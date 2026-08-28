@@ -38,8 +38,14 @@ Answer each sub-question below using ONLY the context chunks.
 Rules:
 - Cite with [chunk_id] inline, using the exact ids shown above. Every factual sentence
   needs at least one citation.
-- If the context does not support an answer, write what little is supported and cite it;
-  do not invent facts and do not cite ids that are not listed.
+- Write DIRECT factual statements about the subject itself. Never write about the sources:
+  no "the context shows", "the provided chunks indicate", "the context does not specify",
+  no hedging about what is or is not documented. Such sentences describe the corpus rather
+  than the world and cannot be verified against it.
+- If the context does not support an answer, simply write fewer sentences — or leave the
+  text empty. Do not describe the absence. Do not invent facts. Do not cite ids that are
+  not listed.
+- Keep each sentence short and self-contained: one fact per sentence, stated plainly.
 - 2 to 5 sentences per sub-question.
 - Return a JSON array. Each element: {{"index": <int>, "text": "<answer with [citations]>"}}
 - Return the array only. No prose, no code fences.
@@ -117,29 +123,35 @@ def run_branch(
     cfg,
     *,
     round_: int = 0,
+    search_anchor: str = "",
 ) -> BranchOutput:
+    """search_anchor: 주제의 변별 용어. BM25 질의 앞에 붙인다.
+
+    앵커가 없으면 sub-question 의 일반 명사에 BM25 가 끌려간다 — 실측에서
+    웹툰 연재 질문에 "Burgess Hill railway station" 이, 축구협회 지배구조 질문에
+    "Euroscepticism" 이 올라왔다. 앵커는 라운드·조건에 무관하게 고정이므로
+    retrieval 은 여전히 전 조건 공통 고정 변인이다 (SPEC §2.6).
+    """
     nonce = "r" + str(round_) if round_ else ""
     top_k = cfg.top_k_for_round(round_)
     directive = ""
     if round_ > 0:
         directive = "\nIMPORTANT: " + cfg.retry_directive(round_) + "\n"
 
+    llm.begin_scope()
     subs = p.sub_questions
-    llm_calls = 0
-    tokens_in = tokens_out = latency = 0
-
     if round_ > 0:
-        before = llm.stats.calls
         subs = paraphrase_sub_questions(subs, llm, round_=round_)
-        llm_calls += llm.stats.calls - before
 
     # --- 검색 ---------------------------------------------------------
     chunks: list[Chunk] = []
     seen: set[str] = set()
     retrievals = 0
+    anchor = (search_anchor or "").strip()
     for sq in subs:
         retrievals += 1
-        for c in retriever.search(sq, top_k):
+        query = (anchor + " " + sq).strip() if anchor else sq
+        for c in retriever.search(query, top_k):
             if c.chunk_id not in seen:
                 seen.add(c.chunk_id)
                 chunks.append(c)
@@ -153,10 +165,6 @@ def run_branch(
         subs="\n".join(str(i) + ". " + s for i, s in enumerate(subs)),
     )
     res = llm.call(prompt, system=ANSWER_SYSTEM, tag="answer", cache_nonce=nonce)
-    llm_calls += 1
-    tokens_in += res.tokens_in
-    tokens_out += res.tokens_out
-    latency += res.latency_ms
     truncated = LLM.is_truncated(res)
 
     if truncated:
@@ -167,10 +175,6 @@ def run_branch(
             prompt, system=ANSWER_SYSTEM, tag="answer_retry", max_tokens=bumped,
             cache_nonce=nonce,
         )
-        llm_calls += 1
-        tokens_in += res.tokens_in
-        tokens_out += res.tokens_out
-        latency += res.latency_ms
         truncated = LLM.is_truncated(res)
 
     rows = parse_structured(llm, res.text, expect=list, tag="answer", cache_nonce=nonce)
@@ -209,13 +213,10 @@ def run_branch(
             tag="claims",
             cache_nonce=nonce,
         )
-        llm_calls += 1
-        tokens_in += cres.tokens_in
-        tokens_out += cres.tokens_out
-        latency += cres.latency_ms
         parsed = parse_structured(llm, cres.text, expect=list, tag="claims", cache_nonce=nonce)
         claims = [str(c).strip() for c in (parsed or []) if str(c).strip()]
 
+    scope = llm.end_scope()
     return BranchOutput(
         perspective=p,
         sub_answers=sub_answers,
@@ -225,10 +226,10 @@ def run_branch(
         truncated=truncated,
         degraded=degraded,
         retrievals=retrievals,
-        llm_calls=llm_calls,
-        tokens_in=tokens_in,
-        tokens_out=tokens_out,
-        latency_ms=latency,
+        llm_calls=scope["llm_calls"],
+        tokens_in=scope["tokens_in"],
+        tokens_out=scope["tokens_out"],
+        latency_ms=scope["latency_ms"],
     )
 
 

@@ -1,0 +1,1608 @@
+{
+  "context": {
+    "generated_at": "2026-08-29T03:50:47+0900",
+    "run_id": "3591f74f-10bb-49e4-9e0c-92c6a23b627a",
+    "n_queries": 5,
+    "n_failed": 5,
+    "n_passed": 0,
+    "n_rounds_total": 15,
+    "n_reexec": 40,
+    "n_degraded": 0,
+    "tau_g_global": 0.8,
+    "tau_c_global": 0.8,
+    "primary_tau": 0.8,
+    "bootstrap_n": 1000,
+    "seed": 42,
+    "model": "gpt-5-mini",
+    "reasoning_effort": "low",
+    "nli_model": "cross-encoder/nli-deberta-v3-base",
+    "nli_device": "cuda",
+    "elapsed_s": 453.24489545822144,
+    "by_round": {
+      "0": {
+        "queries": 5,
+        "llm_calls": 40,
+        "tokens_in": 68299,
+        "tokens_out": 30101
+      },
+      "1": {
+        "queries": 5,
+        "llm_calls": 60,
+        "tokens_in": 78583,
+        "tokens_out": 42554
+      },
+      "2": {
+        "queries": 5,
+        "llm_calls": 60,
+        "tokens_in": 80646,
+        "tokens_out": 43896
+      }
+    },
+    "llm_calls": 165,
+    "cache_hits": 67,
+    "tokens_in": 228514,
+    "tokens_out": 119977,
+    "billed_in": 133808,
+    "billed_out": 67860
+  },
+  "ci": [
+    {
+      "tau": 0.7,
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_failed_queries": 5,
+      "n_reexec_branches": 40,
+      "n_wasted_branches": 0
+    },
+    {
+      "tau": 0.8,
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_failed_queries": 5,
+      "n_reexec_branches": 40,
+      "n_wasted_branches": 0
+    },
+    {
+      "tau": 0.9,
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_failed_queries": 5,
+      "n_reexec_branches": 40,
+      "n_wasted_branches": 0
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "t000",
+      "query": "How did a long‑running American web novel and illustrated webtoon evolve across serialization platforms, adaptations, audience reach, and criticisms?",
+      "run_id": "3591f74f-10bb-49e4-9e0c-92c6a23b627a",
+      "perspectives": [
+        {
+          "role": "overview_factual",
+          "question": "What is the chronological overview of the web novel and illustrated webtoon's publication, adaptation, audience growth, and criticism?",
+          "sub_questions": [
+            "When and where was the web novel first serialized, including initial platform and first publication date?",
+            "Which platforms and formats hosted subsequent serializations, and what were the start and end dates on each platform?",
+            "What official adaptations (e.g., illustrated webtoon, print, audio, TV, film) were produced, with release dates and producing companies?",
+            "What documented audience metrics (e.g., total views, unique readers, circulation figures) were reported during its run?",
+            "What major critical responses or review summaries were published in encyclopedic or mainstream sources during its history?"
+          ]
+        },
+        {
+          "role": "technical_mechanism",
+          "question": "What technical and production mechanisms enabled the work's transitions between web novel, illustrated webtoon, and other formats?",
+          "sub_questions": [
+            "What file formats, aspect ratios, and panel/layout standards are used for illustrated webtoons versus traditional web novels?",
+            "Which platform-specific serialization systems and content management tools hosted the work, and how did they affect update cadence?",
+            "What monetization mechanisms (e.g., micropayments, tipping, ad revenue, episode gates) did platforms implement for this title?",
+            "How were illustrations produced and integrated (e.g., artist credits, workflow, episode art schedules) for the webtoon adaptation?",
+            "What localization and distribution technologies (e.g., translation workflows, international platform launches) supported wider release?"
+          ]
+        },
+        {
+          "role": "impact_application",
+          "question": "What measurable impacts did the series have on audience reach, creator careers, and derivative commercial applications?",
+          "sub_questions": [
+            "How did readership numbers and geographic distribution change after major platform moves or adaptations?",
+            "What commercial products or licensing deals (e.g., print runs, merchandise, international rights) resulted from the series?",
+            "How did the series affect the professional trajectories of its author and illustrator(s), including subsequent projects or contracts?",
+            "What awards, industry recognitions, or bestseller listings did the work or its adaptations achieve?"
+          ]
+        },
+        {
+          "role": "controversy_limitation",
+          "question": "What notable controversies, criticisms, or platform limitations affected the web novel and its illustrated webtoon adaptations?",
+          "sub_questions": [
+            "Were there documented disputes over authorship, plagiarism, or copyright related to the original novel or its adaptations?",
+            "What content-based controversies or censorship actions occurred on serialization platforms or in specific markets?",
+            "What recurring critical limitations were cited in reviews (e.g., pacing, characterization, artwork quality) across authoritative sources?",
+            "Did platform policies, technical restrictions, or monetization limits constrain distribution or creative content for the series?"
+          ]
+        }
+      ],
+      "passed": false,
+      "failed_round_0": true,
+      "n_rounds": 3,
+      "rounds": [
+        {
+          "round": 0,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.625,
+              "source_diversity": 0.0,
+              "support_strength": 0.747813
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.923381,
+              "support_strength": 0.273216
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.5625,
+              "source_diversity": 1.0,
+              "support_strength": 0.563437
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.375,
+              "source_diversity": 1.0,
+              "support_strength": 0.477698
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.390625,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.625,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.747813
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.923381,
+                  "support_strength": 0.273216
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.5625,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.563437
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.375,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.477698
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 0,
+              "next_round": 1
+            }
+          },
+          "cost": {
+            "tokens_in": 14248,
+            "tokens_out": 6777,
+            "llm_calls": 8,
+            "retrievals": 18,
+            "latency_ms": 81500
+          }
+        },
+        {
+          "round": 1,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.189281,
+              "support_strength": 0.018817
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.898931,
+              "support_strength": 0.255255
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.375,
+              "source_diversity": 1.0,
+              "support_strength": 0.394894
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 1.0,
+              "support_strength": 0.040901
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.09375,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.189281,
+                  "support_strength": 0.018817
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.898931,
+                  "support_strength": 0.255255
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.375,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.394894
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.040901
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 1,
+              "next_round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 16952,
+            "tokens_out": 9567,
+            "llm_calls": 12,
+            "retrievals": 18,
+            "latency_ms": 114168
+          }
+        },
+        {
+          "round": 2,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.3,
+              "source_diversity": 0.0,
+              "support_strength": 0.304274
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.133333,
+              "source_diversity": 0.969724,
+              "support_strength": 0.283525
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 1.0,
+              "support_strength": 0.290907
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 1.0,
+              "support_strength": 0.114246
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.108333,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.3,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.304274
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.133333,
+                  "source_diversity": 0.969724,
+                  "support_strength": 0.283525
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.290907
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.114246
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "STOP",
+            "target": [],
+            "params": {
+              "reason": "max_rounds",
+              "round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 17249,
+            "tokens_out": 9275,
+            "llm_calls": 12,
+            "retrievals": 18,
+            "latency_ms": 109489
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "t001",
+      "query": "How has the national men's football side from Bosnia and Herzegovina developed competitively, administratively, and politically since Yugoslav-era participation?",
+      "run_id": "3591f74f-10bb-49e4-9e0c-92c6a23b627a",
+      "perspectives": [
+        {
+          "role": "overview_factual",
+          "question": "What are the major chronological stages in the Bosnia and Herzegovina national men's football team's development since Yugoslav-era participation?",
+          "sub_questions": [
+            "When did Bosnia and Herzegovina form an independent national men's football team after the breakup of Yugoslavia?",
+            "What were the team's FIFA and UEFA membership dates and timeline of international recognition?",
+            "Which major international tournaments has Bosnia and Herzegovina qualified for and in which years?",
+            "Who have been the longest-serving head coaches and captains since the team's establishment?",
+            "How have the team's FIFA world rankings changed year-by-year from formation to present?"
+          ]
+        },
+        {
+          "role": "technical_mechanism",
+          "question": "What structural and administrative mechanisms shaped the team's organization, talent pipeline, and competitive performance after Yugoslavia?",
+          "sub_questions": [
+            "How is the Football Association of Bosnia and Herzegovina structured and when were its key governing bodies formed?",
+            "What domestic league and club systems exist in Bosnia and Herzegovina and how do they feed players to the national team?",
+            "What youth development programs, academies, or scouting systems have been established since independence?",
+            "How have coaching, training, and sports science practices been institutionalized within the national team setup?"
+          ]
+        },
+        {
+          "role": "impact_application",
+          "question": "How has the national team influenced Bosnian football's international reputation, talent export, and domestic sports culture since Yugoslavia?",
+          "sub_questions": [
+            "Which Bosnian national team players have achieved notable club careers abroad and in which leagues?",
+            "How did the team's qualification for major tournaments affect international perceptions of Bosnian football?",
+            "What measurable effects did national team success have on domestic football attendance, youth participation, or club revenues?",
+            "How has the national team's performance influenced transfers of Bosnian players to foreign clubs?"
+          ]
+        },
+        {
+          "role": "controversy_limitation",
+          "question": "What political, ethnic, and administrative controversies or limitations have affected the team's formation, selection, and governance?",
+          "sub_questions": [
+            "What disputes arose over representation of Bosnia's ethnic groups within the national team and football association?",
+            "What legal or political interventions affected the Football Association of Bosnia and Herzegovina and when did they occur?",
+            "Have there been corruption, governance, or match-fixing scandals involving Bosnian football officials or the national team?",
+            "What infrastructural or resource limitations (stadia, funding) have constrained the national team's development?"
+          ]
+        }
+      ],
+      "passed": false,
+      "failed_round_0": true,
+      "n_rounds": 3,
+      "rounds": [
+        {
+          "round": 0,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.371726,
+              "support_strength": 0.197743
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.272727,
+              "source_diversity": 0.550238,
+              "support_strength": 0.65163
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.349398,
+              "support_strength": 0.000431
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.527318,
+              "support_strength": 0.532926
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.068182,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.371726,
+                  "support_strength": 0.197743
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.272727,
+                  "source_diversity": 0.550238,
+                  "support_strength": 0.65163
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.349398,
+                  "support_strength": 0.000431
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.527318,
+                  "support_strength": 0.532926
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 0,
+              "next_round": 1
+            }
+          },
+          "cost": {
+            "tokens_in": 13598,
+            "tokens_out": 5880,
+            "llm_calls": 8,
+            "retrievals": 17,
+            "latency_ms": 68414
+          }
+        },
+        {
+          "round": 1,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.685601,
+              "support_strength": 0.26466
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.794756,
+              "support_strength": 0.104418
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.590436,
+              "support_strength": 0.273005
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.111111,
+              "source_diversity": 0.329125,
+              "support_strength": 0.429698
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.027778,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.685601,
+                  "support_strength": 0.26466
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.794756,
+                  "support_strength": 0.104418
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.590436,
+                  "support_strength": 0.273005
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.111111,
+                  "source_diversity": 0.329125,
+                  "support_strength": 0.429698
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 1,
+              "next_round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 15736,
+            "tokens_out": 9307,
+            "llm_calls": 12,
+            "retrievals": 17,
+            "latency_ms": 108569
+          }
+        },
+        {
+          "round": 2,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.59381,
+              "support_strength": 0.387263
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.804346,
+              "support_strength": 0.094151
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 1.0,
+              "support_strength": 0.001095
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.2,
+              "source_diversity": 0.639052,
+              "support_strength": 0.305805
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.05,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.59381,
+                  "support_strength": 0.387263
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.804346,
+                  "support_strength": 0.094151
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.001095
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.2,
+                  "source_diversity": 0.639052,
+                  "support_strength": 0.305805
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "STOP",
+            "target": [],
+            "params": {
+              "reason": "max_rounds",
+              "round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 16330,
+            "tokens_out": 9150,
+            "llm_calls": 12,
+            "retrievals": 17,
+            "latency_ms": 101843
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "t002",
+      "query": "How has the Lae‑based Papua New Guinea football club navigated name changes, league shifts, community role, and financial or competitive challenges?",
+      "run_id": "3591f74f-10bb-49e4-9e0c-92c6a23b627a",
+      "perspectives": [
+        {
+          "role": "overview_factual",
+          "question": "What are the club's basic historical facts: founding, name changes, league participation, and honours?",
+          "sub_questions": [
+            "In what year was the Lae-based Papua New Guinea football club founded and who were its founders?",
+            "What official names has the club used since its founding and in which years did each name apply?",
+            "Which domestic leagues and national competitions has the club participated in and during which seasons?",
+            "What major trophies, league titles, or cup honours has the club won and in which seasons?"
+          ]
+        },
+        {
+          "role": "technical_mechanism",
+          "question": "How have organizational and competitive mechanisms shaped the club's transitions between names and leagues?",
+          "sub_questions": [
+            "What governance or ownership structures governed the club during each documented name change?",
+            "How did promotion, relegation, or league restructuring rules affect the club's movement between competitions?",
+            "What formal registration, licensing, or affiliation processes did the club complete when joining new leagues?",
+            "What changes in coaching, player recruitment, or youth development systems coincided with major club transitions?"
+          ]
+        },
+        {
+          "role": "impact_application",
+          "question": "What has been the club's role and impact on the Lae community, supporters, and local football development?",
+          "sub_questions": [
+            "What community outreach, youth academy, or grassroots programs has the club operated in Lae and when were they established?",
+            "How has the club's presence influenced local attendance, supporter groups, and football culture in Lae?",
+            "What economic or social impacts has the club generated for the Lae community, such as employment or local business engagement?",
+            "How many players from the club's academy or roster have progressed to national team selection or professional careers?"
+          ]
+        },
+        {
+          "role": "controversy_limitation",
+          "question": "What controversies, financial challenges, or limitations have affected the club's stability and competitive performance?",
+          "sub_questions": [
+            "What documented financial difficulties, sponsorship withdrawals, or insolvency events has the club experienced and when?",
+            "What disputes, sanctions, or controversies involving club officials, players, or administrators have been publicly reported?",
+            "What infrastructural or logistical limitations, such as stadium capacity or training facilities, have constrained the club?",
+            "What regulatory or eligibility disputes with leagues or the national association have affected the club's competition participation?"
+          ]
+        }
+      ],
+      "passed": false,
+      "failed_round_0": true,
+      "n_rounds": 3,
+      "rounds": [
+        {
+          "round": 0,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.349398,
+              "support_strength": 0.300441
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.230769,
+              "source_diversity": 1.0,
+              "support_strength": 0.412334
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.962961,
+              "support_strength": 0.00022
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.3,
+              "source_diversity": 0.0,
+              "support_strength": 0.422121
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.132692,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.349398,
+                  "support_strength": 0.300441
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.230769,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.412334
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.962961,
+                  "support_strength": 0.00022
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.3,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.422121
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 0,
+              "next_round": 1
+            }
+          },
+          "cost": {
+            "tokens_in": 13302,
+            "tokens_out": 5754,
+            "llm_calls": 8,
+            "retrievals": 16,
+            "latency_ms": 76442
+          }
+        },
+        {
+          "round": 1,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.444444,
+              "source_diversity": 0.0,
+              "support_strength": 0.456491
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.0,
+              "support_strength": 0.001004
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.125,
+              "source_diversity": 1.0,
+              "support_strength": 0.144513
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 1.0,
+              "support_strength": 0.336504
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.142361,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.444444,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.456491
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.001004
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.125,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.144513
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.336504
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 1,
+              "next_round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 14787,
+            "tokens_out": 7214,
+            "llm_calls": 12,
+            "retrievals": 16,
+            "latency_ms": 88760
+          }
+        },
+        {
+          "round": 2,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.310918,
+              "support_strength": 0.296792
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.111111,
+              "source_diversity": 0.0,
+              "support_strength": 0.393139
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.0,
+              "support_strength": 0.469313
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.214286,
+              "source_diversity": 0.411052,
+              "support_strength": 0.582426
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.081349,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.310918,
+                  "support_strength": 0.296792
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.111111,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.393139
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.469313
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.214286,
+                  "source_diversity": 0.411052,
+                  "support_strength": 0.582426
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "STOP",
+            "target": [],
+            "params": {
+              "reason": "max_rounds",
+              "round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 14914,
+            "tokens_out": 8846,
+            "llm_calls": 12,
+            "retrievals": 16,
+            "latency_ms": 106663
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "t003",
+      "query": "How has the Chinese world‑ranked table tennis champion progressed technically, influenced national team dynamics, commercial impact, and faced performance scrutiny?",
+      "run_id": "3591f74f-10bb-49e4-9e0c-92c6a23b627a",
+      "perspectives": [
+        {
+          "role": "overview_factual",
+          "question": "What is the chronological summary of the Chinese world-ranked table tennis champion's career and major achievements?",
+          "sub_questions": [
+            "What are the birth date, place, and early life background of the Chinese world-ranked table tennis champion?",
+            "When did the player first appear in international competitions and enter world rankings?",
+            "Which major titles (Olympics, World Championships, World Cup) has the player won and in which years?",
+            "How has the player's official ITTF world ranking changed year by year throughout their senior career?"
+          ]
+        },
+        {
+          "role": "technical_mechanism",
+          "question": "Which technical skills, playing style, and equipment choices characterize the Chinese champion's competitive performance?",
+          "sub_questions": [
+            "What is the player's dominant hand, grip style (shakehand or penhold), and typical stance used in matches?",
+            "What signature strokes, serves, and tactical patterns are attributed to the player in match analyses?",
+            "What types of blade, rubbers, and equipment specifications has the player publicly used during peak performance periods?",
+            "How have coaches or technical staff described the player's training methods for footwork, spin generation, and speed?"
+          ]
+        },
+        {
+          "role": "impact_application",
+          "question": "How has the champion influenced Chinese national team dynamics, talent development, and commercial partnerships?",
+          "sub_questions": [
+            "What roles has the player held within the Chinese national team, such as captaincy, mentorship, or relay participation?",
+            "How has the player's presence affected team selection, rotation policies, or training group structures in national programs?",
+            "What documented contributions has the player made to youth development, coaching clinics, or national training curricula?",
+            "Which commercial endorsements, sponsorship deals, or brand collaborations has the player signed and when?"
+          ]
+        },
+        {
+          "role": "controversy_limitation",
+          "question": "What performance criticisms, controversies, or limitations have been raised about the champion's form and public responses?",
+          "sub_questions": [
+            "What notable match losses or periods of decline have been reported for the player, including dates and opponents?",
+            "Have there been official investigations, disciplinary actions, or selection disputes involving the player and Chinese table tennis authorities?",
+            "What media or expert criticisms have been published regarding the player's technique, temperament, or competitive consistency?",
+            "How has the player or their team publicly responded to scrutiny, injury reports, or allegations affecting performance?"
+          ]
+        }
+      ],
+      "passed": false,
+      "failed_round_0": true,
+      "n_rounds": 3,
+      "rounds": [
+        {
+          "round": 0,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.222222,
+              "source_diversity": 0.0,
+              "support_strength": 0.323774
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.0,
+              "support_strength": 0.244112
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.1,
+              "source_diversity": 0.0,
+              "support_strength": 0.289788
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.983734,
+              "support_strength": 0.12817
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.080556,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.222222,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.323774
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.244112
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.1,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.289788
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.983734,
+                  "support_strength": 0.12817
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 0,
+              "next_round": 1
+            }
+          },
+          "cost": {
+            "tokens_in": 13897,
+            "tokens_out": 5834,
+            "llm_calls": 8,
+            "retrievals": 16,
+            "latency_ms": 70795
+          }
+        },
+        {
+          "round": 1,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 1.0,
+              "support_strength": 0.011718
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.0,
+              "support_strength": 0.15372
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.142857,
+              "source_diversity": 0.0,
+              "support_strength": 0.050827
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.285714,
+              "source_diversity": 0.418166,
+              "support_strength": 0.04757
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.107143,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.011718
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.15372
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.142857,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.050827
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.285714,
+                  "source_diversity": 0.418166,
+                  "support_strength": 0.04757
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 1,
+              "next_round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 15091,
+            "tokens_out": 8442,
+            "llm_calls": 12,
+            "retrievals": 16,
+            "latency_ms": 106452
+          }
+        },
+        {
+          "round": 2,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 0.0,
+              "grounding": 0.0,
+              "source_diversity": 0.0,
+              "support_strength": 0.0
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 1.0,
+              "support_strength": 0.330133
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.125,
+              "source_diversity": 0.0,
+              "support_strength": 0.165828
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.1,
+              "source_diversity": 0.934978,
+              "support_strength": 0.33737
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.05625,
+              "min_coverage": 0.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": false,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 0.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.0
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.330133
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.125,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.165828
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.1,
+                  "source_diversity": 0.934978,
+                  "support_strength": 0.33737
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "STOP",
+            "target": [],
+            "params": {
+              "reason": "max_rounds",
+              "round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 16374,
+            "tokens_out": 8721,
+            "llm_calls": 12,
+            "retrievals": 16,
+            "latency_ms": 107355
+          }
+        }
+      ]
+    },
+    {
+      "query_id": "t004",
+      "query": "How did the Montreal‑based forest products firm grow through acquisitions and mergers, influence newsprint markets, and confront industry decline controversies?",
+      "run_id": "3591f74f-10bb-49e4-9e0c-92c6a23b627a",
+      "perspectives": [
+        {
+          "role": "overview_factual",
+          "question": "What were the firm's major mergers and acquisitions and their timeline in Montreal's forest products sector?",
+          "sub_questions": [
+            "What company was the Montreal-based forest products firm founded as and in which year was it established?",
+            "Which major mergers and acquisitions involving the firm occurred between 1950 and 2000, and on what dates?",
+            "What subsidiaries and assets were acquired in each significant transaction and where were they located?",
+            "Who were the principal executives or boards that approved each major merger or acquisition?",
+            "When did the firm change its corporate name or headquarters following key transactions?"
+          ]
+        },
+        {
+          "role": "technical_mechanism",
+          "question": "By what operational mechanisms did the firm expand capacity and integrate acquired paper and newsprint operations?",
+          "sub_questions": [
+            "What production technologies and mill processes did the firm adopt after acquiring paper or newsprint plants?",
+            "How did the firm consolidate supply chains and raw wood fiber sourcing across acquired assets?",
+            "What changes to organizational structure or management systems were implemented to integrate acquisitions?",
+            "Which investments in equipment, modernization, or capacity expansion were recorded after each acquisition?"
+          ]
+        },
+        {
+          "role": "impact_application",
+          "question": "How did the firm's growth through acquisitions affect newsprint market structure, prices, and distribution networks?",
+          "sub_questions": [
+            "What was the firm's share of North American or global newsprint production before and after major mergers?",
+            "How did the firm's acquisitions influence newsprint wholesale prices or price-setting behavior in target markets?",
+            "What changes occurred in the firm's distribution channels and export markets following consolidation?",
+            "How did competitors and downstream customers (newspapers, printers) respond to the firm's increased market presence?"
+          ]
+        },
+        {
+          "role": "controversy_limitation",
+          "question": "What controversies and limitations arose as the firm faced industry decline and public criticism regarding closures and layoffs?",
+          "sub_questions": [
+            "Which mill closures, layoffs, or plant mothballings did the firm announce during industry downturns and on what dates?",
+            "What governmental inquiries, public protests, or union actions were recorded in response to the firm's restructuring decisions?",
+            "What environmental, social, or economic criticisms were leveled at the firm related to its consolidation and decline management?",
+            "Were there legal challenges, fines, or regulatory actions associated with the firm's closure decisions or asset sales?"
+          ]
+        }
+      ],
+      "passed": false,
+      "failed_round_0": true,
+      "n_rounds": 3,
+      "rounds": [
+        {
+          "round": 0,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.1,
+              "source_diversity": 0.420951,
+              "support_strength": 0.124581
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.166667,
+              "source_diversity": 0.349398,
+              "support_strength": 0.187342
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.426833,
+              "support_strength": 0.000989
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.090909,
+              "source_diversity": 0.77198,
+              "support_strength": 0.259483
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.089394,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.1,
+                  "source_diversity": 0.420951,
+                  "support_strength": 0.124581
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.166667,
+                  "source_diversity": 0.349398,
+                  "support_strength": 0.187342
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.426833,
+                  "support_strength": 0.000989
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.090909,
+                  "source_diversity": 0.77198,
+                  "support_strength": 0.259483
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 0,
+              "next_round": 1
+            }
+          },
+          "cost": {
+            "tokens_in": 13254,
+            "tokens_out": 5856,
+            "llm_calls": 8,
+            "retrievals": 17,
+            "latency_ms": 71504
+          }
+        },
+        {
+          "round": 1,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.279949,
+              "support_strength": 0.005068
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.558044,
+              "support_strength": 0.050569
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 1.0,
+              "support_strength": 0.00187
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.972959,
+              "support_strength": 0.15855
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.0,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.279949,
+                  "support_strength": 0.005068
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.558044,
+                  "support_strength": 0.050569
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 1.0,
+                  "support_strength": 0.00187
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.972959,
+                  "support_strength": 0.15855
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "RETRY_ALL",
+            "target": [
+              "controversy_limitation",
+              "impact_application",
+              "overview_factual",
+              "technical_mechanism"
+            ],
+            "params": {
+              "round": 1,
+              "next_round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 16017,
+            "tokens_out": 8024,
+            "llm_calls": 12,
+            "retrievals": 17,
+            "latency_ms": 97662
+          }
+        },
+        {
+          "round": 2,
+          "evidence": {
+            "overview_factual": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.0,
+              "support_strength": 0.197231
+            },
+            "technical_mechanism": {
+              "coverage": 1.0,
+              "grounding": 0.117647,
+              "source_diversity": 0.39333,
+              "support_strength": 0.16357
+            },
+            "impact_application": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.861353,
+              "support_strength": 0.000296
+            },
+            "controversy_limitation": {
+              "coverage": 1.0,
+              "grounding": 0.0,
+              "source_diversity": 0.882368,
+              "support_strength": 0.04739
+            }
+          },
+          "verify": {
+            "passed": false,
+            "agg": {
+              "mean_grounding": 0.029412,
+              "min_coverage": 1.0,
+              "tau_g_global": 0.8,
+              "tau_c_global": 0.8,
+              "pass_grounding": false,
+              "pass_coverage": true,
+              "branches": {
+                "overview_factual": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.0,
+                  "support_strength": 0.197231
+                },
+                "technical_mechanism": {
+                  "coverage": 1.0,
+                  "grounding": 0.117647,
+                  "source_diversity": 0.39333,
+                  "support_strength": 0.16357
+                },
+                "impact_application": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.861353,
+                  "support_strength": 0.000296
+                },
+                "controversy_limitation": {
+                  "coverage": 1.0,
+                  "grounding": 0.0,
+                  "source_diversity": 0.882368,
+                  "support_strength": 0.04739
+                }
+              }
+            }
+          },
+          "action": {
+            "type": "STOP",
+            "target": [],
+            "params": {
+              "reason": "max_rounds",
+              "round": 2
+            }
+          },
+          "cost": {
+            "tokens_in": 15779,
+            "tokens_out": 7904,
+            "llm_calls": 12,
+            "retrievals": 17,
+            "latency_ms": 93634
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+토픽 5개 · 모델 gpt-5-mini · NLI cross-encoder/nli-deberta-v3-base
+산출 -> results\test_a\_pilot5c
+[  1/  5] t000   rounds=3 passed=False  127.8s  How did a long‑running American web novel and illust
+[  2/  5] t001   rounds=3 passed=False  87.6s  How has the national men's football side from Bosnia
+[  3/  5] t002   rounds=3 passed=False  91.1s  How has the Lae‑based Papua New Guinea football club
+[  4/  5] t003   rounds=3 passed=False  54.8s  How has the Chinese world‑ranked table tennis champi
+[  5/  5] t004   rounds=3 passed=False  101.9s  How did the Montreal‑based forest products firm grow
+
+실패 케이스 5/5, 재실행 branch 40
+  tau=0.70  낭비율 0.0%  [0.0–0.0]  (0/40)
+  tau=0.80  낭비율 0.0%  [0.0–0.0]  (0/40)
+  tau=0.90  낭비율 0.0%  [0.0–0.0]  (0/40)
+
+판정 (tau=0.80): 20% 미만 — 전제 오류. 연구 질문 재설계
+LLM 호출 154 (캐시 48), 청구 토큰 in/out = 207157/75943
+소요 7.7분 -> results\test_a\_pilot5c

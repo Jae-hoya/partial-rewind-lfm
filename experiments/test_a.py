@@ -265,6 +265,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--limit", type=int, default=0, help="상위 N개 토픽만. 비용 시험용")
     ap.add_argument("--outdir", default=None)
     ap.add_argument("--mock", action="store_true", help="mock NLI (스모크용)")
+    ap.add_argument("--mock-llm", action="store_true",
+                    help="mock LLM. 실 API 없이 파이프라인만 점검한다 (P3 스모크)")
     args = ap.parse_args(argv)
 
     repo_root = Path(__file__).resolve().parents[1]
@@ -286,14 +288,26 @@ def main(argv: list[str] | None = None) -> int:
     outdir.mkdir(parents=True, exist_ok=True)
     shutil.copy(args.config or (repo_root / "config.yaml"), outdir / "config.yaml")
 
-    llm = LLM(cfg)
-    nli = MockNLI() if args.mock else load_nli(cfg)
+    transport = None
+    if args.mock_llm:
+        sys.path.insert(0, str(repo_root / "tests"))
+        from test_pipeline import ScriptedTransport
+
+        transport = ScriptedTransport()
+        cfg_dict = cfg.as_dict()
+        cfg_dict["llm"]["cache_enabled"] = False
+        from lfm.config import Config
+
+        cfg = Config(cfg_dict, source="mock-llm")
+    llm = LLM(cfg, transport=transport)
+    nli = MockNLI() if (args.mock or args.mock_llm) else load_nli(cfg)
     retriever = BM25Retriever(cfg)
     controller = GlobalRetry(cfg)
     run_id = new_run_id()
 
     print("토픽 %d개 · 모델 %s · NLI %s"
-          % (len(topics), llm.model, "mock" if args.mock else cfg["nli.model"]))
+          % (len(topics), "mock" if args.mock_llm else llm.model,
+             "mock" if (args.mock or args.mock_llm) else cfg["nli.model"]))
     print("산출 -> " + str(outdir))
 
     t0 = time.time()
@@ -311,6 +325,7 @@ def main(argv: list[str] | None = None) -> int:
                 controller=controller,
                 run_id=run_id,
                 trace_writer=tw,
+                search_anchor=" ".join(t.get("terms") or []),
             )
             results.append(qr)
             print("[%3d/%3d] %-6s rounds=%d passed=%-5s  %.1fs  %s"

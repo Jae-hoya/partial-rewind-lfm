@@ -1,0 +1,42 @@
+{
+  "calls": 151,
+  "cache_hits": 45,
+  "api_calls": 106,
+  "tokens_in": 216312,
+  "tokens_out": 82711,
+  "billed_tokens_in": 207926,
+  "billed_tokens_out": 65668,
+  "latency_ms": 1053806,
+  "by_tag": {
+    "decompose": {
+      "calls": 5,
+      "cache_hits": 5,
+      "tokens_in": 986,
+      "tokens_out": 3426
+    },
+    "answer": {
+      "calls": 60,
+      "cache_hits": 0,
+      "tokens_in": 187572,
+      "tokens_out": 42102
+    },
+    "claims": {
+      "calls": 45,
+      "cache_hits": 0,
+      "tokens_in": 17259,
+      "tokens_out": 22074
+    },
+    "paraphrase": {
+      "calls": 40,
+      "cache_hits": 40,
+      "tokens_in": 7400,
+      "tokens_out": 13617
+    },
+    "answer_retry": {
+      "calls": 1,
+      "cache_hits": 0,
+      "tokens_in": 3095,
+      "tokens_out": 1492
+    }
+  }
+}

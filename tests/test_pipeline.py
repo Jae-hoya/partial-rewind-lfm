@@ -321,3 +321,104 @@ def test_trace_records_round_perturbation_params(tmp_path, tmp_config, chunks):
     assert retry, "실패했으면 RETRY_ALL 이 있어야 한다"
     assert retry[0]["action"]["params"]["top_k"] == tmp_config["retrieval.top_k"] * 2
     assert retry[0]["action"]["params"]["cache_nonce"] == "r1"
+
+
+# --- 병렬 실행 ------------------------------------------------------------
+
+
+def test_parallel_branches_match_serial_results(tmp_config, chunks):
+    """병렬화는 성능 조치다. 결과가 달라지면 그건 최적화가 아니라 버그다."""
+    from lfm.config import Config
+
+    def run_with(workers):
+        data = tmp_config.as_dict()
+        data["run"] = {"branch_workers": workers}
+        data["paths"]["cache_dir"] = data["paths"]["cache_dir"] + "-w" + str(workers)
+        cfg = Config(data)
+        llm = LLM(cfg, transport=ScriptedTransport())
+        res = run_query(query_id="q1", query="why is the sky blue",
+                        retriever=ListRetriever(chunks), llm=llm, nli=MockNLI(fixed=0.0),
+                        cfg=cfg, controller=GlobalRetry(cfg), run_id="fixed-run")
+        return res, llm
+
+    serial, llm_s = run_with(1)
+    parallel, llm_p = run_with(4)
+
+    assert len(serial.rounds) == len(parallel.rounds)
+    for a, b in zip(serial.rounds, parallel.rounds):
+        assert {k: v.to_dict() for k, v in a.evidence.items()} == \
+               {k: v.to_dict() for k, v in b.evidence.items()}
+        assert a.action.type == b.action.type
+    assert llm_s.stats.calls == llm_p.stats.calls
+    assert llm_s.stats.tokens_in == llm_p.stats.tokens_in
+
+
+def test_branch_call_accounting_is_per_branch_not_global(tmp_config, chunks):
+    """전역 stats 를 앞뒤로 빼서 세면 스레드 간에 값이 섞인다."""
+    from lfm.config import Config
+
+    data = tmp_config.as_dict()
+    data["run"] = {"branch_workers": 4}
+    cfg = Config(data)
+    llm = LLM(cfg, transport=ScriptedTransport())
+    res = run_query(query_id="q1", query="why is the sky blue",
+                    retriever=ListRetriever(chunks), llm=llm, nli=MockNLI(fixed=0.0),
+                    cfg=cfg, controller=GlobalRetry(cfg), run_id="r")
+    branch_calls = sum(o.llm_calls for r in res.rounds for o in r.outputs.values())
+    # 전역 호출 = branch 호출 + 관점 분해 1회
+    assert branch_calls + 1 == llm.stats.calls
+
+
+def test_search_anchor_is_prepended_to_every_query(tmp_config, chunks):
+    """앵커가 없으면 BM25 가 sub-question 의 일반 명사에 끌려간다."""
+
+    class RecordingRetriever(ListRetriever):
+        def __init__(self, chunks):
+            super().__init__(chunks)
+            self.queries = []
+
+        def search(self, query, top_k):
+            self.queries.append(query)
+            return super().search(query, top_k)
+
+    r = RecordingRetriever(chunks)
+    p = Perspective("overview_factual", "q", ("blue sky", "scattering"))
+    run_branch(p, r, LLM(tmp_config, transport=ScriptedTransport()), tmp_config,
+               search_anchor="rayleigh atmosphere")
+    assert r.queries == ["rayleigh atmosphere blue sky", "rayleigh atmosphere scattering"]
+
+
+def test_empty_anchor_leaves_queries_unchanged(tmp_config, chunks):
+    class RecordingRetriever(ListRetriever):
+        def __init__(self, chunks):
+            super().__init__(chunks)
+            self.queries = []
+
+        def search(self, query, top_k):
+            self.queries.append(query)
+            return super().search(query, top_k)
+
+    r = RecordingRetriever(chunks)
+    p = Perspective("overview_factual", "q", ("blue sky",))
+    run_branch(p, r, LLM(tmp_config, transport=ScriptedTransport()), tmp_config)
+    assert r.queries == ["blue sky"]
+
+
+def test_anchor_is_constant_across_rounds(tmp_config, chunks):
+    """앵커가 라운드마다 바뀌면 retrieval 이 고정 변인이 아니게 된다."""
+
+    class RecordingRetriever(ListRetriever):
+        def __init__(self, chunks):
+            super().__init__(chunks)
+            self.queries = []
+
+        def search(self, query, top_k):
+            self.queries.append(query)
+            return super().search(query, top_k)
+
+    r = RecordingRetriever(chunks)
+    llm = LLM(tmp_config, transport=ScriptedTransport())
+    p = Perspective("overview_factual", "q", ("blue sky",))
+    for rnd in (0, 1, 2):
+        run_branch(p, r, llm, tmp_config, round_=rnd, search_anchor="anchor terms")
+    assert all(q.startswith("anchor terms ") for q in r.queries)

@@ -11,6 +11,7 @@ M2 의 LFM controller 가 같은 루프에 들어와야 비교가 공정하다 (
 
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -100,6 +101,7 @@ def run_query(
     controller: Controller,
     run_id: str,
     trace_writer=None,
+    search_anchor: str = "",
 ) -> QueryResult:
     max_rounds = int(cfg["max_rounds"])
 
@@ -108,10 +110,21 @@ def run_query(
     graph = Graph(branch_ids)
     rounds: list[RoundResult] = []
 
+    workers = int(cfg.get("run.branch_workers", 1))
+
     for r in range(max_rounds):
-        outputs = {
-            p.role: run_branch(p, retriever, llm, cfg, round_=r) for p in perspectives
-        }
+        # 한 라운드의 branch 들은 서로 독립이다. 병렬로 돌려도 결과는 같다 —
+        # 캐시 키가 결정론이고 호출 회계는 스레드-로컬 스코프로 센다.
+        if workers > 1 and len(perspectives) > 1:
+            with ThreadPoolExecutor(max_workers=workers) as ex:
+                futures = {p.role: ex.submit(run_branch, p, retriever, llm, cfg, round_=r,
+                                             search_anchor=search_anchor)
+                           for p in perspectives}
+                outputs = {role: f.result() for role, f in futures.items()}
+        else:
+            outputs = {p.role: run_branch(p, retriever, llm, cfg, round_=r,
+                                          search_anchor=search_anchor)
+                       for p in perspectives}
         evidence = {bid: evaluate(o, nli, cfg) for bid, o in outputs.items()}
         verify = global_verify(evidence, cfg)
 
@@ -129,6 +142,7 @@ def run_query(
         params = dict(action.params)
         if action.type == "RETRY_ALL":
             params.update(perturbation_params(cfg, r + 1))
+        params["search_anchor"] = search_anchor
         params["verify"] = {
             "mean_grounding": verify.agg.get("mean_grounding"),
             "min_coverage": verify.agg.get("min_coverage"),

@@ -19,7 +19,9 @@ import hashlib
 import io
 import json
 import os
+import threading
 import time
+import uuid
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any, Protocol
@@ -141,12 +143,35 @@ class LLM:
         self.reasoning_effort = cfg.get("llm.reasoning_effort", None)
         self.max_tokens_param: str = cfg.get("llm.max_tokens_param", "auto")
         self.stats = UsageStats()
+        self._stats_lock = threading.Lock()
+        # branch 를 스레드로 병렬 실행하므로, 호출 회계는 스레드-로컬 스코프로 센다.
+        # 전역 stats 를 앞뒤로 빼서 세면 스레드 간에 값이 섞인다.
+        self._local = threading.local()
         self._transport = transport
         self._client = None
         if self.cache_enabled:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
 
     # --- 캐시 ---------------------------------------------------------
+    # --- 스레드-로컬 호출 회계 -------------------------------------------
+    def begin_scope(self) -> None:
+        """이 스레드에서 지금부터의 호출을 따로 센다."""
+        self._local.scope = {"llm_calls": 0, "tokens_in": 0, "tokens_out": 0, "latency_ms": 0}
+
+    def end_scope(self) -> dict[str, int]:
+        scope = getattr(self._local, "scope", None)
+        self._local.scope = None
+        return scope or {"llm_calls": 0, "tokens_in": 0, "tokens_out": 0, "latency_ms": 0}
+
+    def _record_scope(self, res: "LLMResult") -> None:
+        scope = getattr(self._local, "scope", None)
+        if scope is None:
+            return
+        scope["llm_calls"] += 1
+        scope["tokens_in"] += res.tokens_in
+        scope["tokens_out"] += res.tokens_out
+        scope["latency_ms"] += res.latency_ms
+
     @staticmethod
     def is_truncated(res: "LLMResult") -> bool:
         """토큰 상한에 걸려 잘린 응답. 추론 모델은 reasoning 이 예산을 먹어
@@ -169,10 +194,20 @@ class LLM:
     def _cache_write(self, key: str, payload: dict[str, Any]) -> None:
         p = self._cache_path(key)
         p.parent.mkdir(parents=True, exist_ok=True)
-        tmp = p.with_suffix(".tmp")
-        with io.open(tmp, "w", encoding="utf-8") as fh:
-            json.dump(payload, fh, ensure_ascii=False)
-        os.replace(tmp, p)
+        # 임시 파일 이름은 호출마다 달라야 한다. 고정 이름이면 같은 키를 동시에 쓰는
+        # 두 스레드가 같은 tmp 를 잡고, Windows 에서 os.replace 가 PermissionError 로
+        # 터진다. 병렬 branch 실행에서 실제로 발생했다.
+        tmp = p.with_name(p.name + "." + uuid.uuid4().hex[:8] + ".tmp")
+        try:
+            with io.open(tmp, "w", encoding="utf-8") as fh:
+                json.dump(payload, fh, ensure_ascii=False)
+            os.replace(tmp, p)
+        except OSError:
+            # 다른 스레드가 같은 키를 먼저 썼다면 내용이 같으므로 버려도 된다.
+            try:
+                tmp.unlink(missing_ok=True)
+            except OSError:
+                pass
 
     # --- 호출 ---------------------------------------------------------
     def call(
@@ -208,7 +243,9 @@ class LLM:
                     cached=True,
                     finish_reason=hit.get("finish_reason", ""),
                 )
-                self.stats.record(res)
+                with self._stats_lock:
+                    self.stats.record(res)
+                self._record_scope(res)
                 return res
 
         t0 = time.perf_counter()
@@ -239,7 +276,9 @@ class LLM:
                     "cache_nonce": cache_nonce,
                 },
             )
-        self.stats.record(res)
+        with self._stats_lock:
+            self.stats.record(res)
+        self._record_scope(res)
         return res
 
     def _invoke(self, *, system: str, prompt: str, max_tokens: int) -> tuple[str, int, int, str]:
