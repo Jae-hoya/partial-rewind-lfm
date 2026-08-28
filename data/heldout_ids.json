@@ -1,0 +1,669 @@
+{
+  "generated_at": "2026-08-29T03:22:33+0900",
+  "spec": "SPEC_M1_TestA_v1.1.md §2.5",
+  "match_mode": "title_normalization",
+  "match_mode_reason": "이 스냅샷에는 redirect 필드가 없다 (MANIFEST.verdicts.redirect_field_present=false). SPEC v1.1 §2.2 가 지정한 폴백 경로다.",
+  "n_topics": 50,
+  "n_heldout_documents": 50,
+  "unmatched_targets": [],
+  "heldout_identifiers": [
+    71071,
+    318996,
+    719464,
+    869667,
+    1008974,
+    1100501,
+    1107832,
+    1225608,
+    1231403,
+    1695767,
+    1967540,
+    2107074,
+    2154940,
+    3085680,
+    3479387,
+    4701939,
+    6387398,
+    6732798,
+    6868247,
+    9308734,
+    13069936,
+    17367000,
+    20785460,
+    21424895,
+    23746608,
+    23777640,
+    24956064,
+    25700150,
+    27674202,
+    31091414,
+    32329717,
+    33124003,
+    35668809,
+    39142147,
+    41597867,
+    46780835,
+    47933827,
+    48578855,
+    51759044,
+    53278103,
+    53928654,
+    56858078,
+    58020502,
+    59592722,
+    62697938,
+    69158089,
+    70420837,
+    71360028,
+    74096381,
+    77962831
+  ],
+  "by_topic": {
+    "t000": {
+      "topic": "How did a long‑running American web novel and illustrated webtoon evolve across serialization platforms, adaptations, audience reach, and criticisms?",
+      "target_article": "The Beginning After the End",
+      "normalized_title": "beginning after the end",
+      "heldout_identifiers": [
+        77962831
+      ],
+      "matched_titles": [
+        "The Beginning After the End"
+      ],
+      "n_matched": 1
+    },
+    "t001": {
+      "topic": "How has the national men's football side from Bosnia and Herzegovina developed competitively, administratively, and politically since Yugoslav-era participation?",
+      "target_article": "Bosnia and Herzegovina national football team",
+      "normalized_title": "bosnia and herzegovina national football team",
+      "heldout_identifiers": [
+        1008974
+      ],
+      "matched_titles": [
+        "Bosnia and Herzegovina national football team"
+      ],
+      "n_matched": 1
+    },
+    "t002": {
+      "topic": "How has the Lae‑based Papua New Guinea football club navigated name changes, league shifts, community role, and financial or competitive challenges?",
+      "target_article": "Morobe United F.C.",
+      "normalized_title": "morobe united f c",
+      "heldout_identifiers": [
+        17367000
+      ],
+      "matched_titles": [
+        "Morobe United F.C."
+      ],
+      "n_matched": 1
+    },
+    "t003": {
+      "topic": "How has the Chinese world‑ranked table tennis champion progressed technically, influenced national team dynamics, commercial impact, and faced performance scrutiny?",
+      "target_article": "Wang Chuqin",
+      "normalized_title": "wang chuqin",
+      "heldout_identifiers": [
+        58020502
+      ],
+      "matched_titles": [
+        "Wang Chuqin"
+      ],
+      "n_matched": 1
+    },
+    "t004": {
+      "topic": "How did the Montreal‑based forest products firm grow through acquisitions and mergers, influence newsprint markets, and confront industry decline controversies?",
+      "target_article": "Abitibi Power and Paper Company",
+      "normalized_title": "abitibi power and paper company",
+      "heldout_identifiers": [
+        21424895
+      ],
+      "matched_titles": [
+        "Abitibi Power and Paper Company"
+      ],
+      "n_matched": 1
+    },
+    "t005": {
+      "topic": "How did Lithuania’s multiweek national selection produce Monika Liu’s entry, affect domestic music industry, staging choices, and public debates?",
+      "target_article": "Lithuania in the Eurovision Song Contest 2022",
+      "normalized_title": "lithuania in the eurovision song contest 2022",
+      "heldout_identifiers": [
+        69158089
+      ],
+      "matched_titles": [
+        "Lithuania in the Eurovision Song Contest 2022"
+      ],
+      "n_matched": 1
+    },
+    "t006": {
+      "topic": "How did Maryland’s 2008 presidential vote reflect state political demographics, campaign strategies, electoral mechanics, and critiques of campaign influence?",
+      "target_article": "2008 United States presidential election in Maryland",
+      "normalized_title": "2008 united states presidential election in maryland",
+      "heldout_identifiers": [
+        20785460
+      ],
+      "matched_titles": [
+        "2008 United States presidential election in Maryland"
+      ],
+      "n_matched": 1
+    },
+    "t007": {
+      "topic": "How has Sri Lanka’s northern province been shaped demographically, administratively, postwar reconstruction policies, and contested regional autonomy debates?",
+      "target_article": "Northern Province, Sri Lanka",
+      "normalized_title": "northern province sri lanka",
+      "heldout_identifiers": [
+        23777640
+      ],
+      "matched_titles": [
+        "Northern Province, Sri Lanka"
+      ],
+      "n_matched": 1
+    },
+    "t008": {
+      "topic": "How did the prominent US communications regulator shape broadcasting policy, legal practice, civic engagement, and provoke debates over media standards?",
+      "target_article": "Newton N. Minow",
+      "normalized_title": "newton n minow",
+      "heldout_identifiers": [
+        1107832
+      ],
+      "matched_titles": [
+        "Newton N. Minow",
+        "Newton N. Minow"
+      ],
+      "n_matched": 2
+    },
+    "t011": {
+      "topic": "How has Bharath's shifting roles across Tamil, Malayalam, Telugu and Hindi films influenced his career trajectory, craft, and public controversies?",
+      "target_article": "Bharath (actor)",
+      "normalized_title": "bharath",
+      "heldout_identifiers": [
+        13069936
+      ],
+      "matched_titles": [
+        "Bharath (actor)"
+      ],
+      "n_matched": 1
+    },
+    "t012": {
+      "topic": "How did the 2024 Oregon attorney general race unfold, what legal priorities defined candidates, and which criticisms emerged post-election?",
+      "target_article": "2024 Oregon Attorney General election",
+      "normalized_title": "2024 oregon attorney general election",
+      "heldout_identifiers": [
+        74096381
+      ],
+      "matched_titles": [
+        "2024 Oregon Attorney General election"
+      ],
+      "n_matched": 1
+    },
+    "t013": {
+      "topic": "How did Anthony Foxx's rise from Charlotte mayor to U.S. Transportation Secretary influence federal transport policy, leadership style, and scrutiny?",
+      "target_article": "Anthony Foxx",
+      "normalized_title": "anthony foxx",
+      "heldout_identifiers": [
+        24956064
+      ],
+      "matched_titles": [
+        "Anthony Foxx"
+      ],
+      "n_matched": 1
+    },
+    "t014": {
+      "topic": "How did the creation, serialization and adaptation of Daisuke Igarashi's ocean-themed manga affect its critical reception, themes, and debates?",
+      "target_article": "Children of the Sea (manga)",
+      "normalized_title": "children of the sea",
+      "heldout_identifiers": [
+        23746608
+      ],
+      "matched_titles": [
+        "Children of the Sea (manga)"
+      ],
+      "n_matched": 1
+    },
+    "t015": {
+      "topic": "How has Royal Antwerp's long history, recent European qualification and domestic successes affected its identity, finances, and fan controversies?",
+      "target_article": "Royal Antwerp F.C.",
+      "normalized_title": "royal antwerp f c",
+      "heldout_identifiers": [
+        2107074
+      ],
+      "matched_titles": [
+        "Royal Antwerp F.C."
+      ],
+      "n_matched": 1
+    },
+    "t016": {
+      "topic": "How did Spirit Hunter: Death Mark's design, multi-platform ports and sequels shape its horror mechanics, audience impact, and critical limitations?",
+      "target_article": "Spirit Hunter: Death Mark",
+      "normalized_title": "spirit hunter death mark",
+      "heldout_identifiers": [
+        62697938
+      ],
+      "matched_titles": [
+        "Spirit Hunter: Death Mark"
+      ],
+      "n_matched": 1
+    },
+    "t017": {
+      "topic": "How has Kota Kinabalu International Airport's growth, hub roles and traffic trends influenced regional connectivity, operations, and capacity challenges?",
+      "target_article": "Kota Kinabalu International Airport",
+      "normalized_title": "kota kinabalu international airport",
+      "heldout_identifiers": [
+        3479387
+      ],
+      "matched_titles": [
+        "Kota Kinabalu International Airport"
+      ],
+      "n_matched": 1
+    },
+    "t018": {
+      "topic": "How have the Australian Rollers' Paralympic achievements, development programs and key figures influenced wheelchair basketball performance and public debates?",
+      "target_article": "Australia men's national wheelchair basketball team",
+      "normalized_title": "australia men s national wheelchair basketball team",
+      "heldout_identifiers": [
+        31091414
+      ],
+      "matched_titles": [
+        "Australia men's national wheelchair basketball team"
+      ],
+      "n_matched": 1
+    },
+    "t019": {
+      "topic": "How did Wisconsin's 2020 House contests interact with the presidential election, ballot dynamics, turnout patterns, and subsequent partisan controversies?",
+      "target_article": "2020 United States House of Representatives elections in Wisconsin",
+      "normalized_title": "2020 united states house of representatives elections in wisconsin",
+      "heldout_identifiers": [
+        53278103
+      ],
+      "matched_titles": [
+        "2020 United States House of Representatives elections in Wisconsin"
+      ],
+      "n_matched": 1
+    },
+    "t020": {
+      "topic": "How did a 1990s shojo comic set in ancient Anatolia achieve mass circulation, adaptation plans, and critical recognition?",
+      "target_article": "Red River (manga)",
+      "normalized_title": "red river",
+      "heldout_identifiers": [
+        1225608
+      ],
+      "matched_titles": [
+        "Red River (manga)"
+      ],
+      "n_matched": 1
+    },
+    "t021": {
+      "topic": "What trajectory and defensive attributes shaped a Bosnian centre-back’s club transfers, international emergence, and career sustainability challenges?",
+      "target_article": "Nihad Mujakić",
+      "normalized_title": "nihad mujakic",
+      "heldout_identifiers": [
+        56858078
+      ],
+      "matched_titles": [
+        "Nihad Mujakić"
+      ],
+      "n_matched": 1
+    },
+    "t022": {
+      "topic": "How did a Soviet-era medium-range air-to-air missile family function, proliferate internationally, influence fighter tactics, and raise safety concerns?",
+      "target_article": "R-27 (air-to-air missile)",
+      "normalized_title": "r 27",
+      "heldout_identifiers": [
+        1231403
+      ],
+      "matched_titles": [
+        "R-27 (air-to-air missile)"
+      ],
+      "n_matched": 1
+    },
+    "t023": {
+      "topic": "How has the most populous Utah county developed demographically, governed metropolitan services, driven regional economy, and faced urbanization challenges?",
+      "target_article": "Salt Lake County, Utah",
+      "normalized_title": "salt lake county utah",
+      "heldout_identifiers": [
+        71071
+      ],
+      "matched_titles": [
+        "Salt Lake County, Utah"
+      ],
+      "n_matched": 1
+    },
+    "t024": {
+      "topic": "How did Australia’s 1976 Paralympic delegation perform across sports, shape disability sport development, influence policy, and encounter systemic limitations?",
+      "target_article": "Australia at the 1976 Summer Paralympics",
+      "normalized_title": "australia at the 1976 summer paralympics",
+      "heldout_identifiers": [
+        32329717
+      ],
+      "matched_titles": [
+        "Australia at the 1976 Summer Paralympics"
+      ],
+      "n_matched": 1
+    },
+    "t025": {
+      "topic": "How has a state-owned creative industries agency promoted film, fashion, and music exports, supported entrepreneurs, and faced governance or effectiveness critiques?",
+      "target_article": "Trinidad and Tobago Creative Industries Company",
+      "normalized_title": "trinidad and tobago creative industries company",
+      "heldout_identifiers": [
+        51759044
+      ],
+      "matched_titles": [
+        "Trinidad and Tobago Creative Industries Company"
+      ],
+      "n_matched": 1
+    },
+    "t026": {
+      "topic": "How has a Kurdish city near the Iran–Iraq border evolved culturally, geographically and politically, and confronted historical trauma and reconstruction issues?",
+      "target_article": "Halabja",
+      "normalized_title": "halabja",
+      "heldout_identifiers": [
+        318996
+      ],
+      "matched_titles": [
+        "Halabja"
+      ],
+      "n_matched": 1
+    },
+    "t027": {
+      "topic": "How did an Indian-American psychologist rise within global human rights leadership, apply trauma expertise, influence advocacy, and confront representational challenges?",
+      "target_article": "Anjhula Mya Bais",
+      "normalized_title": "anjhula mya bais",
+      "heldout_identifiers": [
+        59592722
+      ],
+      "matched_titles": [
+        "Anjhula Mya Bais"
+      ],
+      "n_matched": 1
+    },
+    "t028": {
+      "topic": "What technical strengths, competitive achievements, training approaches, and injury or consistency limitations defined a Japanese elite figure skater’s career?",
+      "target_article": "Satoko Miyahara",
+      "normalized_title": "satoko miyahara",
+      "heldout_identifiers": [
+        33124003
+      ],
+      "matched_titles": [
+        "Satoko Miyahara"
+      ],
+      "n_matched": 1
+    },
+    "t029": {
+      "topic": "How did an Indian model-turned-actress transition across Kannada, Tamil, and Telugu cinema, shape her on-screen image, and face industry constraints?",
+      "target_article": "Hebah Patel",
+      "normalized_title": "hebah patel",
+      "heldout_identifiers": [
+        48578855
+      ],
+      "matched_titles": [
+        "Hebah Patel"
+      ],
+      "n_matched": 1
+    },
+    "t030": {
+      "topic": "How has the municipal authority governing Newcastle upon Tyne evolved administratively, functionally, and politically since medieval reforms and recent coalition shifts?",
+      "target_article": "Newcastle City Council",
+      "normalized_title": "newcastle city council",
+      "heldout_identifiers": [
+        3085680
+      ],
+      "matched_titles": [
+        "Newcastle City Council",
+        "Newcastle City Council"
+      ],
+      "n_matched": 2
+    },
+    "t031": {
+      "topic": "How has the Japanese professional wrestling promotion founded in 2001 navigated factional affiliations, booking practices, global partnerships, and domestic criticisms?",
+      "target_article": "Pro Wrestling Zero1",
+      "normalized_title": "pro wrestling zero1",
+      "heldout_identifiers": [
+        1100501
+      ],
+      "matched_titles": [
+        "Pro Wrestling Zero1"
+      ],
+      "n_matched": 1
+    },
+    "t032": {
+      "topic": "How did the ethnic group originating on the Mueda Plateau develop distinct Tanzanian and Mozambican languages, arts, social structure, and political tensions?",
+      "target_article": "Makonde people",
+      "normalized_title": "makonde people",
+      "heldout_identifiers": [
+        1695767
+      ],
+      "matched_titles": [
+        "Makonde people"
+      ],
+      "n_matched": 1
+    },
+    "t033": {
+      "topic": "How has the England and Wales women’s national cricket side shaped formats, talent development, international success, and debates over professionalism and governance?",
+      "target_article": "England women's cricket team",
+      "normalized_title": "england women s cricket team",
+      "heldout_identifiers": [
+        2154940
+      ],
+      "matched_titles": [
+        "England women's cricket team"
+      ],
+      "n_matched": 1
+    },
+    "t034": {
+      "topic": "How did the Wake Forest star’s collegiate dominance translate into a decade-long professional basketball career, influence, and critiques of his legacy?",
+      "target_article": "Len Chappell",
+      "normalized_title": "len chappell",
+      "heldout_identifiers": [
+        4701939
+      ],
+      "matched_titles": [
+        "Len Chappell"
+      ],
+      "n_matched": 1
+    },
+    "t035": {
+      "topic": "How did the 2016 under-20 women's world tournament in Papua New Guinea affect regional football development, logistics, competitive outcomes, and governance controversies?",
+      "target_article": "2016 FIFA U-20 Women's World Cup",
+      "normalized_title": "2016 fifa u 20 women s world cup",
+      "heldout_identifiers": [
+        39142147
+      ],
+      "matched_titles": [
+        "2016 FIFA U-20 Women's World Cup"
+      ],
+      "n_matched": 1
+    },
+    "t036": {
+      "topic": "How has the web-originated Japanese isekai light novel series expanded across media, adapted its storytelling mechanics, influenced fans, and attracted criticism?",
+      "target_article": "Farming Life in Another World",
+      "normalized_title": "farming life in another world",
+      "heldout_identifiers": [
+        70420837
+      ],
+      "matched_titles": [
+        "Farming Life in Another World"
+      ],
+      "n_matched": 1
+    },
+    "t037": {
+      "topic": "How have Latvia’s national figure skating championships evolved to identify champions, manage participant shortages, develop talent, and face organizational constraints?",
+      "target_article": "Latvian Figure Skating Championships",
+      "normalized_title": "latvian figure skating championships",
+      "heldout_identifiers": [
+        27674202
+      ],
+      "matched_titles": [
+        "Latvian Figure Skating Championships"
+      ],
+      "n_matched": 1
+    },
+    "t038": {
+      "topic": "How has Ghana’s men's national cricket representative body developed from colonial-era matches to associate ICC status, grassroots promotion, and infrastructural challenges?",
+      "target_article": "Ghana national cricket team",
+      "normalized_title": "ghana national cricket team",
+      "heldout_identifiers": [
+        6868247
+      ],
+      "matched_titles": [
+        "Ghana national cricket team"
+      ],
+      "n_matched": 1
+    },
+    "t039": {
+      "topic": "How did the British track and road cyclist achieve sustained team pursuit success, refine training techniques, influence national programs, and confront doping debates?",
+      "target_article": "Ed Clancy",
+      "normalized_title": "ed clancy",
+      "heldout_identifiers": [
+        9308734
+      ],
+      "matched_titles": [
+        "Ed Clancy"
+      ],
+      "n_matched": 1
+    },
+    "t040": {
+      "topic": "How has a Providence-headquartered regional bank evolved its branch and wealth management model, technologies, market expansion, and governance controversies?",
+      "target_article": "Citizens Financial Group",
+      "normalized_title": "citizens financial group",
+      "heldout_identifiers": [
+        719464
+      ],
+      "matched_titles": [
+        "Citizens Financial Group"
+      ],
+      "n_matched": 1
+    },
+    "t041": {
+      "topic": "How has a far-right German politician shaped party leadership, parliamentary strategy, policy platforms, public reception, and legal controversies?",
+      "target_article": "Alice Weidel",
+      "normalized_title": "alice weidel",
+      "heldout_identifiers": [
+        53928654
+      ],
+      "matched_titles": [
+        "Alice Weidel"
+      ],
+      "n_matched": 1
+    },
+    "t042": {
+      "topic": "What explains the swimmer's rise from junior champion to record-holding relay specialist, training methods, international impact, and limitations?",
+      "target_article": "Nikolett Pádár",
+      "normalized_title": "nikolett padar",
+      "heldout_identifiers": [
+        71360028
+      ],
+      "matched_titles": [
+        "Nikolett Pádár"
+      ],
+      "n_matched": 1
+    },
+    "t043": {
+      "topic": "How did a Northern Irish wrestler transition into training and production roles, influence performers, in-ring style, and criticisms?",
+      "target_article": "Fit Finlay",
+      "normalized_title": "fit finlay",
+      "heldout_identifiers": [
+        1967540
+      ],
+      "matched_titles": [
+        "Fit Finlay"
+      ],
+      "n_matched": 1
+    },
+    "t044": {
+      "topic": "How has the Labour movement's Welsh section maintained electoral dominance, organizational structure, policy priorities, and internal tensions?",
+      "target_article": "Welsh Labour",
+      "normalized_title": "welsh labour",
+      "heldout_identifiers": [
+        6732798
+      ],
+      "matched_titles": [
+        "Welsh Labour",
+        "Welsh Labour",
+        "Welsh Labour",
+        "Welsh Labour"
+      ],
+      "n_matched": 4
+    },
+    "t047": {
+      "topic": "How has a Giza-based professional volleyball section built regional success, training infrastructure, continental achievements, and faced organizational challenges?",
+      "target_article": "Zamalek SC Volleyball",
+      "normalized_title": "zamalek sc volleyball",
+      "heldout_identifiers": [
+        46780835
+      ],
+      "matched_titles": [
+        "Zamalek SC Volleyball"
+      ],
+      "n_matched": 1
+    },
+    "t048": {
+      "topic": "What factors underlie the Canadian long-distance skater's mass-start and pursuit successes, training methods, Olympic impact, and performance limits?",
+      "target_article": "Ivanie Blondin",
+      "normalized_title": "ivanie blondin",
+      "heldout_identifiers": [
+        41597867
+      ],
+      "matched_titles": [
+        "Ivanie Blondin"
+      ],
+      "n_matched": 1
+    },
+    "t049": {
+      "topic": "How did an Australian forward's international club career influence domestic football, leadership in property sector, playing style, and post-retirement controversies?",
+      "target_article": "Bruce Djite",
+      "normalized_title": "bruce djite",
+      "heldout_identifiers": [
+        6387398
+      ],
+      "matched_titles": [
+        "Bruce Djite"
+      ],
+      "n_matched": 1
+    },
+    "t050": {
+      "topic": "How did the longtime left-handed Major League pitcher known for high strikeout totals shape team records, pitching style, career longevity, and criticisms?",
+      "target_article": "Chuck Finley",
+      "normalized_title": "chuck finley",
+      "heldout_identifiers": [
+        869667
+      ],
+      "matched_titles": [
+        "Chuck Finley"
+      ],
+      "n_matched": 1
+    },
+    "t051": {
+      "topic": "What is the history, organizational structure, athlete development role, cultural significance, and criticisms of Ireland's premier university camogie championship?",
+      "target_article": "Ashbourne Cup",
+      "normalized_title": "ashbourne cup",
+      "heldout_identifiers": [
+        25700150
+      ],
+      "matched_titles": [
+        "Ashbourne Cup"
+      ],
+      "n_matched": 1
+    },
+    "t052": {
+      "topic": "How has the Hobart-based Tasmanian field hockey club evolved competitively and organizationally, influenced local sport, and faced challenges?",
+      "target_article": "Tassie Tigers",
+      "normalized_title": "tassie tigers",
+      "heldout_identifiers": [
+        47933827
+      ],
+      "matched_titles": [
+        "Tassie Tigers"
+      ],
+      "n_matched": 1
+    },
+    "t053": {
+      "topic": "In what ways did the Congress leader's political career and governance approach transform state administration, policy priorities, public reception, and controversies?",
+      "target_article": "Revanth Reddy",
+      "normalized_title": "revanth reddy",
+      "heldout_identifiers": [
+        35668809
+      ],
+      "matched_titles": [
+        "Revanth Reddy"
+      ],
+      "n_matched": 1
+    }
+  },
+  "elapsed_s": 0.0
+}

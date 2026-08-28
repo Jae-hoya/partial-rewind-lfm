@@ -201,6 +201,16 @@ def main(argv: list[str] | None = None) -> int:
     cred_missing = [k for k, p in CREDIBILITY_FIELDS.items() if p not in present]
     redirect_found = [c for c in REDIRECT_CANDIDATES if c in present]
 
+    # --- 중복 행 ------------------------------------------------------
+    import duckdb
+
+    _con = duckdb.connect()
+    _src = "read_parquet('" + str(corpus).replace("\\", "/") + "')"
+    n_unique = _con.execute(
+        "SELECT count(DISTINCT identifier) AS n FROM " + _src
+    ).fetchone()[0]
+    _con.close()
+
     # --- 채움률 ------------------------------------------------------
     probe = {f: f for f in HARD_FIELDS + SOFT_FIELDS + INFO_FIELDS if f in present}
     probe.update({k: v for k, v in CREDIBILITY_FIELDS.items() if v in present})
@@ -252,6 +262,13 @@ def main(argv: list[str] | None = None) -> int:
             "sha256": corpus_sha,
             "bytes": corpus.stat().st_size,
             "n_documents": n_rows,
+            "n_unique_documents": n_unique,
+            "n_duplicate_rows": n_rows - n_unique,
+            "duplicate_rate": round((n_rows - n_unique) / n_rows, 4) if n_rows else 0.0,
+            "duplicate_note": (
+                "상류 샤드가 서로 겹쳐 같은 문서가 여러 행으로 들어온다. "
+                "chunk_index.py 가 identifier 기준으로 첫 행만 남긴다."
+            ),
             "row_groups": pf.metadata.num_row_groups,
             "sampling": {
                 "method": "seeded stratified sample over all upstream shards "
@@ -303,7 +320,10 @@ def main(argv: list[str] | None = None) -> int:
 
     # --- 보고 --------------------------------------------------------
     print()
-    print("문서 " + str(total_rows) + "건 · 컬럼 " + str(len(pf.schema_arrow)) + "개")
+    print("행 " + str(total_rows) + " · 유니크 문서 " + str(n_unique)
+          + " (중복 " + str(total_rows - n_unique) + ", "
+          + ("%.2f%%" % (100 * (total_rows - n_unique) / total_rows if total_rows else 0))
+          + ") · 컬럼 " + str(len(pf.schema_arrow)) + "개")
     print("SHA256 " + corpus_sha)
     print()
     print("필드            존재   채움률")

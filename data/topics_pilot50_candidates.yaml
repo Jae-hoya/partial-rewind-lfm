@@ -1,0 +1,1704 @@
+approved: false
+generated_at: 2026-08-29T03:20:16+0900
+spec: SPEC_M1_TestA_v1.1.md §2.3
+note: '후보 파일이다. 사람이 검토해 topics_pilot50.yaml 로 저장하고 approved: true 를 넣기 전까지 이후 단계는 실행되지 않는다.'
+criteria:
+  min_related_docs: 30
+  max_related_docs: 600
+  min_infobox_types: 3
+llm:
+  model: gpt-5-mini
+  reasoning_effort: low
+  calls: 6
+  cache_hits: 0
+  tokens_in: 15956
+  tokens_out: 4610
+  billed_tokens_in: 15956
+  billed_tokens_out: 4610
+n_candidates: 60
+missing_phrase: []
+candidates:
+- id: t000
+  term: migrating serialization volumes
+  terms:
+  - migrating
+  - serialization
+  - volumes
+  - anime
+  - illustrated
+  primary_infobox_type: Infobox manhwa
+  topic: How did a long‑running American web novel and illustrated webtoon evolve across serialization
+    platforms, adaptations, audience reach, and criticisms?
+  target_article: The Beginning After the End
+  target_identifier: 77962831
+  target_url: https://en.wikipedia.org/wiki/The_Beginning_After_the_End
+  related_docs: 241
+  n_infobox_types: 19
+  infobox_types:
+  - Infobox Chinese
+  - Infobox animanga/Header
+  - 'Infobox animanga/Header
+
+    <!-- Do not change the name as the following name has been confirmed -->'
+  - Infobox book <!-- See Wikipedia:WikiProject_Novels or Wikipedia:WikiProject_Books -->
+  - Infobox book series
+  - Infobox character
+  - Infobox comic book title
+  - Infobox comics creator
+  - Infobox manhwa
+  - Infobox media franchise
+  - Infobox medieval text
+  - Infobox original English manga
+- id: t001
+  term: footballers bosnian herzegovina
+  terms:
+  - footballers
+  - bosnian
+  - herzegovina
+  - yugoslavia
+  - bosnia
+  primary_infobox_type: Infobox national football team
+  topic: How has the national men's football side from Bosnia and Herzegovina developed competitively,
+    administratively, and politically since Yugoslav-era participation?
+  target_article: Bosnia and Herzegovina national football team
+  target_identifier: 1008974
+  target_url: https://en.wikipedia.org/wiki/Bosnia_and_Herzegovina_national_football_team
+  related_docs: 236
+  n_infobox_types: 88
+  infobox_types:
+  - Country geography
+  - ESC 1999 participants
+  - ESC 2006 participants
+  - Infobox
+  - Infobox Basketball club
+  - Infobox Christian leader
+  - Infobox Diplomatic Mission
+  - Infobox Former Subdivision
+  - Infobox Song Contest
+  - Infobox Stadium
+  - Infobox academic
+  - Infobox aircraft
+- id: t002
+  term: papua runners-up guinea
+  terms:
+  - papua
+  - runners-up
+  - guinea
+  - ahead
+  - finishing
+  primary_infobox_type: Infobox football club
+  topic: How has the Lae‑based Papua New Guinea football club navigated name changes, league shifts, community
+    role, and financial or competitive challenges?
+  target_article: Morobe United F.C.
+  target_identifier: 17367000
+  target_url: https://en.wikipedia.org/wiki/Morobe_United_F.C.
+  related_docs: 233
+  n_infobox_types: 79
+  infobox_types:
+  - Automatic taxobox
+  - Infobox Bilateral relations
+  - Infobox Christian leader
+  - Infobox F1 race
+  - Infobox Gaelic games player
+  - Infobox Hurricane Small
+  - Infobox Islands
+  - Infobox Mine
+  - Infobox NCAA team season
+  - Infobox Olympic event
+  - Infobox Political post
+  - Infobox UNESCO World Heritage Site
+- id: t003
+  term: doha medallist wang
+  terms:
+  - doha
+  - medallist
+  - wang
+  - buenos
+  - aires
+  primary_infobox_type: Infobox table tennis player
+  topic: How has the Chinese world‑ranked table tennis champion progressed technically, influenced national
+    team dynamics, commercial impact, and faced performance scrutiny?
+  target_article: Wang Chuqin
+  target_identifier: 58020502
+  target_url: https://en.wikipedia.org/wiki/Wang_Chuqin
+  related_docs: 199
+  n_infobox_types: 75
+  infobox_types:
+  - Infobox
+  - Infobox Cardinal styles
+  - Infobox Christian leader
+  - Infobox FIBA tourney
+  - Infobox Officeholder
+  - Infobox Olympic games
+  - Infobox Pan American Games event
+  - Infobox Tour Rugby
+  - Infobox Treaty
+  - Infobox academic
+  - Infobox album
+  - Infobox artwork
+- id: t004
+  term: mainstay excellence price
+  terms:
+  - mainstay
+  - excellence
+  - price
+  - montreal
+  - quebec
+  primary_infobox_type: Infobox company
+  topic: How did the Montreal‑based forest products firm grow through acquisitions and mergers, influence
+    newsprint markets, and confront industry decline controversies?
+  target_article: Abitibi Power and Paper Company
+  target_identifier: 21424895
+  target_url: https://en.wikipedia.org/wiki/Abitibi_Power_and_Paper_Company
+  related_docs: 196
+  n_infobox_types: 73
+  infobox_types:
+  - Infobox Ambassador
+  - Infobox American football team
+  - Infobox Canada electoral district
+  - Infobox Grand Prix race report
+  - Infobox Ice Hockey Player
+  - Infobox NBA biography
+  - Infobox NFL season
+  - Infobox NFL team season
+  - Infobox Olympic event
+  - Infobox Theatre
+  - Infobox actor
+  - Infobox aircraft
+- id: t005
+  term: semi-final lithuanian lithuania
+  terms:
+  - semi-final
+  - lithuanian
+  - lithuania
+  - eurovision
+  - jury
+  primary_infobox_type: Infobox song contest national year
+  topic: How did Lithuania’s multiweek national selection produce Monika Liu’s entry, affect domestic
+    music industry, staging choices, and public debates?
+  target_article: Lithuania in the Eurovision Song Contest 2022
+  target_identifier: 69158089
+  target_url: https://en.wikipedia.org/wiki/Lithuania_in_the_Eurovision_Song_Contest_2022
+  related_docs: 170
+  n_infobox_types: 41
+  infobox_types:
+  - ESC 1999 participants
+  - ESC 2006 participants
+  - Infobox Basketball club
+  - Infobox Olympic games
+  - Infobox Song Contest
+  - Infobox basketball biography
+  - Infobox basketball club
+  - Infobox building
+  - Infobox company
+  - Infobox cyclist
+  - Infobox economist
+  - Infobox election
+- id: t006
+  term: electors barack obama
+  terms:
+  - electors
+  - barack
+  - obama
+  - landslide
+  - easily
+  primary_infobox_type: Infobox election
+  topic: How did Maryland’s 2008 presidential vote reflect state political demographics, campaign strategies,
+    electoral mechanics, and critiques of campaign influence?
+  target_article: 2008 United States presidential election in Maryland
+  target_identifier: 20785460
+  target_url: https://en.wikipedia.org/wiki/2008_United_States_presidential_election_in_Maryland
+  related_docs: 166
+  n_infobox_types: 33
+  infobox_types:
+  - Infobox Australian electorate
+  - Infobox SCOTUS nomination
+  - Infobox U.S. legislation
+  - Infobox U.S. state
+  - Infobox Urban Development
+  - Infobox album
+  - Infobox awards list
+  - Infobox book
+  - Infobox character
+  - Infobox chef
+  - Infobox choir
+  - Infobox company
+- id: t007
+  term: jaffna lanka's lankan
+  terms:
+  - jaffna
+  - lanka's
+  - lankan
+  - temporarily
+  - lanka
+  primary_infobox_type: 'Infobox settlement
+
+    <!-- See Template:Infobox settlement for additional fields and descriptions -->'
+  topic: How has Sri Lanka’s northern province been shaped demographically, administratively, postwar
+    reconstruction policies, and contested regional autonomy debates?
+  target_article: Northern Province, Sri Lanka
+  target_identifier: 23777640
+  target_url: https://en.wikipedia.org/wiki/Northern_Province,_Sri_Lanka
+  related_docs: 163
+  n_infobox_types: 51
+  infobox_types:
+  - Infobox European Rugby Cup season
+  - Infobox Hindu temple
+  - Infobox Political post
+  - Infobox aircraft occurrence
+  - Infobox airline
+  - Infobox book<!-- See Wikipedia:WikiProject_Novels or Wikipedia:WikiProject_Books -->
+  - Infobox bridge
+  - Infobox church
+  - Infobox civilian attack
+  - Infobox company
+  - Infobox constituency
+  - Infobox cricket tour
+- id: t008
+  term: obama's consul barack
+  terms:
+  - obama's
+  - consul
+  - barack
+  - newton
+  - obama
+  primary_infobox_type: Infobox officeholder
+  topic: How did the prominent US communications regulator shape broadcasting policy, legal practice,
+    civic engagement, and provoke debates over media standards?
+  target_article: Newton N. Minow
+  target_identifier: 1107832
+  target_url: https://en.wikipedia.org/wiki/Newton_N._Minow
+  related_docs: 160
+  n_infobox_types: 39
+  infobox_types:
+  - External media
+  - Infobox SCOTUS nomination
+  - Infobox U.S. legislation
+  - Infobox U.S. state
+  - Infobox United States Congress
+  - Infobox Urban Development
+  - Infobox album
+  - Infobox award
+  - Infobox awards list
+  - Infobox bilateral relations
+  - Infobox book
+  - Infobox character
+- id: t009
+  term: mata semi-final lithuanian
+  terms:
+  - mata
+  - semi-final
+  - lithuanian
+  - lithuania
+  - eurovision
+  primary_infobox_type: Infobox song contest national year
+  topic: How did Lithuania’s lengthy national selection process produce Vilija Matačiūnaitė’s 2014 entry,
+    affect festival culture, promotion, and selection controversies?
+  target_article: Lithuania in the Eurovision Song Contest 2014
+  target_identifier: 40165141
+  target_url: https://en.wikipedia.org/wiki/Lithuania_in_the_Eurovision_Song_Contest_2014
+  related_docs: 159
+  n_infobox_types: 39
+  infobox_types:
+  - ESC 1999 participants
+  - ESC 2006 participants
+  - Infobox Basketball club
+  - Infobox Olympic games
+  - Infobox Song Contest
+  - Infobox basketball biography
+  - Infobox basketball club
+  - Infobox building
+  - Infobox company
+  - Infobox cyclist
+  - Infobox economist
+  - Infobox election
+- id: t010
+  term: semi-final lithuanian lithuania
+  terms:
+  - semi-final
+  - lithuanian
+  - lithuania
+  - eurovision
+  - hence
+  primary_infobox_type: Infobox song contest national year
+  topic: How did Lithuania's national selection process and performance at the 2023 Eurovision shape its
+    musical strategy, reception, and criticisms?
+  target_article: Lithuania in the Eurovision Song Contest 2023
+  target_identifier: 72194381
+  target_url: https://en.wikipedia.org/wiki/Lithuania_in_the_Eurovision_Song_Contest_2023
+  related_docs: 159
+  n_infobox_types: 39
+  infobox_types:
+  - ESC 1999 participants
+  - ESC 2006 participants
+  - Infobox Basketball club
+  - Infobox Olympic games
+  - Infobox Song Contest
+  - Infobox basketball biography
+  - Infobox basketball club
+  - Infobox building
+  - Infobox company
+  - Infobox cyclist
+  - Infobox economist
+  - Infobox election
+- id: t011
+  term: antagonist malayalam breakthrough
+  terms:
+  - antagonist
+  - malayalam
+  - breakthrough
+  - telugu
+  - hindi
+  primary_infobox_type: Infobox person
+  topic: How has Bharath's shifting roles across Tamil, Malayalam, Telugu and Hindi films influenced his
+    career trajectory, craft, and public controversies?
+  target_article: Bharath (actor)
+  target_identifier: 13069936
+  target_url: https://en.wikipedia.org/wiki/Bharath_(actor)
+  related_docs: 157
+  n_infobox_types: 18
+  infobox_types:
+  - Infobox Unicode block
+  - Infobox actor
+  - Infobox actor awards
+  - Infobox album
+  - Infobox artist discography
+  - Infobox book
+  - Infobox clergy
+  - Infobox company
+  - Infobox film
+  - Infobox filmography list
+  - Infobox language family
+  - Infobox magazine
+- id: t012
+  term: ellen limits seek
+  terms:
+  - ellen
+  - limits
+  - seek
+  - re-election
+  - nominee
+  primary_infobox_type: Infobox election
+  topic: How did the 2024 Oregon attorney general race unfold, what legal priorities defined candidates,
+    and which criticisms emerged post-election?
+  target_article: 2024 Oregon Attorney General election
+  target_identifier: 74096381
+  target_url: https://en.wikipedia.org/wiki/2024_Oregon_Attorney_General_election
+  related_docs: 145
+  n_infobox_types: 8
+  infobox_types:
+  - First Trump cabinet infobox
+  - Infobox Election
+  - Infobox election
+  - Infobox incumbency
+  - Infobox legislature
+  - Infobox officeholder
+  - Infobox political party
+  - external media
+- id: t013
+  term: davidson barack trustees
+  terms:
+  - davidson
+  - barack
+  - trustees
+  - obama
+  - mayoral
+  primary_infobox_type: Infobox officeholder
+  topic: How did Anthony Foxx's rise from Charlotte mayor to U.S. Transportation Secretary influence federal
+    transport policy, leadership style, and scrutiny?
+  target_article: Anthony Foxx
+  target_identifier: 24956064
+  target_url: https://en.wikipedia.org/wiki/Anthony_Foxx
+  related_docs: 142
+  n_infobox_types: 32
+  infobox_types:
+  - Infobox SCOTUS nomination
+  - Infobox U.S. legislation
+  - Infobox U.S. state
+  - Infobox Urban Development
+  - Infobox album
+  - Infobox awards list
+  - Infobox book
+  - Infobox character
+  - Infobox chef
+  - Infobox choir
+  - Infobox company
+  - Infobox debate
+- id: t014
+  term: seinen serialized excellence
+  terms:
+  - seinen
+  - serialized
+  - excellence
+  - tank
+  - monthly
+  primary_infobox_type: Infobox animanga/Header
+  topic: How did the creation, serialization and adaptation of Daisuke Igarashi's ocean-themed manga affect
+    its critical reception, themes, and debates?
+  target_article: Children of the Sea (manga)
+  target_identifier: 23746608
+  target_url: https://en.wikipedia.org/wiki/Children_of_the_Sea_(manga)
+  related_docs: 137
+  n_infobox_types: 7
+  infobox_types:
+  - Infobox animanga/Header
+  - Infobox government agency
+  - Infobox magazine
+  - Infobox military installation
+  - Infobox officeholder
+  - Infobox organization
+  - Infobox person
+- id: t015
+  term: winners' antwerp colours
+  terms:
+  - winners'
+  - antwerp
+  - colours
+  - belgian
+  - uefa
+  primary_infobox_type: Infobox football club
+  topic: How has Royal Antwerp's long history, recent European qualification and domestic successes affected
+    its identity, finances, and fan controversies?
+  target_article: Royal Antwerp F.C.
+  target_identifier: 2107074
+  target_url: https://en.wikipedia.org/wiki/Royal_Antwerp_F.C.
+  related_docs: 134
+  n_infobox_types: 25
+  infobox_types:
+  - Designation list
+  - Infobox Belgium municipality
+  - Infobox Olympic games
+  - Infobox album
+  - Infobox artwork
+  - Infobox company
+  - Infobox football biography
+  - Infobox football club
+  - Infobox football club season
+  - Infobox football country season
+  - Infobox football league
+  - Infobox football league season
+- id: t016
+  term: vita ported sequels
+  terms:
+  - vita
+  - ported
+  - sequels
+  - xbox
+  - switch
+  primary_infobox_type: Infobox video game
+  topic: 'How did Spirit Hunter: Death Mark''s design, multi-platform ports and sequels shape its horror
+    mechanics, audience impact, and critical limitations?'
+  target_article: 'Spirit Hunter: Death Mark'
+  target_identifier: 62697938
+  target_url: https://en.wikipedia.org/wiki/Spirit_Hunter:_Death_Mark
+  related_docs: 128
+  n_infobox_types: 10
+  infobox_types:
+  - Infobox Video game system
+  - Infobox album
+  - Infobox animanga/Header
+  - Infobox company
+  - Infobox information appliance
+  - Infobox video game
+  - Infobox video game series
+  - Video game infobox
+  - external media
+  - infobox video game
+- id: t017
+  term: kinabalu kota sabah
+  terms:
+  - kinabalu
+  - kota
+  - sabah
+  - lumpur
+  - kuala
+  primary_infobox_type: Infobox airport
+  topic: How has Kota Kinabalu International Airport's growth, hub roles and traffic trends influenced
+    regional connectivity, operations, and capacity challenges?
+  target_article: Kota Kinabalu International Airport
+  target_identifier: 3479387
+  target_url: https://en.wikipedia.org/wiki/Kota_Kinabalu_International_Airport
+  related_docs: 121
+  n_infobox_types: 58
+  infobox_types:
+  - Infobox Chinese
+  - Infobox Malaysia electoral district
+  - Infobox Public transit
+  - Infobox airline
+  - Infobox airport
+  - Infobox album
+  - Infobox badminton event
+  - Infobox beauty pageant
+  - Infobox bilateral relations
+  - Infobox building
+  - Infobox bus company
+  - Infobox civil conflict
+- id: t018
+  term: rollers wheelchair oceania
+  terms:
+  - rollers
+  - wheelchair
+  - oceania
+  - paralympic
+  - paralympics
+  primary_infobox_type: Use dmy dates
+  topic: How have the Australian Rollers' Paralympic achievements, development programs and key figures
+    influenced wheelchair basketball performance and public debates?
+  target_article: Australia men's national wheelchair basketball team
+  target_identifier: 31091414
+  target_url: https://en.wikipedia.org/wiki/Australia_men%27s_national_wheelchair_basketball_team
+  related_docs: 119
+  n_infobox_types: 23
+  infobox_types:
+  - Infobox Olympic games
+  - Infobox Paralympic event
+  - Infobox Parapan American Games event
+  - Infobox athlete
+  - Infobox award
+  - Infobox country at games
+  - Infobox curler
+  - Infobox event
+  - Infobox ice hockey player
+  - Infobox judoka
+  - Infobox organization
+  - Infobox person
+- id: t019
+  term: primaries coincided trump
+  terms:
+  - primaries
+  - coincided
+  - trump
+  - congressional
+  - state's
+  primary_infobox_type: Infobox election
+  topic: How did Wisconsin's 2020 House contests interact with the presidential election, ballot dynamics,
+    turnout patterns, and subsequent partisan controversies?
+  target_article: 2020 United States House of Representatives elections in Wisconsin
+  target_identifier: 53278103
+  target_url: https://en.wikipedia.org/wiki/2020_United_States_House_of_Representatives_elections_in_Wisconsin
+  related_docs: 119
+  n_infobox_types: 10
+  infobox_types:
+  - Infobox U.S. congressional district
+  - Infobox court case
+  - Infobox election
+  - Infobox election campaign
+  - Infobox event
+  - Infobox military operation
+  - Infobox officeholder
+  - Infobox person
+  - Infobox referendum
+  - Infobox settlement
+- id: t020
+  term: anatolia circulation tank
+  terms:
+  - anatolia
+  - circulation
+  - tank
+  - best-selling
+  - volumes
+  primary_infobox_type: Infobox animanga/Header
+  topic: How did a 1990s shojo comic set in ancient Anatolia achieve mass circulation, adaptation plans,
+    and critical recognition?
+  target_article: Red River (manga)
+  target_identifier: 1225608
+  target_url: https://en.wikipedia.org/wiki/Red_River_(manga)
+  related_docs: 116
+  n_infobox_types: 7
+  infobox_types:
+  - Infobox animanga/Header
+  - Infobox book
+  - Infobox magazine
+  - Infobox media franchise
+  - Infobox person
+  - Infobox writer
+  - infobox book
+- id: t021
+  term: sarajevo loaned centre-back
+  terms:
+  - sarajevo
+  - loaned
+  - centre-back
+  - bosnian
+  - herzegovina
+  primary_infobox_type: Infobox football biography
+  topic: What trajectory and defensive attributes shaped a Bosnian centre-back’s club transfers, international
+    emergence, and career sustainability challenges?
+  target_article: Nihad Mujakić
+  target_identifier: 56858078
+  target_url: https://en.wikipedia.org/wiki/Nihad_Mujaki%C4%87
+  related_docs: 115
+  n_infobox_types: 44
+  infobox_types:
+  - Infobox
+  - Infobox Basketball club
+  - Infobox Diplomatic Mission
+  - Infobox Mayor
+  - Infobox airline
+  - Infobox artist
+  - Infobox book
+  - Infobox building
+  - Infobox civil conflict
+  - Infobox civilian attack
+  - Infobox criminal
+  - Infobox ethnic group
+- id: t022
+  term: air-to-air missiles radar
+  terms:
+  - air-to-air
+  - missiles
+  - radar
+  - aerospace
+  - missile
+  primary_infobox_type: Infobox weapon
+  topic: How did a Soviet-era medium-range air-to-air missile family function, proliferate internationally,
+    influence fighter tactics, and raise safety concerns?
+  target_article: R-27 (air-to-air missile)
+  target_identifier: 1231403
+  target_url: https://en.wikipedia.org/wiki/R-27_(air-to-air_missile)
+  related_docs: 111
+  n_infobox_types: 27
+  infobox_types:
+  - External media
+  - Infobox Radar
+  - Infobox aircraft
+  - Infobox aircraft occurrence
+  - Infobox bilateral relations
+  - Infobox building
+  - Infobox company
+  - Infobox government agency
+  - Infobox launch pad
+  - Infobox military conflict
+  - Infobox military installation
+  - Infobox military operation
+- id: t023
+  term: resorts occupies populous
+  terms:
+  - resorts
+  - occupies
+  - populous
+  - salt
+  - utah
+  primary_infobox_type: Infobox U.S. county
+  topic: How has the most populous Utah county developed demographically, governed metropolitan services,
+    driven regional economy, and faced urbanization challenges?
+  target_article: Salt Lake County, Utah
+  target_identifier: 71071
+  target_url: https://en.wikipedia.org/wiki/Salt_Lake_County,_Utah
+  related_docs: 108
+  n_infobox_types: 48
+  infobox_types:
+  - Infobox Airliner accident
+  - Infobox Christian leader
+  - Infobox LDS biography
+  - Infobox Latter Day Saint biography
+  - Infobox NBA season
+  - Infobox NCAA team season
+  - Infobox NFL biography
+  - Infobox NRHP
+  - Infobox U.S. county
+  - Infobox aircraft occurrence
+  - Infobox alpine ski racer
+  - Infobox basketball biography
+- id: t024
+  term: podium paralympic paralympics
+  terms:
+  - podium
+  - paralympic
+  - paralympics
+  - australia's
+  - inception
+  primary_infobox_type: infobox country at games
+  topic: How did Australia’s 1976 Paralympic delegation perform across sports, shape disability sport
+    development, influence policy, and encounter systemic limitations?
+  target_article: Australia at the 1976 Summer Paralympics
+  target_identifier: 32329717
+  target_url: https://en.wikipedia.org/wiki/Australia_at_the_1976_Summer_Paralympics
+  related_docs: 102
+  n_infobox_types: 22
+  infobox_types:
+  - Infobox Grand Prix race report
+  - Infobox Olympic games
+  - Infobox Paralympic event
+  - Infobox Parapan American Games event
+  - Infobox athlete
+  - Infobox award
+  - Infobox country at games
+  - Infobox event
+  - Infobox judoka
+  - Infobox organization
+  - Infobox rugby biography
+  - Infobox sports team
+- id: t025
+  term: stimulate niche tobago
+  terms:
+  - stimulate
+  - niche
+  - tobago
+  - trinidad
+  - wholly
+  primary_infobox_type: Infobox government agency
+  topic: How has a state-owned creative industries agency promoted film, fashion, and music exports, supported
+    entrepreneurs, and faced governance or effectiveness critiques?
+  target_article: Trinidad and Tobago Creative Industries Company
+  target_identifier: 51759044
+  target_url: https://en.wikipedia.org/wiki/Trinidad_and_Tobago_Creative_Industries_Company
+  related_docs: 98
+  n_infobox_types: 33
+  infobox_types:
+  - Automatic taxobox
+  - Infobox LGBT rights
+  - Infobox Rugby World Sevens
+  - Infobox UK legislation
+  - Infobox aircraft
+  - Infobox company
+  - Infobox country
+  - Infobox cricket team
+  - Infobox cricket tournament
+  - Infobox cricketer
+  - Infobox election
+  - Infobox football biography
+- id: t026
+  term: baghdad kurdish kurdistan
+  terms:
+  - baghdad
+  - kurdish
+  - kurdistan
+  - kurds
+  - stretching
+  primary_infobox_type: 'Infobox settlement
+
+    <!-- See Template:Infobox settlement for additional fields and descriptions -->'
+  topic: How has a Kurdish city near the Iran–Iraq border evolved culturally, geographically and politically,
+    and confronted historical trauma and reconstruction issues?
+  target_article: Halabja
+  target_identifier: 318996
+  target_url: https://en.wikipedia.org/wiki/Halabja
+  related_docs: 98
+  n_infobox_types: 21
+  infobox_types:
+  - Infobox Turkey place
+  - Infobox bilateral relations
+  - Infobox book
+  - Infobox civil conflict
+  - Infobox civilian attack
+  - Infobox country
+  - Infobox dependency
+  - Infobox ethnic group
+  - Infobox executive government
+  - Infobox militant organization
+  - Infobox military conflict
+  - Infobox military person
+- id: t027
+  term: satish indian-american amnesty
+  terms:
+  - satish
+  - indian-american
+  - amnesty
+  - lumpur
+  - kuala
+  primary_infobox_type: Infobox person
+  topic: How did an Indian-American psychologist rise within global human rights leadership, apply trauma
+    expertise, influence advocacy, and confront representational challenges?
+  target_article: Anjhula Mya Bais
+  target_identifier: 59592722
+  target_url: https://en.wikipedia.org/wiki/Anjhula_Mya_Bais
+  related_docs: 94
+  n_infobox_types: 49
+  infobox_types:
+  - Infobox Chinese
+  - Infobox Malaysia electoral district
+  - Infobox Public transit
+  - Infobox airport
+  - Infobox album
+  - Infobox badminton event
+  - Infobox beauty pageant
+  - Infobox bilateral relations
+  - Infobox building
+  - Infobox bus company
+  - Infobox civil conflict
+  - Infobox civilian attack
+- id: t028
+  term: skate four-time continents
+  terms:
+  - skate
+  - four-time
+  - continents
+  - skater
+  - skating
+  primary_infobox_type: Infobox figure skater
+  topic: What technical strengths, competitive achievements, training approaches, and injury or consistency
+    limitations defined a Japanese elite figure skater’s career?
+  target_article: Satoko Miyahara
+  target_identifier: 33124003
+  target_url: https://en.wikipedia.org/wiki/Satoko_Miyahara
+  related_docs: 94
+  n_infobox_types: 18
+  infobox_types:
+  - Figure skating records and statistics
+  - Infobox Figure Skating Competition
+  - Infobox Figure Skating Element
+  - Infobox Olympic event
+  - Infobox award
+  - Infobox figure skater
+  - Infobox model
+  - Infobox organization
+  - Infobox person
+  - Infobox recurring event
+  - Infobox speed skater
+  - Infobox sport
+- id: t029
+  term: kumari patel kannada
+  terms:
+  - kumari
+  - patel
+  - kannada
+  - angel
+  - telugu
+  primary_infobox_type: Infobox person
+  topic: How did an Indian model-turned-actress transition across Kannada, Tamil, and Telugu cinema, shape
+    her on-screen image, and face industry constraints?
+  target_article: Hebah Patel
+  target_identifier: 48578855
+  target_url: https://en.wikipedia.org/wiki/Hebah_Patel
+  related_docs: 94
+  n_infobox_types: 18
+  infobox_types:
+  - Infobox Unicode block
+  - Infobox academic
+  - Infobox actor
+  - Infobox actor awards
+  - Infobox album
+  - Infobox artist discography
+  - Infobox clergy
+  - Infobox film
+  - Infobox filmography list
+  - Infobox given name
+  - Infobox language family
+  - Infobox magazine
+- id: t030
+  term: tyne ceremonial newcastle
+  terms:
+  - tyne
+  - ceremonial
+  - newcastle
+  - wear
+  - reformed
+  primary_infobox_type: Infobox legislature
+  topic: How has the municipal authority governing Newcastle upon Tyne evolved administratively, functionally,
+    and politically since medieval reforms and recent coalition shifts?
+  target_article: Newcastle City Council
+  target_identifier: 3085680
+  target_url: https://en.wikipedia.org/wiki/Newcastle_City_Council
+  related_docs: 92
+  n_infobox_types: 36
+  infobox_types:
+  - Border Counties Railway
+  - Infobox Chinese
+  - Infobox UK constituency main
+  - Infobox UK legislation
+  - Infobox UK place
+  - Infobox UK place <!--The City of York article covers the council area's statistics and coat of arms.-->
+  - Infobox artist
+  - Infobox automobile
+  - Infobox bridge
+  - Infobox building
+  - Infobox concert
+  - Infobox country
+- id: t031
+  term: catch wrestling briefly
+  terms:
+  - catch
+  - wrestling
+  - briefly
+  - alliance
+  - affiliated
+  primary_infobox_type: Infobox Wrestling promotion
+  topic: How has the Japanese professional wrestling promotion founded in 2001 navigated factional affiliations,
+    booking practices, global partnerships, and domestic criticisms?
+  target_article: Pro Wrestling Zero1
+  target_identifier: 1100501
+  target_url: https://en.wikipedia.org/wiki/Pro_Wrestling_Zero1
+  related_docs: 92
+  n_infobox_types: 35
+  infobox_types:
+  - External media
+  - Infobox Chinese
+  - Infobox Christian denomination
+  - Infobox Grappling hold
+  - Infobox Minor League Baseball
+  - Infobox NPB player
+  - Infobox Political post
+  - Infobox U.S. legislation
+  - Infobox Wrestling event
+  - Infobox Wrestling team
+  - Infobox church
+  - Infobox college football player
+- id: t032
+  term: mozambique tanzania plateau
+  terms:
+  - mozambique
+  - tanzania
+  - plateau
+  - kenya
+  - roughly
+  primary_infobox_type: Infobox ethnic group
+  topic: How did the ethnic group originating on the Mueda Plateau develop distinct Tanzanian and Mozambican
+    languages, arts, social structure, and political tensions?
+  target_article: Makonde people
+  target_identifier: 1695767
+  target_url: https://en.wikipedia.org/wiki/Makonde_people
+  related_docs: 92
+  n_infobox_types: 27
+  infobox_types:
+  - Automatic taxobox
+  - External image
+  - External video
+  - Infobox athletics event
+  - Infobox cave
+  - Infobox civilian attack
+  - Infobox company
+  - Infobox continent
+  - Infobox country
+  - Infobox ecoregion
+  - Infobox international football competition
+  - Infobox landform
+- id: t033
+  term: ashes t20i triumph
+  terms:
+  - ashes
+  - t20i
+  - triumph
+  - twenty20
+  - wickets
+  primary_infobox_type: Infobox cricket team
+  topic: How has the England and Wales women’s national cricket side shaped formats, talent development,
+    international success, and debates over professionalism and governance?
+  target_article: England women's cricket team
+  target_identifier: 2154940
+  target_url: https://en.wikipedia.org/wiki/England_women%27s_cricket_team
+  related_docs: 92
+  n_infobox_types: 8
+  infobox_types:
+  - Infobox cricket club season
+  - Infobox cricket series
+  - Infobox cricket team
+  - Infobox cricket tour
+  - Infobox cricket tournament
+  - Infobox cricketer
+  - Infobox domestic cricket season
+  - infobox cricket club season
+- id: t034
+  term: chappell first-team consensus
+  terms:
+  - chappell
+  - first-team
+  - consensus
+  - leonard
+  - all-american
+  primary_infobox_type: Infobox basketball biography
+  topic: How did the Wake Forest star’s collegiate dominance translate into a decade-long professional
+    basketball career, influence, and critiques of his legacy?
+  target_article: Len Chappell
+  target_identifier: 4701939
+  target_url: https://en.wikipedia.org/wiki/Len_Chappell
+  related_docs: 91
+  n_infobox_types: 15
+  infobox_types:
+  - Infobox CFL biography
+  - Infobox MLB player
+  - Infobox NFL biography
+  - Infobox album
+  - Infobox award
+  - Infobox basketball biography
+  - Infobox college coach
+  - Infobox college football player
+  - Infobox college sports team season
+  - Infobox football biography
+  - Infobox gridiron football biography
+  - Infobox gridiron football person
+- id: t035
+  term: australasia u-20 u-17
+  terms:
+  - australasia
+  - u-20
+  - u-17
+  - under-20
+  - under-17
+  primary_infobox_type: Infobox international football competition
+  topic: How did the 2016 under-20 women's world tournament in Papua New Guinea affect regional football
+    development, logistics, competitive outcomes, and governance controversies?
+  target_article: 2016 FIFA U-20 Women's World Cup
+  target_identifier: 39142147
+  target_url: https://en.wikipedia.org/wiki/2016_FIFA_U-20_Women%27s_World_Cup
+  related_docs: 91
+  n_infobox_types: 9
+  infobox_types:
+  - Infobox National football team
+  - Infobox football biography
+  - Infobox football tournament
+  - Infobox international football competition
+  - Infobox international ice hockey competition
+  - Infobox national football team
+  - Infobox venue
+  - Use dmy dates
+  - infobox football tournament
+- id: t036
+  term: setsuka user-generated serialized
+  terms:
+  - setsuka
+  - user-generated
+  - serialized
+  - dragon
+  - chapters
+  primary_infobox_type: Infobox animanga/Header
+  topic: How has the web-originated Japanese isekai light novel series expanded across media, adapted
+    its storytelling mechanics, influenced fans, and attracted criticism?
+  target_article: Farming Life in Another World
+  target_identifier: 70420837
+  target_url: https://en.wikipedia.org/wiki/Farming_Life_in_Another_World
+  related_docs: 90
+  n_infobox_types: 5
+  infobox_types:
+  - Infobox Chinese
+  - Infobox animanga/Header
+  - Infobox book series
+  - Infobox manhwa
+  - Infobox person
+- id: t037
+  term: riga elena latvian
+  terms:
+  - riga
+  - elena
+  - latvian
+  - latvia
+  - skating
+  primary_infobox_type: Infobox recurring event
+  topic: How have Latvia’s national figure skating championships evolved to identify champions, manage
+    participant shortages, develop talent, and face organizational constraints?
+  target_article: Latvian Figure Skating Championships
+  target_identifier: 27674202
+  target_url: https://en.wikipedia.org/wiki/Latvian_Figure_Skating_Championships
+  related_docs: 88
+  n_infobox_types: 37
+  infobox_types:
+  - Infobox FIBA tourney
+  - Infobox award
+  - Infobox basketball biography
+  - Infobox basketball club
+  - Infobox company
+  - Infobox convention
+  - Infobox cyclist
+  - Infobox drug
+  - Infobox ethnic group
+  - Infobox football biography
+  - Infobox football club
+  - Infobox football league season
+- id: t038
+  term: breakup ghanaian promotes
+  terms:
+  - breakup
+  - ghanaian
+  - promotes
+  - ghana
+  - affiliate
+  primary_infobox_type: Infobox cricket team
+  topic: How has Ghana’s men's national cricket representative body developed from colonial-era matches
+    to associate ICC status, grassroots promotion, and infrastructural challenges?
+  target_article: Ghana national cricket team
+  target_identifier: 6868247
+  target_url: https://en.wikipedia.org/wiki/Ghana_national_cricket_team
+  related_docs: 88
+  n_infobox_types: 20
+  infobox_types:
+  - Infobox Bilateral relations
+  - Infobox academic
+  - Infobox airline
+  - Infobox award
+  - Infobox company
+  - Infobox election
+  - Infobox food
+  - Infobox football biography
+  - Infobox football club
+  - Infobox military person
+  - Infobox musical artist
+  - Infobox officeholder
+- id: t039
+  term: clancy pursuit bicycle
+  terms:
+  - clancy
+  - pursuit
+  - bicycle
+  - racer
+  - cycling
+  primary_infobox_type: Infobox cyclist
+  topic: How did the British track and road cyclist achieve sustained team pursuit success, refine training
+    techniques, influence national programs, and confront doping debates?
+  target_article: Ed Clancy
+  target_identifier: 9308734
+  target_url: https://en.wikipedia.org/wiki/Ed_Clancy
+  related_docs: 87
+  n_infobox_types: 18
+  infobox_types:
+  - Infobox Olympic event
+  - Infobox Paralympic event
+  - Infobox climber
+  - Infobox company
+  - Infobox cycling championship
+  - Infobox cycling race
+  - Infobox cycling race report
+  - Infobox cycling team
+  - Infobox cyclist
+  - Infobox machine
+  - Infobox person
+  - Infobox sport
+- id: t040
+  term: providence stake wholly
+  terms:
+  - providence
+  - stake
+  - wholly
+  - rhode
+  - wealth
+  primary_infobox_type: Infobox company
+  topic: How has a Providence-headquartered regional bank evolved its branch and wealth management model,
+    technologies, market expansion, and governance controversies?
+  target_article: Citizens Financial Group
+  target_identifier: 719464
+  target_url: https://en.wikipedia.org/wiki/Citizens_Financial_Group
+  related_docs: 85
+  n_infobox_types: 39
+  infobox_types:
+  - Chinese
+  - Infobox Bus transit
+  - Infobox NRHP
+  - Infobox U.S. state
+  - Infobox academic
+  - Infobox baseball biography
+  - Infobox basketball biography
+  - Infobox college basketball team
+  - Infobox college coach
+  - Infobox college sports team season
+  - Infobox company
+  - Infobox election
+- id: t041
+  term: chairwoman bundestag baden-w
+  terms:
+  - chairwoman
+  - bundestag
+  - baden-w
+  - rttemberg
+  - elisabeth
+  primary_infobox_type: Infobox officeholder
+  topic: How has a far-right German politician shaped party leadership, parliamentary strategy, policy
+    platforms, public reception, and legal controversies?
+  target_article: Alice Weidel
+  target_identifier: 53928654
+  target_url: https://en.wikipedia.org/wiki/Alice_Weidel
+  related_docs: 85
+  n_infobox_types: 28
+  infobox_types:
+  - Automatic taxobox
+  - Infobox Bridge
+  - Infobox German district
+  - Infobox German location
+  - Infobox German place
+  - Infobox archaeological culture
+  - Infobox brewery
+  - Infobox bridge
+  - Infobox company
+  - Infobox constituency
+  - Infobox country
+  - Infobox football club
+- id: t042
+  term: five-time aquatics holder
+  terms:
+  - five-time
+  - aquatics
+  - holder
+  - medalist
+  - freestyle
+  primary_infobox_type: Infobox swimmer
+  topic: What explains the swimmer's rise from junior champion to record-holding relay specialist, training
+    methods, international impact, and limitations?
+  target_article: Nikolett Pádár
+  target_identifier: 71360028
+  target_url: https://en.wikipedia.org/wiki/Nikolett_P%C3%A1d%C3%A1r
+  related_docs: 84
+  n_infobox_types: 16
+  infobox_types:
+  - Infobox Commonwealth Games event
+  - Infobox Olympic event
+  - Infobox Paralympic event
+  - Infobox chess biography
+  - Infobox college coach
+  - Infobox figure skater
+  - Infobox individual golf tournament
+  - Infobox judoka
+  - Infobox martial artist
+  - Infobox ski area
+  - Infobox sports competition event
+  - Infobox sportsperson
+- id: t043
+  term: tenures wrestlers trainer
+  terms:
+  - tenures
+  - wrestlers
+  - trainer
+  - coaching
+  - wrestler
+  primary_infobox_type: Infobox professional wrestler
+  topic: How did a Northern Irish wrestler transition into training and production roles, influence performers,
+    in-ring style, and criticisms?
+  target_article: Fit Finlay
+  target_identifier: 1967540
+  target_url: https://en.wikipedia.org/wiki/Fit_Finlay
+  related_docs: 83
+  n_infobox_types: 22
+  infobox_types:
+  - Infobox Gaelic games biography
+  - Infobox Korean name/auto
+  - Infobox Olympic event
+  - Infobox Wrestling event
+  - Infobox Wrestling team
+  - Infobox boxer
+  - Infobox college coach
+  - Infobox college football player
+  - Infobox football biography
+  - Infobox musical artist
+  - Infobox person
+  - Infobox pro wrestling championship
+- id: t044
+  term: plurality senedd streak
+  terms:
+  - plurality
+  - senedd
+  - streak
+  - councillors
+  - commons
+  primary_infobox_type: Infobox political party
+  topic: How has the Labour movement's Welsh section maintained electoral dominance, organizational structure,
+    policy priorities, and internal tensions?
+  target_article: Welsh Labour
+  target_identifier: 6732798
+  target_url: https://en.wikipedia.org/wiki/Welsh_Labour
+  related_docs: 83
+  n_infobox_types: 4
+  infobox_types:
+  - Infobox Political post
+  - Infobox UK place
+  - Infobox election
+  - Infobox political party
+- id: t045
+  term: pro-independence plaid plurality
+  terms:
+  - pro-independence
+  - plaid
+  - plurality
+  - cymru
+  - senedd
+  primary_infobox_type: Infobox political party
+  topic: In what ways has the Welsh branch of the UK Labour Party shaped Senedd representation, local
+    governance, policy impact, and political challenges?
+  target_article: Welsh Labour
+  target_identifier: 6732798
+  target_url: https://en.wikipedia.org/wiki/Welsh_Labour
+  related_docs: 82
+  n_infobox_types: 9
+  infobox_types:
+  - Infobox Political post
+  - Infobox UK legislation
+  - Infobox election
+  - Infobox election <!-- A consensus has been reached to use this template. -->
+  - Infobox government cabinet
+  - Infobox legislature
+  - Infobox officeholder
+  - Infobox political party
+  - Infobox referendum
+- id: t046
+  term: pro-independence plaid plurality
+  terms:
+  - pro-independence
+  - plaid
+  - plurality
+  - cymru
+  - senedd
+  primary_infobox_type: Infobox political party
+  topic: How did the Wales-based section of Labour sustain long-term vote plurality, adapt to devolution,
+    engage rivals, and face criticism?
+  target_article: Welsh Labour
+  target_identifier: 6732798
+  target_url: https://en.wikipedia.org/wiki/Welsh_Labour
+  related_docs: 82
+  n_infobox_types: 9
+  infobox_types:
+  - Infobox Political post
+  - Infobox UK legislation
+  - Infobox election
+  - Infobox election <!-- A consensus has been reached to use this template. -->
+  - Infobox government cabinet
+  - Infobox legislature
+  - Infobox officeholder
+  - Infobox political party
+  - Infobox referendum
+- id: t047
+  term: interruption fivb handball
+  terms:
+  - interruption
+  - fivb
+  - handball
+  - volleyball
+  - egyptian
+  primary_infobox_type: Infobox volleyball club
+  topic: How has a Giza-based professional volleyball section built regional success, training infrastructure,
+    continental achievements, and faced organizational challenges?
+  target_article: Zamalek SC Volleyball
+  target_identifier: 46780835
+  target_url: https://en.wikipedia.org/wiki/Zamalek_SC_Volleyball
+  related_docs: 81
+  n_infobox_types: 22
+  infobox_types:
+  - Infobox FIVB tournament
+  - Infobox Olympic event
+  - Infobox football club
+  - Infobox name
+  - Infobox national volleyball team
+  - Infobox organization
+  - Infobox person
+  - Infobox settlement
+  - Infobox sports league
+  - Infobox sportsperson
+  - Infobox stadium
+  - Infobox venue
+- id: t048
+  term: skates pursuit distances
+  terms:
+  - skates
+  - pursuit
+  - distances
+  - skater
+  - skating
+  primary_infobox_type: Infobox speed skater
+  topic: What factors underlie the Canadian long-distance skater's mass-start and pursuit successes, training
+    methods, Olympic impact, and performance limits?
+  target_article: Ivanie Blondin
+  target_identifier: 41597867
+  target_url: https://en.wikipedia.org/wiki/Ivanie_Blondin
+  related_docs: 80
+  n_infobox_types: 21
+  infobox_types:
+  - External video
+  - Figure skating records and statistics
+  - Infobox Figure Skating Competition
+  - Infobox Figure Skating Element
+  - Infobox Olympic event
+  - Infobox Skating event
+  - Infobox award
+  - Infobox book
+  - Infobox figure skater
+  - Infobox model
+  - Infobox person
+  - Infobox skier <!-- See Wikipedia:WikiProject_Ski -->
+- id: t049
+  term: debuting scorer adelaide
+  terms:
+  - debuting
+  - scorer
+  - adelaide
+  - caps
+  - all-time
+  primary_infobox_type: Infobox football biography
+  topic: How did an Australian forward's international club career influence domestic football, leadership
+    in property sector, playing style, and post-retirement controversies?
+  target_article: Bruce Djite
+  target_identifier: 6387398
+  target_url: https://en.wikipedia.org/wiki/Bruce_Djite
+  related_docs: 80
+  n_infobox_types: 17
+  infobox_types:
+  - Infobox NFL biography
+  - Infobox album
+  - Infobox basketball biography
+  - Infobox cricketer
+  - Infobox football biography
+  - Infobox football club
+  - Infobox ice hockey player
+  - Infobox national football team
+  - Infobox netball biography
+  - Infobox person
+  - Infobox rugby biography
+  - Infobox rugby league team season
+- id: t050
+  term: finley strikeouts left-handed
+  terms:
+  - finley
+  - strikeouts
+  - left-handed
+  - batted
+  - pounds
+  primary_infobox_type: Infobox baseball biography
+  topic: How did the longtime left-handed Major League pitcher known for high strikeout totals shape team
+    records, pitching style, career longevity, and criticisms?
+  target_article: Chuck Finley
+  target_identifier: 869667
+  target_url: https://en.wikipedia.org/wiki/Chuck_Finley
+  related_docs: 79
+  n_infobox_types: 3
+  infobox_types:
+  - Infobox MLB player
+  - Infobox baseball biography
+  - Infobox cricketer
+- id: t051
+  term: camogie wayback archived
+  terms:
+  - camogie
+  - wayback
+  - archived
+  - all-ireland
+  - cork
+  primary_infobox_type: Infobox GAA championship main
+  topic: What is the history, organizational structure, athlete development role, cultural significance,
+    and criticisms of Ireland's premier university camogie championship?
+  target_article: Ashbourne Cup
+  target_identifier: 25700150
+  target_url: https://en.wikipedia.org/wiki/Ashbourne_Cup
+  related_docs: 78
+  n_infobox_types: 42
+  infobox_types:
+  - Chinese
+  - Infobox All-Ireland Hurling
+  - Infobox Camogie All-Ireland
+  - Infobox Christian leader
+  - Infobox Football All-Ireland
+  - Infobox GAA championship
+  - Infobox GAA club
+  - Infobox GAA player
+  - Infobox Gaelic Athletic Association player
+  - Infobox Gaelic games biography
+  - Infobox Gaelic games county team
+  - Infobox Gaelic games player
+- id: t052
+  term: tasmanian demons encompass
+  terms:
+  - tasmanian
+  - demons
+  - encompass
+  - hobart
+  - tasmania
+  primary_infobox_type: Infobox field hockey club
+  topic: How has the Hobart-based Tasmanian field hockey club evolved competitively and organizationally,
+    influenced local sport, and faced challenges?
+  target_article: Tassie Tigers
+  target_identifier: 47933827
+  target_url: https://en.wikipedia.org/wiki/Tassie_Tigers
+  related_docs: 78
+  n_infobox_types: 36
+  infobox_types:
+  - Automatic_taxobox
+  - Infobox
+  - Infobox AFL biography
+  - Infobox Australian football club
+  - Infobox Australian place
+  - Infobox Australian road
+  - Infobox Australian rules football season
+  - Infobox Prison
+  - Infobox building
+  - Infobox church
+  - Infobox cricketer
+  - Infobox cyclist
+- id: t053
+  term: bharat telangana reddy
+  terms:
+  - bharat
+  - telangana
+  - reddy
+  - pradesh
+  - incumbent
+  primary_infobox_type: infobox officeholder
+  topic: In what ways did the Congress leader's political career and governance approach transform state
+    administration, policy priorities, public reception, and controversies?
+  target_article: Revanth Reddy
+  target_identifier: 35668809
+  target_url: https://en.wikipedia.org/wiki/Revanth_Reddy
+  related_docs: 76
+  n_infobox_types: 31
+  infobox_types:
+  - Infobox Grand Lodge
+  - Infobox Indian Political Party
+  - Infobox Indian constituency
+  - Infobox Rockunit
+  - Infobox artist
+  - Infobox bridge
+  - Infobox broadcasting network
+  - Infobox cricket club season
+  - Infobox dam
+  - Infobox election
+  - Infobox ethnic group
+  - Infobox film
+- id: t054
+  term: omaha progressed nebraska
+  terms:
+  - omaha
+  - progressed
+  - nebraska
+  - none
+  - collegiate
+  primary_infobox_type: College baseball season
+  topic: How did the 2011 Division I collegiate baseball season's structure, venue change, postseason
+    format, player development, and controversies influence college baseball?
+  target_article: 2011 NCAA Division I baseball season
+  target_identifier: 30744412
+  target_url: https://en.wikipedia.org/wiki/2011_NCAA_Division_I_baseball_season
+  related_docs: 74
+  n_infobox_types: 39
+  infobox_types:
+  - College baseball season
+  - Infobox Bridge
+  - Infobox NCAA Baseball Conference Tournament
+  - Infobox NCAA Baseball Tournament
+  - Infobox NCAA Ice Hockey Tournament
+  - Infobox NCAA team season
+  - Infobox NFL biography
+  - Infobox NRHP
+  - Infobox SCOTUS case
+  - Infobox U.S. state
+  - Infobox UFL
+  - Infobox album
+- id: t055
+  term: t20i tying qualifier
+  terms:
+  - t20i
+  - tying
+  - qualifier
+  - twenty20
+  - rating
+  primary_infobox_type: Infobox cricket team
+  topic: How has Nepal's men's international cricket team progressed in formats, development pathways,
+    competitive impact, and structural limitations since associate membership?
+  target_article: Nepal national cricket team
+  target_identifier: 1829276
+  target_url: https://en.wikipedia.org/wiki/Nepal_national_cricket_team
+  related_docs: 74
+  n_infobox_types: 5
+  infobox_types:
+  - Infobox cricket series
+  - Infobox cricket team
+  - Infobox cricket tour
+  - Infobox cricket tournament
+  - Infobox cricketer
+- id: t056
+  term: quadrennial concacaf qualify
+  terms:
+  - quadrennial
+  - concacaf
+  - qualify
+  - caribbean
+  - qualifying
+  primary_infobox_type: Infobox international football competition
+  topic: What were the tournament's qualification mechanics, regional competitive dynamics, Olympic implications,
+    organizational challenges, and debated decisions in 2020?
+  target_article: 2020 CONCACAF Women's Olympic Qualifying Championship
+  target_identifier: 61402964
+  target_url: https://en.wikipedia.org/wiki/2020_CONCACAF_Women%27s_Olympic_Qualifying_Championship
+  related_docs: 73
+  n_infobox_types: 29
+  infobox_types:
+  - Former F1 team
+  - Infobox F1 driver
+  - Infobox International Handball Competition
+  - Infobox NFL team season
+  - Infobox Pan American Games event
+  - Infobox country at games
+  - Infobox darts player
+  - Infobox event
+  - Infobox football biography
+  - Infobox football league
+  - Infobox football league season
+  - Infobox football match
+- id: t057
+  term: salzburg loaned leipzig
+  terms:
+  - salzburg
+  - loaned
+  - leipzig
+  - bosnian
+  - herzegovina
+  primary_infobox_type: Infobox football biography
+  topic: How did the Bosnian forward's career through loans and transfers shape his playing style, club
+    impact, international role, and criticisms?
+  target_article: Smail Prevljak
+  target_identifier: 43526461
+  target_url: https://en.wikipedia.org/wiki/Smail_Prevljak
+  related_docs: 73
+  n_infobox_types: 29
+  infobox_types:
+  - Infobox
+  - Infobox Basketball club
+  - Infobox artist
+  - Infobox building
+  - Infobox civil conflict
+  - Infobox civilian attack
+  - Infobox criminal
+  - Infobox ethnic group
+  - Infobox football biography
+  - Infobox given name
+  - Infobox military conflict
+  - Infobox military person
+- id: t058
+  term: sparsely pakhtunkhwa pakistan's
+  terms:
+  - sparsely
+  - pakhtunkhwa
+  - pakistan's
+  - forested
+  - khyber
+  primary_infobox_type: Infobox settlement
+  topic: How have Kunar's rugged geography, cross-border dynamics, governance challenges, ecological characteristics,
+    and historical marginalization affected regional stability?
+  target_article: Kunar Province
+  target_identifier: 2159600
+  target_url: https://en.wikipedia.org/wiki/Kunar_Province
+  related_docs: 73
+  n_infobox_types: 25
+  infobox_types:
+  - Infobox Chinese
+  - Infobox ancient site
+  - Infobox body of water
+  - Infobox cemetery
+  - Infobox civilian attack
+  - Infobox college
+  - Infobox cricket tournament
+  - Infobox cricketer
+  - Infobox ecoregion
+  - Infobox election
+  - Infobox ethnic group
+  - Infobox government agency
+- id: t059
+  term: sportscaster skater skier
+  terms:
+  - sportscaster
+  - skater
+  - skier
+  - skating
+  - exhibitions
+  primary_infobox_type: Infobox figure skater
+  topic: How did the Japanese Olympic champion's technical skating skills, training methods, cultural
+    impact, post-retirement roles, and criticisms shape her legacy?
+  target_article: Shizuka Arakawa
+  target_identifier: 559195
+  target_url: https://en.wikipedia.org/wiki/Shizuka_Arakawa
+  related_docs: 73
+  n_infobox_types: 17
+  infobox_types:
+  - Figure skating records and statistics
+  - Infobox Figure Skating Competition
+  - Infobox Figure Skating Element
+  - Infobox Olympic event
+  - Infobox Olympic games
+  - Infobox award
+  - Infobox figure skater
+  - Infobox given name
+  - Infobox model
+  - Infobox person
+  - Infobox speed skater
+  - Infobox sport

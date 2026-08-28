@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T02:32:25+0900",
+  "generated_at": "2026-08-29T03:23:42+0900",
   "spec": "SPEC_M1_TestA_v1.1.md §2.2",
   "snapshot": {
     "repo": "wikimedia/structured-wikipedia",
@@ -11,14 +11,18 @@
   },
   "corpus": {
     "path": "data\\corpus.parquet",
-    "sha256": "a6aacbbb4848a1fe50c4420c5bc0909da893dedda76d0cf84ae4a70d6cc2b4bf",
-    "bytes": 293491491,
-    "n_documents": 30000,
+    "sha256": "7fa93410a5e301b9ca48048c396acff03daa1f7c0ff047c6fa93e4280e308816",
+    "bytes": 1424576496,
+    "n_documents": 150000,
+    "n_unique_documents": 142972,
+    "n_duplicate_rows": 7028,
+    "duplicate_rate": 0.0469,
+    "duplicate_note": "상류 샤드가 서로 겹쳐 같은 문서가 여러 행으로 들어온다. chunk_index.py 가 identifier 기준으로 첫 행만 남긴다.",
     "row_groups": 86,
     "sampling": {
       "method": "seeded stratified sample over all upstream shards (row-group range reads)",
       "seed": 42,
-      "row_groups_per_shard": 2,
+      "row_groups_per_shard": 3,
       "min_abstract_chars": 200,
       "n_shards": 86,
       "shortfall": 0
@@ -628,103 +632,103 @@
     "fill_rates": {
       "identifier": {
         "present": true,
-        "non_null": 30000,
+        "non_null": 150000,
         "fill_rate": 1.0,
-        "non_empty": 30000,
+        "non_empty": 150000,
         "non_empty_rate": 1.0
       },
       "name": {
         "present": true,
-        "non_null": 30000,
+        "non_null": 150000,
         "fill_rate": 1.0,
-        "non_empty": 30000,
+        "non_empty": 150000,
         "non_empty_rate": 1.0
       },
       "url": {
         "present": true,
-        "non_null": 30000,
+        "non_null": 150000,
         "fill_rate": 1.0,
-        "non_empty": 30000,
+        "non_empty": 150000,
         "non_empty_rate": 1.0
       },
       "abstract": {
         "present": true,
-        "non_null": 30000,
+        "non_null": 150000,
         "fill_rate": 1.0,
-        "non_empty": 30000,
+        "non_empty": 150000,
         "non_empty_rate": 1.0
       },
       "sections": {
         "present": true,
-        "non_null": 30000,
+        "non_null": 150000,
         "fill_rate": 1.0,
-        "non_empty": 30000,
+        "non_empty": 150000,
         "non_empty_rate": 1.0
       },
       "references": {
         "present": true,
-        "non_null": 27845,
-        "fill_rate": 0.9282,
-        "non_empty": 27845,
-        "non_empty_rate": 0.9282
+        "non_null": 139216,
+        "fill_rate": 0.9281,
+        "non_empty": 139216,
+        "non_empty_rate": 0.9281
       },
       "infoboxes": {
         "present": true,
-        "non_null": 22778,
-        "fill_rate": 0.7593,
-        "non_empty": 22778,
-        "non_empty_rate": 0.7593
+        "non_null": 113436,
+        "fill_rate": 0.7562,
+        "non_empty": 113436,
+        "non_empty_rate": 0.7562
       },
       "tables": {
         "present": true,
-        "non_null": 9765,
-        "fill_rate": 0.3255,
-        "non_empty": 9765,
-        "non_empty_rate": 0.3255
+        "non_null": 48516,
+        "fill_rate": 0.3234,
+        "non_empty": 48516,
+        "non_empty_rate": 0.3234
       },
       "description": {
         "present": true,
-        "non_null": 26708,
-        "fill_rate": 0.8903,
-        "non_empty": 26708,
-        "non_empty_rate": 0.8903
+        "non_null": 133203,
+        "fill_rate": 0.888,
+        "non_empty": 133203,
+        "non_empty_rate": 0.888
       },
       "image": {
         "present": true,
-        "non_null": 13896,
-        "fill_rate": 0.4632,
-        "non_empty": 13896,
-        "non_empty_rate": 0.4632
+        "non_null": 69640,
+        "fill_rate": 0.4643,
+        "non_empty": 69640,
+        "non_empty_rate": 0.4643
       },
       "referencerisk": {
         "present": true,
-        "non_null": 27189,
-        "fill_rate": 0.9063,
-        "non_empty": 27189,
-        "non_empty_rate": 0.9063
+        "non_null": 136088,
+        "fill_rate": 0.9073,
+        "non_empty": 136088,
+        "non_empty_rate": 0.9073
       },
       "referenceneed": {
         "present": true,
-        "non_null": 26506,
-        "fill_rate": 0.8835,
-        "non_empty": 26506,
-        "non_empty_rate": 0.8835
+        "non_null": 132572,
+        "fill_rate": 0.8838,
+        "non_empty": 132572,
+        "non_empty_rate": 0.8838
       },
       "revertrisk": {
         "present": true,
-        "non_null": 29426,
-        "fill_rate": 0.9809,
-        "non_empty": 29426,
-        "non_empty_rate": 0.9809
+        "non_null": 146989,
+        "fill_rate": 0.9799,
+        "non_empty": 146989,
+        "non_empty_rate": 0.9799
       }
     }
   },
   "verdicts": {
     "passed": true,
     "citation_mode": "references",
-    "references_fill_rate": 0.9282,
-    "referencerisk_fill_rate": 0.9063,
-    "credibility_signal_max_fill_rate": 0.9809,
+    "references_fill_rate": 0.9281,
+    "referencerisk_fill_rate": 0.9073,
+    "credibility_signal_max_fill_rate": 0.9799,
     "credibility_signal_usable": true,
     "redirect_field_present": false,
     "redirect_fields_found": [],
@@ -736,5 +740,5 @@
     "pyarrow": "16.1.0",
     "duckdb": "1.5.5"
   },
-  "elapsed_s": 3.8
+  "elapsed_s": 9.0
 }

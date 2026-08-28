@@ -100,8 +100,9 @@ def build_chunks(corpus: Path, heldout: set[int], cfg) -> tuple[list[dict[str, A
     max_chunks = int(cfg.get("retrieval.max_chunks", 4000000))
 
     chunks: list[dict[str, Any]] = []
-    n_docs = n_skipped = 0
+    n_docs = n_skipped = n_duplicate = 0
     total_tokens = 0
+    seen_docs: set[int] = set()
     pf = pq.ParquetFile(corpus)
 
     for batch in pf.iter_batches(
@@ -112,6 +113,12 @@ def build_chunks(corpus: Path, heldout: set[int], cfg) -> tuple[list[dict[str, A
             if doc_id in heldout:
                 n_skipped += 1
                 continue
+            if doc_id in seen_docs:
+                # 상류 샤드가 서로 겹쳐 같은 문서가 여러 번 들어온다(약 4.7%).
+                # 그대로 두면 chunk_id 가 충돌하고 같은 본문이 검색 상위를 중복 점유한다.
+                n_duplicate += 1
+                continue
+            seen_docs.add(doc_id)
             n_docs += 1
             try:
                 sections = json.loads(row["sections"]) if row["sections"] else []
@@ -141,6 +148,7 @@ def build_chunks(corpus: Path, heldout: set[int], cfg) -> tuple[list[dict[str, A
     stats = {
         "n_documents_indexed": n_docs,
         "n_documents_heldout_skipped": n_skipped,
+        "n_rows_duplicate_skipped": n_duplicate,
         "n_chunks": len(chunks),
         "total_tokens": total_tokens,
         "mean_chunk_tokens": round(total_tokens / len(chunks), 2) if chunks else 0.0,
