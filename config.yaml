@@ -16,17 +16,35 @@ data:
   hf_revision: 417c267bb457fa645c22eb3b5c77764963194c70   # 스냅샷 고정 (2026-05-19)
   hf_file_glob: enwiki/data/enwiki_namespace_0_*.parquet
   language: en
-  max_articles: 30000             # 변경 #5 (M2 에서 200000+ 로 상향)
-  row_groups_per_shard: 2         # 샤드당 range-read 할 row group 수 (층화 표집 폭)
+  max_articles: 150000            # SPEC v1.1 기본값 30000 에서 상향.
+                                  # 30000 으로는 교차 도메인 토픽 후보가 28개뿐이었다
+                                  # (기준: 관련문서>=30 & infobox 유형>=3). HANDOFF §4 의
+                                  # "커버리지 미달이면 max_articles 를 올려 P1 부터 재실행" 경로.
+  row_groups_per_shard: 3         # 샤드당 range-read 할 row group 수 (층화 표집 폭)
   min_abstract_chars: 200         # 이보다 짧은 abstract 는 스텁으로 보고 제외
   min_chunks_per_topic: 20
   n_topics: 50
+
+topics:                           # SPEC §2.3 교차 도메인 후보 선별 임계
+  min_related_docs: 30            # 코퍼스 내 관련 문서 하한. min_chunks_per_topic 보다 넉넉히
+  min_infobox_types: 3            # "서로 다른 3개 이상 하위주제" 의 조작적 정의
+  min_term_hits: 2                # 이웃 판정: 변별력 용어 중 몇 개를 담아야 하는가
+  n_terms: 5                      # target 당 변별력 용어 수
+  df_lo: 20                       # 변별력 용어의 문서빈도 하한 (이웃이 생길 만큼)
+  df_hi: 3000                     # 상한 (기능어 배제)
+  min_target_abstract_chars: 600  # target 후보의 '두께' 기준
+  min_target_section_chars: 6000
+  min_target_references: 20
+  max_per_infobox_type: 3         # 다양성: 같은 유형이 후보를 독식하지 않게
+  n_candidates: 60                # 50개 승인 + 예비
+  min_term_len: 4
+  batch_size: 10                  # 문구 생성 배치당 후보 수
 
 retrieval:
   backend: bm25s                  # 변경 #5. {bm25s, rank_bm25}
   top_k: 5
   retry_k_multiplier: [1, 2, 3]   # 변경 #1. 라운드별 검색 폭 배수
-  max_chunks: 2000000
+  max_chunks: 4000000
   chunk_max_tokens: 1200          # 섹션이 이 값을 넘으면 문단 분할
 
 llm:
@@ -42,6 +60,16 @@ llm:
   timeout_s: 120
   max_retries: 4
   cache_enabled: true
+
+perspectives:
+  min_sub_questions: 3            # SPEC §3.2 — role 당 3~5개
+  max_sub_questions: 5
+
+branch:
+  max_context_chars: 12000        # 생성 프롬프트에 싣는 청크 본문 상한
+  max_claims: 20
+  max_claim_chars: 8000
+  truncation_retry_mult: 2        # 응답이 잘리면 max_tokens 를 이 배수로 올려 1회 재시도
 
 nli:
   model: cross-encoder/nli-deberta-v3-base

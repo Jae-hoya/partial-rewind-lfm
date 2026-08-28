@@ -20,7 +20,9 @@ def test_spec_pinned_values(real_config):
     assert real_config["sweep.primary_tau"] == 0.8
     assert real_config["sweep.tau"] == [0.7, 0.8, 0.9]
     assert real_config["sweep.bootstrap_n"] == 1000
-    assert real_config["data.max_articles"] == 30000
+    # SPEC v1.1 기본값은 30000 이었으나 교차 도메인 토픽 후보가 28개뿐이라
+    # HANDOFF §4 경로로 상향했다. 근거는 P2_REPORT.md.
+    assert real_config["data.max_articles"] >= 30000
     assert real_config["retrieval.backend"] == "bm25s"
     assert real_config["retrieval.retry_k_multiplier"] == [1, 2, 3]
     assert real_config["max_rounds"] == 3
