@@ -99,6 +99,38 @@ def regime_diagnostics(rows, taus_fine) -> list[str]:
                 if float(r["grounding"]) > tau and float(r["coverage"]) > tau)
         add("| %.1f | %.1f%% | %d / %d |" % (tau, 100 * n / len(reexec), n, len(reexec)))
     add("")
+    rounds = sorted({int(r["round"]) for r in rows})
+    add("### 라운드별 품질 — 재실행이 무엇을 건졌는가")
+    add("")
+    add("낭비율은 '재실행이 불필요했는가' 를 묻는다. 그 짝이 되는 질문은")
+    add("'재실행이 도움이 됐는가' 다. 같은 원자료로 바로 답할 수 있다.")
+    add("")
+    add("| 라운드 | branch | coverage 평균 | grounding 평균 | cov=1.0 | grd>0.8 | 빈 답안 |")
+    add("|---|---|---|---|---|---|---|")
+    base = None
+    for rd in rounds:
+        sub = [x for x in rows if int(x["round"]) == rd]
+        c = [float(x["coverage"]) for x in sub]
+        g = [float(x["grounding"]) for x in sub]
+        if base is None:
+            base = (st.mean(c), st.mean(g))
+        add("| %d | %d | %.3f | %.3f | %d | %d | %d |"
+            % (rd, len(sub), st.mean(c), st.mean(g),
+               sum(1 for v in c if v == 1.0), sum(1 for v in g if v > 0.8),
+               sum(int(x.get("degraded", 0)) for x in sub)))
+    last = [x for x in rows if int(x["round"]) == rounds[-1]]
+    dc = st.mean([float(x["coverage"]) for x in last]) - base[0]
+    dg = st.mean([float(x["grounding"]) for x in last]) - base[1]
+    add("")
+    add("라운드 0 → %d 변화: coverage **%+.3f**, grounding **%+.3f**." % (rounds[-1], dc, dg))
+    if dc <= 0 and dg <= 0:
+        add("")
+        add("**재실행이 품질을 올리지 못했다.** 검색 폭을 2~3배로 넓히고 sub-question 을")
+        add("재표현하고 retry directive 를 넣었는데도 두 지표가 모두 하락했다. 전체 토큰의")
+        add("약 3분의 2가 라운드 1~2 에 쓰였고 통과 질의는 여전히 0건이다. 낭비율이 낮은")
+        add("것과는 별개의 사실이며, 같은 방향을 가리킨다 — 이 설정에서 GlobalRetry 는")
+        add("건질 것도 없었고 버릴 것도 없었다.")
+    add("")
     add("**coverage 는 양자화돼 있다.** sub-question 이 3~5개이므로 `coverage > 0.8` 은")
     add("사실상 `coverage = 1.0` 을 요구한다. τ 를 연속량처럼 읽으면 안 된다.")
     add("")
