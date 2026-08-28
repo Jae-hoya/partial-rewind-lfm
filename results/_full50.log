@@ -7,3 +7,55 @@
 [  5/ 50] t004   rounds=3 passed=False  18.8s  How did the Montreal‑based forest products firm grow
 [  6/ 50] t005   rounds=3 passed=False  108.6s  How did Lithuania’s multiweek national selection pro
 [  7/ 50] t006   rounds=3 passed=False  55.9s  How did Maryland’s 2008 presidential vote reflect st
+[  8/ 50] t007   rounds=3 passed=False  109.3s  How has Sri Lanka’s northern province been shaped de
+[  9/ 50] t008   rounds=3 passed=False  92.5s  How did the prominent US communications regulator sh
+[ 10/ 50] t011   rounds=3 passed=False  56.3s  How has Bharath's shifting roles across Tamil, Malay
+[ 11/ 50] t012   rounds=3 passed=False  70.6s  How did the 2024 Oregon attorney general race unfold
+[ 12/ 50] t013   rounds=3 passed=False  69.4s  How did Anthony Foxx's rise from Charlotte mayor to 
+[ 13/ 50] t014   rounds=3 passed=False  92.0s  How did the creation, serialization and adaptation o
+[ 14/ 50] t015   rounds=3 passed=False  94.0s  How has Royal Antwerp's long history, recent Europea
+[ 15/ 50] t016   rounds=3 passed=False  29.7s  How did Spirit Hunter: Death Mark's design, multi-pl
+[ 16/ 50] t017   rounds=3 passed=False  55.2s  How has Kota Kinabalu International Airport's growth
+[ 17/ 50] t018   rounds=3 passed=False  52.0s  How have the Australian Rollers' Paralympic achievem
+[ 18/ 50] t019   rounds=3 passed=False  93.6s  How did Wisconsin's 2020 House contests interact wit
+[ 19/ 50] t020   rounds=3 passed=False  88.4s  How did a 1990s shojo comic set in ancient Anatolia 
+[ 20/ 50] t021   rounds=3 passed=False  72.8s  What trajectory and defensive attributes shaped a Bo
+[ 21/ 50] t022   rounds=3 passed=False  145.4s  How did a Soviet-era medium-range air-to-air missile
+[ 22/ 50] t023   rounds=3 passed=False  112.8s  How has the most populous Utah county developed demo
+[ 23/ 50] t024   rounds=3 passed=False  52.9s  How did Australia’s 1976 Paralympic delegation perfo
+[ 24/ 50] t025   rounds=3 passed=False  87.3s  How has a state-owned creative industries agency pro
+[ 25/ 50] t026   rounds=3 passed=False  145.0s  How has a Kurdish city near the Iran–Iraq border evo
+[ 26/ 50] t027   rounds=3 passed=False  89.9s  How did an Indian-American psychologist rise within 
+[ 27/ 50] t028   rounds=3 passed=False  95.6s  What technical strengths, competitive achievements, 
+[ 28/ 50] t029   rounds=3 passed=False  108.7s  How did an Indian model-turned-actress transition ac
+[ 29/ 50] t030   rounds=3 passed=False  113.4s  How has the municipal authority governing Newcastle 
+[ 30/ 50] t031   rounds=3 passed=False  104.2s  How has the Japanese professional wrestling promotio
+[ 31/ 50] t032   rounds=3 passed=False  106.1s  How did the ethnic group originating on the Mueda Pl
+[ 32/ 50] t033   rounds=3 passed=False  96.1s  How has the England and Wales women’s national crick
+[ 33/ 50] t034   rounds=3 passed=False  84.2s  How did the Wake Forest star’s collegiate dominance 
+[ 34/ 50] t035   rounds=3 passed=False  40.4s  How did the 2016 under-20 women's world tournament i
+[ 35/ 50] t036   rounds=3 passed=False  198.6s  How has the web-originated Japanese isekai light nov
+[ 36/ 50] t037   rounds=3 passed=False  41.1s  How have Latvia’s national figure skating championsh
+[ 37/ 50] t038   rounds=3 passed=False  48.8s  How has Ghana’s men's national cricket representativ
+[ 38/ 50] t039   rounds=3 passed=False  107.8s  How did the British track and road cyclist achieve s
+[ 39/ 50] t040   rounds=3 passed=False  105.3s  How has a Providence-headquartered regional bank evo
+[ 40/ 50] t041   rounds=3 passed=False  95.5s  How has a far-right German politician shaped party l
+[ 41/ 50] t042   rounds=3 passed=False  86.4s  What explains the swimmer's rise from junior champio
+[ 42/ 50] t043   rounds=3 passed=False  83.3s  How did a Northern Irish wrestler transition into tr
+[ 43/ 50] t044   rounds=3 passed=False  136.3s  How has the Labour movement's Welsh section maintain
+[ 44/ 50] t047   rounds=3 passed=False  44.3s  How has a Giza-based professional volleyball section
+[ 45/ 50] t048   rounds=3 passed=False  78.6s  What factors underlie the Canadian long-distance ska
+[ 46/ 50] t049   rounds=3 passed=False  86.5s  How did an Australian forward's international club c
+[ 47/ 50] t050   rounds=3 passed=False  106.2s  How did the longtime left-handed Major League pitche
+[ 48/ 50] t051   rounds=3 passed=False  67.9s  What is the history, organizational structure, athle
+[ 49/ 50] t052   rounds=3 passed=False  79.8s  How has the Hobart-based Tasmanian field hockey club
+[ 50/ 50] t053   rounds=3 passed=False  98.1s  In what ways did the Congress leader's political car
+
+실패 케이스 50/50, 재실행 branch 400
+  tau=0.70  낭비율 1.8%  [0.0–4.3]  (7/400)
+  tau=0.80  낭비율 0.5%  [0.0–1.5]  (2/400)
+  tau=0.90  낭비율 0.5%  [0.0–1.5]  (2/400)
+
+판정 (tau=0.80): 20% 미만 — 전제 오류. 연구 질문 재설계
+LLM 호출 1439 (캐시 154), 청구 토큰 in/out = 1882035/697798
+소요 67.8분 -> results\test_a\20260829-041445

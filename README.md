@@ -28,7 +28,7 @@
 | P1 | download.py · schema_check.py → `data/MANIFEST.json` | ✅ (150k 로 재실행) |
 | P2 | topics.py 후보 60 → approve_topics.py 승인 50 | ✅ |
 | P3 | heldout · chunk_index(685,683 청크) · 모듈 · mock 스모크 | ✅ |
-| P4 | 50토픽 실행 · 낭비율 리포트 | 진행 |
+| P4 | 50토픽 실행 · 낭비율 리포트 | ✅ |
 
 ## 문서 지도
 
@@ -38,6 +38,7 @@
 | `P2_P3_REPORT.md` | 토픽 선별 2회, 승인 게이트, 파일럿 3회 — 측정 결함 2건 |
 | `MODEL_NOTES.md` | 모델 검증, reasoning 토큰, 키 사용 개시일·비용 귀속 |
 | `VALIDITY.md` | Threats to Validity 재료 |
+| `P4_REPORT.md` | **Test A 결과 · 판정 · 왜 이 숫자를 전제 반증으로 읽으면 안 되는가** |
 | `REPRODUCE.md` | 재현 절차 · 스냅샷 고정값 · 산출물 지도 |
 
 ## 실험 결과가 나쁘게 나오면

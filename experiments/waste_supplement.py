@@ -42,6 +42,69 @@ def estimate(rows, taus, boot_n, seed):
     return out
 
 
+def regime_diagnostics(rows, taus_fine) -> list[str]:
+    """낭비율이 낮을 때, 그게 '재실행이 낭비가 아니다' 인지 '애초에 충분한 branch 가
+    없다' 인지 갈라 보여준다. 둘은 완전히 다른 결론이다.
+
+    새 그림을 만들지 않는다 — 표만 낸다 (SPEC §6).
+    """
+    import statistics as st
+
+    a = []
+    add = a.append
+    cov = [float(r["coverage"]) for r in rows]
+    grd = [float(r["grounding"]) for r in rows]
+    reexec = [r for r in rows if int(r["re_executed"])]
+
+    def q(v, p):
+        v = sorted(v)
+        return v[min(len(v) - 1, int(p * len(v)))]
+
+    add("")
+    add("## 측정 영역 진단 — 낭비율이 낮은 이유")
+    add("")
+    add("낭비율이 낮은 데는 두 가지 서로 다른 원인이 있다.")
+    add("")
+    add("1. 전역 재실행이 실제로 낭비가 아니다 (재실행된 branch 가 원래 부족했다)")
+    add("2. **애초에 충분한 branch 가 거의 없다** — 낭비할 것이 없어서 낭비율이 낮다")
+    add("")
+    add("둘은 정반대의 결론으로 이어지므로 구분해서 보고한다.")
+    add("")
+    add("| 지표 | 값 |")
+    add("|---|---|")
+    add("| branch-round 수 | %d |" % len(rows))
+    add("| coverage 중앙값 / 평균 | %.2f / %.3f |" % (q(cov, 0.5), st.mean(cov)))
+    add("| grounding 중앙값 / 평균 | %.2f / %.3f |" % (q(grd, 0.5), st.mean(grd)))
+    add("| coverage = 1.0 인 branch | %d (%.1f%%) |"
+        % (sum(1 for x in cov if x == 1.0), 100 * sum(1 for x in cov if x == 1.0) / len(cov)))
+    add("| grounding > 0.8 인 branch | %d (%.1f%%) |"
+        % (sum(1 for x in grd if x > 0.8), 100 * sum(1 for x in grd if x > 0.8) / len(grd)))
+    add("| **둘 다 만족 (sufficient@0.8)** | **%d (%.1f%%)** |"
+        % (sum(1 for r in rows if float(r["coverage"]) == 1.0 and float(r["grounding"]) > 0.8),
+           100 * sum(1 for r in rows if float(r["coverage"]) == 1.0
+                     and float(r["grounding"]) > 0.8) / len(rows)))
+    add("| 답안이 비어 있는 branch (degraded) | %d (%.1f%%) |"
+        % (sum(int(r.get("degraded", 0)) for r in rows),
+           100 * sum(int(r.get("degraded", 0)) for r in rows) / len(rows)))
+    add("")
+    add("### τ 미세 스윕 (진단용 — 논문 표 아님)")
+    add("")
+    add("SPEC 이 정한 τ ∈ {0.7, 0.8, 0.9} 밖까지 내려 보면, 낭비율이 임계 근처에서")
+    add("급변하는 절벽인지 완만한 연속인지 알 수 있다.")
+    add("")
+    add("| τ | 낭비율 | 낭비 / 재실행 |")
+    add("|---|---|---|")
+    for tau in taus_fine:
+        n = sum(1 for r in reexec
+                if float(r["grounding"]) > tau and float(r["coverage"]) > tau)
+        add("| %.1f | %.1f%% | %d / %d |" % (tau, 100 * n / len(reexec), n, len(reexec)))
+    add("")
+    add("**coverage 는 양자화돼 있다.** sub-question 이 3~5개이므로 `coverage > 0.8` 은")
+    add("사실상 `coverage = 1.0` 을 요구한다. τ 를 연속량처럼 읽으면 안 된다.")
+    add("")
+    return a
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="파일럿 제외 보조 추정")
     ap.add_argument("results_dir")
@@ -91,6 +154,7 @@ def main(argv: list[str] | None = None) -> int:
       % (primary, verdict(pf["point"]), verdict(ps["point"])))
     a("")
 
+    lines += regime_diagnostics(rows, [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])
     text = "\n".join(lines)
     print(text)
 
