@@ -32,7 +32,11 @@ retrieval:
 llm:
   provider: openai                # 상용 API 는 OpenAI 만 (CLAUDE.md 모델 정책)
   model: gpt-5-mini
-  max_tokens: 1500
+  max_tokens: 2000                # reasoning + 가시 출력의 합산 상한이다 (아래 주석 참고)
+  reasoning_effort: low           # gpt-5-mini 는 추론 모델. 기본값(medium)은 출력 토큰의
+                                  # 84%를 reasoning 에 쓰고 가시 답안은 630자로 눌린다.
+                                  # {minimal, low, medium, high}. null 이면 요청에서 생략.
+                                  # 전 시스템 공통 고정 변인이다 — 조건별로 바꾸지 마라.
   temperature: null               # null 이면 요청에서 생략한다 (모델별 지원 차이 회피)
   max_tokens_param: auto          # {auto, max_tokens, max_completion_tokens}
   timeout_s: 120

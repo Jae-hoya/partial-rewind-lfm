@@ -1,0 +1,54 @@
+[
+  {
+    "checked_at": "2026-08-29T02:48:11+0900",
+    "purpose": "LFM M1 Test A 착수 검증",
+    "model": "gpt-5-mini",
+    "provider": "openai",
+    "api_key": {
+      "present": true,
+      "length": 56,
+      "sha256_12": "0eb866a6fbe3"
+    },
+    "ok": true,
+    "tokens_in": 13,
+    "tokens_out": 16,
+    "latency_ms": 4370,
+    "finish_reason": "length",
+    "response_preview": ""
+  },
+  {
+    "checked_at": "2026-08-29T02:51:21+0900",
+    "purpose": "LFM M1 Test A 착수 검증 (reasoning_effort=low 적용 후)",
+    "model": "gpt-5-mini",
+    "provider": "openai",
+    "api_key": {
+      "present": true,
+      "length": 56,
+      "sha256_12": "0eb866a6fbe3"
+    },
+    "ok": true,
+    "tokens_in": 13,
+    "tokens_out": 16,
+    "latency_ms": 3631,
+    "finish_reason": "length",
+    "response_preview": ""
+  },
+  {
+    "checked_at": "2026-08-29T02:51:41+0900",
+    "purpose": "LFM M1 Test A 착수 검증",
+    "model": "gpt-5-mini",
+    "provider": "openai",
+    "api_key": {
+      "present": true,
+      "length": 56,
+      "sha256_12": "0eb866a6fbe3"
+    },
+    "ok": true,
+    "truncated": false,
+    "tokens_in": 13,
+    "tokens_out": 10,
+    "latency_ms": 2990,
+    "finish_reason": "stop",
+    "response_preview": "ok"
+  }
+]

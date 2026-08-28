@@ -37,7 +37,7 @@
 - 모델명·경로·시드·예산은 전부 `config.yaml`에서 주입. **코드에 하드코딩 금지.**
 - 모든 무작위성은 `config.seed`로 고정. 같은 config + 같은 데이터 스냅샷 → 같은 결과여야 한다.
 - **모델 정책:** 생성·평가용 상용 API는 **OpenAI만** 사용 — 주모델 `gpt-5-mini`(전 시스템·전 baseline 동일 고정), `gpt-5.4-nano`는 LLM-judge(M3, 검증 게이트 통과 조건부)와 부록 모델 일반화 체크 한정. Anthropic·Gemini 등 다른 상용 API 연동 금지. 로컬 오픈소스 모델(NLI, 선택적 보조 judge)은 허용. 인간 평가는 전 과정에 없음 — 평가는 객관 지표 + LLM-judge 프로토콜(마스터플랜 M3)로만.
-- LLM 호출은 `llm.py` 단일 래퍼 경유. 호출마다 (tokens_in, tokens_out, latency_ms)를 반환하고 trace에 기록. 응답은 디스크 캐시(키: model + system + prompt + max_tokens + cache_nonce) — 재실행 비용 절감 및 결정성.
+- LLM 호출은 `llm.py` 단일 래퍼 경유. 호출마다 (tokens_in, tokens_out, latency_ms)를 반환하고 trace에 기록. 응답은 디스크 캐시(키: model + system + prompt + max_tokens + reasoning_effort + cache_nonce) — 재실행 비용 절감 및 결정성.
 - 컨트롤러는 전부 `controller/base.py`의 동일 인터페이스를 구현한다. **비교 공정성의 핵심이므로 baseline 전용 우회 경로 금지.**
 
 ## Trace 스키마 (동결 — 필드 추가만 허용, 변경·삭제 금지)

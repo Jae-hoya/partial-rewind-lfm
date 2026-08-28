@@ -15,9 +15,15 @@ class CountingTransport:
     def __init__(self) -> None:
         self.calls: list[dict] = []
 
-    def __call__(self, *, model, system, prompt, max_tokens):
+    def __call__(self, *, model, system, prompt, max_tokens, reasoning_effort=None):
         self.calls.append(
-            {"model": model, "system": system, "prompt": prompt, "max_tokens": max_tokens}
+            {
+                "model": model,
+                "system": system,
+                "prompt": prompt,
+                "max_tokens": max_tokens,
+                "reasoning_effort": reasoning_effort,
+            }
         )
         n = len(self.calls)
         return ("resp-" + str(n), 10 + n, 20 + n, "stop")
@@ -31,7 +37,8 @@ def make(cfg, transport):
 
 
 def test_cache_key_covers_all_five_components():
-    base = dict(model="m", system="s", prompt="p", max_tokens=100, cache_nonce="")
+    base = dict(model="m", system="s", prompt="p", max_tokens=100,
+                reasoning_effort="low", cache_nonce="")
     k0 = cache_key(**base)
     for field, other in [
         ("model", "m2"),
@@ -39,6 +46,7 @@ def test_cache_key_covers_all_five_components():
         ("prompt", "p2"),
         ("max_tokens", 101),
         ("cache_nonce", "r1"),
+        ("reasoning_effort", "high"),
     ]:
         assert cache_key(**{**base, field: other}) != k0, field
 
@@ -102,7 +110,7 @@ def test_cache_disabled_always_calls(tmp_config):
 
 def test_cache_file_is_utf8_json(tmp_config):
     class KoreanTransport:
-        def __call__(self, *, model, system, prompt, max_tokens):
+        def __call__(self, *, model, system, prompt, max_tokens, reasoning_effort=None):
             return ("한국어 응답", 1, 2, "stop")
 
     llm = make(tmp_config, KoreanTransport())
@@ -153,7 +161,7 @@ def test_usage_stats_separates_billed_from_cached(tmp_config):
 def test_non_retryable_error_raises_immediately(tmp_config):
     calls = []
 
-    def boom(*, model, system, prompt, max_tokens):
+    def boom(*, model, system, prompt, max_tokens, reasoning_effort=None):
         calls.append(1)
         raise ValueError("bad request")
 
@@ -169,7 +177,7 @@ def test_retryable_error_is_retried_then_raises(tmp_config, monkeypatch):
     class RateLimitError(Exception):
         pass
 
-    def flaky(*, model, system, prompt, max_tokens):
+    def flaky(*, model, system, prompt, max_tokens, reasoning_effort=None):
         calls.append(1)
         raise RateLimitError("429")
 
@@ -185,7 +193,7 @@ def test_retryable_error_recovers(tmp_config, monkeypatch):
     class APITimeoutError(Exception):
         pass
 
-    def flaky(*, model, system, prompt, max_tokens):
+    def flaky(*, model, system, prompt, max_tokens, reasoning_effort=None):
         state["n"] += 1
         if state["n"] == 1:
             raise APITimeoutError("timeout")
@@ -209,3 +217,50 @@ def test_llm_result_is_frozen():
     r = LLMResult(text="t", tokens_in=1, tokens_out=2, latency_ms=3)
     with pytest.raises(Exception):
         r.text = "x"  # type: ignore[misc]
+
+
+# --- reasoning_effort ---------------------------------------------------
+
+
+def test_reasoning_effort_is_passed_to_transport(tmp_config):
+    t = CountingTransport()
+    make(tmp_config, t).call("q", tag="unit")
+    assert t.calls[0]["reasoning_effort"] == tmp_config["llm.reasoning_effort"]
+
+
+def test_reasoning_effort_participates_in_the_cache_key(tmp_config):
+    """응답을 바꾸는 파라미터를 키에서 빼면 effort 를 낮춘 뒤에도 옛 응답이 나온다."""
+    from lfm.config import Config
+
+    t = CountingTransport()
+    low = tmp_config.as_dict()
+    low["llm"]["reasoning_effort"] = "low"
+    high = tmp_config.as_dict()
+    high["llm"]["reasoning_effort"] = "high"
+
+    r_low = LLM(Config(low), transport=t).call("q", tag="unit")
+    r_high = LLM(Config(high), transport=t).call("q", tag="unit")
+    assert len(t.calls) == 2, "effort 가 다르면 캐시 히트가 아니어야 한다"
+    assert r_low.text != r_high.text
+
+
+def test_null_reasoning_effort_is_omitted(tmp_config):
+    from lfm.config import Config
+
+    data = tmp_config.as_dict()
+    data["llm"]["reasoning_effort"] = None
+    t = CountingTransport()
+    LLM(Config(data), transport=t).call("q", tag="unit")
+    assert t.calls[0]["reasoning_effort"] is None
+
+
+def test_truncated_response_is_detectable(tmp_config):
+    """추론 모델은 reasoning 이 예산을 먹고 finish_reason='length' + 빈 본문을 낸다.
+    이걸 조용히 넘기면 coverage 0 인 빈 답안이 낭비율을 왜곡한다."""
+
+    def truncating(*, model, system, prompt, max_tokens, reasoning_effort=None):
+        return ("", 13, 16, "length")
+
+    res = make(tmp_config, truncating).call("q", tag="unit")
+    assert LLM.is_truncated(res) is True
+    assert res.text == ""

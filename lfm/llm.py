@@ -3,7 +3,8 @@
 모든 LLM 호출은 이 모듈을 경유한다. 호출마다 (tokens_in, tokens_out, latency_ms) 를
 반환하고 trace 에 기록한다.
 
-디스크 캐시 키 = sha256(canonical_json([model, system, prompt, max_tokens, cache_nonce]))
+디스크 캐시 키 = sha256(canonical_json(
+    [model, system, prompt, max_tokens, reasoning_effort, cache_nonce]))
 문자열 연결이 아니라 정규화 JSON 을 해시한다. 연결하면 ("ab","c") 와 ("a","bc") 가 충돌한다.
 
 cache_nonce 는 라운드 교란의 유일한 캐시 회피 수단이다 (SPEC 변경 #1).
@@ -49,23 +50,39 @@ class Transport(Protocol):
     """실제 API 호출부. 테스트·mock 은 이 자리에 함수를 끼워 넣는다."""
 
     def __call__(
-        self, *, model: str, system: str, prompt: str, max_tokens: int
+        self,
+        *,
+        model: str,
+        system: str,
+        prompt: str,
+        max_tokens: int,
+        reasoning_effort: str | None = None,
     ) -> tuple[str, int, int, str]:
         """returns (text, tokens_in, tokens_out, finish_reason)"""
 
 
-def _canonical(model: str, system: str, prompt: str, max_tokens: int, cache_nonce: str) -> str:
+def _canonical(
+    model: str, system: str, prompt: str, max_tokens: int, reasoning_effort: str, cache_nonce: str
+) -> str:
     return json.dumps(
-        [model, system, prompt, int(max_tokens), cache_nonce],
+        [model, system, prompt, int(max_tokens), reasoning_effort, cache_nonce],
         ensure_ascii=False,
         separators=(",", ":"),
     )
 
 
 def cache_key(
-    *, model: str, system: str, prompt: str, max_tokens: int, cache_nonce: str = ""
+    *,
+    model: str,
+    system: str,
+    prompt: str,
+    max_tokens: int,
+    reasoning_effort: str = "",
+    cache_nonce: str = "",
 ) -> str:
-    payload = _canonical(model, system, prompt, max_tokens, cache_nonce)
+    """reasoning_effort 도 키에 들어간다. 응답을 바꾸는 파라미터를 키에서 빼면
+    effort 를 조정한 뒤에도 예전 응답이 캐시에서 그대로 나온다."""
+    payload = _canonical(model, system, prompt, max_tokens, reasoning_effort, cache_nonce)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
@@ -121,6 +138,7 @@ class LLM:
         self.max_retries: int = int(cfg.get("llm.max_retries", 4))
         self.timeout_s: float = float(cfg.get("llm.timeout_s", 120))
         self.temperature = cfg.get("llm.temperature", None)
+        self.reasoning_effort = cfg.get("llm.reasoning_effort", None)
         self.max_tokens_param: str = cfg.get("llm.max_tokens_param", "auto")
         self.stats = UsageStats()
         self._transport = transport
@@ -129,6 +147,12 @@ class LLM:
             self.cache_dir.mkdir(parents=True, exist_ok=True)
 
     # --- 캐시 ---------------------------------------------------------
+    @staticmethod
+    def is_truncated(res: "LLMResult") -> bool:
+        """토큰 상한에 걸려 잘린 응답. 추론 모델은 reasoning 이 예산을 먹어
+        finish_reason='length' + 빈 본문이 나올 수 있다."""
+        return res.finish_reason == "length"
+
     def _cache_path(self, key: str) -> Path:
         return self.cache_dir / key[:2] / (key + ".json")
 
@@ -166,6 +190,7 @@ class LLM:
             system=system,
             prompt=prompt,
             max_tokens=mt,
+            reasoning_effort=self.reasoning_effort or "",
             cache_nonce=cache_nonce,
         )
 
@@ -223,7 +248,11 @@ class LLM:
         for attempt in range(self.max_retries):
             try:
                 return transport(
-                    model=self.model, system=system, prompt=prompt, max_tokens=max_tokens
+                    model=self.model,
+                    system=system,
+                    prompt=prompt,
+                    max_tokens=max_tokens,
+                    reasoning_effort=self.reasoning_effort,
                 )
             except Exception as exc:  # noqa: BLE001 — 재시도 후 LLMError 로 감싼다
                 if not self._retryable(exc):
@@ -265,7 +294,13 @@ class LLM:
         return self._client
 
     def _openai_transport(
-        self, *, model: str, system: str, prompt: str, max_tokens: int
+        self,
+        *,
+        model: str,
+        system: str,
+        prompt: str,
+        max_tokens: int,
+        reasoning_effort: str | None = None,
     ) -> tuple[str, int, int, str]:
         client = self._ensure_client()
         messages = ([{"role": "system", "content": system}] if system else []) + [
@@ -274,6 +309,8 @@ class LLM:
         kwargs: dict[str, Any] = {"model": model, "messages": messages}
         if self.temperature is not None:
             kwargs["temperature"] = self.temperature
+        if reasoning_effort:
+            kwargs["reasoning_effort"] = reasoning_effort
 
         # 신형 모델은 max_tokens 대신 max_completion_tokens 를 받는다. auto 면 한 번 되짚는다.
         order = {
