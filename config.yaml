@@ -1,0 +1,61 @@
+# LFM M1 — Test A 설정. 코드에 하드코딩 금지, 모든 파라미터는 여기서 주입한다.
+# SPEC_M1_TestA_v1.1.md §7 의 필수 키를 전부 포함한다.
+
+seed: 42
+
+paths:
+  data_dir: data
+  raw_dir: data/raw
+  index_dir: data/index
+  results_dir: results
+  cache_dir: .cache/llm
+
+data:
+  hf_dataset: wikimedia/structured-wikipedia
+  hf_config: enwiki_namespace_0   # 영어판 namespace 0. README configs 기준
+  hf_revision: 417c267bb457fa645c22eb3b5c77764963194c70   # 스냅샷 고정 (2026-05-19)
+  hf_file_glob: enwiki/data/enwiki_namespace_0_*.parquet
+  language: en
+  max_articles: 30000             # 변경 #5 (M2 에서 200000+ 로 상향)
+  row_groups_per_shard: 2         # 샤드당 range-read 할 row group 수 (층화 표집 폭)
+  min_abstract_chars: 200         # 이보다 짧은 abstract 는 스텁으로 보고 제외
+  min_chunks_per_topic: 20
+  n_topics: 50
+
+retrieval:
+  backend: bm25s                  # 변경 #5. {bm25s, rank_bm25}
+  top_k: 5
+  retry_k_multiplier: [1, 2, 3]   # 변경 #1. 라운드별 검색 폭 배수
+  max_chunks: 2000000
+  chunk_max_tokens: 1200          # 섹션이 이 값을 넘으면 문단 분할
+
+llm:
+  provider: openai                # 상용 API 는 OpenAI 만 (CLAUDE.md 모델 정책)
+  model: gpt-5-mini
+  max_tokens: 1500
+  temperature: null               # null 이면 요청에서 생략한다 (모델별 지원 차이 회피)
+  max_tokens_param: auto          # {auto, max_tokens, max_completion_tokens}
+  timeout_s: 120
+  max_retries: 4
+  cache_enabled: true
+
+nli:
+  model: cross-encoder/nli-deberta-v3-base
+  device: auto                    # {auto, cuda, cpu}. GPU 없으면 base 강제
+  batch_size: 16
+  tau_ground: 0.5
+
+verify:
+  tau_g_global: 0.80              # 변경 #2 — primary_tau 와 동일하게 고정
+  tau_c_global: 0.80
+
+sweep:
+  tau: [0.7, 0.8, 0.9]
+  primary_tau: 0.8
+  bootstrap_n: 1000
+
+max_rounds: 3
+
+retry_directives:                 # 변경 #1. 키는 라운드 번호(int)
+  1: "이전 시도는 근거가 부족했다. 다른 하위 질문 각도와 다른 출처를 우선하라."
+  2: "앞선 두 시도가 실패했다. 하위 질문을 더 구체적인 사실 단위로 쪼개고 인용을 늘려라."

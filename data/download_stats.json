@@ -1,0 +1,1307 @@
+{
+  "repo": "wikimedia/structured-wikipedia",
+  "revision": "417c267bb457fa645c22eb3b5c77764963194c70",
+  "config_name": "enwiki_namespace_0",
+  "language": "en",
+  "seed": 42,
+  "target_articles": 30000,
+  "written_articles": 30000,
+  "shortfall": 0,
+  "n_shards": 86,
+  "row_groups_per_shard": 2,
+  "min_abstract_chars": 200,
+  "elapsed_s": 673.1,
+  "output": "data\\corpus.parquet",
+  "shards": [
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_0.parquet",
+      "row_groups_total": 87,
+      "row_groups_read": [
+        42,
+        79
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2379,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Ancient Paths",
+      "name_last": "Allama (disambiguation)",
+      "seconds": 5.75
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_1.parquet",
+      "row_groups_total": 126,
+      "row_groups_read": [
+        9,
+        58
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2371,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Coonalpyn",
+      "name_last": "Gonny Reijnen",
+      "seconds": 4.04
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_2.parquet",
+      "row_groups_total": 126,
+      "row_groups_read": [
+        8,
+        87
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2383,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Deer Creek (Blanchard River tributary)",
+      "name_last": "Eastern Mennonite Seminary",
+      "seconds": 4.12
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_3.parquet",
+      "row_groups_total": 116,
+      "row_groups_read": [
+        88,
+        103
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2323,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "George Carlin: 40 Years of Comedy",
+      "name_last": "Scalectrix",
+      "seconds": 4.26
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_4.parquet",
+      "row_groups_total": 90,
+      "row_groups_read": [
+        1,
+        85
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2495,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Florin Daniel Pripici",
+      "name_last": "Second Cup",
+      "seconds": 4.36
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_5.parquet",
+      "row_groups_total": 82,
+      "row_groups_read": [
+        20,
+        54
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2571,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Gamō Katahide",
+      "name_last": "Cissy Grahame",
+      "seconds": 4.3
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_6.parquet",
+      "row_groups_total": 74,
+      "row_groups_read": [
+        47,
+        65
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2558,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Bowdoin Prizes",
+      "name_last": "Naya Nepal",
+      "seconds": 5.46
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_7.parquet",
+      "row_groups_total": 70,
+      "row_groups_read": [
+        0,
+        41
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2670,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Cotton Mills and Factories Act 1819",
+      "name_last": "Jonny Stewart",
+      "seconds": 6.87
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_8.parquet",
+      "row_groups_total": 67,
+      "row_groups_read": [
+        6,
+        47
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2518,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Swedish Brewery Industry Workers' Union",
+      "name_last": "Morion (helmet)",
+      "seconds": 6.43
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_9.parquet",
+      "row_groups_total": 65,
+      "row_groups_read": [
+        19,
+        31
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2608,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Lisa Ervin",
+      "name_last": "Campolungo-Villa Sant'Antonio",
+      "seconds": 6.61
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_10.parquet",
+      "row_groups_total": 59,
+      "row_groups_read": [
+        13,
+        19
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2594,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Saturnino Álvarez Bugallal",
+      "name_last": "Roswitha Krause",
+      "seconds": 7.01
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_11.parquet",
+      "row_groups_total": 57,
+      "row_groups_read": [
+        30,
+        48
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2705,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Jin (otter)",
+      "name_last": "Lake Mitchell",
+      "seconds": 7.0
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_12.parquet",
+      "row_groups_total": 54,
+      "row_groups_read": [
+        15,
+        38
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2808,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Rowing at the 2016 Summer Olympics – Qualification",
+      "name_last": "Maysville City Transit",
+      "seconds": 7.55
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_13.parquet",
+      "row_groups_total": 51,
+      "row_groups_read": [
+        2,
+        3
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2800,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Galena High School (Missouri)",
+      "name_last": "New Course",
+      "seconds": 5.97
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_14.parquet",
+      "row_groups_total": 49,
+      "row_groups_read": [
+        34,
+        37
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2901,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Malcolm Barrow",
+      "name_last": "Honey Hollow Watershed",
+      "seconds": 7.37
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_15.parquet",
+      "row_groups_total": 49,
+      "row_groups_read": [
+        12,
+        28
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2878,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "1957 Blackbushe Viking accident",
+      "name_last": "American Tour",
+      "seconds": 7.51
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_16.parquet",
+      "row_groups_total": 46,
+      "row_groups_read": [
+        7,
+        34
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2840,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Dutch Schirick",
+      "name_last": "Xiangyun (Auspicious clouds)",
+      "seconds": 7.56
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_17.parquet",
+      "row_groups_total": 46,
+      "row_groups_read": [
+        9,
+        39
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2833,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Barnsley fern",
+      "name_last": "Vancouver International Water Airport",
+      "seconds": 6.8
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_18.parquet",
+      "row_groups_total": 46,
+      "row_groups_read": [
+        19,
+        21
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2680,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Dossouye",
+      "name_last": "Thomas Mowbray, 1st Duke of Norfolk",
+      "seconds": 6.7
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_19.parquet",
+      "row_groups_total": 47,
+      "row_groups_read": [
+        5,
+        22
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2600,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Chestnut Street District",
+      "name_last": "Caper in the Castro",
+      "seconds": 6.85
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_20.parquet",
+      "row_groups_total": 67,
+      "row_groups_read": [
+        23,
+        48
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2349,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Roland Pryzbylewski",
+      "name_last": "Seanad Éireann (Irish Free State)",
+      "seconds": 5.26
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_21.parquet",
+      "row_groups_total": 97,
+      "row_groups_read": [
+        79,
+        93
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2447,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Trochetiopsis",
+      "name_last": "Chiyoda Station",
+      "seconds": 4.31
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_22.parquet",
+      "row_groups_total": 81,
+      "row_groups_read": [
+        11,
+        29
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2486,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Kankwadi",
+      "name_last": "IMA Awards",
+      "seconds": 4.22
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_23.parquet",
+      "row_groups_total": 71,
+      "row_groups_read": [
+        13,
+        70
+      ],
+      "rows_scanned": 3470,
+      "rows_eligible": 2276,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Qi Lili",
+      "name_last": "Seong-ja",
+      "seconds": 5.05
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_24.parquet",
+      "row_groups_total": 66,
+      "row_groups_read": [
+        18,
+        27
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2586,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Pŏp of Paekche",
+      "name_last": "Parties in the European Council during 2006",
+      "seconds": 6.3
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_25.parquet",
+      "row_groups_total": 64,
+      "row_groups_read": [
+        40,
+        45
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2619,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Destroyer (band)",
+      "name_last": "Craig Carothers",
+      "seconds": 6.49
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_26.parquet",
+      "row_groups_total": 60,
+      "row_groups_read": [
+        0,
+        10
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2732,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "2008 USL W-League season",
+      "name_last": "Ed Keating",
+      "seconds": 6.33
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_27.parquet",
+      "row_groups_total": 58,
+      "row_groups_read": [
+        28,
+        36
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2698,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Joshibi University of Art and Design",
+      "name_last": "Funky President (People It's Bad)",
+      "seconds": 6.47
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_28.parquet",
+      "row_groups_total": 58,
+      "row_groups_read": [
+        4,
+        52
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2786,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Lisa Middelhauve",
+      "name_last": "AKMSU",
+      "seconds": 6.89
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_29.parquet",
+      "row_groups_total": 52,
+      "row_groups_read": [
+        34,
+        35
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2869,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Lloyd Woodard",
+      "name_last": "Wheelchair tennis at the 2008 Summer Paralympics – Quad doubles",
+      "seconds": 5.45
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_30.parquet",
+      "row_groups_total": 49,
+      "row_groups_read": [
+        39,
+        46
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2903,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Qutubuddin Koka",
+      "name_last": "Sobibór Museum",
+      "seconds": 6.52
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_31.parquet",
+      "row_groups_total": 46,
+      "row_groups_read": [
+        9,
+        31
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2848,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Bill Bottrell",
+      "name_last": "Curling at the 2025 Asian Winter Games – Women's team",
+      "seconds": 6.56
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_32.parquet",
+      "row_groups_total": 48,
+      "row_groups_read": [
+        22,
+        26
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2950,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Blowout (geomorphology)",
+      "name_last": "Maria Krahe",
+      "seconds": 6.46
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_33.parquet",
+      "row_groups_total": 45,
+      "row_groups_read": [
+        9,
+        15
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2969,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Wyoming's 3rd House of Representatives district",
+      "name_last": "WSTF (FM)",
+      "seconds": 6.68
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_34.parquet",
+      "row_groups_total": 44,
+      "row_groups_read": [
+        6,
+        14
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2800,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Italo-Byzantine",
+      "name_last": "O'Hare Transfer station",
+      "seconds": 6.97
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_35.parquet",
+      "row_groups_total": 44,
+      "row_groups_read": [
+        0,
+        4
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2772,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Max Hegele",
+      "name_last": "1986–87 Atlanta Hawks season",
+      "seconds": 6.46
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_36.parquet",
+      "row_groups_total": 43,
+      "row_groups_read": [
+        11,
+        12
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2854,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "La Chiquita (Montecito, California)",
+      "name_last": "Nissa Sabyan",
+      "seconds": 6.43
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_37.parquet",
+      "row_groups_total": 43,
+      "row_groups_read": [
+        24,
+        42
+      ],
+      "rows_scanned": 2092,
+      "rows_eligible": 1355,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Kume affair",
+      "name_last": "Proposed Japanese invasion of Sichuan",
+      "seconds": 5.43
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_38.parquet",
+      "row_groups_total": 51,
+      "row_groups_read": [
+        25,
+        42
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2590,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Sir Alfred Newton, 1st Baronet",
+      "name_last": "Kwok Kin Poon",
+      "seconds": 6.54
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_39.parquet",
+      "row_groups_total": 58,
+      "row_groups_read": [
+        13,
+        46
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2647,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Garbage Museum",
+      "name_last": "Luis Núñez Ladevéze",
+      "seconds": 6.58
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_40.parquet",
+      "row_groups_total": 54,
+      "row_groups_read": [
+        7,
+        22
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2733,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Tysen-Otis Copeland",
+      "name_last": "Yuh Myung-woo",
+      "seconds": 6.73
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_41.parquet",
+      "row_groups_total": 47,
+      "row_groups_read": [
+        12,
+        42
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2880,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Duck Mountain Provincial Park (Saskatchewan)",
+      "name_last": "For Real (film)",
+      "seconds": 6.89
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_42.parquet",
+      "row_groups_total": 45,
+      "row_groups_read": [
+        0,
+        44
+      ],
+      "rows_scanned": 2747,
+      "rows_eligible": 1967,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Performances of The Vagina Monologues",
+      "name_last": "Kate Hill (New York)",
+      "seconds": 5.15
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_43.parquet",
+      "row_groups_total": 43,
+      "row_groups_read": [
+        18,
+        30
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2798,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Hillsdale Dales football, 1891–1899",
+      "name_last": "Nikolaev massacre",
+      "seconds": 7.35
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_44.parquet",
+      "row_groups_total": 41,
+      "row_groups_read": [
+        17,
+        33
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2827,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Alopecia in animals",
+      "name_last": "Roald Hoffmann",
+      "seconds": 8.61
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_45.parquet",
+      "row_groups_total": 40,
+      "row_groups_read": [
+        4,
+        33
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2605,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Margaret, Countess of Comminges",
+      "name_last": "Penn Line",
+      "seconds": 7.3
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_46.parquet",
+      "row_groups_total": 38,
+      "row_groups_read": [
+        26,
+        34
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2724,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "2022 NASCAR Xfinity Series Championship Race",
+      "name_last": "GLACIER (refrigerator)",
+      "seconds": 8.56
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_47.parquet",
+      "row_groups_total": 39,
+      "row_groups_read": [
+        32,
+        34
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2650,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Chunni Lal Sahu",
+      "name_last": "The Very Best of Grateful Dead",
+      "seconds": 8.88
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_48.parquet",
+      "row_groups_total": 38,
+      "row_groups_read": [
+        3,
+        26
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2651,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Len Jessup",
+      "name_last": "Cannonsburg, Kentucky",
+      "seconds": 7.85
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_49.parquet",
+      "row_groups_total": 38,
+      "row_groups_read": [
+        19,
+        35
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2777,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Title of show",
+      "name_last": "Mike Tyson vs. Roy Jones Jr.",
+      "seconds": 8.62
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_50.parquet",
+      "row_groups_total": 36,
+      "row_groups_read": [
+        12,
+        15
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2851,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Parnell, Missouri",
+      "name_last": "Kulturzentrum Schlachthof (Wiesbaden)",
+      "seconds": 8.67
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_51.parquet",
+      "row_groups_total": 35,
+      "row_groups_read": [
+        15,
+        17
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2871,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "BKB Bare Knuckle Boxing",
+      "name_last": "Visa requirements for Kuwaiti citizens",
+      "seconds": 8.83
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_52.parquet",
+      "row_groups_total": 35,
+      "row_groups_read": [
+        18,
+        31
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2927,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Nebo-M",
+      "name_last": "Hans-Wilhelm Ebeling",
+      "seconds": 8.59
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_53.parquet",
+      "row_groups_total": 35,
+      "row_groups_read": [
+        21,
+        31
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2955,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Wild Strawberries (film)",
+      "name_last": "Divergent (film)",
+      "seconds": 8.15
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_54.parquet",
+      "row_groups_total": 34,
+      "row_groups_read": [
+        6,
+        28
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2998,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Don Cooper",
+      "name_last": "Dieter Koulmann",
+      "seconds": 8.47
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_55.parquet",
+      "row_groups_total": 31,
+      "row_groups_read": [
+        0,
+        14
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2918,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Zac Nearchou",
+      "name_last": "Havelock North",
+      "seconds": 8.75
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_56.parquet",
+      "row_groups_total": 31,
+      "row_groups_read": [
+        5,
+        16
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2878,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "White swamphen",
+      "name_last": "Sophia Brown (actress)",
+      "seconds": 8.91
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_57.parquet",
+      "row_groups_total": 30,
+      "row_groups_read": [
+        20,
+        26
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2916,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Vanguard Public Foundation",
+      "name_last": "Lake Village, Arkansas",
+      "seconds": 9.12
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_58.parquet",
+      "row_groups_total": 28,
+      "row_groups_read": [
+        7,
+        26
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2972,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Lloyd Nelson Hand",
+      "name_last": "Florin Cîțu",
+      "seconds": 8.4
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_59.parquet",
+      "row_groups_total": 28,
+      "row_groups_read": [
+        14,
+        21
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2842,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Rattlesnake James",
+      "name_last": "Trevor Letowski",
+      "seconds": 8.96
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_60.parquet",
+      "row_groups_total": 28,
+      "row_groups_read": [
+        0,
+        10
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2847,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "20th Politburo of the Chinese Communist Party",
+      "name_last": "2025–26 Botola Pro",
+      "seconds": 8.83
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_61.parquet",
+      "row_groups_total": 27,
+      "row_groups_read": [
+        14,
+        21
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2907,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Nettspend discography",
+      "name_last": "Philip Bent",
+      "seconds": 9.02
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_62.parquet",
+      "row_groups_total": 26,
+      "row_groups_read": [
+        13,
+        23
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2916,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Al Cowlings",
+      "name_last": "Formatted text",
+      "seconds": 9.09
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_63.parquet",
+      "row_groups_total": 24,
+      "row_groups_read": [
+        7,
+        21
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2940,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Eunice Wanjiku Kamaara",
+      "name_last": "John Alden Carpenter",
+      "seconds": 9.38
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_64.parquet",
+      "row_groups_total": 24,
+      "row_groups_read": [
+        12,
+        14
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2958,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Zabłocie, Bartoszyce County",
+      "name_last": "Voltigeur (horse)",
+      "seconds": 9.21
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_65.parquet",
+      "row_groups_total": 22,
+      "row_groups_read": [
+        1,
+        20
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3006,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Walter Gericke",
+      "name_last": "Matthew Owies",
+      "seconds": 10.53
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_66.parquet",
+      "row_groups_total": 21,
+      "row_groups_read": [
+        3,
+        7
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3065,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Marek Ujlaky (footballer, born 1974)",
+      "name_last": "William Melmoth",
+      "seconds": 10.2
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_67.parquet",
+      "row_groups_total": 20,
+      "row_groups_read": [
+        4,
+        7
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3090,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Michael Angerschmid",
+      "name_last": "Sri Lankan cricket team in England in 2006",
+      "seconds": 10.15
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_68.parquet",
+      "row_groups_total": 19,
+      "row_groups_read": [
+        3,
+        5
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3172,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Call of Duty: Mobile",
+      "name_last": "2021 FIVB Men's Volleyball Nations League",
+      "seconds": 10.69
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_69.parquet",
+      "row_groups_total": 18,
+      "row_groups_read": [
+        0,
+        12
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 2989,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Stockbroker",
+      "name_last": "Refaat El-Sayed",
+      "seconds": 11.12
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_70.parquet",
+      "row_groups_total": 17,
+      "row_groups_read": [
+        7,
+        15
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3167,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Misery literature",
+      "name_last": "D mol",
+      "seconds": 11.38
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_71.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        12,
+        13
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3209,
+      "quota": 349,
+      "rows_taken": 349,
+      "name_first": "Kastelli Giant's Church",
+      "name_last": "War of aggression",
+      "seconds": 10.08
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_72.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        6,
+        9
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3200,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Huntingdonshire District Council",
+      "name_last": "Philippe Henriot",
+      "seconds": 11.47
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_73.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        9,
+        14
+      ],
+      "rows_scanned": 3151,
+      "rows_eligible": 2499,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Thamma",
+      "name_last": "Detention and deportation of Uyghurs by Thailand",
+      "seconds": 9.85
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_74.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        4,
+        5
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3228,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Bandar (film)",
+      "name_last": "Brexit withdrawal agreement",
+      "seconds": 10.26
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_75.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        1,
+        10
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3367,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Roll-A-Palace",
+      "name_last": "Zac Gallen",
+      "seconds": 11.59
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_76.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        0,
+        10
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3235,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Ramon Bautista",
+      "name_last": "UFC rankings",
+      "seconds": 11.24
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_77.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        3,
+        10
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3316,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "R. D. Shekar",
+      "name_last": "Learn to Earn",
+      "seconds": 11.81
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_78.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        10,
+        11
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3098,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Télétoon Rétro",
+      "name_last": "Economy of the United Kingdom",
+      "seconds": 10.17
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_79.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        2,
+        14
+      ],
+      "rows_scanned": 2918,
+      "rows_eligible": 2349,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Parramatta Park, New South Wales",
+      "name_last": "Margaret Brown",
+      "seconds": 9.02
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_80.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        13,
+        14
+      ],
+      "rows_scanned": 3436,
+      "rows_eligible": 2661,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Ali Reza Pahlavi (born 1966)",
+      "name_last": "Eutheria",
+      "seconds": 9.66
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_81.parquet",
+      "row_groups_total": 14,
+      "row_groups_read": [
+        9,
+        12
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3328,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "KWAK (AM)",
+      "name_last": "Kothapally, Nizamabad district",
+      "seconds": 11.97
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_82.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        6,
+        8
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3349,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "John Tate (mathematician)",
+      "name_last": "Yuri Fedotov",
+      "seconds": 11.47
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_83.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        5,
+        8
+      ],
+      "rows_scanned": 4096,
+      "rows_eligible": 3214,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "James de Lostock",
+      "name_last": "Timelash (UFO)",
+      "seconds": 11.26
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_84.parquet",
+      "row_groups_total": 15,
+      "row_groups_read": [
+        6,
+        14
+      ],
+      "rows_scanned": 3184,
+      "rows_eligible": 2452,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Ashford, Surrey",
+      "name_last": "Russell Norman",
+      "seconds": 9.48
+    },
+    {
+      "shard": "enwiki/data/enwiki_namespace_0_85.parquet",
+      "row_groups_total": 3,
+      "row_groups_read": [
+        1,
+        2
+      ],
+      "rows_scanned": 2556,
+      "rows_eligible": 1943,
+      "quota": 348,
+      "rows_taken": 348,
+      "name_first": "Gravimetric analysis",
+      "name_last": "Finland in the Eurovision Song Contest 1978",
+      "seconds": 7.43
+    }
+  ]
+}
