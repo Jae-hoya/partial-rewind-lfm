@@ -24,10 +24,24 @@
 
 | 단계 | 범위 | 상태 |
 |---|---|---|
-| P0 | 스켈레톤 · config · llm.py · trace.py · trace_validate.py · pytest | ✅ 완료 |
-| P1 | download.py · schema_check.py → `data/MANIFEST.json` | 대기 |
-| P2 | topics.py 후보 생성 → **사람 승인** | 대기 |
-| P3 | heldout · chunk_index · perspectives/branch/evidence/verifier · mock 스모크 | 대기 |
-| P4 | 50토픽 실행 · 낭비율 리포트 | 대기 |
+| P0 | 스켈레톤 · config · llm.py · trace.py · trace_validate.py · pytest | ✅ |
+| P1 | download.py · schema_check.py → `data/MANIFEST.json` | ✅ (150k 로 재실행) |
+| P2 | topics.py 후보 60 → approve_topics.py 승인 50 | ✅ |
+| P3 | heldout · chunk_index(685,683 청크) · 모듈 · mock 스모크 | ✅ |
+| P4 | 50토픽 실행 · 낭비율 리포트 | 진행 |
 
-각 단계는 완료 조건을 만족하면 중단·보고한다. 이어서 다음 단계로 넘어가지 않는다.
+## 문서 지도
+
+| 파일 | 내용 |
+|---|---|
+| `P1_REPORT.md` | 코퍼스·스키마 게이트. referencerisk 샤드 간 이질성 |
+| `P2_P3_REPORT.md` | 토픽 선별 2회, 승인 게이트, 파일럿 3회 — 측정 결함 2건 |
+| `MODEL_NOTES.md` | 모델 검증, reasoning 토큰, 키 사용 개시일·비용 귀속 |
+| `VALIDITY.md` | Threats to Validity 재료 |
+| `REPRODUCE.md` | 재현 절차 · 스냅샷 고정값 · 산출물 지도 |
+
+## 실험 결과가 나쁘게 나오면
+
+그게 결과다. 마스터플랜 §9 는 낭비율 <20% 를 연구 질문 교체 신호로 규정한다.
+숫자를 밀어 올리는 방향으로 파라미터를 만지지 않는다. 측정 결함(들여다본 근거가
+있는 것)만 고친다.

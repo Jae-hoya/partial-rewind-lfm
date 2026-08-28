@@ -1,0 +1,9 @@
+토픽 50개 · 모델 gpt-5-mini · NLI cross-encoder/nli-deberta-v3-base
+산출 -> results\test_a\20260829-041445
+[  1/ 50] t000   rounds=3 passed=False  37.6s  How did a long‑running American web novel and illust
+[  2/ 50] t001   rounds=3 passed=False  14.1s  How has the national men's football side from Bosnia
+[  3/ 50] t002   rounds=3 passed=False  7.9s  How has the Lae‑based Papua New Guinea football club
+[  4/ 50] t003   rounds=3 passed=False  4.2s  How has the Chinese world‑ranked table tennis champi
+[  5/ 50] t004   rounds=3 passed=False  18.8s  How did the Montreal‑based forest products firm grow
+[  6/ 50] t005   rounds=3 passed=False  108.6s  How did Lithuania’s multiweek national selection pro
+[  7/ 50] t006   rounds=3 passed=False  55.9s  How did Maryland’s 2008 presidential vote reflect st
