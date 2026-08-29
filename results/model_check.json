@@ -50,5 +50,23 @@
     "latency_ms": 2990,
     "finish_reason": "stop",
     "response_preview": "ok"
+  },
+  {
+    "checked_at": "2026-08-29T11:22:59+0900",
+    "purpose": "인수인계 전 최종 검증",
+    "model": "gpt-5-mini",
+    "provider": "openai",
+    "api_key": {
+      "present": true,
+      "length": 56,
+      "sha256_12": "0eb866a6fbe3"
+    },
+    "ok": true,
+    "truncated": false,
+    "tokens_in": 13,
+    "tokens_out": 10,
+    "latency_ms": 4543,
+    "finish_reason": "stop",
+    "response_preview": "ok"
   }
 ]
