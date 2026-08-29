@@ -1,0 +1,21 @@
+{
+  "intersection_rate": 0.0,
+  "cov1_grounding_median": 0.0,
+  "cov1_rate": 0.2833333333333333,
+  "empty_rate": 0.35,
+  "grounding_gt08_rate": 0.05,
+  "grounded_count_zero_rate": 0.65,
+  "grounded_count_median": 0.0,
+  "coverage_mean": 0.4741666666666667,
+  "grounding_mean": 0.18806576666666666,
+  "sentences_median": 4.0,
+  "condition": "C1_baseline",
+  "top_k": 5,
+  "index_dir": "data/index",
+  "n_branches": 60,
+  "elapsed_s": 83.1,
+  "llm_calls": 114,
+  "cache_hits": 114,
+  "billed_tokens_in": 0,
+  "billed_tokens_out": 0
+}

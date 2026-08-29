@@ -148,3 +148,48 @@ def test_malformed_sections_json_does_not_crash(tmp_path, real_config):
     pq.write_table(tbl, p)
     chunks, stats = ci.build_chunks(p, set(), real_config)
     assert chunks == [] and stats["n_documents_indexed"] == 1
+
+
+# --- SPEC M1-D C3: 부분 held-out ------------------------------------------
+
+
+def heldout_corpus(tmp_path):
+    rows = [(1, "Target", [section("Abstract", "lead text"),
+                           section("History", "body one"),
+                           section("Impact", "body two")]),
+            (2, "Other", [section("Abstract", "other lead")])]
+    return corpus_file(tmp_path, rows)
+
+
+def test_full_mode_removes_the_whole_target(tmp_path, real_config):
+    chunks, stats = ci.build_chunks(heldout_corpus(tmp_path), {1}, real_config, mode="full")
+    assert {c["doc_id"] for c in chunks} == {2}
+    assert stats["n_documents_heldout_skipped"] == 1
+    assert stats["heldout_mode"] == "full"
+
+
+def test_partial_mode_keeps_body_but_drops_lead(tmp_path, real_config):
+    """C3: abstract/lead(section_idx=0) 만 빼고 본문은 남긴다."""
+    chunks, stats = ci.build_chunks(heldout_corpus(tmp_path), {1}, real_config, mode="partial")
+    target = [c for c in chunks if c["doc_id"] == 1]
+    paths = {c["section_path"] for c in target}
+    assert paths == {"History", "Impact"}, paths
+    assert "Abstract" not in paths, "lead 는 남으면 안 된다"
+    assert stats["n_heldout_lead_sections_skipped"] == 1
+    assert stats["n_documents_heldout_skipped"] == 0
+
+
+def test_partial_mode_does_not_touch_non_heldout_docs(tmp_path, real_config):
+    chunks, _ = ci.build_chunks(heldout_corpus(tmp_path), {1}, real_config, mode="partial")
+    other = [c for c in chunks if c["doc_id"] == 2]
+    assert len(other) == 1 and other[0]["section_path"] == "Abstract"
+
+
+def test_partial_mode_chunk_ids_stay_stable(tmp_path, real_config):
+    """섹션을 건너뛰어도 남은 청크의 id 는 원래 section_idx 를 유지해야 한다 —
+    캐시된 답안이 인용한 id 와 어긋나면 grounding 이 엉뚱한 본문에 붙는다."""
+    full, _ = ci.build_chunks(heldout_corpus(tmp_path), set(), real_config, mode="full")
+    part, _ = ci.build_chunks(heldout_corpus(tmp_path), {1}, real_config, mode="partial")
+    full_ids = {c["chunk_id"] for c in full if c["doc_id"] == 1 and c["section_path"] != "Abstract"}
+    part_ids = {c["chunk_id"] for c in part if c["doc_id"] == 1}
+    assert full_ids == part_ids

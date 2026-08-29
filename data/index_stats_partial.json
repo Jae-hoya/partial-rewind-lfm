@@ -1,0 +1,20 @@
+{
+  "n_documents_indexed": 142972,
+  "n_documents_heldout_skipped": 0,
+  "n_rows_duplicate_skipped": 7028,
+  "n_heldout_lead_sections_skipped": 50,
+  "heldout_mode": "partial",
+  "n_chunks": 686221,
+  "total_tokens": 146964414,
+  "mean_chunk_tokens": 214.16,
+  "tokenizer": "o200k_base",
+  "chunk_max_tokens": 1200,
+  "chunking_seconds": 417.6,
+  "indexing_seconds": 142.3,
+  "index_bytes": 1305093960,
+  "index_dir": "data\\index_partial",
+  "backend": "bm25s",
+  "coverage_per_topic": {},
+  "topics_below_min": [],
+  "min_chunks_per_topic": 20
+}

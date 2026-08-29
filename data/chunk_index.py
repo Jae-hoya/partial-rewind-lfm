@@ -91,7 +91,15 @@ def split_by_tokens(text: str, enc, max_tokens: int) -> list[str]:
     return out
 
 
-def build_chunks(corpus: Path, heldout: set[int], cfg) -> tuple[list[dict[str, Any]], dict]:
+def build_chunks(corpus: Path, heldout: set[int], cfg, *, mode: str = "full") -> tuple[list[dict[str, Any]], dict]:
+    """mode="full": held-out 문서를 통째로 제외 (본실험).
+    mode="partial": held-out 문서의 abstract/lead 섹션(section_idx=0)만 제외하고
+    본문 섹션은 남긴다 (SPEC M1-D v1.1 C3).
+
+    **partial 은 leakage 를 의도적으로 완화하는 진단 조건이다.** 토픽 질의가 target
+    article 에서 파생됐으므로 본문이 질의에 거의 그대로 답할 수 있다. 진단 정보로만
+    쓰고 본실험 설정으로 승격하지 않는다.
+    """
     import pyarrow.parquet as pq
     import tiktoken
 
@@ -100,7 +108,7 @@ def build_chunks(corpus: Path, heldout: set[int], cfg) -> tuple[list[dict[str, A
     max_chunks = int(cfg.get("retrieval.max_chunks", 4000000))
 
     chunks: list[dict[str, Any]] = []
-    n_docs = n_skipped = n_duplicate = 0
+    n_docs = n_skipped = n_duplicate = n_lead_skipped = 0
     total_tokens = 0
     seen_docs: set[int] = set()
     pf = pq.ParquetFile(corpus)
@@ -110,7 +118,8 @@ def build_chunks(corpus: Path, heldout: set[int], cfg) -> tuple[list[dict[str, A
     ):
         for row in batch.to_pylist():
             doc_id = int(row["identifier"])
-            if doc_id in heldout:
+            is_heldout = doc_id in heldout
+            if is_heldout and mode == "full":
                 n_skipped += 1
                 continue
             if doc_id in seen_docs:
@@ -125,6 +134,9 @@ def build_chunks(corpus: Path, heldout: set[int], cfg) -> tuple[list[dict[str, A
             except (json.JSONDecodeError, TypeError):
                 sections = []
             for sec_idx, (section_path, text) in enumerate(walk_sections(sections)):
+                if is_heldout and sec_idx == 0:
+                    n_lead_skipped += 1
+                    continue  # partial: abstract/lead 만 제외
                 for part_idx, piece in enumerate(split_by_tokens(text, enc, max_tokens)):
                     ntok = len(enc.encode(piece))
                     total_tokens += ntok
@@ -149,6 +161,8 @@ def build_chunks(corpus: Path, heldout: set[int], cfg) -> tuple[list[dict[str, A
         "n_documents_indexed": n_docs,
         "n_documents_heldout_skipped": n_skipped,
         "n_rows_duplicate_skipped": n_duplicate,
+        "n_heldout_lead_sections_skipped": n_lead_skipped,
+        "heldout_mode": mode,
         "n_chunks": len(chunks),
         "total_tokens": total_tokens,
         "mean_chunk_tokens": round(total_tokens / len(chunks), 2) if chunks else 0.0,
@@ -162,12 +176,17 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="섹션 청킹 + BM25 인덱스 (SPEC §2.6)")
     ap.add_argument("--config", default=None)
     ap.add_argument("--skip-coverage", action="store_true", help="커버리지 검증 생략(디버그용)")
+    ap.add_argument("--mode", default=None, choices=["full", "partial"],
+                    help="held-out 제외 범위. 기본은 config 의 heldout.mode")
+    ap.add_argument("--index-dir", default=None, help="기본은 config 의 paths.index_dir")
+    ap.add_argument("--stats-out", default=None)
     args = ap.parse_args(argv)
 
     repo_root = Path(__file__).resolve().parents[1]
     cfg = load_config(args.config or (repo_root / "config.yaml"))
     data_dir = Path(cfg["paths.data_dir"])
-    index_dir = Path(cfg["paths.index_dir"])
+    index_dir = Path(args.index_dir or cfg["paths.index_dir"])
+    mode = args.mode or cfg.get("heldout.mode", "full")
     corpus = data_dir / "corpus.parquet"
     heldout_path = data_dir / "heldout_ids.json"
 
@@ -183,7 +202,8 @@ def main(argv: list[str] | None = None) -> int:
     print("held-out 문서 %d건 제외" % len(heldout))
 
     t0 = time.time()
-    chunks, stats = build_chunks(corpus, heldout, cfg)
+    print("held-out 제외 범위: %s" % mode)
+    chunks, stats = build_chunks(corpus, heldout, cfg, mode=mode)
     t_chunk = time.time() - t0
     print("청킹 완료: 문서 %d, 청크 %d, 평균 %.1f 토큰, %.1fs"
           % (stats["n_documents_indexed"], stats["n_chunks"],
@@ -238,12 +258,13 @@ def main(argv: list[str] | None = None) -> int:
             "min_chunks_per_topic": cfg["data.min_chunks_per_topic"],
         }
     )
-    with io.open(data_dir / "index_stats.json", "w", encoding="utf-8") as fh:
+    stats_path = Path(args.stats_out) if args.stats_out else (data_dir / "index_stats.json")
+    with io.open(stats_path, "w", encoding="utf-8") as fh:
         json.dump(stats, fh, ensure_ascii=False, indent=2)
 
     print("인덱스 빌드 %.1fs, 크기 %.1f MB -> %s"
           % (t_index, index_bytes / 1e6, index_dir))
-    print("통계 -> " + str(data_dir / "index_stats.json"))
+    print("통계 -> " + str(stats_path))
     if below:
         print()
         print("FAIL — 관련 청크가 min_chunks_per_topic(%d) 미만인 토픽 %d개: %s"

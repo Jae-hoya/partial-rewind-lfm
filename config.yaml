@@ -7,6 +7,7 @@ paths:
   data_dir: data
   raw_dir: data/raw
   index_dir: data/index
+  index_dir_partial: data/index_partial   # SPEC M1-D C3 진단 전용
   results_dir: results
   cache_dir: .cache/llm
 
@@ -39,6 +40,11 @@ topics:                           # SPEC §2.3 교차 도메인 후보 선별 �
   n_candidates: 60                # 50개 승인 + 예비
   min_term_len: 4
   batch_size: 10                  # 문구 생성 배치당 후보 수
+
+heldout:
+  mode: full                      # {full, partial}. partial 은 SPEC M1-D C3 진단 전용 —
+                                  # target article 의 abstract/lead 섹션만 빼고 본문은 남긴다.
+                                  # leakage 를 완화하는 조건이므로 본실험에 쓰지 않는다.
 
 retrieval:
   backend: bm25s                  # 변경 #5. {bm25s, rank_bm25}
