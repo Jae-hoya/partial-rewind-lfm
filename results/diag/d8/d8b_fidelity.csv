@@ -1,0 +1,31 @@
+branch_id,topic,branch,n_sentences,n_claims,label,reason
+t007:impact_application,t007,impact_application,9,8,complete,The claims cover all stated facts from the original sentence without adding or omitting any elements.
+t007:controversy_limitation,t007,controversy_limitation,9,9,complete,The claims collectively state all factual elements of the original sentence without adding or omitting details.
+t008:impact_application,t008,impact_application,8,11,unparsed,
+t014:overview_factual,t014,overview_factual,1,5,complete,"The claims reproduce all stated facts, including title, author, publication date, serialization venue, magazine type, publisher, and date range."
+t014:impact_application,t014,impact_application,7,14,complete,The claims include all factual elements from the sentence without adding new ones.
+t022:overview_factual,t022,overview_factual,15,16,omission,The claims omit that the RVV-AE-PD variant is described as an improved-range variant.
+t028:technical_mechanism,t028,technical_mechanism,10,20,complete,The claims collectively state all factual elements of the original sentence without adding new facts.
+t028:impact_application,t028,impact_application,4,5,complete,The claims capture all factual elements of each sentence without adding or omitting details.
+t028:controversy_limitation,t028,controversy_limitation,5,10,complete,All factual elements of the sentence are represented in the claim set with no added or omitted claims.
+t031:overview_factual,t031,overview_factual,1,20,omission,"The claims omit that the promotion operated the “Takeshiba Coliseum” dojo and the 2020 plan to hold an April 13, 2021 show at Ryōgoku Kokugikan with annual goal."
+t031:technical_mechanism,t031,technical_mechanism,5,10,complete,The claims together capture all factual elements of the original five sentences without adding or omitting details.
+t031:impact_application,t031,impact_application,1,9,complete,"The claims include all stated agreements, dojo details, GPWA membership purpose, and planned super shows without adding or omitting factual elements."
+t033:overview_factual,t033,overview_factual,7,12,complete,The claims collectively state all factual elements of the original sentence without adding or omitting any.
+t033:technical_mechanism,t033,technical_mechanism,11,19,complete,The claims collectively include all factual details stated in the original sentence without adding new facts.
+t033:impact_application,t033,impact_application,1,2,complete,The claims restate the sentence’s key facts: England provides the most venues and there are 27 grounds hosting women’s WT20I matches.
+t033:controversy_limitation,t033,controversy_limitation,1,3,complete,The claims capture all factual elements: representing both England and Wales and being part of the ECB.
+t037:overview_factual,t037,overview_factual,1,13,complete,"The claims include all factual details from the original sentence, including dates, location, governing body, disciplines, and event combinations/renaming."
+t037:technical_mechanism,t037,technical_mechanism,10,15,complete,The claims cover all factual elements of the original sentence without adding or omitting information.
+t037:impact_application,t037,impact_application,4,4,complete,The four claims restate all factual elements of the original sentence set without adding or omitting anything.
+t037:controversy_limitation,t037,controversy_limitation,4,7,complete,Every factual element of the original sentence is represented in the claims with no extra assertions.
+t038:impact_application,t038,impact_application,3,4,complete,The claims collectively restate all factual elements of the original sentence without adding or omitting details.
+t038:controversy_limitation,t038,controversy_limitation,1,5,complete,The claims reproduce all factual details of the sentence without adding or omitting any elements.
+t039:technical_mechanism,t039,technical_mechanism,3,8,complete,The claims cover all factual elements of the sentence without adding or omitting details.
+t040:overview_factual,t040,overview_factual,1,7,complete,"The claims collectively include all factual details from the sentence, with no missing elements or extra assertions."
+t040:controversy_limitation,t040,controversy_limitation,2,3,complete,"The claims include all factual elements about the 1985 status change, its temporal relation to geographic expansion, and the 1986 start in Massachusetts."
+t048:overview_factual,t048,overview_factual,10,16,unparsed,
+t048:technical_mechanism,t048,technical_mechanism,11,12,complete,The claims together include every factual element of the original sentence without adding or omitting anything.
+t049:technical_mechanism,t049,technical_mechanism,9,15,complete,The claims collectively restate all factual elements of the original sentence without adding or omitting details.
+t050:technical_mechanism,t050,technical_mechanism,14,22,complete,Every factual element from the original sentence is represented in the claim set without adding new facts.
+t050:impact_application,t050,impact_application,1,16,complete,Each atomic claim matches a factual element from the original sentence with no added or omitted facts.
