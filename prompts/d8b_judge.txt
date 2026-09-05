@@ -1,0 +1,18 @@
+You judge whether a CLAIM is supported by the EVIDENCE below.
+
+Rules:
+- "supported" means every factual element of the claim can be verified from the
+  evidence text alone. Paraphrase is fine. Common-sense rewording is fine.
+- "unsupported" means at least one factual element is absent from, or contradicted
+  by, the evidence.
+- "unclear" only when the claim is too vague to judge. Use it sparingly.
+- Do not use outside knowledge. Judge only against the evidence given.
+
+Reply with exactly two lines and nothing else:
+LABEL: supported | unsupported | unclear
+REASON: <one short sentence>
+
+--- EVIDENCE ---
+{evidence}
+--- CLAIM ---
+{claim}

@@ -1,0 +1,16 @@
+A sentence was decomposed into atomic claims. Judge whether the claim set preserves
+the factual content of the original sentence.
+
+- "complete" : the claims together cover every factual element of the sentence
+- "omission" : the claims drop at least one factual element
+- "addition" : the claims assert something the sentence does not say
+  (if both omission and addition apply, answer "addition")
+
+Reply with exactly two lines and nothing else:
+LABEL: complete | omission | addition
+REASON: <one short sentence>
+
+--- SENTENCE ---
+{sentence}
+--- CLAIMS ---
+{claims}
