@@ -45,6 +45,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--config", default=None)
     ap.add_argument("--n-topics", type=int, default=15)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--premise-pool", default="cited", choices=["cited", "retrieved"],
+                    help="cited: 인용된 청크만 전제 (현행 grounding 정의). "
+                         "retrieved: 검색된 전 청크를 전제 후보로 — 귀속 오류 가설 판별")
     args = ap.parse_args(argv)
 
     repo_root = Path(__file__).resolve().parents[1]
@@ -75,20 +78,28 @@ def main(argv: list[str] | None = None) -> int:
         for p in decompose(t["topic"], llm, ccfg):
             o = run_branch(p, retriever, llm, ccfg, round_=0, search_anchor=anchor)
             cmap = o.chunk_map()
+            all_chunks = [c.text for c in o.chunks]
             for sa in o.sub_answers:
-                cited = [c for c in sa.citations if c in cmap]
-                if not cited:
+                cited_ids = [c for c in sa.citations if c in cmap]
+                if not cited_ids:
                     continue
+                cited_texts = [cmap[c].text for c in cited_ids]
+                pool = all_chunks if args.premise_pool == "retrieved" else cited_texts
                 for sent in split_sentences(sa.text):
-                    best = max(nli.entailment([(cmap[c].text, sent)]) [0] for c in cited)
+                    best_cited = max(nli.entailment([(x, sent)])[0] for x in cited_texts)
+                    best = (max(nli.entailment([(x, sent)])[0] for x in pool)
+                            if args.premise_pool == "retrieved" else best_cited)
                     scores.append(best)
                     rows.append({"query_id": t["id"], "branch": p.role,
                                  "max_entailment": round(best, 6),
-                                 "n_cited_chunks": len(cited),
+                                 "max_entailment_cited_only": round(best_cited, 6),
+                                 "n_cited_chunks": len(cited_ids),
+                                 "n_retrieved_chunks": len(all_chunks),
                                  "sentence_chars": len(sent)})
         print("  [%2d/%2d] %s" % (n + 1, len(picked), t["id"]), flush=True)
 
-    out = Path(args.out or ("results/diag/entail_profile_%s.csv" % args.condition))
+    suffix = "" if args.premise_pool == "cited" else "_pool-retrieved"
+    out = Path(args.out or ("results/diag/entail_profile_%s%s.csv" % (args.condition, suffix)))
     out.parent.mkdir(parents=True, exist_ok=True)
     with io.open(out, "w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
@@ -97,7 +108,8 @@ def main(argv: list[str] | None = None) -> int:
 
     s = sorted(scores)
     print()
-    print("조건 %s · 인용 있는 문장 %d개" % (args.condition, len(s)))
+    print("조건 %s · 전제 풀 %s · 인용 있는 문장 %d개"
+          % (args.condition, args.premise_pool, len(s)))
     print("  중앙값 %.3f · 평균 %.3f · p75 %.3f · p90 %.3f · 최대 %.3f"
           % (st.median(s), st.mean(s), s[int(.75 * len(s))], s[int(.90 * len(s))], s[-1]))
     print()
