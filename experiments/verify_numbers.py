@@ -128,7 +128,7 @@ print("=" * 78)
 g = rd("results/diag/d7/pool_unit_grid.csv")
 sp = rd("results/diag/d7/pool_unit_grid_sentprem.csv")
 for lbl, src, unit, col, w in [
-        ("문장가설×청크전제 (현행)", g, "sentence", "p_cited", 15.7),
+        ("문장가설×청크전제 (현행)", g, "sentence", "p_cited", 15.6),
         ("문장가설×retrieved", g, "sentence", "p_retrieved", 17.3),
         ("문장가설×target", g, "sentence", "p_target", 17.3),
         ("claim가설×청크전제", g, "claim", "p_cited", 31.7),
@@ -142,12 +142,17 @@ for lbl, src, unit, col, w in [
 print("\n" + "=" * 78)
 print("6. D8-A 음성 통제  (정의: 전제 풀 = 토픽 4 branch 인용 청크 합)")
 print("=" * 78)
-s8 = rd("results/diag/d8/d8a2_summary.csv")
-for est, wn, ws, wnet in [("E1", 15.7, 0.0, 15.7), ("E2", 62.3, 50.5, 11.7), ("E3", 53.5, 15.2, 38.3)]:
-    r = next(x for x in s8 if x["estimator"] == est)
-    chk("%s 정상(%%)" % est, 100 * float(r["grounded_normal"]), wn, 0.15)
-    chk("%s 교란(%%)" % est, 100 * float(r["grounded_shuffled"]), ws, 0.15)
-    chk("%s 순증(%%p)" % est, 100 * float(r["net"]), wnet, 0.15)
+# 요약 CSV(d8a2_summary) 는 4자리로 반올림해 저장한다. 그 값을 다시 반올림하면
+# 15.6463% 가 0.1565 -> 15.7% 로 튄다 (실제로 원고에 15.7% 가 그렇게 들어갔다).
+# 따라서 **원행에서 다시 센다.**
+net_rows = rd("results/diag/d8/d8a2_estimator_net.csv")
+for est, wn, ws, wnet in [("E1", 15.6, 0.0, 15.6), ("E2", 62.3, 50.5, 11.7), ("E3", 53.5, 15.2, 38.3)]:
+    sub = [x for x in net_rows if x["estimator"] == est]
+    gn = pct(sub, lambda x: f(x, "p_normal") >= 0.5)
+    gs = pct(sub, lambda x: f(x, "p_shuffled") >= 0.5)
+    chk("%s 정상(%%) [원행 %d개]" % (est, len(sub)), gn, wn, 0.05)
+    chk("%s 교란(%%)" % est, gs, ws, 0.05)
+    chk("%s 순증(%%p)" % est, gn - gs, wnet, 0.05)
 neg = rd("results/diag/d8/d8a_negative_control.csv")
 chk("D8-A 교란 쌍 수", len(neg), 546)
 chk("D8-A 위양성(%)", pct([f(r, "max_p") for r in neg], lambda x: x >= 0.5), 50.5, 0.15)
