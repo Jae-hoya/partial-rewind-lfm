@@ -1,0 +1,4 @@
+estimator,label,n,pool_median,grounded_normal,grounded_shuffled,net,rho_poolsize_p
+E1,현행: 문장가설 × 청크전제,294,7.0,0.1565,0.0,0.1565,-0.085
+E2,수정후보: claim × 문장전제 전체,546,96.0,0.6227,0.5055,0.1172,-0.045
+E3,폴백: claim × BM25 상위 5문장,546,5.0,0.5348,0.152,0.3828,0.0
