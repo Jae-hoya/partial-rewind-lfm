@@ -160,6 +160,23 @@ chk("전제 문장 수 중앙", st.median([int(r["n_premise_sentences"]) for r i
 chk("같은 토픽 배정 0건", sum(1 for r in neg if r["src_topic"] == r["premise_topic"]), 0)
 
 print("\n" + "=" * 78)
+print("6b. 논문이 보고하는 %p 차이 — 반올림끼리 빼지 않았는지 (원행 재계산)")
+print("=" * 78)
+# 세 번 당했다: 15.7(이중 반올림) · 11.8(반올림끼리 뺌) · 5.2(반올림끼리 뺌).
+# 눈으로 잡을 게 아니라 구조로 잡는다. 모든 %p 는 **원행에서 센 비율끼리** 뺀다.
+G = [r for r in g if r["unit"] == "sentence"]
+GC = [r for r in g if r["unit"] == "claim"]
+SPC = [r for r in sp if r["unit"] == "claim"]
+E2 = [r for r in net_rows if r["estimator"] == "E2"]
+p_ = lambda rows, k: pct(rows, lambda r: f(r, k) >= 0.5)
+for lbl, a, b, want in [
+        ("전제 풀 확대 cited->retrieved", p_(G, "p_retrieved"), p_(G, "p_cited"), 1.7),
+        ("가설 단위 문장->claim", p_(GC, "p_cited"), p_(G, "p_cited"), 16.0),
+        ("전제 풀 branch->토픽 (E2)", p_(E2, "p_normal"), p_(SPC, "p_cited"), 5.1),
+        ("E2 순증 (정상-교란)", p_(E2, "p_normal"), p_(E2, "p_shuffled"), 11.7)]:
+    chk(lbl + " (%p)", a - b, want, 0.05)
+
+print("\n" + "=" * 78)
 print("7. D8-B 판정 표본  results/diag/d8/d8b_judge_sample.csv")
 print("=" * 78)
 jb = rd("results/diag/d8/d8b_judge_sample.csv")
