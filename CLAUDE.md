@@ -2,13 +2,18 @@
 
 이 저장소는 논문 **"Localize, Freeze, Mutate: Evidence-Driven Partial Re-execution for Multi-Perspective RAG" (LFM)** 의 실험 코드다. 내부 프로젝트명은 CPE-MGM이나 코드·논문에는 **LFM만 사용**한다.
 
-## 현재 마일스톤: M1 — Test A (동기 실험)
+## 현재 마일스톤: M1-D7 — 추정자 판별
 
-구현 범위는 `SPEC_M1_TestA_v1.1.md`에 정의된 것**만**이다.
+구현 범위는 `SPEC_M1D7_추정자판별.md`에 정의된 것**만**이다.
+`SPEC_M1_TestA_v1.1.md`(M1 완료)와 `SPEC_M1D_진단스윕.md` v1.1(M1-D 완료)은 기록용이다.
 
 ### 🛑 STOP RULE (절대 준수)
-1. Test A 리포트(낭비율 표 + threshold 스윕) 산출 후 **작업을 중단하고 결과를 보고**한다.
-2. 아래는 M1에서 **구현 금지**다. Test A 결과가 긍정일 때만 M2로 진행한다:
+1. **D7-0 산출 후 중단·보고. D7-1~3 산출 후 다시 중단·보고.**
+   (M1 Test A 리포트와 M1-D 진단 스윕은 완료됐다 — `P4_REPORT.md`, `results/diag/D1_D3_FINDINGS.md`.)
+2. 아래는 **금지**다. M2 는 D7 판별이 끝나고 사람이 결정한 뒤에만 진행한다:
+   - **생성 LLM 호출.** `llm.call` 을 import 하지 않는다. NLI forward pass 만 허용한다.
+     D7 은 청구 토큰 0 이 설계 전제다 — 스펙에만 적어두면 우선순위가 밀린다.
+   - **낭비율 계산.** `test_a`, `sufficient()` 를 import 하지 않는다 (AST 검사 테스트로 강제 중).
    - `relation.py` (cross-perspective relation)
    - `controller/lfm.py`, `controller/oracle.py`, `controller/random.py`
    - 웹 검색 retriever (ddgs) — 웹 실험은 부록용, 훨씬 뒤
