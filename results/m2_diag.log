@@ -1,0 +1,20 @@
+claim 수집 (캐시 재생) ...
+정상 pair 채점 ...
+C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\bart\modeling_bart.py:603: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+교란 pair 채점 ...
+
+=== A. edge 단위 (max 집계) — 스펙이 쓰는 값 ===
+  정상 n=68 중앙 0.9886  >tau_c 91.18%
+  교란 n=179 중앙 0.9922  >tau_c 93.30%
+
+=== B. pair 단위 — max 가 죽였는지 본다 ===
+  정상 n=5375 중앙 0.058808 평균 0.248014 p95 0.9722  >tau_c 16.279%
+  교란 n=14535 중앙 0.296067 평균 0.405615 p95 0.9856  >tau_c 28.263%
+  **pair 단위 차이 -11.984%p** (정상 - 교란)
+
+=== C. 팽창 — pair 수와 edge 최댓값의 상관 ===
+  정상 rho +0.1498 (pair 중앙 80) · 교란 rho +0.2178 (pair 중앙 72)
+
+해석은 하지 않는다. 임계도 바꾸지 않는다. 이 표를 공저자에게 보낸다.
+-> C:\Users\skyop\Desktop\나의 rag\LFM\m1\results\m2\relation\diagnosis.json

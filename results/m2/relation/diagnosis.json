@@ -1,0 +1,38 @@
+{
+ "checkpoint": "facebook/bart-large-mnli",
+ "tau_c": 0.7,
+ "A_edge_level_max": {
+  "normal": {
+   "n": 68,
+   "median": 0.9886,
+   "gt_tau_c_pct": 91.18
+  },
+  "shuffled": {
+   "n": 179,
+   "median": 0.9922,
+   "gt_tau_c_pct": 93.3
+  }
+ },
+ "B_pair_level": {
+  "normal": {
+   "n": 5375,
+   "median": 0.058808,
+   "mean": 0.248014,
+   "p95": 0.972185,
+   "gt_tau_c_pct": 16.279
+  },
+  "shuffled": {
+   "n": 14535,
+   "median": 0.296067,
+   "mean": 0.405615,
+   "p95": 0.985622,
+   "gt_tau_c_pct": 28.263
+  }
+ },
+ "C_inflation": {
+  "rho_npairs_vs_edgemax_normal": 0.1498,
+  "rho_npairs_vs_edgemax_shuffled": 0.2178,
+  "npairs_median_normal": 80.5,
+  "npairs_median_shuffled": 72
+ }
+}

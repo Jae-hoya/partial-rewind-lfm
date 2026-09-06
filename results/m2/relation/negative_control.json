@@ -1,0 +1,23 @@
+{
+ "checkpoint": "facebook/bart-large-mnli",
+ "thresholds": {
+  "tau_a": 0.6,
+  "tau_r": 0.85,
+  "tau_c": 0.7,
+  "tau_g": 0.8,
+  "q_top": 0.25
+ },
+ "normal": {
+  "n_edges": 68,
+  "contradiction_gt_tau_c_pct": 91.1765,
+  "agreement_gt_tau_a_pct": 0.0
+ },
+ "shuffled": {
+  "n": 179,
+  "shift": 7,
+  "contradiction_gt_tau_c_pct": 93.2961,
+  "agreement_gt_tau_a_pct": 0.0,
+  "pass": false,
+  "note": "5% 초과. tau 를 올리지 말고 이 사실을 Test C-1 해석에 반영한다"
+ }
+}

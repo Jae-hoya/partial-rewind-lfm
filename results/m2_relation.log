@@ -39,3 +39,15 @@ C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\bart\modeling_bar
   agreement      중앙 0.041  >tau_a(0.60) 0개 = 0.0%
 
 교란 음성 통제 (i -> i+7 mod 15) ...
+
+=== SPEC_M2 §2 교란 통제 판정 (사전 등록, 사후 변경 금지) ===
+| 배정 | contradiction > 0.70 | agreement > 0.60 |
+|---|---|---|
+| 정상 | 91.2% | 0.0% |
+| **교란** | **93.3%** | **0.0%** | (기준 둘 다 <=5%)
+
+판정: **FAIL**
+5% 초과. tau 를 올리지 말고 이 사실을 Test C-1 해석에 반영한다
+
+LLM 호출 128 (캐시 128), 청구 0/0
+-> C:\Users\skyop\Desktop\나의 rag\LFM\m1\results\m2\relation
