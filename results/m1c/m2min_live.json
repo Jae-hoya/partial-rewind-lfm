@@ -1,0 +1,54 @@
+{
+ "provisional": true,
+ "n_queries": 45,
+ "unit": "branch",
+ "note": "실행 단위가 branch 다. 스펙의 최소 변경 단위인 sub-question 이 아니다 — 그 단위 artifact 는 캐시에 없다. 따라서 이 비교는 절감을 과소평가한다.",
+ "calls": {
+  "A": 540,
+  "B": 498,
+  "delta_pct": -7.7778
+ },
+ "tokens": {
+  "A": 2534331,
+  "B": 2295403,
+  "delta_pct": -9.4277
+ },
+ "subq": {
+  "A": 2268,
+  "B": 2104,
+  "delta_pct": -7.231
+ },
+ "coverage": {
+  "A": 0.381111,
+  "B": 0.422778,
+  "delta": 0.041667,
+  "ci": [
+   0.020833,
+   0.065278
+  ],
+  "within_ci": false
+ },
+ "grounding": {
+  "A": 0.438954,
+  "B": 0.481928,
+  "delta": 0.042974,
+  "ci": [
+   0.01826,
+   0.072178
+  ],
+  "within_ci": false
+ },
+ "verify_pass": {
+  "A": 0,
+  "B": 0
+ },
+ "frozen_branches": 29,
+ "minicheck_calls": 2198,
+ "chunk_split_violations": 0,
+ "verdict": {
+  "calls_reduced": true,
+  "coverage_direction": "better",
+  "grounding_direction": "better",
+  "sentence": "호출·토큰 감소이며 coverage·grounding 은 오히려 유의하게 높다"
+ }
+}
