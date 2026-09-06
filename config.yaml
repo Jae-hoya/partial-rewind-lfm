@@ -83,6 +83,12 @@ nli:
   batch_size: 16
   tau_ground: 0.5
 
+estimator:
+  # SPEC_M1prime §1. 기본은 nli_max — 바꾸면 Test A~D14 재현이 조용히 깨진다.
+  # M1′ 만 실행 시 minicheck_doc 으로 덮어쓴다.
+  kind: nli_max                   # {nli_max, minicheck_doc}
+  tau: 0.5                        # minicheck_doc 은 **엄격 초과** (> 0.5)
+
 verify:
   tau_g_global: 0.80              # 변경 #2 — primary_tau 와 동일하게 고정
   tau_c_global: 0.80

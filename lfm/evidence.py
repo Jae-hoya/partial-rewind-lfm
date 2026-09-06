@@ -15,11 +15,12 @@ from collections import Counter
 from dataclasses import asdict, dataclass
 from typing import Any
 
+from .estimator import Estimator, NLIMaxEstimator
 from .nli import NLIBase
 from .types import BranchOutput, split_sentences
 
 __all__ = ["EvidenceState", "coverage", "grounding", "source_diversity", "support_strength",
-           "evaluate"]
+           "sentences_with_premises", "evaluate"]
 
 DIVERSITY_K = 5  # CLAUDE.md 확정: K=5 고정 (K ∈ {3,5,8} 민감도는 부록)
 
@@ -45,34 +46,35 @@ def coverage(out: BranchOutput) -> float:
     return n / len(subs)
 
 
-def grounding(out: BranchOutput, nli: NLIBase, tau_ground: float) -> float:
-    """답안 문장 중 인용 chunk 가 entail 하는 비율.
+def sentences_with_premises(out: BranchOutput) -> list[tuple[str, list[str]]]:
+    """답안 문장과 그 문장이 인용한 chunk 본문. 인용이 없으면 빈 목록이다.
 
-    인용이 없는 문장은 근거가 없는 것이므로 grounded 로 세지 않는다.
+    grounding 의 분모를 한 곳에서 정한다 — 여기가 갈리면 표가 어긋난다.
     """
     cmap = out.chunk_map()
-    sentences: list[tuple[str, list[str]]] = []
+    items: list[tuple[str, list[str]]] = []
     for sa in out.sub_answers:
+        cited = [cmap[c].text for c in sa.citations if c in cmap]
         for sent in split_sentences(sa.text):
-            cited = [c for c in sa.citations if c in cmap]
-            sentences.append((sent, cited))
-    if not sentences:
+            items.append((sent, cited))
+    return items
+
+
+def grounding(out: BranchOutput, scorer, tau_ground: float = 0.5) -> float:
+    """답안 문장 중 근거가 지지하는 비율.
+
+    인용이 없는 문장은 근거가 없는 것이므로 grounded 로 세지 않는다.
+
+    `scorer` 로 `Estimator`(SPEC_M1prime §1) 를 주면 그 연산자로 재고, 종전처럼
+    NLI 모델을 주면 **현행 g₁ 과 완전히 같은 계산**을 한다. 기존 호출부를 그대로
+    두기 위한 것이며, 기본 경로의 수치는 한 자리도 바뀌지 않는다.
+    """
+    est = scorer if isinstance(scorer, Estimator) else NLIMaxEstimator(scorer, tau_ground)
+    items = sentences_with_premises(out)
+    if not items:
         return 0.0
-
-    pairs: list[tuple[str, str]] = []
-    spans: list[tuple[int, int]] = []
-    for sent, cited in sentences:
-        start = len(pairs)
-        for cid in cited:
-            pairs.append((cmap[cid].text, sent))
-        spans.append((start, len(pairs)))
-
-    scores = nli.entailment(pairs) if pairs else []
-    grounded = 0
-    for start, end in spans:
-        if end > start and max(scores[start:end]) >= tau_ground:
-            grounded += 1
-    return grounded / len(sentences)
+    flags = est.grounded_many(items) if hasattr(est, "grounded_many")         else [est.grounded(s, p) for s, p in items]
+    return sum(1 for f in flags if f) / len(items)
 
 
 def source_diversity(out: BranchOutput, k: int = DIVERSITY_K) -> float:
@@ -103,11 +105,15 @@ def support_strength(out: BranchOutput, nli: NLIBase) -> float:
     return sum(nli.max_entailment(premises, claim) for claim in claims) / len(claims)
 
 
-def evaluate(out: BranchOutput, nli: NLIBase, cfg) -> EvidenceState:
+def evaluate(out: BranchOutput, nli: NLIBase, cfg, est: Estimator | None = None) -> EvidenceState:
+    """`est` 를 주면 grounding 만 그 연산자로 잰다 (SPEC_M1prime §1).
+
+    support_strength 는 그대로 NLI 로 잰다 — 스펙이 바꾸라 한 것은 grounding 하나다.
+    """
     tau = float(cfg.get("nli.tau_ground", 0.5))
     return EvidenceState(
         coverage=coverage(out),
-        grounding=grounding(out, nli, tau),
+        grounding=grounding(out, est if est is not None else nli, tau),
         source_diversity=source_diversity(out),
         support_strength=support_strength(out, nli),
     )
