@@ -1,0 +1,4 @@
+estimator,precision_k,precision_n,recall_k,recall_n,n_recovery_k,n_recovery_n,n_unclear_excluded
+g1 (현행),16,20,16,49,0,33,0
+MiniCheck,34,40,34,49,22,33,0
+bart,31,39,31,49,18,33,0
