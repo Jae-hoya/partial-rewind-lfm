@@ -18,7 +18,7 @@ import statistics as st
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MS = ROOT / "specs_from_chat/manuscript_PartialRewind_v0.5.md"
+MS = ROOT / "specs_from_chat/manuscript_PartialRewind_v0.7.md"
 
 fails: list[str] = []
 missing: list[str] = []
