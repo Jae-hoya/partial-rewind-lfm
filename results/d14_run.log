@@ -36,3 +36,24 @@ C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\bart\modeling_bar
   attn_output = torch.nn.functional.scaled_dot_product_attention(
 Token indices sequence length is longer than the specified maximum sequence length for this model (1136 > 1024). Running this sequence through the model will result in indexing errors
   whole_max        전제토큰중앙   376   grounded  60.5%   중앙 p 0.708
+  sentsplit_max    전제토큰중앙    29   grounded  28.2%   중앙 p 0.128
+  single_L32       전제토큰중앙    34   grounded  25.5%   중앙 p 0.033
+  single_L64       전제토큰중앙    49   grounded  35.7%   중앙 p 0.180
+  single_L128      전제토큰중앙   105   grounded  60.5%   중앙 p 0.724
+  single_L256      전제토큰중앙   214   grounded  72.8%   중앙 p 0.865
+  union_L32        전제토큰중앙    94   grounded  22.4%   중앙 p 0.028
+  union_L64        전제토큰중앙   134   grounded  29.6%   중앙 p 0.149
+  union_L128       전제토큰중앙   308   grounded  49.7%   중앙 p 0.495
+  union_L256       전제토큰중앙   608   grounded  55.8%   중앙 p 0.591
+
+=== 스펙 대칭 검증 — single_L64 vs union_L64 전제 토큰 중앙값 ===
+| 체크포인트 | single | union | 차이 | 10%% 이내 |
+|---|---|---|---|---|
+| cross-encoder/nli-deberta-v3-base | 47 | 130 | 64.0% | **아니오** |
+| facebook/bart-large-mnli | 49 | 134 | 63.6% | **아니오** |
+
+union 은 청크를 이어붙이므로 single 보다 길 수밖에 없다. 10%% 를 넘으면
+그건 절차 오류가 아니라 **두 조건이 애초에 다른 길이라는 사실**이다.
+맞추려고 L 을 조정하지 않는다 — 사실대로 보고한다.
+
+-> results\diag\d14
