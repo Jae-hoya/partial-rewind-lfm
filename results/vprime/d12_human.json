@@ -1,0 +1,117 @@
+{
+ "n_overlap_d12": 28,
+ "n_overlap_d8b": 32,
+ "recovery_n": 33,
+ "false_recovery_n": 7,
+ "retention_n": 16,
+ "recovery_stratified_by_d8b_rule": {
+  "N": 30,
+  "M": 3,
+  "G": 0
+ },
+ "A": [
+  {
+   "checkpoint": "cross-encoder/nli-deberta-v3-base",
+   "N층 사람=지지 (회수 대상)": "0/9",
+   "N층 사람=불지지 (오회수 대조)": "0/1",
+   "G층 사람=지지 (유지 대조)": "13/13",
+   "M층 사람=지지 (참고)": "0/1"
+  },
+  {
+   "checkpoint": "cross-encoder/nli-deberta-v3-large",
+   "N층 사람=지지 (회수 대상)": "2/9",
+   "N층 사람=불지지 (오회수 대조)": "0/1",
+   "G층 사람=지지 (유지 대조)": "9/13",
+   "M층 사람=지지 (참고)": "0/1"
+  },
+  {
+   "checkpoint": "facebook/bart-large-mnli",
+   "N층 사람=지지 (회수 대상)": "6/9",
+   "N층 사람=불지지 (오회수 대조)": "1/1",
+   "G층 사람=지지 (유지 대조)": "12/13",
+   "M층 사람=지지 (참고)": "1/1"
+  },
+  {
+   "checkpoint": "roberta-large-mnli",
+   "N층 사람=지지 (회수 대상)": "1/9",
+   "N층 사람=불지지 (오회수 대조)": "0/1",
+   "G층 사람=지지 (유지 대조)": "7/13",
+   "M층 사람=지지 (참고)": "0/1"
+  },
+  {
+   "checkpoint": "MiniCheck (정답키 lab_mc)",
+   "N층 사람=지지 (회수 대상)": "5/9",
+   "N층 사람=불지지 (오회수 대조)": "0/1",
+   "G층 사람=지지 (유지 대조)": "11/13",
+   "M층 사람=지지 (참고)": "1/1"
+  }
+ ],
+ "B": [
+  {
+   "stratum": "G",
+   "n": 20,
+   "human_supported": 16
+  },
+  {
+   "stratum": "N",
+   "n": 10,
+   "human_supported": 9
+  },
+  {
+   "stratum": "M",
+   "n": 2,
+   "human_supported": 2
+  }
+ ],
+ "C": [
+  {
+   "estimator": "현행 g₁",
+   "recovery_k": 0,
+   "recovery_n": 33,
+   "false_recovery_k": 0,
+   "false_recovery_n": 7,
+   "retention_k": 16,
+   "retention_n": 16
+  },
+  {
+   "estimator": "MiniCheck",
+   "recovery_k": 22,
+   "recovery_n": 33,
+   "false_recovery_k": 3,
+   "false_recovery_n": 7,
+   "retention_k": 12,
+   "retention_n": 16
+  },
+  {
+   "estimator": "bart",
+   "recovery_k": 18,
+   "recovery_n": 33,
+   "false_recovery_k": 4,
+   "false_recovery_n": 7,
+   "retention_k": 13,
+   "retention_n": 16
+  }
+ ],
+ "D": [
+  {
+   "cell": "P1",
+   "n": 15,
+   "human_supported": 12
+  },
+  {
+   "cell": "P2",
+   "n": 25,
+   "human_supported": 22
+  },
+  {
+   "cell": "N1",
+   "n": 15,
+   "human_supported": 11
+  },
+  {
+   "cell": "N2",
+   "n": 5,
+   "human_supported": 4
+  }
+ ]
+}

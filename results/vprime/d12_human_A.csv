@@ -1,0 +1,6 @@
+G층 사람=지지 (유지 대조),M층 사람=지지 (참고),N층 사람=불지지 (오회수 대조),N층 사람=지지 (회수 대상),checkpoint
+13/13,0/1,0/1,0/9,cross-encoder/nli-deberta-v3-base
+9/13,0/1,0/1,2/9,cross-encoder/nli-deberta-v3-large
+12/13,1/1,1/1,6/9,facebook/bart-large-mnli
+7/13,0/1,0/1,1/9,roberta-large-mnli
+11/13,1/1,0/1,5/9,MiniCheck (정답키 lab_mc)

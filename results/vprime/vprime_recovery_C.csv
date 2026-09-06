@@ -1,0 +1,4 @@
+estimator,false_recovery_k,false_recovery_n,recovery_k,recovery_n,retention_k,retention_n
+현행 g₁,0,7,0,33,16,16
+MiniCheck,3,7,22,33,12,16
+bart,4,7,18,33,13,16

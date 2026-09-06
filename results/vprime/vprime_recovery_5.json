@@ -1,0 +1,51 @@
+{
+ "premise_reconstruction_mismatches": 0,
+ "n_items": 60,
+ "rows": [
+  {
+   "estimator": "현행 g₁ (deberta-v3-base)",
+   "recovery_k": 0,
+   "recovery_n": 33,
+   "false_recovery_k": 0,
+   "false_recovery_n": 7,
+   "retention_k": 16,
+   "retention_n": 16
+  },
+  {
+   "estimator": "deberta-v3-large",
+   "recovery_k": 7,
+   "recovery_n": 33,
+   "false_recovery_k": 3,
+   "false_recovery_n": 7,
+   "retention_k": 11,
+   "retention_n": 16
+  },
+  {
+   "estimator": "roberta-large-mnli",
+   "recovery_k": 2,
+   "recovery_n": 33,
+   "false_recovery_k": 2,
+   "false_recovery_n": 7,
+   "retention_k": 7,
+   "retention_n": 16
+  },
+  {
+   "estimator": "bart-large-mnli",
+   "recovery_k": 18,
+   "recovery_n": 33,
+   "false_recovery_k": 4,
+   "false_recovery_n": 7,
+   "retention_k": 13,
+   "retention_n": 16
+  },
+  {
+   "estimator": "MiniCheck",
+   "recovery_k": 22,
+   "recovery_n": 33,
+   "false_recovery_k": 3,
+   "false_recovery_n": 7,
+   "retention_k": 12,
+   "retention_n": 16
+  }
+ ]
+}

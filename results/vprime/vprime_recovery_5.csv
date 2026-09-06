@@ -1,0 +1,6 @@
+estimator,recovery_k,recovery_n,false_recovery_k,false_recovery_n,retention_k,retention_n
+현행 g₁ (deberta-v3-base),0,33,0,7,16,16
+deberta-v3-large,7,33,3,7,11,16
+roberta-large-mnli,2,33,2,7,7,16
+bart-large-mnli,18,33,4,7,13,16
+MiniCheck,22,33,3,7,12,16
