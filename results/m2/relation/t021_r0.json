@@ -1,0 +1,21 @@
+{
+ "topic": "t021",
+ "round": 0,
+ "checkpoint": "facebook/bart-large-mnli",
+ "relations": [
+  {
+   "i": "t021:overview_factual",
+   "j": "t021:technical_mechanism",
+   "agreement": 0.069445,
+   "contradiction": 0.916916,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    8,
+    5
+   ],
+   "n_pairs": 60,
+   "cos": 0.0
+  }
+ ]
+}

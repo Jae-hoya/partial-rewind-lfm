@@ -1,0 +1,41 @@
+claim 수집 (캐시 재생, 생성 호출 0) ...
+  [ 1/15] t007  branch 4 · claim [12, 12, 8, 9]
+  [ 2/15] t008  branch 4 · claim [7, 0, 11, 0]
+  [ 3/15] t014  branch 4 · claim [5, 8, 12, 0]
+  [ 4/15] t021  branch 4 · claim [10, 6, 0, 0]
+  [ 5/15] t022  branch 4 · claim [12, 6, 12, 12]
+  [ 6/15] t028  branch 4 · claim [4, 12, 5, 10]
+  [ 7/15] t031  branch 4 · claim [12, 10, 9, 11]
+  [ 8/15] t033  branch 4 · claim [12, 12, 2, 3]
+  [ 9/15] t037  branch 4 · claim [12, 12, 4, 7]
+  [10/15] t038  branch 4 · claim [3, 5, 4, 5]
+  [11/15] t039  branch 4 · claim [12, 8, 0, 1]
+  [12/15] t040  branch 4 · claim [7, 12, 12, 3]
+  [13/15] t048  branch 4 · claim [12, 12, 12, 0]
+  [14/15] t049  branch 4 · claim [7, 12, 5, 0]
+  [15/15] t050  branch 4 · claim [12, 12, 12, 11]
+
+정상 배정에서 R_ij 계산 ...
+C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\bart\modeling_bart.py:603: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+  t007  edge 6
+  t008  edge 1
+  t014  edge 3
+  t021  edge 1
+  t022  edge 6
+  t028  edge 6
+  t031  edge 6
+  t033  edge 6
+  t037  edge 6
+  t038  edge 6
+  t039  edge 3
+  t040  edge 6
+  t048  edge 3
+  t049  edge 3
+  t050  edge 6
+
+정상 배정 edge 68개 (NLI 쌍 10750)
+  contradiction  중앙 0.989  >tau_c(0.70) 62개 = 91.2%
+  agreement      중앙 0.041  >tau_a(0.60) 0개 = 0.0%
+
+교란 음성 통제 (i -> i+7 mod 15) ...

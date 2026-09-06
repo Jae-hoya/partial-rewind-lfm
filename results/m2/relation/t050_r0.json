@@ -1,0 +1,91 @@
+{
+ "topic": "t050",
+ "round": 0,
+ "checkpoint": "facebook/bart-large-mnli",
+ "relations": [
+  {
+   "i": "t050:controversy_limitation",
+   "j": "t050:impact_application",
+   "agreement": 0.016014,
+   "contradiction": 0.999385,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    7,
+    3
+   ],
+   "n_pairs": 132,
+   "cos": 0.0
+  },
+  {
+   "i": "t050:controversy_limitation",
+   "j": "t050:overview_factual",
+   "agreement": 0.002397,
+   "contradiction": 0.904041,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    9,
+    5
+   ],
+   "n_pairs": 132,
+   "cos": 0.0
+  },
+  {
+   "i": "t050:controversy_limitation",
+   "j": "t050:technical_mechanism",
+   "agreement": 0.067219,
+   "contradiction": 0.986531,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    2,
+    10
+   ],
+   "n_pairs": 132,
+   "cos": 0.0
+  },
+  {
+   "i": "t050:impact_application",
+   "j": "t050:overview_factual",
+   "agreement": 0.004085,
+   "contradiction": 0.990043,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    0,
+    2
+   ],
+   "n_pairs": 144,
+   "cos": 0.0
+  },
+  {
+   "i": "t050:impact_application",
+   "j": "t050:technical_mechanism",
+   "agreement": 0.003488,
+   "contradiction": 0.89356,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    9,
+    11
+   ],
+   "n_pairs": 144,
+   "cos": 0.0
+  },
+  {
+   "i": "t050:overview_factual",
+   "j": "t050:technical_mechanism",
+   "agreement": 0.0027,
+   "contradiction": 0.135659,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    0,
+    11
+   ],
+   "n_pairs": 144,
+   "cos": 0.0
+  }
+ ]
+}

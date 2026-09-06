@@ -1,0 +1,49 @@
+{
+ "topic": "t039",
+ "round": 0,
+ "checkpoint": "facebook/bart-large-mnli",
+ "relations": [
+  {
+   "i": "t039:controversy_limitation",
+   "j": "t039:overview_factual",
+   "agreement": 0.000431,
+   "contradiction": 0.09654,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    0,
+    1
+   ],
+   "n_pairs": 12,
+   "cos": 0.0
+  },
+  {
+   "i": "t039:controversy_limitation",
+   "j": "t039:technical_mechanism",
+   "agreement": 0.032334,
+   "contradiction": 0.128599,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    0,
+    0
+   ],
+   "n_pairs": 8,
+   "cos": 0.0
+  },
+  {
+   "i": "t039:overview_factual",
+   "j": "t039:technical_mechanism",
+   "agreement": 0.019665,
+   "contradiction": 0.958266,
+   "complementarity": 0.0,
+   "redundancy": 0,
+   "argmax_pair": [
+    11,
+    4
+   ],
+   "n_pairs": 96,
+   "cos": 0.0
+  }
+ ]
+}
