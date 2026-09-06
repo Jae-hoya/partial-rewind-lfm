@@ -1,0 +1,33 @@
+자료 수집 (캐시 재생, 생성 호출 0) ...
+  [ 1/15] t007  문장 28 · 전제 청크 18
+  [ 2/15] t008  문장 12 · 전제 청크 3
+  [ 3/15] t014  문장 13 · 전제 청크 6
+  [ 4/15] t021  문장 10 · 전제 청크 2
+  [ 5/15] t022  문장 44 · 전제 청크 7
+  [ 6/15] t028  문장 20 · 전제 청크 6
+  [ 7/15] t031  문장 14 · 전제 청크 8
+  [ 8/15] t033  문장 20 · 전제 청크 8
+  [ 9/15] t037  문장 22 · 전제 청크 5
+  [10/15] t038  문장 12 · 전제 청크 6
+  [11/15] t039  문장 8 · 전제 청크 6
+  [12/15] t040  문장 21 · 전제 청크 10
+  [13/15] t048  문장 25 · 전제 청크 5
+  [14/15] t049  문장 15 · 전제 청크 4
+  [15/15] t050  문장 30 · 전제 청크 14
+
+교란 배정 (i -> i+7 mod 15), 같은 토픽 0건 확인
+전제 풀은 정상·교란 모두 **토픽 단위** 인용 청크 (풀 크기를 맞춘다)
+
+======================================================================
+체크포인트: cross-encoder/nli-deberta-v3-base
+  n=294  정상 15.65%  교란 0.00%  **순증 15.65%p**  rho(풀,p) -0.085  게이트 PASS
+
+======================================================================
+체크포인트: cross-encoder/nli-deberta-v3-large
+  n=294  정상 37.76%  교란 21.09%  **순증 16.67%p**  rho(풀,p) -0.051  게이트 FAIL
+
+======================================================================
+체크포인트: roberta-large-mnli
+Some weights of the model checkpoint at roberta-large-mnli were not used when initializing RobertaForSequenceClassification: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).

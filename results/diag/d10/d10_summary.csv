@@ -1,0 +1,5 @@
+below_005,checkpoint,grid_n,grounded_at_05,keep_1x,keep_2x,keep_3x,keep_4x,median_max_p,mid_band,n_pos_pairs,status
+76.53,cross-encoder/nli-deberta-v3-base,294,15.65,100.0,14.3,14.3,11.4,0.0022,8.5,35,ok
+46.94,cross-encoder/nli-deberta-v3-large,294,34.69,85.7,40.0,42.9,42.9,0.0646,19.73,35,ok
+43.54,roberta-large-mnli,294,19.05,48.6,5.7,2.9,2.9,0.064,35.37,35,ok
+15.31,facebook/bart-large-mnli,294,60.54,82.9,82.9,71.4,71.4,0.7084,51.7,35,ok

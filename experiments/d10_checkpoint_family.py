@@ -168,8 +168,8 @@ def main(argv=None):
         summary.append({"checkpoint": ck, "status": "ok", "n_pos_pairs": len(pos),
                         "keep_1x": round(keep[1], 1), "keep_2x": round(keep[2], 1),
                         "keep_3x": round(keep[3], 1), "keep_4x": round(keep[4], 1),
-                        "grid_n": len(gs), "grounded_at_05": round(grounded, 2),
-                        "below_005": round(below, 2), "mid_band": round(mid, 2),
+                        "grid_n": len(gs), "grounded_at_05": round(grounded, 4),
+                        "below_005": round(below, 4), "mid_band": round(mid, 4),
                         "median_max_p": round(st.median(gs), 4)})
         del nli
 
