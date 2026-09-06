@@ -27,3 +27,20 @@ Token indices sequence length is longer than the specified maximum sequence leng
   union_L128     n=294  정상 57.82%  교란  9.86%  **순증  47.96%p**  **FAIL**
   union_L256     n=294  정상 67.01%  교란 11.22%  **순증  55.78%p**  **FAIL**
   single_L128    n=294  정상 42.18%  교란  1.36%  **순증  40.82%p**  PASS
+  single_L256    n=294  정상 30.27%  교란  0.68%  **순증  29.59%p**  PASS
+
+=== 판정 — 순증으로만 ===
+| 구성 | 정상 | 교란(위양성) | **순증** | 게이트(<=5%) |
+|---|---|---|---|---|
+| whole_max | 15.65% | 0.00% | **15.65%p** | PASS |
+| single_L64 | 31.63% | 8.50% | **23.13%p** | **FAIL** |
+| union_L64 | 34.01% | 6.46% | **27.55%p** | **FAIL** |
+| union_L128 | 57.82% | 9.86% | **47.96%p** | **FAIL** |
+| union_L256 | 67.01% | 11.22% | **55.78%p** | **FAIL** |
+| single_L128 | 42.18% | 1.36% | **40.82%p** | PASS |
+| single_L256 | 30.27% | 0.68% | **29.59%p** | PASS |
+
+대조 — D14 의 정상값(같은 범위): whole 15.6 · single_L64 31.6 · union_L64 34.0
+      · union_L128 57.8 · union_L256 67.0 · single_L128 42.2 · single_L256 30.3
+정상값이 이와 맞아야 범위가 같다는 확인이 된다.
+-> results\diag\d14
