@@ -1,0 +1,5 @@
+G층 supported (유지 대조),M층 supported (참고),N층 supported (회수 대상),N층 unsupported (오회수 대조),checkpoint
+100.0,0.0,0.0,0.0,cross-encoder/nli-deberta-v3-base
+73.8095,50.0,24.1379,10.0,cross-encoder/nli-deberta-v3-large
+50.0,44.4444,17.2414,0.0,roberta-large-mnli
+88.0952,77.7778,62.069,70.0,facebook/bart-large-mnli

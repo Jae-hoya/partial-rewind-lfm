@@ -1,0 +1,67 @@
+모집단 재구성 (캐시 재생, 호출 0) ...
+  [ 1/15] t007  누적 28
+  [ 2/15] t008  누적 40
+  [ 3/15] t014  누적 53
+  [ 4/15] t021  누적 63
+  [ 5/15] t022  누적 107
+  [ 6/15] t028  누적 127
+  [ 7/15] t031  누적 141
+  [ 8/15] t033  누적 161
+  [ 9/15] t037  누적 183
+  [10/15] t038  누적 195
+  [11/15] t039  누적 203
+  [12/15] t040  누적 224
+  [13/15] t048  누적 249
+  [14/15] t049  누적 264
+  [15/15] t050  누적 294
+
+D8-B 판정 표본 106건 중 전제 복원 106건, 실패 0건
+  N층 supported (회수 대상)           n=29
+  N층 unsupported (오회수 대조)        n=10
+  G층 supported (유지 대조)           n=42
+  M층 supported (참고)              n=18
+
+======================================================================
+체크포인트: cross-encoder/nli-deberta-v3-base
+  N층 supported (회수 대상)            0/29 =   0.0%
+  N층 unsupported (오회수 대조)         0/10 =   0.0%
+  G층 supported (유지 대조)           42/42 = 100.0%
+  M층 supported (참고)               0/18 =   0.0%
+
+======================================================================
+체크포인트: cross-encoder/nli-deberta-v3-large
+  N층 supported (회수 대상)            7/29 =  24.1%
+  N층 unsupported (오회수 대조)         1/10 =  10.0%
+  G층 supported (유지 대조)           31/42 =  73.8%
+  M층 supported (참고)               9/18 =  50.0%
+
+======================================================================
+체크포인트: roberta-large-mnli
+Some weights of the model checkpoint at roberta-large-mnli were not used when initializing RobertaForSequenceClassification: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+  N층 supported (회수 대상)            5/29 =  17.2%
+  N층 unsupported (오회수 대조)         0/10 =   0.0%
+  G층 supported (유지 대조)           21/42 =  50.0%
+  M층 supported (참고)               8/18 =  44.4%
+
+======================================================================
+체크포인트: facebook/bart-large-mnli
+C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\bart\modeling_bart.py:603: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+  N층 supported (회수 대상)           18/29 =  62.1%
+  N층 unsupported (오회수 대조)         7/10 =  70.0%
+  G층 supported (유지 대조)           37/42 =  88.1%
+  M층 supported (참고)              14/18 =  77.8%
+
+=== N층 회수율 — 논문 결론을 가르는 표 ===
+| 체크포인트 | N층 supported (회수 대상) (n=29) | N층 unsupported (오회수 대조) (n=10) | G층 supported (유지 대조) (n=42) | M층 supported (참고) (n=18) |
+|---|---|---|---|---|
+| cross-encoder/nli-deberta-v3-base | 0.0% | 0.0% | 100.0% | 0.0% |
+| cross-encoder/nli-deberta-v3-large | 24.1% | 10.0% | 73.8% | 50.0% |
+| roberta-large-mnli | 17.2% | 0.0% | 50.0% | 44.4% |
+| facebook/bart-large-mnli | 62.1% | 70.0% | 88.1% | 77.8% |
+
+읽는 법: 1열이 오르면서 2열이 안 오르면 진짜 개선이다.
+         두 열이 같이 오르면 그냥 관대한 것이고 D8-A 순증에서 걸러진다.
+-> results\diag\d12

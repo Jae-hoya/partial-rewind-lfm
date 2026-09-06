@@ -96,3 +96,17 @@ C:\Users\skyop\anaconda3\python.exe experiments/model_check.py                  
 | `results/test_a/<ts>/trace.jsonl` | 전 라운드 trace (동결 스키마) |
 | `results/test_a/<ts>/usage.json` | 태그별 호출·토큰 (비용 근거) |
 | `results/test_a/_pilot5{,b,c}/` | 파일럿 3회 — 측정 결함 수정의 증거 |
+
+## MiniCheck 설치 — 재현 함정 (2026-09-06)
+
+```
+pip install "minicheck @ git+https://github.com/Liyan06/MiniCheck.git"
+```
+
+**`pip install minicheck` 를 그냥 치면 안 된다.** PyPI 의 `minicheck` (0.4.0) 은
+동명이인이고 사실검증기가 아니라 **explicit-state model checker** 다. 설치는 성공하고
+`import minicheck` 도 되지만 `minicheck.minicheck` 가 없어서 그때 가서야 깨진다.
+
+공식 저장소 설치는 `minicheck-0.1.0` 만 추가하며 transformers/torch/numpy 를
+건드리지 않는다 (확인: transformers 4.42.3 · torch 2.3.1+cu118 유지).
+첫 import 시 nltk `punkt` 를 내려받는다.
