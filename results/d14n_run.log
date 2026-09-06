@@ -1,0 +1,29 @@
+자료 수집 (캐시 재생, 호출 0) ...
+  t007  문장 28 · 토픽 풀 18
+  t008  문장 12 · 토픽 풀 3
+  t014  문장 13 · 토픽 풀 6
+  t021  문장 10 · 토픽 풀 2
+  t022  문장 44 · 토픽 풀 7
+  t028  문장 20 · 토픽 풀 6
+  t031  문장 14 · 토픽 풀 8
+  t033  문장 20 · 토픽 풀 8
+  t037  문장 22 · 토픽 풀 5
+  t038  문장 12 · 토픽 풀 6
+  t039  문장 8 · 토픽 풀 6
+  t040  문장 21 · 토픽 풀 10
+  t048  문장 25 · 토픽 풀 5
+  t049  문장 15 · 토픽 풀 4
+  t050  문장 30 · 토픽 풀 14
+
+교란 배정 (i -> i+7 mod 15), 같은 토픽 0건 확인
+**전제 개수를 맞춘다** — 교란도 정상과 같은 수의 청크를 다른 토픽에서 뽑는다.
+
+==========================================================================
+체크포인트: cross-encoder/nli-deberta-v3-base
+Token indices sequence length is longer than the specified maximum sequence length for this model (685 > 512). Running this sequence through the model will result in indexing errors
+  whole_max      n=294  정상 15.65%  교란  0.00%  **순증  15.65%p**  PASS
+  single_L64     n=294  정상 31.63%  교란  8.50%  **순증  23.13%p**  **FAIL**
+  union_L64      n=294  정상 34.01%  교란  6.46%  **순증  27.55%p**  **FAIL**
+  union_L128     n=294  정상 57.82%  교란  9.86%  **순증  47.96%p**  **FAIL**
+  union_L256     n=294  정상 67.01%  교란 11.22%  **순증  55.78%p**  **FAIL**
+  single_L128    n=294  정상 42.18%  교란  1.36%  **순증  40.82%p**  PASS
