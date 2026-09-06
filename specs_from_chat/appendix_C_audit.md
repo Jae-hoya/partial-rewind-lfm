@@ -72,6 +72,20 @@ C3 is the informative row: with the gold article present the pipeline answers mo
 
 **Claim decomposition does not manufacture support.** Of 30 sampled branch answers, the claim set was judged complete for 26 and omitting content for 2, with zero additions. Because the pipeline decomposes claims from the whole branch answer rather than per sentence, the check is at answer level rather than the sentence level the protocol specified; we report the unit as it exists rather than construct a mapping the data lacks. Zero additions is the direction that matters for the claim-level rows of the body.
 
-### C.6 What this appendix does not contain
+### C.6 Human-referenced recovery across five operators
+
+The same question as Table 8's recovery column, asked of every operator tested: of the 33 sentences the deployed operator scored below 0.5 that the human marked supported, how many does the candidate accept; of the 7 it scored below 0.5 that the human marked unsupported, how many does it wrongly accept; of the 16 it accepted that the human marked supported, how many does it keep. Net = recovery − false recovery, from raw counts. Denominators of 7 and 16 fix direction, not rank. Local inference only; no API calls.
+
+| Operator | Recovery (of 33) | False recovery (of 7) | Net | Retention (of 16) |
+|---|---|---|---|---|
+| nli-deberta-v3-base (deployed) | 0 (0.0%) | 0 (0.0%) | +0.0 pp | 16 (100.0%) |
+| deberta-v3-large-mnli | 7 (21.2%) | 3 (42.9%) | −21.6 pp | 11 (68.8%) |
+| roberta-large-mnli | 2 (6.1%) | 2 (28.6%) | −22.5 pp | 7 (43.8%) |
+| bart-large-mnli | 18 (54.5%) | 4 (57.1%) | −2.6 pp | 13 (81.2%) |
+| MiniCheck-Flan-T5-Large, single document | 22 (66.7%) | 3 (42.9%) | **+23.8 pp** | 12 (75.0%) |
+
+Only the document-level verifier recovers more than it wrongly recovers. The judge-referenced version of this table (Section VI-F, 65.6% judge–human agreement) is retained in the repository and not reproduced here.
+
+### C.7 What this appendix does not contain
 
 The per-stage findings documents, raw score files, and the scripts that regenerate every figure in this paper from them are in the released repository, together with three verification scripts that check the manuscript's numbers against the raw rows and exit non-zero on any mismatch or any figure they cannot locate.
