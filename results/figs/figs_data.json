@@ -1,0 +1,38 @@
+{
+ "provisional": true,
+ "note": "추정자는 사람 라벨 전이라 잠정. 라벨 확정 후 같은 스크립트로 재생성.",
+ "dpi": 300,
+ "fig1": {
+  "n_branches": 180,
+  "n_queries": 45,
+  "g1": {
+   "0.7": 3,
+   "0.8": 1,
+   "0.9": 1
+  },
+  "accepted": {
+   "0.7": 30,
+   "0.8": 19,
+   "0.9": 15
+  }
+ },
+ "fig4": {
+  "query_id": "t005",
+  "n_branches": 4,
+  "frozen": 1,
+  "median_frozen_all": 0,
+  "median_frozen_nonzero": 1.0,
+  "queries_freezing_none": 23,
+  "queries_freezing_any": 22,
+  "n_queries": 45,
+  "distribution": {
+   "0": 23,
+   "1": 16,
+   "2": 5,
+   "3": 1
+  },
+  "selection_rule": "전 질의 중앙값이 0 이라 그 규칙으로는 빈 그림이 된다. (a) 에 분포 전체를 싣고 (b) 는 0 이 아닌 질의의 중앙값에 해당하는 것을 골랐다. 동률이면 query_id 사전순.",
+  "A_calls": 12,
+  "B_calls": 10
+ }
+}
