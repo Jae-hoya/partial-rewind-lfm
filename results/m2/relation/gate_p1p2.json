@@ -1,0 +1,23 @@
+{
+ "checkpoint": "facebook/bart-large-mnli",
+ "generator": "gpt-5.4-nano",
+ "n": 50,
+ "tau_c": 0.7,
+ "P1": {
+  "n": 46,
+  "median": 0.999516,
+  "detect_pct": 97.8261,
+  "gate": 80.0,
+  "pass": true
+ },
+ "P2": {
+  "n": 50,
+  "median": 0.998609,
+  "entail_pct": 100.0,
+  "gate": 80.0,
+  "pass": true
+ },
+ "calls": 100,
+ "billed_in": 11728,
+ "billed_out": 5501
+}

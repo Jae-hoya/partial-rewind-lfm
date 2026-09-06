@@ -1,0 +1,12 @@
+Rewrite the sentence below so that it asserts the OPPOSITE of the original fact.
+
+Rules:
+- Change only what is needed to reverse the fact. Keep the same subject, entities,
+  numbers and wording everywhere else.
+- Do not add hedging ("may", "possibly"). State the opposite as a plain fact.
+- Do not add or remove information beyond the reversal.
+- Output the rewritten sentence only. No quotes, no preface, no explanation.
+
+--- SENTENCE ---
+{claim}
+--- END ---

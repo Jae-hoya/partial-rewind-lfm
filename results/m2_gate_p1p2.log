@@ -1,0 +1,23 @@
+claim 수집 (캐시 재생, 생성 호출 0) ...
+claim 모집단 458
+표본 50 (시드 고정)
+
+부정문·paraphrase 생성 (gpt-5.4-nano, 50 x 2 호출) ...
+  10/50
+  20/50
+  30/50
+  40/50
+  50/50
+
+NLI 채점 ...
+C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\bart\modeling_bart.py:603: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+
+=== 게이트 P1 (부정문 검출) ===
+  n=46  contradiction 중앙 0.9995  **> tau_c 인 비율 97.8%**  (기준 >=80%)  -> PASS
+=== 게이트 P2 (paraphrase 대칭 entailment) ===
+  n=50  entailment 중앙 0.9986  **>=0.5 인 비율 100.0%**  (기준 >=80%)  -> PASS
+
+N1 은 이미 탈락(26.4%%). ORDERS §C: 관계 모듈 비활성으로 계속 진행.
+생성 호출 100 (캐시 0), 청구 11728/5501
+-> C:\Users\skyop\Desktop\나의 rag\LFM\m1\results\m2\relation\gate_p1p2.json

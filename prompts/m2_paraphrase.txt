@@ -1,0 +1,11 @@
+Rewrite the sentence below so that it states exactly the same fact in different words.
+
+Rules:
+- Preserve every fact, entity, number and date exactly. Add nothing, drop nothing.
+- Change the wording and sentence structure substantially.
+- Do not hedge and do not comment on the sentence.
+- Output the rewritten sentence only. No quotes, no preface, no explanation.
+
+--- SENTENCE ---
+{claim}
+--- END ---
