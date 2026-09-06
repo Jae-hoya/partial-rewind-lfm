@@ -1,0 +1,36 @@
+자료 수집 (캐시 재생, 생성 호출 0) ...
+  [ 1/15] t007  문장 28
+  [ 2/15] t008  문장 40
+  [ 3/15] t014  문장 53
+  [ 4/15] t021  문장 63
+  [ 5/15] t022  문장 107
+  [ 6/15] t028  문장 127
+  [ 7/15] t031  문장 141
+  [ 8/15] t033  문장 161
+  [ 9/15] t037  문장 183
+  [10/15] t038  문장 195
+  [11/15] t039  문장 203
+  [12/15] t040  문장 224
+  [13/15] t048  문장 249
+  [14/15] t049  문장 264
+  [15/15] t050  문장 294
+문장 294 · 패딩 재료 청크 108
+양성 쌍 선정 (현행 체크포인트 기준, p_entail > 0.90) ...
+양성 쌍 35개
+
+======================================================================
+체크포인트: cross-encoder/nli-deberta-v3-base
+======================================================================
+  1x  전제토큰 중앙  144  p 중앙 0.992  >=0.5 유지 100.0%
+Token indices sequence length is longer than the specified maximum sequence length for this model (822 > 512). Running this sequence through the model will result in indexing errors
+  2x  전제토큰 중앙  472  p 중앙 0.011  >=0.5 유지 14.3%
+  3x  전제토큰 중앙  783  p 중앙 0.005  >=0.5 유지 14.3%
+  4x  전제토큰 중앙 1074  p 중앙 0.003  >=0.5 유지 11.4%
+  격자: grounded@0.5 15.6%  <0.05 76.5%  중간대 8.5%  중앙 0.002
+
+======================================================================
+체크포인트: cross-encoder/nli-deberta-v3-large
+======================================================================
+C:\Users\skyop\anaconda3\Lib\site-packages\huggingface_hub\file_download.py:157: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\skyop\.cache\huggingface\hub\models--cross-encoder--nli-deberta-v3-large. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to see activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
