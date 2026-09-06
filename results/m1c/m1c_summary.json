@@ -1,0 +1,26 @@
+{
+ "provisional": true,
+ "estimator": "MiniCheck-Flan-T5-Large (single-document premise, >0.5)",
+ "note": "사람 라벨(V') 전이라 잠정. 라벨 확정 후 같은 스크립트로 재실행(호출 0).",
+ "n_branches": 180,
+ "n_queries": 45,
+ "n_degraded": 65,
+ "coverage_eq1": 47,
+ "grounding_gt08": 56,
+ "sufficient": {
+  "0.7": 30,
+  "0.8": 19,
+  "0.9": 15
+ },
+ "verify": {
+  "tau_g_global": 0.8,
+  "tau_c_global": 0.8,
+  "pass_grounding": 4,
+  "pass_coverage": 2,
+  "pass_both": 0,
+  "best_mean_grounding": 1.0,
+  "best_min_coverage": 1.0
+ },
+ "minicheck_calls": 719,
+ "chunk_split_violations": 0
+}
