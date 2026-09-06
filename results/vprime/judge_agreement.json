@@ -1,0 +1,17 @@
+{
+ "n_overlap": 32,
+ "n_agree": 21,
+ "agreement_pct": 65.625,
+ "ci": [
+  48.3108,
+  79.5898
+ ],
+ "spec_gate_pct": 90.0,
+ "is_spec_sample": false,
+ "note": "D8-B 게이트가 지정한 25건 표본이 아니라 V' 60건과 우연히 겹친 문장이다. 관측 일치율만 보고하고 통과/탈락 판정은 하지 않는다.",
+ "disagreements": {
+  "unsupported|supported": 5,
+  "supported|unsupported": 5,
+  "unclear|supported": 1
+ }
+}
