@@ -1,0 +1,6 @@
+checkpoint,condition,gate_pass,grounded_normal,grounded_shuffled,n,net
+cross-encoder/nli-deberta-v3-base,whole_max,True,15.6463,0.0,294,15.6463
+cross-encoder/nli-deberta-v3-base,single_L64,False,35.3741,15.9864,294,19.3878
+cross-encoder/nli-deberta-v3-base,union_L64,False,19.3878,9.1837,294,10.2041
+cross-encoder/nli-deberta-v3-base,union_L128,True,8.8435,0.3401,294,8.5034
+cross-encoder/nli-deberta-v3-base,union_L256,True,10.5442,2.0408,294,8.5034

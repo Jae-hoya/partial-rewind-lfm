@@ -12,8 +12,23 @@ D14 는 `union_L256` 에서 **현행 g1 이 grounded 67.0%** 를 낸다고 말�
 **게이트도 같다: 교란 grounded <= 5%.** 실행 전 고정, 사후 변경 금지.
 판정은 **순증**으로만 한다.
 
-대조를 위해 `whole_max`(현행)도 같은 파이프라인으로 다시 잰다 — 이미 아는 값
-(정상 15.65 / 교란 0.00)이 재현되면 스크립트가 맞다는 확인이 된다.
+---
+
+**전제 범위 정정 (2026-09-06, 1차 실행 후).**
+
+1차 실행은 정상·교란 양쪽에 **토픽 단위 풀**(중앙 7 청크)을 썼다. 그런데 D14 의 정상
+값은 **sub-answer 인용 청크**(중앙 3)로 잰 것이다. 범위가 다르니 D14 의 57.8% 와
+1차 D14-N 의 8.84% 가 어긋났다 — union 은 청크를 이어붙이므로 풀이 커지면 전제가
+길어지고 희석된다. **E2 의 57.1 vs 62.3 과 같은 부류의 오류를 두 번째로 저질렀다.**
+
+이 판에서는 **범위를 맞춘다.**
+
+  정상   그 문장이 실제로 인용한 청크 (D14 와 동일)
+  교란   **같은 개수**의 청크를 다른 토픽 풀에서 결정론적으로 뽑는다
+
+개수를 맞추지 않으면 최댓값 집계와 union 길이가 양쪽에서 달라져 비교가 성립하지
+않는다. 뽑기는 시드 없는 결정론이다 — 교란 토픽 풀을 정렬 순서 그대로 앞에서부터,
+문장 인덱스만큼 회전시켜 겹치지 않게 고른다.
 """
 
 from __future__ import annotations
@@ -21,7 +36,6 @@ from __future__ import annotations
 import argparse
 import csv
 import io
-import statistics as st
 import sys
 from pathlib import Path
 
@@ -31,7 +45,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import yaml  # noqa: E402
 
 from d14_spec_trunc import trunc  # noqa: E402
-from d8a_negative_control import SHIFT, spearman  # noqa: E402
+from d8a_negative_control import SHIFT  # noqa: E402
 from diag_sweep import CONDITIONS, pick_topics  # noqa: E402
 
 from lfm.branch import run_branch  # noqa: E402
@@ -45,7 +59,8 @@ from lfm.types import split_sentences  # noqa: E402
 TAU = 0.5
 GATE = 5.0
 CONDS = [("whole_max", None, "max"), ("single_L64", 64, "max"), ("union_L64", 64, "union"),
-         ("union_L128", 128, "union"), ("union_L256", 256, "union")]
+         ("union_L128", 128, "union"), ("union_L256", 256, "union"),
+         ("single_L128", 128, "max"), ("single_L256", 256, "max")]
 
 
 def main(argv=None):
@@ -75,27 +90,33 @@ def main(argv=None):
     picked = pick_topics(topics, args.n_topics, int(cfg["seed"]))
 
     print("자료 수집 (캐시 재생, 호출 0) ...")
-    sents_by, pool_by = {}, {}
+    # 문장마다 **그 문장이 실제로 인용한 청크**를 들고 다닌다 (D14 와 같은 범위).
+    items_by: dict[str, list[dict]] = {}
+    pool_by: dict[str, list[str]] = {}
     for t in picked:
         tid = str(t["id"])
         anchor = " ".join(t.get("terms") or [])
-        s_, p_ = [], []
+        items, pool = [], []
         for p in decompose(t["topic"], llm, ccfg):
             o = run_branch(p, retriever, llm, ccfg, round_=0, search_anchor=anchor)
             cmap = o.chunk_map()
             for c in o.cited_chunks():
-                p_.append(c.text)
+                pool.append(c.text)
             for sa in o.sub_answers:
-                if any(c in cmap for c in sa.citations):
-                    s_.extend(split_sentences(sa.text))
-        sents_by[tid], pool_by[tid] = s_, p_
-        print("  %s  문장 %d · 전제 청크 %d" % (tid, len(s_), len(p_)), flush=True)
+                cited = [cmap[c].text for c in sa.citations if c in cmap]
+                if not cited:
+                    continue
+                for sent in split_sentences(sa.text):
+                    items.append({"sentence": sent, "premises": cited})
+        items_by[tid], pool_by[tid] = items, pool
+        print("  %s  문장 %d · 토픽 풀 %d" % (tid, len(items), len(pool)), flush=True)
 
     tids = [str(t["id"]) for t in picked]
     mapping = {tids[i]: tids[(i + SHIFT) % len(tids)] for i in range(len(tids))}
     assert all(a != b for a, b in mapping.items())
     print("")
     print("교란 배정 (i -> i+%d mod %d), 같은 토픽 0건 확인" % (SHIFT, len(tids)))
+    print("**전제 개수를 맞춘다** — 교란도 정상과 같은 수의 청크를 다른 토픽에서 뽑는다.")
 
     outdir = Path(args.outdir)
     outdir.mkdir(parents=True, exist_ok=True)
@@ -103,7 +124,7 @@ def main(argv=None):
 
     for ck in [x.strip() for x in args.checkpoints.split(",") if x.strip()]:
         print("")
-        print("=" * 72)
+        print("=" * 74)
         print("체크포인트: %s" % ck, flush=True)
         d2 = ccfg.as_dict()
         d2["nli"]["model"] = ck
@@ -119,17 +140,24 @@ def main(argv=None):
                     return nli.entailment([(" ".join(cut), hyp)])[0]
                 return max(nli.entailment([(c, hyp) for c in cut]))
 
-            norm, shuf = [], []
+            norm, shuf, ntok_n, ntok_s = [], [], [], []
             for tid in tids:
-                own, other = pool_by[tid], pool_by[mapping[tid]]
-                if not sents_by[tid] or not own or not other:
+                other = pool_by[mapping[tid]]
+                if not items_by[tid] or not other:
                     continue
-                for s_ in sents_by[tid]:
-                    a = score(s_, own)
-                    b = score(s_, other)
+                for k, it in enumerate(items_by[tid]):
+                    own = it["premises"]
+                    m = len(own)
+                    # 같은 개수를 다른 토픽 풀에서 결정론적으로 회전 선택
+                    fake = [other[(k * m + j) % len(other)] for j in range(m)]
+                    a = score(it["sentence"], own)
+                    b = score(it["sentence"], fake)
                     norm.append(a); shuf.append(b)
+                    ntok_n.append(sum(len(tk.encode(x, truncation=False)) for x in own))
+                    ntok_s.append(sum(len(tk.encode(x, truncation=False)) for x in fake))
                     rows.append({"checkpoint": ck, "condition": cname, "src_topic": tid,
-                                 "p_normal": round(a, 6), "p_shuffled": round(b, 6)})
+                                 "n_chunks": m, "p_normal": round(a, 6),
+                                 "p_shuffled": round(b, 6)})
             gn = 100.0 * sum(1 for x in norm if x >= TAU) / len(norm)
             gs = 100.0 * sum(1 for x in shuf if x >= TAU) / len(shuf)
             ok = gs <= GATE
@@ -156,8 +184,9 @@ def main(argv=None):
               % (s_["condition"], s_["grounded_normal"], s_["grounded_shuffled"],
                  s_["net"], "PASS" if s_["gate_pass"] else "**FAIL**"))
     print("")
-    print("대조: whole_max 는 D8-A/D10-N 에서 정상 15.65 / 교란 0.00 이었다.")
-    print("      재현되면 스크립트가 맞다는 확인이다.")
+    print("대조 — D14 의 정상값(같은 범위): whole 15.6 · single_L64 31.6 · union_L64 34.0")
+    print("      · union_L128 57.8 · union_L256 67.0 · single_L128 42.2 · single_L256 30.3")
+    print("정상값이 이와 맞아야 범위가 같다는 확인이 된다.")
     print("-> " + str(outdir))
     return 0
 
