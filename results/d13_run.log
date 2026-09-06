@@ -1,0 +1,75 @@
+자료 수집 (캐시 재생, 호출 0) ...
+  [ 1/15] t007  문장 28
+  [ 2/15] t008  문장 40
+  [ 3/15] t014  문장 53
+  [ 4/15] t021  문장 63
+  [ 5/15] t022  문장 107
+  [ 6/15] t028  문장 127
+  [ 7/15] t031  문장 141
+  [ 8/15] t033  문장 161
+  [ 9/15] t037  문장 183
+  [10/15] t038  문장 195
+  [11/15] t039  문장 203
+  [12/15] t040  문장 224
+  [13/15] t048  문장 249
+  [14/15] t049  문장 264
+  [15/15] t050  문장 294
+문장 294 · 패딩 재료 108
+양성 쌍 선정 (현행 기준 p > 0.90) ...
+양성 쌍 35개
+
+========================================================================
+체크포인트: cross-encoder/nli-deberta-v3-base
+  배수    토큰중앙  뒤에붙임 p중앙/유지   앞에붙임 p중앙/유지
+  1.00x     144    0.992 / 100.0%      0.992 / 100.0%
+Token indices sequence length is longer than the specified maximum sequence length for this model (547 > 512). Running this sequence through the model will result in indexing errors
+  1.25x     181    0.963 /  68.6%      0.983 /  74.3%
+  1.50x     215    0.108 /  42.9%      0.919 /  60.0%
+  1.75x     251    0.017 /  37.1%      0.570 /  51.4%
+  2.00x     288    0.011 /  34.3%      0.061 /  37.1%
+  2.50x     357    0.011 /  22.9%      0.037 /  34.3%
+  3.00x     419    0.006 /  17.1%      0.001 /  22.9%
+  4.00x     568    0.003 /  14.3%      0.001 /  11.4%
+  5.00x     718    0.005 /  14.3%      0.001 /  11.4%
+  6.00x     842    0.005 /  11.4%      0.000 /   2.9%
+  자연 상태 885 쌍 — 전제 토큰 구간별 grounded@0.5
+       0-100   n=  27  중앙 p 0.007  >=0.5  44.4%
+     100-200   n= 236  중앙 p 0.003  >=0.5  23.3%
+     200-300   n=  60  중앙 p 0.004  >=0.5  23.3%
+     300-400   n=  85  중앙 p 0.001  >=0.5   5.9%
+     400-600   n= 177  중앙 p 0.001  >=0.5   4.5%
+     600-+     n= 300  중앙 p 0.001  >=0.5   1.7%
+
+========================================================================
+체크포인트: facebook/bart-large-mnli
+  배수    토큰중앙  뒤에붙임 p중앙/유지   앞에붙임 p중앙/유지
+C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\bart\modeling_bart.py:603: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+  1.00x     157    0.915 /  82.9%      0.915 /  82.9%
+  1.25x     196    0.917 /  85.7%      0.934 /  88.6%
+  1.50x     238    0.922 /  85.7%      0.928 /  82.9%
+  1.75x     280    0.894 /  85.7%      0.946 /  80.0%
+  2.00x     322    0.911 /  88.6%      0.933 /  77.1%
+Token indices sequence length is longer than the specified maximum sequence length for this model (1143 > 1024). Running this sequence through the model will result in indexing errors
+  2.50x     400    0.867 /  80.0%      0.902 /  68.6%
+  3.00x     466    0.814 /  74.3%      0.545 /  51.4%
+  4.00x     622    0.786 /  74.3%      0.066 /  34.3%
+  5.00x     762    0.814 /  74.3%      0.042 /  17.1%
+  6.00x     906    0.808 /  74.3%      0.038 /  11.4%
+  자연 상태 885 쌍 — 전제 토큰 구간별 grounded@0.5
+       0-100   n=  27  중앙 p 0.182  >=0.5  48.1%
+     100-200   n= 178  중앙 p 0.484  >=0.5  49.4%
+     200-300   n= 115  중앙 p 0.456  >=0.5  49.6%
+     300-400   n=  72  중앙 p 0.549  >=0.5  55.6%
+     400-600   n= 184  중앙 p 0.386  >=0.5  42.9%
+     600-+     n= 309  중앙 p 0.407  >=0.5  45.3%
+
+=== 실무 상한 — 유지율이 50% 아래로 처음 내려가는 지점 ===
+| 체크포인트 | 붙이는 위치 | 마지막 안전 배수 | 그때 토큰 중앙 |
+|---|---|---|---|
+| cross-encoder/nli-deberta-v3-base | back | 1.25x | 181 |
+| cross-encoder/nli-deberta-v3-base | front | 1.75x | 251 |
+| facebook/bart-large-mnli | back | 6.00x | 906 |
+| facebook/bart-large-mnli | front | 3.00x | 466 |
+
+-> results\diag\d13
