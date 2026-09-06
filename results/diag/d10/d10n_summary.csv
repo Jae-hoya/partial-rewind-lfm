@@ -1,0 +1,5 @@
+checkpoint,gate_pass,grounded_normal,grounded_shuffled,n,net,pool_median,rho_poolsize_p,status
+cross-encoder/nli-deberta-v3-base,True,15.6463,0.0,294,15.6463,7.0,-0.085,ok
+cross-encoder/nli-deberta-v3-large,False,37.7551,21.0884,294,16.6667,7.0,-0.051,ok
+roberta-large-mnli,True,19.7279,2.7211,294,17.0068,7.0,-0.258,ok
+facebook/bart-large-mnli,True,60.8844,1.0204,294,59.8639,7.0,-0.079,ok

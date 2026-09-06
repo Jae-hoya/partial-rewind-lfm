@@ -37,3 +37,15 @@ Some weights of the model checkpoint at roberta-large-mnli were not used when in
 체크포인트: facebook/bart-large-mnli
 C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\bart\modeling_bart.py:603: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
   attn_output = torch.nn.functional.scaled_dot_product_attention(
+  n=294  정상 60.88%  교란 1.02%  **순증 59.86%p**  rho(풀,p) -0.079  게이트 PASS
+
+=== 음성 통제 요약 — 판정 지표는 순증이다 ===
+| 체크포인트 | n | 풀 중앙 | 정상 | 교란(위양성) | **순증** | rho | 게이트(<=5%) |
+|---|---|---|---|---|---|---|---|
+| cross-encoder/nli-deberta-v3-base | 294 | 7 | 15.6% | 0.0% | **15.6%p** | -0.085 | PASS |
+| cross-encoder/nli-deberta-v3-large | 294 | 7 | 37.8% | 21.1% | **16.7%p** | -0.051 | FAIL |
+| roberta-large-mnli | 294 | 7 | 19.7% | 2.7% | **17.0%p** | -0.258 | PASS |
+| facebook/bart-large-mnli | 294 | 7 | 60.9% | 1.0% | **59.9%p** | -0.079 | PASS |
+
+게이트 통과 중 순증 최대: facebook/bart-large-mnli (59.9%p)
+-> results\diag\d10
