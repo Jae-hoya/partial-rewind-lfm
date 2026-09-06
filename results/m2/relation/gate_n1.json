@@ -1,0 +1,17 @@
+{
+ "gate": "N1",
+ "checkpoint": "facebook/bart-large-mnli",
+ "tau_c": 0.7,
+ "threshold_pct": 5.0,
+ "n_pairs": 823,
+ "n_groups": 114,
+ "contradiction_median": 0.121638,
+ "contradiction_mean": 0.339526,
+ "gt_tau_c_pct": 26.367,
+ "pass": false,
+ "attribution": {
+  "attributed": 458,
+  "failed": 0
+ },
+ "note": "5% 초과. 관련 pair 안에서도 충돌이 넘친다 — 집계를 바꾸는 v1.2 는 만들지 않는다(마스터플랜 §9-2)."
+}
