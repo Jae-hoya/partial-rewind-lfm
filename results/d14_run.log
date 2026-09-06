@@ -1,0 +1,38 @@
+자료 수집 (캐시 재생, 호출 0) ...
+  [ 1/15] t007  문장 28
+  [ 2/15] t008  문장 40
+  [ 3/15] t014  문장 53
+  [ 4/15] t021  문장 63
+  [ 5/15] t022  문장 107
+  [ 6/15] t028  문장 127
+  [ 7/15] t031  문장 141
+  [ 8/15] t033  문장 161
+  [ 9/15] t037  문장 183
+  [10/15] t038  문장 195
+  [11/15] t039  문장 203
+  [12/15] t040  문장 224
+  [13/15] t048  문장 249
+  [14/15] t049  문장 264
+  [15/15] t050  문장 294
+문장 294
+
+==========================================================================
+체크포인트: cross-encoder/nli-deberta-v3-base
+Token indices sequence length is longer than the specified maximum sequence length for this model (685 > 512). Running this sequence through the model will result in indexing errors
+  whole_max        전제토큰중앙   368   grounded  15.6%   중앙 p 0.002
+  sentsplit_max    전제토큰중앙    28   grounded  38.4%   중앙 p 0.031
+  single_L32       전제토큰중앙    33   grounded  27.9%   중앙 p 0.002
+  single_L64       전제토큰중앙    47   grounded  31.6%   중앙 p 0.008
+  single_L128      전제토큰중앙   105   grounded  42.2%   중앙 p 0.075
+  single_L256      전제토큰중앙   219   grounded  30.3%   중앙 p 0.009
+  union_L32        전제토큰중앙    90   grounded  24.8%   중앙 p 0.004
+  union_L64        전제토큰중앙   130   grounded  34.0%   중앙 p 0.010
+  union_L128       전제토큰중앙   314   grounded  57.8%   중앙 p 0.926
+  union_L256       전제토큰중앙   613   grounded  67.0%   중앙 p 0.987
+
+==========================================================================
+체크포인트: facebook/bart-large-mnli
+C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\bart\modeling_bart.py:603: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+Token indices sequence length is longer than the specified maximum sequence length for this model (1136 > 1024). Running this sequence through the model will result in indexing errors
+  whole_max        전제토큰중앙   376   grounded  60.5%   중앙 p 0.708
