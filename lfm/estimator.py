@@ -108,52 +108,53 @@ class MiniCheckDocEstimator:
 
 
 class MiniCheckScorer:
-    """MiniCheck-Flan-T5-Large 래퍼. `experiments/d9_minicheck.Scorer` 와 **같은 설정**이다.
+    """MiniCheck-Flan-T5-Large 래퍼 — **진짜 단일 문서 전제**.
 
-    V′ 의 사람 라벨 60건이 그 설정으로 채점됐으므로 한 글자도 바꾸지 않는다 —
-    모델명·max_model_len·자르기 규칙이 다르면 확정한 연산자와 다른 것을 쓰는 셈이다.
+    처음 판(=`experiments/d9_minicheck.Scorer`)은 `max_model_len=2048` 만 넘기고
+    `chunk_size` 를 안 넘겼다. 그런데 `minicheck/minicheck.py:148` 이
 
-    import 는 첫 호출 때 한다. 이 모듈을 그냥 import 하는 것만으로 2GB 모델을
-    올리면 테스트가 못 돌아간다.
+        self.model.chunk_size = 500 if model_name == 'flan-t5-large' else 400
+
+    으로 **하드코딩**한다. `max_model_len` 은 쪼개기에 영향이 없고 개별 청크를 자를
+    때만 쓰인다. 그래서 500토큰이 넘는 전제는 조용히 쪼개졌고, `inference()` 는
+    청크 **최댓값**으로 집계한다 — 논문이 "없앴다" 고 한 자유도가 그대로 돌아왔다.
+    294문장 중 189건(64.3%)이 그렇게 채점됐다.
+
+    여기서는 `score(..., chunk_size=...)` 로 직접 넘겨 한 조각을 강제한다.
+    기본값은 실측 분포에서 온 것이다 — 가장 긴 전제 7,129 토큰, doc+claim 최대
+    7,169, `inference.py:300` 이 claim 자리로 300 을 뺀다. 그래서 7,200 / 7,500.
+
+    **`d9_minicheck.Scorer` 는 건드리지 않는다.** 그것이 기존 수치를 재현한다.
     """
 
     MODEL = "flan-t5-large"          # = lytang/MiniCheck-Flan-T5-Large
-    MAX_LEN = 2048
-    HEADROOM = 64                    # 프롬프트 여유
+    CHUNK_SIZE = 7200                # 가장 긴 전제 7,129 토큰보다 크게
+    MAX_LEN = 7500                   # inference.py:444 가 chunk_size < max_model_len 강제
 
-    def __init__(self):
+    def __init__(self, chunk_size: int | None = None, max_model_len: int | None = None):
         from minicheck.minicheck import MiniCheck
-        from transformers import AutoTokenizer
-        self.m = MiniCheck(model_name=self.MODEL, max_model_len=self.MAX_LEN, batch_size=8)
-        self.tok = AutoTokenizer.from_pretrained("google/flan-t5-large")
+        self.chunk_size = int(chunk_size or self.CHUNK_SIZE)
+        self.max_model_len = int(max_model_len or self.MAX_LEN)
+        if self.chunk_size >= self.max_model_len:
+            raise ValueError("chunk_size(%d) < max_model_len(%d) 이어야 한다"
+                             % (self.chunk_size, self.max_model_len))
+        self.m = MiniCheck(model_name=self.MODEL, max_model_len=self.max_model_len,
+                           batch_size=1)
         self.calls = 0
-        self.truncated = 0
         self.last_n_chunks: int | None = None
 
-    def truncate(self, doc: str) -> str:
-        ids = self.tok.encode(doc, truncation=False)
-        if len(ids) <= self.MAX_LEN - self.HEADROOM:
-            return doc
-        self.truncated += 1
-        return self.tok.decode(ids[: self.MAX_LEN - self.HEADROOM], skip_special_tokens=True)
-
     def score(self, doc: str, claim: str) -> float:
-        doc = self.truncate(doc)
-        out = self.m.score(docs=[doc], claims=[claim])
+        out = self.m.score(docs=[doc], claims=[claim], chunk_size=self.chunk_size)
         self.calls += 1
         # 실측한 반환 형태 (MiniCheck 0.1.0):
-        #   out[0] [pred_label]        out[1] [prob]
-        #   out[2] [[실제로 쓰인 청크 문자열, ...]]   out[3] [청크별 확률 array]
+        #   out[0] [pred]  out[1] [prob]  out[2] [[쓰인 청크...]]  out[3] [청크별 확률]
         # **청크 수는 out[2][0] 의 길이**다. out[3] 을 정수로 읽으면 확률이 0 으로
-        # 내림돼 "0 조각" 이라는 거짓 경보가 난다 — 처음에 그렇게 틀렸다.
+        # 내림돼 "0 조각" 거짓 경보가 난다 — 처음에 그렇게 틀렸다.
         self.last_n_chunks = None
         try:
             self.last_n_chunks = len(out[2][0])
         except (TypeError, IndexError):
-            try:
-                self.last_n_chunks = len(out[3][0])
-            except (TypeError, IndexError):
-                self.last_n_chunks = None
+            pass
         return float(out[1][0])
 
 
