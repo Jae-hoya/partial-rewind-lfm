@@ -1,0 +1,80 @@
+{
+ "scorer": {
+  "chunk_size": 7200,
+  "max_model_len": 7500,
+  "calls": 882
+ },
+ "n_sentences": 294,
+ "n_split_sentence_scope": 0,
+ "n_split_negative_control": 0,
+ "gates": {
+  "precision": {
+   "k": 38,
+   "n": 44,
+   "value": 0.8636363636363636,
+   "ci": [
+    73.29026247825904,
+    93.59713259213996
+   ]
+  },
+  "recall": {
+   "k": 38,
+   "n": 49,
+   "value": 0.7755102040816326,
+   "ci": [
+    64.12094381295425,
+    86.97516228527138
+   ]
+  },
+  "n_recovery": {
+   "k": 25,
+   "n": 33,
+   "value": 0.7575757575757576,
+   "ci": [
+    58.97505131450972,
+    87.1684386533527
+   ]
+  },
+  "false_recovery": {
+   "k": 3,
+   "n": 7,
+   "value": 0.42857142857142855,
+   "ci": [
+    15.821692226262678,
+    74.95457695909742
+   ]
+  },
+  "retention": {
+   "k": 13,
+   "n": 16,
+   "value": 0.8125,
+   "ci": [
+    56.99064013154177,
+    93.40852122641323
+   ]
+  }
+ },
+ "negative_control": {
+  "n": 294,
+  "normal_pct": 82.6531,
+  "shuffled_pct": 0.0,
+  "net_pp": 82.6531,
+  "premise_scope": "topic pool"
+ },
+ "previous_with_chunking": {
+  "precision": [
+   34,
+   40
+  ],
+  "recall": [
+   34,
+   49
+  ],
+  "n_recovery": [
+   22,
+   33
+  ],
+  "normal_pct": 64.29,
+  "shuffled_pct": 0.0
+ }
+}
