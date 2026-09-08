@@ -1,0 +1,25 @@
+{
+ "n": 294,
+ "doc_tokens": {
+  "median": 1064,
+  "p90": 3652,
+  "p99": 7129,
+  "max": 7129
+ },
+ "doc_plus_claim_max": 7169,
+ "current": {
+  "chunk_size": 500,
+  "max_model_len": 2048,
+  "n_over_chunk": 228,
+  "n_over_truncate": 105
+ },
+ "required": {
+  "chunk_size_min": 7129,
+  "max_model_len_min": 7469
+ },
+ "candidate_4096": {
+  "n_split": 28,
+  "n_truncated": 29
+ },
+ "cause": "minicheck/minicheck.py:148 이 flan-t5-large 의 chunk_size 를 500 으로 하드코딩한다. max_model_len 은 쪼개기에 영향이 없다. inference() 는 청크 최댓값으로 집계한다."
+}
