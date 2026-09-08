@@ -168,9 +168,30 @@ def test_minicheck_는_명시적으로_켜야_한다():
     assert est.name == "minicheck_doc"
 
 
-def test_scorer_없이_minicheck_를_켜면_거부한다():
-    with pytest.raises(ValueError, match="scorer"):
-        load_estimator(Cfg({"estimator.kind": "minicheck_doc"}), nli=FakeNLI())
+def test_scorer_없이_켜면_MiniCheck_를_스스로_올린다(monkeypatch):
+    """실행 스크립트가 scorer 를 안 넘겨도 확정 연산자가 서야 한다.
+
+    실제 모델(2GB)을 올리면 테스트가 못 돈다. 그래서 **불리는지만** 확인한다.
+    """
+    import lfm.estimator as E
+    made = []
+
+    class Stub:
+        def __init__(self):
+            made.append(1)
+
+        def score(self, doc, claim):
+            return 0.0
+
+    monkeypatch.setattr(E, "MiniCheckScorer", Stub)
+    est = E.load_estimator(Cfg({"estimator.kind": "minicheck_doc"}), nli=FakeNLI())
+    assert est.name == "minicheck_doc"
+    assert made == [1]
+
+
+def test_nli_없이_nli_max_를_켜면_거부한다():
+    with pytest.raises(ValueError, match="NLI"):
+        load_estimator(Cfg({"estimator.kind": "nli_max"}))
 
 
 def test_모르는_종류는_거부한다():

@@ -32,6 +32,7 @@ from lfm.config import load_config  # noqa: E402
 from lfm.controller import GlobalRetry  # noqa: E402
 from lfm.evidence import sufficient  # noqa: E402
 from lfm.llm import LLM, load_dotenv_if_present  # noqa: E402
+from lfm.estimator import load_estimator  # noqa: E402
 from lfm.nli import MockNLI, load_nli  # noqa: E402
 from lfm.pipeline import QueryResult, run_query  # noqa: E402
 from lfm.retriever import BM25Retriever  # noqa: E402
@@ -195,6 +196,7 @@ def write_report(outdir: Path, ctx: dict[str, Any]) -> None:
     a("| 재실행된 branch 총수 | %d |" % ctx["n_reexec"])
     a("| degraded branch (절단·파싱 실패) | %d |" % ctx["n_degraded"])
     a("| 모델 | `%s` (reasoning_effort=%s) |" % (ctx["model"], ctx["reasoning_effort"]))
+    a("| 충분성 연산자 | `%s` |" % ctx.get("estimator", "nli_max"))
     a("| NLI | `%s` (%s) |" % (ctx["nli_model"], ctx["nli_device"]))
     a("| 소요 | %.1f 분 |" % (ctx["elapsed_s"] / 60))
     a("")
@@ -259,11 +261,26 @@ def write_report(outdir: Path, ctx: dict[str, Any]) -> None:
 # --- main ----------------------------------------------------------------
 
 
+class _KindCfg:
+    """`estimator.kind` 만 덮어쓰는 얇은 껍데기. 원본 cfg 는 그대로 둔다."""
+
+    def __init__(self, cfg, kind):
+        self._cfg, self._kind = cfg, kind
+
+    def get(self, key, default=None):
+        if key == "estimator.kind":
+            return self._kind
+        return self._cfg.get(key, default)
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Test A (SPEC §4)")
     ap.add_argument("--config", default=None)
     ap.add_argument("--limit", type=int, default=0, help="상위 N개 토픽만. 비용 시험용")
     ap.add_argument("--outdir", default=None)
+    ap.add_argument("--estimator", default=None,
+                    help="충분성 연산자 (SPEC_M1prime §1). {nli_max, minicheck_doc}. "
+                         "안 주면 config.yaml 의 estimator.kind — 기본 nli_max")
     ap.add_argument("--mock", action="store_true", help="mock NLI (스모크용)")
     ap.add_argument("--mock-llm", action="store_true",
                     help="mock LLM. 실 API 없이 파이프라인만 점검한다 (P3 스모크)")
@@ -301,6 +318,14 @@ def main(argv: list[str] | None = None) -> int:
         cfg = Config(cfg_dict, source="mock-llm")
     llm = LLM(cfg, transport=transport)
     nli = MockNLI() if (args.mock or args.mock_llm) else load_nli(cfg)
+
+    # 충분성 연산자. --estimator 로 덮어쓰지 않으면 config 의 기본값(nli_max)이라
+    # Test A 원본 경로가 그대로 재현된다.
+    kind = args.estimator or str(cfg.get("estimator.kind", "nli_max"))
+    if args.mock or args.mock_llm:
+        kind = "nli_max"                       # 스모크는 모델을 올리지 않는다
+    est = load_estimator(_KindCfg(cfg, kind), nli=nli)
+    print("추정자: %s" % est.name)
     retriever = BM25Retriever(cfg)
     controller = GlobalRetry(cfg)
     run_id = new_run_id()
@@ -325,6 +350,7 @@ def main(argv: list[str] | None = None) -> int:
                 controller=controller,
                 run_id=run_id,
                 trace_writer=tw,
+                est=est,
                 search_anchor=" ".join(t.get("terms") or []),
             )
             results.append(qr)
@@ -380,6 +406,7 @@ def main(argv: list[str] | None = None) -> int:
         "seed": int(cfg["seed"]),
         "model": llm.model,
         "reasoning_effort": llm.reasoning_effort,
+        "estimator": est.name,
         "nli_model": "mock" if args.mock else cfg["nli.model"],
         "nli_device": getattr(nli, "device", "mock"),
         "elapsed_s": elapsed,

@@ -1,0 +1,26 @@
+{
+ "summary": {
+  "all_294": {
+   "n": 294,
+   "n_split": 189,
+   "pct_split": 64.2857,
+   "max_chunks": 3,
+   "n_grounded": 208,
+   "n_grounded_split": 126
+  },
+  "vprime_60": {
+   "n": 60,
+   "n_split": 36,
+   "pct_split": 60.0,
+   "max_chunks": 3,
+   "n_grounded": 40,
+   "n_grounded_split": 23
+  }
+ },
+ "scorer": {
+  "model": "flan-t5-large",
+  "max_model_len": 2048,
+  "truncate_headroom": 64,
+  "truncated_calls": 105
+ }
+}

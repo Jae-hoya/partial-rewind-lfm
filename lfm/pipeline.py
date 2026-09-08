@@ -102,7 +102,12 @@ def run_query(
     run_id: str,
     trace_writer=None,
     search_anchor: str = "",
+    est=None,
 ) -> QueryResult:
+    """`est` 를 주면 grounding 을 그 연산자로 잰다 (SPEC_M1prime §1).
+
+    주지 않으면 종전대로 `nli` 로 잰다 — Test A 원본 경로가 그대로 재현된다.
+    """
     max_rounds = int(cfg["max_rounds"])
 
     perspectives = decompose(query, llm, cfg)
@@ -125,7 +130,7 @@ def run_query(
             outputs = {p.role: run_branch(p, retriever, llm, cfg, round_=r,
                                           search_anchor=search_anchor)
                        for p in perspectives}
-        evidence = {bid: evaluate(o, nli, cfg) for bid, o in outputs.items()}
+        evidence = {bid: evaluate(o, nli, cfg, est) for bid, o in outputs.items()}
         verify = global_verify(evidence, cfg)
 
         state = State(
