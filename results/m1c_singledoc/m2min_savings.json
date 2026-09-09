@@ -1,0 +1,41 @@
+{
+ "common_queries": 45,
+ "total_branch_rounds": 540,
+ "total_tokens": 2534331,
+ "rounds": [
+  0,
+  1,
+  2
+ ],
+ "counterfactual": true,
+ "note": "관측 궤적 고정. FREEZE 는 verify 를 바꾸므로 진짜 실행은 다른 궤적을 그린다. 이 값은 하한이고 M1' 의 추정치가 아니다.",
+ "by_tau": {
+  "0.7": {
+   "frozen_branches": 28,
+   "saved_branch_rounds": 56,
+   "saved_tokens": 329173,
+   "pct_branch_rounds": 10.3704,
+   "pct_tokens": 12.9886,
+   "g1_frozen": 3,
+   "g1_pct_branch_rounds": 1.1111
+  },
+  "0.8": {
+   "frozen_branches": 19,
+   "saved_branch_rounds": 38,
+   "saved_tokens": 220169,
+   "pct_branch_rounds": 7.037,
+   "pct_tokens": 8.6875,
+   "g1_frozen": 1,
+   "g1_pct_branch_rounds": 0.3704
+  },
+  "0.9": {
+   "frozen_branches": 16,
+   "saved_branch_rounds": 32,
+   "saved_tokens": 186218,
+   "pct_branch_rounds": 5.9259,
+   "pct_tokens": 7.3478,
+   "g1_frozen": 1,
+   "g1_pct_branch_rounds": 0.3704
+  }
+ }
+}

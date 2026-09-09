@@ -92,6 +92,9 @@ def main(argv=None):
     ap.add_argument("--n-topics", type=int, default=50)
     ap.add_argument("--testa", default="results/test_a/20260829-041445/waste_ratio.csv")
     ap.add_argument("--outdir", default="results/m1c")
+    ap.add_argument("--scorer", default="legacy", choices=["legacy", "singledoc"],
+                    help="legacy=쪼개기 버그 있는 원본(기존 수치 재현) · "
+                         "singledoc=chunk_size 강제한 확정 연산자")
     args = ap.parse_args(argv)
 
     root = Path(__file__).resolve().parents[1]
@@ -108,7 +111,11 @@ def main(argv=None):
     for r in csv.DictReader(io.open(root / args.testa, encoding="utf-8")):
         tok[(r["query_id"], r["branch"], int(r["round"]))] = int(r["tokens"])
 
-    from d9_minicheck import Scorer
+    # SPEC_M1prime §1 — 추정자는 estimator.py 경유. 기본은 예전 그대로다.
+    if getattr(args, "scorer", "legacy") == "singledoc":
+        from lfm.estimator import MiniCheckScorer as Scorer   # chunk_size 강제
+    else:
+        from d9_minicheck import Scorer                       # 쪼개기 버그 있는 원본
     print("MiniCheck 적재 ...", flush=True)
     sc = Scorer()
 

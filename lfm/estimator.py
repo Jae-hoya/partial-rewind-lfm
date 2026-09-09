@@ -141,6 +141,7 @@ class MiniCheckScorer:
         self.m = MiniCheck(model_name=self.MODEL, max_model_len=self.max_model_len,
                            batch_size=1)
         self.calls = 0
+        self.violations = 0          # 내부 청크가 1 이 아니었던 횟수 — **세어서 남긴다**
         self.last_n_chunks: int | None = None
 
     def score(self, doc: str, claim: str) -> float:
@@ -155,6 +156,8 @@ class MiniCheckScorer:
             self.last_n_chunks = len(out[2][0])
         except (TypeError, IndexError):
             pass
+        if (self.last_n_chunks or 1) != 1:
+            self.violations += 1     # d9_minicheck.Scorer 는 이걸 안 세서 "위반 0" 이 나왔다
         return float(out[1][0])
 
 

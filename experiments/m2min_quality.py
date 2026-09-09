@@ -107,6 +107,9 @@ def main(argv=None):
     ap.add_argument("--n-topics", type=int, default=50)
     ap.add_argument("--live", default="results/m1c/m2min_live.csv")
     ap.add_argument("--outdir", default="results/m1c")
+    ap.add_argument("--scorer", default="legacy", choices=["legacy", "singledoc"],
+                    help="legacy=쪼개기 버그 있는 원본(기존 수치 재현) · "
+                         "singledoc=chunk_size 강제한 확정 연산자")
     args = ap.parse_args(argv)
 
     root = Path(__file__).resolve().parents[1]
@@ -155,7 +158,11 @@ def main(argv=None):
     # 조용한 실패 방지 — 앞 판에서 제목 0 개인데 계산이 그냥 진행됐다.
     assert med > 0, "섹션 제목을 하나도 못 뽑았다. sections 파싱을 확인하라."
 
-    from d9_minicheck import Scorer
+    # SPEC_M1prime §1 — 추정자는 estimator.py 경유. 기본은 예전 그대로다.
+    if getattr(args, "scorer", "legacy") == "singledoc":
+        from lfm.estimator import MiniCheckScorer as Scorer   # chunk_size 강제
+    else:
+        from d9_minicheck import Scorer                       # 쪼개기 버그 있는 원본
     print("MiniCheck 적재 (얼리기 판정용) ...", flush=True)
     sc = Scorer()
     from m2min_live import evaluate

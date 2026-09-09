@@ -1,0 +1,48 @@
+{
+ "provisional": true,
+ "n_queries": 45,
+ "unit": "branch",
+ "note": "실행 단위가 branch 다. 스펙의 최소 변경 단위인 sub-question 이 아니다 — 그 단위 artifact 는 캐시에 없다. 따라서 이 비교는 절감을 과소평가한다.",
+ "calls": {
+  "A": 540,
+  "B": 495,
+  "delta_pct": -8.3333
+ },
+ "tokens": {
+  "A": 2534331,
+  "B": 2281158,
+  "delta_pct": -9.9897
+ },
+ "subq": {
+  "A": 2268,
+  "B": 2091,
+  "delta_pct": -7.8042
+ },
+ "coverage": {
+  "A": 0.381111,
+  "B": 0.42,
+  "delta": 0.038889,
+  "ci": [
+   0.018056,
+   0.0625
+  ],
+  "within_ci": false
+ },
+ "grounding": {
+  "A": 0.447806,
+  "B": 0.493924,
+  "delta": 0.046119,
+  "ci": [
+   0.020037,
+   0.076634
+  ],
+  "within_ci": false
+ },
+ "verify_pass": {
+  "A": 0,
+  "B": 0
+ },
+ "frozen_branches": 27,
+ "minicheck_calls": 2198,
+ "chunk_split_violations": 0
+}
