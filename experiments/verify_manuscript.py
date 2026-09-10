@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MS = ROOT / "specs_from_chat/manuscript_PartialRewind_v0.9.md"
+MS = ROOT / "specs_from_chat/manuscript_PartialRewind_v1.0.md"
 
 fails: list[str] = []
 missing: list[str] = []
@@ -61,10 +61,10 @@ def main() -> int:
         return 1
     t = io.open(MS, encoding="utf-8").read()
 
-    live = load("results/m1c/m2min_live.json")
-    qual = load("results/m1c/m2min_quality.json")
-    m1c = load("results/m1c/m1c_summary.json")
-    sav = load("results/m1c/m2min_savings.json")
+    live = load("results/m1c_singledoc/m2min_live.json")
+    qual = load("results/m1c_singledoc/m2min_quality.json")
+    m1c = load("results/m1c_singledoc/m1c_summary.json")
+    sav = load("results/m1c_singledoc/m2min_savings.json")
     n1 = load("results/m2/relation/gate_n1.json")
     p1p2 = load("results/m2/relation/gate_p1p2.json")
 

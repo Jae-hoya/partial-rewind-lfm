@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MS = ROOT / "specs_from_chat/manuscript_PartialRewind_v0.9.md"
+MS = ROOT / "specs_from_chat/manuscript_PartialRewind_v1.0.md"
 POS, NEG = "지지", "불지지"
 
 FAIL = 0
@@ -68,12 +68,18 @@ def main() -> int:
     lab = rd("results/vprime/labels_stage1.csv", "utf-8-sig")
     key = {r["item_id"]: r for r in rd("results/vprime/_key_stage1.csv", "utf-8-sig")}
     jb = {r["sentence"].strip(): r for r in rd("results/diag/d8/d8b_judge_sample.csv")}
+    # **MiniCheck 라벨은 정답키가 아니라 재채점 결과에서 온다.** 정답키의 lab_mc 는
+    # 쪼개기 버그가 있던 채점(294중 189건 분할)이고, v1.0 이 싣는 값은 단일 문서
+    # 재채점이다. g1·bart 는 전제 처리가 안 바뀌어 정답키 그대로 쓴다.
+    mcnew = {r["item_id"]: float(r["p_mc_new"]) > 0.5
+             for r in rd("results/vprime/rescore_singledoc_rows.csv")}
 
     it = []
     for x in lab:
         h = x["human_label"].strip()
         k = key.get(x["item_id"])
-        if h in (POS, NEG) and k:
+        if h in (POS, NEG) and k and x["item_id"] in mcnew:
+            k = dict(k); k["lab_mc"] = "1" if mcnew[x["item_id"]] else "0"
             it.append({"h": h, "k": k, "j": jb.get(x["문장"].strip())})
 
     print("=" * 78)
@@ -83,7 +89,7 @@ def main() -> int:
 
     sup = [i for i in it if i["h"] == POS]
     for est, col, pr, rc, nr in [("g1", "lab_g1", 0.800, 0.327, 0.000),
-                                 ("MiniCheck", "lab_mc", 0.850, 0.694, 0.667),
+                                 ("MiniCheck", "lab_mc", 0.864, 0.776, 0.758),
                                  ("bart", "lab_bart", 0.795, 0.633, 0.545)]:
         pn = [i for i in it if i["k"][col] == "1"]
         pk = sum(1 for i in pn if i["h"] == POS)
@@ -96,12 +102,14 @@ def main() -> int:
         chk("%s recall" % est, rk / len(sup), rc, 0.0006)
         chk("%s N층 회수" % est, nk / len(tgt), nr, 0.0006)
 
-    # 관문 미달 폭 — 원고가 "falls 0.006 short" 라고 적었다
+    # v1.0 에서 미결 사유가 **recall 미달 -> precision 하한 미달**로 바뀌었다.
     mk = sum(1 for i in sup if i["k"]["lab_mc"] == "1")
-    chk("recall 미달 폭 (바 0.70 − 실측)", 0.70 - mk / len(sup), 0.006, 0.0006)
-    lo, hi = wilson(mk, len(sup))
-    chk("MiniCheck recall Wilson 하한(%)", lo, 55.5, 0.05)
-    chk("MiniCheck recall Wilson 상한(%)", hi, 80.5, 0.05)
+    chk("MiniCheck recall 이 바 0.70 을 넘는다", mk / len(sup) - 0.70, 0.0755, 0.0006)
+    pn2 = [i for i in it if i["k"]["lab_mc"] == "1"]
+    pk2 = sum(1 for i in pn2 if i["h"] == POS)
+    lo, hi = wilson(pk2, len(pn2))
+    chk("precision Wilson 하한(%)", lo, 73.29, 0.05)
+    chk("precision 하한이 바-0.10=75 에 미달하는 폭(%p)", 75.0 - lo, 1.71, 0.05)
 
     print("")
     print("=" * 78)
@@ -142,9 +150,9 @@ def main() -> int:
     mfls = sum(1 for i in fls if i["k"]["lab_mc"] == "1")
     mkep = sum(1 for i in keep if i["k"]["lab_mc"] == "1")
     chk("MiniCheck 오회수(%)", 100.0 * mfls / len(fls), 42.9, 0.05)
-    chk("MiniCheck 유지 (분자)", mkep, 12, 0)
+    chk("MiniCheck 유지 (분자)", mkep, 13, 0)
     chk("MiniCheck 순증(%p, 원행끼리)",
-        100.0 * mrec / len(tgt) - 100.0 * mfls / len(fls), 23.8, 0.05)
+        100.0 * mrec / len(tgt) - 100.0 * mfls / len(fls), 32.9, 0.1)
     chk("현행 g1 유지 (분자)", sum(1 for i in keep if i["k"]["lab_g1"] == "1"), 16, 0)
 
     # like-for-like: 회수 대상 33건을 D8-B 규칙(N: p_g1<0.05)으로 다시 가른다
@@ -167,9 +175,13 @@ def main() -> int:
         r"precise \(0\.80\).*recall 0\.33", T)
     has("§VI-E 가 미결(inconclusive)을 공개한다",
         r"inconclusive verdict", T)
-    has("§VI-E 가 'falls 0.006 short' 를 적었다", r"0\.006 short", T)
+    has("§VI-E 가 미결 사유를 precision 하한으로 적었다", r"0\.733|0\.73", T)
+    has("§VIII-A 가 M1′ 실측 8.5% 를 적었다", r"8\.5%.*5\.5|W_\{0\.8\}.*8\.5", T)
+    has("§V 가 청크 분할 버그를 적었다", r"chunk|aggregation freedom", T)
+    has("'zero aggregation freedom' 주장이 철회됐다",
+        r"^(?!.*only configuration in this paper with zero aggregation freedom).*$", T)
     has("§VI-F 판정자 절이 65.6% 와 게이트 미달을 적었다", r"65\.6", T)
-    has("유지 칸 교환(12/16)이 원고에 있다", r"12/16|12 of 16", T)
+    has("유지 칸(13/16)이 원고에 있다", r"13/16|13 of 16|13 \(81\.2", T)
 
     print("")
     print("=" * 78)
