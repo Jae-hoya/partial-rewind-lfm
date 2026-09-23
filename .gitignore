@@ -9,3 +9,7 @@ __pycache__/
 .pytest_cache/
 .venv/
 data/_*.log
+
+# 원고는 저장소에 두지 않는다 (로컬에는 그대로 있음)
+MANUSCRIPT_FIXES.md
+specs_from_chat/manuscript_PartialRewind_*
