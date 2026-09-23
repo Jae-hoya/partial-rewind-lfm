@@ -1,7 +1,7 @@
 """D10 — 계열 일반화. 같은 자료를 NLI 체크포인트 4종에 건다. **생성 호출 0회.**
 
 논문은 "sentence-pair NLI 계열"이라고 계열 단위로 주장하는데 실제로 잰 것은
-`cross-encoder/nli-deberta-v3-base` 하나뿐이다. 게다가 **base 크기**다. 심사자는
+`cross-encoder/nli-deberta-v3-base` 하나뿐이다. 게다가 **base 크기**다. 검토자는
 "large 면 274토큰에서 안 무너질 수 있다"고 쓸 것이고 지금 우리는 답이 없다.
 D7-0 의 희석, D8-A 의 정밀, D8-B 의 맹목 — 세 기둥이 전부 체크포인트 하나 위에 있다.
 

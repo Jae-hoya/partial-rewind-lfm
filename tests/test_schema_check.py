@@ -162,7 +162,7 @@ def test_missing_corpus_returns_error(tmp_path, cfg_file):
 
 
 def test_manifest_records_license_attribution(tmp_path, cfg_file):
-    """CC BY-SA 저작자표시는 투고 전 체크리스트 항목이다."""
+    """CC BY-SA 저작자표시는 제출 전 체크리스트 항목이다."""
     corpus = make_corpus(tmp_path / "corpus.parquet")
     _, m = run(cfg_file, corpus, tmp_path / "MANIFEST.json")
     assert "CC BY-SA" in m["snapshot"]["license"]
