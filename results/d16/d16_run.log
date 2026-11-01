@@ -1,0 +1,191 @@
+  C1_baseline t007
+  C1_baseline t008
+  C1_baseline t014
+  C1_baseline t021
+  C1_baseline t022
+  C1_baseline t028
+  C1_baseline t031
+  C1_baseline t033
+  C1_baseline t037
+  C1_baseline t038
+  C1_baseline t039
+  C1_baseline t040
+  C1_baseline t048
+  C1_baseline t049
+  C1_baseline t050
+  C3_partial_heldout t007
+  C3_partial_heldout t008
+  C3_partial_heldout t014
+  C3_partial_heldout t021
+  C3_partial_heldout t022
+  C3_partial_heldout t028
+  C3_partial_heldout t031
+  C3_partial_heldout t033
+  C3_partial_heldout t037
+  C3_partial_heldout t038
+  C3_partial_heldout t039
+  C3_partial_heldout t040
+  C3_partial_heldout t048
+  C3_partial_heldout t049
+  C3_partial_heldout t050
+{
+ "topics": [
+  "t007",
+  "t008",
+  "t014",
+  "t021",
+  "t022",
+  "t028",
+  "t031",
+  "t033",
+  "t037",
+  "t038",
+  "t039",
+  "t040",
+  "t048",
+  "t049",
+  "t050"
+ ],
+ "llm_stats": {
+  "C1_baseline": {
+   "calls": 114,
+   "cache_hits": 114,
+   "api_calls": 0,
+   "tokens_in": 191262,
+   "tokens_out": 74270,
+   "billed_tokens_in": 0,
+   "billed_tokens_out": 0,
+   "latency_ms": 894091,
+   "by_tag": {
+    "decompose": {
+     "calls": 15,
+     "cache_hits": 15,
+     "tokens_in": 2945,
+     "tokens_out": 12106
+    },
+    "answer": {
+     "calls": 60,
+     "cache_hits": 60,
+     "tokens_in": 172827,
+     "tokens_out": 41739
+    },
+    "claims": {
+     "calls": 39,
+     "cache_hits": 39,
+     "tokens_in": 15490,
+     "tokens_out": 20425
+    }
+   }
+  },
+  "C3_partial_heldout": {
+   "calls": 128,
+   "cache_hits": 128,
+   "api_calls": 0,
+   "tokens_in": 194935,
+   "tokens_out": 85957,
+   "billed_tokens_in": 0,
+   "billed_tokens_out": 0,
+   "latency_ms": 1062246,
+   "by_tag": {
+    "decompose": {
+     "calls": 15,
+     "cache_hits": 15,
+     "tokens_in": 2945,
+     "tokens_out": 12106
+    },
+    "answer": {
+     "calls": 60,
+     "cache_hits": 60,
+     "tokens_in": 172857,
+     "tokens_out": 47533
+    },
+    "claims": {
+     "calls": 52,
+     "cache_hits": 52,
+     "tokens_in": 18823,
+     "tokens_out": 25935
+    },
+    "answer_repair": {
+     "calls": 1,
+     "cache_hits": 1,
+     "tokens_in": 310,
+     "tokens_out": 383
+    }
+   }
+  }
+ },
+ "checks": {
+  "C1_baseline": {
+   "n": 60,
+   "mismatch": []
+  },
+  "C3_partial_heldout": {
+   "n": 60,
+   "mismatch": []
+  },
+  "c1_vs_d15_mismatch": 0
+ },
+ "n_pairs": 256,
+ "n_unpaired": 0,
+ "P1_rescued_with_gold_citation": {
+  "n": 136,
+  "k": 46,
+  "rate": 0.3382352941176471,
+  "ci": [
+   0.17020914748878274,
+   0.5
+  ]
+ },
+ "P1b_rescued_any": {
+  "n": 136,
+  "k": 48,
+  "rate": 0.35294117647058826,
+  "ci": [
+   0.19165760869565218,
+   0.509282879818594
+  ]
+ },
+ "P2_residual_abstention_gold_in_ctx": {
+  "n": 108,
+  "k": 43,
+  "rate": 0.39814814814814814,
+  "ci": [
+   0.25,
+   0.5596871456550868
+  ]
+ },
+ "reverse_answered_c1_empty_c3": 11,
+ "empty_rate": {
+  "C1_baseline": {
+   "n": 256,
+   "k": 136,
+   "rate": 0.53125,
+   "ci": [
+    0.38492063492063494,
+    0.6742514430014429
+   ]
+  },
+  "C3_partial_heldout": {
+   "n": 256,
+   "k": 99,
+   "rate": 0.38671875,
+   "ci": [
+    0.2661290322580645,
+    0.5
+   ]
+  }
+ },
+ "c3_gold_in_ctx_rate": {
+  "n": 256,
+  "k": 108,
+  "rate": 0.421875,
+  "ci": [
+   0.22944356872635563,
+   0.6250480769230766
+  ]
+ },
+ "verdict": {
+  "P1": "근거 부족만으로 설명 안 됨",
+  "P2": "과잉 기권 있음"
+ }
+}

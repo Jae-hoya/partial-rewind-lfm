@@ -1,0 +1,87 @@
+item_id,query_id,branch,sq_index,model_empty,n_gold_in_ctx,gold_chunks
+q000,t039,technical_mechanism,2,1,1,d9308734s1p0
+q001,t008,technical_mechanism,1,1,1,d1107832s9p0
+q002,t008,technical_mechanism,2,1,1,d1107832s9p0
+q003,t031,controversy_limitation,2,0,1,d1100501s1p0
+q004,t007,overview_factual,3,0,4,d23777640s6p0 d23777640s1p0 d23777640s13p0 d23777640s5p0
+q005,t031,controversy_limitation,0,0,1,d1100501s1p0
+q006,t037,overview_factual,3,0,2,d27674202s1p0 d27674202s2p0
+q007,t038,controversy_limitation,4,1,1,d6868247s2p0
+q008,t008,technical_mechanism,3,1,1,d1107832s9p0
+q009,t014,overview_factual,3,1,2,d23746608s3p0 d23746608s2p0
+q010,t039,impact_application,0,1,1,d9308734s1p0
+q011,t007,controversy_limitation,3,1,2,d23777640s5p0 d23777640s6p0
+q012,t040,overview_factual,3,1,1,d719464s1p0
+q013,t038,overview_factual,4,1,1,d6868247s2p0
+q014,t039,technical_mechanism,1,1,1,d9308734s1p0
+q015,t037,overview_factual,0,0,2,d27674202s1p0 d27674202s2p0
+q016,t008,overview_factual,2,1,1,d1107832s9p0
+q017,t039,controversy_limitation,0,1,1,d9308734s1p0
+q018,t014,overview_factual,1,0,2,d23746608s3p0 d23746608s2p0
+q019,t014,impact_application,0,1,2,d23746608s3p0 d23746608s2p0
+q020,t039,controversy_limitation,1,1,1,d9308734s1p0
+q021,t007,controversy_limitation,1,0,3,d23777640s5p0 d23777640s6p0 d23777640s1p0
+q022,t007,impact_application,0,1,4,d23777640s11p0 d23777640s5p0 d23777640s13p0 d23777640s6p0
+q023,t031,overview_factual,2,1,1,d1100501s1p0
+q024,t031,overview_factual,4,0,1,d1100501s1p0
+q025,t039,overview_factual,1,0,1,d9308734s1p0
+q026,t008,controversy_limitation,1,1,1,d1107832s9p0
+q027,t014,controversy_limitation,0,1,1,d23746608s3p0
+q028,t039,impact_application,3,1,1,d9308734s1p0
+q029,t039,impact_application,1,1,1,d9308734s1p0
+q030,t038,overview_factual,1,1,1,d6868247s2p0
+q031,t008,impact_application,3,0,1,d1107832s9p0
+q032,t031,impact_application,0,0,1,d1100501s1p0
+q033,t007,impact_application,3,0,4,d23777640s11p0 d23777640s13p0 d23777640s6p0 d23777640s12p0
+q034,t038,technical_mechanism,1,0,2,d6868247s2p0 d6868247s4p0
+q035,t007,overview_factual,1,1,2,d23777640s5p0 d23777640s6p0
+q036,t039,overview_factual,0,0,1,d9308734s1p0
+q037,t038,impact_application,4,1,1,d6868247s2p0
+q038,t037,controversy_limitation,1,0,2,d27674202s1p0 d27674202s2p0
+q039,t040,controversy_limitation,0,1,1,d719464s1p0
+q040,t008,impact_application,2,0,1,d1107832s9p0
+q041,t031,controversy_limitation,3,0,1,d1100501s1p0
+q042,t008,controversy_limitation,3,1,1,d1107832s9p0
+q043,t037,technical_mechanism,3,0,1,d27674202s1p0
+q044,t038,controversy_limitation,0,1,1,d6868247s2p0
+q045,t039,impact_application,2,1,1,d9308734s1p0
+q046,t008,technical_mechanism,0,1,2,d1107832s9p0 d1107832s11p0
+q047,t038,technical_mechanism,0,0,2,d6868247s2p0 d6868247s3p0
+q048,t008,impact_application,1,1,1,d1107832s9p0
+q049,t040,overview_factual,1,0,1,d719464s1p0
+q050,t037,controversy_limitation,2,0,1,d27674202s1p0
+q051,t007,technical_mechanism,0,1,3,d23777640s6p0 d23777640s5p0 d23777640s1p0
+q052,t008,controversy_limitation,2,1,1,d1107832s9p0
+q053,t038,impact_application,3,0,1,d6868247s2p0
+q054,t039,controversy_limitation,3,1,1,d9308734s1p0
+q055,t037,technical_mechanism,1,0,2,d27674202s1p0 d27674202s2p0
+q056,t014,impact_application,2,0,1,d23746608s3p0
+q057,t007,technical_mechanism,1,0,4,d23777640s5p0 d23777640s11p0 d23777640s1p0 d23777640s6p0
+q058,t014,technical_mechanism,1,0,2,d23746608s3p0 d23746608s2p0
+q059,t007,impact_application,1,0,4,d23777640s11p0 d23777640s6p0 d23777640s1p0 d23777640s13p0
+q060,t008,overview_factual,0,0,1,d1107832s9p0
+q061,t048,technical_mechanism,0,1,1,d41597867s1p0
+q062,t031,overview_factual,0,1,1,d1100501s1p0
+q063,t038,controversy_limitation,3,0,1,d6868247s2p0
+q064,t007,technical_mechanism,3,0,4,d23777640s11p0 d23777640s6p0 d23777640s1p0 d23777640s13p0
+q065,t014,controversy_limitation,2,1,1,d23746608s3p0
+q066,t040,controversy_limitation,3,0,1,d719464s1p0
+q067,t014,overview_factual,2,1,2,d23746608s3p0 d23746608s2p0
+q068,t037,impact_application,2,0,1,d27674202s1p0
+q069,t031,impact_application,4,1,1,d1100501s1p0
+q070,t038,overview_factual,2,0,2,d6868247s1p0 d6868247s2p0
+q071,t031,impact_application,3,0,1,d1100501s1p0
+q072,t037,overview_factual,1,0,2,d27674202s1p0 d27674202s2p0
+q073,t038,technical_mechanism,2,0,1,d6868247s2p0
+q074,t037,controversy_limitation,0,0,1,d27674202s1p0
+q075,t037,technical_mechanism,0,1,1,d27674202s1p0
+q076,t037,impact_application,1,0,1,d27674202s1p0
+q077,t038,technical_mechanism,4,1,1,d6868247s2p0
+q078,t038,impact_application,0,0,1,d6868247s2p0
+q079,t007,controversy_limitation,2,0,2,d23777640s1p0 d23777640s6p0
+q080,t031,controversy_limitation,4,1,1,d1100501s1p0
+q081,t038,overview_factual,0,0,2,d6868247s2p0 d6868247s1p0
+q082,t008,controversy_limitation,0,1,1,d1107832s9p0
+q083,t014,overview_factual,0,0,2,d23746608s3p0 d23746608s2p0
+q084,t038,controversy_limitation,2,1,1,d6868247s2p0
+q085,t033,controversy_limitation,1,0,1,d2154940s12p0
