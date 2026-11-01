@@ -1,0 +1,151 @@
+{
+ "n_topics": 50,
+ "n_branch_rounds": 600,
+ "n_subq": 2520,
+ "llm_stats": {
+  "calls": 1439,
+  "cache_hits": 1439,
+  "api_calls": 0,
+  "tokens_in": 2104657,
+  "tokens_out": 792888,
+  "billed_tokens_in": 0,
+  "billed_tokens_out": 0,
+  "latency_ms": 9974641,
+  "by_tag": {
+   "decompose": {
+    "calls": 50,
+    "cache_hits": 50,
+    "tokens_in": 9821,
+    "tokens_out": 40093
+   },
+   "answer": {
+    "calls": 600,
+    "cache_hits": 600,
+    "tokens_in": 1851571,
+    "tokens_out": 403016
+   },
+   "claims": {
+    "calls": 385,
+    "cache_hits": 385,
+    "tokens_in": 158909,
+    "tokens_out": 202077
+   },
+   "paraphrase": {
+    "calls": 400,
+    "cache_hits": 400,
+    "tokens_in": 76650,
+    "tokens_out": 143253
+   },
+   "answer_retry": {
+    "calls": 2,
+    "cache_hits": 2,
+    "tokens_in": 6953,
+    "tokens_out": 3477
+   },
+   "answer_repair": {
+    "calls": 1,
+    "cache_hits": 1,
+    "tokens_in": 472,
+    "tokens_out": 676
+   },
+   "paraphrase_repair": {
+    "calls": 1,
+    "cache_hits": 1,
+    "tokens_in": 281,
+    "tokens_out": 296
+   }
+  }
+ },
+ "degraded_mismatch": [],
+ "n_degraded": 215,
+ "primary": {
+  "n_unexposed": 432,
+  "n_exposed": 2088,
+  "E1": 0.6851851851851852,
+  "E0": 0.5526819923371648,
+  "RR": 1.2397458116695552,
+  "RR_ci": [
+   1.077187779008281,
+   1.4236729225317872
+  ],
+  "verdict": "B형"
+ },
+ "sensitivity_any": {
+  "n_unexposed": 428,
+  "n_exposed": 2092,
+  "E1": 0.6822429906542056,
+  "E0": 0.5535372848948374,
+  "RR": 1.2325149710264232,
+  "RR_ci": [
+   1.0681950369381104,
+   1.4188380565937417
+  ],
+  "verdict": "B형"
+ },
+ "sensitivity_full": {
+  "n_unexposed": 456,
+  "n_exposed": 2064,
+  "E1": 0.6820175438596491,
+  "E0": 0.5518410852713178,
+  "RR": 1.2358948292592764,
+  "RR_ci": [
+   1.0754997550952774,
+   1.418109203974165
+  ],
+  "verdict": "B형"
+ },
+ "by_position": {
+  "0": {
+   "n_unexposed": 0,
+   "E1": null,
+   "n_exposed": 600,
+   "E0": 0.49666666666666665
+  },
+  "1": {
+   "n_unexposed": 101,
+   "E1": 0.6831683168316832,
+   "n_exposed": 499,
+   "E0": 0.5531062124248497
+  },
+  "2": {
+   "n_unexposed": 154,
+   "E1": 0.6428571428571429,
+   "n_exposed": 446,
+   "E0": 0.5672645739910314
+  },
+  "3": {
+   "n_unexposed": 151,
+   "E1": 0.7086092715231788,
+   "n_exposed": 437,
+   "E0": 0.5812356979405034
+  },
+  "4": {
+   "n_unexposed": 26,
+   "E1": 0.8076923076923077,
+   "n_exposed": 106,
+   "E0": 0.6886792452830188
+  }
+ },
+ "degraded_all_exposed": 112,
+ "degraded_none_exposed": 0,
+ "ctx": {
+  "n_retrieved": {
+   "median": 33.5,
+   "p10": 11.0,
+   "p90": 57.0,
+   "max": 72.0
+  },
+  "n_in_ctx": {
+   "median": 10.0,
+   "p10": 6.900000000000006,
+   "p90": 15.0,
+   "max": 24.0
+  },
+  "n_cut": {
+   "median": 1.0,
+   "p10": 0.0,
+   "p90": 1.0,
+   "max": 1.0
+  }
+ }
+}
