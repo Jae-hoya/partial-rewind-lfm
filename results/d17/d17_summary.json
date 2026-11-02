@@ -1,0 +1,69 @@
+{
+ "llm_stats": {
+  "calls": 123,
+  "cache_hits": 123,
+  "api_calls": 0,
+  "tokens_in": 208160,
+  "tokens_out": 79772,
+  "billed_tokens_in": 0,
+  "billed_tokens_out": 0,
+  "latency_ms": 1187660,
+  "by_tag": {
+   "decompose": {
+    "calls": 15,
+    "cache_hits": 15,
+    "tokens_in": 2945,
+    "tokens_out": 12106
+   },
+   "answer": {
+    "calls": 60,
+    "cache_hits": 60,
+    "tokens_in": 187002,
+    "tokens_out": 43321
+   },
+   "claims": {
+    "calls": 48,
+    "cache_hits": 48,
+    "tokens_in": 18213,
+    "tokens_out": 24345
+   }
+  }
+ },
+ "c4_degraded_mismatch": [],
+ "n_c4_branches": 60,
+ "n_items": 108,
+ "n_unpaired": 0,
+ "n_target": 43,
+ "n_control": 65,
+ "target_c4_answered": 8,
+ "target_c4_cites_gold": 3,
+ "Q1_target_proved_via_c4": {
+  "n": 43,
+  "k": 2,
+  "rate": 0.046511627906976744,
+  "ci": [
+   0.0,
+   0.1111111111111111
+  ]
+ },
+ "Q2_control_proved_via_c4": {
+  "n": 65,
+  "k": 33,
+  "rate": 0.5076923076923077,
+  "ci": [
+   0.25443181818181815,
+   0.6875
+  ]
+ },
+ "Q3_control_proved_own": {
+  "n": 65,
+  "k": 49,
+  "rate": 0.7538461538461538,
+  "ci": [
+   0.6111111111111112,
+   0.8474668386145909
+  ]
+ },
+ "Q1_over_Q2": 0.0916138125440451,
+ "verdict": "과잉 기권 증거 약함 (답할 수 없는 질문 쪽, 증명 아님)"
+}

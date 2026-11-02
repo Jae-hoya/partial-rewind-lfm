@@ -1,0 +1,401 @@
+  C4_both t007
+  C4_both t008
+  C4_both t014
+  C4_both t021
+  C4_both t022
+  C4_both t028
+  C4_both t031
+  C4_both t033
+  C4_both t037
+  C4_both t038
+  C4_both t039
+  C4_both t040
+  C4_both t048
+  C4_both t049
+  C4_both t050
+MiniCheck 적재 ...
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.58it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.58it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.57it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.57it/s]
+  t007 controversy_limitation 0
+  t007 controversy_limitation 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.45it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.45it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.94it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.94it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.09it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.09it/s]
+  t007 controversy_limitation 2
+  t007 controversy_limitation 3
+  t007 impact_application 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.14it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.14it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.28it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.28it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.28it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.24it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.69it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.69it/s]
+  t007 impact_application 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.24it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.81it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.58it/s]
+  t007 impact_application 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.53it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.71it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.83it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.10it/s]
+  t007 impact_application 3
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 16.23it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.34it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.00it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.50it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.02it/s]
+  t007 overview_factual 0
+  t007 overview_factual 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.63it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.63it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 17.66it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.43it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.43it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 19.52it/s]
+  t007 overview_factual 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.01it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.01it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.25it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.25it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.01it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.01it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.93it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.93it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.08it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.07it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.27it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.27it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.23it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.23it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.36it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.36it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.29it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.29it/s]
+  t007 overview_factual 3
+  t007 technical_mechanism 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.41it/s]
+  t007 technical_mechanism 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.10it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.10it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.36it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.36it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.88it/s]
+  t007 technical_mechanism 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.62it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.62it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.45it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.45it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.69it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.69it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.00it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.00it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.25it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.25it/s]
+  t007 technical_mechanism 3
+  t008 controversy_limitation 0
+  t008 controversy_limitation 1
+  t008 controversy_limitation 2
+  t008 controversy_limitation 3
+  t008 impact_application 0
+  t008 impact_application 1
+  t008 impact_application 2
+  t008 impact_application 3
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 10.64it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.20it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 10.54it/s]
+  t008 overview_factual 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.85it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.33it/s]
+  t008 overview_factual 1
+  t008 overview_factual 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.89it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.89it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  9.99it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  9.99it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.38it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 10.85it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.74it/s]
+  t008 overview_factual 3
+  t008 technical_mechanism 0
+  t008 technical_mechanism 1
+  t008 technical_mechanism 2
+  t008 technical_mechanism 3
+  t014 controversy_limitation 0
+  t014 controversy_limitation 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.87it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 17.61it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.96it/s]
+  t014 impact_application 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 19.14it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 13.72it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 17.19it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.00it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.15it/s]
+  t014 impact_application 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.95it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.24it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 19.99it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.07it/s]
+  t014 overview_factual 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.98it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.72it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.44it/s]
+  t014 overview_factual 1
+  t014 overview_factual 2
+  t014 overview_factual 3
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.04it/s]
+  t014 technical_mechanism 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.44it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.44it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.46it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.46it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.93it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.93it/s]
+  t031 controversy_limitation 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.62it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.62it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.73it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.73it/s]
+  t031 controversy_limitation 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.50it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.50it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.66it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.66it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.68it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.68it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.13it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.13it/s]
+  t031 controversy_limitation 3
+  t031 controversy_limitation 4
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.48it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.48it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.00it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.00it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.37it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.37it/s]
+  t031 impact_application 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.99it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.99it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.60it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.60it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.69it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.69it/s]
+  t031 impact_application 3
+  t031 impact_application 4
+  t031 overview_factual 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.04it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.01it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.36it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.36it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.31it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.31it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.99it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.99it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.41it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.41it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.46it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.46it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.05it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.05it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.21it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.21it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.21it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.21it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.41it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.41it/s]
+  t031 overview_factual 1
+  t031 overview_factual 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.72it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.72it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.60it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.05it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.57it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.57it/s]
+  t031 overview_factual 4
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 13.38it/s]
+  t033 controversy_limitation 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.02it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.02it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.78it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.78it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.63it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.63it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.34it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.34it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.40it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.40it/s]
+  t037 controversy_limitation 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.91it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.91it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.65it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.65it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.90it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.90it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.39it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.39it/s]
+  t037 controversy_limitation 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.68it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.68it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.71it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.71it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.44it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.44it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.69it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.69it/s]
+  t037 controversy_limitation 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.65it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.65it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.68it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.68it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.52it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.52it/s]
+  t037 controversy_limitation 3
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.21it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.21it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.19it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.19it/s]
+  t037 impact_application 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]
+  t037 impact_application 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.08it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.08it/s]
+  t037 impact_application 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.65it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.65it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.09it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.09it/s]
+  t037 impact_application 3
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.49it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.49it/s]
+  t037 overview_factual 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.66it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.32it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.02it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.02it/s]
+  t037 overview_factual 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.66it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.66it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 20.02it/s]
+  t037 overview_factual 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.59it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.59it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.66it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.66it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.01it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.01it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.20it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.20it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.61it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.61it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.61it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.61it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.60it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.60it/s]
+  t037 overview_factual 3
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.30it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.30it/s]
+  t037 technical_mechanism 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.21it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.21it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.71it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.71it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.49it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.49it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.47it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.47it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.31it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.31it/s]
+  t037 technical_mechanism 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.99it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.99it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.72it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.72it/s]
+  t037 technical_mechanism 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.71it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.71it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.22it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.22it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.65it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.65it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.88it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.88it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.66it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.66it/s]
+  t037 technical_mechanism 3
+  t038 controversy_limitation 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.96it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.18it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.00it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.94it/s]
+  t038 controversy_limitation 1
+  t038 controversy_limitation 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.32it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.29it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.43it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.58it/s]
+  t038 controversy_limitation 3
+  t038 controversy_limitation 4
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.34it/s]
+  t038 impact_application 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.82it/s]
+  t038 impact_application 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.00it/s]
+  t038 impact_application 3
+  t038 impact_application 4
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.57it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.57it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.53it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.53it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.58it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.58it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.58it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.58it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.85it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  7.85it/s]
+  t038 overview_factual 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 13.78it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.46it/s]
+  t038 overview_factual 1
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.54it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.54it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.93it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.93it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.23it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.23it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.62it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.62it/s]
+  t038 overview_factual 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.21it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.64it/s]
+  t038 overview_factual 3
+  t038 overview_factual 4
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.97it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.04it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.60it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.60it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.76it/s]
+  t038 technical_mechanism 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.42it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.78it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.39it/s]
+  t038 technical_mechanism 1
+  t038 technical_mechanism 2
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.48it/s]
+  t038 technical_mechanism 3
+  t038 technical_mechanism 4
+  t039 controversy_limitation 0
+  t039 controversy_limitation 1
+  t039 controversy_limitation 3
+  t039 impact_application 0
+  t039 impact_application 1
+  t039 impact_application 2
+  t039 impact_application 3
+  t039 overview_factual 0
+  t039 overview_factual 1
+  t039 technical_mechanism 1
+  t039 technical_mechanism 2
+  t040 controversy_limitation 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.36it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.19it/s]
+  t040 controversy_limitation 3
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.68it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 18.89it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.00it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.01it/s]
+  t040 overview_factual 1
+  t040 overview_factual 3
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.52it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.47it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.64it/s]
+  t048 overview_factual 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 15.45it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.91it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 17.86it/s]
+  t048 overview_factual 1
+  t048 technical_mechanism 0
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  9.66it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  9.66it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.58it/s]
+  t049 impact_application 1
+  t050 impact_application 0
+{
+ "llm_stats": {
+  "calls": 123,
+  "cache_hits": 123,
+  "api_calls": 0,
+  "tokens_in": 208160,
+  "tokens_out": 79772,
+  "billed_tokens_in": 0,
+  "billed_tokens_out": 0,
+  "latency_ms": 1187660,
+  "by_tag": {
+   "decompose": {
+    "calls": 15,
+    "cache_hits": 15,
+    "tokens_in": 2945,
+    "tokens_out": 12106
+   },
+   "answer": {
+    "calls": 60,
+    "cache_hits": 60,
+    "tokens_in": 187002,
+    "tokens_out": 43321
+   },
+   "claims": {
+    "calls": 48,
+    "cache_hits": 48,
+    "tokens_in": 18213,
+    "tokens_out": 24345
+   }
+  }
+ },
+ "c4_degraded_mismatch": [],
+ "n_c4_branches": 60,
+ "n_items": 108,
+ "n_unpaired": 0,
+ "n_target": 43,
+ "n_control": 65,
+ "target_c4_answered": 8,
+ "target_c4_cites_gold": 3,
+ "Q1_target_proved_via_c4": {
+  "n": 43,
+  "k": 2,
+  "rate": 0.046511627906976744,
+  "ci": [
+   0.0,
+   0.1111111111111111
+  ]
+ },
+ "Q2_control_proved_via_c4": {
+  "n": 65,
+  "k": 33,
+  "rate": 0.5076923076923077,
+  "ci": [
+   0.25443181818181815,
+   0.6875
+  ]
+ },
+ "Q3_control_proved_own": {
+  "n": 65,
+  "k": 49,
+  "rate": 0.7538461538461538,
+  "ci": [
+   0.6111111111111112,
+   0.8474668386145909
+  ]
+ },
+ "Q1_over_Q2": 0.0916138125440451,
+ "verdict": "과잉 기권 증거 약함 (답할 수 없는 질문 쪽, 증명 아님)"
+}
