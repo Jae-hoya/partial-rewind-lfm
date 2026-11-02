@@ -1,0 +1,126 @@
+{
+ "n": 100,
+ "n_unclear": 0,
+ "human_support": 82,
+ "strata": {
+  "P1": {
+   "N_h": 37,
+   "n_h": 25,
+   "weight": 1.48
+  },
+  "P2": {
+   "N_h": 171,
+   "n_h": 42,
+   "weight": 4.071
+  },
+  "N1": {
+   "N_h": 77,
+   "n_h": 25,
+   "weight": 3.08
+  },
+  "N2": {
+   "N_h": 9,
+   "n_h": 8,
+   "weight": 1.125
+  }
+ },
+ "operators": {
+  "MiniCheck 단일문서 (채택)": {
+   "precision": {
+    "k": 62,
+    "n": 72,
+    "rate": 0.8611111111111112,
+    "wilson": [
+     0.7628660215842661,
+     0.922773521885281
+    ],
+    "weighted": 0.8499057761345106,
+    "bar": 0.85,
+    "pass_point": true
+   },
+   "recall": {
+    "k": 62,
+    "n": 82,
+    "rate": 0.7560975609756098,
+    "wilson": [
+     0.6530708869115632,
+     0.8362023791971767
+    ],
+    "weighted": 0.7824735935276048,
+    "bar": 0.7,
+    "pass_point": true
+   },
+   "recovery": {
+    "k": 39,
+    "n": 53,
+    "rate": 0.7358490566037735,
+    "wilson": [
+     0.6041907894277545,
+     0.8356279348868316
+    ],
+    "weighted": 0.7721387433421377,
+    "bar": 0.5,
+    "pass_point": true
+   },
+   "verdict_registered": "통과"
+  },
+  "g1 (현행 baseline)": {
+   "precision": {
+    "k": 29,
+    "n": 33,
+    "rate": 0.8787878787878788,
+    "wilson": [
+     0.7267415674973484,
+     0.9518391673241577
+    ],
+    "weighted": 0.8790217391304349,
+    "bar": 0.85,
+    "pass_point": true
+   },
+   "recall": {
+    "k": 29,
+    "n": 82,
+    "rate": 0.35365853658536583,
+    "wilson": [
+     0.25885412674487723,
+     0.46156114976441426
+    ],
+    "weighted": 0.16962768746722584,
+    "bar": 0.7,
+    "pass_point": false
+   },
+   "recovery": {
+    "k": 0,
+    "n": 53,
+    "rate": 0.0,
+    "wilson": [
+     0.0,
+     0.0675843044530766
+    ],
+    "weighted": 0.0,
+    "bar": 0.5,
+    "pass_point": false
+   },
+   "verdict_registered": "탈락"
+  }
+ },
+ "by_cell": {
+  "P1": {
+   "n": 25,
+   "human_support": 22
+  },
+  "P2": {
+   "n": 42,
+   "human_support": 35
+  },
+  "N1": {
+   "n": 25,
+   "human_support": 18
+  },
+  "N2": {
+   "n": 8,
+   "human_support": 7
+  }
+ },
+ "stage2_only_support_rate": 0.825
+}
