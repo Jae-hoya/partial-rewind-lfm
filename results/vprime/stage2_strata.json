@@ -1,0 +1,29 @@
+{
+ "population": 294,
+ "strata": {
+  "P1": {
+   "N_h": 37,
+   "n_stage1": 15,
+   "remaining": 22,
+   "n_stage2": 10
+  },
+  "P2": {
+   "N_h": 171,
+   "n_stage1": 25,
+   "remaining": 146,
+   "n_stage2": 17
+  },
+  "N1": {
+   "N_h": 77,
+   "n_stage1": 15,
+   "remaining": 62,
+   "n_stage2": 10
+  },
+  "N2": {
+   "N_h": 9,
+   "n_stage1": 5,
+   "remaining": 4,
+   "n_stage2": 3
+  }
+ }
+}
