@@ -1,0 +1,651 @@
+set,item_id,topic,w,judge,human,finish,p,p_loose,y,y_loose,reason
+h2dev,d000,t038,1.0,partial,일부,stop,0,1,0,1,"partial  
+REASON: The answer discusses organizational/international participation details but does not address colonial legacy, access constraints, or demographic participation patterns."
+h2dev,d001,t038,1.0,none,답안함,stop,0,0,0,0,"none
+REASON: The answer only mentions the West Africa Cricket Council and its founding members, not Ghana’s national cricket association’s governance structure or official roles."
+h2dev,d002,t007,1.0,none,답안함,stop,0,0,0,0,"none
+REASON: The answer discusses railway reconstruction, not land resettlement or demining procedures in the Northern Province after the civil war."
+h2dev,d003,t038,1.0,partial,답함,stop,0,1,1,1,"partial
+REASON: It mentions Gold Coast fixtures and years but does not identify the colonial-era representative or clearly state the outcomes."
+h2dev,d004,t038,1.0,partial,답함,stop,0,1,1,1,"partial
+REASON: It gives a specific early date for cricket being played in the Gold Coast, but does not explain how cricket was introduced or describe the manner of play beyond that match."
+h2dev,d005,t037,1.0,full,답함,stop,1,1,1,1,"LABEL: full  
+REASON: It directly states the year (1992) when the first Latvian national figure skating championship was held."
+h2dev,d006,t033,1.0,none,일부,stop,0,0,0,1,"LABEL: none  
+REASON: It only states how the team represents England and Wales, without addressing any disputes or debates about fairness or Wales’ specific representation."
+h2dev,d007,t008,1.0,none,답함,stop,0,0,1,1,"none
+REASON: The answer names Newton N. Minow but does not provide the official title or the dates of service of a prominent US communications regulator."
+h2dev,d008,t031,1.0,partial,답함,stop,0,1,1,1,"partial  
+REASON: It mentions some Japan venues and timing (Yasukuni Shrine, Takeshiba Coliseum, Ryōgoku Kokugikan plans) but does not comprehensively describe the major venue and touring patterns across the period since 2001."
+h2dev,d009,t031,1.0,partial,일부,stop,0,1,0,1,"partial
+The answer lists leadership/ownership and affiliation changes but does not connect them to “major domestic criticisms” or specify responses made afterward."
+h2dev,d010,t014,1.0,full,답함,stop,1,1,1,1,"LABEL: full  
+REASON: The answer specifies the exact platform (Monthly Ikki) and the start/end years/dates of serialization."
+h2dev,d011,t038,1.0,none,일부,stop,0,0,0,1,"none
+REASON: The answer only states a historical debut at the 1982 ICC Trophy and does not address changes in performance after development initiatives in regional/ICC-sanctioned tournaments."
+h2dev,d012,t037,1.0,partial,답함,stop,0,1,1,1,"LABEL: partial  
+REASON: It identifies the governing body but does not provide the establishment date requested."
+h2dev,d013,t007,1.0,full,답함,stop,1,1,1,1,"full
+REASON: It cites specific legal actions and a Supreme Court ruling (13th Amendment/Provincial Councils Act; 2006 decision on de-merger) that directly shaped devolution and provincial council arrangements in Sri Lanka."
+h2dev,d014,t040,1.0,partial,일부,stop,0,1,0,1,"partial
+REASON: The answer mentions a regulatory/status change and expansion timing but does not identify any specific capital requirements or regulatory restrictions that constrained the bank’s expansion plans."
+h2dev,d015,t014,1.0,partial,답함,stop,0,1,1,1,"partial
+REASON: It describes serialization and licensing venues that likely affected readership, but it does not provide concrete domestic/international readership or sales figures or measurable impact."
+h2dev,d016,t007,1.0,partial,답함,stop,0,1,1,1,"LABEL: partial  
+REASON: The answer states employment-rate changes (unemployment) but does not describe the main economic activities."
+h2dev,d017,t037,1.0,partial,일부,stop,0,1,0,1,"partial
+REASON: It mentions resource shortages (ice, financing, public interest) but doesn’t specifically explain their impact on staging or competitiveness of the Latvian national championships."
+h2dev,d018,t037,1.0,partial,일부,stop,0,1,0,1,"partial
+REASON: It mentions combined Latvia–Lithuania events and progression to higher contests, but doesn’t directly identify junior-to-senior development pathways tied to performance at Latvia’s national championships."
+h2dev,d019,t031,1.0,full,일부,stop,1,1,0,1,"full
+REASON: The answer lists specific foreign promotions and international partners that the 2001-founded promotion formally collaborated or co-promoted with."
+h2dev,d020,t037,1.0,partial,일부,stop,0,1,0,1,"partial  
+REASON: It provides specific years and mentions combinations/role changes, but it does not clearly state the overall frequency (e.g., annual) or enumerate interruptions as such."
+h2dev,d021,t038,1.0,partial,일부,stop,0,1,0,1,"LABEL: partial  
+REASON: It mentions a historical school match involving an MCC side, but it does not clearly identify it as run by Ghana’s cricket body or describe documented grassroots programs or outreach projects."
+h2dev,d022,t037,1.0,partial,일부,stop,0,1,0,1,"LABEL: partial  
+REASON: It mentions a specific contract arrangement tying championship status to national team membership, but doesn’t clearly address broader national team selection and funding/support programs."
+h2dev,d023,t037,1.0,full,답함,stop,1,1,1,1,"LABEL: full  
+REASON: The answer directly explains tactics used to manage low participation numbers, including combining categories and inviting guest skaters."
+h2dev,d024,t014,1.0,none,답안함,stop,0,0,0,0,"LABEL: none  
+REASON: The answer discusses inspiration and research for the manga but does not describe any specific art techniques or paneling methods for oceanic imagery."
+h2dev,d025,t007,1.0,partial,일부,stop,0,1,0,1,"partial
+The answer lists several political parties and Tamil groups but does not clearly state which of them advocated greater regional autonomy or federal arrangements for Sri Lanka’s Northern Province."
+h2dev,d026,t008,1.0,partial,일부,stop,0,1,0,1,"partial  
+REASON: It describes civic engagement via town halls and a diversity initiative, but it does not clearly explain how the regulator’s initiatives changed citizens’ access to broadcast information."
+h2dev,d027,t007,1.0,partial,답함,stop,0,1,1,1,"partial  
+REASON: The answer discusses changes in education (and transport) but does not address healthcare access or directly describe overall post-reconstruction service changes."
+h2dev,d028,t007,1.0,full,일부,stop,1,1,0,1,"LABEL: full  
+REASON: The answer lists specific legal instruments and official measures (Indo-Lanka Accord, 13th Amendment, Provincial Councils Act, presidential proclamations) that governed reconstruction administration in the Northern Province."
+h2dev,d029,t008,1.0,partial,일부,stop,0,1,0,1,"partial
+REASON: The answer discusses perceived impacts and an FCC action but does not give measurable effects on consolidation, minority ownership, or localism."
+h2dev,d030,t038,1.0,partial,답안함,stop,0,1,0,0,"LABEL: partial  
+REASON: It gives limited historical location details but does not address league formats, selection procedures, or competition mechanisms supporting elite men’s cricket in Ghana."
+h2dev,d031,t037,1.0,full,답함,stop,1,1,1,1,"full
+REASON: The answer identifies specific eligibility/qualification criteria (national champions via specific combined events, signing contracts with the association, nationality/release requirements, and separate recognition when combined events were used)."
+h2dev,d032,t040,1.0,partial,답함,stop,0,1,1,1,"partial  
+The answer mentions only one clear acquisition (1954) and includes non-M&A events without providing the major mergers/acquisitions and their dates comprehensively."
+h2dev,d033,t031,1.0,partial,일부,stop,0,1,0,1,"partial
+REASON: It mentions one booking-related choice tied to controversy and lightly references business arrangements, but it doesn’t directly address the broader asks about booking decisions, faction management, or business-practice criticisms from media and fan communities."
+h2dev,d034,t038,1.0,none,답안함,stop,0,0,0,0,"LABEL: none  
+REASON: The answer does not state the ICC associate membership criteria Ghana met or name the documents that specify those requirements."
+h2dev,d035,t037,1.0,partial,답함,stop,0,1,1,1,"partial
+The answer gives one anecdotal medal-related dispute but doesn’t address the broader categories the question asks for (selection, judging, federation decisions) or survey multiple reported controversies."
+h2dev,d036,t014,1.0,full,답함,stop,1,1,1,1,"full
+REASON: The answer provides the manga’s full title and its publication date as asked."
+h2dev,d037,t031,1.0,full,답함,stop,1,1,1,1,"full  
+REASON: It names a specific, since-2001 controversy about the promotion (yearly PPVs at Yasukuni Shrine since April 2005) and explains why it was criticized."
+h2dev,d038,t037,1.0,partial,답함,stop,0,1,1,1,"LABEL: partial  
+REASON: It gives one historical participant composition for 1994 but doesn’t explicitly document shortages, cancellations, or specific category omissions."
+h2dev,d039,t031,1.0,partial,일부,stop,0,1,0,1,"partial
+REASON: It describes initiatives for international participation and cross-promotional defenses but does not directly state how they affected the promotion’s global reputation."
+h2dev,d040,t007,1.0,full,답함,stop,1,1,1,1,"full
+REASON: It directly identifies key events (British reorganization in 1815/1833, 1873 transfer, 1987 merger, 2006/2007 de-merger) that altered the administrative boundaries of the Northern Province."
+h2dev,d041,t039,1.0,full,답함,stop,1,1,1,1,"full
+REASON: The answer lists the medals (gold, silver, bronze) and the corresponding Olympic years for team pursuit."
+h2dev,d042,t039,1.0,full,답함,stop,1,1,1,1,"full
+REASON: It lists the team pursuit world championship titles with the corresponding years (2013, 2014, and 2023)."
+h1,q000,t039,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context mentions cyclists and team pursuit results but does not describe any aerodynamic or equipment innovations (bike position, components) used for team pursuit."
+h1,q001,t008,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses federal enforcement and memo-based prosecution guidelines for medical cannabis, not licensing, rulemaking, adjudication, or enforcement procedures for broadcasting policies."
+h1,q002,t008,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context contains unrelated political biographies and policy references, with no information about technical standards, spectrum allocation methods, or broadcasting engineering rules promulgated under a regulator."
+h1,q003,t031,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The provided context does not mention any Japanese media or fan community criticism of booking decisions, faction management, or business practices."
+h1,q004,t007,1.0,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context describes key boundary-altering events: British administrative restructuring (1815/1833 creating the Northern Province) and the Indo-Lanka Accord leading to the 1987 creation of the North Eastern Province (merger) and its de-merger in 2007."
+h1,q005,t031,1.0,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context mentions Pro Wrestling Zero1 holding yearly pay-per-view events at the Yasukuni Shrine (controversial due to WWII associations), but it does not report other high-profile controversies, scandals, or public criticisms about the promotion since 2001."
+h1,q006,t037,1.0,partial,일부,stop,1,,1,,"ON: The context notes first post-independence championships in April 1992 and later instances (e.g., combined with Lithuania in 2010/2017 and using the Latvian Open in 2012/2022/2023) but does not explicitly state how frequently the Latvian championships are held or whether there were interruptions."
+h1,q007,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context explains eligibility rules (e.g., FIBA nationality/age ties) but records no controversies or disputes about national team selection or diaspora player policies."
+h1,q008,t008,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context is about political figures and a poster, with no information about regulators using administrative orders, fines, or license revocations to enforce broadcasting compliance."
+h1,q009,t014,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides no awards, nominations, or critical recognitions specifically for Daisuke Igarashi’s ocean-themed manga (e.g., Children of the Sea)."
+h1,q010,t039,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides biographical/career results but does not document any British national team training protocol changes attributed to any cyclist’s methods or results."
+h1,q011,t007,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses the civil war, demographics, and governance but provides no information about specific international statements or human rights reports critiquing Sri Lanka’s handling of autonomy and rights in the Northern Province."
+h1,q012,t040,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides general history for Santander Bank and Citizens Financial Group but contains no information about establishing a dedicated wealth management division or its initial services."
+h1,q013,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context discusses West African international competition and councils (1970s–2000), but it does not describe Ghana’s official domestic men’s cricket competition structure or how it evolved over time."
+h1,q014,t039,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context contains cyclist biographies and Olympic event descriptions but no mention of VO2max, power output, or lactate thresholds used in training assessments."
+h1,q015,t037,1.0,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context says the first national championships after Latvia’s independence took place in Riga in April 1992, but it does not explicitly state the year of the first Latvian national figure skating championship overall."
+h1,q016,t008,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Newton N. Minow’s political roles and personal history but contains no facts about major broadcasting policy initiatives or rules attributed to a regulator during a tenure."
+h1,q017,t039,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context mentions performance-enhancing drugs and a doctor supplying them, but it reports no formal investigations, inquiries, or sanctions involving any cyclist in connection with these substances."
+h1,q018,t014,1.0,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context states that Daisuke Igarashi’s ocean-themed manga (Children of the Sea) was serialized in Shōgakukan’s seinen magazine Monthly Ikki from December 24, 2005 to September 24, 2011."
+h1,q019,t014,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides publication and development details about Daisuke Igarashi’s manga but contains no information about contemporary critics’ reviews at serialization or after adaptation."
+h1,q020,t039,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides biographical and career details about cyclists but includes no documented therapeutic use exemptions, medical treatments, or disclosed medications involving any of them."
+h1,q021,t007,1.0,partial,일부,stop,1,,1,,"LABEL: partial  
+REASON: The context only mentions the LTTE seeking an independent Tamil state in northeast Sri Lanka (implying autonomy), but it does not identify specific Sri Lankan political parties or Tamil groups advocating federal/regional autonomy for the Northern Province beyond that."
+h1,q022,t007,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context does not provide any official-record figures for how many internally displaced persons returned to the Northern Province between 2009 and 2015."
+h1,q023,t031,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context mentions the Sons of Samoa stable and gives formation/reformation dates, but it does not provide any disbanded dates or identify other major in-ring factions/stables in the promotion."
+h1,q024,t031,1.0,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context mentions venue strategy (yearly pay-per-views at Yasukuni Shrine since April 2005) and some alliance/touring structures (AWA and GPWA “Super Shows”), but not the major venue and touring patterns for Japan since 2001 overall."
+h1,q025,t039,1.0,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context specifies Alexander Morgan won gold in the team pursuit at the 2013 UCI Track Cycling World Championships, but it does not clearly state the world-title years for Elinor Barker in team pursuit."
+h1,q026,t008,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context does not mention any public debates or congressional hearings criticizing a regulator’s standards on indecency, fairness, or political broadcasting."
+h1,q027,t014,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context provides publication/licensing details and awards for some manga but contains no information about any controversies or critical debates about indigenous, ecological, or cultural sea-related portrayals."
+h1,q028,t039,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context only provides cyclists’ biographies and competition results, with no published case studies or reports about shaping team pursuit program structure."
+h1,q029,t039,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides cyclist bios and general cycling rules, but it does not mention any coaching staff, performance directors, or development programs citing a cyclist as influencing their practices."
+h1,q030,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses the West Africa Cricket Council and West African cricket events, but it does not give key dates/events about the formation or renaming of Ghana’s national cricket governing body."
+h1,q031,t008,1.0,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context discusses concerns about media concentration and monitoring but does not describe any measurable effects of the regulator’s specific rules on consolidation, minority ownership, or localism."
+h1,q032,t031,1.0,no,답있음,stop,0,,1,,"LABEL: no  
+REASON: The context does not identify any promotion founded in 2001 nor lists its foreign promotions/international partners for formal collaboration or co-promoted events."
+h1,q033,t007,1.0,partial,일부,stop,1,,1,,"LABEL: partial  
+REASON: The context mentions re-opening of an educational institution (Osmania College) and general education availability, but it does not provide information about healthcare access changes after reconstruction."
+h1,q034,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context notes Ghana became an affiliate and mentions ICC T20I status, but it does not state any ICC membership criteria for associate status or the documents specifying those requirements."
+h1,q035,t007,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context gives Northern Province population only for 2024 and does not provide figures for the 1980, 2001, or 2012 censuses."
+h1,q036,t039,1.0,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context states Barker won Olympic gold in team pursuit at the 2016 Summer Olympics, silver in the team pursuit at the delayed 2020 Summer Olympics (Tokyo), and bronze in the team pursuit at the 2024 Summer Olympics."
+h1,q037,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context mentions cricket matches and players in Ghana but does not provide evidence that cricket contributed to social, educational, or economic outcomes in Ghanaian communities."
+h1,q038,t037,1.0,yes,답있음,stop,1,,1,,"ext reports a 1993 controversy involving Vlaščenko’s refusal of a silver medal, the annulment of his placement, and his suspension by the Latvian Skating Association, plus later federation-related disputes about his release to compete for Germany and his German citizenship while representing Latvia."
+h1,q039,t040,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context describes general consumer credit court orders and general history/economy/sports in Providence and Citizens, but it does not mention any major regulatory enforcement actions, fines, or consent orders involving the bank or timing."
+h1,q040,t008,1.0,partial,답없음,stop,1,,0,,"l  
+REASON: The context says Genachowski guided the campaign’s use of technology and the Internet for grassroots civic engagement and that he was chosen to head the FCC, but it does not describe how his (regulator) initiatives changed citizens’ access to broadcast information or engagement patterns."
+h1,q041,t031,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context does not mention any “major domestic criticisms” or any official responses, policy changes, or leadership actions taken afterward by a promotion."
+h1,q042,t008,1.0,partial,답없음,stop,1,,0,,"LABEL: partial  
+REASON: The context only says financial institutions and Republican members of Congress strongly opposed Warren’s CFPB directorship, but it does not identify specific advocacy groups, industry associations, or civic organizations leading major opposition campaigns."
+h1,q043,t037,1.0,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context says the Latvian Skating Association invited guest skaters from neighboring countries to their national championships to fill out the competition."
+h1,q044,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context discusses cricket history and other unrelated topics but does not report any infrastructural deficits for Ghana cricket (grounds, pitches, training facilities)."
+h1,q045,t039,1.0,partial,일부,stop,1,,1,,"LABEL: partial  
+REASON: The context says Hobbs’ results led to selection to join the British Cycling junior academy, but it does not describe impacts on funding, broader talent-identification, or institutional priorities."
+h1,q046,t008,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains biographical and unrelated political/arts coverage and does not mention any statutory authorities or federal communications law sections used to justify broadcasting rulemaking."
+h1,q047,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context only covers match/tournament history and does not describe the governance, organizational structure, or official roles of Ghana’s national cricket association."
+h1,q048,t008,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The provided context does not mention any regulator’s policies or how court decisions cited or interpreted them in subsequent communications/broadcasting litigation."
+h1,q049,t040,1.0,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context only mentions one specific bank-related acquisition (Citizens acquiring The Greenville Trust Company in 1954) and does not list major mergers/acquisitions with dates across the bank’s full history."
+h1,q050,t037,1.0,yes,답있음,stop,1,,1,,"t states that Latvian figure skating has been “hampered by a lack of resources, including available ice, financing, and interest,” and notes that the 1994 championships had only one participant per category and used guest skaters to fill events—directly describing impacts on staging/competitiveness."
+h1,q051,t007,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Northern Province history, demographics, and governance but does not name any Sri Lankan government ministries or agencies mandated to coordinate postwar reconstruction."
+h1,q052,t008,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context is about CFPB and presidential debate figures and a poster, with no information on broadcasting regulator power, judicial constraints, or statutory repeals."
+h1,q053,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses historical ICC Trophy participation of West Africa/Ghana cricket teams, but it does not mention development initiatives or describe changes in performance in regional and ICC-sanctioned tournaments afterward."
+h1,q054,t039,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides biographical/career details for cyclists but contains no official findings, rulings, or exonerations about any cyclist’s involvement in doping controversies."
+h1,q055,t037,1.0,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context mentions invite guest skaters and that top Latvian skaters were recognized as Latvian Champions, but it does not state any eligibility or qualification criteria for entering the national championships."
+h1,q056,t014,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides serialization venues and licensing/adaptation info but does not state any domestic/international readership changes or sales figures tied to those factors."
+h1,q057,t007,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses the civil war, displacement/return of Muslims, and infrastructure/rail reconstruction, but it does not describe any primary land resettlement or demining procedures in the Northern Province after the war."
+h1,q058,t014,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes the manga’s origin and research for accuracy but does not state any specific art techniques or paneling methods used to depict oceanic imagery."
+h1,q059,t007,1.0,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context says reconstruction/infrastructure projects have failed to create new jobs, leaving the Northern Province with extreme unemployment, but it does not describe changes in the province’s main economic activities."
+h1,q060,t008,1.0,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context does not mention any US communications regulator’s full name, official title, or service dates."
+h1,q061,t048,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes skating equipment and body positions but does not provide information on primary physiological energy systems or aerobic/anaerobic demands for long-distance mass-start and pursuit speed skating."
+h1,q062,t031,1.0,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context does not mention any Japanese professional wrestling promotion founded in 2001 with its exact establishment date and founder."
+h1,q063,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses West Africa cricket structures and tournaments but does not explain how colonial legacy affected access or demographic participation to limit cricket’s broader growth in Ghana."
+h1,q064,t007,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context mentions rail reconstruction and general infrastructure projects, but it does not identify any specific legal instruments, policy plans, or official reconstruction programs governing rebuilding efforts in the Northern Province."
+h1,q065,t014,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides only publication/license details for “Sunny” and other series and contains no information about academic or critical disputes on any environmental or ethical messaging limits."
+h1,q066,t040,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Citizens’ history and general expansion but provides no information about capital requirements or regulatory restrictions affecting its expansion plans."
+h1,q067,t014,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Daisuke Igarashi’s manga “Children of the Sea” publication and development but does not mention any studios, directors, or producers involved in adapting it into other media."
+h1,q068,t037,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Latvian national championships and other historical facts, but it does not state how championship results influenced national team selection or Latvia’s funding/support programs."
+h1,q069,t031,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context describes Zero1/Zero1-Max history, affiliations, and events but does not mention any notable alumni or talents achieving significant success abroad after participating in its programs."
+h1,q070,t038,1.0,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context describes Gold Coast–Southern Nigeria representative matches (e.g., the 1912 fixture) and gives one outcome (Gold Coast won by an innings), but it doesn’t comprehensively list all colonial-era Gold Coast representative matches/tours with their outcomes."
+h1,q071,t031,1.0,no,일부,stop,0,,1,,"LABEL: no
+REASON: The context discusses alliances and working agreements (including cross-promotional title challenges) but does not describe participation in international tournaments or any specific impact on the promotion’s global reputation."
+h1,q072,t037,1.0,partial,일부,stop,1,,1,,"LABEL: partial  
+REASON: The context mentions the Latvian Skating Association as the body involved, but it does not state when it was established."
+h1,q073,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains no facts about Ghana’s domestic men’s cricket league formats, selection procedures, or cricket competition mechanisms supporting elite cricket."
+h1,q074,t037,1.0,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context mentions 1994 Latvian Championships having only one participant per senior category (suggesting shortages) but gives no documented instances of event cancellations or specific category omissions beyond that."
+h1,q075,t037,1.0,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context discusses Latvian figure skating history but contains no information about what scoring system was used in Latvian national championships at different times."
+h1,q076,t037,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Latvia’s figure skating championships and historical issues but does not mention any junior-to-senior development pathways or link them to performance at national championships."
+h1,q077,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes West African cricket council history and Vodafone Ghana corporate events, but it does not mention any Ghana cricket administrators’ funding, sponsorship, or resource-allocation mechanisms."
+h1,q078,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses historical cricket matches and non-cricket unrelated topics, but it does not document grassroots programs or community outreach run by Ghana's cricket body."
+h1,q079,t007,1.0,partial,답있음,stop,1,,1,,"t 2006 Supreme Court ruling that Jayewardene’s proclamations were null and void, and it notes the 13th Amendment and Provincial Councils Act establishing provincial councils, but it does not identify other major Supreme Court decisions or legal rulings affecting devolution/provincial council powers."
+h1,q080,t031,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes affiliations, alliances, and venue choices but does not mention any guidelines or sanctions by government, sporting bodies, or industry organizations affecting operations."
+h1,q081,t038,1.0,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context says cricket was introduced by British settlers and that a Gold Coast team played its first recorded match in May 1904 (Gold Coast vs Lagos Colony), with similar fixtures in later seasons and mostly in Accra and Lagos during the colonial era."
+h1,q082,t008,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses unrelated topics (e.g., birther lawsuits and Supreme Court nominations) and does not mention any major lawsuits or Supreme Court cases challenging broadcasting rules by a regulator or their outcomes."
+h1,q083,t014,1.0,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context identifies the ocean-themed manga as *Children of the Sea* but only provides its serialization period (starting December 24, 2005) rather than a clear single “publication date.”"
+h1,q084,t038,1.0,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context does not mention any financial challenges, funding shortfalls, or sponsor withdrawals affecting Ghana's cricket programs or operations."
+h1,q085,t033,1.0,partial,답있음,stop,1,,1,,"nly notes political comments and Senedd debates about the absence of an internationally competing Welsh men’s team, with uncertainty about whether this applies to the women’s game, but it does not address selection fairness or regional/Wales representation disputes within the England and Wales team."
+h2hoA,a000,t034,2.12,full,답함,stop,1,1,1,1,"full
+REASON: The answer states the draft year (1997), the team (San Antonio Spurs), and the draft position (number one overall)."
+h2hoA,a001,t015,2.12,partial,답함,stop,0,1,1,1,"LABEL: partial  
+REASON: The answer lists Belgian Cup wins and a league title but does not clearly specify all major domestic trophies (e.g., Belgian Super Cup) or the exact seasons for each trophy in a complete way."
+h2hoA,a002,t002,2.12,partial,답함,stop,0,1,1,1,"LABEL: partial  
+REASON: The answer names only one domestic/national competition (2019 Papua New Guinea National Soccer League) and its season, but does not comprehensively list all domestic leagues and national competitions the club participated in."
+h2hoA,a003,t034,2.64,partial,일부,stop,0,1,0,1,"partial  
+The answer mentions influence on younger players and benchmarks but doesn’t provide documented examples or address specific coaching strategies/style influence as asked."
+h2hoA,a004,t044,2.12,full,답함,stop,1,1,1,1,"full  
+REASON: The answer directly lists leadership changes and related internal challenges (resignations, scandals, contested contests) within Welsh Labour over the past two decades."
+h2hoA,a005,t044,2.64,partial,일부,stop,0,1,0,1,"LABEL: partial
+REASON: It explains how Wales uses devolved Senedd powers but does not meaningfully compare Welsh Labour implementation with UK-wide Labour positions."
+h2hoA,a006,t034,2.12,partial,답함,stop,0,1,1,1,"partial
+REASON: It focuses on late-career achievements and retirement, only indirectly addressing how (or whether) any statistical/performance decline affected legacy debates."
+h2hoA,a007,t003,2.64,none,일부,stop,0,0,0,1,"none
+REASON: The answer lists unrelated tournaments and athlete achievements and does not mention captaincy, mentorship, relay participation, or any specific roles within the Chinese national team."
+h2hoA,a008,t015,3.6,partial,일부,stop,0,1,0,1,"partial
+REASON: The answer discusses coefficient/points and qualification pathways but does not cover typical revenue streams like UEFA/domestic broadcasting income or prize-money amounts."
+h2hoA,a009,t001,2.64,none,일부,stop,0,0,0,1,"none
+REASON: The answer discusses individual Bosnian players’ careers abroad but does not explain how the national team’s performance influenced transfers."
+h2hoA,a010,t020,3.6,full,답함,stop,1,1,1,1,"full
+REASON: It identifies the domestic publishing company (Shueisha) and describes the 1990s editorial/distribution strategies (serialization in Weekly Shōnen Jump and compilation into tankōbon volumes)."
+h2hoA,a011,t041,3.6,full,답함,stop,1,1,1,1,"LABEL: full
+REASON: The answer directly lists the politician’s specific roles in the FDP parliamentary group and the responsibilities tied to them."
+h2hoA,a012,t032,2.64,partial,일부,stop,0,1,0,1,"partial  
+REASON: It discusses linguistic and artistic differences mainly in Mozambique and cultural identity, but does not address Tanzania specifically or how these differences shape intergroup relations."
+h2hoA,a013,t002,3.6,partial,답함,stop,0,1,1,1,"partial  
+REASON: The answer describes status changes between cricket competitions, but it doesn’t clearly explain how promotion/relegation or league restructuring rules affected the club’s movement."
+h2hoA,a014,t043,2.64,full,답함,stop,1,1,1,1,"LABEL: full  
+REASON: It directly states how Tragos’s teaching shaped trainees’ in-ring style (submission wrestling and wrestling from the bottom)."
+h2hoA,a015,t029,2.64,partial,답함,stop,0,1,1,1,"partial  
+REASON: It discusses media/critic reception and audience acceptance in parts of the Kannada industry, but it doesn’t cover fan community responses and doesn’t address each film industry separately."
+h2hoA,a016,t003,2.12,partial,답함,stop,0,1,1,1,"LABEL: partial
+REASON: It gives two loss events with dates/opponents, but only partially answers “notable match losses or periods of decline” as it doesn’t comprehensively cover reported decline periods."
+h2hoA,a017,t036,2.12,partial,답함,stop,0,1,1,1,"partial
+It provides original platforms and some serialization/LN start dates plus publishers, but doesn’t consistently cover “publication dates” and “first commercial publishers” for all series in the way the question asks."
+h2hoA,a018,t053,2.12,partial,일부,stop,0,1,0,1,"partial
+The answer mentions a cabinet minister role and years (2004–2009) but does not clearly state specific official Congress party positions held by the leader."
+h2hoA,a019,t034,2.12,full,답함,stop,1,1,1,1,"LABEL: full  
+REASON: The answer specifically identifies one collegiate honor the player received (All-ACC First Team)."
+h2hoA,a020,t012,3.6,partial,일부,stop,0,1,0,1,"partial  
+The answer cites an example of coordinated multi-state litigation but does not describe what specific processes exist for coordinating with county prosecutors, federal authorities, or other states."
+h2hoA,a021,t003,3.6,full,답함,stop,1,1,1,1,"full
+REASON: It directly lists signature strokes (backhand motion), serves (direct heavy-spin attack), and tactical patterns (wide-angle controlled shots, speed/unexpected shots) from match analyses."
+h2hoA,a022,t025,3.6,partial,일부,stop,0,1,0,1,"LABEL: partial
+REASON: It mentions grants, subsidies, and loans but doesn’t specify the agency’s types of instruments for export activities or address equity."
+h2hoA,a023,t013,3.6,none,일부,stop,0,0,0,1,"none
+REASON: The answer discusses TRB cooperative research programs and FAA sponsorship, but it does not identify any interagency/stakeholder coordination structures Foxx established or employed at USDOT."
+h2hoA,a024,t023,3.6,partial,일부,stop,0,1,0,1,"LABEL: partial
+REASON: The answer only discusses regional transportation planning and does not address funding or administration, nor water and wastewater services."
+h2hoA,a025,t004,2.12,none,답안함,stop,0,0,0,0,"none
+REASON: The answer discusses an anti-corruption investigation but does not address legal challenges, fines, or regulatory actions related to the firm’s closure decisions or asset sales."
+h2hoA,a026,t052,2.12,full,답함,stop,1,1,1,1,"full
+REASON: The answer lists the leagues/competitions the club played in and specifies the corresponding years."
+h2hoA,a027,t044,2.64,partial,일부,stop,0,1,0,1,"partial
+REASON: It mentions policy measures relevant to rural and post-industrial areas but doesn’t address campaign messaging or how they engaged beyond general policy examples."
+h2hoA,a028,t023,2.12,full,답함,stop,1,1,1,1,"full
+REASON: The answer directly identifies legal/political and fiscal limitations (restrictive zoning politics, slow contentious processes, funding shifts, and concerns like corruption/economic inequality) that impede regional coordination and large-scale urban implementation."
+h2hoA,a029,t034,3.6,full,답함,stop,1,1,1,1,"full
+REASON: The answer directly lists the player’s college strengths in scoring/post play, rebounding, playmaking, and defense with specific examples."
+h2hoA,a030,t026,2.12,partial,일부,stop,0,1,0,1,"partial  
+REASON: It mentions PUK control and Kurdish autonomy/elections but does not clearly specify the city’s administrative status or the exact regional and national political institutions."
+h2hoA,a031,t043,2.64,full,답함,stop,1,1,1,1,"LABEL: full
+REASON: It directly attributes a career/stylistic outcome to mentorship (Thesz becoming a dangerous grappler)."
+h2hoA,a032,t053,2.12,partial,일부,stop,0,1,0,1,"partial
+REASON: It mentions roles such as Panchayati Raj and rural water supply and gives a 2009–2014 timeframe, but it does not clearly identify specific major policy initiatives the leader launched and the exact times they were introduced."
+h2hoA,a033,t051,2.64,partial,일부,stop,0,1,0,1,"partial
+REASON: It gives an example of dual success but doesn’t clearly explain the general relationship between Ashbourne Cup participation and local club player development."
+h2hoA,a034,t023,2.12,partial,답함,stop,0,1,1,1,"partial  
+The answer discusses zoning controversies and housing affordability generally (and mentions other places like Montgomery County), but it doesn’t clearly identify what specific “county” is being asked about."
+h2hoA,a035,t052,2.12,none,답안함,stop,0,0,0,0,"none
+REASON: The answer mentions Hall of Fame induction and player progression, but does not list major championships/titles/trophies won or the seasons."
+h2hoA,a036,t036,2.12,full,답함,stop,1,1,1,1,"full
+REASON: The answer lists specific notable isekai light novel titles that originally serialized on Shōsetsuka ni Narō, which directly answers the question."
+h2hoA,a037,t041,2.12,partial,답함,stop,0,1,1,1,"LABEL: partial
+REASON: It gives the full name and date of birth but not the place of origin."
+h2hoA,a038,t020,2.64,partial,답함,stop,0,1,1,1,"partial
+REASON: The answer lists several announced adaptations and dates but only names one production company (Eight Bit), leaving other production-company involvement unspecified."
+h2hoA,a039,t005,3.6,partial,답함,stop,0,1,1,1,"partial  
+REASON: It identifies the broadcaster (LRT) but does not name production entities or the credited technical production roles."
+h2hoA,a040,t029,2.12,full,답함,stop,1,1,1,1,"full
+REASON: The answer lists a time-ordered sequence of her film debut and subsequent cross-industry acting credits, including the 2025 reality show entry."
+h2hoA,a041,t012,2.12,full,일부,stop,1,1,0,1,"full
+REASON: The answer directly lists oversight mechanisms, specifically legislative oversight and judicial review, and mentions audit/review commissions to limit the attorney general’s actions."
+h2hoA,a042,t036,2.12,full,일부,stop,1,1,0,1,"full
+REASON: It directly cites high-volume web fiction output as evidence of market saturation concerns and also mentions reported creator digital-labor/labor-condition worries within web publishing ecosystems."
+h2hoA,a043,t030,3.6,partial,일부,stop,0,1,0,1,"partial  
+REASON: The answer discusses election timing but does not explain changes to corporate governance or office-holding in Newcastle."
+h2hoA,a044,t032,2.12,full,답함,stop,1,1,1,1,"LABEL: full  
+REASON: It directly identifies the Makonde’s traditional homeland as the Mueda Plateau in Cabo Delgado and places them as indigenous there."
+h2hoA,a045,t026,2.12,partial,답함,stop,0,1,1,1,"partial  
+The answer discusses demographic verification, boundary determination, and archival attention but does not clearly connect these data gaps/limitations to the city’s specific reconstruction history."
+h2hoA,a046,t042,2.64,full,답함,stop,1,1,1,1,"LABEL: full
+REASON: The answer lists specific international medals/records (World Aquatics Championships medals and short-course/long-course world records) that directly increased the swimmer’s visibility and impact."
+h2hoA,a047,t034,3.6,partial,일부,stop,0,1,0,1,"LABEL: partial  
+REASON: It discusses his college role/achievements and draft, but does not compare college role/usage rate to his role/usage rate during his first ten professional seasons."
+h2hoA,a048,t023,3.6,partial,일부,stop,0,1,0,1,"LABEL: partial  
+REASON: The answer discusses special-purpose local governments generally but does not identify specific interlocal agreements/regional authorities/councils in the county or their statutory powers."
+h2hoA,a049,t019,2.12,partial,일부,stop,0,1,0,1,"LABEL: partial  
+REASON: The answer mentions allegations of fraud after the 2020 election but does not specify Wisconsin’s 2020 House and presidential ballots or the evidence addressing those claims."
+h2hoA,a050,t025,2.64,partial,일부,stop,0,1,0,1,"partial  
+It describes the agency structure and mandate but does not provide documented case studies or specific export results."
+h2hoA,a051,t030,2.12,partial,답함,stop,0,1,1,1,"partial  
+It covers key election outcomes changing control (2004–2011, 2011, 2019, 2024) but only loosely addresses “coalition changes” and doesn’t clearly detail coalition shifts beyond general alliance discussions."
+h2hoA,a052,t005,3.6,partial,답함,stop,0,1,1,1,"partial  
+REASON: It covers artist eligibility and song originality (who wrote vs who performs) but does not state the official submission rules."
+h2hoA,a053,t025,2.64,none,답안함,stop,0,0,0,0,"none
+REASON: The answer describes the agency’s mandate and structure but does not mention any monitoring and evaluation metrics or how they demonstrate impact on export growth and firm performance."
+h2hoA,a054,t052,2.12,none,일부,stop,0,0,0,1,"LABEL: none  
+REASON: It discusses a rebranding after a corporate change, not governance disputes, sanctions, or legal issues or their outcomes."
+h2hoA,a055,t019,2.12,none,일부,stop,0,0,0,1,"none
+REASON: The answer discusses a pre-election COVID postponement order, not post-election legal challenges and rulings about Wisconsin’s 2020 election procedures or results."
+h2hoA,a056,t013,3.6,partial,답함,stop,0,1,1,1,"partial
+REASON: It cites the FAST Act and general statutes/appropriations but does not directly identify the specific statutory authorities empowering the Secretary of Transportation to alter federal transportation policy during Foxx’s term."
+h2hoA,a057,t019,2.12,none,일부,stop,0,0,0,1,"LABEL: none  
+REASON: The answer discusses preventing postponement of an April 2020 election, not how officials responded to certification, recounts, and public controversy after the 2020 election."
+h2hoA,a058,t036,2.12,full,답함,stop,1,1,1,1,"full
+REASON: It describes the typical step-by-step pathway from web novel sites to commercial light novel imprints, including acquisition and release."
+h2hoA,a059,t000,2.12,full,답함,stop,1,1,1,1,"full
+REASON: The answer lists specific review-quoted limitations repeatedly criticized across sources, including characterization/storytelling (e.g., cardboard villains, childish/barely coherent) and artwork quality/logical plot issues."
+h2hoA,a060,t023,2.64,full,답함,stop,1,1,1,1,"full
+REASON: The answer identifies specific changes in major employers/business sectors over the last twenty years (military-to-civilian depot, IRS employment growth, growth in tech/innovation firms)."
+h2hoA,a061,t001,2.12,full,일부,stop,1,1,0,1,"LABEL: full  
+REASON: It directly identifies a major international tournament (2014 FIFA World Cup) and the year Bosnia and Herzegovina qualified/participated."
+h2hoA,a062,t030,3.6,full,답함,stop,1,1,1,1,"full
+REASON: The answer describes Newcastle’s executive structure (leader of the council model vs proposed directly elected mayor) and states the council election method (elections by thirds/all-out then by thirds) that selects the executive leaders."
+h2hoA,a063,t036,3.6,partial,일부,stop,0,1,0,1,"partial
+REASON: It discusses chapter-by-chapter serialization but does not address first-person vs third-person or author interjections."
+h2hoA,a064,t036,3.6,partial,답함,stop,0,1,1,1,"partial  
+REASON: It explains pacing and long-term serialization effects on arcs and release structure, but it does not directly address how these techniques influence cliffhangers (or chapter length specifically)."
+h2hoA,a065,t025,2.12,partial,답함,stop,0,1,1,1,"partial
+REASON: It states the establishment year (2015) but does not specify the legislative or executive act under which it was established."
+h2hoA,a066,t051,2.64,full,답함,stop,1,1,1,1,"full
+REASON: It directly links the Ashbourne Cup to a specific player’s progression from university success to inter-county senior achievement."
+h2hoA,a067,t029,2.12,partial,답함,stop,0,1,1,1,"partial
+REASON: The answer gives only Telugu (2005) and Kannada (2006) debuts, but omits the Tamil debut and does not cover all three industries “respectively.”"
+h2hoA,a068,t023,3.6,partial,일부,stop,0,1,0,1,"LABEL: partial
+REASON: It describes county responsibility for unincorporated areas but does not explain how authority is distributed among cities and metropolitan service districts."
+h2hoA,a069,t030,2.12,full,답함,stop,1,1,1,1,"LABEL: full
+REASON: It directly describes how the 1972 Act and later reorganization changed Newcastle upon Tyne’s administrative status."
+h2hoA,a070,t002,2.12,partial,답함,stop,0,1,1,1,"LABEL: partial
+REASON: The answer gives the founding year but does not name the founders."
+h2hoA,a071,t034,2.64,none,답함,stop,0,0,1,1,"none  
+REASON: The answer discusses draft position and a Super Bowl win but does not address win-loss records or playoff appearances during his first ten professional seasons."
+h2hoA,a072,t005,2.64,none,답안함,stop,0,0,0,0,"none
+REASON: The answer discusses Monika Liu’s performance as an interval act, not the professionals credited for staging, visual design, and performance."
+h2hoA,a073,t034,2.12,full,답함,stop,1,1,1,1,"full
+REASON: The answer lists specific analyst criticisms of the player’s limitations and weaknesses (attitudes toward coaching, impact on mentoring, and on-field protocol/behavior)."
+h2hoA,a074,t011,2.64,partial,일부,stop,0,1,0,1,"partial
+REASON: The answer mentions critical reception and box office for one film but does not explain how that reception affected later casting decisions or career opportunities."
+h2hoA,a075,t000,2.12,partial,답함,stop,0,1,1,1,"partial  
+REASON: The answer lists some adaptation formats with dates and some producing companies, but it does not clearly cover all official adaptations the question asks for (and appears to span multiple unrelated works)."
+h2hoA,a076,t004,2.12,none,일부,stop,0,0,0,1,"none
+REASON: The answer discusses alleged organized-crime ties in construction, but it does not address criticisms specifically about the firm’s consolidation and decline management."
+h2hoA,a077,t042,2.12,full,답함,stop,1,1,1,1,"full
+REASON: It directly states that the swimmer’s medal was revoked due to a positive doping test, addressing revocation and doping investigation."
+h2hoA,a078,t002,2.12,partial,일부,stop,0,1,0,1,"partial
+REASON: The answer mentions conference topping and a quarter-final appearance in 2019 but does not clearly list major trophies/league titles/cup honours and their seasons as requested."
+h2hoA,a079,t020,3.6,full,답함,stop,1,1,1,1,"full  
+REASON: It directly names the licensing/translation and international distribution agreements and links them to overseas publication and adaptation opportunities."
+h2hoA,a080,t001,2.12,partial,답함,stop,0,1,1,1,"partial
+REASON: It describes ethnic-based football splits and institutions but does not specifically address disputes about representation within the national team and the football association."
+h2hoA,a081,t034,2.12,partial,답함,stop,0,1,1,1,"partial  
+REASON: It lists suspensions/off-court incidents but does not clearly connect them to effects on perceptions of his legacy."
+h2hoA,a082,t036,2.12,partial,답안함,stop,0,1,0,0,"partial  
+REASON: It discusses general digital-content concerns (misinformation, data ethics, algorithmic bias) rather than specifically addressing cultural impacts or ideological concerns linked to isekai narratives."
+h2hoA,a083,t015,3.6,none,일부,stop,0,0,0,1,"none  
+REASON: The answer explains qualification mechanics (seeding/rounds and an example) but does not address transfer spending, player recruitment, or market valuation effects."
+h2hoA,a084,t002,2.64,partial,일부,stop,0,1,0,1,"partial
+REASON: The answer gives an example of one player but does not state how many academy/roster players have progressed."
+h2hoA,a085,t030,2.64,partial,일부,stop,0,1,0,1,"partial
+REASON: It describes political control changes and council composition, but it doesn’t clearly explain how those shifts altered specific local policy priorities or development projects."
+h2hoA,a086,t032,2.64,partial,일부,stop,0,1,0,1,"partial  
+REASON: It mentions Makonde wood sculpture and cultural influences in Mozambique but does not address incorporation into national heritage, tourism, and cultural economy in both countries."
+h2hoA,a087,t004,2.12,partial,답함,stop,0,1,1,1,"LABEL: partial
+REASON: It names a mill closure and a date, but it does not specify that it occurred during an industry downturn or provide other announced closures/layoffs/mothballings."
+h2hoA,a088,t025,2.12,full,답함,stop,1,1,1,1,"full
+REASON: It explicitly lists music, film, and fashion as covered in the agency’s core objectives/strategic plans."
+h2hoA,a089,t023,2.64,partial,일부,stop,0,1,0,1,"partial
+REASON: It lists major employers and general industry clusters but does not identify which industries have the largest shares of employment and GDP in the county."
+h2hoA,a090,t053,2.12,full,답함,stop,1,1,1,1,"full  
+REASON: The answer lists state-level offices (state legislature election, ministerial roles, and opposition leader) along with the years they were held."
+h2hoA,a091,t012,2.64,full,답함,stop,1,1,1,1,"full
+REASON: The answer lists specific policy areas (consumer protection, equitable economic opportunity, social safety net) that the winning candidate prioritized."
+h2hoA,a092,t043,2.12,partial,일부,stop,0,1,0,1,"partial
+REASON: The answer mentions general criticisms and a split over style preferences, but it does not directly address coaching style, management decisions, or backstage conduct disputes."
+h2hoA,a093,t044,2.12,full,답함,stop,1,1,1,1,"full  
+REASON: It directly identifies structural/electoral constraints (reforms to Senedd size, PR, constituencies, term length) and related demographic/party shifts that threaten Welsh Labour’s dominance."
+h2hoA,a094,t002,3.6,partial,일부,stop,0,1,0,1,"partial
+REASON: The answer mentions ICC associate membership and T20I status but does not address the specific registration/licensing/affiliation processes the club completed when joining new leagues."
+h2hoA,a095,t041,2.64,partial,답함,stop,0,1,1,1,"partial  
+REASON: The answer gives some prior local vote shares but does not track vote share and seat counts before vs after the politician’s rise as asked."
+h2hoA,a096,t003,2.12,none,답안함,stop,0,0,0,0,"none
+REASON: The answer states a coaching position and does not address any public response to scrutiny, injury reports, or allegations."
+h2hoA,a097,t047,3.6,full,일부,stop,1,1,0,1,"full
+REASON: The answer identifies a specific Giza-based volleyball training facility (Abdulrahman Fawzi Hall) used as the team’s home venue, directly addressing the question about facilities."
+h2hoA,a098,t043,2.12,full,답함,stop,1,1,1,1,"full  
+REASON: The answer directly describes role constraints (part-time instructional role) and a contract/recognition dispute related to his separation from UWFi."
+h2hoA,a099,t026,3.6,partial,일부,stop,0,1,0,1,"partial  
+REASON: It describes regional inflows/outflows affecting Syrian areas, but it doesn’t clearly identify the specific city or directly connect the patterns to the city’s population and cultural landscape."
+h2hoB,b000,t002,2.1538461538461537,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context does not provide any history of official club names or the years each name was used."
+h2hoB,b001,t023,4.846153846153846,yes,답있음,stop,1,,1,,"ervisors, elected offices, departments under a chief/county administrator) provide countywide/ regional services and that chartered municipalities and contracted cities provide additional municipal services, with possible special-purpose local governments like school districts and special districts."
+h2hoB,b002,t025,4.846153846153846,partial,일부,stop,1,,1,,"LABEL: partial  
+REASON: The context states the agency (CreativeTT with subsidiaries MusicTT, FilmTT, FashionTT) has a mandate to stimulate and facilitate export activities, but it does not list any specific export-promotion programs or initiatives."
+h2hoB,b003,t005,3.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes the selection shows’ structure and voting, but it provides no television viewership figures or public attendance numbers for the multiweek events."
+h2hoB,b004,t000,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context lists publication/serialization dates and volume counts but provides no documented audience metrics like views, unique readers, or circulation figures."
+h2hoB,b005,t001,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Bosnian football association history and a humanitarian team, but it contains no information about how qualification for major tournaments affected international perceptions."
+h2hoB,b006,t025,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes agencies and mandates for creative sectors but provides no evaluations or independent studies identifying limitations, unintended consequences, or gaps in their programs."
+h2hoB,b007,t052,2.25,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context gives league/identity changes but no details about competitive declines, relegations, poor performance periods, or reasons for them."
+h2hoB,b008,t052,4.846153846153846,no,일부,stop,0,,1,,"LABEL: no
+REASON: The context provides club history but contains no facts about any official governance structure, board composition, or officer roles."
+h2hoB,b009,t017,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context does not mention Kota Kinabalu International Airport, nor its ground handling, cargo facilities, navigation aids, or turnaround-time support."
+h2hoB,b010,t025,7.166666666666667,yes,답없음,stop,1,,0,,"LABEL: yes  
+REASON: The context describes procurement irregularities, conflicts of interest, and a bribery allegation involving IDT leadership (Tebogo Malaka), including tender-linked contract awards to a company linked to her sister-in-law."
+h2hoB,b011,t052,3.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes the club’s league history and notable players but provides no information about events it hosted or volunteer involvement impacting the local Hobart community."
+h2hoB,b012,t041,2.1538461538461537,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context lists Gao Yan’s Party/party-leadership-related roles (e.g., CCPIT Chairwoman and Party Secretary in Aug 2018; stepping down Jan 2022; membership in Party Leadership Group since May 2013; member of the Party Leadership Group in Aug 2003) with dates."
+h2hoB,b013,t027,4.846153846153846,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides historical information about the Archdiocese of Kuala Lumpur and road descriptions, with no facts about a psychologist’s integration of trauma expertise into human rights investigative, documentation, or rehabilitation procedures."
+h2hoB,b014,t011,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context does not mention Bharath’s repeated collaborations with any directors, cinematographers, or acting coaches."
+h2hoB,b015,t044,4.846153846153846,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context mentions Welsh Labour leadership and election outcomes but does not describe Welsh Labour’s formal organizational structure or its relationship to UK Labour headquarters."
+h2hoB,b016,t029,2.1538461538461537,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context does not provide the birth name, birthdate, and birth place of any Indian model-turned-actress."
+h2hoB,b017,t044,4.846153846153846,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains election/background information about parties and constituencies but does not describe Welsh Labour’s party rules for selecting UK Parliament or Senedd candidates."
+h2hoB,b018,t036,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context only provides publication/serialization and platform details for specific series, with no documentation of recurring critical complaints about isekai novels."
+h2hoB,b019,t004,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses market power, pricing models, and wholesale electricity or pharmaceutical pricing, but it contains no information about newsprint wholesale prices or how acquisitions affected price-setting in target markets."
+h2hoB,b020,t036,3.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses a specific web novel series and “clop” erotic fan art, but it does not mention web-originated isekai communities or fan translations, fan art, cosplay, or doujinshi."
+h2hoB,b021,t041,6.25,partial,답있음,stop,1,,1,,"e context mentions that advocacy by Gough Whitlam and others contributed to the 1967 platform change removing “white Australia,” but it does not clearly identify which specific politician or match the politician’s exact introduced positions to adopted platform items beyond that general policy shift."
+h2hoB,b022,t029,2.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context only provides brief biographical/career details about actresses and does not mention any cited structural industry barriers like nepotism or distribution limits."
+h2hoB,b023,t025,3.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes agencies and mandates for film, fashion, and music but provides no reported changes in export revenues attributable to interventions."
+h2hoB,b024,t029,6.6923076923076925,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context lists that Vanisri has received three Filmfare Awards South, plus Nandi Awards and a Tamil Nadu State Film Award, but it does not specify major award nominations (or which actor “she” refers to) beyond wins."
+h2hoB,b025,t044,2.25,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The provided context discusses party coalitions and election outcomes but does not mention any criticisms or limitations about Welsh Labour’s handling of national identity or relations with Plaid Cymru."
+h2hoB,b026,t020,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context only discusses manga sales/popularity and contains no information about a comic’s narrative setting, historical period in Anatolia, or how such a setting is described in synopses."
+h2hoB,b027,t006,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses general election law and unrelated state election results, but it provides no Maryland-specific ballot access, voter registration, or absentee voting procedures for 2008."
+h2hoB,b028,t011,2.1538461538461537,yes,일부,stop,1,,1,,"LABEL: yes  
+REASON: The context states that Bharath’s Bollywood film debut was in “Jackpot” released in 2013 and it is a Hindi-language film."
+h2hoB,b029,t001,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains no information about the team’s FIFA world ranking changes year-by-year from formation to present."
+h2hoB,b030,t001,2.1538461538461537,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains no information about the team’s head coaches, captains, or who has served the longest since the team’s establishment."
+h2hoB,b031,t051,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context mentions Ashbourne Cup medals and match details but provides no information about debates or criticisms of media coverage, visibility, or gender equity related to the Ashbourne Cup."
+h2hoB,b032,t006,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The provided context discusses elections in Hawaii and New York (and newspaper endorsements), not Maryland’s 2004, 2008, or 2012 results."
+h2hoB,b033,t026,3.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Kurdistan conflict timelines and politics but provides no details about the scale or patterns of displacement, resettlement, or return of residents after periods of conflict."
+h2hoB,b034,t016,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The provided CONTEXT does not mention Spirit Hunter: Death Mark or any of its gameplay mechanics/systems related to tension and fear."
+h2hoB,b035,t029,2.25,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context describes her film roles and career timeline but does not document any specific instances of typecasting, limited roles, or gendered role constraints affecting her career."
+h2hoB,b036,t044,2.1538461538461537,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context mentions Welsh Labour losing/gaining power and some Plaid/coalition details, but it does not name any Welsh regions or constituencies that have consistently supported Welsh Labour across recent decades."
+h2hoB,b037,t026,2.1538461538461537,partial,일부,stop,1,,1,,"LABEL: partial  
+REASON: It says Şırnak is near the Ibrahim Khalil border crossing and is a main link to Iraq’s Kurdistan Region, but it provides no location coordinates or specific geographical features."
+h2hoB,b038,t012,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses unrelated state elections (Connecticut, Wisconsin, North Carolina) and contains no information about the 2024 Oregon attorney general candidates or their prior offices/roles."
+h2hoB,b039,t024,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses the 1988 Australian Winter Paralympics athletes and general Paralympic history, but it does not mention Australia’s 1976 participation or any measurable effects on disability participation or grassroots programs."
+h2hoB,b040,t017,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains terminal information for other airports (e.g., Juanda, Heydar Aliyev) but nothing about Kota Kinabalu International Airport’s terminals, capacity, gates, or upgrades."
+h2hoB,b041,t003,6.25,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context contains biographical and sports participation information but no facts about any player’s documented contributions to youth development, coaching clinics, or national training curricula."
+h2hoB,b042,t000,4.846153846153846,partial,일부,stop,1,,1,,"LABEL: partial  
+REASON: The context mentions English/Southeast Asia releases and a global Steam release, but it does not describe specific localization and distribution technologies or translation workflows."
+h2hoB,b043,t036,2.1538461538461537,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context identifies web novel authors Konoe (“My One-Hit Kill Sister”) and Kureha (“The White Cat’s Revenge as Plotted from the Dragon King’s Lap”) and describes their move into additional media (e.g., manga/anime for Konoe, and light-novel publication for Kureha)."
+h2hoB,b044,t013,4.846153846153846,partial,일부,stop,1,,1,,"SON: The context mentions DOT-administered grant funding (e.g., $10.5M/$12.5M DOT grants via the Federal Transit Administration) and cooperative research programs sponsored by DOT agencies, but it does not specify which programs and funding mechanisms were overseen specifically during Foxx’s tenure."
+h2hoB,b045,t013,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context does not mention Anthony Foxx or his nomination/confirmation dates as Secretary of Transportation."
+h2hoB,b046,t042,2.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes Libby Trickett’s relay successes and subsequent records/regaining world records, but it does not document any post-peak performance declines or provide retirement reasons."
+h2hoB,b047,t044,3.25,no,일부,stop,0,,1,,"LABEL: no
+REASON: The context describes Welsh Labour politicians’ careers and general devolution powers, but it does not mention any recent Welsh Labour Senedd manifestos or their major policy platforms."
+h2hoB,b048,t042,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context lists swimmer achievements and general relay rules but does not mention any endorsements, ambassador roles, or coaching positions that affected swimming programs."
+h2hoB,b049,t000,2.1538461538461537,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context gives full start/end dates for a subsequent serialization on Kodansha’s Weekly Young Magazine (Jan 25, 2021 to Sep 15, 2023), but it does not provide start/end dates for the other subsequent-platform serializations mentioned."
+h2hoB,b050,t011,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains general information about Indian cinema and unrelated film/company blurbs, but nothing about Bharath, nor any critical backlashes or industry criticisms affecting his casting/distribution."
+h2hoB,b051,t000,3.25,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context states that Kodansha USA and others licensed the series for international (English) publication, including digital releases and plans to issue print copies."
+h2hoB,b052,t030,2.25,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context mentions the Local Government Acts and council/authority history, but it provides no information about legal or statutory limits on Newcastle City Council’s powers or how any constraints were applied or challenged."
+h2hoB,b053,t036,3.25,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context only covers “My One-Hit Kill Sister” as a web novel with manga and an anime adaptation release (Dec 2019–Jun 2023; manga Mar 2020–Jul 2023; anime Apr–Jun 2023) but provides no game or live-action adaptation details."
+h2hoB,b054,t043,3.25,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context only explains general wrestling terms and Olympic tournament structure, with no information about any wrestlers/trainees crediting an influence or mentor."
+h2hoB,b055,t035,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses tournament details and qualification but contains no information about transport, accommodation, or accreditation systems for teams, officials, or fans."
+h2hoB,b056,t042,2.25,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context provides career and results details for swimmers but contains no information about any formal controversies like disciplinary actions, selection disputes, or appeals."
+h2hoB,b057,t003,4.846153846153846,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context states the player is left-handed and uses a shakehand grip, but it does not specify the typical match stance."
+h2hoB,b058,t032,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context is about coral reefs and mangroves (and a company expansion), and contains no information on Makonde dialect classification or mutual intelligibility debates."
+h2hoB,b059,t035,2.1538461538461537,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses unrelated years/teams and does not state which national teams qualified for or participated in the 2016 FIFA U-20 Women's World Cup."
+h2hoB,b060,t004,2.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains no information about governmental inquiries, public protests, or union actions related to the firm’s restructuring decisions."
+h2hoB,b061,t011,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context only states that Bharath starred in the Hindi film “Jackpot” as his Bollywood debut, but it does not mention any endorsements, brand partnerships, or specific industry positions he gained in language markets."
+h2hoB,b062,t005,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context mentions Monika Liu performing as an interval act, but it does not provide any record label, management, or publishing deals involved with her before or after her selection."
+h2hoB,b063,t047,4.3076923076923075,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context does not describe any club’s volleyball section administrative structure, including technical director, coaching staff, or youth academy."
+h2hoB,b064,t018,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context mentions the Australian Rollers winning wheelchair basketball, but it provides no information about how their Paralympic results affected participation rates in Australia."
+h2hoB,b065,t011,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context does not mention “Bharath” or provide any list of Bharath’s films and their box-office success by language industry."
+h2hoB,b066,t032,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Mozambique’s independence and FRELIMO’s origins and general colonial conditions, but it never describes contested narratives about Makonde political loyalties or roles during independence or the civil war."
+h2hoB,b067,t047,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context mentions venues and volleyball teams in Cairo (Zamalek SC) but provides no information about any Giza-based volleyball section’s head coaches or notable players."
+h2hoB,b068,t002,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses Papua New Guinea cricket team status changes (ODI/T20I) and ICC decisions, but it provides no information about coaching, player recruitment, or youth development system changes tied to club transitions."
+h2hoB,b069,t001,2.1538461538461537,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context says Bosnia and Herzegovina’s national team started playing official matches in late November 1995, marking the formation of the independent team."
+h2hoB,b070,t004,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context provides only general U.S. M&A history and unrelated biographical details, with no firm-specific major mergers/acquisitions between 1950 and 2000 or their dates."
+h2hoB,b071,t043,4.846153846153846,partial,답있음,stop,1,,1,,"LABEL: partial  
+REASON: The context only states he was trained by Arkangel de la Muerte at a CMLL school, but provides no other qualifications, prior experiences, or mentorship details."
+h2hoB,b072,t030,4.3076923076923075,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context only describes general UK local government reorganizations and a London “old corporation” powers/duties excerpt, not Newcastle’s municipal corporation under historical charters and statutes."
+h2hoB,b073,t017,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains no information about Kota Kinabalu International Airport’s opening date or development milestones by decade."
+h2hoB,b074,t012,3.25,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context only lists unrelated election results and does not mention any precedent cases or past attorney general actions cited by a candidate."
+h2hoB,b075,t032,3.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context mentions FRELIMO’s formation in Tanzania and general colonial/nationalist dynamics, but it provides no information about Makonde political alignments or their impacts on governance, representation, conflict, or Tanzanian politics during the Mozambican civil war."
+h2hoB,b076,t035,6.6923076923076925,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context mentions the 2016 FIFA U-20 Women’s World Cup location (Papua New Guinea) only via a player bio, but provides no dates, host cities, or venues."
+h2hoB,b077,t017,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains no studies or statistics about airport capacity changes at Kota Kinabalu International Airport or their effects on local employment and GDP contribution."
+h2hoB,b078,t016,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context does not mention Spirit Hunter: Death Mark or its sequels, nor any awards, nominations, or notable mentions."
+h2hoB,b079,t005,7.166666666666667,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context describes Eurovision editions and national selection formats/results but contains no information about later rule changes, investigations, or official broadcaster statements responding to criticisms."
+h2hoB,b080,t002,2.25,partial,일부,stop,1,,1,,"LABEL: partial  
+REASON: The context only mentions that the club’s playoff participation was thrown into doubt because players hadn’t been paid, but it does not describe regulatory or eligibility disputes with the league or national association."
+h2hoB,b081,t032,2.1538461538461537,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context mentions Makonde culture in northern Mozambique but provides no demographic distributions for Makonde people in Mozambique vs Tanzania from colonial times to present."
+h2hoB,b082,t025,2.1538461538461537,yes,답있음,stop,1,,1,,"LABEL: yes  
+REASON: The context states CreativeTT’s mandate is to “stimulate and facilitate the business development and export activities” of the Music, Film, and Fashion creative industries."
+h2hoB,b083,t006,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context contains no information about Maryland in 2008 or any documented concerns about voter suppression, access barriers, or disenfranchisement."
+h2hoB,b084,t052,2.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides club history and stadium details but does not mention any facility access problems, membership declines, or recruitment challenges for the club, nor specific periods."
+h2hoB,b085,t006,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses elections in Hawaii and Kentucky and an unrelated EVM controversy in West Bengal, with no mention of Maryland voting irregularities or election administration legal challenges in 2008."
+h2hoB,b086,t053,6.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context provides biographical and election details about political figures but gives no information on GDP growth or employment rates in relation to their time in office."
+h2hoB,b087,t034,2.25,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The provided context is about Tony Casillas’s early life and does not discuss any controversies about evaluating his career versus peers for Hall of Fame or all-time status."
+h2hoB,b088,t012,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context only lists unrelated historical abstracts of attorney general elections and provides no information about any post-election criticisms of an attorney general-elect’s campaign conduct, conflicts of interest, or qualifications."
+h2hoB,b089,t005,4.846153846153846,partial,일부,stop,1,,1,,"LABEL: partial  
+REASON: The context states 50/50 jury vs public televoting for semi-finals and final in Festival da Canção 2025, but it does not describe weighting between “jury panels,” “international juries,” and public televoting across multiple selection rounds."
+h2hoB,b090,t000,4.846153846153846,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context only describes titles/authors/serialization and does not mention illustration production, artist credits, workflow, or episode art schedules for any webtoon adaptation."
+h2hoB,b091,t047,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context contains no documented coaching philosophies, training regimens, or technical programs for any Giza-based volleyball section."
+h2hoB,b092,t042,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context describes race results and athlete biographies but does not mention VO2max, lactate threshold, or muscle fiber composition in relation to sprint relay performance."
+h2hoB,b093,t011,3.25,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context contains information about other people and films, but it does not mention Bharath or any “crossover/pan-Indian projects” involving Bharath."
+h2hoB,b094,t029,6.6923076923076925,partial,답없음,stop,1,,0,,"LABEL: partial  
+REASON: The context says she is active in modeling with fashion events and photoshoots, but it does not specify when or how she began modeling before entering films."
+h2hoB,b095,t024,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The context contains no information about Australian Paralympic athletes’ training methods, coaching structures, or preparation programs leading up to the 1976 Games."
+h2hoB,b096,t017,7.166666666666667,no,답없음,stop,0,,0,,"LABEL: no
+REASON: The provided context does not mention any health, noise, or air quality studies/complaints tied to increased operations at Kota Kinabalu International Airport."
+h2hoB,b097,t032,4.846153846153846,no,일부,stop,0,,1,,"LABEL: no  
+REASON: The context mentions Makonde wood sculpture and general historical influences but provides no information on how cross-border trade, migration, or intermarriage affected artistic styles."
+h2hoB,b098,t016,4.3076923076923075,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The context discusses other games (e.g., Marvel: Ultimate Alliance, Rain World) and contains no information about Spirit Hunter: Death Mark or its development tools."
+h2hoB,b099,t052,2.25,no,답없음,stop,0,,0,,"LABEL: no  
+REASON: The provided context does not document any club financial difficulties, sponsorship withdrawals, or funding disputes or their dates."

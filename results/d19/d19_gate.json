@@ -1,0 +1,207 @@
+{
+ "model": "gpt-5.4-nano",
+ "max_tokens": 512,
+ "sets": {
+  "h2dev": {
+   "role": "dev",
+   "n": 43,
+   "judge_counts": {
+    "partial": 24,
+    "none": 7,
+    "full": 12
+   },
+   "crosstab": {
+    "답안함|none": 4,
+    "답안함|partial": 1,
+    "답함|full": 10,
+    "답함|none": 1,
+    "답함|partial": 10,
+    "일부|full": 2,
+    "일부|none": 2,
+    "일부|partial": 13
+   },
+   "primary": {
+    "agree": 0.6976744186046512,
+    "kappa": 0.3890710382513662,
+    "neg_pred_precision_w": 0.6451612903225806,
+    "pos_pred_precision_w": 0.8333333333333334,
+    "n_pred_neg": 31,
+    "human_pos_rate": 0.4883720930232558,
+    "pred_pos_rate": 0.27906976744186046
+   },
+   "sensitivity_partial_as_answer": {
+    "agree": 0.9069767441860465,
+    "kappa": 0.6143497757847531,
+    "neg_pred_precision_w": 0.5714285714285714,
+    "pos_pred_precision_w": 0.9722222222222222,
+    "n_pred_neg": 7,
+    "human_pos_rate": 0.8837209302325582,
+    "pred_pos_rate": 0.8372093023255814
+   }
+  },
+  "h1": {
+   "role": "dev",
+   "n": 86,
+   "judge_counts": {
+    "no": 61,
+    "yes": 7,
+    "partial": 18
+   },
+   "crosstab": {
+    "답없음|no": 55,
+    "답없음|partial": 2,
+    "답있음|no": 1,
+    "답있음|partial": 11,
+    "답있음|yes": 7,
+    "일부|no": 5,
+    "일부|partial": 5
+   },
+   "primary": {
+    "agree": 0.9069767441860465,
+    "kappa": 0.7845961177207262,
+    "neg_pred_precision_w": 0.9016393442622951,
+    "pos_pred_precision_w": 0.92,
+    "n_pred_neg": 61,
+    "human_pos_rate": 0.3372093023255814,
+    "pred_pos_rate": 0.29069767441860467
+   }
+  },
+  "h2hoA": {
+   "role": "held_out",
+   "n": 100,
+   "judge_counts": {
+    "full": 33,
+    "partial": 53,
+    "none": 14
+   },
+   "crosstab": {
+    "답안함|none": 5,
+    "답안함|partial": 1,
+    "답함|full": 29,
+    "답함|none": 1,
+    "답함|partial": 24,
+    "일부|full": 4,
+    "일부|none": 8,
+    "일부|partial": 28
+   },
+   "primary": {
+    "agree": 0.71,
+    "kappa": 0.4353582554517134,
+    "neg_pred_precision_w": 0.650089605734767,
+    "pos_pred_precision_w": 0.8806327900287633,
+    "n_pred_neg": 67,
+    "human_pos_rate": 0.54,
+    "pred_pos_rate": 0.33,
+    "kappa_ci": [
+     0.28117356098251817,
+     0.577802589986744
+    ],
+    "neg_pred_precision_w_ci": [
+     0.5486271351859822,
+     0.7575285928181053
+    ],
+    "checks": {
+     "agree>=0.80": false,
+     "kappa>=0.60": false,
+     "kappa_ci_lo>=0.40": false,
+     "negprec_w>=0.80": false,
+     "negprec_w_ci_lo>=0.70": false
+    },
+    "pass": false
+   },
+   "sensitivity_partial_as_answer": {
+    "agree": 0.9,
+    "kappa": 0.4541484716157211,
+    "neg_pred_precision_w": 0.33030646992054485,
+    "pos_pred_precision_w": 0.990650908449462,
+    "n_pred_neg": 14,
+    "human_pos_rate": 0.94,
+    "pred_pos_rate": 0.86,
+    "kappa_ci": [
+     0.1730472603893449,
+     0.666685520361991
+    ],
+    "neg_pred_precision_w_ci": [
+     0.10649049210811767,
+     0.555373788217748
+    ],
+    "checks": {
+     "agree>=0.80": true,
+     "kappa>=0.60": false,
+     "kappa_ci_lo>=0.40": false,
+     "negprec_w>=0.80": false,
+     "negprec_w_ci_lo>=0.70": false
+    },
+    "pass": false
+   }
+  },
+  "h2hoB": {
+   "role": "held_out",
+   "n": 100,
+   "judge_counts": {
+    "no": 79,
+    "yes": 8,
+    "partial": 13
+   },
+   "crosstab": {
+    "답없음|no": 64,
+    "답없음|partial": 1,
+    "답없음|yes": 1,
+    "답있음|partial": 6,
+    "답있음|yes": 6,
+    "일부|no": 15,
+    "일부|partial": 6,
+    "일부|yes": 1
+   },
+   "primary": {
+    "agree": 0.83,
+    "kappa": 0.5825147347740667,
+    "neg_pred_precision_w": 0.8568777032319586,
+    "pos_pred_precision_w": 0.8360879454131919,
+    "n_pred_neg": 79,
+    "human_pos_rate": 0.34,
+    "pred_pos_rate": 0.21,
+    "kappa_ci": [
+     0.36807576223505417,
+     0.7892598128771519
+    ],
+    "neg_pred_precision_w_ci": [
+     0.7563326917150478,
+     0.9369982236941038
+    ],
+    "checks": {
+     "agree>=0.80": true,
+     "kappa>=0.60": false,
+     "kappa_ci_lo>=0.40": false,
+     "negprec_w>=0.80": true,
+     "negprec_w_ci_lo>=0.70": true
+    },
+    "pass": false
+   }
+  }
+ },
+ "usage": {
+  "calls": 329,
+  "cache_hits": 1,
+  "api_calls": 328,
+  "tokens_in": 250950,
+  "tokens_out": 24107,
+  "billed_tokens_in": 250708,
+  "billed_tokens_out": 23984,
+  "latency_ms": 416986,
+  "by_tag": {
+   "d19_judge_A": {
+    "calls": 143,
+    "cache_hits": 1,
+    "tokens_in": 34690,
+    "tokens_out": 10905
+   },
+   "d19_judge_B": {
+    "calls": 186,
+    "cache_hits": 0,
+    "tokens_in": 216260,
+    "tokens_out": 13202
+   }
+  }
+ }
+}
