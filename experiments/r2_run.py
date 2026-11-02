@@ -33,7 +33,7 @@ from diag_sweep import pick_topics  # noqa: E402
 from lfm.config import Config, load_config  # noqa: E402
 from lfm.controller import FreezeRetry, GlobalRetry  # noqa: E402
 from lfm.estimator import MemoEstimator, load_estimator  # noqa: E402
-from lfm.llm import LLM, load_dotenv_if_present  # noqa: E402
+from lfm.llm import LLM, BillingLedger, load_dotenv_if_present  # noqa: E402
 from lfm.nli import load_nli  # noqa: E402
 from lfm.pipeline import run_query  # noqa: E402
 from lfm.retriever import BM25Retriever  # noqa: E402
@@ -81,6 +81,8 @@ def arm_cfg(base: Config, arm: str | None, seed: int | None, args) -> Config:
     d["paths"]["cache_dir_ro"] = args.cache_dir_ro
     d["llm"]["cache_policy"] = "cache_only" if args.cache_only else "live"
     if args.model:
+        # 생성 단계만 바꾼다. 분해는 Test A 분해 모델의 캐시를 그대로 재생한다 (확정안 §1 N arm)
+        d["llm"]["decompose_model"] = base.get("llm.model")
         d["llm"]["model"] = args.model
     d["budget"].update({"max_billed_in": args.max_billed_in, "max_billed_out": args.max_billed_out})
     return Config(d, source="r2:%s:s%s" % (arm, seed))
@@ -110,13 +112,26 @@ def branch_record(qr, rr, bid) -> dict:
     }
 
 
-def run_one(cfg, topics, outdir: Path, retriever, nli, est, run_tag: str) -> dict:
+def run_one(cfg, topics, outdir: Path, retriever, nli, est, run_tag: str, ledger=None) -> dict:
     outdir.mkdir(parents=True, exist_ok=True)
     (outdir / "topics").mkdir(exist_ok=True)
     yaml.safe_dump(cfg.as_dict(), io.open(outdir / "config.yaml", "w", encoding="utf-8"), allow_unicode=True, sort_keys=False)
-    llm = LLM(cfg)
+    llm = LLM(cfg, ledger=ledger)
     controller = make_controller(cfg)
     run_id = new_run_id()
+    try:
+        _run_topics(llm, controller, cfg, topics, outdir, retriever, nli, est, run_tag, run_id)
+    finally:
+        # 크래시·예산 초과여도 이 프로세스의 usage 를 남긴다. 호출 단위 청구는 원장에 이미 있다
+        usage = llm.stats.to_dict()
+        prev = outdir / "usage.json"
+        hist = json.load(io.open(prev, encoding="utf-8")) if prev.exists() else []
+        hist.append({"finished_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "usage": usage})
+        io.open(prev, "w", encoding="utf-8").write(json.dumps(hist, ensure_ascii=False, indent=1))
+    return usage
+
+
+def _run_topics(llm, controller, cfg, topics, outdir, retriever, nli, est, run_tag, run_id) -> None:
     with TraceWriter(outdir / "trace.jsonl", append=True) as tw:
         for i, t in enumerate(topics):
             qid = str(t["id"])
@@ -138,12 +153,6 @@ def run_one(cfg, topics, outdir: Path, retriever, nli, est, run_tag: str) -> dic
             print("  [%2d/%2d] %s rounds=%d passed=%s %.0fs billed in/out %d/%d"
                   % (i + 1, len(topics), qid, len(qr.rounds), qr.passed, time.time() - t0,
                      llm.stats.billed_tokens_in, llm.stats.billed_tokens_out), flush=True)
-    usage = llm.stats.to_dict()
-    prev = outdir / "usage.json"
-    hist = json.load(io.open(prev, encoding="utf-8")) if prev.exists() else []
-    hist.append({"finished_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "usage": usage})
-    io.open(prev, "w", encoding="utf-8").write(json.dumps(hist, ensure_ascii=False, indent=1))
-    return usage
 
 
 def main(argv=None) -> int:
@@ -187,12 +196,17 @@ def main(argv=None) -> int:
     unknown = set(args.arms) - set(ARMS)
     if unknown:
         raise SystemExit("모르는 arm: %s (E-R1 은 E-GR 라운드 0 에서 분석 때 만든다)" % sorted(unknown))
+    # 예산 하드 스톱은 run_tag 전체(모든 arm·seed·재개)에 하나다. 원장은 호출마다 append 된다
+    ledger = BillingLedger(ROOT / "results/r2" / run_tag / "billing_ledger.jsonl")
+    print("원장 시작 청구 in/out %d/%d (상한 %d/%d)" % (ledger.billed_in, ledger.billed_out,
+          args.max_billed_in, args.max_billed_out), flush=True)
     for seed in args.seeds:
         for arm in arms:
             cfg = arm_cfg(base, arm, seed, args)
             name = arm + ("@" + args.model if args.model else "")
             print("=== %s s%d ===" % (name, seed), flush=True)
-            usage = run_one(cfg, topics, ROOT / "results/r2" / run_tag / name / ("s%d" % seed), retriever, nli, est, run_tag)
+            usage = run_one(cfg, topics, ROOT / "results/r2" / run_tag / name / ("s%d" % seed), retriever, nli, est,
+                            run_tag, ledger=ledger)
             print("    usage calls %d · api %d · billed in/out %d/%d"
                   % (usage["calls"], usage["api_calls"], usage["billed_tokens_in"], usage["billed_tokens_out"]), flush=True)
     return 0

@@ -68,6 +68,7 @@ llm:
   max_retries: 4
   cache_enabled: true
   cache_policy: live              # R2: {live, cache_only}. cache_only 는 캐시 미스를 예외로 막는다
+  decompose_model: null           # R2: 분해 호출의 모델. null 이면 llm.model. N arm 은 Test A 분해 모델로 고정
 
 perspectives:
   min_sub_questions: 3            # SPEC §3.2 — role 당 3~5개

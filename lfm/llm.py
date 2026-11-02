@@ -33,7 +33,7 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any, Protocol
 
-__all__ = ["LLMResult", "LLMError", "CacheMiss", "BudgetExceeded", "LLM", "UsageStats",
+__all__ = ["LLMResult", "LLMError", "CacheMiss", "BudgetExceeded", "LLM", "UsageStats", "BillingLedger",
            "cache_key", "load_dotenv_if_present", "UNSEEDED_TAGS"]
 
 # seed 접두사를 붙이지 않는 호출. 분해는 모든 arm·seed 에서 Test A 캐시를 그대로 재생한다.
@@ -158,9 +158,13 @@ class LLM:
     transport 를 주면 그것을 쓰고, 없으면 OpenAI 를 지연 초기화한다.
     """
 
-    def __init__(self, cfg, *, transport: Transport | None = None) -> None:
+    def __init__(self, cfg, *, transport: Transport | None = None, ledger: "BillingLedger | None" = None) -> None:
         self.cfg = cfg
         self.model: str = cfg.get("llm.model")
+        # 분해는 생성 모델을 바꾼 arm(N: nano)에서도 Test A 의 분해 모델로 키를 만들고 부른다
+        self.decompose_model: str = cfg.get("llm.decompose_model", None) or self.model
+        # 예산은 arm·seed·재개를 넘어 하나의 원장으로 센다 (없으면 이 인스턴스만)
+        self.ledger = ledger
         self.default_max_tokens: int = int(cfg.get("llm.max_tokens"))
         self.cache_dir = Path(cfg.get("paths.cache_dir"))
         self.cache_enabled: bool = bool(cfg.get("llm.cache_enabled", True))
@@ -256,10 +260,11 @@ class LLM:
         return self.nonce_prefix + cache_nonce
 
     def _check_budget(self) -> None:
-        s = self.stats
-        if (self.max_billed_in is not None and s.billed_tokens_in > int(self.max_billed_in)) or \
-                (self.max_billed_out is not None and s.billed_tokens_out > int(self.max_billed_out)):
-            raise BudgetExceeded("청구 토큰 상한 초과: in %d / out %d" % (s.billed_tokens_in, s.billed_tokens_out))
+        bin_, bout = self.ledger.totals() if self.ledger is not None else \
+            (self.stats.billed_tokens_in, self.stats.billed_tokens_out)
+        if (self.max_billed_in is not None and bin_ >= int(self.max_billed_in)) or \
+                (self.max_billed_out is not None and bout >= int(self.max_billed_out)):
+            raise BudgetExceeded("청구 토큰 상한 도달: in %d / out %d" % (bin_, bout))
 
     def _cache_write(self, key: str, payload: dict[str, Any]) -> None:
         p = self._cache_path(key)
@@ -291,8 +296,9 @@ class LLM:
     ) -> LLMResult:
         mt = int(max_tokens if max_tokens is not None else self.default_max_tokens)
         nonce = self.effective_nonce(tag, cache_nonce)
+        model = self.decompose_model if tag in UNSEEDED_TAGS else self.model
         key = cache_key(
-            model=self.model,
+            model=model,
             system=system,
             prompt=prompt,
             max_tokens=mt,
@@ -309,7 +315,7 @@ class LLM:
                     tokens_in=hit["tokens_in"],
                     tokens_out=hit["tokens_out"],
                     latency_ms=hit["latency_ms"],
-                    model=self.model,
+                    model=model,
                     tag=tag,
                     cached=True,
                     finish_reason=hit.get("finish_reason", ""),
@@ -325,12 +331,15 @@ class LLM:
 
         if self.cache_policy == "cache_only":
             raise CacheMiss("캐시 미스 (tag=%s, nonce=%r) — cache_only 라 API 를 부르지 않는다" % (tag, nonce))
+        if tag in UNSEEDED_TAGS and self.cache_dir_ro is not None:
+            # 읽기 전용 캐시를 건 실행에서 분해는 반드시 Test A 재생이어야 한다 — 새로 분해하면 짝이 깨진다
+            raise CacheMiss("분해가 읽기 전용 캐시에 없다 (model=%s). 새로 분해하지 않는다" % model)
         with self._stats_lock:
             self._check_budget()
 
         t0 = time.perf_counter()
         text, tin, tout, finish, tin_cached, treason, model_ret = self._invoke(
-            system=system, prompt=prompt, max_tokens=mt)
+            system=system, prompt=prompt, max_tokens=mt, model=model)
         latency_ms = int((time.perf_counter() - t0) * 1000)
 
         res = LLMResult(
@@ -338,7 +347,7 @@ class LLM:
             tokens_in=tin,
             tokens_out=tout,
             latency_ms=latency_ms,
-            model=self.model,
+            model=model,
             tag=tag,
             cached=False,
             finish_reason=finish,
@@ -354,7 +363,7 @@ class LLM:
                 "tokens_out": tout,
                 "latency_ms": latency_ms,
                 "finish_reason": finish,
-                "model": self.model,
+                "model": model,
                 "tag": tag,
                 "cache_nonce": nonce,
             }
@@ -366,10 +375,12 @@ class LLM:
             self._cache_write(key, payload)
         with self._stats_lock:
             self.stats.record(res)
+        if self.ledger is not None:
+            self.ledger.add(res)
         self._record_scope(res)
         return res
 
-    def _invoke(self, *, system: str, prompt: str, max_tokens: int):
+    def _invoke(self, *, system: str, prompt: str, max_tokens: int, model: str | None = None):
         """(text, tokens_in, tokens_out, finish, tokens_in_cached, tokens_reasoning, model_returned).
         transport 가 예전 4-튜플을 돌려주면 나머지는 0/빈 값으로 채운다 (mock 호환)."""
         transport = self._transport or self._openai_transport
@@ -377,7 +388,7 @@ class LLM:
         for attempt in range(self.max_retries):
             try:
                 out = tuple(transport(
-                    model=self.model,
+                    model=model or self.model,
                     system=system,
                     prompt=prompt,
                     max_tokens=max_tokens,
@@ -475,6 +486,47 @@ class LLM:
             int(getattr(cdet, "reasoning_tokens", 0) or 0),
             str(getattr(resp, "model", "") or ""),
         )
+
+
+class BillingLedger:
+    """실제 API 호출(캐시 적중 제외)을 호출마다 jsonl 로 남기는 공유 원장.
+
+    예산 하드 스톱의 기준이다. arm·seed 마다 LLM 을 새로 만들어도, 크래시 뒤 재개해도 누적이
+    이어진다 — 파일을 열 때 기존 줄을 모두 더해 시작한다. 진행 중 토픽의 지출도 즉시 남는다.
+    """
+
+    def __init__(self, path: str | os.PathLike[str] | None = None) -> None:
+        self.path = Path(path) if path else None
+        self._lock = threading.Lock()
+        self.billed_in = self.billed_out = self.api_calls = 0
+        if self.path is not None and self.path.exists():
+            with io.open(self.path, encoding="utf-8") as fh:
+                for line in fh:
+                    if line.strip():
+                        r = json.loads(line)
+                        self.billed_in += int(r["tokens_in"])
+                        self.billed_out += int(r["tokens_out"])
+                        self.api_calls += 1
+
+    def totals(self) -> tuple[int, int]:
+        with self._lock:
+            return self.billed_in, self.billed_out
+
+    def add(self, res: LLMResult) -> None:
+        if res.cached:
+            return
+        with self._lock:
+            self.billed_in += res.tokens_in
+            self.billed_out += res.tokens_out
+            self.api_calls += 1
+            if self.path is not None:
+                self.path.parent.mkdir(parents=True, exist_ok=True)
+                with io.open(self.path, "a", encoding="utf-8") as fh:
+                    fh.write(json.dumps({"t": time.strftime("%Y-%m-%dT%H:%M:%S"), "tag": res.tag,
+                                         "model": res.model, "nonce": res.effective_nonce,
+                                         "tokens_in": res.tokens_in, "tokens_out": res.tokens_out,
+                                         "tokens_in_cached": res.tokens_in_cached,
+                                         "tokens_reasoning": res.tokens_reasoning}) + "\n")
 
 
 def load_dotenv_if_present(path: str = ".env") -> bool:

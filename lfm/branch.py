@@ -146,10 +146,14 @@ def format_context(chunks: list[Chunk], max_chars: int) -> str:
 
 
 def paraphrase_sub_questions(
-    subs: tuple[str, ...], llm: LLM, *, round_: int
+    subs: tuple[str, ...], llm: LLM, *, round_: int, nonce: str | None = None
 ) -> tuple[str, ...]:
-    """SPEC §3.6 교란 2. 개수와 순서는 유지한다 — coverage 분모가 흔들리면 안 된다."""
-    nonce = "r" + str(round_)
+    """SPEC §3.6 교란 2. 개수와 순서는 유지한다 — coverage 분모가 흔들리면 안 된다.
+
+    nonce 를 주지 않으면 예전처럼 "r{round}" 다. sub-question 재실행은 "r{round}|sq" 를 넘겨
+    대상이 전체여도 BR/GR 의 paraphrase 와 캐시를 공유하지 않게 한다 (독립 표본, 확정안 §1).
+    """
+    nonce = "r" + str(round_) if nonce is None else nonce
     listing = "\n".join(str(i) + ". " + s for i, s in enumerate(subs))
     res = llm.call(
         PARAPHRASE_PROMPT.format(subs=listing),
@@ -210,7 +214,7 @@ def run_branch(
     llm.begin_scope()
     subs = tuple(p.sub_questions[i] for i in targets)
     if round_ > 0:
-        subs = paraphrase_sub_questions(subs, llm, round_=round_)
+        subs = paraphrase_sub_questions(subs, llm, round_=round_, nonce=nonce if sq_mode else None)
     sub_of = dict(zip(targets, subs))
 
     # --- 검색 ---------------------------------------------------------
@@ -309,8 +313,8 @@ def run_branch(
     # --- claim 분해 ----------------------------------------------------
     answer_text = "\n".join(sa.text for sa in sub_answers if sa.text)
     claims: list[str] = []
-    if sq_mode and not any(new_answers[i].text for i in targets):
-        claims = list(carry.claims)       # 새 텍스트가 없으면 답이 그대로다 — 다시 분해하지 않는다
+    if sq_mode and all(new_answers[i].text == carry.sub_answers[i].text for i in targets):
+        claims = list(carry.claims)       # 대상 답이 글자 그대로 같을 때만 재사용한다 — 바뀌었으면 다시 분해
     elif answer_text.strip():
         cres = llm.call(
             CLAIM_PROMPT.format(

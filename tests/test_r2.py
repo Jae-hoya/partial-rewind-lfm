@@ -236,3 +236,66 @@ def test_budget_stops_before_the_next_billed_call(tmp_config):
     with pytest.raises(BudgetExceeded):
         llm.call("three", tag="answer")
     llm.call("one", tag="answer")          # 캐시 적중은 청구가 아니므로 막지 않는다
+
+
+# --- 리뷰 결함 회귀 (432bec7 리뷰) -----------------------------------------------------------------
+
+
+def test_ledger_budget_spans_instances_and_restarts(tmp_config, tmp_path):
+    from lfm.llm import BillingLedger
+    path = tmp_path / "ledger.jsonl"
+    cfg = cfg_with(tmp_config, **{"budget.max_billed_in": 250})
+    LLM(cfg, transport=R2Transport(), ledger=BillingLedger(path)).call("a", tag="answer")   # 100
+    LLM(cfg, transport=R2Transport(), ledger=BillingLedger(path)).call("b", tag="answer")   # 200, 새 인스턴스
+    resumed = BillingLedger(path)                                                           # 재개
+    assert resumed.totals() == (200, 100)
+    llm = LLM(cfg, transport=R2Transport(), ledger=resumed)
+    llm.call("c", tag="answer")             # 200 < 250 → 부른다 (300)
+    with pytest.raises(BudgetExceeded):
+        llm.call("d", tag="answer")
+
+
+def test_generation_model_override_keeps_testa_decomposition(tmp_config, tmp_path):
+    ro = tmp_path / "ro"
+    base = cfg_with(tmp_config, **{"paths.cache_dir": str(ro)})
+    t0 = R2Transport()
+    decompose("why is the sky blue", LLM(base, transport=t0), base)        # Test A 분해를 ro 캐시에 기록
+    t = R2Transport()
+    nano = cfg_with(tmp_config, **{"paths.cache_dir": str(tmp_path / "new"), "paths.cache_dir_ro": str(ro),
+                                   "llm.model": "gpt-5.4-nano", "llm.decompose_model": base.get("llm.model"),
+                                   "run.seed": 1, "run.family": "E"})
+    decompose("why is the sky blue", LLM(nano, transport=t), nano)
+    assert not any("Decompose it into exactly" in p for p in t.prompts)     # 재생, 새 분해 없음
+    plain = cfg_with(tmp_config, **{"paths.cache_dir": str(tmp_path / "x"), "paths.cache_dir_ro": str(ro),
+                                    "llm.model": "gpt-5.4-nano"})
+    with pytest.raises(CacheMiss):          # 분해 모델을 고정하지 않으면 새로 분해하지 않고 멈춘다
+        decompose("why is the sky blue", LLM(plain, transport=R2Transport()), plain)
+
+
+def test_subq_paraphrase_does_not_share_cache_with_branch_rerun(tmp_config, chunks):
+    t = R2Transport()
+    cfg = cfg_with(tmp_config, **{"branch.prompt_mode": "status", "run.seed": 1, "run.family": "E"})
+    llm = LLM(cfg, transport=t)
+    p = Perspective("overview_factual", "Q", tuple("sub %d blue sky" % i for i in range(N_SUB)))
+    r0 = run_branch(p, ListRetriever(chunks), llm, cfg)
+    run_branch(p, ListRetriever(chunks), llm, cfg, round_=1, subq_filter={0, 1, 2}, carry=r0)   # 대상 = 전체
+    before = llm.stats.by_tag["paraphrase"]["cache_hits"]
+    run_branch(p, ListRetriever(chunks), llm, cfg, round_=1)                                    # BR
+    assert llm.stats.by_tag["paraphrase"]["cache_hits"] == before        # SQ 의 paraphrase 를 받지 않는다
+
+
+def test_subq_redecomposes_claims_when_target_text_changed(tmp_config, chunks):
+    def policy(role, i, retry):
+        if i == 1:
+            return {"status": "insufficient", "text": ""} if retry else {"status": "answered", "text": "Zebras fly [c2]."}
+        return {"status": "answered", "text": "The sky is blue [c1]."}
+    t = R2Transport(policy)
+    cfg = cfg_with(tmp_config, **{"branch.prompt_mode": "status"})
+    llm = LLM(cfg, transport=t)
+    p = Perspective("overview_factual", "Q", tuple("sub %d blue sky" % i for i in range(N_SUB)))
+    r0 = run_branch(p, ListRetriever(chunks), llm, cfg)
+    n_claims = sum("atomic factual claims" in q for q in t.prompts)
+    r1 = run_branch(p, ListRetriever(chunks), llm, cfg, round_=1, subq_filter={1}, carry=r0)
+    assert r1.sub_answers[1].text == ""
+    assert sum("atomic factual claims" in q for q in t.prompts) == n_claims + 1   # 바뀐 답으로 다시 분해
+    assert "Zebras" not in "".join(t.prompts[-1].split("--- TEXT ---", 1)[1])
