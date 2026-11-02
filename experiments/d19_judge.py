@@ -44,7 +44,7 @@ def items_of(path):
 def parse(text, kind):
     lines = (text or "").splitlines()
     for line in lines:
-        m = re.match(r"\s*\**LABEL\**\s*:\s*\**([a-z]+)", line, re.I)
+        m = re.match(r"\s*\**LABEL\**\s*:\s*\**\s*([a-z]+)", line, re.I)
         if m and m.group(1).lower() in LABELS[kind]:
             return m.group(1).lower()
     # 스모크에서 nano 가 "LABEL:" 접두어 없이 첫 줄에 라벨만 쓴 것을 봤다 (PREREG_D19 부기 1)
