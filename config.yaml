@@ -10,6 +10,7 @@ paths:
   index_dir_partial: data/index_partial   # SPEC M1-D C3 진단 전용
   results_dir: results
   cache_dir: .cache/llm
+  cache_dir_ro: null              # R2: 읽기 전용 캐시 (예 .cache/llm). 새 응답은 cache_dir 에만 쓴다
 
 data:
   hf_dataset: wikimedia/structured-wikipedia
@@ -66,6 +67,7 @@ llm:
   timeout_s: 120
   max_retries: 4
   cache_enabled: true
+  cache_policy: live              # R2: {live, cache_only}. cache_only 는 캐시 미스를 예외로 막는다
 
 perspectives:
   min_sub_questions: 3            # SPEC §3.2 — role 당 3~5개
@@ -76,6 +78,7 @@ branch:
   max_claims: 20
   max_claim_chars: 8000
   truncation_retry_mult: 2        # 응답이 잘리면 max_tokens 를 이 배수로 올려 1회 재시도
+  prompt_mode: legacy             # R2: {legacy, status}. status = 기권 명시형 ANSWER_PROMPT_E
 
 nli:
   model: cross-encoder/nli-deberta-v3-base
@@ -100,7 +103,18 @@ sweep:
 
 run:
   branch_workers: 4               # 한 라운드의 4개 branch 를 병렬 실행. 결과는 직렬과 동일
+  seed: null                      # R2: 생성 단계 반복 seed. null 이면 nonce 불변 (Test A 키)
+  family: null                    # R2: 프롬프트 계열 {L, E}. nonce 접두사 s{seed}|{family}|
+  arm: null                       # R2: arm 이름. 값이 있으면 branch 회계 필드를 채운다
                                   # (캐시 키가 결정론, 호출 회계는 스레드-로컬)
+
+controller:                        # R2. 기본은 Test A 의 GlobalRetry
+  kind: global_retry              # {global_retry, freeze_retry}
+  granularity: branch             # freeze_retry 만: {branch, subq}
+
+budget:                            # R2: 청구 토큰 하드 스톱. null 이면 없음
+  max_billed_in: null
+  max_billed_out: null
 
 max_rounds: 3
 

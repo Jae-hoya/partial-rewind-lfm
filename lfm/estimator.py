@@ -107,6 +107,33 @@ class MiniCheckDocEstimator:
         return [self.grounded(s, p) for s, p in items]
 
 
+class MemoEstimator:
+    """같은 (문장, 전제) 판정을 한 번만 계산한다. R2 의 sub-question 대상 계산이 evaluate() 와
+    같은 문장을 다시 채점하므로 GPU 시간을 두 배로 쓰지 않게 한다. 판정 값은 내부 연산자 그대로다."""
+
+    def __init__(self, inner):
+        self.inner = inner
+        self.name = getattr(inner, "name", "memo")
+        self.tau = getattr(inner, "tau", None)
+        self.memo: dict[tuple[str, tuple[str, ...]], bool] = {}
+        self.hits = 0
+
+    def grounded(self, sentence: str, premises: list[str]) -> bool:
+        return self.grounded_many([(sentence, premises)])[0]
+
+    def grounded_many(self, items: list[tuple[str, list[str]]]) -> list[bool]:
+        keys = [(s, tuple(p)) for s, p in items]
+        todo = [k for k in dict.fromkeys(keys) if k not in self.memo]
+        self.hits += len(keys) - len(todo)
+        if todo:
+            if hasattr(self.inner, "grounded_many"):
+                vals = self.inner.grounded_many([(s, list(p)) for s, p in todo])
+            else:
+                vals = [self.inner.grounded(s, list(p)) for s, p in todo]
+            self.memo.update(zip(todo, vals))
+        return [self.memo[k] for k in keys]
+
+
 class MiniCheckScorer:
     """MiniCheck-Flan-T5-Large 래퍼 — **진짜 단일 문서 전제**.
 

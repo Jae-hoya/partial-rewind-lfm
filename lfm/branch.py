@@ -14,11 +14,12 @@
 
 from __future__ import annotations
 
+import hashlib
 from typing import Any
 
 from .jsonio import parse_structured
 from .llm import LLM
-from .types import BranchOutput, Chunk, Perspective, SubAnswer, parse_citations
+from .types import BranchOutput, Chunk, Perspective, SubAnswer, parse_citations, split_sentences
 
 __all__ = ["run_branch", "ANSWER_SYSTEM", "CLAIM_SYSTEM", "paraphrase_sub_questions"]
 
@@ -52,6 +53,55 @@ Rules:
 {directive}
 Sub-questions:
 {subs}"""
+
+# R2 기권 명시형 (재실험설계_확정안_R2 §2). legacy 상수는 한 글자도 바꾸지 않는다 — Test A 캐시 키 보존.
+# H1·H2 사람 라벨: 기권은 옳았고, 결함은 근거가 없을 때 쓰는 비껴간 답이었다. 이 프롬프트는 그 답을
+# insufficient 로 바꾸게 한다. 기권을 줄이는 장치가 아니다.
+ANSWER_SYSTEM_E = (
+    "You answer from one assigned perspective using only the supplied context chunks. "
+    "For every sub-question you first decide whether the chunks directly answer it. "
+    "Every answer sentence must carry a [chunk_id] citation. Reply with JSON only."
+)
+
+ANSWER_PROMPT_E = """Perspective role: {role}
+Perspective question: {question}
+
+Context chunks:
+{context}
+
+For each sub-question below, decide its status, then write the text.
+
+Status rules:
+- "answered": use ONLY when the chunks directly state the information the
+  sub-question asks for. Answer that core and stop.
+- "insufficient": use when the chunks do not directly answer the core of the
+  sub-question — including when they contain only related background, neighbouring
+  facts, general statements, or information about a different aspect, time, entity
+  or measure than the one asked. Leave the text empty.
+- Do NOT write a partial or sidestepping answer. Do not answer an easier, broader
+  or neighbouring question in place of the one asked. Do not pad an answer with
+  related facts. If you are unsure whether the chunks answer the core, choose
+  "insufficient".
+- An "insufficient" status is a correct and expected outcome. It is not a failure.
+
+Text rules (for "answered"):
+- 1 to 5 short sentences, one fact per sentence, stated plainly.
+- Every sentence carries at least one [chunk_id] from the list above. A sentence
+  without a valid citation will be deleted.
+- Write DIRECT factual statements about the subject. Never write about the sources
+  ("the context shows", "the chunks do not specify"). Do not describe the absence
+  of information. Do not invent facts. Do not cite ids that are not listed.
+
+Output:
+- A JSON array. Each element:
+  {{"index": <int>, "status": "answered" | "insufficient", "text": "<sentences with [citations] or empty>"}}
+- One element per sub-question, same indices as below. Array only, no prose, no code fences.
+- Retry instructions below never override the status rules.
+{directive}
+Sub-questions:
+{subs}"""
+
+PROMPT_MODES = ("legacy", "status")
 
 CLAIM_SYSTEM = "You decompose text into atomic factual claims. Reply with JSON only."
 
@@ -124,6 +174,8 @@ def run_branch(
     *,
     round_: int = 0,
     search_anchor: str = "",
+    subq_filter: set[int] | None = None,
+    carry: BranchOutput | None = None,
 ) -> BranchOutput:
     """search_anchor: 주제의 변별 용어. BM25 질의 앞에 붙인다.
 
@@ -131,17 +183,35 @@ def run_branch(
     웹툰 연재 질문에 "Burgess Hill railway station" 이, 축구협회 지배구조 질문에
     "Euroscepticism" 이 올라왔다. 앵커는 라운드·조건에 무관하게 고정이므로
     retrieval 은 여전히 전 조건 공통 고정 변인이다 (SPEC §2.6).
+
+    R2 확장 (기본값이면 legacy 경로와 바이트 동일):
+      branch.prompt_mode = status  기권 명시형 프롬프트(ANSWER_PROMPT_E)와 status 파서.
+      subq_filter + carry          sub-question 단위 EXPAND. 대상 sub-question 만 paraphrase·검색·
+                                   생성하고, 나머지 SubAnswer 와 그 청크는 carry 에서 그대로 물려받는다.
     """
+    mode = cfg.get("branch.prompt_mode", "legacy") or "legacy"
+    if mode not in PROMPT_MODES:
+        raise ValueError("branch.prompt_mode 는 legacy | status: " + str(mode))
+    sq_mode = subq_filter is not None
+    if sq_mode and carry is None:
+        raise ValueError("subq_filter 에는 이전 라운드 산출(carry)이 필요하다")
+    n_all = len(p.sub_questions)
+    targets = sorted(i for i in (subq_filter if sq_mode else range(n_all)) if 0 <= i < n_all)
+    r2 = mode != "legacy" or sq_mode or cfg.get("run.arm", None) is not None
+
     nonce = "r" + str(round_) if round_ else ""
+    if sq_mode:
+        nonce = (nonce or "r0") + "|sq"     # 대상만 싣는 프롬프트 — BR/GR 과 다른 표본
     top_k = cfg.top_k_for_round(round_)
     directive = ""
     if round_ > 0:
         directive = "\nIMPORTANT: " + cfg.retry_directive(round_) + "\n"
 
     llm.begin_scope()
-    subs = p.sub_questions
+    subs = tuple(p.sub_questions[i] for i in targets)
     if round_ > 0:
         subs = paraphrase_sub_questions(subs, llm, round_=round_)
+    sub_of = dict(zip(targets, subs))
 
     # --- 검색 ---------------------------------------------------------
     chunks: list[Chunk] = []
@@ -157,14 +227,16 @@ def run_branch(
                 chunks.append(c)
 
     # --- 답안 생성 -----------------------------------------------------
-    prompt = ANSWER_PROMPT.format(
+    system, template = (ANSWER_SYSTEM, ANSWER_PROMPT) if mode == "legacy" else (ANSWER_SYSTEM_E, ANSWER_PROMPT_E)
+    context = format_context(chunks, int(cfg.get("branch.max_context_chars", 12000)))
+    prompt = template.format(
         role=p.role,
         question=p.question,
-        context=format_context(chunks, int(cfg.get("branch.max_context_chars", 12000))),
+        context=context,
         directive=directive,
-        subs="\n".join(str(i) + ". " + s for i, s in enumerate(subs)),
+        subs="\n".join(str(i) + ". " + sub_of[i] for i in targets),
     )
-    res = llm.call(prompt, system=ANSWER_SYSTEM, tag="answer", cache_nonce=nonce)
+    res = llm.call(prompt, system=system, tag="answer", cache_nonce=nonce)
     truncated = LLM.is_truncated(res)
 
     if truncated:
@@ -172,14 +244,14 @@ def run_branch(
         # 예산을 올려 한 번만 다시 부른다. max_tokens 가 캐시 키에 있으므로 키가 갈린다.
         bumped = int(cfg.get("llm.max_tokens")) * int(cfg.get("branch.truncation_retry_mult", 2))
         res = llm.call(
-            prompt, system=ANSWER_SYSTEM, tag="answer_retry", max_tokens=bumped,
+            prompt, system=system, tag="answer_retry", max_tokens=bumped,
             cache_nonce=nonce,
         )
         truncated = LLM.is_truncated(res)
 
     rows = parse_structured(llm, res.text, expect=list, tag="answer", cache_nonce=nonce)
     valid = {c.chunk_id for c in chunks}
-    by_index: dict[int, str] = {}
+    by_index: dict[int, dict[str, Any]] = {}
     for row in rows or []:
         if not isinstance(row, dict):
             continue
@@ -187,23 +259,59 @@ def run_branch(
             idx = int(row.get("index"))
         except (TypeError, ValueError):
             continue
-        by_index.setdefault(idx, str(row.get("text", "") or ""))
+        by_index.setdefault(idx, row)
 
-    sub_answers = [
-        SubAnswer(
+    stats = {"n_format_fail": 0, "n_insufficient": 0, "n_dropped": 0,
+             "n_dropped_uncited_sentences": 0, "n_fabricated_id": 0, "n_insufficient_with_text": 0}
+    new_answers: dict[int, SubAnswer] = {}
+    for i in targets:
+        row = by_index.get(i, {})
+        text = str(row.get("text", "") or "")
+        status = None
+        if mode == "status":
+            status = str(row.get("status", "") or "").strip().lower()
+            if status not in ("answered", "insufficient"):
+                status, text = "format_fail", ""
+                stats["n_format_fail"] += 1
+            elif status == "insufficient":
+                stats["n_insufficient"] += 1
+                stats["n_insufficient_with_text"] += int(bool(text.strip()))
+                text = ""
+            else:
+                sents = split_sentences(text)
+                kept = [s for s in sents if parse_citations(s, valid)]
+                stats["n_fabricated_id"] += sum(1 for c in parse_citations(text) if c not in valid)
+                stats["n_dropped_uncited_sentences"] += len(sents) - len(kept)
+                text = " ".join(kept)
+                if not kept:
+                    status = "dropped"
+                    stats["n_dropped"] += 1
+        new_answers[i] = SubAnswer(
             index=i,
-            sub_question=sq,
-            text=by_index.get(i, ""),
-            citations=parse_citations(by_index.get(i, ""), valid),
+            sub_question=sub_of[i],
+            text=text,
+            citations=parse_citations(text, valid),
+            status=status,
+            produced_round=round_ if r2 else None,
         )
-        for i, sq in enumerate(subs)
-    ]
+
+    if sq_mode:
+        sub_answers = [new_answers.get(i) or carry.sub_answers[i] for i in range(n_all)]
+        have = {c.chunk_id for c in chunks}
+        for c in carry.chunks:            # 물려받은 답이 인용한 청크가 chunk_map 에 남게 한다
+            if c.chunk_id not in have:
+                have.add(c.chunk_id)
+                chunks.append(c)
+    else:
+        sub_answers = [new_answers[i] for i in range(n_all)]
     degraded = truncated or not any(sa.text for sa in sub_answers)
 
     # --- claim 분해 ----------------------------------------------------
     answer_text = "\n".join(sa.text for sa in sub_answers if sa.text)
     claims: list[str] = []
-    if answer_text.strip():
+    if sq_mode and not any(new_answers[i].text for i in targets):
+        claims = list(carry.claims)       # 새 텍스트가 없으면 답이 그대로다 — 다시 분해하지 않는다
+    elif answer_text.strip():
         cres = llm.call(
             CLAIM_PROMPT.format(
                 answer=answer_text[: int(cfg.get("branch.max_claim_chars", 8000))],
@@ -217,7 +325,7 @@ def run_branch(
         claims = [str(c).strip() for c in (parsed or []) if str(c).strip()]
 
     scope = llm.end_scope()
-    return BranchOutput(
+    out = BranchOutput(
         perspective=p,
         sub_answers=sub_answers,
         claims=claims,
@@ -231,6 +339,13 @@ def run_branch(
         tokens_out=scope["tokens_out"],
         latency_ms=scope["latency_ms"],
     )
+    if r2:
+        out.billing = {k: scope[k] for k in ("api_calls", "billed_in", "billed_out",
+                                              "billed_in_cached", "billed_reasoning", "by_tag")}
+        out.answer_stats = stats if mode == "status" else {}
+        out.context_sha256 = hashlib.sha256(context.encode("utf-8")).hexdigest()
+        out.subq_executed = len(targets)
+    return out
 
 
 def perturbation_params(cfg, round_: int) -> dict[str, Any]:

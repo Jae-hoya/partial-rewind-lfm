@@ -81,6 +81,8 @@ class SubAnswer:
     sub_question: str
     text: str
     citations: list[str] = field(default_factory=list)
+    status: str | None = None          # R2 E 프롬프트: answered | insufficient | dropped | format_fail
+    produced_round: int | None = None  # 이 답을 만든 라운드. sub-question 재실행에서 물려받으면 이전 라운드
 
 
 @dataclass
@@ -97,6 +99,11 @@ class BranchOutput:
     tokens_in: int = 0
     tokens_out: int = 0
     latency_ms: int = 0
+    # R2 회계·진단. 기본값이면 to_dict 에 싣지 않는다 (legacy 산출 바이트 보존)
+    billing: dict[str, Any] = field(default_factory=dict)   # api_calls, billed_*, by_tag
+    answer_stats: dict[str, int] = field(default_factory=dict)  # n_format_fail, n_dropped_uncited, ...
+    context_sha256: str = ""
+    subq_executed: int = 0             # 이번 실행에서 실제로 생성한 sub-question 수
 
     # --- 파생 ---------------------------------------------------------
     @property
@@ -124,14 +131,26 @@ class BranchOutput:
         return out
 
     def to_dict(self) -> dict[str, Any]:
+        def sa_dict(s: SubAnswer) -> dict[str, Any]:
+            d = {"index": s.index, "sub_question": s.sub_question, "text": s.text, "citations": s.citations}
+            if s.status is not None:
+                d["status"] = s.status
+            if s.produced_round is not None:
+                d["produced_round"] = s.produced_round
+            return d
+
+        out = self._legacy_dict(sa_dict)
+        for k in ("billing", "answer_stats", "context_sha256", "subq_executed"):
+            v = getattr(self, k)
+            if v:
+                out[k] = v
+        return out
+
+    def _legacy_dict(self, sa_dict) -> dict[str, Any]:
         return {
             "perspective": self.perspective.to_dict(),
             "round": self.round,
-            "sub_answers": [
-                {"index": s.index, "sub_question": s.sub_question,
-                 "text": s.text, "citations": s.citations}
-                for s in self.sub_answers
-            ],
+            "sub_answers": [sa_dict(s) for s in self.sub_answers],
             "claims": list(self.claims),
             "n_chunks": len(self.chunks),
             "truncated": self.truncated,

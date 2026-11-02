@@ -17,7 +17,8 @@ from typing import Any
 
 from .branch import perturbation_params, run_branch
 from .controller.base import Action, Controller, State
-from .evidence import EvidenceState, evaluate
+from .estimator import MemoEstimator, NLIMaxEstimator
+from .evidence import EvidenceState, evaluate, subq_targets
 from .graph import Graph
 from .perspectives import decompose
 from .trace import budget_left, make_action, make_cost, make_record, make_state
@@ -35,6 +36,8 @@ class RoundResult:
     action: Action
     outputs: dict[str, BranchOutput] = field(default_factory=dict)
     cost: dict[str, int] = field(default_factory=dict)
+    # 이 라운드에 실제로 실행한 branch. 나머지 outputs 는 이전 라운드에서 물려받은 것이다 (비용 0)
+    executed: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -107,6 +110,11 @@ def run_query(
     """`est` 를 주면 grounding 을 그 연산자로 잰다 (SPEC_M1prime §1).
 
     주지 않으면 종전대로 `nli` 로 잰다 — Test A 원본 경로가 그대로 재현된다.
+
+    R2: 컨트롤러가 RERUN 을 내면 다음 라운드에 그 target branch 만 실행하고, 나머지 branch 는
+    직전 산출과 evidence 를 그대로 물려받는다(호출 0, 비용 0). params["subqs"] 가 있으면 그 branch 는
+    대상 sub-question 만 다시 돈다. VERIFY / PRUNE 은 평가 시스템에서 제외했으므로 나오면 멈춘다.
+    GlobalRetry(RETRY_ALL)의 경로는 예전과 같다.
     """
     max_rounds = int(cfg["max_rounds"])
 
@@ -116,21 +124,40 @@ def run_query(
     rounds: list[RoundResult] = []
 
     workers = int(cfg.get("run.branch_workers", 1))
+    needs_view = bool(getattr(controller, "needs_subq_view", False))
+    if needs_view:
+        # sub-question 대상 계산과 evaluate 가 같은 문장을 채점한다 — 한 번만 계산한다
+        est = MemoEstimator(est if est is not None else NLIMaxEstimator(nli, float(cfg.get("nli.tau_ground", 0.5))))
+
+    prev_action: Action | None = None
+    prev_outputs: dict[str, BranchOutput] = {}
+    prev_evidence: dict[str, EvidenceState] = {}
+    frozen: list[str] = []
 
     for r in range(max_rounds):
+        if prev_action is None or prev_action.type == "RETRY_ALL":
+            run_set, subqs = list(perspectives), {}
+        else:  # RERUN
+            run_set = [p for p in perspectives if p.role in set(prev_action.target)]
+            subqs = prev_action.params.get("subqs") or {}
+
+        def go(p):
+            sel = subqs.get(p.role)
+            return run_branch(p, retriever, llm, cfg, round_=r, search_anchor=search_anchor,
+                              subq_filter=set(sel) if sel is not None else None,
+                              carry=prev_outputs[p.role] if sel is not None else None)
+
         # 한 라운드의 branch 들은 서로 독립이다. 병렬로 돌려도 결과는 같다 —
         # 캐시 키가 결정론이고 호출 회계는 스레드-로컬 스코프로 센다.
-        if workers > 1 and len(perspectives) > 1:
+        if workers > 1 and len(run_set) > 1:
             with ThreadPoolExecutor(max_workers=workers) as ex:
-                futures = {p.role: ex.submit(run_branch, p, retriever, llm, cfg, round_=r,
-                                             search_anchor=search_anchor)
-                           for p in perspectives}
-                outputs = {role: f.result() for role, f in futures.items()}
+                futures = {p.role: ex.submit(go, p) for p in run_set}
+                ran = {role: f.result() for role, f in futures.items()}
         else:
-            outputs = {p.role: run_branch(p, retriever, llm, cfg, round_=r,
-                                          search_anchor=search_anchor)
-                       for p in perspectives}
-        evidence = {bid: evaluate(o, nli, cfg, est) for bid, o in outputs.items()}
+            ran = {p.role: go(p) for p in run_set}
+        outputs = {p.role: ran.get(p.role, prev_outputs.get(p.role)) for p in perspectives}
+        evidence = {bid: (evaluate(o, nli, cfg, est) if bid in ran else prev_evidence[bid])
+                    for bid, o in outputs.items()}
         verify = global_verify(evidence, cfg)
 
         state = State(
@@ -141,11 +168,18 @@ def run_query(
             verify_passed=verify.passed,
             verify_agg=verify.agg,
             graph=graph.snapshot(),
+            frozen=list(frozen),
         )
+        if needs_view:
+            tau_g = float(cfg.get("nli.tau_ground", 0.5))
+            state.subq_view = {b: subq_targets(o, est, tau_g) for b, o in outputs.items() if b not in frozen}
         action = controller.step(state)
+        if action.type in ("VERIFY", "PRUNE"):
+            raise AssertionError("VERIFY/PRUNE 은 R2 평가 시스템에서 제외했다: " + action.type)
+        frozen = list(action.params.get("frozen", frozen))
 
         params = dict(action.params)
-        if action.type == "RETRY_ALL":
+        if action.type in ("RETRY_ALL", "RERUN"):
             params.update(perturbation_params(cfg, r + 1))
         params["search_anchor"] = search_anchor
         params["verify"] = {
@@ -155,10 +189,10 @@ def run_query(
         }
         params["degraded_branches"] = sorted(b for b, o in outputs.items() if o.degraded)
 
-        cost = _cost_of(outputs)
+        cost = _cost_of(ran)                      # 이번 라운드에 실행한 것만. 물려받은 branch 는 0
         rounds.append(
             RoundResult(round=r, evidence=evidence, verify=verify, action=action,
-                        outputs=outputs, cost=cost)
+                        outputs=outputs, cost=cost, executed=sorted(ran))
         )
 
         if trace_writer is not None:
@@ -172,14 +206,16 @@ def run_query(
                         budget=budget_left(r, max_rounds),
                         vertices=graph.V,
                         status=graph.S,
+                        frozen=frozen,
                     ),
                     action=make_action(action.type, target=list(action.target), params=params),
                     cost=cost,
                 )
             )
 
-        if action.type != "RETRY_ALL":
+        if action.type not in ("RETRY_ALL", "RERUN"):
             break
+        prev_action, prev_outputs, prev_evidence = action, outputs, evidence
 
     return QueryResult(
         query_id=query_id, query=query, perspectives=perspectives, rounds=rounds, run_id=run_id

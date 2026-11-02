@@ -38,6 +38,8 @@ class State:
     relations: list[Any] = field(default_factory=list)   # M1 은 비어 있다
     verify_count: dict[str, int] = field(default_factory=dict)
     frozen: list[str] = field(default_factory=list)
+    # R2: branch -> EXPAND 대상 sub-question 번호. 컨트롤러가 needs_subq_view 일 때만 채운다
+    subq_view: dict[str, list[int]] = field(default_factory=dict)
 
 
 class Controller(ABC):

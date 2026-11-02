@@ -119,6 +119,29 @@ def evaluate(out: BranchOutput, nli: NLIBase, cfg, est: Estimator | None = None)
     )
 
 
+def subq_targets(out: BranchOutput, scorer, tau_ground: float = 0.5) -> list[int]:
+    """sub-question 단위 EXPAND 대상 = 미커버 ∪ 근거 비지지 문장이 있는 sub-question.
+
+    coverage·grounding 과 같은 규칙으로 센다 — 유효 인용이 없으면 미커버이고, 문장 판정은
+    grounding() 과 같은 연산자다(재실험설계_확정안_R2 §8-8).
+    """
+    est = scorer if isinstance(scorer, Estimator) else NLIMaxEstimator(scorer, tau_ground)
+    cmap = out.chunk_map()
+    targets, items, owner = [], [], []
+    for sa in out.sub_answers:
+        cited = [cmap[c].text for c in sa.citations if c in cmap]
+        if not cited:
+            targets.append(sa.index)
+            continue
+        for sent in split_sentences(sa.text):
+            items.append((sent, cited))
+            owner.append(sa.index)
+    if items:
+        flags = est.grounded_many(items) if hasattr(est, "grounded_many") else [est.grounded(s, p) for s, p in items]
+        targets.extend(i for i, f in zip(owner, flags) if not f)
+    return sorted(set(targets))
+
+
 def sufficient(ev: EvidenceState | dict[str, Any], tau: float) -> bool:
     """SPEC §4.3 — sufficient(b) := grounding(b) > tau AND coverage(b) > tau.
 

@@ -11,6 +11,13 @@ cache_nonce 는 라운드 교란의 유일한 캐시 회피 수단이다 (SPEC �
 라운드 r>0 의 모든 호출은 cache_nonce=f"r{r}" 를 전달한다. nonce 가 라운드의 결정론적
 함수이므로 같은 config 를 두 번 돌리면 같은 nonce -> 캐시 히트 -> 동일 결과가 된다.
 재현성과 라운드 교란이 양립한다.
+
+R2 (재실험설계_확정안_R2 §1, §3): 캐시 키에는 seed 가 없다. 그래서 `run.seed` 가 있으면
+nonce 앞에 `s{seed}|{family}|` 를 붙여 seed 마다 독립 표본을 만든다. 분해(decompose)는
+붙이지 않는다 — 모든 arm·seed 가 Test A 의 sub-question 을 바이트 그대로 쓰게 하기 위해서다.
+seed 가 null 이면 nonce 가 바뀌지 않아 기존 캐시 키와 같다.
+`llm.cache_policy: cache_only` 면 캐시 미스를 예외로 막는다. 기본(live)에서는 미스가 나면
+조용히 API 를 부른다 — "호출 0" 재분석은 반드시 cache_only 로 돌린다.
 """
 
 from __future__ import annotations
@@ -26,11 +33,23 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any, Protocol
 
-__all__ = ["LLMResult", "LLMError", "LLM", "UsageStats", "cache_key", "load_dotenv_if_present"]
+__all__ = ["LLMResult", "LLMError", "CacheMiss", "BudgetExceeded", "LLM", "UsageStats",
+           "cache_key", "load_dotenv_if_present", "UNSEEDED_TAGS"]
+
+# seed 접두사를 붙이지 않는 호출. 분해는 모든 arm·seed 에서 Test A 캐시를 그대로 재생한다.
+UNSEEDED_TAGS = frozenset({"decompose", "decompose_repair"})
 
 
 class LLMError(RuntimeError):
     """LLM 호출 실패 (재시도 소진 포함)."""
+
+
+class CacheMiss(LLMError):
+    """cache_only 정책에서 캐시에 없는 호출. 실제 API 를 부르지 않고 멈춘다."""
+
+
+class BudgetExceeded(LLMError):
+    """누적 청구 토큰이 budget.max_billed_* 를 넘었다."""
 
 
 @dataclass(frozen=True)
@@ -43,6 +62,10 @@ class LLMResult:
     tag: str = ""
     cached: bool = False
     finish_reason: str = ""
+    effective_nonce: str = ""        # 캐시 키에 실제로 들어간 nonce (seed 접두사 포함)
+    tokens_in_cached: int = 0        # provider 쪽 프롬프트 캐시로 할인된 입력 토큰
+    tokens_reasoning: int = 0        # 출력 토큰 중 reasoning 몫
+    model_returned: str = ""         # provider 가 실제로 돌려준 모델 id
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -99,6 +122,8 @@ class UsageStats:
     tokens_out: int = 0
     billed_tokens_in: int = 0  # 캐시 히트를 제외한 실제 청구 대상
     billed_tokens_out: int = 0
+    billed_tokens_in_cached: int = 0   # 청구분 중 provider 캐시 할인 입력
+    billed_tokens_reasoning: int = 0   # 청구분 중 reasoning 출력
     latency_ms: int = 0
     by_tag: dict[str, dict[str, int]] = field(default_factory=dict)
 
@@ -113,6 +138,8 @@ class UsageStats:
             self.api_calls += 1
             self.billed_tokens_in += r.tokens_in
             self.billed_tokens_out += r.tokens_out
+            self.billed_tokens_in_cached += r.tokens_in_cached
+            self.billed_tokens_reasoning += r.tokens_reasoning
         slot = self.by_tag.setdefault(
             r.tag, {"calls": 0, "cache_hits": 0, "tokens_in": 0, "tokens_out": 0}
         )
@@ -142,6 +169,15 @@ class LLM:
         self.temperature = cfg.get("llm.temperature", None)
         self.reasoning_effort = cfg.get("llm.reasoning_effort", None)
         self.max_tokens_param: str = cfg.get("llm.max_tokens_param", "auto")
+        self.cache_policy: str = cfg.get("llm.cache_policy", "live") or "live"
+        if self.cache_policy not in ("live", "cache_only"):
+            raise LLMError("llm.cache_policy 는 live | cache_only: " + str(self.cache_policy))
+        ro = cfg.get("paths.cache_dir_ro", None)
+        self.cache_dir_ro = Path(ro) if ro else None     # 읽기만 한다. 새 응답은 cache_dir 에만 쓴다
+        seed, family = cfg.get("run.seed", None), cfg.get("run.family", None)
+        self.nonce_prefix = "" if seed is None else "s%s|%s|" % (seed, family or "")
+        self.max_billed_in = cfg.get("budget.max_billed_in", None)
+        self.max_billed_out = cfg.get("budget.max_billed_out", None)
         self.stats = UsageStats()
         self._stats_lock = threading.Lock()
         # branch 를 스레드로 병렬 실행하므로, 호출 회계는 스레드-로컬 스코프로 센다.
@@ -154,14 +190,21 @@ class LLM:
 
     # --- 캐시 ---------------------------------------------------------
     # --- 스레드-로컬 호출 회계 -------------------------------------------
+    _SCOPE_KEYS = ("llm_calls", "tokens_in", "tokens_out", "latency_ms",
+                   "api_calls", "billed_in", "billed_out", "billed_in_cached", "billed_reasoning")
+
     def begin_scope(self) -> None:
         """이 스레드에서 지금부터의 호출을 따로 센다."""
-        self._local.scope = {"llm_calls": 0, "tokens_in": 0, "tokens_out": 0, "latency_ms": 0}
+        self._local.scope = dict.fromkeys(self._SCOPE_KEYS, 0)
+        self._local.scope["by_tag"] = {}
 
-    def end_scope(self) -> dict[str, int]:
+    def end_scope(self) -> dict[str, Any]:
         scope = getattr(self._local, "scope", None)
         self._local.scope = None
-        return scope or {"llm_calls": 0, "tokens_in": 0, "tokens_out": 0, "latency_ms": 0}
+        if scope is None:
+            scope = dict.fromkeys(self._SCOPE_KEYS, 0)
+            scope["by_tag"] = {}
+        return scope
 
     def _record_scope(self, res: "LLMResult") -> None:
         scope = getattr(self._local, "scope", None)
@@ -171,6 +214,17 @@ class LLM:
         scope["tokens_in"] += res.tokens_in
         scope["tokens_out"] += res.tokens_out
         scope["latency_ms"] += res.latency_ms
+        if not res.cached:
+            scope["api_calls"] += 1
+            scope["billed_in"] += res.tokens_in
+            scope["billed_out"] += res.tokens_out
+            scope["billed_in_cached"] += res.tokens_in_cached
+            scope["billed_reasoning"] += res.tokens_reasoning
+        slot = scope["by_tag"].setdefault(res.tag, {"calls": 0, "api_calls": 0, "tokens_in": 0, "tokens_out": 0})
+        slot["calls"] += 1
+        slot["api_calls"] += int(not res.cached)
+        slot["tokens_in"] += res.tokens_in
+        slot["tokens_out"] += res.tokens_out
 
     @staticmethod
     def is_truncated(res: "LLMResult") -> bool:
@@ -182,14 +236,30 @@ class LLM:
         return self.cache_dir / key[:2] / (key + ".json")
 
     def _cache_read(self, key: str) -> dict[str, Any] | None:
-        p = self._cache_path(key)
-        if not p.exists():
-            return None
-        try:
-            with io.open(p, encoding="utf-8") as fh:
-                return json.load(fh)
-        except (json.JSONDecodeError, OSError):
-            return None  # 손상된 캐시는 미스로 취급
+        for root in (self.cache_dir, self.cache_dir_ro):
+            if root is None:
+                continue
+            p = root / key[:2] / (key + ".json")
+            if not p.exists():
+                continue
+            try:
+                with io.open(p, encoding="utf-8") as fh:
+                    return json.load(fh)
+            except (json.JSONDecodeError, OSError):
+                continue  # 손상된 캐시는 미스로 취급
+        return None
+
+    def effective_nonce(self, tag: str, cache_nonce: str) -> str:
+        """캐시 키에 실제로 들어갈 nonce. seed 가 없거나 분해 호출이면 그대로다."""
+        if not self.nonce_prefix or tag in UNSEEDED_TAGS:
+            return cache_nonce
+        return self.nonce_prefix + cache_nonce
+
+    def _check_budget(self) -> None:
+        s = self.stats
+        if (self.max_billed_in is not None and s.billed_tokens_in > int(self.max_billed_in)) or \
+                (self.max_billed_out is not None and s.billed_tokens_out > int(self.max_billed_out)):
+            raise BudgetExceeded("청구 토큰 상한 초과: in %d / out %d" % (s.billed_tokens_in, s.billed_tokens_out))
 
     def _cache_write(self, key: str, payload: dict[str, Any]) -> None:
         p = self._cache_path(key)
@@ -220,13 +290,14 @@ class LLM:
         cache_nonce: str = "",
     ) -> LLMResult:
         mt = int(max_tokens if max_tokens is not None else self.default_max_tokens)
+        nonce = self.effective_nonce(tag, cache_nonce)
         key = cache_key(
             model=self.model,
             system=system,
             prompt=prompt,
             max_tokens=mt,
             reasoning_effort=self.reasoning_effort or "",
-            cache_nonce=cache_nonce,
+            cache_nonce=nonce,
         )
 
         if self.cache_enabled:
@@ -242,14 +313,24 @@ class LLM:
                     tag=tag,
                     cached=True,
                     finish_reason=hit.get("finish_reason", ""),
+                    effective_nonce=nonce,
+                    tokens_in_cached=int(hit.get("tokens_in_cached", 0)),
+                    tokens_reasoning=int(hit.get("tokens_reasoning", 0)),
+                    model_returned=hit.get("model_returned", ""),
                 )
                 with self._stats_lock:
                     self.stats.record(res)
                 self._record_scope(res)
                 return res
 
+        if self.cache_policy == "cache_only":
+            raise CacheMiss("캐시 미스 (tag=%s, nonce=%r) — cache_only 라 API 를 부르지 않는다" % (tag, nonce))
+        with self._stats_lock:
+            self._check_budget()
+
         t0 = time.perf_counter()
-        text, tin, tout, finish = self._invoke(system=system, prompt=prompt, max_tokens=mt)
+        text, tin, tout, finish, tin_cached, treason, model_ret = self._invoke(
+            system=system, prompt=prompt, max_tokens=mt)
         latency_ms = int((time.perf_counter() - t0) * 1000)
 
         res = LLMResult(
@@ -261,38 +342,48 @@ class LLM:
             tag=tag,
             cached=False,
             finish_reason=finish,
+            effective_nonce=nonce,
+            tokens_in_cached=tin_cached,
+            tokens_reasoning=treason,
+            model_returned=model_ret,
         )
         if self.cache_enabled:
-            self._cache_write(
-                key,
-                {
-                    "text": text,
-                    "tokens_in": tin,
-                    "tokens_out": tout,
-                    "latency_ms": latency_ms,
-                    "finish_reason": finish,
-                    "model": self.model,
-                    "tag": tag,
-                    "cache_nonce": cache_nonce,
-                },
-            )
+            payload = {
+                "text": text,
+                "tokens_in": tin,
+                "tokens_out": tout,
+                "latency_ms": latency_ms,
+                "finish_reason": finish,
+                "model": self.model,
+                "tag": tag,
+                "cache_nonce": nonce,
+            }
+            # 새 필드는 값이 있을 때만 쓴다 — mock 이나 구형 transport 의 payload 는 예전과 같다.
+            for k, v in (("tokens_in_cached", tin_cached), ("tokens_reasoning", treason),
+                         ("model_returned", model_ret)):
+                if v:
+                    payload[k] = v
+            self._cache_write(key, payload)
         with self._stats_lock:
             self.stats.record(res)
         self._record_scope(res)
         return res
 
-    def _invoke(self, *, system: str, prompt: str, max_tokens: int) -> tuple[str, int, int, str]:
+    def _invoke(self, *, system: str, prompt: str, max_tokens: int):
+        """(text, tokens_in, tokens_out, finish, tokens_in_cached, tokens_reasoning, model_returned).
+        transport 가 예전 4-튜플을 돌려주면 나머지는 0/빈 값으로 채운다 (mock 호환)."""
         transport = self._transport or self._openai_transport
         last: Exception | None = None
         for attempt in range(self.max_retries):
             try:
-                return transport(
+                out = tuple(transport(
                     model=self.model,
                     system=system,
                     prompt=prompt,
                     max_tokens=max_tokens,
                     reasoning_effort=self.reasoning_effort,
-                )
+                ))
+                return out + (0, 0, "")[len(out) - 4:] if len(out) < 7 else out[:7]
             except Exception as exc:  # noqa: BLE001 — 재시도 후 LLMError 로 감싼다
                 if not self._retryable(exc):
                     raise LLMError("LLM 호출 실패 (재시도 불가): " + repr(exc)) from exc
@@ -373,11 +464,16 @@ class LLM:
 
         choice = resp.choices[0]
         usage = resp.usage
+        pdet = getattr(usage, "prompt_tokens_details", None)
+        cdet = getattr(usage, "completion_tokens_details", None)
         return (
             choice.message.content or "",
             int(getattr(usage, "prompt_tokens", 0) or 0),
             int(getattr(usage, "completion_tokens", 0) or 0),
             str(choice.finish_reason or ""),
+            int(getattr(pdet, "cached_tokens", 0) or 0),
+            int(getattr(cdet, "reasoning_tokens", 0) or 0),
+            str(getattr(resp, "model", "") or ""),
         )
 
 
