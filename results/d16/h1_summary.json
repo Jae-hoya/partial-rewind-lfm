@@ -1,0 +1,115 @@
+{
+ "model_empty": {
+  "n": 43,
+  "counts": {
+   "답있음": 0,
+   "일부": 2,
+   "답없음": 41
+  },
+  "answerable_strict": {
+   "n": 43,
+   "k": 0,
+   "rate": 0.0,
+   "ci": [
+    0.0,
+    0.0
+   ]
+  },
+  "answerable_loose": {
+   "n": 43,
+   "k": 2,
+   "rate": 0.046511627906976744,
+   "ci": [
+    0.0,
+    0.11117424242424208
+   ]
+  },
+  "by_branch": {
+   "controversy_limitation": {
+    "답없음": 15
+   },
+   "impact_application": {
+    "답없음": 8,
+    "일부": 1
+   },
+   "overview_factual": {
+    "답없음": 8,
+    "일부": 1
+   },
+   "technical_mechanism": {
+    "답없음": 10
+   }
+  }
+ },
+ "model_answered": {
+  "n": 43,
+  "counts": {
+   "답있음": 19,
+   "일부": 8,
+   "답없음": 16
+  },
+  "answerable_strict": {
+   "n": 43,
+   "k": 19,
+   "rate": 0.4418604651162791,
+   "ci": [
+    0.32432432432432434,
+    0.5682629870129866
+   ]
+  },
+  "answerable_loose": {
+   "n": 43,
+   "k": 27,
+   "rate": 0.627906976744186,
+   "ci": [
+    0.45443181818181816,
+    0.7692307692307693
+   ]
+  },
+  "by_branch": {
+   "controversy_limitation": {
+    "답없음": 4,
+    "답있음": 6,
+    "일부": 1
+   },
+   "impact_application": {
+    "일부": 3,
+    "답있음": 2,
+    "답없음": 6
+   },
+   "overview_factual": {
+    "답있음": 10,
+    "일부": 3
+   },
+   "technical_mechanism": {
+    "답없음": 6,
+    "답있음": 1,
+    "일부": 1
+   }
+  }
+ },
+ "vs_d17_empty_proved_via_c4": {
+  "proved_via_c4=0": {
+   "답있음": 0,
+   "일부": 2,
+   "답없음": 39
+  },
+  "proved_via_c4=1": {
+   "답있음": 0,
+   "일부": 0,
+   "답없음": 2
+  }
+ },
+ "vs_d17_answered_proved_own": {
+  "proved_own=0": {
+   "답있음": 5,
+   "일부": 3,
+   "답없음": 4
+  },
+  "proved_own=1": {
+   "답있음": 14,
+   "일부": 5,
+   "답없음": 12
+  }
+ }
+}

@@ -1,0 +1,87 @@
+item_id,query_id,branch,sq_index,model_empty,n_gold_in_ctx,gold_chunks,human,proved_via_c4,proved_own
+q000,t039,technical_mechanism,2,1,1,d9308734s1p0,답없음,0,0
+q001,t008,technical_mechanism,1,1,1,d1107832s9p0,답없음,0,0
+q002,t008,technical_mechanism,2,1,1,d1107832s9p0,답없음,0,0
+q003,t031,controversy_limitation,2,0,1,d1100501s1p0,답없음,1,0
+q004,t007,overview_factual,3,0,4,d23777640s6p0 d23777640s1p0 d23777640s13p0 d23777640s5p0,답있음,1,1
+q005,t031,controversy_limitation,0,0,1,d1100501s1p0,답있음,1,1
+q006,t037,overview_factual,3,0,2,d27674202s1p0 d27674202s2p0,일부,1,1
+q007,t038,controversy_limitation,4,1,1,d6868247s2p0,답없음,0,0
+q008,t008,technical_mechanism,3,1,1,d1107832s9p0,답없음,0,0
+q009,t014,overview_factual,3,1,2,d23746608s3p0 d23746608s2p0,답없음,0,0
+q010,t039,impact_application,0,1,1,d9308734s1p0,답없음,0,0
+q011,t007,controversy_limitation,3,1,2,d23777640s5p0 d23777640s6p0,답없음,0,0
+q012,t040,overview_factual,3,1,1,d719464s1p0,답없음,0,0
+q013,t038,overview_factual,4,1,1,d6868247s2p0,답없음,0,0
+q014,t039,technical_mechanism,1,1,1,d9308734s1p0,답없음,0,0
+q015,t037,overview_factual,0,0,2,d27674202s1p0 d27674202s2p0,답있음,1,1
+q016,t008,overview_factual,2,1,1,d1107832s9p0,답없음,0,0
+q017,t039,controversy_limitation,0,1,1,d9308734s1p0,답없음,0,0
+q018,t014,overview_factual,1,0,2,d23746608s3p0 d23746608s2p0,답있음,0,0
+q019,t014,impact_application,0,1,2,d23746608s3p0 d23746608s2p0,답없음,1,0
+q020,t039,controversy_limitation,1,1,1,d9308734s1p0,답없음,0,0
+q021,t007,controversy_limitation,1,0,3,d23777640s5p0 d23777640s6p0 d23777640s1p0,일부,0,0
+q022,t007,impact_application,0,1,4,d23777640s11p0 d23777640s5p0 d23777640s13p0 d23777640s6p0,답없음,0,0
+q023,t031,overview_factual,2,1,1,d1100501s1p0,답없음,0,0
+q024,t031,overview_factual,4,0,1,d1100501s1p0,답있음,1,0
+q025,t039,overview_factual,1,0,1,d9308734s1p0,답있음,0,0
+q026,t008,controversy_limitation,1,1,1,d1107832s9p0,답없음,0,0
+q027,t014,controversy_limitation,0,1,1,d23746608s3p0,답없음,0,0
+q028,t039,impact_application,3,1,1,d9308734s1p0,답없음,0,0
+q029,t039,impact_application,1,1,1,d9308734s1p0,답없음,0,0
+q030,t038,overview_factual,1,1,1,d6868247s2p0,답없음,1,0
+q031,t008,impact_application,3,0,1,d1107832s9p0,일부,0,0
+q032,t031,impact_application,0,0,1,d1100501s1p0,답있음,1,1
+q033,t007,impact_application,3,0,4,d23777640s11p0 d23777640s13p0 d23777640s6p0 d23777640s12p0,일부,0,0
+q034,t038,technical_mechanism,1,0,2,d6868247s2p0 d6868247s4p0,답없음,1,1
+q035,t007,overview_factual,1,1,2,d23777640s5p0 d23777640s6p0,답없음,0,0
+q036,t039,overview_factual,0,0,1,d9308734s1p0,답있음,0,0
+q037,t038,impact_application,4,1,1,d6868247s2p0,답없음,0,0
+q038,t037,controversy_limitation,1,0,2,d27674202s1p0 d27674202s2p0,답있음,1,1
+q039,t040,controversy_limitation,0,1,1,d719464s1p0,답없음,0,0
+q040,t008,impact_application,2,0,1,d1107832s9p0,답없음,0,0
+q041,t031,controversy_limitation,3,0,1,d1100501s1p0,답없음,1,1
+q042,t008,controversy_limitation,3,1,1,d1107832s9p0,답없음,0,0
+q043,t037,technical_mechanism,3,0,1,d27674202s1p0,답있음,1,1
+q044,t038,controversy_limitation,0,1,1,d6868247s2p0,답없음,0,0
+q045,t039,impact_application,2,1,1,d9308734s1p0,일부,0,0
+q046,t008,technical_mechanism,0,1,2,d1107832s9p0 d1107832s11p0,답없음,0,0
+q047,t038,technical_mechanism,0,0,2,d6868247s2p0 d6868247s3p0,답없음,1,1
+q048,t008,impact_application,1,1,1,d1107832s9p0,답없음,0,0
+q049,t040,overview_factual,1,0,1,d719464s1p0,답있음,0,1
+q050,t037,controversy_limitation,2,0,1,d27674202s1p0,답있음,1,1
+q051,t007,technical_mechanism,0,1,3,d23777640s6p0 d23777640s5p0 d23777640s1p0,답없음,0,0
+q052,t008,controversy_limitation,2,1,1,d1107832s9p0,답없음,0,0
+q053,t038,impact_application,3,0,1,d6868247s2p0,답없음,0,1
+q054,t039,controversy_limitation,3,1,1,d9308734s1p0,답없음,0,0
+q055,t037,technical_mechanism,1,0,2,d27674202s1p0 d27674202s2p0,일부,1,1
+q056,t014,impact_application,2,0,1,d23746608s3p0,답없음,1,1
+q057,t007,technical_mechanism,1,0,4,d23777640s5p0 d23777640s11p0 d23777640s1p0 d23777640s6p0,답없음,0,1
+q058,t014,technical_mechanism,1,0,2,d23746608s3p0 d23746608s2p0,답없음,0,1
+q059,t007,impact_application,1,0,4,d23777640s11p0 d23777640s6p0 d23777640s1p0 d23777640s13p0,답있음,1,1
+q060,t008,overview_factual,0,0,1,d1107832s9p0,일부,0,1
+q061,t048,technical_mechanism,0,1,1,d41597867s1p0,답없음,0,0
+q062,t031,overview_factual,0,1,1,d1100501s1p0,일부,0,0
+q063,t038,controversy_limitation,3,0,1,d6868247s2p0,답없음,0,1
+q064,t007,technical_mechanism,3,0,4,d23777640s11p0 d23777640s6p0 d23777640s1p0 d23777640s13p0,답없음,0,1
+q065,t014,controversy_limitation,2,1,1,d23746608s3p0,답없음,0,0
+q066,t040,controversy_limitation,3,0,1,d719464s1p0,답없음,0,1
+q067,t014,overview_factual,2,1,2,d23746608s3p0 d23746608s2p0,답없음,0,0
+q068,t037,impact_application,2,0,1,d27674202s1p0,답없음,0,1
+q069,t031,impact_application,4,1,1,d1100501s1p0,답없음,0,0
+q070,t038,overview_factual,2,0,2,d6868247s1p0 d6868247s2p0,답있음,1,0
+q071,t031,impact_application,3,0,1,d1100501s1p0,일부,1,1
+q072,t037,overview_factual,1,0,2,d27674202s1p0 d27674202s2p0,일부,1,1
+q073,t038,technical_mechanism,2,0,1,d6868247s2p0,답없음,0,0
+q074,t037,controversy_limitation,0,0,1,d27674202s1p0,답있음,1,1
+q075,t037,technical_mechanism,0,1,1,d27674202s1p0,답없음,0,0
+q076,t037,impact_application,1,0,1,d27674202s1p0,답없음,0,0
+q077,t038,technical_mechanism,4,1,1,d6868247s2p0,답없음,0,0
+q078,t038,impact_application,0,0,1,d6868247s2p0,답없음,0,1
+q079,t007,controversy_limitation,2,0,2,d23777640s1p0 d23777640s6p0,답있음,1,1
+q080,t031,controversy_limitation,4,1,1,d1100501s1p0,답없음,0,0
+q081,t038,overview_factual,0,0,2,d6868247s2p0 d6868247s1p0,답있음,1,1
+q082,t008,controversy_limitation,0,1,1,d1107832s9p0,답없음,0,0
+q083,t014,overview_factual,0,0,2,d23746608s3p0 d23746608s2p0,답있음,1,1
+q084,t038,controversy_limitation,2,1,1,d6868247s2p0,답없음,0,0
+q085,t033,controversy_limitation,1,0,1,d2154940s12p0,답있음,0,1
