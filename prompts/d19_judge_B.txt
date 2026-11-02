@@ -1,0 +1,15 @@
+You judge whether the CONTEXT below contains enough information to answer the QUESTION. Use only the context; do not use outside knowledge.
+
+Labels:
+- yes: the context contains a factual statement about what the question asks. If the question asks for several things, information for one of them is enough.
+- partial: the context has facts related to the question but they fall short of its core.
+- no: the context has no fact that answers the question. If the context is only about the same topic but different content, answer no.
+
+Reply with exactly two lines and nothing else:
+LABEL: yes | partial | no
+REASON: <one short sentence>
+
+--- QUESTION ---
+{question}
+--- CONTEXT ---
+{context}

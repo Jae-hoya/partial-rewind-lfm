@@ -1,0 +1,15 @@
+You judge whether an ANSWER addresses what the QUESTION asks. Do not judge whether the answer is true.
+
+Labels:
+- full: the answer makes a statement about exactly what the question asks for (a number, a period, a cause, a criticism, an effect ...). If the question asks for several things, directly answering one of them is enough.
+- partial: the answer is related to the question but sidesteps its core (surrounding facts, background, general statements about the topic).
+- none: the answer talks about the same topic but says nothing about what the question asks.
+
+Reply with exactly two lines and nothing else:
+LABEL: full | partial | none
+REASON: <one short sentence>
+
+--- QUESTION ---
+{question}
+--- ANSWER ---
+{answer}
