@@ -1,0 +1,49 @@
+[
+ {
+  "finished_at": "2026-11-03T02:33:49",
+  "usage": {
+   "calls": 140,
+   "cache_hits": 140,
+   "api_calls": 0,
+   "tokens_in": 210871,
+   "tokens_out": 77581,
+   "billed_tokens_in": 0,
+   "billed_tokens_out": 0,
+   "billed_tokens_in_cached": 0,
+   "billed_tokens_reasoning": 0,
+   "latency_ms": 953009,
+   "by_tag": {
+    "decompose": {
+     "calls": 5,
+     "cache_hits": 5,
+     "tokens_in": 984,
+     "tokens_out": 4375
+    },
+    "answer": {
+     "calls": 60,
+     "cache_hits": 60,
+     "tokens_in": 187480,
+     "tokens_out": 39270
+    },
+    "claims": {
+     "calls": 34,
+     "cache_hits": 34,
+     "tokens_in": 14261,
+     "tokens_out": 18832
+    },
+    "paraphrase": {
+     "calls": 40,
+     "cache_hits": 40,
+     "tokens_in": 7674,
+     "tokens_out": 14428
+    },
+    "answer_repair": {
+     "calls": 1,
+     "cache_hits": 1,
+     "tokens_in": 472,
+     "tokens_out": 676
+    }
+   }
+  }
+ }
+]
