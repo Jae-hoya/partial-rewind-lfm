@@ -1,0 +1,824 @@
+topic,branch,subq,a,b,text_a,text_b
+t007,overview_factual,0,0,1,"The Northern Province had a population of 1,150,148 in 2024.",The majority of the province's population are Sri Lankan Tamils.
+t007,overview_factual,0,0,2,"The Northern Province had a population of 1,150,148 in 2024.",The province contains sizeable Sri Lankan Moor and Sinhalese minorities.
+t007,overview_factual,0,1,2,The majority of the province's population are Sri Lankan Tamils.,The province contains sizeable Sri Lankan Moor and Sinhalese minorities.
+t007,overview_factual,2,0,1,"The province includes the administrative districts of Jaffna, Mannar, Mullaitivu and Vavuniya.","The Vanni Electoral District covers the districts of Mannar, Mullaitivu and Vavuniya."
+t007,overview_factual,2,0,2,"The province includes the administrative districts of Jaffna, Mannar, Mullaitivu and Vavuniya.",The province is represented at national level by the Jaffna Electoral District and the Vanni Electoral District.
+t007,overview_factual,2,0,3,"The province includes the administrative districts of Jaffna, Mannar, Mullaitivu and Vavuniya.",The Jaffna and Vanni Electoral Districts together elect 15 members of parliament.
+t007,overview_factual,2,0,4,"The province includes the administrative districts of Jaffna, Mannar, Mullaitivu and Vavuniya.",Jaffna is a major urban centre in the province.
+t007,overview_factual,2,0,5,"The province includes the administrative districts of Jaffna, Mannar, Mullaitivu and Vavuniya.",Jaffna hosts the University of Jaffna.
+t007,overview_factual,2,1,2,"The Vanni Electoral District covers the districts of Mannar, Mullaitivu and Vavuniya.",The province is represented at national level by the Jaffna Electoral District and the Vanni Electoral District.
+t007,overview_factual,2,1,3,"The Vanni Electoral District covers the districts of Mannar, Mullaitivu and Vavuniya.",The Jaffna and Vanni Electoral Districts together elect 15 members of parliament.
+t007,overview_factual,2,1,4,"The Vanni Electoral District covers the districts of Mannar, Mullaitivu and Vavuniya.",Jaffna is a major urban centre in the province.
+t007,overview_factual,2,1,5,"The Vanni Electoral District covers the districts of Mannar, Mullaitivu and Vavuniya.",Jaffna hosts the University of Jaffna.
+t007,overview_factual,2,2,3,The province is represented at national level by the Jaffna Electoral District and the Vanni Electoral District.,The Jaffna and Vanni Electoral Districts together elect 15 members of parliament.
+t007,overview_factual,2,2,4,The province is represented at national level by the Jaffna Electoral District and the Vanni Electoral District.,Jaffna is a major urban centre in the province.
+t007,overview_factual,2,2,5,The province is represented at national level by the Jaffna Electoral District and the Vanni Electoral District.,Jaffna hosts the University of Jaffna.
+t007,overview_factual,2,3,4,The Jaffna and Vanni Electoral Districts together elect 15 members of parliament.,Jaffna is a major urban centre in the province.
+t007,overview_factual,2,3,5,The Jaffna and Vanni Electoral Districts together elect 15 members of parliament.,Jaffna hosts the University of Jaffna.
+t007,overview_factual,2,4,5,Jaffna is a major urban centre in the province.,Jaffna hosts the University of Jaffna.
+t007,overview_factual,3,0,1,Parts of the present Northern Province were formerly part of the pre-colonial Jaffna kingdom and Vanniar chieftaincies before colonial rule.,The British reorganized administration in 1815.
+t007,overview_factual,3,0,2,Parts of the present Northern Province were formerly part of the pre-colonial Jaffna kingdom and Vanniar chieftaincies before colonial rule.,"In 1833 the British unified ethnic-based administrations into five geographic provinces, forming the Northern Province from Jaffna, Mannar, Nuvarakalaviya and Vanni."
+t007,overview_factual,3,1,2,The British reorganized administration in 1815.,"In 1833 the British unified ethnic-based administrations into five geographic provinces, forming the Northern Province from Jaffna, Mannar, Nuvarakalaviya and Vanni."
+t007,technical_mechanism,1,0,1,"Railway lines between Vavuniya, Jaffna, and Kankesanthurai and between Medawachchiya and Talaimannar were destroyed during the civil war.",Those railway lines were later reconstructed to restore the original network and upgrade operating technology.
+t007,technical_mechanism,1,0,2,"Railway lines between Vavuniya, Jaffna, and Kankesanthurai and between Medawachchiya and Talaimannar were destroyed during the civil war.",Sri Lanka Railways operates the Northern Line.
+t007,technical_mechanism,1,0,3,"Railway lines between Vavuniya, Jaffna, and Kankesanthurai and between Medawachchiya and Talaimannar were destroyed during the civil war.",Sri Lanka Railways operates the Mannar Line.
+t007,technical_mechanism,1,0,4,"Railway lines between Vavuniya, Jaffna, and Kankesanthurai and between Medawachchiya and Talaimannar were destroyed during the civil war.",Sri Lanka Railways led reconstruction of those lines in the Northern Province.
+t007,technical_mechanism,1,1,2,Those railway lines were later reconstructed to restore the original network and upgrade operating technology.,Sri Lanka Railways operates the Northern Line.
+t007,technical_mechanism,1,1,3,Those railway lines were later reconstructed to restore the original network and upgrade operating technology.,Sri Lanka Railways operates the Mannar Line.
+t007,technical_mechanism,1,1,4,Those railway lines were later reconstructed to restore the original network and upgrade operating technology.,Sri Lanka Railways led reconstruction of those lines in the Northern Province.
+t007,technical_mechanism,1,2,3,Sri Lanka Railways operates the Northern Line.,Sri Lanka Railways operates the Mannar Line.
+t007,technical_mechanism,1,2,4,Sri Lanka Railways operates the Northern Line.,Sri Lanka Railways led reconstruction of those lines in the Northern Province.
+t007,technical_mechanism,1,3,4,Sri Lanka Railways operates the Mannar Line.,Sri Lanka Railways led reconstruction of those lines in the Northern Province.
+t007,technical_mechanism,2,0,1,The Mahinda Rajapaksa government undertook a large amount of infrastructure projects in the Northern Province at a cost of over $3 billion.,India assisted in reopening and converting Jaffna International Airport back to an international airport.
+t007,technical_mechanism,2,0,2,The Mahinda Rajapaksa government undertook a large amount of infrastructure projects in the Northern Province at a cost of over $3 billion.,Flights operated between Colombo and Chennai and between Colombo and Jaffna.
+t007,technical_mechanism,2,1,2,India assisted in reopening and converting Jaffna International Airport back to an international airport.,Flights operated between Colombo and Chennai and between Colombo and Jaffna.
+t007,technical_mechanism,3,0,1,The Indo-Lanka Accord of 29 July 1987 required devolution of powers to the provinces.,The Indo-Lanka Accord of 29 July 1987 required an interim merger of the Northern and Eastern provinces into one administrative unit.
+t007,technical_mechanism,3,0,2,The Indo-Lanka Accord of 29 July 1987 required devolution of powers to the provinces.,The Sri Lankan Parliament passed the 13th Amendment to the 1978 Constitution.
+t007,technical_mechanism,3,0,3,The Indo-Lanka Accord of 29 July 1987 required devolution of powers to the provinces.,The Sri Lankan Parliament passed the Provincial Councils Act No 42 of 1987 to establish provincial councils.
+t007,technical_mechanism,3,1,2,The Indo-Lanka Accord of 29 July 1987 required an interim merger of the Northern and Eastern provinces into one administrative unit.,The Sri Lankan Parliament passed the 13th Amendment to the 1978 Constitution.
+t007,technical_mechanism,3,1,3,The Indo-Lanka Accord of 29 July 1987 required an interim merger of the Northern and Eastern provinces into one administrative unit.,The Sri Lankan Parliament passed the Provincial Councils Act No 42 of 1987 to establish provincial councils.
+t007,technical_mechanism,3,2,3,The Sri Lankan Parliament passed the 13th Amendment to the 1978 Constitution.,The Sri Lankan Parliament passed the Provincial Councils Act No 42 of 1987 to establish provincial councils.
+t007,impact_application,1,0,1,Postwar reconstruction projects failed to create large numbers of new jobs in the Northern Province.,The province suffered from extreme levels of unemployment after reconstruction.
+t007,impact_application,2,0,1,The Northern Line was reconstructed past Jaffna to its terminus at Kankesanthirai by 2015.,The Mannar Line was reconstructed between Medawachchiya and Madhu Road and has been under reconstruction to restore the original network.
+t007,impact_application,2,0,2,The Northern Line was reconstructed past Jaffna to its terminus at Kankesanthirai by 2015.,Jaffna International Airport was reopened and returned to international status with daily flights between Colombo and Chennai and Jaffna becoming available.
+t007,impact_application,2,0,3,The Northern Line was reconstructed past Jaffna to its terminus at Kankesanthirai by 2015.,Osmania College in Jaffna was reopened as a public school serving the city's Muslim community.
+t007,impact_application,2,1,2,The Mannar Line was reconstructed between Medawachchiya and Madhu Road and has been under reconstruction to restore the original network.,Jaffna International Airport was reopened and returned to international status with daily flights between Colombo and Chennai and Jaffna becoming available.
+t007,impact_application,2,1,3,The Mannar Line was reconstructed between Medawachchiya and Madhu Road and has been under reconstruction to restore the original network.,Osmania College in Jaffna was reopened as a public school serving the city's Muslim community.
+t007,impact_application,2,2,3,Jaffna International Airport was reopened and returned to international status with daily flights between Colombo and Chennai and Jaffna becoming available.,Osmania College in Jaffna was reopened as a public school serving the city's Muslim community.
+t007,impact_application,3,0,1,"The University of Jaffna continued to operate with approximately 7,000 students, maintaining higher education access in the province.",Railway reconstruction and the reopening of Jaffna International Airport improved transport connectivity to and within the Northern Province.
+t007,controversy_limitation,0,0,1,The Thirteenth Amendment established provincial councils as a new system of provincial government in Sri Lanka to devolve power to the provinces.,The Thirteenth Amendment was enacted alongside the Provincial Councils Act No 42 of 1987 to implement provincial governance.
+t007,controversy_limitation,0,0,2,The Thirteenth Amendment established provincial councils as a new system of provincial government in Sri Lanka to devolve power to the provinces.,The Thirteenth Amendment and the Provincial Councils Act No 42 of 1987 were passed by Parliament on 14 November 1987.
+t007,controversy_limitation,0,1,2,The Thirteenth Amendment was enacted alongside the Provincial Councils Act No 42 of 1987 to implement provincial governance.,The Thirteenth Amendment and the Provincial Councils Act No 42 of 1987 were passed by Parliament on 14 November 1987.
+t007,controversy_limitation,1,0,1,"Major political parties active in the Northern Province include the Tamil National Alliance led by Illankai Tamil Arasu Kachchi, the Democratic Tamil National Alliance, the United National Party, the Sri Lanka Freedom Party, and the EPDP.",The Eelam People's Revolutionary Liberation Front and the Eelam National Democratic Liberation Front were Indian-backed paramilitary groups that won uncontested seats in the 1988 north provincial elections.
+t007,controversy_limitation,1,0,2,"Major political parties active in the Northern Province include the Tamil National Alliance led by Illankai Tamil Arasu Kachchi, the Democratic Tamil National Alliance, the United National Party, the Sri Lanka Freedom Party, and the EPDP.","The Liberation Tigers of Tamil Eelam sought an independent Tamil state called Tamil Eelam, which is a demand beyond regional autonomy."
+t007,controversy_limitation,1,1,2,The Eelam People's Revolutionary Liberation Front and the Eelam National Democratic Liberation Front were Indian-backed paramilitary groups that won uncontested seats in the 1988 north provincial elections.,"The Liberation Tigers of Tamil Eelam sought an independent Tamil state called Tamil Eelam, which is a demand beyond regional autonomy."
+t007,controversy_limitation,2,0,1,The passage of the Thirteenth Amendment and the Provincial Councils Act No 42 of 1987 created the provincial council framework.,The Supreme Court ruled on 16 October 2006 that presidential proclamations merging the Northern and Eastern provinces were null and void and had no legal effect.
+t007,controversy_limitation,2,0,2,The passage of the Thirteenth Amendment and the Provincial Councils Act No 42 of 1987 created the provincial council framework.,The North Eastern Province was formally de-merged into the Northern and Eastern provinces on 1 January 2007 following the Supreme Court ruling.
+t007,controversy_limitation,2,1,2,The Supreme Court ruled on 16 October 2006 that presidential proclamations merging the Northern and Eastern provinces were null and void and had no legal effect.,The North Eastern Province was formally de-merged into the Northern and Eastern provinces on 1 January 2007 following the Supreme Court ruling.
+t008,overview_factual,0,0,1,Newton N. Minow is the full name of the individual described.,He co-chaired the 1976 presidential debates.
+t008,overview_factual,0,0,2,Newton N. Minow is the full name of the individual described.,He co-chaired the 1980 presidential debates.
+t008,overview_factual,0,0,3,Newton N. Minow is the full name of the individual described.,He was a vice-chairman of the Commission on Presidential Debates.
+t008,overview_factual,0,1,2,He co-chaired the 1976 presidential debates.,He co-chaired the 1980 presidential debates.
+t008,overview_factual,0,1,3,He co-chaired the 1976 presidential debates.,He was a vice-chairman of the Commission on Presidential Debates.
+t008,overview_factual,0,2,3,He co-chaired the 1980 presidential debates.,He was a vice-chairman of the Commission on Presidential Debates.
+t008,overview_factual,3,0,1,He served on numerous presidential commissions.,He authored a book on the history of the presidential debates released in 2008.
+t008,impact_application,0,0,1,Community groups held town hall meetings documenting widespread concerns about the negative effects of media concentration and consolidation on racial-ethnic diversity in staffing and programming.,The regulator created a new post of associate general counsel and chief diversity officer at the FCC.
+t008,impact_application,0,0,2,Community groups held town hall meetings documenting widespread concerns about the negative effects of media concentration and consolidation on racial-ethnic diversity in staffing and programming.,President Obama appointed Mark Lloyd to the FCC position of associate general counsel and chief diversity officer.
+t008,impact_application,0,0,3,Community groups held town hall meetings documenting widespread concerns about the negative effects of media concentration and consolidation on racial-ethnic diversity in staffing and programming.,Julius Genachowski was identified as President-Elect Obama's choice to head the FCC.
+t008,impact_application,0,0,4,Community groups held town hall meetings documenting widespread concerns about the negative effects of media concentration and consolidation on racial-ethnic diversity in staffing and programming.,Julius Genachowski was later confirmed to head the FCC.
+t008,impact_application,0,1,2,The regulator created a new post of associate general counsel and chief diversity officer at the FCC.,President Obama appointed Mark Lloyd to the FCC position of associate general counsel and chief diversity officer.
+t008,impact_application,0,1,3,The regulator created a new post of associate general counsel and chief diversity officer at the FCC.,Julius Genachowski was identified as President-Elect Obama's choice to head the FCC.
+t008,impact_application,0,1,4,The regulator created a new post of associate general counsel and chief diversity officer at the FCC.,Julius Genachowski was later confirmed to head the FCC.
+t008,impact_application,0,2,3,President Obama appointed Mark Lloyd to the FCC position of associate general counsel and chief diversity officer.,Julius Genachowski was identified as President-Elect Obama's choice to head the FCC.
+t008,impact_application,0,2,4,President Obama appointed Mark Lloyd to the FCC position of associate general counsel and chief diversity officer.,Julius Genachowski was later confirmed to head the FCC.
+t008,impact_application,0,3,4,Julius Genachowski was identified as President-Elect Obama's choice to head the FCC.,Julius Genachowski was later confirmed to head the FCC.
+t008,impact_application,2,0,1,"Latino and other minority community groups organized town hall meetings in California, New York, and Texas to discuss media diversity and the effects of consolidation on their communities.",The community meetings raised concerns about the FCC's monitoring of obscene and pornographic material in Spanish-language radio.
+t008,impact_application,2,0,2,"Latino and other minority community groups organized town hall meetings in California, New York, and Texas to discuss media diversity and the effects of consolidation on their communities.",The community meetings raised concerns about a lack of racial and national-origin diversity among Latino staff in Spanish-language television.
+t008,impact_application,2,0,3,"Latino and other minority community groups organized town hall meetings in California, New York, and Texas to discuss media diversity and the effects of consolidation on their communities.",The regulator appointed a chief diversity officer at the FCC as a step tied to addressing diversity and access issues for minority communities.
+t008,impact_application,2,1,2,The community meetings raised concerns about the FCC's monitoring of obscene and pornographic material in Spanish-language radio.,The community meetings raised concerns about a lack of racial and national-origin diversity among Latino staff in Spanish-language television.
+t008,impact_application,2,1,3,The community meetings raised concerns about the FCC's monitoring of obscene and pornographic material in Spanish-language radio.,The regulator appointed a chief diversity officer at the FCC as a step tied to addressing diversity and access issues for minority communities.
+t008,impact_application,2,2,3,The community meetings raised concerns about a lack of racial and national-origin diversity among Latino staff in Spanish-language television.,The regulator appointed a chief diversity officer at the FCC as a step tied to addressing diversity and access issues for minority communities.
+t008,impact_application,3,0,1,Groups documented perceived impacts of media concentration and consolidation on minority ownership and localism.,The FCC created and filled a chief diversity officer position as an institutional response to concerns about diversity and local staffing in broadcasting.
+t014,overview_factual,0,0,1,Children of the Sea is the full title of the manga by Daisuke Igarashi.,"The manga was first published on December 24, 2005."
+t014,overview_factual,1,0,1,The manga was first serialized in Monthly Ikki.,Monthly Ikki is a seinen magazine of Shōgakukan.
+t014,overview_factual,1,0,2,The manga was first serialized in Monthly Ikki.,"The serialization ran from December 24, 2005 to September 24, 2011."
+t014,overview_factual,1,1,2,Monthly Ikki is a seinen magazine of Shōgakukan.,"The serialization ran from December 24, 2005 to September 24, 2011."
+t014,technical_mechanism,0,0,1,Sunny was serialized in Monthly Ikki from December 2010 until Ikki suspended publication in September 2014.,Monthly Ikki suspended publication in September 2014.
+t014,technical_mechanism,0,0,2,Sunny was serialized in Monthly Ikki from December 2010 until Ikki suspended publication in September 2014.,"After Monthly Ikki suspended publication, Sunny transferred to Monthly Big Comic Spirits from January to July 2015."
+t014,technical_mechanism,0,1,2,Monthly Ikki suspended publication in September 2014.,"After Monthly Ikki suspended publication, Sunny transferred to Monthly Big Comic Spirits from January to July 2015."
+t014,technical_mechanism,1,0,1,Daisuke Igarashi based Children of the Sea on his interest in marine life.,Daisuke Igarashi based Children of the Sea on his habit of collecting field guides on marine animals.
+t014,technical_mechanism,2,0,1,An anime film adaptation of Sunny was announced in April 2025.,The anime film adaptation of Sunny is being produced by Dwarf Studios.
+t014,technical_mechanism,2,0,2,An anime film adaptation of Sunny was announced in April 2025.,The anime film adaptation of Sunny is slated for completion in 2029.
+t014,technical_mechanism,2,1,2,The anime film adaptation of Sunny is being produced by Dwarf Studios.,The anime film adaptation of Sunny is slated for completion in 2029.
+t014,impact_application,1,0,1,The story originated from Daisuke Igarashi's interest in marine life and mermaid mythology.,The story combines folkloric inspiration with marine biology details such as sperm whale anatomy.
+t014,impact_application,1,0,2,The story originated from Daisuke Igarashi's interest in marine life and mermaid mythology.,The author balanced imaginative storytelling with scientific accuracy by consulting a marine mammal researcher.
+t014,impact_application,1,0,3,The story originated from Daisuke Igarashi's interest in marine life and mermaid mythology.,The narrative envisions children raised by marine creatures.
+t014,impact_application,1,0,4,The story originated from Daisuke Igarashi's interest in marine life and mermaid mythology.,The narrative foregrounds human-nature relationships.
+t014,impact_application,1,1,2,The story combines folkloric inspiration with marine biology details such as sperm whale anatomy.,The author balanced imaginative storytelling with scientific accuracy by consulting a marine mammal researcher.
+t014,impact_application,1,1,3,The story combines folkloric inspiration with marine biology details such as sperm whale anatomy.,The narrative envisions children raised by marine creatures.
+t014,impact_application,1,1,4,The story combines folkloric inspiration with marine biology details such as sperm whale anatomy.,The narrative foregrounds human-nature relationships.
+t014,impact_application,1,2,3,The author balanced imaginative storytelling with scientific accuracy by consulting a marine mammal researcher.,The narrative envisions children raised by marine creatures.
+t014,impact_application,1,2,4,The author balanced imaginative storytelling with scientific accuracy by consulting a marine mammal researcher.,The narrative foregrounds human-nature relationships.
+t014,impact_application,1,3,4,The narrative envisions children raised by marine creatures.,The narrative foregrounds human-nature relationships.
+t014,impact_application,2,0,1,The manga was serialized in Shōgakukan's seinen magazine Monthly Ikki.,The manga was later collected in five tankōbon volumes.
+t014,impact_application,2,0,2,The manga was serialized in Shōgakukan's seinen magazine Monthly Ikki.,The collection of five tankōbon volumes established its domestic publication run.
+t014,impact_application,2,0,3,The manga was serialized in Shōgakukan's seinen magazine Monthly Ikki.,The series was licensed in North America by Viz Media.
+t014,impact_application,2,0,4,The manga was serialized in Shōgakukan's seinen magazine Monthly Ikki.,The series was serialized online at SigIkki.com.
+t014,impact_application,2,0,5,The manga was serialized in Shōgakukan's seinen magazine Monthly Ikki.,The online serialization expanded its international readership through English-language digital serialization.
+t014,impact_application,2,0,6,The manga was serialized in Shōgakukan's seinen magazine Monthly Ikki.,Viz Media released the five tankōbon volumes in North America between 2009 and 2013.
+t014,impact_application,2,1,2,The manga was later collected in five tankōbon volumes.,The collection of five tankōbon volumes established its domestic publication run.
+t014,impact_application,2,1,3,The manga was later collected in five tankōbon volumes.,The series was licensed in North America by Viz Media.
+t014,impact_application,2,1,4,The manga was later collected in five tankōbon volumes.,The series was serialized online at SigIkki.com.
+t014,impact_application,2,1,5,The manga was later collected in five tankōbon volumes.,The online serialization expanded its international readership through English-language digital serialization.
+t014,impact_application,2,1,6,The manga was later collected in five tankōbon volumes.,Viz Media released the five tankōbon volumes in North America between 2009 and 2013.
+t014,impact_application,2,2,3,The collection of five tankōbon volumes established its domestic publication run.,The series was licensed in North America by Viz Media.
+t014,impact_application,2,2,4,The collection of five tankōbon volumes established its domestic publication run.,The series was serialized online at SigIkki.com.
+t014,impact_application,2,2,5,The collection of five tankōbon volumes established its domestic publication run.,The online serialization expanded its international readership through English-language digital serialization.
+t014,impact_application,2,2,6,The collection of five tankōbon volumes established its domestic publication run.,Viz Media released the five tankōbon volumes in North America between 2009 and 2013.
+t014,impact_application,2,3,4,The series was licensed in North America by Viz Media.,The series was serialized online at SigIkki.com.
+t014,impact_application,2,3,5,The series was licensed in North America by Viz Media.,The online serialization expanded its international readership through English-language digital serialization.
+t014,impact_application,2,3,6,The series was licensed in North America by Viz Media.,Viz Media released the five tankōbon volumes in North America between 2009 and 2013.
+t014,impact_application,2,4,5,The series was serialized online at SigIkki.com.,The online serialization expanded its international readership through English-language digital serialization.
+t014,impact_application,2,4,6,The series was serialized online at SigIkki.com.,Viz Media released the five tankōbon volumes in North America between 2009 and 2013.
+t014,impact_application,2,5,6,The online serialization expanded its international readership through English-language digital serialization.,Viz Media released the five tankōbon volumes in North America between 2009 and 2013.
+t021,overview_factual,0,0,1,Tarik Muharemović was born on 28 February 2003.,He was born in Slovenia.
+t021,overview_factual,1,0,1,Muharemović started his professional career at Wolfsberger AC.,He played mainly in Wolfsberger AC's reserve team.
+t021,overview_factual,1,0,2,Muharemović started his professional career at Wolfsberger AC.,He joined Juventus Next Gen in 2021.
+t021,overview_factual,1,0,3,Muharemović started his professional career at Wolfsberger AC.,Juventus Next Gen loaned him to Sassuolo in 2024.
+t021,overview_factual,1,0,4,Muharemović started his professional career at Wolfsberger AC.,He signed permanently for Sassuolo in 2025 after the loan.
+t021,overview_factual,1,1,2,He played mainly in Wolfsberger AC's reserve team.,He joined Juventus Next Gen in 2021.
+t021,overview_factual,1,1,3,He played mainly in Wolfsberger AC's reserve team.,Juventus Next Gen loaned him to Sassuolo in 2024.
+t021,overview_factual,1,1,4,He played mainly in Wolfsberger AC's reserve team.,He signed permanently for Sassuolo in 2025 after the loan.
+t021,overview_factual,1,2,3,He joined Juventus Next Gen in 2021.,Juventus Next Gen loaned him to Sassuolo in 2024.
+t021,overview_factual,1,2,4,He joined Juventus Next Gen in 2021.,He signed permanently for Sassuolo in 2025 after the loan.
+t021,overview_factual,1,3,4,Juventus Next Gen loaned him to Sassuolo in 2024.,He signed permanently for Sassuolo in 2025 after the loan.
+t021,overview_factual,3,0,1,Muharemović is registered to play as a centre-back at club level.,He is registered to play as a centre-back for the Bosnia and Herzegovina national team.
+t021,technical_mechanism,2,0,1,He serves as a defensive anchor with strong tactical awareness.,He relies on an aerial game.
+t021,technical_mechanism,2,0,2,He serves as a defensive anchor with strong tactical awareness.,He is crucial when covering advancing full-backs during transitions.
+t021,technical_mechanism,2,0,3,He serves as a defensive anchor with strong tactical awareness.,He is versatile.
+t021,technical_mechanism,2,0,4,He serves as a defensive anchor with strong tactical awareness.,He can fill in as a centre-back.
+t021,technical_mechanism,2,0,5,He serves as a defensive anchor with strong tactical awareness.,He can fill in as a right-back.
+t021,technical_mechanism,2,1,2,He relies on an aerial game.,He is crucial when covering advancing full-backs during transitions.
+t021,technical_mechanism,2,1,3,He relies on an aerial game.,He is versatile.
+t021,technical_mechanism,2,1,4,He relies on an aerial game.,He can fill in as a centre-back.
+t021,technical_mechanism,2,1,5,He relies on an aerial game.,He can fill in as a right-back.
+t021,technical_mechanism,2,2,3,He is crucial when covering advancing full-backs during transitions.,He is versatile.
+t021,technical_mechanism,2,2,4,He is crucial when covering advancing full-backs during transitions.,He can fill in as a centre-back.
+t021,technical_mechanism,2,2,5,He is crucial when covering advancing full-backs during transitions.,He can fill in as a right-back.
+t021,technical_mechanism,2,3,4,He is versatile.,He can fill in as a centre-back.
+t021,technical_mechanism,2,3,5,He is versatile.,He can fill in as a right-back.
+t021,technical_mechanism,2,4,5,He can fill in as a centre-back.,He can fill in as a right-back.
+t022,overview_factual,0,0,1,The missile was developed by Molnija OKB beginning in the Ukrainian SSR and by the Vympel Design Bureau thereafter.,Development work on the missile began in 1982.
+t022,overview_factual,0,0,2,The missile was developed by Molnija OKB beginning in the Ukrainian SSR and by the Vympel Design Bureau thereafter.,The baseline development was completed by around 1994.
+t022,overview_factual,0,1,2,Development work on the missile began in 1982.,The baseline development was completed by around 1994.
+t022,overview_factual,1,0,1,The basic missile is designated R-77.,The basic missile is also known as izdeliye 170.
+t022,overview_factual,1,0,2,The basic missile is designated R-77.,The export variant is designated RVV-AE and is also known as izdeliye 190.
+t022,overview_factual,1,0,3,The basic missile is designated R-77.,The missile family carries the NATO reporting name AA-12 Adder.
+t022,overview_factual,1,0,4,The basic missile is designated R-77.,"Later designations and variants include R-77-1 (AA-12B), RVV-SD, R-77M, R-77M1, R-77-PD, and RVV-AE-PD."
+t022,overview_factual,1,1,2,The basic missile is also known as izdeliye 170.,The export variant is designated RVV-AE and is also known as izdeliye 190.
+t022,overview_factual,1,1,3,The basic missile is also known as izdeliye 170.,The missile family carries the NATO reporting name AA-12 Adder.
+t022,overview_factual,1,1,4,The basic missile is also known as izdeliye 170.,"Later designations and variants include R-77-1 (AA-12B), RVV-SD, R-77M, R-77M1, R-77-PD, and RVV-AE-PD."
+t022,overview_factual,1,2,3,The export variant is designated RVV-AE and is also known as izdeliye 190.,The missile family carries the NATO reporting name AA-12 Adder.
+t022,overview_factual,1,2,4,The export variant is designated RVV-AE and is also known as izdeliye 190.,"Later designations and variants include R-77-1 (AA-12B), RVV-SD, R-77M, R-77M1, R-77-PD, and RVV-AE-PD."
+t022,overview_factual,1,3,4,The missile family carries the NATO reporting name AA-12 Adder.,"Later designations and variants include R-77-1 (AA-12B), RVV-SD, R-77M, R-77M1, R-77-PD, and RVV-AE-PD."
+t022,overview_factual,2,0,1,The missile family is classified as an active radar-homing beyond-visual-range air-to-air missile.,The baseline and export versions have an approximate range of 80 km.
+t022,overview_factual,2,0,2,The missile family is classified as an active radar-homing beyond-visual-range air-to-air missile.,The design is described as a fire-and-forget multi-purpose missile for tactical and strategic aircraft.
+t022,overview_factual,2,0,3,The missile family is classified as an active radar-homing beyond-visual-range air-to-air missile.,"The missile can be integrated on fighters such as upgraded Su-27, MiG-29, MiG-31 variants and some Su-30MKK and Su-35S aircraft."
+t022,overview_factual,2,1,2,The baseline and export versions have an approximate range of 80 km.,The design is described as a fire-and-forget multi-purpose missile for tactical and strategic aircraft.
+t022,overview_factual,2,1,3,The baseline and export versions have an approximate range of 80 km.,"The missile can be integrated on fighters such as upgraded Su-27, MiG-29, MiG-31 variants and some Su-30MKK and Su-35S aircraft."
+t022,overview_factual,2,2,3,The design is described as a fire-and-forget multi-purpose missile for tactical and strategic aircraft.,"The missile can be integrated on fighters such as upgraded Su-27, MiG-29, MiG-31 variants and some Su-30MKK and Su-35S aircraft."
+t022,technical_mechanism,2,0,1,R-77 variants were fitted with an expanding-rod warhead.,The expanding-rod warhead was designed to destroy targets of various sizes.
+t022,technical_mechanism,3,0,1,The R-77 employed an inertial guidance autopilot for mid-course flight.,The R-77 received occasional encoded datalink updates from the launch aircraft's radar for target spatial or G changes.
+t022,impact_application,0,0,1,"The export variant RVV-AE was sold to India, with the final batch delivered in 2002.",China placed significant orders for the RVV-AE for use on some Su-27 and J-11 variants.
+t022,impact_application,0,0,2,"The export variant RVV-AE was sold to India, with the final batch delivered in 2002.",The R-77 (izdeliye 170) family was produced in Kyiv at the Artem plant after the Soviet Union dissolved.
+t022,impact_application,0,0,3,"The export variant RVV-AE was sold to India, with the final batch delivered in 2002.","The missile was first publicly seen at the 1992 Moscow Airshow, indicating export availability in the early 1990s."
+t022,impact_application,0,1,2,China placed significant orders for the RVV-AE for use on some Su-27 and J-11 variants.,The R-77 (izdeliye 170) family was produced in Kyiv at the Artem plant after the Soviet Union dissolved.
+t022,impact_application,0,1,3,China placed significant orders for the RVV-AE for use on some Su-27 and J-11 variants.,"The missile was first publicly seen at the 1992 Moscow Airshow, indicating export availability in the early 1990s."
+t022,impact_application,0,2,3,The R-77 (izdeliye 170) family was produced in Kyiv at the Artem plant after the Soviet Union dissolved.,"The missile was first publicly seen at the 1992 Moscow Airshow, indicating export availability in the early 1990s."
+t022,impact_application,1,0,1,"The R-77's active radar homing and fire-and-forget capability enabled beyond-visual-range engagements out to approximately 80 km, extending engagement envelopes for operator air forces.","The missile could be used against helicopters, high-speed low-altitude aircraft, cruise missiles, and precision-guided munitions, broadening tactical target sets for fighters."
+t022,impact_application,1,0,2,"The R-77's active radar homing and fire-and-forget capability enabled beyond-visual-range engagements out to approximately 80 km, extending engagement envelopes for operator air forces.","Pairing radar-guided and terminal infrared-homing variants forced defenders to counter mixed-seeker attacks, complicating end-game defensive tactics."
+t022,impact_application,1,0,3,"The R-77's active radar homing and fire-and-forget capability enabled beyond-visual-range engagements out to approximately 80 km, extending engagement envelopes for operator air forces.","The R-77 was cited as usable against other medium- and long-range air-to-air missiles and some surface-to-air missiles, affecting decisions about mutual suppression and engagement sequencing."
+t022,impact_application,1,1,2,"The missile could be used against helicopters, high-speed low-altitude aircraft, cruise missiles, and precision-guided munitions, broadening tactical target sets for fighters.","Pairing radar-guided and terminal infrared-homing variants forced defenders to counter mixed-seeker attacks, complicating end-game defensive tactics."
+t022,impact_application,1,1,3,"The missile could be used against helicopters, high-speed low-altitude aircraft, cruise missiles, and precision-guided munitions, broadening tactical target sets for fighters.","The R-77 was cited as usable against other medium- and long-range air-to-air missiles and some surface-to-air missiles, affecting decisions about mutual suppression and engagement sequencing."
+t022,impact_application,1,2,3,"Pairing radar-guided and terminal infrared-homing variants forced defenders to counter mixed-seeker attacks, complicating end-game defensive tactics.","The R-77 was cited as usable against other medium- and long-range air-to-air missiles and some surface-to-air missiles, affecting decisions about mutual suppression and engagement sequencing."
+t022,impact_application,2,0,1,The R-77-1 (AA-12B) entered Russian Aerospace Forces service in 2015.,The R-77-1 was subsequently deployed by Su-35S fighters on combat air patrols in Syria.
+t022,impact_application,3,0,1,"Upgraded Su-27, MiG-29, and MiG-31 variants were able to employ the R-77, expanding those platforms' beyond-visual-range engagement capabilities.","Some Chinese Su-27 derivatives and domestically produced J-11 variants were capable of using the missile, extending their multirole air-to-air doctrine."
+t022,controversy_limitation,0,0,1,Several S-200 missiles went ballistic after losing their targets and landed in populated areas or other countries during combat operations.,A Syrian S-200 missile that went ballistic was intercepted by an Israeli Arrow missile after being inbound to a populated area in Israel.
+t022,controversy_limitation,0,0,2,Several S-200 missiles went ballistic after losing their targets and landed in populated areas or other countries during combat operations.,"A Syrian S-200 missile strike resulted in the downing of a Russian Il-20M ELINT aircraft, killing 15 servicemen onboard."
+t022,controversy_limitation,0,0,3,Several S-200 missiles went ballistic after losing their targets and landed in populated areas or other countries during combat operations.,"A Syrian S-200 missile engagement in 2018 resulted in the shoot-down of an Israeli F-16I aircraft, with both crew surviving after ejection."
+t022,controversy_limitation,0,1,2,A Syrian S-200 missile that went ballistic was intercepted by an Israeli Arrow missile after being inbound to a populated area in Israel.,"A Syrian S-200 missile strike resulted in the downing of a Russian Il-20M ELINT aircraft, killing 15 servicemen onboard."
+t022,controversy_limitation,0,1,3,A Syrian S-200 missile that went ballistic was intercepted by an Israeli Arrow missile after being inbound to a populated area in Israel.,"A Syrian S-200 missile engagement in 2018 resulted in the shoot-down of an Israeli F-16I aircraft, with both crew surviving after ejection."
+t022,controversy_limitation,0,2,3,"A Syrian S-200 missile strike resulted in the downing of a Russian Il-20M ELINT aircraft, killing 15 servicemen onboard.","A Syrian S-200 missile engagement in 2018 resulted in the shoot-down of an Israeli F-16I aircraft, with both crew surviving after ejection."
+t022,controversy_limitation,1,0,1,S-200 missiles have demonstrated loss-of-target behavior that caused them to go ballistic and impact unintended areas.,"S-200 air-defense sites and equipment were found in a state of disrepair after being overrun, indicating maintenance and operational degradation under combat conditions."
+t022,controversy_limitation,1,0,2,S-200 missiles have demonstrated loss-of-target behavior that caused them to go ballistic and impact unintended areas.,S-200 fire-control radars and batteries have been vulnerable to preemptive strikes that degraded their operational effectiveness.
+t022,controversy_limitation,1,1,2,"S-200 air-defense sites and equipment were found in a state of disrepair after being overrun, indicating maintenance and operational degradation under combat conditions.",S-200 fire-control radars and batteries have been vulnerable to preemptive strikes that degraded their operational effectiveness.
+t022,controversy_limitation,2,0,1,The Soviet Union supplied S-200 missiles to Syria and organized them into multiple long-range surface-to-air missile regiments.,Soviet crews initially manned the S-200 systems and training of Syrian personnel was completed prior to transfer of operational control to Syrian forces.
+t022,controversy_limitation,2,0,2,The Soviet Union supplied S-200 missiles to Syria and organized them into multiple long-range surface-to-air missile regiments.,Russian forces later repaired and restored Syrian S-200 systems to operational status.
+t022,controversy_limitation,2,1,2,Soviet crews initially manned the S-200 systems and training of Syrian personnel was completed prior to transfer of operational control to Syrian forces.,Russian forces later repaired and restored Syrian S-200 systems to operational status.
+t022,controversy_limitation,3,0,1,Parts of S-200 systems were pictured in a state of disrepair after air defense sites were overtaken by rebel forces.,"Russian assistance was used to rebuild and restore damaged or non-operational S-200 sites, as exemplified by reconstruction at Kweires airport near Aleppo."
+t028,overview_factual,3,0,1,Andrews was selected as a host pick for the 2025 Skate America.,Andrews placed fifth overall at the 2025 Skate America.
+t028,overview_factual,3,0,2,Andrews was selected as a host pick for the 2025 Skate America.,Andrews earned a new personal best free skate score at the 2025 Skate America.
+t028,overview_factual,3,0,3,Andrews was selected as a host pick for the 2025 Skate America.,Andrews earned a new personal best combined total score at the 2025 Skate America.
+t028,overview_factual,3,1,2,Andrews placed fifth overall at the 2025 Skate America.,Andrews earned a new personal best free skate score at the 2025 Skate America.
+t028,overview_factual,3,1,3,Andrews placed fifth overall at the 2025 Skate America.,Andrews earned a new personal best combined total score at the 2025 Skate America.
+t028,overview_factual,3,2,3,Andrews earned a new personal best free skate score at the 2025 Skate America.,Andrews earned a new personal best combined total score at the 2025 Skate America.
+t028,technical_mechanism,0,0,1,He included a quad toe loop in his programs.,He included a quad Salchow in his programs.
+t028,technical_mechanism,0,0,2,He included a quad toe loop in his programs.,He sometimes combined a quad toe loop with a triple toe loop in the short program.
+t028,technical_mechanism,0,0,3,He included a quad toe loop in his programs.,He performed three quadruple jumps in several free programs.
+t028,technical_mechanism,0,0,4,He included a quad toe loop in his programs.,Those free programs included instances of a toe loop and two Salchows with one Salchow executed in combination with a triple toe loop.
+t028,technical_mechanism,0,0,5,He included a quad toe loop in his programs.,He incorporated multiple triple Axels into free programs.
+t028,technical_mechanism,0,0,6,He included a quad toe loop in his programs.,He performed two triple Axels in his clean free skate at the 2016 World Championships.
+t028,technical_mechanism,0,0,7,He included a quad toe loop in his programs.,He routinely executed additional triple jumps beyond the Axels.
+t028,technical_mechanism,0,0,8,He included a quad toe loop in his programs.,He completed four more triple jumps in his World Championship free skate.
+t028,technical_mechanism,0,1,2,He included a quad Salchow in his programs.,He sometimes combined a quad toe loop with a triple toe loop in the short program.
+t028,technical_mechanism,0,1,3,He included a quad Salchow in his programs.,He performed three quadruple jumps in several free programs.
+t028,technical_mechanism,0,1,4,He included a quad Salchow in his programs.,Those free programs included instances of a toe loop and two Salchows with one Salchow executed in combination with a triple toe loop.
+t028,technical_mechanism,0,1,5,He included a quad Salchow in his programs.,He incorporated multiple triple Axels into free programs.
+t028,technical_mechanism,0,1,6,He included a quad Salchow in his programs.,He performed two triple Axels in his clean free skate at the 2016 World Championships.
+t028,technical_mechanism,0,1,7,He included a quad Salchow in his programs.,He routinely executed additional triple jumps beyond the Axels.
+t028,technical_mechanism,0,1,8,He included a quad Salchow in his programs.,He completed four more triple jumps in his World Championship free skate.
+t028,technical_mechanism,0,2,3,He sometimes combined a quad toe loop with a triple toe loop in the short program.,He performed three quadruple jumps in several free programs.
+t028,technical_mechanism,0,2,4,He sometimes combined a quad toe loop with a triple toe loop in the short program.,Those free programs included instances of a toe loop and two Salchows with one Salchow executed in combination with a triple toe loop.
+t028,technical_mechanism,0,2,5,He sometimes combined a quad toe loop with a triple toe loop in the short program.,He incorporated multiple triple Axels into free programs.
+t028,technical_mechanism,0,2,6,He sometimes combined a quad toe loop with a triple toe loop in the short program.,He performed two triple Axels in his clean free skate at the 2016 World Championships.
+t028,technical_mechanism,0,2,7,He sometimes combined a quad toe loop with a triple toe loop in the short program.,He routinely executed additional triple jumps beyond the Axels.
+t028,technical_mechanism,0,2,8,He sometimes combined a quad toe loop with a triple toe loop in the short program.,He completed four more triple jumps in his World Championship free skate.
+t028,technical_mechanism,0,3,4,He performed three quadruple jumps in several free programs.,Those free programs included instances of a toe loop and two Salchows with one Salchow executed in combination with a triple toe loop.
+t028,technical_mechanism,0,3,5,He performed three quadruple jumps in several free programs.,He incorporated multiple triple Axels into free programs.
+t028,technical_mechanism,0,3,6,He performed three quadruple jumps in several free programs.,He performed two triple Axels in his clean free skate at the 2016 World Championships.
+t028,technical_mechanism,0,3,7,He performed three quadruple jumps in several free programs.,He routinely executed additional triple jumps beyond the Axels.
+t028,technical_mechanism,0,3,8,He performed three quadruple jumps in several free programs.,He completed four more triple jumps in his World Championship free skate.
+t028,technical_mechanism,0,4,5,Those free programs included instances of a toe loop and two Salchows with one Salchow executed in combination with a triple toe loop.,He incorporated multiple triple Axels into free programs.
+t028,technical_mechanism,0,4,6,Those free programs included instances of a toe loop and two Salchows with one Salchow executed in combination with a triple toe loop.,He performed two triple Axels in his clean free skate at the 2016 World Championships.
+t028,technical_mechanism,0,4,7,Those free programs included instances of a toe loop and two Salchows with one Salchow executed in combination with a triple toe loop.,He routinely executed additional triple jumps beyond the Axels.
+t028,technical_mechanism,0,4,8,Those free programs included instances of a toe loop and two Salchows with one Salchow executed in combination with a triple toe loop.,He completed four more triple jumps in his World Championship free skate.
+t028,technical_mechanism,0,5,6,He incorporated multiple triple Axels into free programs.,He performed two triple Axels in his clean free skate at the 2016 World Championships.
+t028,technical_mechanism,0,5,7,He incorporated multiple triple Axels into free programs.,He routinely executed additional triple jumps beyond the Axels.
+t028,technical_mechanism,0,5,8,He incorporated multiple triple Axels into free programs.,He completed four more triple jumps in his World Championship free skate.
+t028,technical_mechanism,0,6,7,He performed two triple Axels in his clean free skate at the 2016 World Championships.,He routinely executed additional triple jumps beyond the Axels.
+t028,technical_mechanism,0,6,8,He performed two triple Axels in his clean free skate at the 2016 World Championships.,He completed four more triple jumps in his World Championship free skate.
+t028,technical_mechanism,0,7,8,He routinely executed additional triple jumps beyond the Axels.,He completed four more triple jumps in his World Championship free skate.
+t028,technical_mechanism,1,0,1,He performed level-four spins consistently in competition.,He recorded two level-four spins in the short program at the 2016 World Championships.
+t028,technical_mechanism,1,0,2,He performed level-four spins consistently in competition.,He achieved level-four footwork sequences in multiple events.
+t028,technical_mechanism,1,1,2,He recorded two level-four spins in the short program at the 2016 World Championships.,He achieved level-four footwork sequences in multiple events.
+t028,impact_application,0,0,1,Riku Miura trained with Takeshi Honda in Japan.,Riku Miura traveled to Canada two to three weeks at a time to work with Canadian pair coach Bruno Marcotte.
+t028,controversy_limitation,1,0,1,Andrews placed seventh at the 2025 CS Nepela Memorial.,Andrews placed twelfth at the 2025 CS Trialeti Trophy.
+t028,controversy_limitation,1,0,2,Andrews placed seventh at the 2025 CS Nepela Memorial.,These events occurred at the start of the 2025–26 season.
+t028,controversy_limitation,1,0,3,Andrews placed seventh at the 2025 CS Nepela Memorial.,Andrews finished fifth at the 2025 Skate America.
+t028,controversy_limitation,1,0,4,Andrews placed seventh at the 2025 CS Nepela Memorial.,"At the 2025 Skate America, Andrews delivered two clean programs."
+t028,controversy_limitation,1,0,5,Andrews placed seventh at the 2025 CS Nepela Memorial.,"At the 2025 Skate America, Andrews earned new personal bests."
+t028,controversy_limitation,1,0,6,Andrews placed seventh at the 2025 CS Nepela Memorial.,Andrews placed fifth at the 2025 CS Tallinn Trophy.
+t028,controversy_limitation,1,0,7,Andrews placed seventh at the 2025 CS Nepela Memorial.,Andrews placed seventh at the 2026 U.S. Championships.
+t028,controversy_limitation,1,0,8,Andrews placed seventh at the 2025 CS Nepela Memorial.,Andrews was eighth after the short program at the 2026 Four Continents.
+t028,controversy_limitation,1,0,9,Andrews placed seventh at the 2025 CS Nepela Memorial.,Andrews dropped to fifteenth overall at the 2026 Four Continents after the free skate.
+t028,controversy_limitation,1,1,2,Andrews placed twelfth at the 2025 CS Trialeti Trophy.,These events occurred at the start of the 2025–26 season.
+t028,controversy_limitation,1,1,3,Andrews placed twelfth at the 2025 CS Trialeti Trophy.,Andrews finished fifth at the 2025 Skate America.
+t028,controversy_limitation,1,1,4,Andrews placed twelfth at the 2025 CS Trialeti Trophy.,"At the 2025 Skate America, Andrews delivered two clean programs."
+t028,controversy_limitation,1,1,5,Andrews placed twelfth at the 2025 CS Trialeti Trophy.,"At the 2025 Skate America, Andrews earned new personal bests."
+t028,controversy_limitation,1,1,6,Andrews placed twelfth at the 2025 CS Trialeti Trophy.,Andrews placed fifth at the 2025 CS Tallinn Trophy.
+t028,controversy_limitation,1,1,7,Andrews placed twelfth at the 2025 CS Trialeti Trophy.,Andrews placed seventh at the 2026 U.S. Championships.
+t028,controversy_limitation,1,1,8,Andrews placed twelfth at the 2025 CS Trialeti Trophy.,Andrews was eighth after the short program at the 2026 Four Continents.
+t028,controversy_limitation,1,1,9,Andrews placed twelfth at the 2025 CS Trialeti Trophy.,Andrews dropped to fifteenth overall at the 2026 Four Continents after the free skate.
+t028,controversy_limitation,1,2,3,These events occurred at the start of the 2025–26 season.,Andrews finished fifth at the 2025 Skate America.
+t028,controversy_limitation,1,2,4,These events occurred at the start of the 2025–26 season.,"At the 2025 Skate America, Andrews delivered two clean programs."
+t028,controversy_limitation,1,2,5,These events occurred at the start of the 2025–26 season.,"At the 2025 Skate America, Andrews earned new personal bests."
+t028,controversy_limitation,1,2,6,These events occurred at the start of the 2025–26 season.,Andrews placed fifth at the 2025 CS Tallinn Trophy.
+t028,controversy_limitation,1,2,7,These events occurred at the start of the 2025–26 season.,Andrews placed seventh at the 2026 U.S. Championships.
+t028,controversy_limitation,1,2,8,These events occurred at the start of the 2025–26 season.,Andrews was eighth after the short program at the 2026 Four Continents.
+t028,controversy_limitation,1,2,9,These events occurred at the start of the 2025–26 season.,Andrews dropped to fifteenth overall at the 2026 Four Continents after the free skate.
+t028,controversy_limitation,1,3,4,Andrews finished fifth at the 2025 Skate America.,"At the 2025 Skate America, Andrews delivered two clean programs."
+t028,controversy_limitation,1,3,5,Andrews finished fifth at the 2025 Skate America.,"At the 2025 Skate America, Andrews earned new personal bests."
+t028,controversy_limitation,1,3,6,Andrews finished fifth at the 2025 Skate America.,Andrews placed fifth at the 2025 CS Tallinn Trophy.
+t028,controversy_limitation,1,3,7,Andrews finished fifth at the 2025 Skate America.,Andrews placed seventh at the 2026 U.S. Championships.
+t028,controversy_limitation,1,3,8,Andrews finished fifth at the 2025 Skate America.,Andrews was eighth after the short program at the 2026 Four Continents.
+t028,controversy_limitation,1,3,9,Andrews finished fifth at the 2025 Skate America.,Andrews dropped to fifteenth overall at the 2026 Four Continents after the free skate.
+t028,controversy_limitation,1,4,5,"At the 2025 Skate America, Andrews delivered two clean programs.","At the 2025 Skate America, Andrews earned new personal bests."
+t028,controversy_limitation,1,4,6,"At the 2025 Skate America, Andrews delivered two clean programs.",Andrews placed fifth at the 2025 CS Tallinn Trophy.
+t028,controversy_limitation,1,4,7,"At the 2025 Skate America, Andrews delivered two clean programs.",Andrews placed seventh at the 2026 U.S. Championships.
+t028,controversy_limitation,1,4,8,"At the 2025 Skate America, Andrews delivered two clean programs.",Andrews was eighth after the short program at the 2026 Four Continents.
+t028,controversy_limitation,1,4,9,"At the 2025 Skate America, Andrews delivered two clean programs.",Andrews dropped to fifteenth overall at the 2026 Four Continents after the free skate.
+t028,controversy_limitation,1,5,6,"At the 2025 Skate America, Andrews earned new personal bests.",Andrews placed fifth at the 2025 CS Tallinn Trophy.
+t028,controversy_limitation,1,5,7,"At the 2025 Skate America, Andrews earned new personal bests.",Andrews placed seventh at the 2026 U.S. Championships.
+t028,controversy_limitation,1,5,8,"At the 2025 Skate America, Andrews earned new personal bests.",Andrews was eighth after the short program at the 2026 Four Continents.
+t028,controversy_limitation,1,5,9,"At the 2025 Skate America, Andrews earned new personal bests.",Andrews dropped to fifteenth overall at the 2026 Four Continents after the free skate.
+t028,controversy_limitation,1,6,7,Andrews placed fifth at the 2025 CS Tallinn Trophy.,Andrews placed seventh at the 2026 U.S. Championships.
+t028,controversy_limitation,1,6,8,Andrews placed fifth at the 2025 CS Tallinn Trophy.,Andrews was eighth after the short program at the 2026 Four Continents.
+t028,controversy_limitation,1,6,9,Andrews placed fifth at the 2025 CS Tallinn Trophy.,Andrews dropped to fifteenth overall at the 2026 Four Continents after the free skate.
+t028,controversy_limitation,1,7,8,Andrews placed seventh at the 2026 U.S. Championships.,Andrews was eighth after the short program at the 2026 Four Continents.
+t028,controversy_limitation,1,7,9,Andrews placed seventh at the 2026 U.S. Championships.,Andrews dropped to fifteenth overall at the 2026 Four Continents after the free skate.
+t028,controversy_limitation,1,8,9,Andrews was eighth after the short program at the 2026 Four Continents.,Andrews dropped to fifteenth overall at the 2026 Four Continents after the free skate.
+t031,overview_factual,1,0,1,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,"On November 30, 2004, Shinya Hashimoto gave up ownership."
+t031,overview_factual,1,0,2,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,"A new parent company called First On Stage was formed on November 30, 2004."
+t031,overview_factual,1,0,3,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,First On Stage's president was Yoshiyuki Nakamura.
+t031,overview_factual,1,0,4,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,Ring announcer Oki Okidata was part of First On Stage.
+t031,overview_factual,1,0,5,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,Shinjiro Otani was part of First On Stage.
+t031,overview_factual,1,0,6,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,First On Stage renamed the promotion to Pro Wrestling Zero1-Max.
+t031,overview_factual,1,0,7,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,Shinjiro Otani and Yoshiyuki Nakamura took over general operations.
+t031,overview_factual,1,0,8,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,In 2016 Dream On Stage was announced as Zero1's new parent company.
+t031,overview_factual,1,0,9,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,In 2018 Yoshitaka Ono stepped down from management.
+t031,overview_factual,1,0,10,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,0,11,Shinya Hashimoto was the original founder and owner of the promotion in its early years.,In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,1,2,"On November 30, 2004, Shinya Hashimoto gave up ownership.","A new parent company called First On Stage was formed on November 30, 2004."
+t031,overview_factual,1,1,3,"On November 30, 2004, Shinya Hashimoto gave up ownership.",First On Stage's president was Yoshiyuki Nakamura.
+t031,overview_factual,1,1,4,"On November 30, 2004, Shinya Hashimoto gave up ownership.",Ring announcer Oki Okidata was part of First On Stage.
+t031,overview_factual,1,1,5,"On November 30, 2004, Shinya Hashimoto gave up ownership.",Shinjiro Otani was part of First On Stage.
+t031,overview_factual,1,1,6,"On November 30, 2004, Shinya Hashimoto gave up ownership.",First On Stage renamed the promotion to Pro Wrestling Zero1-Max.
+t031,overview_factual,1,1,7,"On November 30, 2004, Shinya Hashimoto gave up ownership.",Shinjiro Otani and Yoshiyuki Nakamura took over general operations.
+t031,overview_factual,1,1,8,"On November 30, 2004, Shinya Hashimoto gave up ownership.",In 2016 Dream On Stage was announced as Zero1's new parent company.
+t031,overview_factual,1,1,9,"On November 30, 2004, Shinya Hashimoto gave up ownership.",In 2018 Yoshitaka Ono stepped down from management.
+t031,overview_factual,1,1,10,"On November 30, 2004, Shinya Hashimoto gave up ownership.",In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,1,11,"On November 30, 2004, Shinya Hashimoto gave up ownership.",In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,2,3,"A new parent company called First On Stage was formed on November 30, 2004.",First On Stage's president was Yoshiyuki Nakamura.
+t031,overview_factual,1,2,4,"A new parent company called First On Stage was formed on November 30, 2004.",Ring announcer Oki Okidata was part of First On Stage.
+t031,overview_factual,1,2,5,"A new parent company called First On Stage was formed on November 30, 2004.",Shinjiro Otani was part of First On Stage.
+t031,overview_factual,1,2,6,"A new parent company called First On Stage was formed on November 30, 2004.",First On Stage renamed the promotion to Pro Wrestling Zero1-Max.
+t031,overview_factual,1,2,7,"A new parent company called First On Stage was formed on November 30, 2004.",Shinjiro Otani and Yoshiyuki Nakamura took over general operations.
+t031,overview_factual,1,2,8,"A new parent company called First On Stage was formed on November 30, 2004.",In 2016 Dream On Stage was announced as Zero1's new parent company.
+t031,overview_factual,1,2,9,"A new parent company called First On Stage was formed on November 30, 2004.",In 2018 Yoshitaka Ono stepped down from management.
+t031,overview_factual,1,2,10,"A new parent company called First On Stage was formed on November 30, 2004.",In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,2,11,"A new parent company called First On Stage was formed on November 30, 2004.",In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,3,4,First On Stage's president was Yoshiyuki Nakamura.,Ring announcer Oki Okidata was part of First On Stage.
+t031,overview_factual,1,3,5,First On Stage's president was Yoshiyuki Nakamura.,Shinjiro Otani was part of First On Stage.
+t031,overview_factual,1,3,6,First On Stage's president was Yoshiyuki Nakamura.,First On Stage renamed the promotion to Pro Wrestling Zero1-Max.
+t031,overview_factual,1,3,7,First On Stage's president was Yoshiyuki Nakamura.,Shinjiro Otani and Yoshiyuki Nakamura took over general operations.
+t031,overview_factual,1,3,8,First On Stage's president was Yoshiyuki Nakamura.,In 2016 Dream On Stage was announced as Zero1's new parent company.
+t031,overview_factual,1,3,9,First On Stage's president was Yoshiyuki Nakamura.,In 2018 Yoshitaka Ono stepped down from management.
+t031,overview_factual,1,3,10,First On Stage's president was Yoshiyuki Nakamura.,In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,3,11,First On Stage's president was Yoshiyuki Nakamura.,In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,4,5,Ring announcer Oki Okidata was part of First On Stage.,Shinjiro Otani was part of First On Stage.
+t031,overview_factual,1,4,6,Ring announcer Oki Okidata was part of First On Stage.,First On Stage renamed the promotion to Pro Wrestling Zero1-Max.
+t031,overview_factual,1,4,7,Ring announcer Oki Okidata was part of First On Stage.,Shinjiro Otani and Yoshiyuki Nakamura took over general operations.
+t031,overview_factual,1,4,8,Ring announcer Oki Okidata was part of First On Stage.,In 2016 Dream On Stage was announced as Zero1's new parent company.
+t031,overview_factual,1,4,9,Ring announcer Oki Okidata was part of First On Stage.,In 2018 Yoshitaka Ono stepped down from management.
+t031,overview_factual,1,4,10,Ring announcer Oki Okidata was part of First On Stage.,In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,4,11,Ring announcer Oki Okidata was part of First On Stage.,In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,5,6,Shinjiro Otani was part of First On Stage.,First On Stage renamed the promotion to Pro Wrestling Zero1-Max.
+t031,overview_factual,1,5,7,Shinjiro Otani was part of First On Stage.,Shinjiro Otani and Yoshiyuki Nakamura took over general operations.
+t031,overview_factual,1,5,8,Shinjiro Otani was part of First On Stage.,In 2016 Dream On Stage was announced as Zero1's new parent company.
+t031,overview_factual,1,5,9,Shinjiro Otani was part of First On Stage.,In 2018 Yoshitaka Ono stepped down from management.
+t031,overview_factual,1,5,10,Shinjiro Otani was part of First On Stage.,In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,5,11,Shinjiro Otani was part of First On Stage.,In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,6,7,First On Stage renamed the promotion to Pro Wrestling Zero1-Max.,Shinjiro Otani and Yoshiyuki Nakamura took over general operations.
+t031,overview_factual,1,6,8,First On Stage renamed the promotion to Pro Wrestling Zero1-Max.,In 2016 Dream On Stage was announced as Zero1's new parent company.
+t031,overview_factual,1,6,9,First On Stage renamed the promotion to Pro Wrestling Zero1-Max.,In 2018 Yoshitaka Ono stepped down from management.
+t031,overview_factual,1,6,10,First On Stage renamed the promotion to Pro Wrestling Zero1-Max.,In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,6,11,First On Stage renamed the promotion to Pro Wrestling Zero1-Max.,In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,7,8,Shinjiro Otani and Yoshiyuki Nakamura took over general operations.,In 2016 Dream On Stage was announced as Zero1's new parent company.
+t031,overview_factual,1,7,9,Shinjiro Otani and Yoshiyuki Nakamura took over general operations.,In 2018 Yoshitaka Ono stepped down from management.
+t031,overview_factual,1,7,10,Shinjiro Otani and Yoshiyuki Nakamura took over general operations.,In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,7,11,Shinjiro Otani and Yoshiyuki Nakamura took over general operations.,In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,8,9,In 2016 Dream On Stage was announced as Zero1's new parent company.,In 2018 Yoshitaka Ono stepped down from management.
+t031,overview_factual,1,8,10,In 2016 Dream On Stage was announced as Zero1's new parent company.,In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,8,11,In 2016 Dream On Stage was announced as Zero1's new parent company.,In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,9,10,In 2018 Yoshitaka Ono stepped down from management.,In 2018 Katsumi Sasazaki was appointed representative director and president.
+t031,overview_factual,1,9,11,In 2018 Yoshitaka Ono stepped down from management.,In 2018 Shinjiro Otani became chairman of the board.
+t031,overview_factual,1,10,11,In 2018 Katsumi Sasazaki was appointed representative director and president.,In 2018 Shinjiro Otani became chairman of the board.
+t031,technical_mechanism,0,0,1,The promotion has used storyline devices that award and then revoke titles as part of angles.,A title was initially forfeited due to an alleged injury and then later contested in a match to settle the matter.
+t031,technical_mechanism,1,0,1,Factions appear on cards as allied groups that back talent and compete in multi-man matches.,American Top Team backed Dos Santos and teamed in a trios match on AEW programming.
+t031,technical_mechanism,2,0,1,The promotion has employed developmental placements for talent.,Wrestlers were sent to the Heartland Wrestling Association before main roster usage.
+t031,technical_mechanism,3,0,1,The promotion has used single-elimination tournaments to determine inaugural or top title holders.,A four-woman single-elimination tournament was used to crown the first Strong Women's Champion.
+t031,technical_mechanism,4,0,1,The promotion has used storyline substitutions and angle-driven resolutions when incumbents are claimed injured.,The promotion has at times initially awarded a title by forfeit and then later held a match to determine the champion.
+t031,impact_application,1,0,1,Zero1's working agreements enabled Zero1 wrestlers to challenge for other promotions' titles.,Zero1's working agreements enabled Zero1 wrestlers to hold other promotions' titles.
+t031,impact_application,1,0,2,Zero1's working agreements enabled Zero1 wrestlers to challenge for other promotions' titles.,Zero1 operated its own dojo called the Takeshiba Coliseum.
+t031,impact_application,1,0,3,Zero1's working agreements enabled Zero1 wrestlers to challenge for other promotions' titles.,The Takeshiba Coliseum trained talent for in-ring careers.
+t031,impact_application,1,1,2,Zero1's working agreements enabled Zero1 wrestlers to hold other promotions' titles.,Zero1 operated its own dojo called the Takeshiba Coliseum.
+t031,impact_application,1,1,3,Zero1's working agreements enabled Zero1 wrestlers to hold other promotions' titles.,The Takeshiba Coliseum trained talent for in-ring careers.
+t031,impact_application,1,2,3,Zero1 operated its own dojo called the Takeshiba Coliseum.,The Takeshiba Coliseum trained talent for in-ring careers.
+t031,impact_application,3,0,1,Zero1 joined the Global Professional Wrestling Alliance to foster cooperation among member promotions.,"Zero1 planned occasional ""Super Shows"" with cross-promotional cards."
+t031,impact_application,3,0,2,Zero1 joined the Global Professional Wrestling Alliance to foster cooperation among member promotions.,GPWA membership and title-challenge agreements allowed Zero1 talent to participate in interpromotional matches.
+t031,impact_application,3,0,3,Zero1 joined the Global Professional Wrestling Alliance to foster cooperation among member promotions.,GPWA membership and title-challenge agreements allowed Zero1 talent to participate in interpromotional defenses.
+t031,impact_application,3,1,2,"Zero1 planned occasional ""Super Shows"" with cross-promotional cards.",GPWA membership and title-challenge agreements allowed Zero1 talent to participate in interpromotional matches.
+t031,impact_application,3,1,3,"Zero1 planned occasional ""Super Shows"" with cross-promotional cards.",GPWA membership and title-challenge agreements allowed Zero1 talent to participate in interpromotional defenses.
+t031,impact_application,3,2,3,GPWA membership and title-challenge agreements allowed Zero1 talent to participate in interpromotional matches.,GPWA membership and title-challenge agreements allowed Zero1 talent to participate in interpromotional defenses.
+t031,controversy_limitation,0,0,1,The promotion has held yearly pay-per-view events at the Yasukuni Shrine since April 2005.,The Yasukuni Shrine is controversial due to its relation to World War II.
+t031,controversy_limitation,0,0,2,The promotion has held yearly pay-per-view events at the Yasukuni Shrine since April 2005.,Larger Japanese wrestling promotions have traditionally stayed away from such venues due to their controversial nature.
+t031,controversy_limitation,0,1,2,The Yasukuni Shrine is controversial due to its relation to World War II.,Larger Japanese wrestling promotions have traditionally stayed away from such venues due to their controversial nature.
+t031,controversy_limitation,2,0,1,Media and industry critics criticized the choice to hold events at the Yasukuni Shrine.,The promotion maintained working agreements with multiple other promotions in its early years.
+t031,controversy_limitation,2,0,2,Media and industry critics criticized the choice to hold events at the Yasukuni Shrine.,These working agreements enabled cross-promotion title challenges and exchanges.
+t031,controversy_limitation,2,1,2,The promotion maintained working agreements with multiple other promotions in its early years.,These working agreements enabled cross-promotion title challenges and exchanges.
+t031,controversy_limitation,3,0,1,"Shinya Hashimoto gave up ownership of the promotion on November 30, 2004, citing financial problems.",A new parent company called First On Stage was formed.
+t031,controversy_limitation,3,0,2,"Shinya Hashimoto gave up ownership of the promotion on November 30, 2004, citing financial problems.",The promotion was renamed Pro Wrestling Zero1-Max under new leadership.
+t031,controversy_limitation,3,0,3,"Shinya Hashimoto gave up ownership of the promotion on November 30, 2004, citing financial problems.",The promotion joined AWA Superstars of Wrestling after the ownership change.
+t031,controversy_limitation,3,0,4,"Shinya Hashimoto gave up ownership of the promotion on November 30, 2004, citing financial problems.",The promotion later joined the Global Professional Wrestling Alliance in 2006.
+t031,controversy_limitation,3,1,2,A new parent company called First On Stage was formed.,The promotion was renamed Pro Wrestling Zero1-Max under new leadership.
+t031,controversy_limitation,3,1,3,A new parent company called First On Stage was formed.,The promotion joined AWA Superstars of Wrestling after the ownership change.
+t031,controversy_limitation,3,1,4,A new parent company called First On Stage was formed.,The promotion later joined the Global Professional Wrestling Alliance in 2006.
+t031,controversy_limitation,3,2,3,The promotion was renamed Pro Wrestling Zero1-Max under new leadership.,The promotion joined AWA Superstars of Wrestling after the ownership change.
+t031,controversy_limitation,3,2,4,The promotion was renamed Pro Wrestling Zero1-Max under new leadership.,The promotion later joined the Global Professional Wrestling Alliance in 2006.
+t031,controversy_limitation,3,3,4,The promotion joined AWA Superstars of Wrestling after the ownership change.,The promotion later joined the Global Professional Wrestling Alliance in 2006.
+t033,overview_factual,1,0,1,England lost the 2014 Women's World Twenty20 final to Australia.,England won the 2013–14 Women's Ashes series.
+t033,overview_factual,3,0,1,County Championship cricket has been part of the domestic structure supporting players.,The Women's Twenty20 Cup has been part of the domestic structure supporting players.
+t033,overview_factual,3,0,2,County Championship cricket has been part of the domestic structure supporting players.,The Women's Cricket Super League was a domestic T20 competition.
+t033,overview_factual,3,0,3,County Championship cricket has been part of the domestic structure supporting players.,Surrey Stars won the Women's Cricket Super League in 2018.
+t033,overview_factual,3,0,4,County Championship cricket has been part of the domestic structure supporting players.,Players from Surrey Stars progressed to national selection.
+t033,overview_factual,3,0,5,County Championship cricket has been part of the domestic structure supporting players.,The Rachael Heyhoe Flint Trophy has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,0,6,County Championship cricket has been part of the domestic structure supporting players.,The Charlotte Edwards Cup has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,0,7,County Championship cricket has been part of the domestic structure supporting players.,The Hundred has featured England women's players.
+t033,overview_factual,3,0,8,County Championship cricket has been part of the domestic structure supporting players.,The Hundred contributed to player development for the national side.
+t033,overview_factual,3,1,2,The Women's Twenty20 Cup has been part of the domestic structure supporting players.,The Women's Cricket Super League was a domestic T20 competition.
+t033,overview_factual,3,1,3,The Women's Twenty20 Cup has been part of the domestic structure supporting players.,Surrey Stars won the Women's Cricket Super League in 2018.
+t033,overview_factual,3,1,4,The Women's Twenty20 Cup has been part of the domestic structure supporting players.,Players from Surrey Stars progressed to national selection.
+t033,overview_factual,3,1,5,The Women's Twenty20 Cup has been part of the domestic structure supporting players.,The Rachael Heyhoe Flint Trophy has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,1,6,The Women's Twenty20 Cup has been part of the domestic structure supporting players.,The Charlotte Edwards Cup has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,1,7,The Women's Twenty20 Cup has been part of the domestic structure supporting players.,The Hundred has featured England women's players.
+t033,overview_factual,3,1,8,The Women's Twenty20 Cup has been part of the domestic structure supporting players.,The Hundred contributed to player development for the national side.
+t033,overview_factual,3,2,3,The Women's Cricket Super League was a domestic T20 competition.,Surrey Stars won the Women's Cricket Super League in 2018.
+t033,overview_factual,3,2,4,The Women's Cricket Super League was a domestic T20 competition.,Players from Surrey Stars progressed to national selection.
+t033,overview_factual,3,2,5,The Women's Cricket Super League was a domestic T20 competition.,The Rachael Heyhoe Flint Trophy has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,2,6,The Women's Cricket Super League was a domestic T20 competition.,The Charlotte Edwards Cup has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,2,7,The Women's Cricket Super League was a domestic T20 competition.,The Hundred has featured England women's players.
+t033,overview_factual,3,2,8,The Women's Cricket Super League was a domestic T20 competition.,The Hundred contributed to player development for the national side.
+t033,overview_factual,3,3,4,Surrey Stars won the Women's Cricket Super League in 2018.,Players from Surrey Stars progressed to national selection.
+t033,overview_factual,3,3,5,Surrey Stars won the Women's Cricket Super League in 2018.,The Rachael Heyhoe Flint Trophy has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,3,6,Surrey Stars won the Women's Cricket Super League in 2018.,The Charlotte Edwards Cup has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,3,7,Surrey Stars won the Women's Cricket Super League in 2018.,The Hundred has featured England women's players.
+t033,overview_factual,3,3,8,Surrey Stars won the Women's Cricket Super League in 2018.,The Hundred contributed to player development for the national side.
+t033,overview_factual,3,4,5,Players from Surrey Stars progressed to national selection.,The Rachael Heyhoe Flint Trophy has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,4,6,Players from Surrey Stars progressed to national selection.,The Charlotte Edwards Cup has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,4,7,Players from Surrey Stars progressed to national selection.,The Hundred has featured England women's players.
+t033,overview_factual,3,4,8,Players from Surrey Stars progressed to national selection.,The Hundred contributed to player development for the national side.
+t033,overview_factual,3,5,6,The Rachael Heyhoe Flint Trophy has been part of the regional domestic structure used by national players.,The Charlotte Edwards Cup has been part of the regional domestic structure used by national players.
+t033,overview_factual,3,5,7,The Rachael Heyhoe Flint Trophy has been part of the regional domestic structure used by national players.,The Hundred has featured England women's players.
+t033,overview_factual,3,5,8,The Rachael Heyhoe Flint Trophy has been part of the regional domestic structure used by national players.,The Hundred contributed to player development for the national side.
+t033,overview_factual,3,6,7,The Charlotte Edwards Cup has been part of the regional domestic structure used by national players.,The Hundred has featured England women's players.
+t033,overview_factual,3,6,8,The Charlotte Edwards Cup has been part of the regional domestic structure used by national players.,The Hundred contributed to player development for the national side.
+t033,overview_factual,3,7,8,The Hundred has featured England women's players.,The Hundred contributed to player development for the national side.
+t033,technical_mechanism,0,0,1,Mady Villiers progressed through age-group cricket for Essex beginning in 2012.,Mady Villiers made her first-team county debut in 2013.
+t033,technical_mechanism,0,0,2,Mady Villiers progressed through age-group cricket for Essex beginning in 2012.,Villiers' progression demonstrates a county age-group to senior county pathway in practice.
+t033,technical_mechanism,0,0,3,Mady Villiers progressed through age-group cricket for Essex beginning in 2012.,Villiers played in county-level competitions such as the County Championship and the Women's Twenty20 Cup.
+t033,technical_mechanism,0,0,4,Mady Villiers progressed through age-group cricket for Essex beginning in 2012.,"Villiers advanced to regional and franchise teams including Surrey Stars, Sunrisers, and Oval Invincibles."
+t033,technical_mechanism,0,0,5,Mady Villiers progressed through age-group cricket for Essex beginning in 2012.,Villiers later signed a three-year contract with Durham.
+t033,technical_mechanism,0,0,6,Mady Villiers progressed through age-group cricket for Essex beginning in 2012.,Villiers' movements indicate movement from county to regional/franchise and contracted county roles within the domestic system.
+t033,technical_mechanism,0,0,7,Mady Villiers progressed through age-group cricket for Essex beginning in 2012.,Villiers' participation illustrates that regional academies and performance centres are linked to domestic competitions through player involvement and team membership.
+t033,technical_mechanism,0,1,2,Mady Villiers made her first-team county debut in 2013.,Villiers' progression demonstrates a county age-group to senior county pathway in practice.
+t033,technical_mechanism,0,1,3,Mady Villiers made her first-team county debut in 2013.,Villiers played in county-level competitions such as the County Championship and the Women's Twenty20 Cup.
+t033,technical_mechanism,0,1,4,Mady Villiers made her first-team county debut in 2013.,"Villiers advanced to regional and franchise teams including Surrey Stars, Sunrisers, and Oval Invincibles."
+t033,technical_mechanism,0,1,5,Mady Villiers made her first-team county debut in 2013.,Villiers later signed a three-year contract with Durham.
+t033,technical_mechanism,0,1,6,Mady Villiers made her first-team county debut in 2013.,Villiers' movements indicate movement from county to regional/franchise and contracted county roles within the domestic system.
+t033,technical_mechanism,0,1,7,Mady Villiers made her first-team county debut in 2013.,Villiers' participation illustrates that regional academies and performance centres are linked to domestic competitions through player involvement and team membership.
+t033,technical_mechanism,0,2,3,Villiers' progression demonstrates a county age-group to senior county pathway in practice.,Villiers played in county-level competitions such as the County Championship and the Women's Twenty20 Cup.
+t033,technical_mechanism,0,2,4,Villiers' progression demonstrates a county age-group to senior county pathway in practice.,"Villiers advanced to regional and franchise teams including Surrey Stars, Sunrisers, and Oval Invincibles."
+t033,technical_mechanism,0,2,5,Villiers' progression demonstrates a county age-group to senior county pathway in practice.,Villiers later signed a three-year contract with Durham.
+t033,technical_mechanism,0,2,6,Villiers' progression demonstrates a county age-group to senior county pathway in practice.,Villiers' movements indicate movement from county to regional/franchise and contracted county roles within the domestic system.
+t033,technical_mechanism,0,2,7,Villiers' progression demonstrates a county age-group to senior county pathway in practice.,Villiers' participation illustrates that regional academies and performance centres are linked to domestic competitions through player involvement and team membership.
+t033,technical_mechanism,0,3,4,Villiers played in county-level competitions such as the County Championship and the Women's Twenty20 Cup.,"Villiers advanced to regional and franchise teams including Surrey Stars, Sunrisers, and Oval Invincibles."
+t033,technical_mechanism,0,3,5,Villiers played in county-level competitions such as the County Championship and the Women's Twenty20 Cup.,Villiers later signed a three-year contract with Durham.
+t033,technical_mechanism,0,3,6,Villiers played in county-level competitions such as the County Championship and the Women's Twenty20 Cup.,Villiers' movements indicate movement from county to regional/franchise and contracted county roles within the domestic system.
+t033,technical_mechanism,0,3,7,Villiers played in county-level competitions such as the County Championship and the Women's Twenty20 Cup.,Villiers' participation illustrates that regional academies and performance centres are linked to domestic competitions through player involvement and team membership.
+t033,technical_mechanism,0,4,5,"Villiers advanced to regional and franchise teams including Surrey Stars, Sunrisers, and Oval Invincibles.",Villiers later signed a three-year contract with Durham.
+t033,technical_mechanism,0,4,6,"Villiers advanced to regional and franchise teams including Surrey Stars, Sunrisers, and Oval Invincibles.",Villiers' movements indicate movement from county to regional/franchise and contracted county roles within the domestic system.
+t033,technical_mechanism,0,4,7,"Villiers advanced to regional and franchise teams including Surrey Stars, Sunrisers, and Oval Invincibles.",Villiers' participation illustrates that regional academies and performance centres are linked to domestic competitions through player involvement and team membership.
+t033,technical_mechanism,0,5,6,Villiers later signed a three-year contract with Durham.,Villiers' movements indicate movement from county to regional/franchise and contracted county roles within the domestic system.
+t033,technical_mechanism,0,5,7,Villiers later signed a three-year contract with Durham.,Villiers' participation illustrates that regional academies and performance centres are linked to domestic competitions through player involvement and team membership.
+t033,technical_mechanism,0,6,7,Villiers' movements indicate movement from county to regional/franchise and contracted county roles within the domestic system.,Villiers' participation illustrates that regional academies and performance centres are linked to domestic competitions through player involvement and team membership.
+t033,technical_mechanism,2,0,1,"Villiers participated in the KSL, Rachael Heyhoe Flint Trophy, Charlotte Edwards Cup, and The Hundred.","Villiers played and took wickets across multiple domestic competitions including the County Championship, Women's Twenty20 Cup, KSL, Rachael Heyhoe Flint Trophy, Charlotte Edwards Cup, and The Hundred."
+t033,technical_mechanism,1,0,1,Mady Villiers was named in her first England squad for the T20I series against Australia in July 2019.,Villiers was named in a 24-player training squad in June 2020 ahead of international fixtures.
+t033,impact_application,0,0,1,England has provided the most venues for women's Twenty20 Internationals.,Twenty-seven grounds in England have hosted women's Twenty20 International matches.
+t033,controversy_limitation,1,0,1,The England women's cricket team represents England.,The England women's cricket team represents Wales.
+t033,controversy_limitation,1,0,2,The England women's cricket team represents England.,The England women's cricket team is part of the England and Wales Cricket Board (ECB).
+t033,controversy_limitation,1,1,2,The England women's cricket team represents Wales.,The England women's cricket team is part of the England and Wales Cricket Board (ECB).
+t037,overview_factual,2,0,1,Senior men's singles have been included in Latvian championships.,Senior women's singles have been included in Latvian championships.
+t037,overview_factual,2,0,2,Senior men's singles have been included in Latvian championships.,Pair skating has been included in Latvian championships.
+t037,overview_factual,2,0,3,Senior men's singles have been included in Latvian championships.,Ice dance has been included in Latvian championships.
+t037,overview_factual,2,1,2,Senior women's singles have been included in Latvian championships.,Pair skating has been included in Latvian championships.
+t037,overview_factual,2,1,3,Senior women's singles have been included in Latvian championships.,Ice dance has been included in Latvian championships.
+t037,overview_factual,2,2,3,Pair skating has been included in Latvian championships.,Ice dance has been included in Latvian championships.
+t037,overview_factual,3,0,1,Latvian national championships have been held since at least 1992.,The championships were combined with Lithuania in 2010.
+t037,overview_factual,3,0,2,Latvian national championships have been held since at least 1992.,The championships were combined with Lithuania in 2017.
+t037,overview_factual,3,0,3,Latvian national championships have been held since at least 1992.,The Latvian Open served as the national championships in 2012.
+t037,overview_factual,3,0,4,Latvian national championships have been held since at least 1992.,The Latvian Open was later renamed the Latvian Trophy.
+t037,overview_factual,3,0,5,Latvian national championships have been held since at least 1992.,The Latvian Trophy served as the national championships in 2022.
+t037,overview_factual,3,1,2,The championships were combined with Lithuania in 2010.,The championships were combined with Lithuania in 2017.
+t037,overview_factual,3,1,3,The championships were combined with Lithuania in 2010.,The Latvian Open served as the national championships in 2012.
+t037,overview_factual,3,1,4,The championships were combined with Lithuania in 2010.,The Latvian Open was later renamed the Latvian Trophy.
+t037,overview_factual,3,1,5,The championships were combined with Lithuania in 2010.,The Latvian Trophy served as the national championships in 2022.
+t037,overview_factual,3,2,3,The championships were combined with Lithuania in 2017.,The Latvian Open served as the national championships in 2012.
+t037,overview_factual,3,2,4,The championships were combined with Lithuania in 2017.,The Latvian Open was later renamed the Latvian Trophy.
+t037,overview_factual,3,2,5,The championships were combined with Lithuania in 2017.,The Latvian Trophy served as the national championships in 2022.
+t037,overview_factual,3,3,4,The Latvian Open served as the national championships in 2012.,The Latvian Open was later renamed the Latvian Trophy.
+t037,overview_factual,3,3,5,The Latvian Open served as the national championships in 2012.,The Latvian Trophy served as the national championships in 2022.
+t037,overview_factual,3,4,5,The Latvian Open was later renamed the Latvian Trophy.,The Latvian Trophy served as the national championships in 2022.
+t037,technical_mechanism,1,0,1,"National champions were recognized from combined international events such as the Latvian Open/Latvian Trophy when the event also served as the national championships in 2012, 2022, and 2023.",Skaters signed contracts with the Latvian Skating Association as national team members.
+t037,technical_mechanism,1,0,2,"National champions were recognized from combined international events such as the Latvian Open/Latvian Trophy when the event also served as the national championships in 2012, 2022, and 2023.",Skaters met to sign contracts in June 1993.
+t037,technical_mechanism,1,0,3,"National champions were recognized from combined international events such as the Latvian Open/Latvian Trophy when the event also served as the national championships in 2012, 2022, and 2023.",Nationality and release procedures affected eligibility for competition.
+t037,technical_mechanism,1,0,4,"National champions were recognized from combined international events such as the Latvian Open/Latvian Trophy when the event also served as the national championships in 2012, 2022, and 2023.",The German Ice Skating Union requested that Andrejs Vlaščenko be released to compete for Germany while he had been representing Latvia.
+t037,technical_mechanism,1,0,5,"National champions were recognized from combined international events such as the Latvian Open/Latvian Trophy when the event also served as the national championships in 2012, 2022, and 2023.",Organizers recognized the top Latvian skaters separately when championships were combined with other countries or international events.
+t037,technical_mechanism,1,1,2,Skaters signed contracts with the Latvian Skating Association as national team members.,Skaters met to sign contracts in June 1993.
+t037,technical_mechanism,1,1,3,Skaters signed contracts with the Latvian Skating Association as national team members.,Nationality and release procedures affected eligibility for competition.
+t037,technical_mechanism,1,1,4,Skaters signed contracts with the Latvian Skating Association as national team members.,The German Ice Skating Union requested that Andrejs Vlaščenko be released to compete for Germany while he had been representing Latvia.
+t037,technical_mechanism,1,1,5,Skaters signed contracts with the Latvian Skating Association as national team members.,Organizers recognized the top Latvian skaters separately when championships were combined with other countries or international events.
+t037,technical_mechanism,1,2,3,Skaters met to sign contracts in June 1993.,Nationality and release procedures affected eligibility for competition.
+t037,technical_mechanism,1,2,4,Skaters met to sign contracts in June 1993.,The German Ice Skating Union requested that Andrejs Vlaščenko be released to compete for Germany while he had been representing Latvia.
+t037,technical_mechanism,1,2,5,Skaters met to sign contracts in June 1993.,Organizers recognized the top Latvian skaters separately when championships were combined with other countries or international events.
+t037,technical_mechanism,1,3,4,Nationality and release procedures affected eligibility for competition.,The German Ice Skating Union requested that Andrejs Vlaščenko be released to compete for Germany while he had been representing Latvia.
+t037,technical_mechanism,1,3,5,Nationality and release procedures affected eligibility for competition.,Organizers recognized the top Latvian skaters separately when championships were combined with other countries or international events.
+t037,technical_mechanism,1,4,5,The German Ice Skating Union requested that Andrejs Vlaščenko be released to compete for Germany while he had been representing Latvia.,Organizers recognized the top Latvian skaters separately when championships were combined with other countries or international events.
+t037,technical_mechanism,2,0,1,A placement was annulled by the president of the Latvian Skating Association in 1993 when Andrejs Vlaščenko's second-place finish was annulled by Tatjana Strautmane.,The full presidium of the Latvian Skating Association voted to suspend a skater for the rest of the season following the 1993 controversy involving Andrejs Vlaščenko.
+t037,technical_mechanism,3,0,1,"Organizers invited guest skaters from neighboring countries like Estonia, Lithuania, Finland, and Russia to fill out competitions.",Organizers held combined championships with Lithuania in 2010 to address participation issues.
+t037,technical_mechanism,3,0,2,"Organizers invited guest skaters from neighboring countries like Estonia, Lithuania, Finland, and Russia to fill out competitions.",Organizers held combined championships with Lithuania in 2017 to address participation issues.
+t037,technical_mechanism,3,0,3,"Organizers invited guest skaters from neighboring countries like Estonia, Lithuania, Finland, and Russia to fill out competitions.",The Latvian Open was later renamed the Latvian Trophy.
+t037,technical_mechanism,3,1,2,Organizers held combined championships with Lithuania in 2010 to address participation issues.,Organizers held combined championships with Lithuania in 2017 to address participation issues.
+t037,technical_mechanism,3,1,3,Organizers held combined championships with Lithuania in 2010 to address participation issues.,The Latvian Open was later renamed the Latvian Trophy.
+t037,technical_mechanism,3,2,3,Organizers held combined championships with Lithuania in 2017 to address participation issues.,The Latvian Open was later renamed the Latvian Trophy.
+t037,controversy_limitation,1,0,1,Andrejs Vlaščenko allegedly refused his silver medal after the 1993 Latvian Championships.,Andrejs Vlaščenko allegedly threw away his diploma after the 1993 Latvian Championships.
+t037,controversy_limitation,2,0,1,Figure skating in Latvia has been hampered by a lack of available ice.,Figure skating in Latvia has been hampered by a lack of financing.
+t037,controversy_limitation,2,0,2,Figure skating in Latvia has been hampered by a lack of available ice.,Figure skating in Latvia has been hampered by a lack of public interest.
+t037,controversy_limitation,2,1,2,Figure skating in Latvia has been hampered by a lack of financing.,Figure skating in Latvia has been hampered by a lack of public interest.
+t038,technical_mechanism,3,0,1,Achimota School in Accra hosted Marylebone Cricket Club matches in January 1976.,The matches hosted by Achimota School in January 1976 demonstrated school-level cricket activity in Ghana.
+t038,impact_application,0,0,1,An MCC side played two matches at Accra's Achimota School in January 1976.,The matches were against an Accra side and the Ghanaian national side.
+t038,controversy_limitation,1,0,1,The West Africa Cricket Council lost significance in 2000 when Nigeria applied for separate membership of the ICC.,The West Africa Cricket Council was disbanded in 2003 after its members became ICC members in 2002.
+t038,controversy_limitation,3,0,1,Ghanaian cricketers played international matches only for the combined West African team until the West Africa Cricket Council lost significance and was disbanded in the early 2000s.,The West African side made its international debut at the 1982 ICC Trophy.
+t038,controversy_limitation,3,0,2,Ghanaian cricketers played international matches only for the combined West African team until the West Africa Cricket Council lost significance and was disbanded in the early 2000s.,The West African side represented several countries including Ghana rather than Ghana alone.
+t038,controversy_limitation,3,1,2,The West African side made its international debut at the 1982 ICC Trophy.,The West African side represented several countries including Ghana rather than Ghana alone.
+t039,overview_factual,0,0,1,She won Olympic gold in the team pursuit at the 2016 Summer Olympics.,She won Olympic silver in the team pursuit at the delayed 2020 Summer Olympics held in 2021.
+t039,overview_factual,0,0,2,She won Olympic gold in the team pursuit at the 2016 Summer Olympics.,She won Olympic bronze in the team pursuit at the 2024 Summer Olympics.
+t039,overview_factual,0,1,2,She won Olympic silver in the team pursuit at the delayed 2020 Summer Olympics held in 2021.,She won Olympic bronze in the team pursuit at the 2024 Summer Olympics.
+t039,overview_factual,1,0,1,She was part of the Great Britain team that won the team pursuit at the 2013 Track Cycling World Championships.,She helped Great Britain defend the world team pursuit title in 2014.
+t039,overview_factual,1,0,2,She was part of the Great Britain team that won the team pursuit at the 2013 Track Cycling World Championships.,She won the team pursuit world title at the 2023 UCI Track Cycling World Championships in Glasgow.
+t039,overview_factual,1,1,2,She helped Great Britain defend the world team pursuit title in 2014.,She won the team pursuit world title at the 2023 UCI Track Cycling World Championships in Glasgow.
+t039,overview_factual,2,0,1,She was the junior time trial world champion on the road in 2012.,"She finished seventh at Gent–Wevelgem in 2023, which was her best ever finish in a UCI road race."
+t039,overview_factual,2,0,2,She was the junior time trial world champion on the road in 2012.,She made her first Grand Tour appearance at the 2023 Giro Donne.
+t039,overview_factual,2,0,3,She was the junior time trial world champion on the road in 2012.,She finished 58th overall at the 2023 Giro Donne.
+t039,overview_factual,2,0,4,She was the junior time trial world champion on the road in 2012.,She finished third in the elite time trial at the British National Championships in 2023.
+t039,overview_factual,2,0,5,She was the junior time trial world champion on the road in 2012.,She finished third in the elite time trial at the British National Championships in 2024.
+t039,overview_factual,2,1,2,"She finished seventh at Gent–Wevelgem in 2023, which was her best ever finish in a UCI road race.",She made her first Grand Tour appearance at the 2023 Giro Donne.
+t039,overview_factual,2,1,3,"She finished seventh at Gent–Wevelgem in 2023, which was her best ever finish in a UCI road race.",She finished 58th overall at the 2023 Giro Donne.
+t039,overview_factual,2,1,4,"She finished seventh at Gent–Wevelgem in 2023, which was her best ever finish in a UCI road race.",She finished third in the elite time trial at the British National Championships in 2023.
+t039,overview_factual,2,1,5,"She finished seventh at Gent–Wevelgem in 2023, which was her best ever finish in a UCI road race.",She finished third in the elite time trial at the British National Championships in 2024.
+t039,overview_factual,2,2,3,She made her first Grand Tour appearance at the 2023 Giro Donne.,She finished 58th overall at the 2023 Giro Donne.
+t039,overview_factual,2,2,4,She made her first Grand Tour appearance at the 2023 Giro Donne.,She finished third in the elite time trial at the British National Championships in 2023.
+t039,overview_factual,2,2,5,She made her first Grand Tour appearance at the 2023 Giro Donne.,She finished third in the elite time trial at the British National Championships in 2024.
+t039,overview_factual,2,3,4,She finished 58th overall at the 2023 Giro Donne.,She finished third in the elite time trial at the British National Championships in 2023.
+t039,overview_factual,2,3,5,She finished 58th overall at the 2023 Giro Donne.,She finished third in the elite time trial at the British National Championships in 2024.
+t039,overview_factual,2,4,5,She finished third in the elite time trial at the British National Championships in 2023.,She finished third in the elite time trial at the British National Championships in 2024.
+t039,technical_mechanism,3,0,1,Team pursuit matches consisted of two teams of four riders.,The teams started at opposite ends of the track.
+t039,technical_mechanism,3,0,2,Team pursuit matches consisted of two teams of four riders.,"Team pursuit races were ridden over 16 laps, equivalent to 4 kilometres."
+t039,technical_mechanism,3,0,3,Team pursuit matches consisted of two teams of four riders.,A catch ended the race if it was achieved before 16 laps were completed.
+t039,technical_mechanism,3,0,4,Team pursuit matches consisted of two teams of four riders.,The official time for team pursuit was taken from the third rider of the team to cross the line.
+t039,technical_mechanism,3,0,5,Team pursuit matches consisted of two teams of four riders.,Placement and support of at least three riders during the effort were operationally decisive.
+t039,technical_mechanism,3,0,6,Team pursuit matches consisted of two teams of four riders.,Teams sometimes used different riders in qualifying rounds versus finals.
+t039,technical_mechanism,3,0,7,Team pursuit matches consisted of two teams of four riders.,Some riders competed in qualifying and others sat out the final as part of team selection tactics.
+t039,technical_mechanism,3,1,2,The teams started at opposite ends of the track.,"Team pursuit races were ridden over 16 laps, equivalent to 4 kilometres."
+t039,technical_mechanism,3,1,3,The teams started at opposite ends of the track.,A catch ended the race if it was achieved before 16 laps were completed.
+t039,technical_mechanism,3,1,4,The teams started at opposite ends of the track.,The official time for team pursuit was taken from the third rider of the team to cross the line.
+t039,technical_mechanism,3,1,5,The teams started at opposite ends of the track.,Placement and support of at least three riders during the effort were operationally decisive.
+t039,technical_mechanism,3,1,6,The teams started at opposite ends of the track.,Teams sometimes used different riders in qualifying rounds versus finals.
+t039,technical_mechanism,3,1,7,The teams started at opposite ends of the track.,Some riders competed in qualifying and others sat out the final as part of team selection tactics.
+t039,technical_mechanism,3,2,3,"Team pursuit races were ridden over 16 laps, equivalent to 4 kilometres.",A catch ended the race if it was achieved before 16 laps were completed.
+t039,technical_mechanism,3,2,4,"Team pursuit races were ridden over 16 laps, equivalent to 4 kilometres.",The official time for team pursuit was taken from the third rider of the team to cross the line.
+t039,technical_mechanism,3,2,5,"Team pursuit races were ridden over 16 laps, equivalent to 4 kilometres.",Placement and support of at least three riders during the effort were operationally decisive.
+t039,technical_mechanism,3,2,6,"Team pursuit races were ridden over 16 laps, equivalent to 4 kilometres.",Teams sometimes used different riders in qualifying rounds versus finals.
+t039,technical_mechanism,3,2,7,"Team pursuit races were ridden over 16 laps, equivalent to 4 kilometres.",Some riders competed in qualifying and others sat out the final as part of team selection tactics.
+t039,technical_mechanism,3,3,4,A catch ended the race if it was achieved before 16 laps were completed.,The official time for team pursuit was taken from the third rider of the team to cross the line.
+t039,technical_mechanism,3,3,5,A catch ended the race if it was achieved before 16 laps were completed.,Placement and support of at least three riders during the effort were operationally decisive.
+t039,technical_mechanism,3,3,6,A catch ended the race if it was achieved before 16 laps were completed.,Teams sometimes used different riders in qualifying rounds versus finals.
+t039,technical_mechanism,3,3,7,A catch ended the race if it was achieved before 16 laps were completed.,Some riders competed in qualifying and others sat out the final as part of team selection tactics.
+t039,technical_mechanism,3,4,5,The official time for team pursuit was taken from the third rider of the team to cross the line.,Placement and support of at least three riders during the effort were operationally decisive.
+t039,technical_mechanism,3,4,6,The official time for team pursuit was taken from the third rider of the team to cross the line.,Teams sometimes used different riders in qualifying rounds versus finals.
+t039,technical_mechanism,3,4,7,The official time for team pursuit was taken from the third rider of the team to cross the line.,Some riders competed in qualifying and others sat out the final as part of team selection tactics.
+t039,technical_mechanism,3,5,6,Placement and support of at least three riders during the effort were operationally decisive.,Teams sometimes used different riders in qualifying rounds versus finals.
+t039,technical_mechanism,3,5,7,Placement and support of at least three riders during the effort were operationally decisive.,Some riders competed in qualifying and others sat out the final as part of team selection tactics.
+t039,technical_mechanism,3,6,7,Teams sometimes used different riders in qualifying rounds versus finals.,Some riders competed in qualifying and others sat out the final as part of team selection tactics.
+t040,overview_factual,1,0,1,In 1871 the Rhode Island legislature gave a second charter to establish the Citizens Savings Bank.,Citizens Savings Bank eventually acquired its parent group to form Citizens Trust Company.
+t040,overview_factual,1,0,2,In 1871 the Rhode Island legislature gave a second charter to establish the Citizens Savings Bank.,The bank established Citizens Financial Group as a holding company when it acquired The Greenville Trust Company in 1954.
+t040,overview_factual,1,0,3,In 1871 the Rhode Island legislature gave a second charter to establish the Citizens Savings Bank.,The bank changed status from a mutual savings bank to a federal stock savings bank in 1985.
+t040,overview_factual,1,0,4,In 1871 the Rhode Island legislature gave a second charter to establish the Citizens Savings Bank.,The bank began expansion into other states with entry into Massachusetts in 1986.
+t040,overview_factual,1,1,2,Citizens Savings Bank eventually acquired its parent group to form Citizens Trust Company.,The bank established Citizens Financial Group as a holding company when it acquired The Greenville Trust Company in 1954.
+t040,overview_factual,1,1,3,Citizens Savings Bank eventually acquired its parent group to form Citizens Trust Company.,The bank changed status from a mutual savings bank to a federal stock savings bank in 1985.
+t040,overview_factual,1,1,4,Citizens Savings Bank eventually acquired its parent group to form Citizens Trust Company.,The bank began expansion into other states with entry into Massachusetts in 1986.
+t040,overview_factual,1,2,3,The bank established Citizens Financial Group as a holding company when it acquired The Greenville Trust Company in 1954.,The bank changed status from a mutual savings bank to a federal stock savings bank in 1985.
+t040,overview_factual,1,2,4,The bank established Citizens Financial Group as a holding company when it acquired The Greenville Trust Company in 1954.,The bank began expansion into other states with entry into Massachusetts in 1986.
+t040,overview_factual,1,3,4,The bank changed status from a mutual savings bank to a federal stock savings bank in 1985.,The bank began expansion into other states with entry into Massachusetts in 1986.
+t040,technical_mechanism,0,0,1,"CIBC signed an agreement in 2000 with Aplettix Inc., a firm specializing in secure transaction systems in the banking sector.",The CIBC partnership with Aplettix Inc. was later abandoned in favor of alternatives such as VeriSign.
+t040,technical_mechanism,0,0,2,"CIBC signed an agreement in 2000 with Aplettix Inc., a firm specializing in secure transaction systems in the banking sector.","CIBC signed a 10-year agreement in 2002 with TSYS of Columbus, Georgia to outsource credit card processing operations."
+t040,technical_mechanism,0,0,3,"CIBC signed an agreement in 2000 with Aplettix Inc., a firm specializing in secure transaction systems in the banking sector.",Banks moved to centralized online real-time core banking environments that allow all branches to access applications from centralized data centers.
+t040,technical_mechanism,0,1,2,The CIBC partnership with Aplettix Inc. was later abandoned in favor of alternatives such as VeriSign.,"CIBC signed a 10-year agreement in 2002 with TSYS of Columbus, Georgia to outsource credit card processing operations."
+t040,technical_mechanism,0,1,3,The CIBC partnership with Aplettix Inc. was later abandoned in favor of alternatives such as VeriSign.,Banks moved to centralized online real-time core banking environments that allow all branches to access applications from centralized data centers.
+t040,technical_mechanism,0,2,3,"CIBC signed a 10-year agreement in 2002 with TSYS of Columbus, Georgia to outsource credit card processing operations.",Banks moved to centralized online real-time core banking environments that allow all branches to access applications from centralized data centers.
+t040,technical_mechanism,1,0,1,CIBC launched a mobile banking iPhone App in February 2010.,"CIBC's mobile app achieved over 100,000 downloads in just over one month after launch."
+t040,technical_mechanism,1,0,2,CIBC launched a mobile banking iPhone App in February 2010.,CIBC recorded over 1 million client logins to CIBC Mobile Banking since its introduction.
+t040,technical_mechanism,1,0,3,CIBC launched a mobile banking iPhone App in February 2010.,"Core banking systems make services available across multiple channels including automated teller machines, Internet banking, mobile banking and branches."
+t040,technical_mechanism,1,1,2,"CIBC's mobile app achieved over 100,000 downloads in just over one month after launch.",CIBC recorded over 1 million client logins to CIBC Mobile Banking since its introduction.
+t040,technical_mechanism,1,1,3,"CIBC's mobile app achieved over 100,000 downloads in just over one month after launch.","Core banking systems make services available across multiple channels including automated teller machines, Internet banking, mobile banking and branches."
+t040,technical_mechanism,1,2,3,CIBC recorded over 1 million client logins to CIBC Mobile Banking since its introduction.,"Core banking systems make services available across multiple channels including automated teller machines, Internet banking, mobile banking and branches."
+t040,technical_mechanism,2,0,1,"CIBC acquired Atlantic Trust, a wealth management unit, in April 2013 to expand its wealth management business.",CIBC introduced a number of generative AI pilot programs in the year prior to 2025 as part of technology use in its services.
+t040,technical_mechanism,2,0,2,"CIBC acquired Atlantic Trust, a wealth management unit, in April 2013 to expand its wealth management business.",CIBC signed the Canadian government's voluntary code of conduct for generative artificial intelligence in March 2025.
+t040,technical_mechanism,2,1,2,CIBC introduced a number of generative AI pilot programs in the year prior to 2025 as part of technology use in its services.,CIBC signed the Canadian government's voluntary code of conduct for generative artificial intelligence in March 2025.
+t040,impact_application,0,0,1,The Banque de Salonique opened a new Istanbul branch in Osmanbey in 1958.,The Sultan Hammam branch was relocated to Eminönü in 1955.
+t040,impact_application,0,0,2,The Banque de Salonique opened a new Istanbul branch in Osmanbey in 1958.,The bank closed its Mersin branch in 1967.
+t040,impact_application,0,0,3,The Banque de Salonique opened a new Istanbul branch in Osmanbey in 1958.,The bank sold its controlling stake in Banque de Salonique to Yapı Kredi in 1969.
+t040,impact_application,0,1,2,The Sultan Hammam branch was relocated to Eminönü in 1955.,The bank closed its Mersin branch in 1967.
+t040,impact_application,0,1,3,The Sultan Hammam branch was relocated to Eminönü in 1955.,The bank sold its controlling stake in Banque de Salonique to Yapı Kredi in 1969.
+t040,impact_application,0,2,3,The bank closed its Mersin branch in 1967.,The bank sold its controlling stake in Banque de Salonique to Yapı Kredi in 1969.
+t040,impact_application,1,0,1,"Wealth Management brought together the group's funds management platform, master funds, superannuation, insurance and financial advice business support.","Colonial First State, Colonial First State Global Asset Management and CommInsure formed part of Wealth Management."
+t040,impact_application,1,0,2,"Wealth Management brought together the group's funds management platform, master funds, superannuation, insurance and financial advice business support.","The bank was granted MySuper authority, enabling it to continue to receive default superannuation contributions from 1 January 2014."
+t040,impact_application,1,1,2,"Colonial First State, Colonial First State Global Asset Management and CommInsure formed part of Wealth Management.","The bank was granted MySuper authority, enabling it to continue to receive default superannuation contributions from 1 January 2014."
+t040,impact_application,2,0,1,Scalable Capital launched in 2016 as a robo-advisor.,Scalable Capital entered the UK market in 2016.
+t040,impact_application,2,0,2,Scalable Capital launched in 2016 as a robo-advisor.,By May 2018 Scalable Capital had reached €1 billion in assets under management.
+t040,impact_application,2,0,3,Scalable Capital launched in 2016 as a robo-advisor.,"By May 2018 Scalable Capital had over 30,000 customers."
+t040,impact_application,2,0,4,Scalable Capital launched in 2016 as a robo-advisor.,By April 2024 Scalable Capital's client assets had reached €20 billion.
+t040,impact_application,2,1,2,Scalable Capital entered the UK market in 2016.,By May 2018 Scalable Capital had reached €1 billion in assets under management.
+t040,impact_application,2,1,3,Scalable Capital entered the UK market in 2016.,"By May 2018 Scalable Capital had over 30,000 customers."
+t040,impact_application,2,1,4,Scalable Capital entered the UK market in 2016.,By April 2024 Scalable Capital's client assets had reached €20 billion.
+t040,impact_application,2,2,3,By May 2018 Scalable Capital had reached €1 billion in assets under management.,"By May 2018 Scalable Capital had over 30,000 customers."
+t040,impact_application,2,2,4,By May 2018 Scalable Capital had reached €1 billion in assets under management.,By April 2024 Scalable Capital's client assets had reached €20 billion.
+t040,impact_application,2,3,4,"By May 2018 Scalable Capital had over 30,000 customers.",By April 2024 Scalable Capital's client assets had reached €20 billion.
+t040,controversy_limitation,3,0,1,In 1985 the bank changed status from a mutual savings bank to a federal stock savings bank.,The change in 1985 preceded the bank's geographic expansion efforts.
+t040,controversy_limitation,3,0,2,In 1985 the bank changed status from a mutual savings bank to a federal stock savings bank.,The bank began expansion into other states starting with Massachusetts in 1986.
+t040,controversy_limitation,3,1,2,The change in 1985 preceded the bank's geographic expansion efforts.,The bank began expansion into other states starting with Massachusetts in 1986.
+t048,overview_factual,0,0,1,"She won the gold medal in the mass start at the 2020 World Single Distances Speed Skating Championships in Salt Lake City, United States.",She won the silver medal in the Olympic mass start at the 2022 Winter Olympics after finishing second to Irene Schouten.
+t048,overview_factual,0,0,2,"She won the gold medal in the mass start at the 2020 World Single Distances Speed Skating Championships in Salt Lake City, United States.",She won a silver medal in the mass start at the 2025 World Single Distances Speed Skating Championships.
+t048,overview_factual,0,0,3,"She won the gold medal in the mass start at the 2020 World Single Distances Speed Skating Championships in Salt Lake City, United States.",The 2025 silver medal in the mass start marked her eighth career mass start medal at the world championships.
+t048,overview_factual,0,0,4,"She won the gold medal in the mass start at the 2020 World Single Distances Speed Skating Championships in Salt Lake City, United States.",She won the mass start gold at the 2020 World Single Distances Speed Skating Championships.
+t048,overview_factual,0,1,2,She won the silver medal in the Olympic mass start at the 2022 Winter Olympics after finishing second to Irene Schouten.,She won a silver medal in the mass start at the 2025 World Single Distances Speed Skating Championships.
+t048,overview_factual,0,1,3,She won the silver medal in the Olympic mass start at the 2022 Winter Olympics after finishing second to Irene Schouten.,The 2025 silver medal in the mass start marked her eighth career mass start medal at the world championships.
+t048,overview_factual,0,1,4,She won the silver medal in the Olympic mass start at the 2022 Winter Olympics after finishing second to Irene Schouten.,She won the mass start gold at the 2020 World Single Distances Speed Skating Championships.
+t048,overview_factual,0,2,3,She won a silver medal in the mass start at the 2025 World Single Distances Speed Skating Championships.,The 2025 silver medal in the mass start marked her eighth career mass start medal at the world championships.
+t048,overview_factual,0,2,4,She won a silver medal in the mass start at the 2025 World Single Distances Speed Skating Championships.,She won the mass start gold at the 2020 World Single Distances Speed Skating Championships.
+t048,overview_factual,0,3,4,The 2025 silver medal in the mass start marked her eighth career mass start medal at the world championships.,She won the mass start gold at the 2020 World Single Distances Speed Skating Championships.
+t048,overview_factual,1,0,1,She won the gold medal as part of the Canadian team pursuit at the 2022 Winter Olympics.,She won the bronze medal in the team pursuit at the 2025 World Single Distances Speed Skating Championships.
+t048,overview_factual,3,0,1,She pre-qualified for the 2018 Winter Olympics after results from the 2017–18 ISU Speed Skating World Cup.,"She competed in the 3000 m at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,overview_factual,3,0,2,She pre-qualified for the 2018 Winter Olympics after results from the 2017–18 ISU Speed Skating World Cup.,"She competed in the 5000 m at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,overview_factual,3,0,3,She pre-qualified for the 2018 Winter Olympics after results from the 2017–18 ISU Speed Skating World Cup.,"She competed in the mass start at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,overview_factual,3,0,4,She pre-qualified for the 2018 Winter Olympics after results from the 2017–18 ISU Speed Skating World Cup.,"She competed in the team relay events at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,overview_factual,3,1,2,"She competed in the 3000 m at the 2018 Winter Olympics in Pyeongchang, South Korea.","She competed in the 5000 m at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,overview_factual,3,1,3,"She competed in the 3000 m at the 2018 Winter Olympics in Pyeongchang, South Korea.","She competed in the mass start at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,overview_factual,3,1,4,"She competed in the 3000 m at the 2018 Winter Olympics in Pyeongchang, South Korea.","She competed in the team relay events at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,overview_factual,3,2,3,"She competed in the 5000 m at the 2018 Winter Olympics in Pyeongchang, South Korea.","She competed in the mass start at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,overview_factual,3,2,4,"She competed in the 5000 m at the 2018 Winter Olympics in Pyeongchang, South Korea.","She competed in the team relay events at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,overview_factual,3,3,4,"She competed in the mass start at the 2018 Winter Olympics in Pyeongchang, South Korea.","She competed in the team relay events at the 2018 Winter Olympics in Pyeongchang, South Korea."
+t048,technical_mechanism,1,0,1,Speed skaters tilt their trunk forward by up to 60 degrees to reduce frontal air resistance.,"Speed skaters bend their knees aggressively, up to about 80 degrees, adopting a deep squatting position for powerful push-offs."
+t048,technical_mechanism,1,0,2,Speed skaters tilt their trunk forward by up to 60 degrees to reduce frontal air resistance.,Deep dorsiflexion of the shin is required for balance in the forward-leaning position.
+t048,technical_mechanism,1,0,3,Speed skaters tilt their trunk forward by up to 60 degrees to reduce frontal air resistance.,Powerful push-offs produce the farthest displacement of the pushing skate for efficient strides.
+t048,technical_mechanism,1,0,4,Speed skaters tilt their trunk forward by up to 60 degrees to reduce frontal air resistance.,"A longer, stiffer frame provides more stable tracking at high speed and increased power transfer useful for long-distance events."
+t048,technical_mechanism,1,1,2,"Speed skaters bend their knees aggressively, up to about 80 degrees, adopting a deep squatting position for powerful push-offs.",Deep dorsiflexion of the shin is required for balance in the forward-leaning position.
+t048,technical_mechanism,1,1,3,"Speed skaters bend their knees aggressively, up to about 80 degrees, adopting a deep squatting position for powerful push-offs.",Powerful push-offs produce the farthest displacement of the pushing skate for efficient strides.
+t048,technical_mechanism,1,1,4,"Speed skaters bend their knees aggressively, up to about 80 degrees, adopting a deep squatting position for powerful push-offs.","A longer, stiffer frame provides more stable tracking at high speed and increased power transfer useful for long-distance events."
+t048,technical_mechanism,1,2,3,Deep dorsiflexion of the shin is required for balance in the forward-leaning position.,Powerful push-offs produce the farthest displacement of the pushing skate for efficient strides.
+t048,technical_mechanism,1,2,4,Deep dorsiflexion of the shin is required for balance in the forward-leaning position.,"A longer, stiffer frame provides more stable tracking at high speed and increased power transfer useful for long-distance events."
+t048,technical_mechanism,1,3,4,Powerful push-offs produce the farthest displacement of the pushing skate for efficient strides.,"A longer, stiffer frame provides more stable tracking at high speed and increased power transfer useful for long-distance events."
+t048,technical_mechanism,4,0,1,Speed skate boots are cut low around or below the ankle bones to allow deep dorsiflexion and free flexing of the foot.,Removing shafts and cuffs reduces boot weight and permits greater ankle mobility for powerful strides.
+t048,technical_mechanism,4,0,2,Speed skate boots are cut low around or below the ankle bones to allow deep dorsiflexion and free flexing of the foot.,A stiff frame flexes very little and transmits power from the foot to the wheels more directly.
+t048,technical_mechanism,4,0,3,Speed skate boots are cut low around or below the ankle bones to allow deep dorsiflexion and free flexing of the foot.,Longer frames improve stability at high speeds and increase power transfer.
+t048,technical_mechanism,4,0,4,Speed skate boots are cut low around or below the ankle bones to allow deep dorsiflexion and free flexing of the foot.,Shorter frames aid maneuvering on tight tracks.
+t048,technical_mechanism,4,0,5,Speed skate boots are cut low around or below the ankle bones to allow deep dorsiflexion and free flexing of the foot.,Speed skating uses harder wheels with high rebound and a bullet profile to minimize energy loss and reduce rolling and drag friction.
+t048,technical_mechanism,4,0,6,Speed skate boots are cut low around or below the ankle bones to allow deep dorsiflexion and free flexing of the foot.,High-quality bearings and regular maintenance restore optimal performance and support ultimate speed.
+t048,technical_mechanism,4,1,2,Removing shafts and cuffs reduces boot weight and permits greater ankle mobility for powerful strides.,A stiff frame flexes very little and transmits power from the foot to the wheels more directly.
+t048,technical_mechanism,4,1,3,Removing shafts and cuffs reduces boot weight and permits greater ankle mobility for powerful strides.,Longer frames improve stability at high speeds and increase power transfer.
+t048,technical_mechanism,4,1,4,Removing shafts and cuffs reduces boot weight and permits greater ankle mobility for powerful strides.,Shorter frames aid maneuvering on tight tracks.
+t048,technical_mechanism,4,1,5,Removing shafts and cuffs reduces boot weight and permits greater ankle mobility for powerful strides.,Speed skating uses harder wheels with high rebound and a bullet profile to minimize energy loss and reduce rolling and drag friction.
+t048,technical_mechanism,4,1,6,Removing shafts and cuffs reduces boot weight and permits greater ankle mobility for powerful strides.,High-quality bearings and regular maintenance restore optimal performance and support ultimate speed.
+t048,technical_mechanism,4,2,3,A stiff frame flexes very little and transmits power from the foot to the wheels more directly.,Longer frames improve stability at high speeds and increase power transfer.
+t048,technical_mechanism,4,2,4,A stiff frame flexes very little and transmits power from the foot to the wheels more directly.,Shorter frames aid maneuvering on tight tracks.
+t048,technical_mechanism,4,2,5,A stiff frame flexes very little and transmits power from the foot to the wheels more directly.,Speed skating uses harder wheels with high rebound and a bullet profile to minimize energy loss and reduce rolling and drag friction.
+t048,technical_mechanism,4,2,6,A stiff frame flexes very little and transmits power from the foot to the wheels more directly.,High-quality bearings and regular maintenance restore optimal performance and support ultimate speed.
+t048,technical_mechanism,4,3,4,Longer frames improve stability at high speeds and increase power transfer.,Shorter frames aid maneuvering on tight tracks.
+t048,technical_mechanism,4,3,5,Longer frames improve stability at high speeds and increase power transfer.,Speed skating uses harder wheels with high rebound and a bullet profile to minimize energy loss and reduce rolling and drag friction.
+t048,technical_mechanism,4,3,6,Longer frames improve stability at high speeds and increase power transfer.,High-quality bearings and regular maintenance restore optimal performance and support ultimate speed.
+t048,technical_mechanism,4,4,5,Shorter frames aid maneuvering on tight tracks.,Speed skating uses harder wheels with high rebound and a bullet profile to minimize energy loss and reduce rolling and drag friction.
+t048,technical_mechanism,4,4,6,Shorter frames aid maneuvering on tight tracks.,High-quality bearings and regular maintenance restore optimal performance and support ultimate speed.
+t048,technical_mechanism,4,5,6,Speed skating uses harder wheels with high rebound and a bullet profile to minimize energy loss and reduce rolling and drag friction.,High-quality bearings and regular maintenance restore optimal performance and support ultimate speed.
+t048,impact_application,3,0,1,Speed skaters strengthen muscles that support ankle movements.,"The ankle movements supported include dorsiflexion, pronation, and supination."
+t048,impact_application,3,0,2,Speed skaters strengthen muscles that support ankle movements.,This muscle strengthening compensates for minimal lateral ankle support from speed boots.
+t048,impact_application,3,0,3,Speed skaters strengthen muscles that support ankle movements.,Speed skating technique emphasizes a deep-seated squatting position.
+t048,impact_application,3,0,4,Speed skaters strengthen muscles that support ankle movements.,The knee bend in that position can reach up to 80 degrees.
+t048,impact_application,3,0,5,Speed skaters strengthen muscles that support ankle movements.,Speed skating technique also emphasizes a forward trunk lean.
+t048,impact_application,3,0,6,Speed skaters strengthen muscles that support ankle movements.,The forward trunk lean can reach up to 60 degrees.
+t048,impact_application,3,0,7,Speed skaters strengthen muscles that support ankle movements.,The deep squat and forward lean reduce air resistance.
+t048,impact_application,3,0,8,Speed skaters strengthen muscles that support ankle movements.,The deep squat and forward lean help produce powerful push-offs.
+t048,impact_application,3,0,9,Speed skaters strengthen muscles that support ankle movements.,Boot and frame design choices create a built-in forward pitch or heel lift.
+t048,impact_application,3,0,10,Speed skaters strengthen muscles that support ankle movements.,The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,0,11,Speed skaters strengthen muscles that support ankle movements.,The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,1,2,"The ankle movements supported include dorsiflexion, pronation, and supination.",This muscle strengthening compensates for minimal lateral ankle support from speed boots.
+t048,impact_application,3,1,3,"The ankle movements supported include dorsiflexion, pronation, and supination.",Speed skating technique emphasizes a deep-seated squatting position.
+t048,impact_application,3,1,4,"The ankle movements supported include dorsiflexion, pronation, and supination.",The knee bend in that position can reach up to 80 degrees.
+t048,impact_application,3,1,5,"The ankle movements supported include dorsiflexion, pronation, and supination.",Speed skating technique also emphasizes a forward trunk lean.
+t048,impact_application,3,1,6,"The ankle movements supported include dorsiflexion, pronation, and supination.",The forward trunk lean can reach up to 60 degrees.
+t048,impact_application,3,1,7,"The ankle movements supported include dorsiflexion, pronation, and supination.",The deep squat and forward lean reduce air resistance.
+t048,impact_application,3,1,8,"The ankle movements supported include dorsiflexion, pronation, and supination.",The deep squat and forward lean help produce powerful push-offs.
+t048,impact_application,3,1,9,"The ankle movements supported include dorsiflexion, pronation, and supination.",Boot and frame design choices create a built-in forward pitch or heel lift.
+t048,impact_application,3,1,10,"The ankle movements supported include dorsiflexion, pronation, and supination.",The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,1,11,"The ankle movements supported include dorsiflexion, pronation, and supination.",The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,2,3,This muscle strengthening compensates for minimal lateral ankle support from speed boots.,Speed skating technique emphasizes a deep-seated squatting position.
+t048,impact_application,3,2,4,This muscle strengthening compensates for minimal lateral ankle support from speed boots.,The knee bend in that position can reach up to 80 degrees.
+t048,impact_application,3,2,5,This muscle strengthening compensates for minimal lateral ankle support from speed boots.,Speed skating technique also emphasizes a forward trunk lean.
+t048,impact_application,3,2,6,This muscle strengthening compensates for minimal lateral ankle support from speed boots.,The forward trunk lean can reach up to 60 degrees.
+t048,impact_application,3,2,7,This muscle strengthening compensates for minimal lateral ankle support from speed boots.,The deep squat and forward lean reduce air resistance.
+t048,impact_application,3,2,8,This muscle strengthening compensates for minimal lateral ankle support from speed boots.,The deep squat and forward lean help produce powerful push-offs.
+t048,impact_application,3,2,9,This muscle strengthening compensates for minimal lateral ankle support from speed boots.,Boot and frame design choices create a built-in forward pitch or heel lift.
+t048,impact_application,3,2,10,This muscle strengthening compensates for minimal lateral ankle support from speed boots.,The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,2,11,This muscle strengthening compensates for minimal lateral ankle support from speed boots.,The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,3,4,Speed skating technique emphasizes a deep-seated squatting position.,The knee bend in that position can reach up to 80 degrees.
+t048,impact_application,3,3,5,Speed skating technique emphasizes a deep-seated squatting position.,Speed skating technique also emphasizes a forward trunk lean.
+t048,impact_application,3,3,6,Speed skating technique emphasizes a deep-seated squatting position.,The forward trunk lean can reach up to 60 degrees.
+t048,impact_application,3,3,7,Speed skating technique emphasizes a deep-seated squatting position.,The deep squat and forward lean reduce air resistance.
+t048,impact_application,3,3,8,Speed skating technique emphasizes a deep-seated squatting position.,The deep squat and forward lean help produce powerful push-offs.
+t048,impact_application,3,3,9,Speed skating technique emphasizes a deep-seated squatting position.,Boot and frame design choices create a built-in forward pitch or heel lift.
+t048,impact_application,3,3,10,Speed skating technique emphasizes a deep-seated squatting position.,The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,3,11,Speed skating technique emphasizes a deep-seated squatting position.,The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,4,5,The knee bend in that position can reach up to 80 degrees.,Speed skating technique also emphasizes a forward trunk lean.
+t048,impact_application,3,4,6,The knee bend in that position can reach up to 80 degrees.,The forward trunk lean can reach up to 60 degrees.
+t048,impact_application,3,4,7,The knee bend in that position can reach up to 80 degrees.,The deep squat and forward lean reduce air resistance.
+t048,impact_application,3,4,8,The knee bend in that position can reach up to 80 degrees.,The deep squat and forward lean help produce powerful push-offs.
+t048,impact_application,3,4,9,The knee bend in that position can reach up to 80 degrees.,Boot and frame design choices create a built-in forward pitch or heel lift.
+t048,impact_application,3,4,10,The knee bend in that position can reach up to 80 degrees.,The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,4,11,The knee bend in that position can reach up to 80 degrees.,The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,5,6,Speed skating technique also emphasizes a forward trunk lean.,The forward trunk lean can reach up to 60 degrees.
+t048,impact_application,3,5,7,Speed skating technique also emphasizes a forward trunk lean.,The deep squat and forward lean reduce air resistance.
+t048,impact_application,3,5,8,Speed skating technique also emphasizes a forward trunk lean.,The deep squat and forward lean help produce powerful push-offs.
+t048,impact_application,3,5,9,Speed skating technique also emphasizes a forward trunk lean.,Boot and frame design choices create a built-in forward pitch or heel lift.
+t048,impact_application,3,5,10,Speed skating technique also emphasizes a forward trunk lean.,The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,5,11,Speed skating technique also emphasizes a forward trunk lean.,The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,6,7,The forward trunk lean can reach up to 60 degrees.,The deep squat and forward lean reduce air resistance.
+t048,impact_application,3,6,8,The forward trunk lean can reach up to 60 degrees.,The deep squat and forward lean help produce powerful push-offs.
+t048,impact_application,3,6,9,The forward trunk lean can reach up to 60 degrees.,Boot and frame design choices create a built-in forward pitch or heel lift.
+t048,impact_application,3,6,10,The forward trunk lean can reach up to 60 degrees.,The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,6,11,The forward trunk lean can reach up to 60 degrees.,The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,7,8,The deep squat and forward lean reduce air resistance.,The deep squat and forward lean help produce powerful push-offs.
+t048,impact_application,3,7,9,The deep squat and forward lean reduce air resistance.,Boot and frame design choices create a built-in forward pitch or heel lift.
+t048,impact_application,3,7,10,The deep squat and forward lean reduce air resistance.,The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,7,11,The deep squat and forward lean reduce air resistance.,The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,8,9,The deep squat and forward lean help produce powerful push-offs.,Boot and frame design choices create a built-in forward pitch or heel lift.
+t048,impact_application,3,8,10,The deep squat and forward lean help produce powerful push-offs.,The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,8,11,The deep squat and forward lean help produce powerful push-offs.,The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,9,10,Boot and frame design choices create a built-in forward pitch or heel lift.,The built-in forward pitch or heel lift simulates forward flex.
+t048,impact_application,3,9,11,Boot and frame design choices create a built-in forward pitch or heel lift.,The built-in forward pitch or heel lift affects posture and balance.
+t048,impact_application,3,10,11,The built-in forward pitch or heel lift simulates forward flex.,The built-in forward pitch or heel lift affects posture and balance.
+t049,overview_factual,0,0,1,Ollie Lord is a professional Australian rules footballer.,Ollie Lord plays for the Port Adelaide Football Club in the Australian Football League (AFL).
+t049,overview_factual,0,0,2,Ollie Lord is a professional Australian rules footballer.,Ollie Lord was born on 2 January 2002.
+t049,overview_factual,0,1,2,Ollie Lord plays for the Port Adelaide Football Club in the Australian Football League (AFL).,Ollie Lord was born on 2 January 2002.
+t049,overview_factual,2,0,1,Ollie Lord can also play as a ruckman.,"No club-level trophies, league titles, or individual awards for Ollie Lord are specified in the provided context."
+t049,technical_mechanism,0,0,1,He began his career as a key-forward at Port Adelaide.,He played up the ground in the forward line.
+t049,technical_mechanism,0,0,2,He began his career as a key-forward at Port Adelaide.,He often played alongside Warren Tredrea as a forward partner.
+t049,technical_mechanism,0,0,3,He began his career as a key-forward at Port Adelaide.,He demonstrated contested marking ability while operating up the ground.
+t049,technical_mechanism,0,0,4,He began his career as a key-forward at Port Adelaide.,He was moved to centre-half back at the start of the 2004 season.
+t049,technical_mechanism,0,1,2,He played up the ground in the forward line.,He often played alongside Warren Tredrea as a forward partner.
+t049,technical_mechanism,0,1,3,He played up the ground in the forward line.,He demonstrated contested marking ability while operating up the ground.
+t049,technical_mechanism,0,1,4,He played up the ground in the forward line.,He was moved to centre-half back at the start of the 2004 season.
+t049,technical_mechanism,0,2,3,He often played alongside Warren Tredrea as a forward partner.,He demonstrated contested marking ability while operating up the ground.
+t049,technical_mechanism,0,2,4,He often played alongside Warren Tredrea as a forward partner.,He was moved to centre-half back at the start of the 2004 season.
+t049,technical_mechanism,0,3,4,He demonstrated contested marking ability while operating up the ground.,He was moved to centre-half back at the start of the 2004 season.
+t049,technical_mechanism,1,0,1,He booted 22 goals in 2000.,He was noted for his great contested marking ability while playing forward.
+t049,technical_mechanism,1,0,2,He booted 22 goals in 2000.,He was a regular goal scorer early in his career.
+t049,technical_mechanism,1,1,2,He was noted for his great contested marking ability while playing forward.,He was a regular goal scorer early in his career.
+t049,technical_mechanism,3,0,1,He occupied a key defensive role after the move to centre-half back.,The positional switch to defence in 2004 resulted in him dominating games from defence.
+t049,technical_mechanism,2,0,1,Coaches redeployed him from key-forward into a centre-half back role at the start of the 2004 season.,As a centre-half back he was given a key defensive assignment on Brisbane Lions forward Jonathan Brown in the 2004 Grand Final.
+t049,impact_application,0,0,1,He was appointed South Australian executive director of the Property Council of Australia in 2022.,He created an investment portfolio for himself while still involved in football activities.
+t049,impact_application,1,0,1,He was publicly associated with the Property Council of Australia as its South Australian executive director.,He worked part-time at the accounting firm PKF while still playing.
+t049,impact_application,1,0,2,He was publicly associated with the Property Council of Australia as its South Australian executive director.,During that time he developed his personal investment portfolio.
+t049,impact_application,1,1,2,He worked part-time at the accounting firm PKF while still playing.,During that time he developed his personal investment portfolio.
+t050,overview_factual,0,0,1,"Randy Johnson was born on September 10, 1963.",He played 22 seasons in Major League Baseball from 1988 through 2009.
+t050,overview_factual,1,0,1,Johnson played primarily for the Seattle Mariners during 1989–1998.,Johnson played for the Arizona Diamondbacks during 1999–2004.
+t050,overview_factual,2,0,1,"Johnson recorded 4,875 career strikeouts.",He accumulated 303 career victories.
+t050,overview_factual,2,0,2,"Johnson recorded 4,875 career strikeouts.",He won five Cy Young Awards in his career.
+t050,overview_factual,2,1,2,He accumulated 303 career victories.,He won five Cy Young Awards in his career.
+t050,overview_factual,3,0,1,Johnson was listed at 6 feet 10 inches tall.,He was the tallest player in MLB history when he entered the league.
+t050,overview_factual,3,0,2,Johnson was listed at 6 feet 10 inches tall.,He led his league in strikeouts nine times.
+t050,overview_factual,3,0,3,Johnson was listed at 6 feet 10 inches tall.,He led his league in ERA four times.
+t050,overview_factual,3,0,4,Johnson was listed at 6 feet 10 inches tall.,He led his league in winning percentage four times.
+t050,overview_factual,3,1,2,He was the tallest player in MLB history when he entered the league.,He led his league in strikeouts nine times.
+t050,overview_factual,3,1,3,He was the tallest player in MLB history when he entered the league.,He led his league in ERA four times.
+t050,overview_factual,3,1,4,He was the tallest player in MLB history when he entered the league.,He led his league in winning percentage four times.
+t050,overview_factual,3,2,3,He led his league in strikeouts nine times.,He led his league in ERA four times.
+t050,overview_factual,3,2,4,He led his league in strikeouts nine times.,He led his league in winning percentage four times.
+t050,overview_factual,3,3,4,He led his league in ERA four times.,He led his league in winning percentage four times.
+t050,technical_mechanism,0,0,1,His repertoire included a high-velocity fastball.,His repertoire included a hard slider.
+t050,technical_mechanism,0,0,2,His repertoire included a high-velocity fastball.,His repertoire included a split-finger fastball that acted like a change-up.
+t050,technical_mechanism,0,0,3,His repertoire included a high-velocity fastball.,His repertoire included a sinker.
+t050,technical_mechanism,0,0,4,His repertoire included a high-velocity fastball.,His signature and most effective strikeout pitch was his slider.
+t050,technical_mechanism,0,0,5,His repertoire included a high-velocity fastball.,His slider had tight late break and velocity in the low 90s.
+t050,technical_mechanism,0,0,6,His repertoire included a high-velocity fastball.,His slider often made hitters think it was a fastball until it broke at the plate.
+t050,technical_mechanism,0,1,2,His repertoire included a hard slider.,His repertoire included a split-finger fastball that acted like a change-up.
+t050,technical_mechanism,0,1,3,His repertoire included a hard slider.,His repertoire included a sinker.
+t050,technical_mechanism,0,1,4,His repertoire included a hard slider.,His signature and most effective strikeout pitch was his slider.
+t050,technical_mechanism,0,1,5,His repertoire included a hard slider.,His slider had tight late break and velocity in the low 90s.
+t050,technical_mechanism,0,1,6,His repertoire included a hard slider.,His slider often made hitters think it was a fastball until it broke at the plate.
+t050,technical_mechanism,0,2,3,His repertoire included a split-finger fastball that acted like a change-up.,His repertoire included a sinker.
+t050,technical_mechanism,0,2,4,His repertoire included a split-finger fastball that acted like a change-up.,His signature and most effective strikeout pitch was his slider.
+t050,technical_mechanism,0,2,5,His repertoire included a split-finger fastball that acted like a change-up.,His slider had tight late break and velocity in the low 90s.
+t050,technical_mechanism,0,2,6,His repertoire included a split-finger fastball that acted like a change-up.,His slider often made hitters think it was a fastball until it broke at the plate.
+t050,technical_mechanism,0,3,4,His repertoire included a sinker.,His signature and most effective strikeout pitch was his slider.
+t050,technical_mechanism,0,3,5,His repertoire included a sinker.,His slider had tight late break and velocity in the low 90s.
+t050,technical_mechanism,0,3,6,His repertoire included a sinker.,His slider often made hitters think it was a fastball until it broke at the plate.
+t050,technical_mechanism,0,4,5,His signature and most effective strikeout pitch was his slider.,His slider had tight late break and velocity in the low 90s.
+t050,technical_mechanism,0,4,6,His signature and most effective strikeout pitch was his slider.,His slider often made hitters think it was a fastball until it broke at the plate.
+t050,technical_mechanism,0,5,6,His slider had tight late break and velocity in the low 90s.,His slider often made hitters think it was a fastball until it broke at the plate.
+t050,technical_mechanism,1,0,1,He used a low three-quarters delivery that was described as nearly sidearm.,That low arm angle and delivery produced a distinctive release plane that contributed to the late movement and deception of his pitches.
+t050,technical_mechanism,1,0,2,He used a low three-quarters delivery that was described as nearly sidearm.,His fastball velocity reached as high as 102 mph.
+t050,technical_mechanism,1,0,3,He used a low three-quarters delivery that was described as nearly sidearm.,His delivery combined with his fastball velocity to enhance the perceived speed and movement of his pitches.
+t050,technical_mechanism,1,0,4,He used a low three-quarters delivery that was described as nearly sidearm.,Batters reported an impression that pitches could come at the head or upper body due to his release and angle.
+t050,technical_mechanism,1,1,2,That low arm angle and delivery produced a distinctive release plane that contributed to the late movement and deception of his pitches.,His fastball velocity reached as high as 102 mph.
+t050,technical_mechanism,1,1,3,That low arm angle and delivery produced a distinctive release plane that contributed to the late movement and deception of his pitches.,His delivery combined with his fastball velocity to enhance the perceived speed and movement of his pitches.
+t050,technical_mechanism,1,1,4,That low arm angle and delivery produced a distinctive release plane that contributed to the late movement and deception of his pitches.,Batters reported an impression that pitches could come at the head or upper body due to his release and angle.
+t050,technical_mechanism,1,2,3,His fastball velocity reached as high as 102 mph.,His delivery combined with his fastball velocity to enhance the perceived speed and movement of his pitches.
+t050,technical_mechanism,1,2,4,His fastball velocity reached as high as 102 mph.,Batters reported an impression that pitches could come at the head or upper body due to his release and angle.
+t050,technical_mechanism,1,3,4,His delivery combined with his fastball velocity to enhance the perceived speed and movement of his pitches.,Batters reported an impression that pitches could come at the head or upper body due to his release and angle.
+t050,impact_application,0,0,1,"Johnson led the Arizona Diamondbacks to the playoffs in 1999 with a 17–9 record, 2.48 ERA, and 364 strikeouts.",Johnson posted a 20–4 season in 1997 that coincided with a dominant stretch of team success between May 1994 and October 1997 when he went 53–9.
+t050,impact_application,0,0,2,"Johnson led the Arizona Diamondbacks to the playoffs in 1999 with a 17–9 record, 2.48 ERA, and 364 strikeouts.","Johnson's performance in 2000 (19 wins, 347 strikeouts, 2.64 ERA) helped anchor the Diamondbacks' rotation and contributed to the team acquiring Curt Schilling to pair as two aces."
+t050,impact_application,0,0,3,"Johnson led the Arizona Diamondbacks to the playoffs in 1999 with a 17–9 record, 2.48 ERA, and 364 strikeouts.",Johnson's 24–5 season in 2002 provided a team-leading win total en route to winning the NL pitching Triple Crown that year.
+t050,impact_application,0,1,2,Johnson posted a 20–4 season in 1997 that coincided with a dominant stretch of team success between May 1994 and October 1997 when he went 53–9.,"Johnson's performance in 2000 (19 wins, 347 strikeouts, 2.64 ERA) helped anchor the Diamondbacks' rotation and contributed to the team acquiring Curt Schilling to pair as two aces."
+t050,impact_application,0,1,3,Johnson posted a 20–4 season in 1997 that coincided with a dominant stretch of team success between May 1994 and October 1997 when he went 53–9.,Johnson's 24–5 season in 2002 provided a team-leading win total en route to winning the NL pitching Triple Crown that year.
+t050,impact_application,0,2,3,"Johnson's performance in 2000 (19 wins, 347 strikeouts, 2.64 ERA) helped anchor the Diamondbacks' rotation and contributed to the team acquiring Curt Schilling to pair as two aces.",Johnson's 24–5 season in 2002 provided a team-leading win total en route to winning the NL pitching Triple Crown that year.
+t050,impact_application,1,0,1,"Johnson led the majors in innings, complete games, and strikeouts in 1999 while winning the NL Cy Young Award.",Johnson became the third pitcher to win Cy Young Awards in both the American and National Leagues.
+t050,impact_application,1,0,2,"Johnson led the majors in innings, complete games, and strikeouts in 1999 while winning the NL Cy Young Award.",Johnson set and extended the MLB record for consecutive 300-strikeout seasons while winning the pitching Triple Crown in 2002.
+t050,impact_application,1,0,3,"Johnson led the majors in innings, complete games, and strikeouts in 1999 while winning the NL Cy Young Award.","Johnson posted a historic 24–5 single-season record in 2002, a first in baseball history."
+t050,impact_application,1,1,2,Johnson became the third pitcher to win Cy Young Awards in both the American and National Leagues.,Johnson set and extended the MLB record for consecutive 300-strikeout seasons while winning the pitching Triple Crown in 2002.
+t050,impact_application,1,1,3,Johnson became the third pitcher to win Cy Young Awards in both the American and National Leagues.,"Johnson posted a historic 24–5 single-season record in 2002, a first in baseball history."
+t050,impact_application,1,2,3,Johnson set and extended the MLB record for consecutive 300-strikeout seasons while winning the pitching Triple Crown in 2002.,"Johnson posted a historic 24–5 single-season record in 2002, a first in baseball history."
+t050,impact_application,2,0,1,"Managers deployed Johnson as the staff ace to anchor rotations, including pairing him with Curt Schilling to form the Diamondbacks' two-ace rotation.","Johnson was used as a high-leverage starter whose intensity and execution were credited with elevating his battery, according to his perfect game catcher Robbie Hammock."
+t050,impact_application,2,0,2,"Managers deployed Johnson as the staff ace to anchor rotations, including pairing him with Curt Schilling to form the Diamondbacks' two-ace rotation.",Diamondbacks manager Bob Brenly described Johnson's focus and rhythm on nights like his perfect game as maximizing his effectiveness for team outcomes.
+t050,impact_application,2,0,3,"Managers deployed Johnson as the staff ace to anchor rotations, including pairing him with Curt Schilling to form the Diamondbacks' two-ace rotation.",Johnson's long outings and ability to record many innings allowed managers to rely on him for deep starts and to reduce strain on the bullpen.
+t050,impact_application,2,1,2,"Johnson was used as a high-leverage starter whose intensity and execution were credited with elevating his battery, according to his perfect game catcher Robbie Hammock.",Diamondbacks manager Bob Brenly described Johnson's focus and rhythm on nights like his perfect game as maximizing his effectiveness for team outcomes.
+t050,impact_application,2,1,3,"Johnson was used as a high-leverage starter whose intensity and execution were credited with elevating his battery, according to his perfect game catcher Robbie Hammock.",Johnson's long outings and ability to record many innings allowed managers to rely on him for deep starts and to reduce strain on the bullpen.
+t050,impact_application,2,2,3,Diamondbacks manager Bob Brenly described Johnson's focus and rhythm on nights like his perfect game as maximizing his effectiveness for team outcomes.,Johnson's long outings and ability to record many innings allowed managers to rely on him for deep starts and to reduce strain on the bullpen.
+t050,controversy_limitation,0,0,1,Johnson was sidelined throughout much of the 1996 season with a back injury that limited his availability that year.,Johnson's fastball velocity declined in later years from as high as 102 mph to the mid-to-high 90s.
+t050,controversy_limitation,0,0,2,Johnson was sidelined throughout much of the 1996 season with a back injury that limited his availability that year.,The decline in Johnson's velocity reduced the raw overpowering aspect of his repertoire.
+t050,controversy_limitation,0,1,2,Johnson's fastball velocity declined in later years from as high as 102 mph to the mid-to-high 90s.,The decline in Johnson's velocity reduced the raw overpowering aspect of his repertoire.
+t050,controversy_limitation,1,0,1,"Hitters expressed fear of Johnson's stuff, with one hitter saying facing him felt like he was going to be hit in the back of the neck.",Those comments reflected perceptions of intimidation and command that pressured batters.
+t050,controversy_limitation,1,0,2,"Hitters expressed fear of Johnson's stuff, with one hitter saying facing him felt like he was going to be hit in the back of the neck.","Johnson engaged in theatrical on-field interactions, such as throwing over Larry Walker's head in the 1997 All-Star Game."
+t050,controversy_limitation,1,1,2,Those comments reflected perceptions of intimidation and command that pressured batters.,"Johnson engaged in theatrical on-field interactions, such as throwing over Larry Walker's head in the 1997 All-Star Game."
+t050,controversy_limitation,2,0,1,Johnson became publicly upset when the Seattle Mariners would not offer him a contract extension at the start of the 1998 season.,"Johnson was traded minutes before the non-waiver deadline on July 31, 1998."
+t050,controversy_limitation,3,0,1,Johnson's slider velocity declined in later years to around 87 mph.,Larry Walker hit .393 in 28 career at-bats against Johnson.
+t050,controversy_limitation,3,0,2,Johnson's slider velocity declined in later years to around 87 mph.,Left-handed batters overall hit .199 against Johnson.
+t050,controversy_limitation,3,1,2,Larry Walker hit .393 in 28 career at-bats against Johnson.,Left-handed batters overall hit .199 against Johnson.
