@@ -1,0 +1,2332 @@
+{
+ "n_population": 294,
+ "n_with_duplicate_citations": 225,
+ "n_labeled_with_duplicates": 74,
+ "n_flips_all": 30,
+ "n_flips_labeled": 13,
+ "replay_sanity_max_absdiff": 0.0,
+ "registered_dup": {
+  "precision": {
+   "k": 62,
+   "n": 72,
+   "rate": 0.8611111111111112,
+   "wilson": [
+    0.7628660215842661,
+    0.922773521885281
+   ],
+   "pass_point": true
+  },
+  "recall": {
+   "k": 62,
+   "n": 82,
+   "rate": 0.7560975609756098,
+   "wilson": [
+    0.6530708869115632,
+    0.8362023791971767
+   ],
+   "pass_point": true
+  },
+  "recovery": {
+   "k": 39,
+   "n": 53,
+   "rate": 0.7358490566037735,
+   "wilson": [
+    0.6041907894277545,
+    0.8356279348868316
+   ],
+   "pass_point": true
+  },
+  "precision_weighted": 0.8499057761345106,
+  "recall_weighted": 0.7824735935276048,
+  "recovery_weighted": 0.7721387433421377,
+  "verdict_registered": "통과"
+ },
+ "dedup": {
+  "precision": {
+   "k": 65,
+   "n": 75,
+   "rate": 0.8666666666666667,
+   "wilson": [
+    0.7716663173307006,
+    0.9259349490058527
+   ],
+   "pass_point": true
+  },
+  "recall": {
+   "k": 65,
+   "n": 82,
+   "rate": 0.7926829268292683,
+   "wilson": [
+    0.6928322530568153,
+    0.8663371939246017
+   ],
+   "pass_point": true
+  },
+  "recovery": {
+   "k": 43,
+   "n": 53,
+   "rate": 0.8113207547169812,
+   "wilson": [
+    0.6864128355267498,
+    0.8941478805685044
+   ],
+   "pass_point": true
+  },
+  "precision_weighted": 0.857974388824214,
+  "recall_weighted": 0.8347771368641844,
+  "recovery_weighted": 0.8443972921087195,
+  "verdict_registered": "통과"
+ },
+ "changed": [
+  {
+   "item_id": "v000",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2155,
+   "chars_uniq": 717,
+   "p_old": 0.9793158173561096,
+   "p_new": 0.963697075843811,
+   "flip": false
+  },
+  {
+   "item_id": "v002",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 14690,
+   "chars_uniq": 3671,
+   "p_old": 0.8451981544494629,
+   "p_new": 0.9423772692680359,
+   "flip": false
+  },
+  {
+   "item_id": "v003",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1374,
+   "chars_uniq": 686,
+   "p_old": 0.9596731662750244,
+   "p_new": 0.9577192068099976,
+   "flip": false
+  },
+  {
+   "item_id": "v004",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1374,
+   "chars_uniq": 686,
+   "p_old": 0.8298919796943665,
+   "p_new": 0.8540935516357422,
+   "flip": false
+  },
+  {
+   "item_id": "v007",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 11017,
+   "chars_uniq": 3671,
+   "p_old": 0.9833941459655762,
+   "p_new": 0.9851227402687073,
+   "flip": false
+  },
+  {
+   "item_id": "v008",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 11017,
+   "chars_uniq": 3671,
+   "p_old": 0.984524667263031,
+   "p_new": 0.983772337436676,
+   "flip": false
+  },
+  {
+   "item_id": "v009",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 11017,
+   "chars_uniq": 3671,
+   "p_old": 0.9731480479240417,
+   "p_new": 0.9648311734199524,
+   "flip": false
+  },
+  {
+   "item_id": "v010",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 7344,
+   "chars_uniq": 3671,
+   "p_old": 0.9689194560050964,
+   "p_new": 0.9730663895606995,
+   "flip": false
+  },
+  {
+   "item_id": "v011",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 7344,
+   "chars_uniq": 3671,
+   "p_old": 0.9678833484649658,
+   "p_new": 0.979686439037323,
+   "flip": false
+  },
+  {
+   "item_id": "v012",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4173,
+   "chars_uniq": 3485,
+   "p_old": 0.9813940525054932,
+   "p_new": 0.36460232734680176,
+   "flip": true
+  },
+  {
+   "item_id": "v013",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4173,
+   "chars_uniq": 3485,
+   "p_old": 0.9776313900947571,
+   "p_new": 0.9736506342887878,
+   "flip": false
+  },
+  {
+   "item_id": "v014",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 4173,
+   "chars_uniq": 3485,
+   "p_old": 0.9839558005332947,
+   "p_new": 0.9848035573959351,
+   "flip": false
+  },
+  {
+   "item_id": "v015",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 4173,
+   "chars_uniq": 3485,
+   "p_old": 0.980455756187439,
+   "p_new": 0.9817073941230774,
+   "flip": false
+  },
+  {
+   "item_id": "v019",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8562,
+   "chars_uniq": 4354,
+   "p_old": 0.9840583205223083,
+   "p_new": 0.9836825728416443,
+   "flip": false
+  },
+  {
+   "item_id": "v020",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8562,
+   "chars_uniq": 4354,
+   "p_old": 0.9783568978309631,
+   "p_new": 0.9768877029418945,
+   "flip": false
+  },
+  {
+   "item_id": "v021",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8562,
+   "chars_uniq": 4354,
+   "p_old": 0.9864395260810852,
+   "p_new": 0.9886012673377991,
+   "flip": false
+  },
+  {
+   "item_id": "v022",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 6779,
+   "chars_uniq": 4527,
+   "p_old": 0.7143725752830505,
+   "p_new": 0.8911285400390625,
+   "flip": false
+  },
+  {
+   "item_id": "v023",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 6779,
+   "chars_uniq": 4527,
+   "p_old": 0.9729433059692383,
+   "p_new": 0.9728168845176697,
+   "flip": false
+  },
+  {
+   "item_id": "v024",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 6779,
+   "chars_uniq": 4527,
+   "p_old": 0.0797872468829155,
+   "p_new": 0.07950274646282196,
+   "flip": false
+  },
+  {
+   "item_id": "v025",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 11700,
+   "chars_uniq": 8027,
+   "p_old": 0.9861394166946411,
+   "p_new": 0.9880183935165405,
+   "flip": false
+  },
+  {
+   "item_id": "v026",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 11700,
+   "chars_uniq": 8027,
+   "p_old": 0.9848985075950623,
+   "p_new": 0.9849486947059631,
+   "flip": false
+  },
+  {
+   "item_id": "v027",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 11700,
+   "chars_uniq": 8027,
+   "p_old": 0.9860304594039917,
+   "p_new": 0.9878739714622498,
+   "flip": false
+  },
+  {
+   "item_id": "v028",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2902,
+   "chars_uniq": 1450,
+   "p_old": 0.03844870999455452,
+   "p_new": 0.03549841046333313,
+   "flip": false
+  },
+  {
+   "item_id": "v029",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2902,
+   "chars_uniq": 1450,
+   "p_old": 0.9342865943908691,
+   "p_new": 0.9081861972808838,
+   "flip": false
+  },
+  {
+   "item_id": "v030",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2902,
+   "chars_uniq": 1450,
+   "p_old": 0.9726424217224121,
+   "p_new": 0.9559131264686584,
+   "flip": false
+  },
+  {
+   "item_id": "v031",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4354,
+   "chars_uniq": 1450,
+   "p_old": 0.9712697267532349,
+   "p_new": 0.9556035399436951,
+   "flip": false
+  },
+  {
+   "item_id": "v032",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2638,
+   "chars_uniq": 1651,
+   "p_old": 0.9683058857917786,
+   "p_new": 0.975007176399231,
+   "flip": false
+  },
+  {
+   "item_id": "v033",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2638,
+   "chars_uniq": 1651,
+   "p_old": 0.9046719074249268,
+   "p_new": 0.8961380124092102,
+   "flip": false
+  },
+  {
+   "item_id": "v034",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2638,
+   "chars_uniq": 1651,
+   "p_old": 0.9043248891830444,
+   "p_new": 0.9499998688697815,
+   "flip": false
+  },
+  {
+   "item_id": "v035",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2959,
+   "chars_uniq": 985,
+   "p_old": 0.9442774653434753,
+   "p_new": 0.9464285373687744,
+   "flip": false
+  },
+  {
+   "item_id": "v036",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2959,
+   "chars_uniq": 985,
+   "p_old": 0.9780031442642212,
+   "p_new": 0.9606975317001343,
+   "flip": false
+  },
+  {
+   "item_id": "v037",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2959,
+   "chars_uniq": 985,
+   "p_old": 0.6540206074714661,
+   "p_new": 0.525395929813385,
+   "flip": false
+  },
+  {
+   "item_id": "v038",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1972,
+   "chars_uniq": 985,
+   "p_old": 0.02010432258248329,
+   "p_new": 0.03155294805765152,
+   "flip": false
+  },
+  {
+   "item_id": "v039",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 1972,
+   "chars_uniq": 985,
+   "p_old": 0.9300907254219055,
+   "p_new": 0.9644477367401123,
+   "flip": false
+  },
+  {
+   "item_id": "v040",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 906,
+   "chars_uniq": 452,
+   "p_old": 0.8830342292785645,
+   "p_new": 0.8338616490364075,
+   "flip": false
+  },
+  {
+   "item_id": "v046",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1822,
+   "chars_uniq": 606,
+   "p_old": 0.3306766748428345,
+   "p_new": 0.9401718378067017,
+   "flip": true
+  },
+  {
+   "item_id": "v047",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1822,
+   "chars_uniq": 606,
+   "p_old": 0.9620678424835205,
+   "p_new": 0.9687809944152832,
+   "flip": false
+  },
+  {
+   "item_id": "v048",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1822,
+   "chars_uniq": 606,
+   "p_old": 0.08197682350873947,
+   "p_new": 0.11127603054046631,
+   "flip": false
+  },
+  {
+   "item_id": "v049",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1360,
+   "chars_uniq": 452,
+   "p_old": 0.7314144372940063,
+   "p_new": 0.8544653058052063,
+   "flip": false
+  },
+  {
+   "item_id": "v050",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1360,
+   "chars_uniq": 452,
+   "p_old": 0.060645971447229385,
+   "p_new": 0.20184266567230225,
+   "flip": false
+  },
+  {
+   "item_id": "v051",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1360,
+   "chars_uniq": 452,
+   "p_old": 0.024978850036859512,
+   "p_new": 0.04075910523533821,
+   "flip": false
+  },
+  {
+   "item_id": "v053",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1156,
+   "chars_uniq": 577,
+   "p_old": 0.946357786655426,
+   "p_new": 0.9362262487411499,
+   "flip": false
+  },
+  {
+   "item_id": "v054",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1156,
+   "chars_uniq": 577,
+   "p_old": 0.9401055574417114,
+   "p_new": 0.9353588819503784,
+   "flip": false
+  },
+  {
+   "item_id": "v055",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2314,
+   "chars_uniq": 577,
+   "p_old": 0.9755529165267944,
+   "p_new": 0.9598367810249329,
+   "flip": false
+  },
+  {
+   "item_id": "v056",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2314,
+   "chars_uniq": 577,
+   "p_old": 0.9737269282341003,
+   "p_new": 0.9611895680427551,
+   "flip": false
+  },
+  {
+   "item_id": "v057",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2314,
+   "chars_uniq": 577,
+   "p_old": 0.9685724973678589,
+   "p_new": 0.9603941440582275,
+   "flip": false
+  },
+  {
+   "item_id": "v058",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2314,
+   "chars_uniq": 577,
+   "p_old": 0.06648465991020203,
+   "p_new": 0.9085720777511597,
+   "flip": true
+  },
+  {
+   "item_id": "v060",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1156,
+   "chars_uniq": 577,
+   "p_old": 0.4000260531902313,
+   "p_new": 0.6679837703704834,
+   "flip": true
+  },
+  {
+   "item_id": "v061",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1156,
+   "chars_uniq": 577,
+   "p_old": 0.7241731286048889,
+   "p_new": 0.6722062826156616,
+   "flip": false
+  },
+  {
+   "item_id": "v062",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1030,
+   "chars_uniq": 342,
+   "p_old": 0.9412867426872253,
+   "p_new": 0.8666337132453918,
+   "flip": false
+  },
+  {
+   "item_id": "v063",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 12574,
+   "chars_uniq": 4190,
+   "p_old": 0.8787280917167664,
+   "p_new": 0.9457913041114807,
+   "flip": false
+  },
+  {
+   "item_id": "v064",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 12574,
+   "chars_uniq": 4190,
+   "p_old": 0.9625342488288879,
+   "p_new": 0.9817796349525452,
+   "flip": false
+  },
+  {
+   "item_id": "v065",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 12574,
+   "chars_uniq": 4190,
+   "p_old": 0.9765053987503052,
+   "p_new": 0.9852955341339111,
+   "flip": false
+  },
+  {
+   "item_id": "v066",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 14246,
+   "chars_uniq": 5026,
+   "p_old": 0.8293341398239136,
+   "p_new": 0.9586958885192871,
+   "flip": false
+  },
+  {
+   "item_id": "v067",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 14246,
+   "chars_uniq": 5026,
+   "p_old": 0.8990195989608765,
+   "p_new": 0.9296965003013611,
+   "flip": false
+  },
+  {
+   "item_id": "v068",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 14246,
+   "chars_uniq": 5026,
+   "p_old": 0.9425482749938965,
+   "p_new": 0.9522863030433655,
+   "flip": false
+  },
+  {
+   "item_id": "v069",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 14246,
+   "chars_uniq": 5026,
+   "p_old": 0.7670214176177979,
+   "p_new": 0.14526179432868958,
+   "flip": true
+  },
+  {
+   "item_id": "v070",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 14246,
+   "chars_uniq": 5026,
+   "p_old": 0.9689383506774902,
+   "p_new": 0.968545138835907,
+   "flip": false
+  },
+  {
+   "item_id": "v071",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 14246,
+   "chars_uniq": 5026,
+   "p_old": 0.9752594232559204,
+   "p_new": 0.9794108867645264,
+   "flip": false
+  },
+  {
+   "item_id": "v072",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 14246,
+   "chars_uniq": 5026,
+   "p_old": 0.9442448616027832,
+   "p_new": 0.9753574132919312,
+   "flip": false
+  },
+  {
+   "item_id": "v073",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 14246,
+   "chars_uniq": 5026,
+   "p_old": 0.9161290526390076,
+   "p_new": 0.9180249571800232,
+   "flip": false
+  },
+  {
+   "item_id": "v074",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 10054,
+   "chars_uniq": 5026,
+   "p_old": 0.9582576751708984,
+   "p_new": 0.9594366550445557,
+   "flip": false
+  },
+  {
+   "item_id": "v075",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10054,
+   "chars_uniq": 5026,
+   "p_old": 0.9825289249420166,
+   "p_new": 0.9844847917556763,
+   "flip": false
+  },
+  {
+   "item_id": "v076",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10054,
+   "chars_uniq": 5026,
+   "p_old": 0.9833872318267822,
+   "p_new": 0.9726209044456482,
+   "flip": false
+  },
+  {
+   "item_id": "v077",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10054,
+   "chars_uniq": 5026,
+   "p_old": 0.9798259139060974,
+   "p_new": 0.9706675410270691,
+   "flip": false
+  },
+  {
+   "item_id": "v082",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16766,
+   "chars_uniq": 4190,
+   "p_old": 0.9833275675773621,
+   "p_new": 0.9879627823829651,
+   "flip": false
+  },
+  {
+   "item_id": "v083",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 16766,
+   "chars_uniq": 4190,
+   "p_old": 0.9274231195449829,
+   "p_new": 0.9771225452423096,
+   "flip": false
+  },
+  {
+   "item_id": "v084",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16766,
+   "chars_uniq": 4190,
+   "p_old": 0.9746158123016357,
+   "p_new": 0.9828101396560669,
+   "flip": false
+  },
+  {
+   "item_id": "v085",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 16766,
+   "chars_uniq": 4190,
+   "p_old": 0.9181566834449768,
+   "p_new": 0.969722330570221,
+   "flip": false
+  },
+  {
+   "item_id": "v086",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16766,
+   "chars_uniq": 4190,
+   "p_old": 0.03157983720302582,
+   "p_new": 0.12570269405841827,
+   "flip": false
+  },
+  {
+   "item_id": "v087",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16766,
+   "chars_uniq": 4190,
+   "p_old": 0.24835088849067688,
+   "p_new": 0.9133762121200562,
+   "flip": true
+  },
+  {
+   "item_id": "v088",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 16766,
+   "chars_uniq": 4190,
+   "p_old": 0.22245119512081146,
+   "p_new": 0.8924841284751892,
+   "flip": true
+  },
+  {
+   "item_id": "v089",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16766,
+   "chars_uniq": 4190,
+   "p_old": 0.021707890555262566,
+   "p_new": 0.03864526376128197,
+   "flip": false
+  },
+  {
+   "item_id": "v091",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 12574,
+   "chars_uniq": 4190,
+   "p_old": 0.02978920191526413,
+   "p_new": 0.06401650607585907,
+   "flip": false
+  },
+  {
+   "item_id": "v092",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 12574,
+   "chars_uniq": 4190,
+   "p_old": 0.49324798583984375,
+   "p_new": 0.9488602876663208,
+   "flip": true
+  },
+  {
+   "item_id": "v093",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 12574,
+   "chars_uniq": 4190,
+   "p_old": 0.023327533155679703,
+   "p_new": 0.3610546588897705,
+   "flip": false
+  },
+  {
+   "item_id": "v094",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 22026,
+   "chars_uniq": 5505,
+   "p_old": 0.9524381160736084,
+   "p_new": 0.962046205997467,
+   "flip": false
+  },
+  {
+   "item_id": "v095",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 22026,
+   "chars_uniq": 5505,
+   "p_old": 0.9712952375411987,
+   "p_new": 0.9855315685272217,
+   "flip": false
+  },
+  {
+   "item_id": "v096",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 22026,
+   "chars_uniq": 5505,
+   "p_old": 0.9691997766494751,
+   "p_new": 0.9820905327796936,
+   "flip": false
+  },
+  {
+   "item_id": "v097",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 22026,
+   "chars_uniq": 5505,
+   "p_old": 0.9761097431182861,
+   "p_new": 0.9782094955444336,
+   "flip": false
+  },
+  {
+   "item_id": "v098",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16519,
+   "chars_uniq": 5505,
+   "p_old": 0.9328556060791016,
+   "p_new": 0.9778940677642822,
+   "flip": false
+  },
+  {
+   "item_id": "v099",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 16519,
+   "chars_uniq": 5505,
+   "p_old": 0.9360135793685913,
+   "p_new": 0.9743731021881104,
+   "flip": false
+  },
+  {
+   "item_id": "v100",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 16519,
+   "chars_uniq": 5505,
+   "p_old": 0.6510568261146545,
+   "p_new": 0.9025225639343262,
+   "flip": false
+  },
+  {
+   "item_id": "v101",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 16519,
+   "chars_uniq": 5505,
+   "p_old": 0.9784393906593323,
+   "p_new": 0.9831409454345703,
+   "flip": false
+  },
+  {
+   "item_id": "v102",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16519,
+   "chars_uniq": 5505,
+   "p_old": 0.8583732843399048,
+   "p_new": 0.3967447280883789,
+   "flip": true
+  },
+  {
+   "item_id": "v103",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16519,
+   "chars_uniq": 5505,
+   "p_old": 0.07066354900598526,
+   "p_new": 0.9071785807609558,
+   "flip": true
+  },
+  {
+   "item_id": "v104",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 16519,
+   "chars_uniq": 5505,
+   "p_old": 0.9797607660293579,
+   "p_new": 0.9849337935447693,
+   "flip": false
+  },
+  {
+   "item_id": "v105",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16519,
+   "chars_uniq": 5505,
+   "p_old": 0.9775899052619934,
+   "p_new": 0.9858236312866211,
+   "flip": false
+  },
+  {
+   "item_id": "v106",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16519,
+   "chars_uniq": 5505,
+   "p_old": 0.9746160507202148,
+   "p_new": 0.9818074703216553,
+   "flip": false
+  },
+  {
+   "item_id": "v108",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 12850,
+   "chars_uniq": 3211,
+   "p_old": 0.9213568568229675,
+   "p_new": 0.9440746307373047,
+   "flip": false
+  },
+  {
+   "item_id": "v109",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 12850,
+   "chars_uniq": 3211,
+   "p_old": 0.22033590078353882,
+   "p_new": 0.8114635944366455,
+   "flip": true
+  },
+  {
+   "item_id": "v110",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 12850,
+   "chars_uniq": 3211,
+   "p_old": 0.9361680746078491,
+   "p_new": 0.9684363007545471,
+   "flip": false
+  },
+  {
+   "item_id": "v111",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 12850,
+   "chars_uniq": 3211,
+   "p_old": 0.12491638213396072,
+   "p_new": 0.3041062355041504,
+   "flip": false
+  },
+  {
+   "item_id": "v112",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 9637,
+   "chars_uniq": 3211,
+   "p_old": 0.7506914138793945,
+   "p_new": 0.7793693542480469,
+   "flip": false
+  },
+  {
+   "item_id": "v113",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 9637,
+   "chars_uniq": 3211,
+   "p_old": 0.38236045837402344,
+   "p_new": 0.7274507284164429,
+   "flip": true
+  },
+  {
+   "item_id": "v114",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 9637,
+   "chars_uniq": 3211,
+   "p_old": 0.9369697570800781,
+   "p_new": 0.9640675187110901,
+   "flip": false
+  },
+  {
+   "item_id": "v115",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 9637,
+   "chars_uniq": 3211,
+   "p_old": 0.6335814595222473,
+   "p_new": 0.8843052387237549,
+   "flip": false
+  },
+  {
+   "item_id": "v116",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 9637,
+   "chars_uniq": 3211,
+   "p_old": 0.08635426312685013,
+   "p_new": 0.16865670680999756,
+   "flip": false
+  },
+  {
+   "item_id": "v117",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 9637,
+   "chars_uniq": 3211,
+   "p_old": 0.10897187143564224,
+   "p_new": 0.7623469233512878,
+   "flip": true
+  },
+  {
+   "item_id": "v122",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 3994,
+   "chars_uniq": 997,
+   "p_old": 0.9642819762229919,
+   "p_new": 0.955049991607666,
+   "flip": false
+  },
+  {
+   "item_id": "v123",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 3994,
+   "chars_uniq": 997,
+   "p_old": 0.9607287645339966,
+   "p_new": 0.9208548069000244,
+   "flip": false
+  },
+  {
+   "item_id": "v124",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 3994,
+   "chars_uniq": 997,
+   "p_old": 0.7065889239311218,
+   "p_new": 0.17242971062660217,
+   "flip": true
+  },
+  {
+   "item_id": "v125",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 3994,
+   "chars_uniq": 997,
+   "p_old": 0.10373302549123764,
+   "p_new": 0.10484595596790314,
+   "flip": false
+  },
+  {
+   "item_id": "v126",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 3994,
+   "chars_uniq": 997,
+   "p_old": 0.06239709258079529,
+   "p_new": 0.05236872285604477,
+   "flip": false
+  },
+  {
+   "item_id": "v127",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 16702,
+   "chars_uniq": 5566,
+   "p_old": 0.9680759906768799,
+   "p_new": 0.9655709266662598,
+   "flip": false
+  },
+  {
+   "item_id": "v128",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 9544,
+   "chars_uniq": 3180,
+   "p_old": 0.9640028476715088,
+   "p_new": 0.9549427032470703,
+   "flip": false
+  },
+  {
+   "item_id": "v129",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 7952,
+   "chars_uniq": 5566,
+   "p_old": 0.9504576325416565,
+   "p_new": 0.9571523070335388,
+   "flip": false
+  },
+  {
+   "item_id": "v136",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4770,
+   "chars_uniq": 2384,
+   "p_old": 0.9092634320259094,
+   "p_new": 0.9742400050163269,
+   "flip": false
+  },
+  {
+   "item_id": "v137",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4770,
+   "chars_uniq": 2384,
+   "p_old": 0.03239332512021065,
+   "p_new": 0.2503480613231659,
+   "flip": false
+  },
+  {
+   "item_id": "v138",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4770,
+   "chars_uniq": 2384,
+   "p_old": 0.9795055389404297,
+   "p_new": 0.9773320555686951,
+   "flip": false
+  },
+  {
+   "item_id": "v139",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4770,
+   "chars_uniq": 2384,
+   "p_old": 0.10085578262805939,
+   "p_new": 0.26201164722442627,
+   "flip": false
+  },
+  {
+   "item_id": "v140",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 7156,
+   "chars_uniq": 2384,
+   "p_old": 0.9520685076713562,
+   "p_new": 0.9717056751251221,
+   "flip": false
+  },
+  {
+   "item_id": "v144",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 8318,
+   "chars_uniq": 2078,
+   "p_old": 0.20466959476470947,
+   "p_new": 0.10071970522403717,
+   "flip": false
+  },
+  {
+   "item_id": "v145",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8318,
+   "chars_uniq": 2078,
+   "p_old": 0.028830459341406822,
+   "p_new": 0.05637431889772415,
+   "flip": false
+  },
+  {
+   "item_id": "v146",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8318,
+   "chars_uniq": 2078,
+   "p_old": 0.0267434474080801,
+   "p_new": 0.025643136352300644,
+   "flip": false
+  },
+  {
+   "item_id": "v147",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8318,
+   "chars_uniq": 2078,
+   "p_old": 0.0317879244685173,
+   "p_new": 0.028903212398290634,
+   "flip": false
+  },
+  {
+   "item_id": "v148",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8318,
+   "chars_uniq": 2078,
+   "p_old": 0.39510536193847656,
+   "p_new": 0.8940315842628479,
+   "flip": true
+  },
+  {
+   "item_id": "v149",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 8318,
+   "chars_uniq": 2078,
+   "p_old": 0.02934865467250347,
+   "p_new": 0.03622237220406532,
+   "flip": false
+  },
+  {
+   "item_id": "v150",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8318,
+   "chars_uniq": 2078,
+   "p_old": 0.07640398293733597,
+   "p_new": 0.12470348924398422,
+   "flip": false
+  },
+  {
+   "item_id": "v151",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8318,
+   "chars_uniq": 2078,
+   "p_old": 0.027598902583122253,
+   "p_new": 0.025203654542565346,
+   "flip": false
+  },
+  {
+   "item_id": "v152",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 3106,
+   "chars_uniq": 1552,
+   "p_old": 0.05507522448897362,
+   "p_new": 0.0934775099158287,
+   "flip": false
+  },
+  {
+   "item_id": "v153",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 3106,
+   "chars_uniq": 1552,
+   "p_old": 0.0389176569879055,
+   "p_new": 0.06341101974248886,
+   "flip": false
+  },
+  {
+   "item_id": "v154",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 5712,
+   "chars_uniq": 3632,
+   "p_old": 0.044081561267375946,
+   "p_new": 0.05422553792595863,
+   "flip": false
+  },
+  {
+   "item_id": "v155",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5712,
+   "chars_uniq": 3632,
+   "p_old": 0.15261892974376678,
+   "p_new": 0.15703241527080536,
+   "flip": false
+  },
+  {
+   "item_id": "v156",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4660,
+   "chars_uniq": 1552,
+   "p_old": 0.900425136089325,
+   "p_new": 0.9369387030601501,
+   "flip": false
+  },
+  {
+   "item_id": "v157",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4660,
+   "chars_uniq": 1552,
+   "p_old": 0.7249054312705994,
+   "p_new": 0.8279691338539124,
+   "flip": false
+  },
+  {
+   "item_id": "v158",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4660,
+   "chars_uniq": 1552,
+   "p_old": 0.037653617560863495,
+   "p_new": 0.05550892651081085,
+   "flip": false
+  },
+  {
+   "item_id": "v164",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 7882,
+   "chars_uniq": 2626,
+   "p_old": 0.8453510403633118,
+   "p_new": 0.7028101086616516,
+   "flip": false
+  },
+  {
+   "item_id": "v165",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10510,
+   "chars_uniq": 2626,
+   "p_old": 0.958480179309845,
+   "p_new": 0.978468120098114,
+   "flip": false
+  },
+  {
+   "item_id": "v166",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10510,
+   "chars_uniq": 2626,
+   "p_old": 0.9095545411109924,
+   "p_new": 0.8512586355209351,
+   "flip": false
+  },
+  {
+   "item_id": "v167",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10510,
+   "chars_uniq": 2626,
+   "p_old": 0.9130133986473083,
+   "p_new": 0.9256137609481812,
+   "flip": false
+  },
+  {
+   "item_id": "v168",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10510,
+   "chars_uniq": 2626,
+   "p_old": 0.22080722451210022,
+   "p_new": 0.8307585120201111,
+   "flip": true
+  },
+  {
+   "item_id": "v169",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5254,
+   "chars_uniq": 2626,
+   "p_old": 0.9741989374160767,
+   "p_new": 0.976147472858429,
+   "flip": false
+  },
+  {
+   "item_id": "v170",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5254,
+   "chars_uniq": 2626,
+   "p_old": 0.9789613485336304,
+   "p_new": 0.9807416796684265,
+   "flip": false
+  },
+  {
+   "item_id": "v171",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10510,
+   "chars_uniq": 2626,
+   "p_old": 0.9726235866546631,
+   "p_new": 0.9797053933143616,
+   "flip": false
+  },
+  {
+   "item_id": "v172",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10510,
+   "chars_uniq": 2626,
+   "p_old": 0.8844825625419617,
+   "p_new": 0.9625034928321838,
+   "flip": false
+  },
+  {
+   "item_id": "v173",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10510,
+   "chars_uniq": 2626,
+   "p_old": 0.0235869362950325,
+   "p_new": 0.06676928699016571,
+   "flip": false
+  },
+  {
+   "item_id": "v174",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10510,
+   "chars_uniq": 2626,
+   "p_old": 0.9542300701141357,
+   "p_new": 0.9733752012252808,
+   "flip": false
+  },
+  {
+   "item_id": "v193",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2302,
+   "chars_uniq": 1150,
+   "p_old": 0.0971626341342926,
+   "p_new": 0.7932029962539673,
+   "flip": true
+  },
+  {
+   "item_id": "v194",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 2302,
+   "chars_uniq": 1150,
+   "p_old": 0.9329843521118164,
+   "p_new": 0.9609273076057434,
+   "flip": false
+  },
+  {
+   "item_id": "v195",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 7794,
+   "chars_uniq": 5008,
+   "p_old": 0.17470593750476837,
+   "p_new": 0.1885630339384079,
+   "flip": false
+  },
+  {
+   "item_id": "v196",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 7232,
+   "chars_uniq": 5008,
+   "p_old": 0.5609226822853088,
+   "p_new": 0.8792089223861694,
+   "flip": false
+  },
+  {
+   "item_id": "v197",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 9916,
+   "chars_uniq": 4344,
+   "p_old": 0.23145195841789246,
+   "p_new": 0.2458476573228836,
+   "flip": false
+  },
+  {
+   "item_id": "v198",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10914,
+   "chars_uniq": 6568,
+   "p_old": 0.27856290340423584,
+   "p_new": 0.5269514322280884,
+   "flip": true
+  },
+  {
+   "item_id": "v199",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4107,
+   "chars_uniq": 3681,
+   "p_old": 0.2825186252593994,
+   "p_new": 0.752514123916626,
+   "flip": true
+  },
+  {
+   "item_id": "v200",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4107,
+   "chars_uniq": 3681,
+   "p_old": 0.8940309882164001,
+   "p_new": 0.910529613494873,
+   "flip": false
+  },
+  {
+   "item_id": "v201",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 4107,
+   "chars_uniq": 3681,
+   "p_old": 0.7186738848686218,
+   "p_new": 0.718076229095459,
+   "flip": false
+  },
+  {
+   "item_id": "v204",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2518,
+   "chars_uniq": 628,
+   "p_old": 0.8951101303100586,
+   "p_new": 0.8351519703865051,
+   "flip": false
+  },
+  {
+   "item_id": "v205",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1258,
+   "chars_uniq": 628,
+   "p_old": 0.9763578772544861,
+   "p_new": 0.9737720489501953,
+   "flip": false
+  },
+  {
+   "item_id": "v206",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10066,
+   "chars_uniq": 5469,
+   "p_old": 0.979981005191803,
+   "p_new": 0.9826833009719849,
+   "flip": false
+  },
+  {
+   "item_id": "v207",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10066,
+   "chars_uniq": 5469,
+   "p_old": 0.9741985201835632,
+   "p_new": 0.9764724373817444,
+   "flip": false
+  },
+  {
+   "item_id": "v208",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10066,
+   "chars_uniq": 5469,
+   "p_old": 0.49460846185684204,
+   "p_new": 0.9576721787452698,
+   "flip": true
+  },
+  {
+   "item_id": "v209",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 10053,
+   "chars_uniq": 5456,
+   "p_old": 0.9818212389945984,
+   "p_new": 0.9823634624481201,
+   "flip": false
+  },
+  {
+   "item_id": "v210",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10053,
+   "chars_uniq": 5456,
+   "p_old": 0.9764716029167175,
+   "p_new": 0.9782002568244934,
+   "flip": false
+  },
+  {
+   "item_id": "v211",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 10053,
+   "chars_uniq": 5456,
+   "p_old": 0.9538363218307495,
+   "p_new": 0.9660652279853821,
+   "flip": false
+  },
+  {
+   "item_id": "v212",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 13789,
+   "chars_uniq": 4595,
+   "p_old": 0.9808763861656189,
+   "p_new": 0.9846184849739075,
+   "flip": false
+  },
+  {
+   "item_id": "v213",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 13789,
+   "chars_uniq": 4595,
+   "p_old": 0.9742953777313232,
+   "p_new": 0.9815471172332764,
+   "flip": false
+  },
+  {
+   "item_id": "v214",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 13789,
+   "chars_uniq": 4595,
+   "p_old": 0.9703313708305359,
+   "p_new": 0.980885922908783,
+   "flip": false
+  },
+  {
+   "item_id": "v218",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4482,
+   "chars_uniq": 1119,
+   "p_old": 0.7853405475616455,
+   "p_new": 0.12628388404846191,
+   "flip": true
+  },
+  {
+   "item_id": "v219",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1210,
+   "chars_uniq": 402,
+   "p_old": 0.953101634979248,
+   "p_new": 0.8600058555603027,
+   "flip": false
+  },
+  {
+   "item_id": "v220",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 10826,
+   "chars_uniq": 2705,
+   "p_old": 0.9641780853271484,
+   "p_new": 0.8923579454421997,
+   "flip": false
+  },
+  {
+   "item_id": "v221",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 4947,
+   "chars_uniq": 3826,
+   "p_old": 0.9148610234260559,
+   "p_new": 0.894795835018158,
+   "flip": false
+  },
+  {
+   "item_id": "v222",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1258,
+   "chars_uniq": 628,
+   "p_old": 0.8193186521530151,
+   "p_new": 0.9372533559799194,
+   "flip": false
+  },
+  {
+   "item_id": "v223",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 1258,
+   "chars_uniq": 628,
+   "p_old": 0.9820114374160767,
+   "p_new": 0.9809718132019043,
+   "flip": false
+  },
+  {
+   "item_id": "v224",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2843,
+   "chars_uniq": 1733,
+   "p_old": 0.9181032180786133,
+   "p_new": 0.9243488311767578,
+   "flip": false
+  },
+  {
+   "item_id": "v225",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2843,
+   "chars_uniq": 1733,
+   "p_old": 0.11793285608291626,
+   "p_new": 0.12778343260288239,
+   "flip": false
+  },
+  {
+   "item_id": "v226",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2843,
+   "chars_uniq": 1733,
+   "p_old": 0.9697283506393433,
+   "p_new": 0.9549108147621155,
+   "flip": false
+  },
+  {
+   "item_id": "v227",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2218,
+   "chars_uniq": 1108,
+   "p_old": 0.013059220276772976,
+   "p_new": 0.019187789410352707,
+   "flip": false
+  },
+  {
+   "item_id": "v228",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2218,
+   "chars_uniq": 1108,
+   "p_old": 0.954839825630188,
+   "p_new": 0.9178059697151184,
+   "flip": false
+  },
+  {
+   "item_id": "v229",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4093,
+   "chars_uniq": 1733,
+   "p_old": 0.9564586281776428,
+   "p_new": 0.9601389169692993,
+   "flip": false
+  },
+  {
+   "item_id": "v230",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4093,
+   "chars_uniq": 1733,
+   "p_old": 0.9072675108909607,
+   "p_new": 0.9103839993476868,
+   "flip": false
+  },
+  {
+   "item_id": "v231",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 4093,
+   "chars_uniq": 1733,
+   "p_old": 0.9560471177101135,
+   "p_new": 0.5574619770050049,
+   "flip": false
+  },
+  {
+   "item_id": "v232",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 4093,
+   "chars_uniq": 1733,
+   "p_old": 0.8676260113716125,
+   "p_new": 0.0672476664185524,
+   "flip": true
+  },
+  {
+   "item_id": "v233",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4093,
+   "chars_uniq": 1733,
+   "p_old": 0.05507991462945938,
+   "p_new": 0.23501595854759216,
+   "flip": false
+  },
+  {
+   "item_id": "v234",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 24648,
+   "chars_uniq": 4928,
+   "p_old": 0.10154210031032562,
+   "p_new": 0.15630856156349182,
+   "flip": false
+  },
+  {
+   "item_id": "v235",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 24648,
+   "chars_uniq": 4928,
+   "p_old": 0.5948349237442017,
+   "p_new": 0.4970211386680603,
+   "flip": true
+  },
+  {
+   "item_id": "v236",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 24648,
+   "chars_uniq": 4928,
+   "p_old": 0.45538297295570374,
+   "p_new": 0.3894713819026947,
+   "flip": false
+  },
+  {
+   "item_id": "v237",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 24648,
+   "chars_uniq": 4928,
+   "p_old": 0.4997752904891968,
+   "p_new": 0.7362763285636902,
+   "flip": true
+  },
+  {
+   "item_id": "v238",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 24648,
+   "chars_uniq": 4928,
+   "p_old": 0.5942519307136536,
+   "p_new": 0.22285118699073792,
+   "flip": true
+  },
+  {
+   "item_id": "v239",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 29578,
+   "chars_uniq": 4928,
+   "p_old": 0.8695488572120667,
+   "p_new": 0.6955816745758057,
+   "flip": false
+  },
+  {
+   "item_id": "v240",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 29578,
+   "chars_uniq": 4928,
+   "p_old": 0.630295991897583,
+   "p_new": 0.7310031056404114,
+   "flip": false
+  },
+  {
+   "item_id": "v241",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 29578,
+   "chars_uniq": 4928,
+   "p_old": 0.29651913046836853,
+   "p_new": 0.1507696807384491,
+   "flip": false
+  },
+  {
+   "item_id": "v242",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 29578,
+   "chars_uniq": 4928,
+   "p_old": 0.05088558793067932,
+   "p_new": 0.042853616178035736,
+   "flip": false
+  },
+  {
+   "item_id": "v243",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 29578,
+   "chars_uniq": 4928,
+   "p_old": 0.5984472036361694,
+   "p_new": 0.6704498529434204,
+   "flip": false
+  },
+  {
+   "item_id": "v244",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 29578,
+   "chars_uniq": 4928,
+   "p_old": 0.6545723676681519,
+   "p_new": 0.747714638710022,
+   "flip": false
+  },
+  {
+   "item_id": "v245",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 23830,
+   "chars_uniq": 9040,
+   "p_old": 0.7886617183685303,
+   "p_new": 0.953599750995636,
+   "flip": false
+  },
+  {
+   "item_id": "v246",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 23830,
+   "chars_uniq": 9040,
+   "p_old": 0.8818265795707703,
+   "p_new": 0.9425838589668274,
+   "flip": false
+  },
+  {
+   "item_id": "v247",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 23830,
+   "chars_uniq": 9040,
+   "p_old": 0.704365074634552,
+   "p_new": 0.9431003332138062,
+   "flip": false
+  },
+  {
+   "item_id": "v248",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 23830,
+   "chars_uniq": 9040,
+   "p_old": 0.04357759281992912,
+   "p_new": 0.07174517214298248,
+   "flip": false
+  },
+  {
+   "item_id": "v249",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 506,
+   "chars_uniq": 252,
+   "p_old": 0.9433271884918213,
+   "p_new": 0.9445776343345642,
+   "flip": false
+  },
+  {
+   "item_id": "v250",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 506,
+   "chars_uniq": 252,
+   "p_old": 0.9722476601600647,
+   "p_new": 0.969190776348114,
+   "flip": false
+  },
+  {
+   "item_id": "v251",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 506,
+   "chars_uniq": 252,
+   "p_old": 0.7536925077438354,
+   "p_new": 0.8698872327804565,
+   "flip": false
+  },
+  {
+   "item_id": "v252",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 506,
+   "chars_uniq": 252,
+   "p_old": 0.674832820892334,
+   "p_new": 0.7737106680870056,
+   "flip": false
+  },
+  {
+   "item_id": "v253",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1737,
+   "chars_uniq": 1258,
+   "p_old": 0.24150393903255463,
+   "p_new": 0.07787714898586273,
+   "flip": false
+  },
+  {
+   "item_id": "v254",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1737,
+   "chars_uniq": 1258,
+   "p_old": 0.9450778961181641,
+   "p_new": 0.9468839764595032,
+   "flip": false
+  },
+  {
+   "item_id": "v255",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1737,
+   "chars_uniq": 1258,
+   "p_old": 0.9779422879219055,
+   "p_new": 0.9773241877555847,
+   "flip": false
+  },
+  {
+   "item_id": "v256",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 956,
+   "chars_uniq": 477,
+   "p_old": 0.9637882709503174,
+   "p_new": 0.9269095063209534,
+   "flip": false
+  },
+  {
+   "item_id": "v257",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 956,
+   "chars_uniq": 477,
+   "p_old": 0.9607205390930176,
+   "p_new": 0.9306089878082275,
+   "flip": false
+  },
+  {
+   "item_id": "v260",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1560,
+   "chars_uniq": 779,
+   "p_old": 0.7370861768722534,
+   "p_new": 0.9157440066337585,
+   "flip": false
+  },
+  {
+   "item_id": "v261",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 1560,
+   "chars_uniq": 779,
+   "p_old": 0.21768620610237122,
+   "p_new": 0.7423998713493347,
+   "flip": true
+  },
+  {
+   "item_id": "v262",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2574,
+   "chars_uniq": 1286,
+   "p_old": 0.8117871880531311,
+   "p_new": 0.8966438174247742,
+   "flip": false
+  },
+  {
+   "item_id": "v263",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 2574,
+   "chars_uniq": 1286,
+   "p_old": 0.9715230464935303,
+   "p_new": 0.9518702626228333,
+   "flip": false
+  },
+  {
+   "item_id": "v264",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5492,
+   "chars_uniq": 2745,
+   "p_old": 0.8999462723731995,
+   "p_new": 0.8420242071151733,
+   "flip": false
+  },
+  {
+   "item_id": "v266",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 8239,
+   "chars_uniq": 2745,
+   "p_old": 0.9345861673355103,
+   "p_new": 0.8675236701965332,
+   "flip": false
+  },
+  {
+   "item_id": "v267",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 17517,
+   "chars_uniq": 5731,
+   "p_old": 0.8752112984657288,
+   "p_new": 0.8796046376228333,
+   "flip": false
+  },
+  {
+   "item_id": "v268",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 2860,
+   "chars_uniq": 1429,
+   "p_old": 0.05006895586848259,
+   "p_new": 0.09514482319355011,
+   "flip": false
+  },
+  {
+   "item_id": "v269",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 2860,
+   "chars_uniq": 1429,
+   "p_old": 0.17444556951522827,
+   "p_new": 0.45303863286972046,
+   "flip": false
+  },
+  {
+   "item_id": "v270",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 5722,
+   "chars_uniq": 1429,
+   "p_old": 0.9595056772232056,
+   "p_new": 0.9636964201927185,
+   "flip": false
+  },
+  {
+   "item_id": "v271",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5722,
+   "chars_uniq": 1429,
+   "p_old": 0.03873196989297867,
+   "p_new": 0.07326240092515945,
+   "flip": false
+  },
+  {
+   "item_id": "v272",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5722,
+   "chars_uniq": 1429,
+   "p_old": 0.9359524846076965,
+   "p_new": 0.925938069820404,
+   "flip": false
+  },
+  {
+   "item_id": "v273",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5722,
+   "chars_uniq": 1429,
+   "p_old": 0.02828264608979225,
+   "p_new": 0.09047658741474152,
+   "flip": false
+  },
+  {
+   "item_id": "v274",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5157,
+   "chars_uniq": 2295,
+   "p_old": 0.030736025422811508,
+   "p_new": 0.03225816786289215,
+   "flip": false
+  },
+  {
+   "item_id": "v275",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5157,
+   "chars_uniq": 2295,
+   "p_old": 0.056191541254520416,
+   "p_new": 0.0926477462053299,
+   "flip": false
+  },
+  {
+   "item_id": "v276",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 5157,
+   "chars_uniq": 2295,
+   "p_old": 0.021502822637557983,
+   "p_new": 0.0324866957962513,
+   "flip": false
+  },
+  {
+   "item_id": "v277",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5157,
+   "chars_uniq": 2295,
+   "p_old": 0.47311994433403015,
+   "p_new": 0.5487460494041443,
+   "flip": true
+  },
+  {
+   "item_id": "v278",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 6650,
+   "chars_uniq": 3324,
+   "p_old": 0.0546298585832119,
+   "p_new": 0.8600333333015442,
+   "flip": true
+  },
+  {
+   "item_id": "v279",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 6650,
+   "chars_uniq": 3324,
+   "p_old": 0.11733314394950867,
+   "p_new": 0.6656888127326965,
+   "flip": true
+  },
+  {
+   "item_id": "v280",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 6650,
+   "chars_uniq": 3324,
+   "p_old": 0.054931942373514175,
+   "p_new": 0.05565889924764633,
+   "flip": false
+  },
+  {
+   "item_id": "v281",
+   "labeled": true,
+   "human": "지지",
+   "chars_dup": 6650,
+   "chars_uniq": 3324,
+   "p_old": 0.9446082711219788,
+   "p_new": 0.9588742852210999,
+   "flip": false
+  },
+  {
+   "item_id": "v282",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 4378,
+   "chars_uniq": 3512,
+   "p_old": 0.394570916891098,
+   "p_new": 0.5891692638397217,
+   "flip": true
+  },
+  {
+   "item_id": "v283",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 3326,
+   "chars_uniq": 1662,
+   "p_old": 0.8287387490272522,
+   "p_new": 0.8876782059669495,
+   "flip": false
+  },
+  {
+   "item_id": "v284",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 4050,
+   "chars_uniq": 2024,
+   "p_old": 0.07297879457473755,
+   "p_new": 0.07956752181053162,
+   "flip": false
+  },
+  {
+   "item_id": "v285",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 5656,
+   "chars_uniq": 3806,
+   "p_old": 0.16958940029144287,
+   "p_new": 0.19471368193626404,
+   "flip": false
+  },
+  {
+   "item_id": "v290",
+   "labeled": false,
+   "human": null,
+   "chars_dup": 3698,
+   "chars_uniq": 1848,
+   "p_old": 0.9724264740943909,
+   "p_new": 0.9664500951766968,
+   "flip": false
+  },
+  {
+   "item_id": "v291",
+   "labeled": true,
+   "human": "불지지",
+   "chars_dup": 3698,
+   "chars_uniq": 1848,
+   "p_old": 0.8671314716339111,
+   "p_new": 0.902534544467926,
+   "flip": false
+  }
+ ]
+}

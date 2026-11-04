@@ -255,3 +255,19 @@ def test_GPU_메모리가_모자라면_같은_가중치로_CPU에서_한_조각_
     assert sc.cpu_fallbacks == 1 and sc.cpu_fallback_doc_chars == [40]
     assert sc.last_n_chunks == 1 and sc.violations == 0 and sc.calls == 1
     assert sc.m.model.model.moves == ["cpu", "cuda:0"]      # 채점 뒤 원래 장치로 돌아간다
+
+
+def test_같은_청크를_여러_번_인용해도_전제에는_한_번만_첫_인용_순서로_넣는다():
+    """이탈 2 (2026-11-05): 인용 20, 고유 4 → 81,175자 전제. 고유 청크만, 첫 인용 순서."""
+    from lfm.evidence import subq_targets
+    chunks = [{"chunk_id": "b", "doc_id": "d2", "title": "t", "text": "beta 본문"},
+              {"chunk_id": "a", "doc_id": "d1", "title": "t", "text": "alpha 본문"}]
+    out = mk([("alpha one [a][a]. beta two [b][a][b].", ["a", "a", "b", "a", "b"])], chunks)
+    items = sentences_with_premises(out)
+    assert items and all(p == ["alpha 본문", "beta 본문"] for _, p in items)
+    sc = FakeScorer({})
+    subq_targets(out, MiniCheckDocEstimator(sc))
+    assert sc.seen and all(doc == "alpha 본문\n\nbeta 본문" for doc, _ in sc.seen)
+    # nli_max 는 최댓값이라 중복과 무관하다
+    nli = FakeNLI()
+    assert grounding(out, nli) == grounding(mk([("alpha one [a]. beta two [b].", ["a", "b"])], chunks), nli)

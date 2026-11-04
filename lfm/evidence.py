@@ -19,7 +19,7 @@ from .estimator import Estimator, NLIMaxEstimator
 from .nli import NLIBase
 from .types import BranchOutput, split_sentences
 
-__all__ = ["EvidenceState", "coverage", "grounding", "source_diversity", "support_strength",
+__all__ = ["EvidenceState", "coverage", "cited_texts", "grounding", "source_diversity", "support_strength",
            "sentences_with_premises", "evaluate"]
 
 DIVERSITY_K = 5  # CLAUDE.md 확정: K=5 고정 (K ∈ {3,5,8} 민감도는 부록)
@@ -46,6 +46,16 @@ def coverage(out: BranchOutput) -> float:
     return n / len(subs)
 
 
+def cited_texts(sa, cmap) -> list[str]:
+    """sub-answer 가 인용한 청크 본문 — **고유 청크, 첫 인용 순서** (`BranchOutput.cited_chunks()` 와 같은 규칙).
+
+    같은 청크를 여러 번 인용해도 전제에는 한 번만 넣는다(이탈 2, 2026-11-05). 인용 횟수만큼 이어붙이면
+    R2 파일럿에서 전제가 81,175자(인용 20, 고유 4)가 돼 단일 조각 채점이 불가능했다. nli_max(g₁)는
+    최댓값이라 중복과 무관하다.
+    """
+    return [cmap[c].text for c in dict.fromkeys(c for c in sa.citations if c in cmap)]
+
+
 def sentences_with_premises(out: BranchOutput) -> list[tuple[str, list[str]]]:
     """답안 문장과 그 문장이 인용한 chunk 본문. 인용이 없으면 빈 목록이다.
 
@@ -54,7 +64,7 @@ def sentences_with_premises(out: BranchOutput) -> list[tuple[str, list[str]]]:
     cmap = out.chunk_map()
     items: list[tuple[str, list[str]]] = []
     for sa in out.sub_answers:
-        cited = [cmap[c].text for c in sa.citations if c in cmap]
+        cited = cited_texts(sa, cmap)
         for sent in split_sentences(sa.text):
             items.append((sent, cited))
     return items
@@ -129,7 +139,7 @@ def subq_targets(out: BranchOutput, scorer, tau_ground: float = 0.5) -> list[int
     cmap = out.chunk_map()
     targets, items, owner = [], [], []
     for sa in out.sub_answers:
-        cited = [cmap[c].text for c in sa.citations if c in cmap]
+        cited = cited_texts(sa, cmap)
         if not cited:
             targets.append(sa.index)
             continue

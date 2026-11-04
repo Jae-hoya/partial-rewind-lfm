@@ -154,12 +154,12 @@ class Support:
 
     def _items(self, sa: dict) -> list[tuple[str, tuple[str, ...]]]:
         prem = []
-        for c in sa.get("citations") or []:
+        for c in dict.fromkeys(sa.get("citations") or []):
             if c in self.chunk_text:
                 prem.append(self.chunk_text[c])
             else:
                 self.missing_chunks.add(c)
-        # evidence.sentences_with_premises 와 같은 규칙: 문장마다 이 sub-answer 가 인용한 청크 전부
+        # evidence.cited_texts 와 같은 규칙: 문장마다 이 sub-answer 가 인용한 **고유** 청크, 첫 인용 순서
         return [(s, tuple(prem)) for s in split_sentences(sa.get("text") or "")]
 
     def prime(self, sub_answers: Iterable[dict]) -> None:
