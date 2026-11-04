@@ -218,3 +218,40 @@ def test_분모는_지지되지_않은_문장까지_포함한다():
              [{"chunk_id": "c1", "doc_id": "d1", "title": "t", "text": "Alpha"}])
     assert len(sentences_with_premises(out)) == 2
     assert grounding(out, NLIMaxEstimator(FakeNLI(), 0.5)) == 0.5
+
+
+def test_GPU_메모리가_모자라면_같은_가중치로_CPU에서_한_조각_채점한다():
+    """R2 파일럿 2026-11-05 OOM. 대체 경로는 같은 score 를 CPU 에서 다시 부르고, 장치를 되돌리고, 센다."""
+    torch = pytest.importorskip("torch")
+    from lfm.estimator import MiniCheckScorer
+
+    class HF:
+        def __init__(self):
+            self.device = "cuda:0"
+            self.moves = []
+
+        def to(self, d):
+            self.moves.append(str(d))
+            self.device = str(d)
+            return self
+
+    class M:
+        def __init__(self):
+            self.model = type("Inf", (), {})()
+            self.model.model = HF()
+            self.n = 0
+
+        def score(self, docs, claims, chunk_size):
+            self.n += 1
+            if self.model.model.device != "cpu":
+                raise torch.cuda.OutOfMemoryError("fake oom")
+            return [1], [0.73], [[docs[0]]], [[0.73]]
+
+    sc = MiniCheckScorer.__new__(MiniCheckScorer)
+    sc.chunk_size, sc.max_model_len = 7200, 7500
+    sc.m, sc.calls, sc.violations, sc.last_n_chunks = M(), 0, 0, None
+    sc.cpu_fallbacks, sc.cpu_fallback_doc_chars = 0, []
+    assert sc.score("x" * 40, "c") == pytest.approx(0.73)
+    assert sc.cpu_fallbacks == 1 and sc.cpu_fallback_doc_chars == [40]
+    assert sc.last_n_chunks == 1 and sc.violations == 0 and sc.calls == 1
+    assert sc.m.model.model.moves == ["cpu", "cuda:0"]      # 채점 뒤 원래 장치로 돌아간다

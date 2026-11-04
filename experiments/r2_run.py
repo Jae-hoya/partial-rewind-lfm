@@ -112,6 +112,15 @@ def branch_record(qr, rr, bid) -> dict:
     }
 
 
+def scorer_stats(est) -> dict | None:
+    """MiniCheck scorer 누적 계수(프로세스 단위, arm 을 넘어 누적). G1 ⑧ 점검용."""
+    s = getattr(getattr(est, "inner", est), "scorer", None)
+    if s is None or not hasattr(s, "cpu_fallbacks"):
+        return None
+    return {"calls": s.calls, "violations": s.violations, "cpu_fallbacks": s.cpu_fallbacks,
+            "cpu_fallback_doc_chars": list(s.cpu_fallback_doc_chars)}
+
+
 def run_one(cfg, topics, outdir: Path, retriever, nli, est, run_tag: str, ledger=None) -> dict:
     outdir.mkdir(parents=True, exist_ok=True)
     (outdir / "topics").mkdir(exist_ok=True)
@@ -126,7 +135,8 @@ def run_one(cfg, topics, outdir: Path, retriever, nli, est, run_tag: str, ledger
         usage = llm.stats.to_dict()
         prev = outdir / "usage.json"
         hist = json.load(io.open(prev, encoding="utf-8")) if prev.exists() else []
-        hist.append({"finished_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "usage": usage})
+        hist.append({"finished_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "usage": usage,
+                     "scorer_cumulative": scorer_stats(est)})
         io.open(prev, "w", encoding="utf-8").write(json.dumps(hist, ensure_ascii=False, indent=1))
     return usage
 

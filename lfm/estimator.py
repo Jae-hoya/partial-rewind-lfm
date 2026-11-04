@@ -170,9 +170,34 @@ class MiniCheckScorer:
         self.calls = 0
         self.violations = 0          # 내부 청크가 1 이 아니었던 횟수 — **세어서 남긴다**
         self.last_n_chunks: int | None = None
+        # 긴 전제(수천 토큰)는 T5 self-attention 이 층마다 len² × 16 × 4바이트를 잡아
+        # 12GB 카드를 넘는다(R2 파일럿 2026-11-05, 3.35 GiB 할당 실패). 그 호출만 **같은 가중치
+        # fp32 로 CPU 에서** 한 조각 그대로 다시 채점한다. 연산자는 그대로이고 장치만 바뀐다.
+        self.cpu_fallbacks = 0
+        self.cpu_fallback_doc_chars: list[int] = []
+
+    def _score_on_cpu(self, doc: str, claim: str):
+        import torch
+        hf = self.m.model.model
+        dev = hf.device
+        torch.cuda.empty_cache()
+        hf.to("cpu")
+        try:
+            return self.m.score(docs=[doc], claims=[claim], chunk_size=self.chunk_size)
+        finally:
+            hf.to(dev)
 
     def score(self, doc: str, claim: str) -> float:
-        out = self.m.score(docs=[doc], claims=[claim], chunk_size=self.chunk_size)
+        import torch
+        oom = False
+        try:
+            out = self.m.score(docs=[doc], claims=[claim], chunk_size=self.chunk_size)
+        except torch.cuda.OutOfMemoryError:
+            oom = True               # except 밖에서 처리한다 — traceback 이 GPU 텐서를 잡고 있다
+        if oom:
+            out = self._score_on_cpu(doc, claim)
+            self.cpu_fallbacks += 1
+            self.cpu_fallback_doc_chars.append(len(doc))
         self.calls += 1
         # 실측한 반환 형태 (MiniCheck 0.1.0):
         #   out[0] [pred]  out[1] [prob]  out[2] [[쓰인 청크...]]  out[3] [청크별 확률]
