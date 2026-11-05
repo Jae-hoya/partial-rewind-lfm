@@ -220,6 +220,38 @@ def test_분모는_지지되지_않은_문장까지_포함한다():
     assert grounding(out, NLIMaxEstimator(FakeNLI(), 0.5)) == 0.5
 
 
+class FakeTok:
+    """글자 하나 = 토큰 하나."""
+    eos_token = "</s>"
+
+    def __call__(self, text, truncation=False):
+        return {"input_ids": list(range(len(text)))}
+
+
+def _bare_scorer(m, max_model_len=7500):
+    from lfm.estimator import MiniCheckScorer
+    sc = MiniCheckScorer.__new__(MiniCheckScorer)
+    sc.chunk_size, sc.max_model_len = 7200, max_model_len
+    sc.m, sc.calls, sc.violations, sc.last_n_chunks = m, 0, 0, None
+    sc.cpu_fallbacks, sc.cpu_fallback_doc_chars = 0, []
+    return sc
+
+
+def test_입력이_max_model_len_을_넘으면_잘려서_채점되기_전에_죽는다():
+    """이탈 3 (2026-11-05): 쪼개기는 낱말 수로, 자르기는 토큰 수로 해서 '1조각·위반 0' 인 채 claim 이 잘릴 수 있다."""
+    called = []
+    m = type("M", (), {})()
+    m.model = type("Inf", (), {})()
+    m.model.tokenizer = FakeTok()
+    m.score = lambda docs, claims, chunk_size: called.append(1) or ([1], [0.9], [[docs[0]]], [[0.9]])
+    sc = _bare_scorer(m, max_model_len=50)
+    assert sc.score("d" * 20, "c") == pytest.approx(0.9)   # 'predict: '(9) + 20 + '</s>'(4) + 1 = 34 ≤ 50
+    assert sc.max_input_tokens == 34
+    with pytest.raises(AssertionError):
+        sc.score("d" * 40, "c")                            # 54 > 50
+    assert len(called) == 1                                # 넘친 입력은 모델에 들어가지 않는다
+
+
 def test_GPU_메모리가_모자라면_같은_가중치로_CPU에서_한_조각_채점한다():
     """R2 파일럿 2026-11-05 OOM. 대체 경로는 같은 score 를 CPU 에서 다시 부르고, 장치를 되돌리고, 센다."""
     torch = pytest.importorskip("torch")
@@ -239,6 +271,7 @@ def test_GPU_메모리가_모자라면_같은_가중치로_CPU에서_한_조각_
         def __init__(self):
             self.model = type("Inf", (), {})()
             self.model.model = HF()
+            self.model.tokenizer = FakeTok()
             self.n = 0
 
         def score(self, docs, claims, chunk_size):

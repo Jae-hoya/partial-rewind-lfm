@@ -496,9 +496,78 @@ def g5_from_labels(key_csv: Path, labels_csv: Path, support: dict[tuple, bool] |
     return {"n_pairs": len(d), "sd": sd, "slots": g5_slots(sd), "support_used": support is not None, "note": note}
 
 
+# --------------------------------------------------------------------------- G2 (P-H)
+NO_CONTEXT = "(컨텍스트 없음)"
+
+
+def ph_blinding_note(key_csv: Path, html: Path) -> dict[str, Any]:
+    """P-H 시트의 구조적 누출과 빈 컨텍스트 문항 — 라벨 **전에** 봉인 폴더에 적는다(독립 검증 지적, 2026-11-05).
+
+    - 탭 B 는 E insufficient 슬롯뿐이고 같은 슬롯의 E 는 answered 일 수 없다. 그래서 탭 A 문항의 질문이 탭 B 에도 있으면
+      그 A 문항은 L 이라고 추론할 수 있다 → `cross_tab_inferable`.
+    - 탭 B 에서 컨텍스트가 비어 보이는 문항은 자명하게 '답없음'이다 → `b_no_context`."""
+    keys = list(csv.DictReader(io.open(key_csv, encoding="utf-8")))
+    slot = lambda k: (k["query_id"], k["branch"], k["sq_index"])
+    b_slots = {slot(k) for k in keys if k["tab"] == "B"}
+    inferable = sorted(k["item_id"] for k in keys if k["tab"] == "A" and slot(k) in b_slots)
+    h = io.open(html, encoding="utf-8").read()
+    sets = json.loads(re.search(r"const SETS = (\[.*?\]);\n", h, re.S).group(1))      # write_family 형식(탭 묶음)
+    no_ctx = sorted(it["id"] for s in sets if s["id"] == "ph_b" for it in s["items"] if NO_CONTEXT in (it.get("ev") or ""))
+    return {"cross_tab_inferable": inferable, "b_no_context": no_ctx,
+            "mitigation": "탭 A 를 끝까지 라벨한 뒤 탭 B 를 연다. G2(a)(b) 를 이 문항 포함·제외로 함께 보고한다"}
+
+
+def g2_from_labels(key_csv: Path, labels_csv: Path, analysis_json: Path | None = None,
+                   note: dict | None = None, e_arm="E-GR", l_arm="L-GR") -> dict[str, Any]:
+    """PREREG §6 G2 — 등록 문구 그대로 계산한다. 라벨이 들어오기 **전에** 작성·커밋한다.
+
+    (a) E insufficient(탭 B) 중 사람 '답있음' ≤ 4건(≤ 15%). '일부'는 '답있음'이 아니다(라벨 규칙 문구)
+    (b) E answered 의 '답함' 비율 − L answered 의 '답함' 비율 ≥ 0.10 (비가중; P-H 는 관점 층화 비례 추출)
+    (c) sub-question 단위 insufficient 비율 45~85% — P-H 대상인 라운드 0(= E-R1)에서
+    (d) E arm 평균 legacy coverage ≥ 0.15 — 문구가 해석을 정하지 않아 모든 읽기를 내고, 판정은 등록 전 고정한 읽기로 한다
+    """
+    keys = {k["item_id"]: k for k in csv.DictReader(io.open(key_csv, encoding="utf-8")) if k["item_id"]}
+    lab = {r["item_id"]: r["human_label"].strip() for r in csv.DictReader(io.open(labels_csv, encoding="utf-8-sig"))}
+    note = note or {"cross_tab_inferable": [], "b_no_context": []}
+    missing = sorted(i for i, k in keys.items() if k["tab"] in ("A", "B") and not lab.get(i))
+
+    def part_a(excl=()):
+        b = [i for i, k in keys.items() if k["tab"] == "B" and i not in excl]
+        n_yes = sum(1 for i in b if lab.get(i) == "답있음")
+        return {"n": len(b), "답있음": n_yes, "일부": sum(1 for i in b if lab.get(i) == "일부"),
+                "rate": n_yes / len(b) if b else None, "pass": bool(b) and n_yes <= 4 and n_yes / len(b) <= 0.15}
+
+    def part_b(excl=()):
+        rate = {}
+        for arm in (e_arm, l_arm):
+            a = [i for i, k in keys.items() if k["tab"] == "A" and k["arm"] == arm and i not in excl]
+            rate[arm] = {"n": len(a), "답함": sum(1 for i in a if lab.get(i) == "답함"),
+                         "rate": sum(1 for i in a if lab.get(i) == "답함") / len(a) if a else None}
+        d = (rate[e_arm]["rate"] - rate[l_arm]["rate"]) if None not in (rate[e_arm]["rate"], rate[l_arm]["rate"]) else None
+        return {**rate, "diff": d, "pass": d is not None and d >= 0.10}
+
+    out = {"missing_labels": missing,
+           "a": part_a(), "a_excl_no_context": part_a(set(note.get("b_no_context", []))),
+           "b": part_b(), "b_excl_inferable": part_b(set(note.get("cross_tab_inferable", [])))}
+    if analysis_json and Path(analysis_json).exists():
+        an = json.load(io.open(analysis_json, encoding="utf-8"))["arm_seed"]
+        r1 = an.get("E-R1·s1", {})
+        ins = (r1.get("generated_rates") or {}).get("insufficient")
+        out["c"] = {"round0_insufficient_rate": ins, "range": [0.45, 0.85],
+                    "pass": ins is not None and 0.45 <= ins <= 0.85}
+        cov = {k: v.get("mean_coverage") for k, v in an.items() if k.startswith("E-")}
+        finals = [cov[k] for k in ("E-GR·s1", "E-SQ·s1", "E-BR·s1") if cov.get(k) is not None]
+        readings = {"round0 (E-R1)": cov.get("E-R1·s1"),
+                    "final, pooled E-GR/E-SQ/E-BR": float(np.mean(finals)) if finals else None,
+                    "final, min over E-GR/E-SQ/E-BR": min(finals) if finals else None}
+        out["d"] = {"coverage_by_arm": cov, "readings": readings, "bar": 0.15,
+                    "pass_by_reading": {k: (v is not None and v >= 0.15) for k, v in readings.items()}}
+    return out
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="R2 라벨 시트 (LLM 호출 0)")
-    ap.add_argument("set", choices=["ph", "h3", "h4", "h5", "g5"])
+    ap.add_argument("set", choices=["ph", "h3", "h4", "h5", "g5", "g2", "ph_note"])
     ap.add_argument("--run-dir")
     ap.add_argument("--out-dir", default=None, help="기본: <run-dir>/sheets")
     ap.add_argument("--slots", type=int, default=G5_DEFAULT)
@@ -510,6 +579,19 @@ def main(argv=None) -> int:
     run_dir = Path(args.run_dir)
     if not run_dir.exists():
         run_dir = ROOT / run_dir
+    sealed = sealed_dir(Path(args.out_dir) if args.out_dir else run_dir / "sheets")
+    if args.set == "ph_note":
+        n = ph_blinding_note(sealed / "_key_ph.csv", (Path(args.out_dir) if args.out_dir else run_dir / "sheets") / "labeler_ph.html")
+        io.open(sealed / "_note_ph_blinding.json", "w", encoding="utf-8").write(json.dumps(n, ensure_ascii=False, indent=1))
+        print("-> %s (누출 %d · 빈 컨텍스트 %d)" % (sealed / "_note_ph_blinding.json", len(n["cross_tab_inferable"]), len(n["b_no_context"])))
+        return 0
+    if args.set == "g2":
+        np_ = sealed / "_note_ph_blinding.json"
+        res = g2_from_labels(Path(args.key) if args.key else sealed / "_key_ph.csv", Path(args.labels),
+                             run_dir / "ANALYSIS.json", json.load(io.open(np_, encoding="utf-8")) if np_.exists() else None)
+        io.open(run_dir / "G2_RESULT.json", "w", encoding="utf-8").write(json.dumps(res, ensure_ascii=False, indent=1))
+        print(json.dumps(res, ensure_ascii=False, indent=1))
+        return 0
     out = Path(args.out_dir) if args.out_dir else run_dir / "sheets"
     {"ph": lambda: build_ph(run_dir, out), "h3": lambda: build_h3(run_dir, out),
      "h4": lambda: build_h4(run_dir, out, n_slots=args.slots), "h5": lambda: build_h5(run_dir, out)}[args.set]()

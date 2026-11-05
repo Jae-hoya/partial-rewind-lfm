@@ -1270,7 +1270,7 @@
      "sign_table": {
       "1": null
      },
-     "claim": false,
+     "claim": null,
      "vs_big_effect": {
       "threshold": 0.2,
       "point_ge": false,
@@ -1400,7 +1400,7 @@
      "sign_table": {
       "1": null
      },
-     "claim": false,
+     "claim": null,
      "vs_big_effect": {
       "threshold": 0.2,
       "point_ge": false,
@@ -1530,7 +1530,7 @@
      "sign_table": {
       "1": 1
      },
-     "claim": true,
+     "claim": null,
      "vs_big_effect": {
       "threshold": 0.2,
       "point_ge": true,
@@ -1776,7 +1776,7 @@
      "sign_table": {
       "1": null
      },
-     "claim": false,
+     "claim": null,
      "vs_big_effect": {
       "threshold": 0.2,
       "point_ge": false,
@@ -1906,7 +1906,7 @@
      "sign_table": {
       "1": null
      },
-     "claim": false,
+     "claim": null,
      "vs_big_effect": {
       "threshold": 0.2,
       "point_ge": false,
@@ -2036,7 +2036,7 @@
      "sign_table": {
       "1": 1
      },
-     "claim": true,
+     "claim": null,
      "vs_big_effect": {
       "threshold": 0.2,
       "point_ge": true,
@@ -2772,7 +2772,12 @@
    },
    "5_fabricated_ids_left": {
     "n": 10,
-    "pass": false
+    "by_family": {
+     "E": 0,
+     "L": 10
+    },
+    "pass": true,
+    "scope": "E (status 모드 필터 대상). L 은 보고만"
    },
    "6_dropped_uncited_sentences": {
     "rate": 0.01858736059479554,
@@ -2839,6 +2844,14 @@
    "extrapolated_billed": [
     10160178.0,
     2519979.0
+   ],
+   "extrapolated_ledger": [
+    12084912.0,
+    3362709.0
+   ],
+   "extrapolated_used": [
+    12084912.0,
+    3362709.0
    ],
    "extrapolated_accounting_upper": [
     22480962.0,

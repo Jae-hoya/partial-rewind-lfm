@@ -30,15 +30,15 @@
 | 비교 | 지표 | 점추정 | 95% CI | seed별 | 주장 |
 |---|---|---|---|---|---|
 | E-SQ_vs_E-GR | accounting_tokens | 0.039 | [-0.003, 0.091] | s1 0.039 | 아니오 |
-| E-SQ_vs_E-GR | billed_tokens | — | [nan, nan] | s1 — | 아니오 |
+| E-SQ_vs_E-GR | billed_tokens | — | [nan, nan] | s1 — | 보고만 |
 | E-SQ_vs_E-GR | branch_rounds | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
 | E-SQ_vs_E-GR | subq_executed | 0.106 | [0.042, 0.183] | s1 0.106 | 예 |
 | L-BR_vs_L-GR | accounting_tokens | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
-| L-BR_vs_L-GR | billed_tokens | — | [nan, nan] | s1 — | 아니오 |
+| L-BR_vs_L-GR | billed_tokens | — | [nan, nan] | s1 — | 보고만 |
 | L-BR_vs_L-GR | branch_rounds | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
 | L-BR_vs_L-GR | subq_executed | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
 | E-BR_vs_E-SQ | accounting_tokens | -0.041 | [-0.101, 0.003] | s1 -0.041 | 아니오 |
-| E-BR_vs_E-SQ | billed_tokens | 0.269 | [0.231, 0.305] | s1 0.269 | 예 |
+| E-BR_vs_E-SQ | billed_tokens | 0.269 | [0.231, 0.305] | s1 0.269 | 보고만 |
 | E-BR_vs_E-SQ | branch_rounds | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
 | E-BR_vs_E-SQ | subq_executed | -0.119 | [-0.224, -0.043] | s1 -0.119 | 예 |
 
@@ -60,15 +60,15 @@
 | 비교 | 지표 | 점추정 | 95% CI | seed별 | 주장 |
 |---|---|---|---|---|---|
 | E-SQ_vs_E-GR | accounting_tokens | 0.039 | [-0.003, 0.091] | s1 0.039 | 아니오 |
-| E-SQ_vs_E-GR | billed_tokens | — | [nan, nan] | s1 — | 아니오 |
+| E-SQ_vs_E-GR | billed_tokens | — | [nan, nan] | s1 — | 보고만 |
 | E-SQ_vs_E-GR | branch_rounds | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
 | E-SQ_vs_E-GR | subq_executed | 0.106 | [0.042, 0.183] | s1 0.106 | 예 |
 | L-BR_vs_L-GR | accounting_tokens | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
-| L-BR_vs_L-GR | billed_tokens | — | [nan, nan] | s1 — | 아니오 |
+| L-BR_vs_L-GR | billed_tokens | — | [nan, nan] | s1 — | 보고만 |
 | L-BR_vs_L-GR | branch_rounds | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
 | L-BR_vs_L-GR | subq_executed | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
 | E-BR_vs_E-SQ | accounting_tokens | -0.041 | [-0.101, 0.003] | s1 -0.041 | 아니오 |
-| E-BR_vs_E-SQ | billed_tokens | 0.269 | [0.231, 0.305] | s1 0.269 | 예 |
+| E-BR_vs_E-SQ | billed_tokens | 0.269 | [0.231, 0.305] | s1 0.269 | 보고만 |
 | E-BR_vs_E-SQ | branch_rounds | 0.000 | [0.000, 0.000] | s1 0.000 | 아니오 |
 | E-BR_vs_E-SQ | subq_executed | -0.119 | [-0.224, -0.043] | s1 -0.119 | 예 |
 
@@ -142,7 +142,7 @@
 | G1 | 2_decompose_api_calls | True |
 | G1 | 3_answer_format | True |
 | G1 | 4_repair_calls | True |
-| G1 | 5_fabricated_ids_left | False |
+| G1 | 5_fabricated_ids_left | True ({'E': 0, 'L': 10}) |
 | G1 | 6_dropped_uncited_sentences | True |
 | G1 | 7_ledger_equals_usage | False |
 | G1 | 7b_branch_billing_equals_usage | True |
@@ -150,6 +150,6 @@
 | G1 | 9_inherited_bytes_identical | True |
 | G1 | round0_identical_within_family_seed | True |
 | G3 | SQ 부분 재실행 ≥ 20% ∧ SQ 입력 < BR | True |
-| G4 | 외삽 청구 10160178 / 2519979 ≤ 15000000 / 5600000 | True |
+| G4 | 외삽 청구(branch billing·원장 중 큰 쪽) 12084912 / 3362709 ≤ 15000000 / 5600000 | True |
 
 G2·G5 는 사람 라벨이 필요하다. 효과 관문은 없다(PREREG §6).

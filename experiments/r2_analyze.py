@@ -378,7 +378,8 @@ def savings_compare(summ, a, b, metric, topic_filter=lambda t: True, n_boot=N_BO
     return {"a": a, "b": b, "metric": metric, "available": True, "n_topics": len(topics), "seeds": seeds,
             "definition": "1 - Σ%s(%s) / Σ%s(%s)" % (metric, a, metric, b),
             "point": point, "ci95": [lo, hi], "per_seed": per_seed, "sign_table": signs,
-            "claim": bool(same_sign and excl0),
+            # PREREG §8: 청구 토큰은 공통 난수·실행 순서에 의존하므로 보고만 한다. 주장은 회계 토큰 등으로만
+            "claim": bool(same_sign and excl0) if metric != "billed_tokens" else None,
             "vs_big_effect": {"threshold": BIG_EFFECT, "point_ge": (point is not None and point >= BIG_EFFECT),
                               "ci_lo_ge": bool(lo >= BIG_EFFECT)},
             "var_components": var_components(A - B)}
@@ -498,9 +499,11 @@ def g1_checks(runs: dict, usage: dict, ledger: list[dict]) -> dict[str, Any]:
     out["2_decompose_api_calls"] = {"ledger": dec_ledger, "usage": dec_usage, "pass": dec_ledger == 0 and dec_usage == 0}
     n_gen = n_ff = n_exec = n_trunc = calls = repairs = fab = dropped_sent = kept_sent = 0
     inherit_total = inherit_same = 0
+    fab_by_family: dict[str, int] = defaultdict(int)
     for (arm, _s), recs in runs.items():
         if parse_arm(arm)[0] == R1:
             continue
+        family = ARMS[parse_arm(arm)[0]][0]
         for rec in recs.values():
             prev = {}
             for rr in rec["rounds"]:
@@ -523,7 +526,9 @@ def g1_checks(runs: dict, usage: dict, ledger: list[dict]) -> dict[str, Any]:
                         n_ff += int(sa.get("status") == "format_fail")
                         if sa.get("status") == "answered":
                             kept_sent += len(split_sentences(sa.get("text") or ""))
-                        fab += len(set(CITATION_RE.findall(sa.get("text") or "")) - set(sa.get("citations") or []))
+                        nf = len(set(CITATION_RE.findall(sa.get("text") or "")) - set(sa.get("citations") or []))
+                        fab += nf
+                        fab_by_family[family] += nf
                     if rr["round"] > 0 and br["branch"] in prev:
                         for i, sa in sas.items():
                             if id(sa) in gid:
@@ -539,7 +544,11 @@ def g1_checks(runs: dict, usage: dict, ledger: list[dict]) -> dict[str, Any]:
                               "note": "파싱 실패·status 누락은 format_fail 로 합쳐진다. finish=length 는 재시도 후에도 잘린 branch 비율"}
     out["4_repair_calls"] = {"rate": (repairs / calls) if calls else None, "threshold": 0.02,
                              "pass": calls > 0 and repairs / calls <= 0.02}
-    out["5_fabricated_ids_left"] = {"n": fab, "pass": fab == 0}
+    # "남은 문장"을 거르는 것은 status 모드(E)뿐이다. legacy(L) 파서는 일부러 바꾸지 않았고, 위조 id 는 유효 인용으로
+    # 세지 않을 뿐 문장에 남는다. 그래서 판정은 E 에서 하고 L 은 보고만 한다(DEVIATIONS 부기 1)
+    out["5_fabricated_ids_left"] = {"n": fab, "by_family": dict(fab_by_family),
+                                    "pass": fab_by_family.get("E", 0) == 0,
+                                    "scope": "E (status 모드 필터 대상). L 은 보고만"}
     den = dropped_sent + kept_sent
     out["6_dropped_uncited_sentences"] = {"rate": (dropped_sent / den) if den else None, "threshold": 0.05,
                                           "pass": den > 0 and dropped_sent / den <= 0.05}
@@ -621,9 +630,12 @@ def g3_check(runs: dict) -> dict[str, Any]:
 
 
 def g4_check(summ: dict, n_topics_main=35, n_seeds_main=3, limit_in=15_000_000, limit_out=5_600_000,
-             est_in=9_900_000, est_out=3_700_000) -> dict[str, Any]:
+             est_in=9_900_000, est_out=3_700_000, ledger: list[dict] | None = None) -> dict[str, Any]:
     """파일럿 실측(arm 별 토픽당 청구)을 heldout35 × 5 arm × 3 seed 로 외삽한다.
-    기준: PREREG §6 G4 "1.5 × 추정 이하(gpt-5-mini 15M in / 5.6M out)", §10 추정 9.9M / 3.7M — 둘 다 보고한다."""
+    기준: PREREG §6 G4 "1.5 × 추정 이하(gpt-5-mini 15M in / 5.6M out)", §10 추정 9.9M / 3.7M — 둘 다 보고한다.
+
+    branch billing 외삽은 파일럿이 **자기 이전 실행의 캐시**를 맞히면(크래시 후 재개) 작게 나온다. 그래서 원장 총량
+    × (본실험 토픽·seed / 파일럿 토픽·seed) 도 내고, **둘 중 큰 쪽**으로 판정한다(독립 검증 지적, 2026-11-05)."""
     per_arm = defaultdict(list)
     for (arm, s), v in summ.items():
         a, model = parse_arm(arm)
@@ -635,11 +647,20 @@ def g4_check(summ: dict, n_topics_main=35, n_seeds_main=3, limit_in=15_000_000, 
     ext = np.zeros(4)
     for a, rows in per_arm.items():
         ext += np.mean(np.array(rows), axis=0) * n_topics_main * n_seeds_main
+    led = None
+    if ledger:
+        pilot_units = max((v["n_topics"] or 0) for v in summ.values()) * len({s for (_a, s) in summ})
+        f = n_topics_main * n_seeds_main / pilot_units if pilot_units else None
+        if f:
+            led = [sum(int(r["tokens_in"]) for r in ledger) * f, sum(int(r["tokens_out"]) for r in ledger) * f]
+    use = [max(ext[0], led[0]), max(ext[1], led[1])] if led else [ext[0], ext[1]]
     return {"extrapolated_billed": [float(ext[0]), float(ext[1])],
+            "extrapolated_ledger": led,
+            "extrapolated_used": [float(use[0]), float(use[1])],
             "extrapolated_accounting_upper": [float(ext[2]), float(ext[3])],
             "arms_used": sorted(per_arm), "limit_hard": [limit_in, limit_out],
             "limit_1p5x_estimate": [1.5 * est_in, 1.5 * est_out],
-            "pass": bool(bool(per_arm) and ext[0] <= limit_in and ext[1] <= limit_out),
+            "pass": bool(bool(per_arm) and use[0] <= limit_in and use[1] <= limit_out),
             "gpu_hours": None, "note": "GPU 시간은 산출에서 알 수 없다(수동). 청구는 CRN·실행 순서를 본실험과 같게 두고 외삽한다"}
 
 
@@ -699,7 +720,7 @@ def analyze(run_dir: Path, *, sup: Support | None = None, pilot: bool = False, n
         if sup.missing_chunks:
             res["rescore_missing_chunks"] = sorted(sup.missing_chunks)[:50]
     if pilot:
-        res["gates"] = {"G1": g1_checks(raw, usage, ledger), "G3": g3_check(raw), "G4": g4_check(summ),
+        res["gates"] = {"G1": g1_checks(raw, usage, ledger), "G3": g3_check(raw), "G4": g4_check(summ, ledger=ledger),
                         "G2": "사람 라벨(P-H) 필요 — r2_sheets.py", "G5": "P-H 라벨 후 r2_sheets.g5_from_labels"}
     return res
 
@@ -752,7 +773,8 @@ def to_markdown(res: dict) -> str:
                     L.append("| %s | %s | 짝 없음 | | | |" % (name, m)); continue
                 L.append("| %s | %s | %s | [%s, %s] | %s | %s |" % (
                     name, m, _f(s["point"]), _f(s["ci95"][0]), _f(s["ci95"][1]),
-                    ", ".join("s%s %s" % (k, _f(v)) for k, v in s["per_seed"].items()), "예" if s["claim"] else "아니오"))
+                    ", ".join("s%s %s" % (k, _f(v)) for k, v in s["per_seed"].items()),
+                    "보고만" if s["claim"] is None else ("예" if s["claim"] else "아니오")))
         L += ["", "## 자동 비열등성 — %s" % title, "", "차이 = A − B (질의 단위 평균). 90% CI 하한 > −δ.", "",
               "| 비교 | 지표 | 차이 | 90% CI | δ | 비열등 | 동등 |", "|---|---|---|---|---|---|---|"]
         for name, ms in c["noninferiority"].items():
@@ -779,10 +801,11 @@ def to_markdown(res: dict) -> str:
         G = res["gates"]
         L += ["## 파일럿 관문", "", "| 관문 | 항목 | 통과 |", "|---|---|---|"]
         for k, v in G["G1"].items():
-            L.append("| G1 | %s | %s |" % (k, v.get("pass") if isinstance(v, dict) else v))
+            L.append("| G1 | %s | %s%s |" % (k, v.get("pass") if isinstance(v, dict) else v,
+                     (" (%s)" % v["by_family"]) if isinstance(v, dict) and "by_family" in v else ""))
         L.append("| G3 | SQ 부분 재실행 ≥ 20%% ∧ SQ 입력 < BR | %s |" % G["G3"]["pass"])
-        L.append("| G4 | 외삽 청구 %s / %s ≤ %s / %s | %s |" % (
-            _f(G["G4"]["extrapolated_billed"][0], 0), _f(G["G4"]["extrapolated_billed"][1], 0),
+        L.append("| G4 | 외삽 청구(branch billing·원장 중 큰 쪽) %s / %s ≤ %s / %s | %s |" % (
+            _f(G["G4"]["extrapolated_used"][0], 0), _f(G["G4"]["extrapolated_used"][1], 0),
             G["G4"]["limit_hard"][0], G["G4"]["limit_hard"][1], G["G4"]["pass"]))
         L += ["", "G2·G5 는 사람 라벨이 필요하다. 효과 관문은 없다(PREREG §6)."]
     return "\n".join(L) + "\n"

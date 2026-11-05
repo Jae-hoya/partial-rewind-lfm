@@ -74,6 +74,8 @@ def main() -> int:
 
     stored = {r["item_id"]: r for r in csv.DictReader(io.open(V / "rescore_singledoc_rows.csv", encoding="utf-8"))}
     assert len(pop) == len(stored), (len(pop), len(stored))
+    # 정렬: 재생한 문장이 저장 행과 같은 토픽에 있어야 한다 (개수만 맞춰서는 안 된다 — 독립 검증 지적)
+    assert all(r["topic"] == stored[r["item_id"]]["topic"] for r in pop)
 
     lab = {r["item_id"]: r["human_label"].strip()
            for r in csv.DictReader(io.open(V / "labels_stage1_filled.csv", encoding="utf-8-sig"))}
@@ -92,6 +94,11 @@ def main() -> int:
     # 재생 정합성: 중복 없는 문장 몇 건을 다시 채점해 저장값과 같은지 본다
     sanity = [r for r in pop if r["dup"] == r["uniq"]][:5]
     sanity_diff = max(abs(sc.score("\n\n".join(r["dup"]), r["sentence"]) - p_old[r["item_id"]]) for r in sanity)
+    # 비순환 재현: 중복이 있는 **라벨 문장 전부**를 등록 구성(중복 포함)으로 다시 채점해 저장값과 대조한다
+    dup_lab = [r for r in pop if r["dup"] != r["uniq"] and r["item_id"] in lab]
+    dup_p = [sc.score("\n\n".join(r["dup"]), r["sentence"]) for r in dup_lab]
+    dup_replay = [abs(p - p_old[r["item_id"]]) for r, p in zip(dup_lab, dup_p)]
+    dup_replay_flips = sum(1 for r, p in zip(dup_lab, dup_p) if (p > 0.5) != (p_old[r["item_id"]] > 0.5))
     for r in pop:
         if r["dup"] != r["uniq"]:
             p_new[r["item_id"]] = sc.score("\n\n".join(r["uniq"]), r["sentence"])
@@ -137,6 +144,8 @@ def main() -> int:
            "n_flips_all": sum(c["flip"] for c in changed),
            "n_flips_labeled": sum(c["flip"] and c["labeled"] for c in changed),
            "replay_sanity_max_absdiff": sanity_diff,
+           "dup_labeled_replay": {"n": len(dup_lab), "max_absdiff": max(dup_replay) if dup_replay else None,
+                                  "verdict_flips": dup_replay_flips},
            "registered_dup": metrics(p_old), "dedup": metrics(p_new), "changed": changed}
     io.open(V / "VPRIME_DEDUP_CHECK.json", "w", encoding="utf-8").write(json.dumps(res, ensure_ascii=False, indent=1))
     print(json.dumps({k: v for k, v in res.items() if k != "changed"}, ensure_ascii=False, indent=1))

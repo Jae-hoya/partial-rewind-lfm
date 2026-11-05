@@ -1,0 +1,12 @@
+{
+ "cross_tab_inferable": [
+  "pa009",
+  "pa012",
+  "pa041"
+ ],
+ "b_no_context": [
+  "pb012",
+  "pb023"
+ ],
+ "mitigation": "탭 A 를 끝까지 라벨한 뒤 탭 B 를 연다. G2(a)(b) 를 이 문항 포함·제외로 함께 보고한다"
+}

@@ -187,8 +187,21 @@ class MiniCheckScorer:
         finally:
             hf.to(dev)
 
+    def input_tokens(self, doc: str, claim: str) -> int:
+        """MiniCheck 가 실제로 넣는 입력('predict: ' + doc + eos + claim, `inference.py:233,240`)의 토큰 수."""
+        tok = self.m.model.tokenizer
+        return len(tok("predict: " + doc + tok.eos_token + claim, truncation=False)["input_ids"])
+
     def score(self, doc: str, claim: str) -> float:
         import torch
+        # MiniCheck 의 쪼개기는 **낱말 수**(`inference.py:112`)로 세고, 토크나이저는 max_model_len 에서
+        # **조용히 자른다**(`inference.py:241-244`) — 뒤쪽 claim 부터 잘린다. 그러면 "1조각·위반 0" 인 채로
+        # 틀린 입력이 채점된다. 그럴 바엔 죽는다(이탈 3, 2026-11-05).
+        n_tok = self.input_tokens(doc, claim)
+        self.max_input_tokens = max(getattr(self, "max_input_tokens", 0), n_tok)
+        if n_tok > self.max_model_len:
+            raise AssertionError("MiniCheck 입력 %d 토큰 > max_model_len %d — 잘려서 채점된다. 전제 %d자."
+                                 % (n_tok, self.max_model_len, len(doc)))
         oom = False
         try:
             out = self.m.score(docs=[doc], claims=[claim], chunk_size=self.chunk_size)

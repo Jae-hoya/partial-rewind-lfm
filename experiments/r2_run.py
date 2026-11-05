@@ -118,7 +118,8 @@ def scorer_stats(est) -> dict | None:
     if s is None or not hasattr(s, "cpu_fallbacks"):
         return None
     return {"calls": s.calls, "violations": s.violations, "cpu_fallbacks": s.cpu_fallbacks,
-            "cpu_fallback_doc_chars": list(s.cpu_fallback_doc_chars)}
+            "cpu_fallback_doc_chars": list(s.cpu_fallback_doc_chars),
+            "max_input_tokens": getattr(s, "max_input_tokens", None)}
 
 
 def run_one(cfg, topics, outdir: Path, retriever, nli, est, run_tag: str, ledger=None) -> dict:
