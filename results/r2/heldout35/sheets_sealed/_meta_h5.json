@@ -1,0 +1,20 @@
+{
+ "source": "results\\r2\\heldout35",
+ "spec": "PREREG_R2 §9 H5",
+ "seeds": [
+  1,
+  2,
+  3
+ ],
+ "alloc": {
+  "insufficient": 30,
+  "new_answered": 10
+ },
+ "family": "h5",
+ "rng_seed": 4205,
+ "arm_salt": "r2-blind-v1",
+ "html_sha256": "85598d5fed2ade8e69e952d825ebd7f8bb8748ab5ca4fc83a2b6d8e38acbbb86",
+ "n_items": {
+  "h5_b": 40
+ }
+}

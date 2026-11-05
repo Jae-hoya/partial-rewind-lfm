@@ -1,0 +1,25 @@
+{
+ "source": "results\\r2\\heldout35",
+ "spec": "PREREG_R2 §9 H4",
+ "n_slots": 120,
+ "n_slots_requested": 120,
+ "n_slot_universe": 1752,
+ "n_empty_answers": 314,
+ "arms": [
+  "E-SQ",
+  "E-GR",
+  "E-R1"
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ],
+ "family": "h4",
+ "rng_seed": 4204,
+ "arm_salt": "r2-blind-v1",
+ "html_sha256": "136dd429524ae83cc6c4a316ae18ed64df782aa3210a4839987fcec99076e2b6",
+ "n_items": {
+  "h4_a": 36
+ }
+}

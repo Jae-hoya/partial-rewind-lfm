@@ -1,0 +1,14 @@
+{
+ "source": "results\\r2\\heldout35",
+ "seed": 1,
+ "spec": "PREREG_R2 §9 H3",
+ "n_anchor": 25,
+ "n_reuseB": 100,
+ "family": "h3",
+ "rng_seed": 4203,
+ "arm_salt": "r2-blind-v1",
+ "html_sha256": "bf4afd8916685f65c8fddb9abed97cb1b564718765aa1afaa7ddf8f8d83f550e",
+ "n_items": {
+  "h3_a": 60
+ }
+}
