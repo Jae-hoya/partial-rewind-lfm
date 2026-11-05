@@ -13,7 +13,7 @@
  "family": "h5",
  "rng_seed": 4205,
  "arm_salt": "r2-blind-v1",
- "html_sha256": "85598d5fed2ade8e69e952d825ebd7f8bb8748ab5ca4fc83a2b6d8e38acbbb86",
+ "html_sha256": "d9fae14ba1bcd9744580b3c2ab016846b5f0fbb770bda95caacce6269731753b",
  "n_items": {
   "h5_b": 40
  }

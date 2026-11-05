@@ -199,8 +199,13 @@ class ContextBuilder:
             raise ContextMismatch("컨텍스트 재구성 불일치: %s %s r%d" % (rec["query_id"], branch, produced_round))
         included = _included_lengths(chunks, self.max_chars)
         cmap = {c.chunk_id: c for c in chunks}
+        # 답한 sub-question 이면 그 답이 **인용한 청크**도 보여 준다 — 모델은 branch 전체 컨텍스트에서 답했으므로
+        # 자기 검색 청크만 보이면 근거가 있는 답을 '답없음'으로 라벨하게 된다(독립 검증 D1, 2026-11-06). 기권 문항은
+        # 인용이 없어 종전과 같다(P-H 불변)
+        cited = next((sa.get("citations") or [] for sa in sas if sa["index"] == idx), [])
+        ids = list(dict.fromkeys(own.get(idx, []) + [c for c in cited if c in cmap]))
         parts = []
-        for cid in own.get(idx, []):
+        for cid in ids:
             n = included.get(cid, 0)
             if n >= MIN_BODY:
                 c = cmap[cid]
@@ -537,6 +542,30 @@ def ph_blinding_note(key_csv: Path, html: Path) -> dict[str, Any]:
             "mitigation": "탭 A 를 끝까지 라벨한 뒤 탭 B 를 연다. G2(a)(b) 를 이 문항 포함·제외로 함께 보고한다"}
 
 
+def heldout_blinding_note(sheets_dir: Path) -> dict[str, Any]:
+    """H3·H4·H5 사이의 구조적 누출 — 라벨 **전에** 봉인 폴더에 적는다(독립 검증, 2026-11-06).
+
+    - H3 는 E-GR 라운드 0(= E-R1) 답이다. H4 문항 글자가 H3 문항과 같으면 그 H4 문항은 E-R1(또는 같은 글자의 E-SQ)이다.
+    - H5 는 E-SQ 뿐이다. H4 문항과 같은 슬롯이 H5 에 있으면 그 H4 문항의 arm 을 추론할 수 있다.
+    - H5 에서 컨텍스트가 비어 보이는 문항은 자명하게 '답없음'이다.
+    완화: **H4 를 먼저 끝까지 라벨**한다. 해당 문항은 포함·제외로 함께 보고한다."""
+    sealed = sealed_dir(sheets_dir)
+    sets = {}
+    for f in ("h3", "h4", "h5"):
+        h = io.open(Path(sheets_dir) / ("labeler_%s.html" % f), encoding="utf-8").read()
+        sets[f] = {it["id"]: it for s in json.loads(re.search(r"const SETS = (\[.*?\]);\n", h, re.S).group(1)) for it in s["items"]}
+    keys = {f: list(csv.DictReader(io.open(sealed / ("_key_%s.csv" % f), encoding="utf-8"))) for f in ("h4", "h5")}
+    h3_text = {it["ev"] for it in sets["h3"].values()}
+    slot = lambda k: (k["seed"], k["query_id"], k["branch"], k["sq_index"])
+    h5_slots = {slot(k) for k in keys["h5"]}
+    h4_from_h3 = sorted(i for i, it in sets["h4"].items() if it["ev"] in h3_text)
+    h4_from_h5 = sorted({k["item_id"] for k in keys["h4"] if k["item_id"] and slot(k) in h5_slots})
+    h5_no_ctx = sorted(i for i, it in sets["h5"].items() if NO_CONTEXT in (it.get("ev") or ""))
+    return {"h4_inferable_from_h3": h4_from_h3, "h4_inferable_from_h5": h4_from_h5, "h5_no_context": h5_no_ctx,
+            "order": "H4 → H5 → H3 (H4 를 먼저 끝까지)",
+            "mitigation": "추론 가능 문항과 빈 컨텍스트 문항은 포함·제외로 함께 보고한다"}
+
+
 def g2_from_labels(key_csv: Path, labels_csv: Path, analysis_json: Path | None = None,
                    note: dict | None = None, e_arm="E-GR", l_arm="L-GR") -> dict[str, Any]:
     """PREREG §6 G2 — 등록 문구 그대로 계산한다. 라벨이 들어오기 **전에** 작성·커밋한다.
@@ -587,7 +616,7 @@ def g2_from_labels(key_csv: Path, labels_csv: Path, analysis_json: Path | None =
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="R2 라벨 시트 (LLM 호출 0)")
-    ap.add_argument("set", choices=["ph", "h3", "h4", "h5", "g5", "g2", "ph_note"])
+    ap.add_argument("set", choices=["ph", "h3", "h4", "h5", "g5", "g2", "ph_note", "heldout_note"])
     ap.add_argument("--run-dir")
     ap.add_argument("--out-dir", default=None, help="기본: <run-dir>/sheets")
     ap.add_argument("--slots", type=int, default=G5_DEFAULT)
@@ -605,6 +634,13 @@ def main(argv=None) -> int:
     if not run_dir.exists():
         run_dir = ROOT / run_dir
     sealed = sealed_dir(Path(args.out_dir) if args.out_dir else run_dir / "sheets")
+    if args.set == "heldout_note":
+        sd = Path(args.out_dir) if args.out_dir else run_dir / "sheets"
+        n = heldout_blinding_note(sd)
+        io.open(sealed / "_note_heldout_blinding.json", "w", encoding="utf-8").write(json.dumps(n, ensure_ascii=False, indent=1))
+        print("-> %s (H4←H3 %d · H4←H5 %d · H5 빈 컨텍스트 %d)" % (sealed / "_note_heldout_blinding.json",
+              len(n["h4_inferable_from_h3"]), len(n["h4_inferable_from_h5"]), len(n["h5_no_context"])))
+        return 0
     if args.set == "ph_note":
         n = ph_blinding_note(sealed / "_key_ph.csv", (Path(args.out_dir) if args.out_dir else run_dir / "sheets") / "labeler_ph.html")
         io.open(sealed / "_note_ph_blinding.json", "w", encoding="utf-8").write(json.dumps(n, ensure_ascii=False, indent=1))
