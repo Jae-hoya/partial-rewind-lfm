@@ -1,0 +1,335 @@
+토픽 5개 (pilot5) · split sha 6993e8cce363
+원장 시작 청구 in/out 0/0 (상한 3000000/1200000)
+=== L-BR s1 ===
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.01it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.01it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.89it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.89it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  9.89it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.80it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 17.96it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.96it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 14.59it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 12.58it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00, 11.15it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.52it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.51it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.60it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.60it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.76it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.76it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.08it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.08it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.11it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.11it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.05it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.04it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.13it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.13it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.02s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.02s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.01it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.01it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.02it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.02it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.04s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.04s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.16s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.16s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.02s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.02s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.16it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.16it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.47it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.47it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.43it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.43it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.50it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.50it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.55it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.55it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.89it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.89it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.57it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.57it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.12it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.12it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.22it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.22it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.20it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.20it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.34it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.34it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.19it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.19it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.29it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.29it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.19it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.16it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.79it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.79it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.81it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.81it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.13s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.13s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.28it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.28it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.29it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.29it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.26it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.26it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.07s/it]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.07s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.82s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.82s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.81s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.81s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.97it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.97it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.85it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.85it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.99it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.99it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.62it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.62it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.51it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.51it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.08s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.08s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.45it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.45it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.44it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.44it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.38it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.38it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.47it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.47it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.78it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.78it/s]
+  [ 1/ 5] t007 rounds=3 passed=False 131s billed in/out 42548/17340
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.01it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.01it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.76it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.76it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.76it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.73it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.73it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.72it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.72it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.44it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.44it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.51it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.51it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.48it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.48it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.19it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.19it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.76it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.76it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.25it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.25it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.75it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.75it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.70it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.70it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.65it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.65it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.06it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.06it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.80it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.79it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.63s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.81s/it]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.81s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.57s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.56s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.58s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]Evaluating: 100%|██████████| 1/1 [00:02<00:00,  2.55s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.45s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.45s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.46s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.46s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.45s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.46s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.45s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.45s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.47s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.46s/it]Evaluating: 100%|██████████| 1/1 [00:01<00:00,  1.46s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.71it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  8.63it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  9.96it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  9.96it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.24it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.24it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.64it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.64it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.63it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.63it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.87it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  5.87it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.09it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  6.09it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.60it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.56it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.57it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.57it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.57it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.58it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.58it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.47it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.47it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.53it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.53it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.50it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.50it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.86it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.86it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.87it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.87it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.92it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.92it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.71it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.71it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.84it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.84it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.78it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  2.78it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.61it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.61it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.63it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.63it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:04<00:00,  4.02s/it]Evaluating: 100%|██████████| 1/1 [00:04<00:00,  4.02s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:04<00:00,  4.00s/it]Evaluating: 100%|██████████| 1/1 [00:04<00:00,  4.00s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:03<00:00,  3.57s/it]Evaluating: 100%|██████████| 1/1 [00:03<00:00,  3.57s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:04<00:00,  4.05s/it]Evaluating: 100%|██████████| 1/1 [00:04<00:00,  4.05s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:03<00:00,  3.58s/it]Evaluating: 100%|██████████| 1/1 [00:03<00:00,  3.58s/it]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.37it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.37it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.49it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.49it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.50it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.50it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.57it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  3.57it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.10it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.10it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.38it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.38it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.43it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.43it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.04it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.04it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.39it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.39it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.16it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.16it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.28it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.28it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.23it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  4.23it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.91it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.91it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.93it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.93it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.98it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.98it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.94it/s]Evaluating: 100%|██████████| 1/1 [00:00<00:00,  1.94it/s]
+Evaluating:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating:   0%|          | 0/1 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\experiments\r2_run.py", line 216, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\experiments\r2_run.py", line 208, in main
+    usage = run_one(cfg, topics, ROOT / "results/r2" / run_tag / name / ("s%d" % seed), retriever, nli, est,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\experiments\r2_run.py", line 123, in run_one
+    _run_topics(llm, controller, cfg, topics, outdir, retriever, nli, est, run_tag, run_id)
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\experiments\r2_run.py", line 142, in _run_topics
+    qr = run_query(query_id=qid, query=t["topic"], retriever=retriever, llm=llm, nli=nli, cfg=cfg,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\pipeline.py", line 159, in run_query
+    evidence = {bid: (evaluate(o, nli, cfg, est) if bid in ran else prev_evidence[bid])
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\evidence.py", line 116, in evaluate
+    grounding=grounding(out, est if est is not None else nli, tau),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\evidence.py", line 76, in grounding
+    flags = est.grounded_many(items) if hasattr(est, "grounded_many")         else [est.grounded(s, p) for s, p in items]
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\estimator.py", line 130, in grounded_many
+    vals = self.inner.grounded_many([(s, list(p)) for s, p in todo])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\estimator.py", line 107, in grounded_many
+    return [self.grounded(s, p) for s, p in items]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\estimator.py", line 102, in grounded
+    p = float(self.scorer.score(doc, sentence))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\estimator.py", line 175, in score
+    out = self.m.score(docs=[doc], claims=[claim], chunk_size=self.chunk_size)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\minicheck\minicheck.py", line 138, in score
+    return self._score_inferencer(docs, claims, chunk_size)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\minicheck\minicheck.py", line 150, in _score_inferencer
+    max_support_prob, used_chunk, support_prob_per_chunk = self.model.fact_check(docs, claims)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\minicheck\inference.py", line 268, in fact_check
+    outputs = self.inference_example_batch(doc, claim)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\minicheck\inference.py", line 84, in inference_example_batch
+    output = self.inference_per_example(one_doc, one_claim)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\minicheck\inference.py", line 151, in inference_per_example
+    output = self.inference(doc_chunks, claim_repeat)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\minicheck\inference.py", line 200, in inference
+    outputs = self.model(input_ids=mini_batch_input['input_ids'], attention_mask=mini_batch_input['attention_mask'], decoder_input_ids=decoder_input_ids)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\t5\modeling_t5.py", line 1702, in forward
+    encoder_outputs = self.encoder(
+                      ^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\t5\modeling_t5.py", line 1106, in forward
+    layer_outputs = layer_module(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\t5\modeling_t5.py", line 686, in forward
+    self_attention_outputs = self.layer[0](
+                             ^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\t5\modeling_t5.py", line 593, in forward
+    attention_output = self.SelfAttention(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\t5\modeling_t5.py", line 535, in forward
+    position_bias = self.compute_bias(real_seq_length, key_length, device=scores.device)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\transformers\models\t5\modeling_t5.py", line 441, in compute_bias
+    values = self.relative_attention_bias(relative_position_bucket)  # shape (query_length, key_length, num_heads)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\modules\sparse.py", line 163, in forward
+    return F.embedding(
+           ^^^^^^^^^^^^
+  File "C:\Users\skyop\anaconda3\Lib\site-packages\torch\nn\functional.py", line 2264, in embedding
+    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 3.35 GiB. GPU 
+EXIT 1
+=== RESUME after deviation 1 (3883374) ===
+토픽 5개 (pilot5) · split sha 6993e8cce363
+원장 시작 청구 in/out 91654/40130 (상한 3000000/1200000)
+=== L-BR s1 ===
+Traceback (most recent call last):
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\experiments\r2_run.py", line 226, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\experiments\r2_run.py", line 218, in main
+    usage = run_one(cfg, topics, ROOT / "results/r2" / run_tag / name / ("s%d" % seed), retriever, nli, est,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\experiments\r2_run.py", line 132, in run_one
+    _run_topics(llm, controller, cfg, topics, outdir, retriever, nli, est, run_tag, run_id)
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\experiments\r2_run.py", line 152, in _run_topics
+    qr = run_query(query_id=qid, query=t["topic"], retriever=retriever, llm=llm, nli=nli, cfg=cfg,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\pipeline.py", line 159, in run_query
+    evidence = {bid: (evaluate(o, nli, cfg, est) if bid in ran else prev_evidence[bid])
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\evidence.py", line 116, in evaluate
+    grounding=grounding(out, est if est is not None else nli, tau),
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\evidence.py", line 76, in grounding
+    flags = est.grounded_many(items) if hasattr(est, "grounded_many")         else [est.grounded(s, p) for s, p in items]
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\estimator.py", line 130, in grounded_many
+    vals = self.inner.grounded_many([(s, list(p)) for s, p in todo])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\estimator.py", line 107, in grounded_many
+    return [self.grounded(s, p) for s, p in items]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\estimator.py", line 103, in grounded
+    self._assert_single_chunk(doc)
+  File "C:\Users\skyop\Desktop\나의 rag\03_LFM\LFM\m1\lfm\estimator.py", line 93, in _assert_single_chunk
+    raise AssertionError(
+AssertionError: 단일 문서 전제가 내부에서 2 조각으로 쪼개졌다 — 최댓값 집계가 되돌아왔다. scorer 의 max_model_len 을 올려라. 전제 81213자.
+EXIT 1
+=== RESUME after deviation 2 (fb5e6ea) ===
+토픽 5개 (pilot5) · split sha 6993e8cce363
+원장 시작 청구 in/out 91654/40130 (상한 3000000/1200000)
+=== L-BR s1 ===
+  [ 1/ 5] t007 rounds=3 passed=False 23s billed in/out 0/0
+  [ 2/ 5] t031 rounds=3 passed=False 71s billed in/out 0/0
+  [ 3/ 5] t037 rounds=3 passed=False 56s billed in/out 38270/7526
+  [ 4/ 5] t038 rounds=3 passed=False 45s billed in/out 78159/15023
+  [ 5/ 5] t050 rounds=3 passed=False 119s billed in/out 126088/36596
+    usage calls 147 · api 77 · billed in/out 126088/36596
+=== L-GR s1 ===
+  [ 1/ 5] t007 rounds=3 passed=False 9s billed in/out 0/0
+  [ 2/ 5] t031 rounds=3 passed=False 19s billed in/out 0/0
+  [ 3/ 5] t037 rounds=3 passed=False 2s billed in/out 0/0
+  [ 4/ 5] t038 rounds=3 passed=False 2s billed in/out 0/0
+  [ 5/ 5] t050 rounds=3 passed=False 14s billed in/out 0/0
+    usage calls 147 · api 0 · billed in/out 0/0
+=== E-SQ s1 ===
+  [ 1/ 5] t007 rounds=3 passed=False 49s billed in/out 40669/8058
+  [ 2/ 5] t031 rounds=3 passed=False 84s billed in/out 84469/21353
+  [ 3/ 5] t037 rounds=3 passed=False 35s billed in/out 123609/26728
+  [ 4/ 5] t038 rounds=3 passed=False 29s billed in/out 165239/32537
+  [ 5/ 5] t050 rounds=3 passed=False 61s billed in/out 210026/44880
+    usage calls 121 · api 116 · billed in/out 210026/44880
+=== E-BR s1 ===
+  [ 1/ 5] t007 rounds=3 passed=False 22s billed in/out 27904/4725
+  [ 2/ 5] t031 rounds=3 passed=False 67s billed in/out 58242/15879
+  [ 3/ 5] t037 rounds=3 passed=False 18s billed in/out 86212/19373
+  [ 4/ 5] t038 rounds=3 passed=False 32s billed in/out 115194/25499
+  [ 5/ 5] t050 rounds=3 passed=False 82s billed in/out 147704/38523
+    usage calls 124 · api 90 · billed in/out 147704/38523
+=== E-GR s1 ===
+  [ 1/ 5] t007 rounds=3 passed=False 1s billed in/out 0/0
+  [ 2/ 5] t031 rounds=3 passed=False 6s billed in/out 0/0
+  [ 3/ 5] t037 rounds=3 passed=False 1s billed in/out 0/0
+  [ 4/ 5] t038 rounds=3 passed=False 1s billed in/out 0/0
+  [ 5/ 5] t050 rounds=3 passed=False 14s billed in/out 0/0
+    usage calls 124 · api 0 · billed in/out 0/0
+EXIT 0

@@ -1,0 +1,99 @@
+seed: 42
+paths:
+  data_dir: data
+  raw_dir: data/raw
+  index_dir: data/index
+  index_dir_partial: data/index_partial
+  results_dir: results
+  cache_dir: .cache/llm_r2
+  cache_dir_ro: .cache/llm
+data:
+  hf_dataset: wikimedia/structured-wikipedia
+  hf_config: enwiki_namespace_0
+  hf_revision: 417c267bb457fa645c22eb3b5c77764963194c70
+  hf_file_glob: enwiki/data/enwiki_namespace_0_*.parquet
+  language: en
+  max_articles: 150000
+  row_groups_per_shard: 3
+  min_abstract_chars: 200
+  min_chunks_per_topic: 20
+  n_topics: 50
+topics:
+  min_related_docs: 30
+  min_infobox_types: 3
+  min_term_hits: 2
+  n_terms: 5
+  df_lo: 20
+  df_hi: 3000
+  min_target_abstract_chars: 600
+  min_target_section_chars: 6000
+  min_target_references: 20
+  max_per_infobox_type: 3
+  n_candidates: 60
+  min_term_len: 4
+  batch_size: 10
+heldout:
+  mode: full
+retrieval:
+  backend: bm25s
+  top_k: 5
+  retry_k_multiplier:
+  - 1
+  - 2
+  - 3
+  max_chunks: 4000000
+  chunk_max_tokens: 1200
+llm:
+  provider: openai
+  model: gpt-5-mini
+  max_tokens: 2000
+  reasoning_effort: low
+  temperature: null
+  max_tokens_param: auto
+  timeout_s: 120
+  max_retries: 4
+  cache_enabled: true
+  cache_policy: live
+  decompose_model: null
+perspectives:
+  min_sub_questions: 3
+  max_sub_questions: 5
+branch:
+  max_context_chars: 12000
+  max_claims: 20
+  max_claim_chars: 8000
+  truncation_retry_mult: 2
+  prompt_mode: status
+nli:
+  model: cross-encoder/nli-deberta-v3-base
+  device: auto
+  batch_size: 16
+  tau_ground: 0.5
+estimator:
+  kind: nli_max
+  tau: 0.5
+verify:
+  tau_g_global: 0.8
+  tau_c_global: 0.8
+sweep:
+  tau:
+  - 0.7
+  - 0.8
+  - 0.9
+  primary_tau: 0.8
+  bootstrap_n: 1000
+run:
+  branch_workers: 4
+  seed: 1
+  family: E
+  arm: E-SQ
+controller:
+  kind: freeze_retry
+  granularity: subq
+budget:
+  max_billed_in: 3000000
+  max_billed_out: 1200000
+max_rounds: 3
+retry_directives:
+  1: 이전 시도는 근거가 부족했다. 다른 하위 질문 각도와 다른 출처를 우선하라.
+  2: 앞선 두 시도가 실패했다. 하위 질문을 더 구체적인 사실 단위로 쪼개고 인용을 늘려라.

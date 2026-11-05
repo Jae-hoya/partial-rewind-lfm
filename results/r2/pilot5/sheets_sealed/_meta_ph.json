@@ -1,0 +1,18 @@
+{
+ "source": "results\\r2\\pilot5",
+ "seed": 1,
+ "spec": "PREREG_R2 §9 P-H",
+ "pools": {
+  "E_insufficient": 65,
+  "E_answered": 23,
+  "L_answered": 41
+ },
+ "family": "ph",
+ "rng_seed": 4201,
+ "arm_salt": "r2-blind-v1",
+ "html_sha256": "ca75236795ae8b3a7439a5eb3622851e8349b467550f8bd553b496cca77a01a5",
+ "n_items": {
+  "ph_a": 43,
+  "ph_b": 30
+ }
+}

@@ -1,0 +1,110 @@
+[
+ {
+  "finished_at": "2026-11-05T08:21:58",
+  "usage": {
+   "calls": 67,
+   "cache_hits": 2,
+   "api_calls": 65,
+   "tokens_in": 92048,
+   "tokens_out": 42159,
+   "billed_tokens_in": 91654,
+   "billed_tokens_out": 40130,
+   "billed_tokens_in_cached": 3200,
+   "billed_tokens_reasoning": 19088,
+   "latency_ms": 625207,
+   "by_tag": {
+    "decompose": {
+     "calls": 2,
+     "cache_hits": 2,
+     "tokens_in": 394,
+     "tokens_out": 2029
+    },
+    "answer": {
+     "calls": 24,
+     "cache_hits": 0,
+     "tokens_in": 74626,
+     "tokens_out": 20088
+    },
+    "claims": {
+     "calls": 23,
+     "cache_hits": 0,
+     "tokens_in": 10322,
+     "tokens_out": 11660
+    },
+    "paraphrase": {
+     "calls": 16,
+     "cache_hits": 0,
+     "tokens_in": 3122,
+     "tokens_out": 5723
+    },
+    "answer_repair": {
+     "calls": 1,
+     "cache_hits": 0,
+     "tokens_in": 280,
+     "tokens_out": 486
+    },
+    "answer_retry": {
+     "calls": 1,
+     "cache_hits": 0,
+     "tokens_in": 3304,
+     "tokens_out": 2173
+    }
+   }
+  }
+ },
+ {
+  "finished_at": "2026-11-05T08:39:37",
+  "usage": {
+   "calls": 33,
+   "cache_hits": 33,
+   "api_calls": 0,
+   "tokens_in": 49304,
+   "tokens_out": 23757,
+   "billed_tokens_in": 0,
+   "billed_tokens_out": 0,
+   "billed_tokens_in_cached": 0,
+   "billed_tokens_reasoning": 0,
+   "latency_ms": 301326,
+   "by_tag": {
+    "decompose": {
+     "calls": 1,
+     "cache_hits": 1,
+     "tokens_in": 198,
+     "tokens_out": 967
+    },
+    "answer": {
+     "calls": 12,
+     "cache_hits": 12,
+     "tokens_in": 37638,
+     "tokens_out": 11639
+    },
+    "claims": {
+     "calls": 11,
+     "cache_hits": 11,
+     "tokens_in": 6516,
+     "tokens_out": 6159
+    },
+    "paraphrase": {
+     "calls": 8,
+     "cache_hits": 8,
+     "tokens_in": 1648,
+     "tokens_out": 2819
+    },
+    "answer_retry": {
+     "calls": 1,
+     "cache_hits": 1,
+     "tokens_in": 3304,
+     "tokens_out": 2173
+    }
+   }
+  },
+  "scorer_cumulative": {
+   "calls": 84,
+   "violations": 1,
+   "cpu_fallbacks": 1,
+   "cpu_fallback_doc_chars": [
+    81213
+   ]
+  }
+ }
+]
