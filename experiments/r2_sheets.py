@@ -496,6 +496,26 @@ def g5_from_labels(key_csv: Path, labels_csv: Path, support: dict[tuple, bool] |
     return {"n_pairs": len(d), "sd": sd, "slots": g5_slots(sd), "support_used": support is not None, "note": note}
 
 
+def round0_support(run_dir: Path, arms=("E-GR", "L-GR"), seed: int = 1) -> dict[tuple, bool]:
+    """UA 의 자동 절반 — 라운드 0 sub-answer 의 모든 문장이 MiniCheck(단일 문서, 고유 인용 청크) 지지인가.
+    키는 g5_from_labels 와 같은 (arm, seed, 질의, 관점, 번호) 문자열. GPU, LLM 0."""
+    from r2_analyze import Support, load_chunk_text
+    from lfm.config import Config, load_config
+    from lfm.estimator import load_estimator
+    base = load_config(ROOT / "config.yaml")
+    d = base.as_dict(); d.setdefault("estimator", {})["kind"] = "minicheck_doc"
+    sup = Support(load_estimator(Config(d, source="r2_sheets:g5")), load_chunk_text(ROOT / base["paths.index_dir"]))
+    runs = load_run(run_dir)
+    out = {}
+    for arm in arms:
+        rec = runs.get((arm, seed), {})
+        sas = [(qid, br["branch"], sa) for qid, r in rec.items() for br in r["rounds"][0]["branches"] for sa in br["sub_answers"]]
+        sup.prime(sa for _q, _b, sa in sas)
+        for qid, b, sa in sas:
+            out[(arm, str(seed), qid, b, str(sa["index"]))] = bool(sup.supported(sa))
+    return out
+
+
 # --------------------------------------------------------------------------- G2 (P-H)
 NO_CONTEXT = "(컨텍스트 없음)"
 
@@ -574,7 +594,12 @@ def main(argv=None) -> int:
     ap.add_argument("--key"); ap.add_argument("--labels")
     args = ap.parse_args(argv)
     if args.set == "g5":
-        print(json.dumps(g5_from_labels(Path(args.key), Path(args.labels)), ensure_ascii=False, indent=1))
+        # --run-dir 를 주면 UA 를 등록 정의대로(사람 '답함' ∧ 모든 문장 MiniCheck 지지) 계산한다
+        support = round0_support(Path(args.run_dir) if Path(args.run_dir).exists() else ROOT / args.run_dir) if args.run_dir else None
+        res = {"human_only": g5_from_labels(Path(args.key), Path(args.labels))}
+        if support is not None:
+            res["registered_UA"] = g5_from_labels(Path(args.key), Path(args.labels), support)
+        print(json.dumps(res, ensure_ascii=False, indent=1))
         return 0
     run_dir = Path(args.run_dir)
     if not run_dir.exists():

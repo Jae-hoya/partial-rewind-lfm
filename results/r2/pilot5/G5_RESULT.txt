@@ -1,0 +1,18 @@
+G5: 짝 40개로 SD 를 추정했다
+G5: 짝 40개로 SD 를 추정했다
+{
+ "human_only": {
+  "n_pairs": 40,
+  "sd": 0.3499084129252931,
+  "slots": 120,
+  "support_used": false,
+  "note": "짝 40개로 SD 를 추정했다"
+ },
+ "registered_UA": {
+  "n_pairs": 40,
+  "sd": 0.2761920550668525,
+  "slots": 120,
+  "support_used": true,
+  "note": "짝 40개로 SD 를 추정했다"
+ }
+}

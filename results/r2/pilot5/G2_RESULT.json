@@ -1,0 +1,72 @@
+{
+ "missing_labels": [],
+ "a": {
+  "n": 30,
+  "답있음": 3,
+  "일부": 6,
+  "rate": 0.1,
+  "pass": true
+ },
+ "a_excl_no_context": {
+  "n": 28,
+  "답있음": 3,
+  "일부": 6,
+  "rate": 0.10714285714285714,
+  "pass": true
+ },
+ "b": {
+  "E-GR": {
+   "n": 23,
+   "답함": 20,
+   "rate": 0.8695652173913043
+  },
+  "L-GR": {
+   "n": 20,
+   "답함": 14,
+   "rate": 0.7
+  },
+  "diff": 0.16956521739130437,
+  "pass": true
+ },
+ "b_excl_inferable": {
+  "E-GR": {
+   "n": 23,
+   "답함": 20,
+   "rate": 0.8695652173913043
+  },
+  "L-GR": {
+   "n": 17,
+   "답함": 13,
+   "rate": 0.7647058823529411
+  },
+  "diff": 0.1048593350383632,
+  "pass": true
+ },
+ "c": {
+  "round0_insufficient_rate": 0.7386363636363636,
+  "range": [
+   0.45,
+   0.85
+  ],
+  "pass": true
+ },
+ "d": {
+  "coverage_by_arm": {
+   "E-BR·s1": 0.145,
+   "E-GR·s1": 0.145,
+   "E-R1·s1": 0.2725,
+   "E-SQ·s1": 0.22999999999999998
+  },
+  "readings": {
+   "round0 (E-R1)": 0.2725,
+   "final, pooled E-GR/E-SQ/E-BR": 0.17333333333333334,
+   "final, min over E-GR/E-SQ/E-BR": 0.145
+  },
+  "bar": 0.15,
+  "pass_by_reading": {
+   "round0 (E-R1)": true,
+   "final, pooled E-GR/E-SQ/E-BR": true,
+   "final, min over E-GR/E-SQ/E-BR": false
+  }
+ }
+}
