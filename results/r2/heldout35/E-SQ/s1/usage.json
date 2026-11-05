@@ -1,0 +1,50 @@
+[
+ {
+  "finished_at": "2026-11-06T02:50:11",
+  "usage": {
+   "calls": 830,
+   "cache_hits": 35,
+   "api_calls": 795,
+   "tokens_in": 1433096,
+   "tokens_out": 312929,
+   "billed_tokens_in": 1426220,
+   "billed_tokens_out": 284942,
+   "billed_tokens_in_cached": 0,
+   "billed_tokens_reasoning": 142144,
+   "latency_ms": 3028188,
+   "by_tag": {
+    "decompose": {
+     "calls": 35,
+     "cache_hits": 35,
+     "tokens_in": 6876,
+     "tokens_out": 27987
+    },
+    "answer": {
+     "calls": 418,
+     "cache_hits": 0,
+     "tokens_in": 1343580,
+     "tokens_out": 144368
+    },
+    "claims": {
+     "calls": 99,
+     "cache_hits": 0,
+     "tokens_in": 32332,
+     "tokens_out": 45735
+    },
+    "paraphrase": {
+     "calls": 278,
+     "cache_hits": 0,
+     "tokens_in": 50308,
+     "tokens_out": 94839
+    }
+   }
+  },
+  "scorer_cumulative": {
+   "calls": 2025,
+   "violations": 0,
+   "cpu_fallbacks": 0,
+   "cpu_fallback_doc_chars": [],
+   "max_input_tokens": 3363
+  }
+ }
+]
