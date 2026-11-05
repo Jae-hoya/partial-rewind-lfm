@@ -1,0 +1,3797 @@
+{
+ "run_dir": "results\\r2\\heldout35_nano",
+ "n_boot": 10000,
+ "boot_seed": 42,
+ "sentence_support": "minicheck_rescored",
+ "notes": [
+  "accounting_tokens = executed branch 의 tokens_in + tokens_out (물려받은 branch 제외)",
+  "billed_tokens = executed branch 의 billing.billed_in + billed_out. 원장 행에는 arm 이 없어 arm 별 분해는 branch billing 으로 한다",
+  "CRN: 같은 family·seed 에서 뒤에 도는 arm 은 앞 arm 의 캐시를 맞혀 청구가 작다 — 청구 비교는 실행 순서에 의존한다",
+  "E-R1 = E-GR 라운드 0 (실행하지 않음)",
+  "coverage = 최종 라운드 sub-answer 중 유효 인용이 있는 비율(질의 단위 풀링). grounding = 문장 가중 풀링",
+  "R1-8 전이표는 회계 분해이고 인과가 아니다. 토큰은 branch 실행 토큰을 새로 만든 sub-answer 수로 균등 분할했다",
+  "legacy(L) arm 은 status 가 없다. 빈 답·유효 인용 없는 답을 전이표와 기권률에서 insufficient 로 센다 — L 이 기권 status 를 냈다는 뜻이 아니다"
+ ],
+ "arm_seed": {
+  "E-GR@gpt-5.4-nano·s1": {
+   "n_topics": 35,
+   "totals": {
+    "accounting_in": 1416779,
+    "accounting_out": 148004,
+    "accounting_tokens": 1564783,
+    "billed_in": 1006847,
+    "billed_out": 116495,
+    "billed_tokens": 1123342,
+    "api_calls": 596,
+    "llm_calls": 763,
+    "branch_rounds": 420,
+    "subq_executed": 1752,
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n_frozen_final": 0
+   },
+   "verify": {
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n": 35
+   },
+   "frozen_branches_final": 0,
+   "by_tag": {
+    "answer:calls": 420,
+    "answer:tokens": 1427918,
+    "claims:calls": 62,
+    "claims:tokens": 26373,
+    "paraphrase:calls": 280,
+    "paraphrase:tokens": 109910,
+    "paraphrase_repair:calls": 1,
+    "paraphrase_repair:tokens": 582
+   },
+   "generated_status": {
+    "insufficient": 1643,
+    "answered": 88,
+    "dropped": 20,
+    "format_fail": 1
+   },
+   "generated_rates": {
+    "format_fail": 0.0005707762557077625,
+    "insufficient": 0.9377853881278538,
+    "dropped": 0.01141552511415525,
+    "answered": 0.0502283105022831
+   },
+   "final_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.9503424657534246,
+    "dropped": 0.008561643835616438,
+    "answered": 0.0410958904109589
+   },
+   "mean_coverage": 0.041209150326797395,
+   "mean_grounding": 0.2642857142857143
+  },
+  "E-R1@gpt-5.4-nano·s1": {
+   "n_topics": 35,
+   "totals": {
+    "accounting_in": 409932,
+    "accounting_out": 31509,
+    "accounting_tokens": 441441,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 167,
+    "branch_rounds": 140,
+    "subq_executed": 584,
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n_frozen_final": 0
+   },
+   "verify": {
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n": 35
+   },
+   "frozen_branches_final": 0,
+   "by_tag": {
+    "answer:calls": 140,
+    "answer:tokens": 431712,
+    "claims:calls": 27,
+    "claims:tokens": 9729
+   },
+   "generated_status": {
+    "insufficient": 531,
+    "answered": 40,
+    "dropped": 12,
+    "format_fail": 1
+   },
+   "generated_rates": {
+    "format_fail": 0.0017123287671232876,
+    "insufficient": 0.9092465753424658,
+    "dropped": 0.02054794520547945,
+    "answered": 0.0684931506849315
+   },
+   "final_rates": {
+    "format_fail": 0.0017123287671232876,
+    "insufficient": 0.9092465753424658,
+    "dropped": 0.02054794520547945,
+    "answered": 0.0684931506849315
+   },
+   "mean_coverage": 0.07017740429505136,
+   "mean_grounding": 0.4628571428571429
+  },
+  "E-SQ@gpt-5.4-nano·s1": {
+   "n_topics": 35,
+   "totals": {
+    "accounting_in": 1404908,
+    "accounting_out": 135827,
+    "accounting_tokens": 1540735,
+    "billed_in": 1404908,
+    "billed_out": 135827,
+    "billed_tokens": 1540735,
+    "api_calls": 750,
+    "llm_calls": 750,
+    "branch_rounds": 420,
+    "subq_executed": 1683,
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n_frozen_final": 0
+   },
+   "verify": {
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n": 35
+   },
+   "frozen_branches_final": 0,
+   "by_tag": {
+    "answer:calls": 420,
+    "answer:tokens": 1415168,
+    "claims:calls": 49,
+    "claims:tokens": 19415,
+    "paraphrase:calls": 280,
+    "paraphrase:tokens": 105637,
+    "paraphrase_repair:calls": 1,
+    "paraphrase_repair:tokens": 515
+   },
+   "generated_status": {
+    "insufficient": 1597,
+    "answered": 64,
+    "dropped": 20,
+    "format_fail": 2
+   },
+   "generated_rates": {
+    "format_fail": 0.0011883541295306002,
+    "insufficient": 0.9489007724301842,
+    "dropped": 0.011883541295306001,
+    "answered": 0.038027332144979206
+   },
+   "final_rates": {
+    "format_fail": 0.0017123287671232876,
+    "insufficient": 0.9041095890410958,
+    "dropped": 0.010273972602739725,
+    "answered": 0.0839041095890411
+   },
+   "mean_coverage": 0.0861437908496732,
+   "mean_grounding": 0.572108843537415
+  }
+ },
+ "per_query": {
+  "E-GR@gpt-5.4-nano·s1": {
+   "t000": {
+    "accounting_in": 44361,
+    "accounting_out": 4504,
+    "accounting_tokens": 48865,
+    "billed_in": 31084,
+    "billed_out": 3299,
+    "billed_tokens": 34383,
+    "api_calls": 17,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 54,
+    "coverage": 0.05555555555555555,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 44911,
+     "claims:calls": 2,
+     "claims:tokens": 611,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3343
+    }
+   },
+   "t001": {
+    "accounting_in": 41690,
+    "accounting_out": 4716,
+    "accounting_tokens": 46406,
+    "billed_in": 29437,
+    "billed_out": 3699,
+    "billed_tokens": 33136,
+    "api_calls": 19,
+    "llm_calls": 24,
+    "branch_rounds": 12,
+    "subq_executed": 51,
+    "coverage": 0.11764705882352941,
+    "grounding": 0.5,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42313,
+     "claims:calls": 4,
+     "claims:tokens": 982,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3111
+    }
+   },
+   "t002": {
+    "accounting_in": 40995,
+    "accounting_out": 5422,
+    "accounting_tokens": 46417,
+    "billed_in": 28257,
+    "billed_out": 4327,
+    "billed_tokens": 32584,
+    "api_calls": 18,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42569,
+     "claims:calls": 3,
+     "claims:tokens": 900,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2948
+    }
+   },
+   "t003": {
+    "accounting_in": 41413,
+    "accounting_out": 3772,
+    "accounting_tokens": 45185,
+    "billed_in": 28520,
+    "billed_out": 2941,
+    "billed_tokens": 31461,
+    "api_calls": 17,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 41702,
+     "claims:calls": 2,
+     "claims:tokens": 505,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2978
+    }
+   },
+   "t004": {
+    "accounting_in": 40888,
+    "accounting_out": 5428,
+    "accounting_tokens": 46316,
+    "billed_in": 28467,
+    "billed_out": 4597,
+    "billed_tokens": 33064,
+    "api_calls": 19,
+    "llm_calls": 24,
+    "branch_rounds": 12,
+    "subq_executed": 51,
+    "coverage": 0.11764705882352941,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 41228,
+     "claims:calls": 4,
+     "claims:tokens": 2049,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3039
+    }
+   },
+   "t005": {
+    "accounting_in": 39197,
+    "accounting_out": 3899,
+    "accounting_tokens": 43096,
+    "billed_in": 27897,
+    "billed_out": 3360,
+    "billed_tokens": 31257,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40063,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3033
+    }
+   },
+   "t006": {
+    "accounting_in": 40609,
+    "accounting_out": 3104,
+    "accounting_tokens": 43713,
+    "billed_in": 28178,
+    "billed_out": 2703,
+    "billed_tokens": 30881,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40504,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3209
+    }
+   },
+   "t011": {
+    "accounting_in": 43144,
+    "accounting_out": 3242,
+    "accounting_tokens": 46386,
+    "billed_in": 30081,
+    "billed_out": 2553,
+    "billed_tokens": 32634,
+    "api_calls": 16,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 43189,
+     "claims:calls": 1,
+     "claims:tokens": 169,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3028
+    }
+   },
+   "t012": {
+    "accounting_in": 40306,
+    "accounting_out": 3418,
+    "accounting_tokens": 43724,
+    "billed_in": 27889,
+    "billed_out": 2894,
+    "billed_tokens": 30783,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40004,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3720
+    }
+   },
+   "t013": {
+    "accounting_in": 38656,
+    "accounting_out": 3065,
+    "accounting_tokens": 41721,
+    "billed_in": 26505,
+    "billed_out": 2590,
+    "billed_tokens": 29095,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 38606,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3115
+    }
+   },
+   "t015": {
+    "accounting_in": 42306,
+    "accounting_out": 4049,
+    "accounting_tokens": 46355,
+    "billed_in": 29819,
+    "billed_out": 3236,
+    "billed_tokens": 33055,
+    "api_calls": 17,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42729,
+     "claims:calls": 2,
+     "claims:tokens": 468,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3158
+    }
+   },
+   "t016": {
+    "accounting_in": 41451,
+    "accounting_out": 3178,
+    "accounting_tokens": 44629,
+    "billed_in": 28432,
+    "billed_out": 2762,
+    "billed_tokens": 31194,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 41181,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3448
+    }
+   },
+   "t017": {
+    "accounting_in": 40110,
+    "accounting_out": 4023,
+    "accounting_tokens": 44133,
+    "billed_in": 30439,
+    "billed_out": 3546,
+    "billed_tokens": 33985,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39959,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 4174
+    }
+   },
+   "t018": {
+    "accounting_in": 36181,
+    "accounting_out": 3097,
+    "accounting_tokens": 39278,
+    "billed_in": 28624,
+    "billed_out": 2573,
+    "billed_tokens": 31197,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 36210,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3068
+    }
+   },
+   "t019": {
+    "accounting_in": 37134,
+    "accounting_out": 2890,
+    "accounting_tokens": 40024,
+    "billed_in": 26575,
+    "billed_out": 2181,
+    "billed_tokens": 28756,
+    "api_calls": 16,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 36,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 36981,
+     "claims:calls": 1,
+     "claims:tokens": 303,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2740
+    }
+   },
+   "t020": {
+    "accounting_in": 44674,
+    "accounting_out": 5004,
+    "accounting_tokens": 49678,
+    "billed_in": 30476,
+    "billed_out": 3520,
+    "billed_tokens": 33996,
+    "api_calls": 17,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.1875,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 44579,
+     "claims:calls": 3,
+     "claims:tokens": 1980,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3119
+    }
+   },
+   "t023": {
+    "accounting_in": 39018,
+    "accounting_out": 3496,
+    "accounting_tokens": 42514,
+    "billed_in": 26946,
+    "billed_out": 2734,
+    "billed_tokens": 29680,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39489,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3025
+    }
+   },
+   "t024": {
+    "accounting_in": 41396,
+    "accounting_out": 3082,
+    "accounting_tokens": 44478,
+    "billed_in": 28262,
+    "billed_out": 2628,
+    "billed_tokens": 30890,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 41189,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3289
+    }
+   },
+   "t025": {
+    "accounting_in": 36497,
+    "accounting_out": 4416,
+    "accounting_tokens": 40913,
+    "billed_in": 26929,
+    "billed_out": 3497,
+    "billed_tokens": 30426,
+    "api_calls": 19,
+    "llm_calls": 24,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.1875,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 36339,
+     "claims:calls": 4,
+     "claims:tokens": 1657,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2917
+    }
+   },
+   "t026": {
+    "accounting_in": 39324,
+    "accounting_out": 4053,
+    "accounting_tokens": 43377,
+    "billed_in": 27450,
+    "billed_out": 3398,
+    "billed_tokens": 30848,
+    "api_calls": 17,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39962,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2918,
+     "claims:calls": 1,
+     "claims:tokens": 497
+    }
+   },
+   "t027": {
+    "accounting_in": 39761,
+    "accounting_out": 4369,
+    "accounting_tokens": 44130,
+    "billed_in": 26850,
+    "billed_out": 3114,
+    "billed_tokens": 29964,
+    "api_calls": 17,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 51,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40089,
+     "claims:calls": 3,
+     "claims:tokens": 1044,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2997
+    }
+   },
+   "t029": {
+    "accounting_in": 42406,
+    "accounting_out": 6210,
+    "accounting_tokens": 48616,
+    "billed_in": 31351,
+    "billed_out": 4953,
+    "billed_tokens": 36304,
+    "api_calls": 20,
+    "llm_calls": 26,
+    "branch_rounds": 12,
+    "subq_executed": 51,
+    "coverage": 0.17647058823529413,
+    "grounding": 0.75,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 43612,
+     "claims:calls": 6,
+     "claims:tokens": 2037,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2967
+    }
+   },
+   "t030": {
+    "accounting_in": 36110,
+    "accounting_out": 5197,
+    "accounting_tokens": 41307,
+    "billed_in": 27916,
+    "billed_out": 3880,
+    "billed_tokens": 31796,
+    "api_calls": 17,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 54,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 37409,
+     "claims:calls": 2,
+     "claims:tokens": 473,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3425
+    }
+   },
+   "t032": {
+    "accounting_in": 40687,
+    "accounting_out": 3697,
+    "accounting_tokens": 44384,
+    "billed_in": 28281,
+    "billed_out": 2729,
+    "billed_tokens": 31010,
+    "api_calls": 16,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 41122,
+     "claims:calls": 1,
+     "claims:tokens": 209,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3053
+    }
+   },
+   "t034": {
+    "accounting_in": 43381,
+    "accounting_out": 5067,
+    "accounting_tokens": 48448,
+    "billed_in": 30007,
+    "billed_out": 4045,
+    "billed_tokens": 34052,
+    "api_calls": 18,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.1,
+    "grounding": 0.5,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 43230,
+     "claims:calls": 2,
+     "claims:tokens": 824,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3812,
+     "paraphrase_repair:calls": 1,
+     "paraphrase_repair:tokens": 582
+    }
+   },
+   "t035": {
+    "accounting_in": 42916,
+    "accounting_out": 3056,
+    "accounting_tokens": 45972,
+    "billed_in": 29346,
+    "billed_out": 2632,
+    "billed_tokens": 31978,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42769,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3203
+    }
+   },
+   "t036": {
+    "accounting_in": 45109,
+    "accounting_out": 9760,
+    "accounting_tokens": 54869,
+    "billed_in": 32572,
+    "billed_out": 6917,
+    "billed_tokens": 39489,
+    "api_calls": 18,
+    "llm_calls": 24,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.1875,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 46763,
+     "claims:calls": 4,
+     "claims:tokens": 4918,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3188
+    }
+   },
+   "t041": {
+    "accounting_in": 40785,
+    "accounting_out": 4736,
+    "accounting_tokens": 45521,
+    "billed_in": 27910,
+    "billed_out": 3527,
+    "billed_tokens": 31437,
+    "api_calls": 19,
+    "llm_calls": 25,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40735,
+     "claims:calls": 5,
+     "claims:tokens": 1879,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2907
+    }
+   },
+   "t042": {
+    "accounting_in": 42642,
+    "accounting_out": 4025,
+    "accounting_tokens": 46667,
+    "billed_in": 29786,
+    "billed_out": 2886,
+    "billed_tokens": 32672,
+    "api_calls": 17,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 43410,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3056,
+     "claims:calls": 1,
+     "claims:tokens": 201
+    }
+   },
+   "t043": {
+    "accounting_in": 40754,
+    "accounting_out": 4130,
+    "accounting_tokens": 44884,
+    "billed_in": 27873,
+    "billed_out": 3122,
+    "billed_tokens": 30995,
+    "api_calls": 18,
+    "llm_calls": 24,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40874,
+     "claims:calls": 4,
+     "claims:tokens": 1359,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2651
+    }
+   },
+   "t044": {
+    "accounting_in": 41801,
+    "accounting_out": 6601,
+    "accounting_tokens": 48402,
+    "billed_in": 28688,
+    "billed_out": 4842,
+    "billed_tokens": 33530,
+    "api_calls": 20,
+    "llm_calls": 26,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.125,
+    "grounding": 0.5,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42165,
+     "claims:calls": 6,
+     "claims:tokens": 3091,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3146
+    }
+   },
+   "t047": {
+    "accounting_in": 39347,
+    "accounting_out": 3425,
+    "accounting_tokens": 42772,
+    "billed_in": 28637,
+    "billed_out": 2938,
+    "billed_tokens": 31575,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39387,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3385
+    }
+   },
+   "t051": {
+    "accounting_in": 36499,
+    "accounting_out": 3168,
+    "accounting_tokens": 39667,
+    "billed_in": 29856,
+    "billed_out": 2631,
+    "billed_tokens": 32487,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 36819,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2848
+    }
+   },
+   "t052": {
+    "accounting_in": 37644,
+    "accounting_out": 3222,
+    "accounting_tokens": 40866,
+    "billed_in": 28509,
+    "billed_out": 2666,
+    "billed_tokens": 31175,
+    "api_calls": 16,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 37834,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3032
+    }
+   },
+   "t053": {
+    "accounting_in": 37587,
+    "accounting_out": 3483,
+    "accounting_tokens": 41070,
+    "billed_in": 28998,
+    "billed_out": 2575,
+    "billed_tokens": 31573,
+    "api_calls": 16,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 37993,
+     "claims:calls": 1,
+     "claims:tokens": 217,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2860
+    }
+   }
+  },
+  "E-R1@gpt-5.4-nano·s1": {
+   "t000": {
+    "accounting_in": 13277,
+    "accounting_out": 1205,
+    "accounting_tokens": 14482,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 18,
+    "coverage": 0.05555555555555555,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 14061,
+     "claims:calls": 1,
+     "claims:tokens": 421
+    }
+   },
+   "t001": {
+    "accounting_in": 12253,
+    "accounting_out": 1017,
+    "accounting_tokens": 13270,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 17,
+    "coverage": 0.058823529411764705,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13048,
+     "claims:calls": 1,
+     "claims:tokens": 222
+    }
+   },
+   "t002": {
+    "accounting_in": 12738,
+    "accounting_out": 1095,
+    "accounting_tokens": 13833,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13588,
+     "claims:calls": 1,
+     "claims:tokens": 245
+    }
+   },
+   "t003": {
+    "accounting_in": 12893,
+    "accounting_out": 831,
+    "accounting_tokens": 13724,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.125,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13415,
+     "claims:calls": 1,
+     "claims:tokens": 309
+    }
+   },
+   "t004": {
+    "accounting_in": 12421,
+    "accounting_out": 831,
+    "accounting_tokens": 13252,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 17,
+    "coverage": 0.058823529411764705,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 12896,
+     "claims:calls": 1,
+     "claims:tokens": 356
+    }
+   },
+   "t005": {
+    "accounting_in": 11300,
+    "accounting_out": 539,
+    "accounting_tokens": 11839,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 11839
+    }
+   },
+   "t006": {
+    "accounting_in": 12431,
+    "accounting_out": 401,
+    "accounting_tokens": 12832,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 12832
+    }
+   },
+   "t011": {
+    "accounting_in": 13063,
+    "accounting_out": 689,
+    "accounting_tokens": 13752,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13583,
+     "claims:calls": 1,
+     "claims:tokens": 169
+    }
+   },
+   "t012": {
+    "accounting_in": 12417,
+    "accounting_out": 524,
+    "accounting_tokens": 12941,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 20,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 12941
+    }
+   },
+   "t013": {
+    "accounting_in": 12151,
+    "accounting_out": 475,
+    "accounting_tokens": 12626,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 12626
+    }
+   },
+   "t015": {
+    "accounting_in": 12487,
+    "accounting_out": 813,
+    "accounting_tokens": 13300,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13062,
+     "claims:calls": 1,
+     "claims:tokens": 238
+    }
+   },
+   "t016": {
+    "accounting_in": 13019,
+    "accounting_out": 416,
+    "accounting_tokens": 13435,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 20,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13435
+    }
+   },
+   "t017": {
+    "accounting_in": 9671,
+    "accounting_out": 477,
+    "accounting_tokens": 10148,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 20,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 10148
+    }
+   },
+   "t018": {
+    "accounting_in": 7557,
+    "accounting_out": 524,
+    "accounting_tokens": 8081,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 8081
+    }
+   },
+   "t019": {
+    "accounting_in": 10559,
+    "accounting_out": 709,
+    "accounting_tokens": 11268,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 12,
+    "coverage": 0.08333333333333333,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 10965,
+     "claims:calls": 1,
+     "claims:tokens": 303
+    }
+   },
+   "t020": {
+    "accounting_in": 14198,
+    "accounting_out": 1484,
+    "accounting_tokens": 15682,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 6,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.3125,
+    "grounding": 0.8333333333333334,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 14698,
+     "claims:calls": 2,
+     "claims:tokens": 984
+    }
+   },
+   "t023": {
+    "accounting_in": 12072,
+    "accounting_out": 762,
+    "accounting_tokens": 12834,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 12834
+    }
+   },
+   "t024": {
+    "accounting_in": 13134,
+    "accounting_out": 454,
+    "accounting_tokens": 13588,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13588
+    }
+   },
+   "t025": {
+    "accounting_in": 9568,
+    "accounting_out": 919,
+    "accounting_tokens": 10487,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.1875,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 9989,
+     "claims:calls": 1,
+     "claims:tokens": 498
+    }
+   },
+   "t026": {
+    "accounting_in": 11874,
+    "accounting_out": 655,
+    "accounting_tokens": 12529,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 12529
+    }
+   },
+   "t027": {
+    "accounting_in": 12911,
+    "accounting_out": 1255,
+    "accounting_tokens": 14166,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 6,
+    "branch_rounds": 4,
+    "subq_executed": 17,
+    "coverage": 0.17647058823529413,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13506,
+     "claims:calls": 2,
+     "claims:tokens": 660
+    }
+   },
+   "t029": {
+    "accounting_in": 11055,
+    "accounting_out": 1257,
+    "accounting_tokens": 12312,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 6,
+    "branch_rounds": 4,
+    "subq_executed": 17,
+    "coverage": 0.11764705882352941,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 11895,
+     "claims:calls": 2,
+     "claims:tokens": 417
+    }
+   },
+   "t030": {
+    "accounting_in": 8194,
+    "accounting_out": 1317,
+    "accounting_tokens": 9511,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 18,
+    "coverage": 0.05555555555555555,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 9357,
+     "claims:calls": 1,
+     "claims:tokens": 154
+    }
+   },
+   "t032": {
+    "accounting_in": 12406,
+    "accounting_out": 968,
+    "accounting_tokens": 13374,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13165,
+     "claims:calls": 1,
+     "claims:tokens": 209
+    }
+   },
+   "t034": {
+    "accounting_in": 13374,
+    "accounting_out": 1022,
+    "accounting_tokens": 14396,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 20,
+    "coverage": 0.1,
+    "grounding": 0.5,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 14012,
+     "claims:calls": 1,
+     "claims:tokens": 384
+    }
+   },
+   "t035": {
+    "accounting_in": 13570,
+    "accounting_out": 424,
+    "accounting_tokens": 13994,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13994
+    }
+   },
+   "t036": {
+    "accounting_in": 12537,
+    "accounting_out": 2843,
+    "accounting_tokens": 15380,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 6,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.3125,
+    "grounding": 0.2,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13739,
+     "claims:calls": 2,
+     "claims:tokens": 1641
+    }
+   },
+   "t041": {
+    "accounting_in": 12875,
+    "accounting_out": 1209,
+    "accounting_tokens": 14084,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 6,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.1875,
+    "grounding": 0.6666666666666666,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13423,
+     "claims:calls": 2,
+     "claims:tokens": 661
+    }
+   },
+   "t042": {
+    "accounting_in": 12856,
+    "accounting_out": 1139,
+    "accounting_tokens": 13995,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13995
+    }
+   },
+   "t043": {
+    "accounting_in": 12881,
+    "accounting_out": 1008,
+    "accounting_tokens": 13889,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 6,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.125,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13297,
+     "claims:calls": 2,
+     "claims:tokens": 592
+    }
+   },
+   "t044": {
+    "accounting_in": 13113,
+    "accounting_out": 1759,
+    "accounting_tokens": 14872,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 6,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.1875,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 13823,
+     "claims:calls": 2,
+     "claims:tokens": 1049
+    }
+   },
+   "t047": {
+    "accounting_in": 10710,
+    "accounting_out": 487,
+    "accounting_tokens": 11197,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 20,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 11197
+    }
+   },
+   "t051": {
+    "accounting_in": 6643,
+    "accounting_out": 537,
+    "accounting_tokens": 7180,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 7180
+    }
+   },
+   "t052": {
+    "accounting_in": 9135,
+    "accounting_out": 556,
+    "accounting_tokens": 9691,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 4,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 9691
+    }
+   },
+   "t053": {
+    "accounting_in": 8589,
+    "accounting_out": 908,
+    "accounting_tokens": 9497,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 5,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.0625,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 9280,
+     "claims:calls": 1,
+     "claims:tokens": 217
+    }
+   }
+  },
+  "E-SQ@gpt-5.4-nano·s1": {
+   "t000": {
+    "accounting_in": 44739,
+    "accounting_out": 4861,
+    "accounting_tokens": 49600,
+    "billed_in": 44739,
+    "billed_out": 4861,
+    "billed_tokens": 49600,
+    "api_calls": 23,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 52,
+    "coverage": 0.05555555555555555,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 44856,
+     "claims:calls": 3,
+     "claims:tokens": 1448,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3296
+    }
+   },
+   "t001": {
+    "accounting_in": 41421,
+    "accounting_out": 4469,
+    "accounting_tokens": 45890,
+    "billed_in": 41421,
+    "billed_out": 4469,
+    "billed_tokens": 45890,
+    "api_calls": 23,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 51,
+    "coverage": 0.058823529411764705,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42136,
+     "claims:calls": 3,
+     "claims:tokens": 581,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3173
+    }
+   },
+   "t002": {
+    "accounting_in": 40636,
+    "accounting_out": 4865,
+    "accounting_tokens": 45501,
+    "billed_in": 40636,
+    "billed_out": 4865,
+    "billed_tokens": 45501,
+    "api_calls": 23,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 45,
+    "coverage": 0.1875,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 41828,
+     "claims:calls": 3,
+     "claims:tokens": 930,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2743
+    }
+   },
+   "t003": {
+    "accounting_in": 41106,
+    "accounting_out": 3147,
+    "accounting_tokens": 44253,
+    "billed_in": 41106,
+    "billed_out": 3147,
+    "billed_tokens": 44253,
+    "api_calls": 21,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 44,
+    "coverage": 0.125,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 41243,
+     "claims:calls": 1,
+     "claims:tokens": 309,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2701
+    }
+   },
+   "t004": {
+    "accounting_in": 39076,
+    "accounting_out": 3282,
+    "accounting_tokens": 42358,
+    "billed_in": 39076,
+    "billed_out": 3282,
+    "billed_tokens": 42358,
+    "api_calls": 21,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 49,
+    "coverage": 0.058823529411764705,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39158,
+     "claims:calls": 1,
+     "claims:tokens": 356,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2844
+    }
+   },
+   "t005": {
+    "accounting_in": 39504,
+    "accounting_out": 3862,
+    "accounting_tokens": 43366,
+    "billed_in": 39504,
+    "billed_out": 3862,
+    "billed_tokens": 43366,
+    "api_calls": 22,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 46,
+    "coverage": 0.125,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39634,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2926,
+     "claims:calls": 2,
+     "claims:tokens": 806
+    }
+   },
+   "t006": {
+    "accounting_in": 40891,
+    "accounting_out": 2941,
+    "accounting_tokens": 43832,
+    "billed_in": 40891,
+    "billed_out": 2941,
+    "billed_tokens": 43832,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40690,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3142
+    }
+   },
+   "t011": {
+    "accounting_in": 42954,
+    "accounting_out": 3071,
+    "accounting_tokens": 46025,
+    "billed_in": 42954,
+    "billed_out": 3071,
+    "billed_tokens": 46025,
+    "api_calls": 21,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 46,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42900,
+     "claims:calls": 1,
+     "claims:tokens": 169,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2956
+    }
+   },
+   "t012": {
+    "accounting_in": 40023,
+    "accounting_out": 3458,
+    "accounting_tokens": 43481,
+    "billed_in": 40023,
+    "billed_out": 3458,
+    "billed_tokens": 43481,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39707,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3774
+    }
+   },
+   "t013": {
+    "accounting_in": 38619,
+    "accounting_out": 2946,
+    "accounting_tokens": 41565,
+    "billed_in": 38619,
+    "billed_out": 2946,
+    "billed_tokens": 41565,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 38432,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3133
+    }
+   },
+   "t015": {
+    "accounting_in": 41956,
+    "accounting_out": 3782,
+    "accounting_tokens": 45738,
+    "billed_in": 41956,
+    "billed_out": 3782,
+    "billed_tokens": 45738,
+    "api_calls": 22,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 46,
+    "coverage": 0.125,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42164,
+     "claims:calls": 2,
+     "claims:tokens": 573,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3001
+    }
+   },
+   "t016": {
+    "accounting_in": 41270,
+    "accounting_out": 3278,
+    "accounting_tokens": 44548,
+    "billed_in": 41270,
+    "billed_out": 3278,
+    "billed_tokens": 44548,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 41082,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3466
+    }
+   },
+   "t017": {
+    "accounting_in": 39864,
+    "accounting_out": 3872,
+    "accounting_tokens": 43736,
+    "billed_in": 39864,
+    "billed_out": 3872,
+    "billed_tokens": 43736,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39747,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3989
+    }
+   },
+   "t018": {
+    "accounting_in": 36105,
+    "accounting_out": 3264,
+    "accounting_tokens": 39369,
+    "billed_in": 36105,
+    "billed_out": 3264,
+    "billed_tokens": 39369,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 36186,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3183
+    }
+   },
+   "t019": {
+    "accounting_in": 37431,
+    "accounting_out": 2736,
+    "accounting_tokens": 40167,
+    "billed_in": 37431,
+    "billed_out": 2736,
+    "billed_tokens": 40167,
+    "api_calls": 21,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 34,
+    "coverage": 0.08333333333333333,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 37253,
+     "claims:calls": 1,
+     "claims:tokens": 303,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2611
+    }
+   },
+   "t020": {
+    "accounting_in": 43395,
+    "accounting_out": 3839,
+    "accounting_tokens": 47234,
+    "billed_in": 43395,
+    "billed_out": 3839,
+    "billed_tokens": 47234,
+    "api_calls": 23,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 40,
+    "coverage": 0.25,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 43245,
+     "claims:calls": 3,
+     "claims:tokens": 1286,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2703
+    }
+   },
+   "t023": {
+    "accounting_in": 39190,
+    "accounting_out": 3479,
+    "accounting_tokens": 42669,
+    "billed_in": 39190,
+    "billed_out": 3479,
+    "billed_tokens": 42669,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39672,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2997
+    }
+   },
+   "t024": {
+    "accounting_in": 41347,
+    "accounting_out": 2999,
+    "accounting_tokens": 44346,
+    "billed_in": 41347,
+    "billed_out": 2999,
+    "billed_tokens": 44346,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 41147,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3199
+    }
+   },
+   "t025": {
+    "accounting_in": 34890,
+    "accounting_out": 4061,
+    "accounting_tokens": 38951,
+    "billed_in": 34890,
+    "billed_out": 4061,
+    "billed_tokens": 38951,
+    "api_calls": 22,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 42,
+    "coverage": 0.3125,
+    "grounding": 0.8571428571428571,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 35076,
+     "claims:calls": 2,
+     "claims:tokens": 1106,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2769
+    }
+   },
+   "t026": {
+    "accounting_in": 39478,
+    "accounting_out": 4276,
+    "accounting_tokens": 43754,
+    "billed_in": 39478,
+    "billed_out": 4276,
+    "billed_tokens": 43754,
+    "api_calls": 22,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 47,
+    "coverage": 0.125,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39987,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2891,
+     "claims:calls": 2,
+     "claims:tokens": 876
+    }
+   },
+   "t027": {
+    "accounting_in": 38943,
+    "accounting_out": 4140,
+    "accounting_tokens": 43083,
+    "billed_in": 38943,
+    "billed_out": 4140,
+    "billed_tokens": 43083,
+    "api_calls": 22,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 45,
+    "coverage": 0.17647058823529413,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39765,
+     "claims:calls": 2,
+     "claims:tokens": 660,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2658
+    }
+   },
+   "t029": {
+    "accounting_in": 41219,
+    "accounting_out": 4305,
+    "accounting_tokens": 45524,
+    "billed_in": 41219,
+    "billed_out": 4305,
+    "billed_tokens": 45524,
+    "api_calls": 23,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 46,
+    "coverage": 0.17647058823529413,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42272,
+     "claims:calls": 3,
+     "claims:tokens": 660,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2592
+    }
+   },
+   "t030": {
+    "accounting_in": 35821,
+    "accounting_out": 4505,
+    "accounting_tokens": 40326,
+    "billed_in": 35821,
+    "billed_out": 4505,
+    "billed_tokens": 40326,
+    "api_calls": 21,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 52,
+    "coverage": 0.05555555555555555,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 36877,
+     "claims:calls": 1,
+     "claims:tokens": 154,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3295
+    }
+   },
+   "t032": {
+    "accounting_in": 40505,
+    "accounting_out": 3533,
+    "accounting_tokens": 44038,
+    "billed_in": 40505,
+    "billed_out": 3533,
+    "billed_tokens": 44038,
+    "api_calls": 21,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 46,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40977,
+     "claims:calls": 1,
+     "claims:tokens": 209,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2852
+    }
+   },
+   "t034": {
+    "accounting_in": 42926,
+    "accounting_out": 4255,
+    "accounting_tokens": 47181,
+    "billed_in": 42926,
+    "billed_out": 4255,
+    "billed_tokens": 47181,
+    "api_calls": 23,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 57,
+    "coverage": 0.1,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42974,
+     "claims:calls": 3,
+     "claims:tokens": 727,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3480
+    }
+   },
+   "t035": {
+    "accounting_in": 43168,
+    "accounting_out": 3322,
+    "accounting_tokens": 46490,
+    "billed_in": 43168,
+    "billed_out": 3322,
+    "billed_tokens": 46490,
+    "api_calls": 21,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 42623,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3352,
+     "paraphrase_repair:calls": 1,
+     "paraphrase_repair:tokens": 515
+    }
+   },
+   "t036": {
+    "accounting_in": 45254,
+    "accounting_out": 10293,
+    "accounting_tokens": 55547,
+    "billed_in": 45254,
+    "billed_out": 10293,
+    "billed_tokens": 55547,
+    "api_calls": 25,
+    "llm_calls": 25,
+    "branch_rounds": 12,
+    "subq_executed": 46,
+    "coverage": 0.25,
+    "grounding": 0.5,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 47314,
+     "claims:calls": 5,
+     "claims:tokens": 5164,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3069
+    }
+   },
+   "t041": {
+    "accounting_in": 39767,
+    "accounting_out": 3735,
+    "accounting_tokens": 43502,
+    "billed_in": 39767,
+    "billed_out": 3735,
+    "billed_tokens": 43502,
+    "api_calls": 23,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 44,
+    "coverage": 0.1875,
+    "grounding": 0.6666666666666666,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39939,
+     "claims:calls": 3,
+     "claims:tokens": 805,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2758
+    }
+   },
+   "t042": {
+    "accounting_in": 42943,
+    "accounting_out": 4164,
+    "accounting_tokens": 47107,
+    "billed_in": 42943,
+    "billed_out": 4164,
+    "billed_tokens": 47107,
+    "api_calls": 21,
+    "llm_calls": 21,
+    "branch_rounds": 12,
+    "subq_executed": 47,
+    "coverage": 0.0625,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 44002,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2890,
+     "claims:calls": 1,
+     "claims:tokens": 215
+    }
+   },
+   "t043": {
+    "accounting_in": 40150,
+    "accounting_out": 3476,
+    "accounting_tokens": 43626,
+    "billed_in": 40150,
+    "billed_out": 3476,
+    "billed_tokens": 43626,
+    "api_calls": 22,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 44,
+    "coverage": 0.125,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40560,
+     "claims:calls": 2,
+     "claims:tokens": 592,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2474
+    }
+   },
+   "t044": {
+    "accounting_in": 40229,
+    "accounting_out": 4373,
+    "accounting_tokens": 44602,
+    "billed_in": 40229,
+    "billed_out": 4373,
+    "billed_tokens": 44602,
+    "api_calls": 22,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 42,
+    "coverage": 0.1875,
+    "grounding": 1.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 40913,
+     "claims:calls": 2,
+     "claims:tokens": 1049,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2640
+    }
+   },
+   "t047": {
+    "accounting_in": 39346,
+    "accounting_out": 3227,
+    "accounting_tokens": 42573,
+    "billed_in": 39346,
+    "billed_out": 3227,
+    "billed_tokens": 42573,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 39176,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 3397
+    }
+   },
+   "t051": {
+    "accounting_in": 35763,
+    "accounting_out": 3028,
+    "accounting_tokens": 38791,
+    "billed_in": 35763,
+    "billed_out": 3028,
+    "billed_tokens": 38791,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 35954,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2837
+    }
+   },
+   "t052": {
+    "accounting_in": 37587,
+    "accounting_out": 3163,
+    "accounting_tokens": 40750,
+    "billed_in": 37587,
+    "billed_out": 3163,
+    "billed_tokens": 40750,
+    "api_calls": 20,
+    "llm_calls": 20,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 37778,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2972
+    }
+   },
+   "t053": {
+    "accounting_in": 37392,
+    "accounting_out": 3820,
+    "accounting_tokens": 41212,
+    "billed_in": 37392,
+    "billed_out": 3820,
+    "billed_tokens": 41212,
+    "api_calls": 22,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0625,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 37901,
+     "claims:calls": 2,
+     "claims:tokens": 437,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 2874
+    }
+   }
+  }
+ },
+ "ledger": {
+  "rows": 1346,
+  "by_seed_family": {
+   "s1|E": {
+    "billed_in": 2411755,
+    "billed_out": 252322,
+    "api_calls": 1346
+   }
+  }
+ },
+ "usage": {
+  "E-GR@gpt-5.4-nano·s1": {
+   "calls": 798,
+   "cache_hits": 202,
+   "api_calls": 596,
+   "billed_tokens_in": 1006847,
+   "billed_tokens_out": 116495,
+   "decompose_api_calls": 0
+  },
+  "E-SQ@gpt-5.4-nano·s1": {
+   "calls": 785,
+   "cache_hits": 35,
+   "api_calls": 750,
+   "billed_tokens_in": 1404908,
+   "billed_tokens_out": 135827,
+   "decompose_api_calls": 0
+  }
+ },
+ "all_topics": {
+  "savings": {
+   "E-SQ_vs_E-GR@gpt-5.4-nano": {
+    "accounting_tokens": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "accounting_tokens",
+     "available": true,
+     "n_topics": 35,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σaccounting_tokens(E-SQ@gpt-5.4-nano) / Σaccounting_tokens(E-GR@gpt-5.4-nano)",
+     "point": 0.015368265120467184,
+     "ci95": [
+      0.007040502273956875,
+      0.02427061679805364
+     ],
+     "per_seed": {
+      "1": 0.015368265120467184
+     },
+     "sign_table": {
+      "1": 1
+     },
+     "claim": true,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "billed_tokens": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "billed_tokens",
+     "available": true,
+     "n_topics": 35,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbilled_tokens(E-SQ@gpt-5.4-nano) / Σbilled_tokens(E-GR@gpt-5.4-nano)",
+     "point": -0.3715636021799238,
+     "ci95": [
+      -0.39326866774698377,
+      -0.3484132522910012
+     ],
+     "per_seed": {
+      "1": -0.3715636021799238
+     },
+     "sign_table": {
+      "1": -1
+     },
+     "claim": null,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "branch_rounds": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "branch_rounds",
+     "available": true,
+     "n_topics": 35,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbranch_rounds(E-SQ@gpt-5.4-nano) / Σbranch_rounds(E-GR@gpt-5.4-nano)",
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "per_seed": {
+      "1": 0.0
+     },
+     "sign_table": {
+      "1": 0
+     },
+     "claim": false,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "subq_executed": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "subq_executed",
+     "available": true,
+     "n_topics": 35,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σsubq_executed(E-SQ@gpt-5.4-nano) / Σsubq_executed(E-GR@gpt-5.4-nano)",
+     "point": 0.03938356164383561,
+     "ci95": [
+      0.025385873918224635,
+      0.054711051520750016
+     ],
+     "per_seed": {
+      "1": 0.03938356164383561
+     },
+     "sign_table": {
+      "1": 1
+     },
+     "claim": true,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    }
+   },
+   "L-BR_vs_L-GR@gpt-5.4-nano": {
+    "accounting_tokens": {
+     "a": "L-BR@gpt-5.4-nano",
+     "b": "L-GR@gpt-5.4-nano",
+     "metric": "accounting_tokens",
+     "available": false
+    },
+    "billed_tokens": {
+     "a": "L-BR@gpt-5.4-nano",
+     "b": "L-GR@gpt-5.4-nano",
+     "metric": "billed_tokens",
+     "available": false
+    },
+    "branch_rounds": {
+     "a": "L-BR@gpt-5.4-nano",
+     "b": "L-GR@gpt-5.4-nano",
+     "metric": "branch_rounds",
+     "available": false
+    },
+    "subq_executed": {
+     "a": "L-BR@gpt-5.4-nano",
+     "b": "L-GR@gpt-5.4-nano",
+     "metric": "subq_executed",
+     "available": false
+    }
+   },
+   "E-BR_vs_E-SQ@gpt-5.4-nano": {
+    "accounting_tokens": {
+     "a": "E-BR@gpt-5.4-nano",
+     "b": "E-SQ@gpt-5.4-nano",
+     "metric": "accounting_tokens",
+     "available": false
+    },
+    "billed_tokens": {
+     "a": "E-BR@gpt-5.4-nano",
+     "b": "E-SQ@gpt-5.4-nano",
+     "metric": "billed_tokens",
+     "available": false
+    },
+    "branch_rounds": {
+     "a": "E-BR@gpt-5.4-nano",
+     "b": "E-SQ@gpt-5.4-nano",
+     "metric": "branch_rounds",
+     "available": false
+    },
+    "subq_executed": {
+     "a": "E-BR@gpt-5.4-nano",
+     "b": "E-SQ@gpt-5.4-nano",
+     "metric": "subq_executed",
+     "available": false
+    }
+   }
+  },
+  "noninferiority": {
+   "E-SQ_vs_E-GR@gpt-5.4-nano": {
+    "coverage": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "coverage",
+     "available": true,
+     "n_topics": 35,
+     "seeds": [
+      1
+     ],
+     "diff": 0.04493464052287582,
+     "ci90": [
+      0.02816059757236228,
+      0.06268732492997198
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.04493464052287582
+     },
+     "sensitivity": {
+      "0.03": {
+       "noninferior": true,
+       "equivalent": false
+      },
+      "0.1": {
+       "noninferior": true,
+       "equivalent": true
+      }
+     }
+    },
+    "grounding": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "grounding",
+     "available": true,
+     "n_topics": 35,
+     "seeds": [
+      1
+     ],
+     "diff": 0.3078231292517007,
+     "ci90": [
+      0.1792517006802721,
+      0.44251700680272105
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.3078231292517007
+     },
+     "sensitivity": {}
+    }
+   },
+   "E-R1_vs_E-GR@gpt-5.4-nano": {
+    "coverage": {
+     "a": "E-R1@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "coverage",
+     "available": true,
+     "n_topics": 35,
+     "seeds": [
+      1
+     ],
+     "diff": 0.028968253968253966,
+     "ci90": [
+      0.013186274509803924,
+      0.0450986227824463
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": true,
+     "per_seed": {
+      "1": 0.028968253968253966
+     },
+     "sensitivity": {
+      "0.03": {
+       "noninferior": true,
+       "equivalent": false
+      },
+      "0.1": {
+       "noninferior": true,
+       "equivalent": true
+      }
+     }
+    },
+    "grounding": {
+     "a": "E-R1@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "grounding",
+     "available": true,
+     "n_topics": 35,
+     "seeds": [
+      1
+     ],
+     "diff": 0.1985714285714286,
+     "ci90": [
+      0.06666666666666665,
+      0.33383333333333304
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.1985714285714286
+     },
+     "sensitivity": {}
+    }
+   }
+  }
+ },
+ "sensitivity_30": {
+  "savings": {
+   "E-SQ_vs_E-GR@gpt-5.4-nano": {
+    "accounting_tokens": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "accounting_tokens",
+     "available": true,
+     "n_topics": 30,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σaccounting_tokens(E-SQ@gpt-5.4-nano) / Σaccounting_tokens(E-GR@gpt-5.4-nano)",
+     "point": 0.013863835373244426,
+     "ci95": [
+      0.005501846087053242,
+      0.023083900352851343
+     ],
+     "per_seed": {
+      "1": 0.013863835373244426
+     },
+     "sign_table": {
+      "1": 1
+     },
+     "claim": true,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "billed_tokens": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "billed_tokens",
+     "available": true,
+     "n_topics": 30,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbilled_tokens(E-SQ@gpt-5.4-nano) / Σbilled_tokens(E-GR@gpt-5.4-nano)",
+     "point": -0.3696816777474825,
+     "ci95": [
+      -0.39311119761274915,
+      -0.34498745840457684
+     ],
+     "per_seed": {
+      "1": -0.3696816777474825
+     },
+     "sign_table": {
+      "1": -1
+     },
+     "claim": null,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "branch_rounds": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "branch_rounds",
+     "available": true,
+     "n_topics": 30,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbranch_rounds(E-SQ@gpt-5.4-nano) / Σbranch_rounds(E-GR@gpt-5.4-nano)",
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "per_seed": {
+      "1": 0.0
+     },
+     "sign_table": {
+      "1": 0
+     },
+     "claim": false,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "subq_executed": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "subq_executed",
+     "available": true,
+     "n_topics": 30,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σsubq_executed(E-SQ@gpt-5.4-nano) / Σsubq_executed(E-GR@gpt-5.4-nano)",
+     "point": 0.03866666666666663,
+     "ci95": [
+      0.022965346050194967,
+      0.05613495848789959
+     ],
+     "per_seed": {
+      "1": 0.03866666666666663
+     },
+     "sign_table": {
+      "1": 1
+     },
+     "claim": true,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    }
+   },
+   "L-BR_vs_L-GR@gpt-5.4-nano": {
+    "accounting_tokens": {
+     "a": "L-BR@gpt-5.4-nano",
+     "b": "L-GR@gpt-5.4-nano",
+     "metric": "accounting_tokens",
+     "available": false
+    },
+    "billed_tokens": {
+     "a": "L-BR@gpt-5.4-nano",
+     "b": "L-GR@gpt-5.4-nano",
+     "metric": "billed_tokens",
+     "available": false
+    },
+    "branch_rounds": {
+     "a": "L-BR@gpt-5.4-nano",
+     "b": "L-GR@gpt-5.4-nano",
+     "metric": "branch_rounds",
+     "available": false
+    },
+    "subq_executed": {
+     "a": "L-BR@gpt-5.4-nano",
+     "b": "L-GR@gpt-5.4-nano",
+     "metric": "subq_executed",
+     "available": false
+    }
+   },
+   "E-BR_vs_E-SQ@gpt-5.4-nano": {
+    "accounting_tokens": {
+     "a": "E-BR@gpt-5.4-nano",
+     "b": "E-SQ@gpt-5.4-nano",
+     "metric": "accounting_tokens",
+     "available": false
+    },
+    "billed_tokens": {
+     "a": "E-BR@gpt-5.4-nano",
+     "b": "E-SQ@gpt-5.4-nano",
+     "metric": "billed_tokens",
+     "available": false
+    },
+    "branch_rounds": {
+     "a": "E-BR@gpt-5.4-nano",
+     "b": "E-SQ@gpt-5.4-nano",
+     "metric": "branch_rounds",
+     "available": false
+    },
+    "subq_executed": {
+     "a": "E-BR@gpt-5.4-nano",
+     "b": "E-SQ@gpt-5.4-nano",
+     "metric": "subq_executed",
+     "available": false
+    }
+   }
+  },
+  "noninferiority": {
+   "E-SQ_vs_E-GR@gpt-5.4-nano": {
+    "coverage": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "coverage",
+     "available": true,
+     "n_topics": 30,
+     "seeds": [
+      1
+     ],
+     "diff": 0.0480119825708061,
+     "ci90": [
+      0.03203976034858388,
+      0.06444716775599128
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.0480119825708061
+     },
+     "sensitivity": {
+      "0.03": {
+       "noninferior": true,
+       "equivalent": false
+      },
+      "0.1": {
+       "noninferior": true,
+       "equivalent": true
+      }
+     }
+    },
+    "grounding": {
+     "a": "E-SQ@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "grounding",
+     "available": true,
+     "n_topics": 30,
+     "seeds": [
+      1
+     ],
+     "diff": 0.34246031746031746,
+     "ci90": [
+      0.20912698412698413,
+      0.48333333333333334
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.34246031746031746
+     },
+     "sensitivity": {}
+    }
+   },
+   "E-R1_vs_E-GR@gpt-5.4-nano": {
+    "coverage": {
+     "a": "E-R1@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "coverage",
+     "available": true,
+     "n_topics": 30,
+     "seeds": [
+      1
+     ],
+     "diff": 0.03355119825708061,
+     "ci90": [
+      0.017129629629629627,
+      0.05111655773420479
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.03355119825708061
+     },
+     "sensitivity": {
+      "0.03": {
+       "noninferior": true,
+       "equivalent": false
+      },
+      "0.1": {
+       "noninferior": true,
+       "equivalent": true
+      }
+     }
+    },
+    "grounding": {
+     "a": "E-R1@gpt-5.4-nano",
+     "b": "E-GR@gpt-5.4-nano",
+     "metric": "grounding",
+     "available": true,
+     "n_topics": 30,
+     "seeds": [
+      1
+     ],
+     "diff": 0.215,
+     "ci90": [
+      0.06944444444444446,
+      0.3605833333333329
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.215
+     },
+     "sensitivity": {}
+    }
+   }
+  }
+ },
+ "transitions": {
+  "E-GR@gpt-5.4-nano·s1": {
+   "label": "accounting decomposition (회계 분해, 인과 아님)",
+   "states": [
+    "format_fail",
+    "insufficient",
+    "dropped",
+    "cited-unsupported",
+    "sufficient"
+   ],
+   "counts": {
+    "insufficient": {
+     "insufficient": 1066,
+     "sufficient": 14,
+     "dropped": 5,
+     "cited-unsupported": 3
+    },
+    "sufficient": {
+     "insufficient": 29,
+     "sufficient": 14,
+     "dropped": 1,
+     "cited-unsupported": 3
+    },
+    "dropped": {
+     "dropped": 1,
+     "insufficient": 10,
+     "sufficient": 3,
+     "cited-unsupported": 1
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 8,
+     "insufficient": 6,
+     "dropped": 1,
+     "sufficient": 2
+    },
+    "format_fail": {
+     "insufficient": 1
+    }
+   },
+   "tokens": {
+    "insufficient": {
+     "insufficient": 1012044.35,
+     "sufficient": 16433.5,
+     "dropped": 5181.9,
+     "cited-unsupported": 3298.45
+    },
+    "sufficient": {
+     "insufficient": 29301.4,
+     "sufficient": 14989.75,
+     "dropped": 1038.75,
+     "cited-unsupported": 3310.75
+    },
+    "dropped": {
+     "dropped": 987.25,
+     "insufficient": 10171.9,
+     "sufficient": 3113.7,
+     "cited-unsupported": 1172.5
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 12435.95,
+     "insufficient": 5929.0,
+     "dropped": 894.5,
+     "sufficient": 2261.75
+    },
+    "format_fail": {
+     "insufficient": 776.6
+    }
+   },
+   "n_reexecuted_units": 1168,
+   "round0": {
+    "counts": {
+     "insufficient": 531,
+     "sufficient": 31,
+     "dropped": 12,
+     "cited-unsupported": 9,
+     "format_fail": 1
+    },
+    "tokens": {
+     "insufficient": 392937.383,
+     "sufficient": 28982.767,
+     "dropped": 9679.0,
+     "cited-unsupported": 9179.05,
+     "format_fail": 662.8
+    }
+   },
+   "format_recovery_tokens": 0,
+   "format_fail_to_cited_tokens": 0,
+   "format_recovery_upper_bound": {
+    "repair_tokens": 582,
+    "answer_retry_tokens": 0,
+    "sum": 582
+   },
+   "unrecoverable_tokens": 1362000.85,
+   "insufficient_to_answered": {
+    "n_from_insufficient": 1088,
+    "n_to_answered": 17,
+    "rate": 0.015625
+   },
+   "subq_executed_mismatch": 0
+  },
+  "E-R1@gpt-5.4-nano·s1": {
+   "label": "accounting decomposition (회계 분해, 인과 아님)",
+   "states": [
+    "format_fail",
+    "insufficient",
+    "dropped",
+    "cited-unsupported",
+    "sufficient"
+   ],
+   "counts": {},
+   "tokens": {},
+   "n_reexecuted_units": 0,
+   "round0": {
+    "counts": {
+     "insufficient": 531,
+     "sufficient": 31,
+     "dropped": 12,
+     "cited-unsupported": 9,
+     "format_fail": 1
+    },
+    "tokens": {
+     "insufficient": 392937.383,
+     "sufficient": 28982.767,
+     "dropped": 9679.0,
+     "cited-unsupported": 9179.05,
+     "format_fail": 662.8
+    }
+   },
+   "format_recovery_tokens": 0,
+   "format_fail_to_cited_tokens": 0,
+   "format_recovery_upper_bound": {
+    "repair_tokens": 0,
+    "answer_retry_tokens": 0,
+    "sum": 0
+   },
+   "unrecoverable_tokens": 392937.383,
+   "insufficient_to_answered": {
+    "n_from_insufficient": 0,
+    "n_to_answered": 0,
+    "rate": null
+   },
+   "subq_executed_mismatch": 0
+  },
+  "E-SQ@gpt-5.4-nano·s1": {
+   "label": "accounting decomposition (회계 분해, 인과 아님)",
+   "states": [
+    "format_fail",
+    "insufficient",
+    "dropped",
+    "cited-unsupported",
+    "sufficient"
+   ],
+   "counts": {
+    "insufficient": {
+     "insufficient": 1046,
+     "cited-unsupported": 5,
+     "sufficient": 11,
+     "dropped": 6,
+     "format_fail": 1
+    },
+    "cited-unsupported": {
+     "insufficient": 8,
+     "cited-unsupported": 7
+    },
+    "dropped": {
+     "dropped": 2,
+     "insufficient": 11,
+     "sufficient": 1
+    },
+    "format_fail": {
+     "insufficient": 1
+    }
+   },
+   "tokens": {
+    "insufficient": {
+     "insufficient": 1034408.033,
+     "cited-unsupported": 5974.75,
+     "sufficient": 12745.283,
+     "dropped": 7398.5,
+     "format_fail": 767.2
+    },
+    "cited-unsupported": {
+     "insufficient": 10209.0,
+     "cited-unsupported": 13543.133
+    },
+    "dropped": {
+     "dropped": 1847.9,
+     "insufficient": 10580.2,
+     "sufficient": 1053.0
+    },
+    "format_fail": {
+     "insufficient": 767.0
+    }
+   },
+   "n_reexecuted_units": 1099,
+   "round0": {
+    "counts": {
+     "insufficient": 531,
+     "sufficient": 31,
+     "dropped": 12,
+     "cited-unsupported": 9,
+     "format_fail": 1
+    },
+    "tokens": {
+     "insufficient": 392937.383,
+     "sufficient": 28982.767,
+     "dropped": 9679.0,
+     "cited-unsupported": 9179.05,
+     "format_fail": 662.8
+    }
+   },
+   "format_recovery_tokens": 0,
+   "format_fail_to_cited_tokens": 0,
+   "format_recovery_upper_bound": {
+    "repair_tokens": 515,
+    "answer_retry_tokens": 0,
+    "sum": 515
+   },
+   "unrecoverable_tokens": 1387340.1,
+   "insufficient_to_answered": {
+    "n_from_insufficient": 1069,
+    "n_to_answered": 16,
+    "rate": 0.014967259120673527
+   },
+   "subq_executed_mismatch": 0
+  }
+ },
+ "gaming": {
+  "abstention_by_round": {
+   "E-GR@gpt-5.4-nano·s1": {
+    "0": {
+     "n": 584,
+     "insufficient_rate": 0.9092465753424658,
+     "abstain_rate": 0.9315068493150684
+    },
+    "1": {
+     "n": 584,
+     "insufficient_rate": 0.9537671232876712,
+     "abstain_rate": 0.958904109589041
+    },
+    "2": {
+     "n": 584,
+     "insufficient_rate": 0.9503424657534246,
+     "abstain_rate": 0.958904109589041
+    }
+   },
+   "E-R1@gpt-5.4-nano·s1": {
+    "0": {
+     "n": 584,
+     "insufficient_rate": 0.9092465753424658,
+     "abstain_rate": 0.9315068493150684
+    }
+   },
+   "E-SQ@gpt-5.4-nano·s1": {
+    "0": {
+     "n": 584,
+     "insufficient_rate": 0.9092465753424658,
+     "abstain_rate": 0.9315068493150684
+    },
+    "1": {
+     "n": 553,
+     "insufficient_rate": 0.972875226039783,
+     "abstain_rate": 0.976491862567812
+    },
+    "2": {
+     "n": 546,
+     "insufficient_rate": 0.967032967032967,
+     "abstain_rate": 0.9798534798534798
+    }
+   }
+  },
+  "insufficient_to_answered": {
+   "E-GR@gpt-5.4-nano·s1": {
+    "n_from_insufficient": 1088,
+    "n_to_answered": 17,
+    "rate": 0.015625
+   },
+   "E-R1@gpt-5.4-nano·s1": {
+    "n_from_insufficient": 0,
+    "n_to_answered": 0,
+    "rate": null
+   },
+   "E-SQ@gpt-5.4-nano·s1": {
+    "n_from_insufficient": 1069,
+    "n_to_answered": 16,
+    "rate": 0.014967259120673527
+   }
+  }
+ },
+ "rescore_consistency": {
+  "n_branch_records": 840,
+  "n_mismatch": 0,
+  "pass": true,
+  "examples": []
+ }
+}

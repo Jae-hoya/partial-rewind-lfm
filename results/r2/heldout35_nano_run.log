@@ -1,0 +1,78 @@
+=== N arm start 2026-11-06 07:29:33 code f1846e6 ===
+토픽 35개 (heldout35) · split sha 6993e8cce363
+원장 시작 청구 in/out 0/0 (상한 3000000/1200000)
+=== E-SQ@gpt-5.4-nano s1 ===
+  [ 1/35] t000 rounds=3 passed=False 24s billed in/out 44739/4861
+  [ 2/35] t001 rounds=3 passed=False 14s billed in/out 86160/9330
+  [ 3/35] t002 rounds=3 passed=False 18s billed in/out 126796/14195
+  [ 4/35] t003 rounds=3 passed=False 13s billed in/out 167902/17342
+  [ 5/35] t004 rounds=3 passed=False 13s billed in/out 206978/20624
+  [ 6/35] t005 rounds=3 passed=False 13s billed in/out 246482/24486
+  [ 7/35] t006 rounds=3 passed=False 9s billed in/out 287373/27427
+  [ 8/35] t011 rounds=3 passed=False 11s billed in/out 330327/30498
+  [ 9/35] t012 rounds=3 passed=False 11s billed in/out 370350/33956
+  [10/35] t013 rounds=3 passed=False 8s billed in/out 408969/36902
+  [11/35] t015 rounds=3 passed=False 16s billed in/out 450925/40684
+  [12/35] t016 rounds=3 passed=False 10s billed in/out 492195/43962
+  [13/35] t017 rounds=3 passed=False 10s billed in/out 532059/47834
+  [14/35] t018 rounds=3 passed=False 9s billed in/out 568164/51098
+  [15/35] t019 rounds=3 passed=False 13s billed in/out 605595/53834
+  [16/35] t020 rounds=3 passed=False 18s billed in/out 648990/57673
+  [17/35] t023 rounds=3 passed=False 10s billed in/out 688180/61152
+  [18/35] t024 rounds=3 passed=False 8s billed in/out 729527/64151
+  [19/35] t025 rounds=3 passed=False 21s billed in/out 764417/68212
+  [20/35] t026 rounds=3 passed=False 19s billed in/out 803895/72488
+  [21/35] t027 rounds=3 passed=False 18s billed in/out 842838/76628
+  [22/35] t029 rounds=3 passed=False 16s billed in/out 884057/80933
+  [23/35] t030 rounds=3 passed=False 13s billed in/out 919878/85438
+  [24/35] t032 rounds=3 passed=False 14s billed in/out 960383/88971
+  [25/35] t034 rounds=3 passed=False 15s billed in/out 1003309/93226
+  [26/35] t035 rounds=3 passed=False 11s billed in/out 1046477/96548
+  [27/35] t036 rounds=3 passed=False 56s billed in/out 1091731/106841
+  [28/35] t041 rounds=3 passed=False 15s billed in/out 1131498/110576
+  [29/35] t042 rounds=3 passed=False 14s billed in/out 1174441/114740
+  [30/35] t043 rounds=3 passed=False 15s billed in/out 1214591/118216
+  [31/35] t044 rounds=3 passed=False 20s billed in/out 1254820/122589
+  [32/35] t047 rounds=3 passed=False 9s billed in/out 1294166/125816
+  [33/35] t051 rounds=3 passed=False 9s billed in/out 1329929/128844
+  [34/35] t052 rounds=3 passed=False 9s billed in/out 1367516/132007
+  [35/35] t053 rounds=3 passed=False 15s billed in/out 1404908/135827
+    usage calls 785 · api 750 · billed in/out 1404908/135827
+=== E-GR@gpt-5.4-nano s1 ===
+  [ 1/35] t000 rounds=3 passed=False 12s billed in/out 31084/3299
+  [ 2/35] t001 rounds=3 passed=False 14s billed in/out 60521/6998
+  [ 3/35] t002 rounds=3 passed=False 16s billed in/out 88778/11325
+  [ 4/35] t003 rounds=3 passed=False 10s billed in/out 117298/14266
+  [ 5/35] t004 rounds=3 passed=False 20s billed in/out 145765/18863
+  [ 6/35] t005 rounds=3 passed=False 10s billed in/out 173662/22223
+  [ 7/35] t006 rounds=3 passed=False 7s billed in/out 201840/24926
+  [ 8/35] t011 rounds=3 passed=False 7s billed in/out 231921/27479
+  [ 9/35] t012 rounds=3 passed=False 8s billed in/out 259810/30373
+  [10/35] t013 rounds=3 passed=False 7s billed in/out 286315/32963
+  [11/35] t015 rounds=3 passed=False 13s billed in/out 316134/36199
+  [12/35] t016 rounds=3 passed=False 9s billed in/out 344566/38961
+  [13/35] t017 rounds=3 passed=False 9s billed in/out 375005/42507
+  [14/35] t018 rounds=3 passed=False 7s billed in/out 403629/45080
+  [15/35] t019 rounds=3 passed=False 7s billed in/out 430204/47261
+  [16/35] t020 rounds=3 passed=False 23s billed in/out 460680/50781
+  [17/35] t023 rounds=3 passed=False 7s billed in/out 487626/53515
+  [18/35] t024 rounds=3 passed=False 10s billed in/out 515888/56143
+  [19/35] t025 rounds=3 passed=False 15s billed in/out 542817/59640
+  [20/35] t026 rounds=3 passed=False 15s billed in/out 570267/63038
+  [21/35] t027 rounds=3 passed=False 12s billed in/out 597117/66152
+  [22/35] t029 rounds=3 passed=False 18s billed in/out 628468/71105
+  [23/35] t030 rounds=3 passed=False 12s billed in/out 656384/74985
+  [24/35] t032 rounds=3 passed=False 8s billed in/out 684665/77714
+  [25/35] t034 rounds=3 passed=False 12s billed in/out 714672/81759
+  [26/35] t035 rounds=3 passed=False 8s billed in/out 744018/84391
+  [27/35] t036 rounds=3 passed=False 39s billed in/out 776590/91308
+  [28/35] t041 rounds=3 passed=False 15s billed in/out 804500/94835
+  [29/35] t042 rounds=3 passed=False 9s billed in/out 834286/97721
+  [30/35] t043 rounds=3 passed=False 12s billed in/out 862159/100843
+  [31/35] t044 rounds=3 passed=False 22s billed in/out 890847/105685
+  [32/35] t047 rounds=3 passed=False 7s billed in/out 919484/108623
+  [33/35] t051 rounds=3 passed=False 7s billed in/out 949340/111254
+  [34/35] t052 rounds=3 passed=False 8s billed in/out 977849/113920
+  [35/35] t053 rounds=3 passed=False 8s billed in/out 1006847/116495
+    usage calls 798 · api 596 · billed in/out 1006847/116495
+EXIT 0 2026-11-06 07:45:37

@@ -682,15 +682,22 @@ def analyze(run_dir: Path, *, sup: Support | None = None, pilot: bool = False, n
         k = m.group(1) if m else "unseeded"
         by_nonce[k][0] += int(r["tokens_in"]); by_nonce[k][1] += int(r["tokens_out"]); by_nonce[k][2] += 1
 
+    # N arm 처럼 arm 이름에 @model 이 붙으면 같은 model 끼리 짝짓는다(접미사가 없으면 종전과 같다)
+    models = sorted({parse_arm(a)[1] or "" for (a, _s) in summ})
+    at = lambda arm, m: arm + ("@" + m if m else "")
+
     def comps(filt):
-        return {
-            "savings": {"%s_vs_%s" % (a, b): {m: savings_compare(summ, a, b, m, filt, n_boot) for m in METRICS}
-                        for a, b in SAVINGS},
-            "noninferiority": {"%s_vs_%s" % (a, b): {
-                "coverage": noninf_compare(summ, a, b, "coverage", DELTA_COV, DELTA_COV_SENS, filt, n_boot),
-                "grounding": noninf_compare(summ, a, b, "grounding", DELTA_GRD, (), filt, n_boot)}
-                for a, b in NONINF},
-        }
+        out = {"savings": {}, "noninferiority": {}}
+        for mdl in models:
+            tag = "@" + mdl if mdl else ""
+            for a, b in SAVINGS:
+                out["savings"]["%s_vs_%s%s" % (a, b, tag)] = {
+                    m: savings_compare(summ, at(a, mdl), at(b, mdl), m, filt, n_boot) for m in METRICS}
+            for a, b in NONINF:
+                out["noninferiority"]["%s_vs_%s%s" % (a, b, tag)] = {
+                    "coverage": noninf_compare(summ, at(a, mdl), at(b, mdl), "coverage", DELTA_COV, DELTA_COV_SENS, filt, n_boot),
+                    "grounding": noninf_compare(summ, at(a, mdl), at(b, mdl), "grounding", DELTA_GRD, (), filt, n_boot)}
+        return out
 
     res: dict[str, Any] = {
         "run_dir": str(run_dir), "n_boot": n_boot, "boot_seed": BOOT_SEED,
