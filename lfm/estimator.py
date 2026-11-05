@@ -157,6 +157,7 @@ class MiniCheckScorer:
     MODEL = "flan-t5-large"          # = lytang/MiniCheck-Flan-T5-Large
     CHUNK_SIZE = 7200                # 가장 긴 전제 7,129 토큰보다 크게
     MAX_LEN = 7500                   # inference.py:444 가 chunk_size < max_model_len 강제
+    GPU_MAX_TOKENS = 3600            # 이보다 긴 입력은 CPU(이탈 4). 3,620토큰까지 GPU−CPU 차 < 1e-7 확인
 
     def __init__(self, chunk_size: int | None = None, max_model_len: int | None = None):
         from minicheck.minicheck import MiniCheck
@@ -203,10 +204,16 @@ class MiniCheckScorer:
             raise AssertionError("MiniCheck 입력 %d 토큰 > max_model_len %d — 잘려서 채점된다. 전제 %d자."
                                  % (n_tok, self.max_model_len, len(doc)))
         oom = False
-        try:
-            out = self.m.score(docs=[doc], claims=[claim], chunk_size=self.chunk_size)
-        except torch.cuda.OutOfMemoryError:
-            oom = True               # except 밖에서 처리한다 — traceback 이 GPU 텐서를 잡고 있다
+        # Windows WDDM 은 VRAM 이 차면 OOM 대신 **공유(시스템) 메모리로 넘겨** 몇십 배 느리게 돈다 — 본실험
+        # 2026-11-06 t036 에서 30분 넘게 멈췄다(전용 11.9GB + 공유 0.86GB). OOM 이 안 나니 위 대체 경로가
+        # 안 탄다. 그래서 GPU 에서 동치를 확인한 길이(3,620토큰)를 넘으면 **처음부터 CPU** 로 채점한다(이탈 4).
+        if n_tok > self.GPU_MAX_TOKENS and str(self.m.model.model.device) != "cpu":
+            oom = True
+        else:
+            try:
+                out = self.m.score(docs=[doc], claims=[claim], chunk_size=self.chunk_size)
+            except torch.cuda.OutOfMemoryError:
+                oom = True           # except 밖에서 처리한다 — traceback 이 GPU 텐서를 잡고 있다
         if oom:
             out = self._score_on_cpu(doc, claim)
             self.cpu_fallbacks += 1

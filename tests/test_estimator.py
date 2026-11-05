@@ -304,3 +304,27 @@ def test_같은_청크를_여러_번_인용해도_전제에는_한_번만_첫_�
     # nli_max 는 최댓값이라 중복과 무관하다
     nli = FakeNLI()
     assert grounding(out, nli) == grounding(mk([("alpha one [a]. beta two [b].", ["a", "b"])], chunks), nli)
+
+
+def test_GPU_동치_확인_길이를_넘는_입력은_처음부터_CPU에서_채점한다():
+    """이탈 4 (2026-11-06): WDDM 은 OOM 대신 공유 메모리로 넘겨 멈춘 듯 느려진다. 길이로 미리 보낸다."""
+    torch = pytest.importorskip("torch")
+    seen = []
+
+    class HF:
+        device = "cuda:0"
+
+        def to(self, d):
+            HF.device = str(d)
+            return self
+
+    m = type("M", (), {})()
+    m.model = type("Inf", (), {})()
+    m.model.model, m.model.tokenizer = HF(), FakeTok()
+    m.score = lambda docs, claims, chunk_size: seen.append(HF.device) or ([1], [0.6], [[docs[0]]], [[0.6]])
+    sc = _bare_scorer(m)
+    sc.GPU_MAX_TOKENS = 100
+    sc.score("d" * 50, "c")                  # 64 토큰 → GPU
+    sc.score("d" * 200, "c")                 # 214 토큰 → CPU, 뒤에 GPU 로 돌아온다
+    assert seen == ["cuda:0", "cpu"] and HF.device == "cuda:0"
+    assert sc.cpu_fallbacks == 1 and sc.cpu_fallback_doc_chars == [200]
