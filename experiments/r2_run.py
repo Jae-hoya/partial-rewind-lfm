@@ -112,6 +112,16 @@ def branch_record(qr, rr, bid) -> dict:
     }
 
 
+def _release_gpu_cache() -> None:
+    """토픽마다 PyTorch 캐시 할당자가 쥔 빈 블록을 돌려준다. 계산 값과 무관하다."""
+    try:
+        import torch
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+    except Exception:
+        pass
+
+
 def scorer_stats(est) -> dict | None:
     """MiniCheck scorer 누적 계수(프로세스 단위, arm 을 넘어 누적). G1 ⑧ 점검용."""
     s = getattr(getattr(est, "inner", est), "scorer", None)
@@ -161,6 +171,7 @@ def _run_topics(llm, controller, cfg, topics, outdir, retriever, nli, est, run_t
             tmp = done.with_suffix(".tmp")
             io.open(tmp, "w", encoding="utf-8").write(json.dumps(rec, ensure_ascii=False))
             tmp.replace(done)
+            _release_gpu_cache()        # 이탈 4 정정: 긴 프로세스에서 캐시 할당자가 쥔 VRAM 이 WDDM 공유 메모리 넘김을 부른다
             print("  [%2d/%2d] %s rounds=%d passed=%s %.0fs billed in/out %d/%d"
                   % (i + 1, len(topics), qid, len(qr.rounds), qr.passed, time.time() - t0,
                      llm.stats.billed_tokens_in, llm.stats.billed_tokens_out), flush=True)
