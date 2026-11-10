@@ -1,0 +1,221 @@
+{
+  "rule": "PREREG_R2 §7 (results/r2/PREREG_R2.md:123-125)",
+  "generated_at": "2026-11-11T04:46:19+09:00",
+  "script": "experiments/r2_drift.py",
+  "script_sha256_16": "e79190ab2d2fa140",
+  "git_head": "2f7f1b621f8d73ee1d24cca286dbfe381e0c79c1",
+  "sources": {
+    "L-GR_s1": "results/r2/heldout35/L-GR/s1",
+    "TestA": "results/test_a/20260829-041445"
+  },
+  "topics": [
+    "t000",
+    "t001",
+    "t002",
+    "t003",
+    "t004",
+    "t005",
+    "t006",
+    "t011",
+    "t012",
+    "t013",
+    "t015",
+    "t016",
+    "t017",
+    "t018",
+    "t019",
+    "t020",
+    "t023",
+    "t024",
+    "t025",
+    "t026",
+    "t027",
+    "t029",
+    "t030",
+    "t032",
+    "t034",
+    "t035",
+    "t036",
+    "t041",
+    "t042",
+    "t043",
+    "t044",
+    "t047",
+    "t051",
+    "t052",
+    "t053"
+  ],
+  "threshold_pp": 10.0,
+  "diff_sign": "L-GR_s1 - TestA",
+  "definitions": {
+    "degraded": "branch-round 비율; degraded = truncated or not any(sa.text) — lfm/branch.py:311",
+    "coverage": "branch-round 평균 legacy coverage — lfm/evidence.py:39-46",
+    "verify": "최종 verify 통과 토픽 비율; mean_g>=0.8 and min_c>=0.8 — lfm/verifier.py:38-42"
+  },
+  "primary": {
+    "degraded": {
+      "L-GR_s1": 0.361905,
+      "TestA": 0.354762,
+      "diff_pp": 0.714,
+      "drift": false
+    },
+    "verify": {
+      "L-GR_s1": 0.0,
+      "TestA": 0.0,
+      "diff_pp": 0.0,
+      "drift": false
+    },
+    "coverage": {
+      "L-GR_s1": 0.391429,
+      "TestA": 0.424286,
+      "diff_pp": -3.286,
+      "drift": false
+    }
+  },
+  "any_drift": false,
+  "aux_verify_round": {
+    "verify_round": {
+      "L-GR_s1": 0.0,
+      "TestA": 0.0,
+      "diff_pp": 0.0,
+      "drift": false
+    }
+  },
+  "supplementary_not_in_rule": {
+    "grounding_mean": {
+      "L-GR_s1": 0.493962,
+      "TestA": 0.183113,
+      "diff_pp": 31.085,
+      "drift": true
+    }
+  },
+  "verify_components_round_mean": {
+    "L-GR_s1": {
+      "mean_grounding": 0.49396208571428574,
+      "min_coverage": 0.09904761904761905,
+      "n": 105
+    },
+    "TestA": {
+      "mean_grounding": 0.18311341904761905,
+      "min_coverage": 0.1438095238095238,
+      "n": 105
+    }
+  },
+  "by_round": {
+    "0": {
+      "degraded": {
+        "L-GR_s1": 0.321429,
+        "TestA": 0.328571,
+        "diff_pp": -0.714,
+        "drift": false
+      },
+      "verify_round": {
+        "L-GR_s1": 0.0,
+        "TestA": 0.0,
+        "diff_pp": 0.0,
+        "drift": false
+      },
+      "coverage": {
+        "L-GR_s1": 0.437857,
+        "TestA": 0.455357,
+        "diff_pp": -1.75,
+        "drift": false
+      },
+      "grounding_mean": {
+        "L-GR_s1": 0.540619,
+        "TestA": 0.205361,
+        "diff_pp": 33.526,
+        "drift": true
+      }
+    },
+    "1": {
+      "degraded": {
+        "L-GR_s1": 0.378571,
+        "TestA": 0.364286,
+        "diff_pp": 1.429,
+        "drift": false
+      },
+      "verify_round": {
+        "L-GR_s1": 0.0,
+        "TestA": 0.0,
+        "diff_pp": 0.0,
+        "drift": false
+      },
+      "coverage": {
+        "L-GR_s1": 0.385,
+        "TestA": 0.416786,
+        "diff_pp": -3.179,
+        "drift": false
+      },
+      "grounding_mean": {
+        "L-GR_s1": 0.465179,
+        "TestA": 0.172402,
+        "diff_pp": 29.278,
+        "drift": true
+      }
+    },
+    "2": {
+      "degraded": {
+        "L-GR_s1": 0.385714,
+        "TestA": 0.371429,
+        "diff_pp": 1.429,
+        "drift": false
+      },
+      "verify_round": {
+        "L-GR_s1": 0.0,
+        "TestA": 0.0,
+        "diff_pp": 0.0,
+        "drift": false
+      },
+      "coverage": {
+        "L-GR_s1": 0.351429,
+        "TestA": 0.400714,
+        "diff_pp": -4.929,
+        "drift": false
+      },
+      "grounding_mean": {
+        "L-GR_s1": 0.476088,
+        "TestA": 0.171577,
+        "diff_pp": 30.451,
+        "drift": true
+      }
+    }
+  },
+  "counts": {
+    "L-GR_s1": {
+      "n_branch_rounds": 420,
+      "degraded": 0.3619047619047619,
+      "n_degraded": 152,
+      "coverage": 0.39142857142857146,
+      "verify_round": 0.0,
+      "n_round_states": 105,
+      "n_verify_round_pass": 0,
+      "grounding_mean": 0.49396206428571426,
+      "verify": 0.0,
+      "n_topics": 35,
+      "n_verify_pass": 0
+    },
+    "TestA": {
+      "n_branch_rounds": 420,
+      "degraded": 0.3547619047619048,
+      "n_degraded": 149,
+      "coverage": 0.42428571428571427,
+      "verify_round": 0.0,
+      "n_round_states": 105,
+      "n_verify_round_pass": 0,
+      "grounding_mean": 0.18311339047619046,
+      "verify": 0.0,
+      "n_topics": 35,
+      "n_verify_pass": 0
+    }
+  },
+  "caveats": [
+    "Test A(run_id 9448e3b1, 2026-08-29 04:14:45 시작)는 v1.0 시기 코드(9ea222c 04:19 직전, b9d2afc 계열)로 돌았다. 세 지표의 정의는 b9d2afc 와 HEAD 가 글자 그대로 같다: degraded branch.py:201→311, coverage evidence.py:38-45→39-46, verify verifier.py:42→42. coverage·degraded 는 출력이 주어지면 결정론이다.",
+    "저장값만 썼다(재채점 없음). 양쪽 grounding 은 실행 당시 nli_max(cross-encoder/nli-deberta-v3-base, τ 0.5)로 저장됐다. M1′/R2 MiniCheck 재채점값은 쓰지 않았다. 이탈 2(fb5e6ea, 전제 고유 청크)는 nli_max 에 무관(최댓값). D15 는 Test A 를 후속 코드로 재생해 degraded 600/600 일치를 확인했다(results/d15/D15_RESULT.md:9).",
+    "분해는 같다(Test A 캐시 .cache/llm 재생, PREREG §4). 생성 모델 gpt-5-mini·reasoning_effort low·temperature null, prompt_mode legacy, retry_directives, max_rounds 3, τ 0.8/0.8 이 두 config 에서 같다. 그러나 L-GR s1 생성은 seed nonce(s1|L|r{round}) 아래 새 표본이고, 8월→11월 사이 제공자 측 모델이 바뀌었을 수 있다(model_returned 비교는 하지 않음).",
+    "verify 는 양쪽 모두 0/35 라 차이 0pp 는 정보가 적다. 라운드 통과 비율(105 상태)도 함께 냈다.",
+    "grounding 은 §7 지표가 아니다(보조 행, drift 판정에 넣지 않음). verify 는 mean_g 에 의존한다. grounding 은 +31pp 로 크게 다르다. 계산식은 같다(b9d2afc evidence.grounding = HEAD estimator.py NLIMaxEstimator: (청크, 문장) 쌍 최댓값 ≥ 0.5). D18 은 Test A 를 후속 코드로 재생해 grounding 이 waste_ratio.csv 와 일치함을 가드로 확인했고(experiments/d18_textdump.py:10), P0 는 Test A pilot5 재생이 60/60 바이트 일치했다(432bec7). 따라서 차이는 채점 코드가 아니라 생성 출력(새 표본·제공자 측 변화)에서 온다고 본다 — 원인은 이 스크립트가 진단하지 않는다.",
+    "단위(branch-round 평균, 토픽 비율)는 등록 문구가 정하지 않아 이 스크립트에서 고정했다. coverage 는 branch 비율의 평균이다 — Test A csv 에 sub-answer 개수가 없어 sub-answer 풀링 평균은 계산할 수 없다.",
+    "Test A 50토픽 중 heldout35 의 35토픽만 비교한다(나머지 15는 제외). Test A 는 역사 기록이며 결론은 같은 시기 arm 끼리만 비교한다(PREREG §7)."
+  ]
+}

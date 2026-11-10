@@ -69,3 +69,4 @@ PREREG_R2를 커밋한 뒤 생긴 모든 이탈을 여기에 적는다. 지우�
     - **C-G6(a) 통과**: off-topic 위양성 0/300, Wilson 상한 0.013. near-miss 0/300(보고만).
     - **분석기 수정**: `c2_analyze.py`가 `r2_analyze.to_markdown`(sensitivity_30 블록 전제)에서 멈춰, 래퍼 안에서만 JSON에서는 블록을 지우고 MD에만 "해당 없음" 제목으로 둔다. 수치 무관.
     - 본실험: heldout 22토픽 × {L-BR, L-GR, E-BR, E-GR} × seed 1~3, E-R1 = E-GR 라운드 0.
+26. **PREREG_R2 §7 drift 점검 실행 (2026-11-11, `experiments/r2_drift.py`, `results/r2/extra/DRIFT.{json,md}`)** — 등록돼 있었으나 실행 기록이 없던 항목. 저장된 값만 사용(API 0, 재채점 0). L-GR s1 − Test A(같은 35토픽, branch-round 420): degraded +0.7pp(36.2% vs 35.5%), verify 0/35 vs 0/35, coverage −3.3pp(0.391 vs 0.424) → **drift 없음(±10pp 이내)**. 단위는 §7이 정하지 않아 스크립트가 정했다(branch-round 비율·평균, verify는 토픽 비율). 규칙 밖 보조 행: nli_max grounding 0.494 vs 0.183(+31.1pp) — 계산식은 같고(코드 대조) 원인은 진단하지 않았다. 독립 재계산이 모든 수치를 재현했다.
