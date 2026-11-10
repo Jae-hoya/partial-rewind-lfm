@@ -1,0 +1,408 @@
+{
+  "generated_at": "2026-11-11T03:14:26+0900",
+  "spec": "PREREG_R3 §4.2",
+  "match_mode": "identifier + normalized_title_identity + abstract_term_jaccard",
+  "near_dup_jaccard": 0.6,
+  "term_rule": "data/topics.py tokens(abstract, 4): 길이 >= 4, STOPWORDS 제외",
+  "embedding_near_dup_audit": "하지 않음 (공시)",
+  "n_topics": 28,
+  "n_heldout_documents": 28,
+  "by_topic": {
+    "t000": {
+      "topic": "How can an eccentric black hole merger interpretation of GW190521 inform H0 estimates, methods, uncertainties, and astrophysical limitations?",
+      "target_article": "Hubble Constant Measurement with GW190521 as an Eccentric Black Hole Merger",
+      "target_identifier": 61896,
+      "heldout_identifiers": [
+        61896
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t001": {
+      "topic": "How do symplectic embeddings of invariant Riemann surfaces distinguish Hamiltonian versus non-Hamiltonian circle actions, mechanisms and limitations?",
+      "target_article": "Embedded surfaces for symplectic circle actions",
+      "target_identifier": 15506,
+      "heldout_identifiers": [
+        15506
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t002": {
+      "topic": "How does indescribability using infinitary formulas build a hierarchy of large cardinals, what are the technical constructions and open consistency issues?",
+      "target_article": "Higher indescribability and derived topologies",
+      "target_identifier": 65316,
+      "heldout_identifiers": [
+        65316
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t003": {
+      "topic": "How does the Schwinger–DeWitt stress-energy calculation modify higher-dimensional Schwarzschild-Tangherlini black hole properties and what are its approximation limits?",
+      "target_article": "Stress-energy tensor of the quantized massive fields in Schwarzschild-Tangherlini spacetimes. The back reaction",
+      "target_identifier": 25460,
+      "heldout_identifiers": [
+        25460
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t004": {
+      "topic": "How do quadratic gradient terms influence existence, multiplicity, and a priori bounds for fully nonlinear elliptic equations, and where do challenges arise?",
+      "target_article": "A priori bounds and multiplicity for fully nonlinear equations with quadratic growth in the gradient",
+      "target_identifier": 42215,
+      "heldout_identifiers": [
+        42215
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t005": {
+      "topic": "How do ATLAS measurements of rare B0s and B0 to muon pairs constrain flavor physics, experimental systematics, and theoretical interpretation ambiguities?",
+      "target_article": "Study of the rare decays of $B^0_s$ and $B^0$ mesons into muon pairs using data collected during 2015 and 2016 with the ATLAS detector",
+      "target_identifier": 47818,
+      "heldout_identifiers": [
+        47818
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t006": {
+      "topic": "How can contrastive adversarial domain mixup enable unsupervised COVID-19 misinformation detection, what mechanisms and domain-shift limitations exist?",
+      "target_article": "Unsupervised Domain Adaptation for COVID-19 Information Service with Contrastive Adversarial Domain Mixup",
+      "target_identifier": 79768,
+      "heldout_identifiers": [
+        79768
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t007": {
+      "topic": "How do covariance-lag spectral density estimators quantify errors from noise and finite samples, and which design trade-offs and robustness issues appear?",
+      "target_article": "Quantitative Error Analyses of Spectral Density Estimators Using Covariance Lags",
+      "target_identifier": 83871,
+      "heldout_identifiers": [
+        83871
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t008": {
+      "topic": "How can dynamic spin susceptibility signatures detect topological phases in 2D Dirac systems, what measurement protocols and interpretational ambiguities arise?",
+      "target_article": "Detection of topological states in two-dimensional Dirac systems by the dynamic spin susceptibility",
+      "target_identifier": 27822,
+      "heldout_identifiers": [
+        27822
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t009": {
+      "topic": "How does mechanical strain reshape noncollinear spin density in Mn antiperovskites, what modeling approaches explain domain evolution and experimental challenges?",
+      "target_article": "Spin density in frustrated magnets under mechanical stress: Mn-based antiperovskites",
+      "target_identifier": 6173,
+      "heldout_identifiers": [
+        6173
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t010": {
+      "topic": "How do manifold-decomposition based, array-independent channel models reformulate MIMO scattering, and what trade-offs affect practical antenna design and accuracy?",
+      "target_article": "Array independent MIMO channel models with analytical characteristics",
+      "target_identifier": 11036,
+      "heldout_identifiers": [
+        11036
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t011": {
+      "topic": "What mechanisms enable learning-based ML detectors to approximate unknown, potentially impulsive noise in MIMO systems and what are practical limits?",
+      "target_article": "Learning based signal detection for MIMO systems with unknown noise statistics",
+      "target_identifier": 64609,
+      "heldout_identifiers": [
+        64609
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t012": {
+      "topic": "How does integrating reconfigurable intelligent surfaces with reduced RF chains affect location-specific MIMO performance predicted by ray-tracing, and what constraints arise?",
+      "target_article": "Evaluating the Performance of Reconfigurable Intelligent Base Stations through Ray Tracing",
+      "target_identifier": 110992,
+      "heldout_identifiers": [
+        110992
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t013": {
+      "topic": "Which structural principles govern extremal relationships between vertex distance sums and subtree counts in binary trees, and what combinatorial limitations emerge?",
+      "target_article": "Some extremal ratios of the distance and subtree problems in binary trees",
+      "target_identifier": 41220,
+      "heldout_identifiers": [
+        41220
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t014": {
+      "topic": "How can reinforcement learning-driven interactive perception strategies improve object search in cluttered scenes, and what failure modes limit generalization?",
+      "target_article": "Object Finding in Cluttered Scenes Using Interactive Perception",
+      "target_identifier": 54688,
+      "heldout_identifiers": [
+        54688
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t015": {
+      "topic": "What algorithmic techniques make gapped-pattern motif matching both practically efficient and theoretically robust for transcription factor site discovery, and where do they fail?",
+      "target_article": "Motif matching using gapped patterns",
+      "target_identifier": 19052,
+      "heldout_identifiers": [
+        19052
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t016": {
+      "topic": "In linear continual learning, how does overparameterization mitigate catastrophic forgetting, through what mechanisms, and under which task assumptions does it break down?",
+      "target_article": "Analysis of Overparameterization in Continual Learning under a Linear Model",
+      "target_identifier": 105342,
+      "heldout_identifiers": [
+        105342
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t017": {
+      "topic": "How do affine-twisted Hom-algebra structures generalize Lie and pre-Lie identities, and what implications or obstructions arise for derivations and fibers?",
+      "target_article": "On Affine Version of Hom-Lie Algebras",
+      "target_identifier": 114957,
+      "heldout_identifiers": [
+        114957
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t018": {
+      "topic": "What are the design trade-offs when translating between MiniZinc and OMT representations, and how does this interoperability impact solver performance and applicability?",
+      "target_article": "From MiniZinc to Optimization Modulo Theories, and Back (Extended Version)",
+      "target_identifier": 55039,
+      "heldout_identifiers": [
+        55039
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t019": {
+      "topic": "How do unitary protocols convert thermal states into quantum coherence, what is the energy–coherence trade-off, and what thermodynamic constraints limit creation?",
+      "target_article": "Energy Cost of Creating Quantum Coherence",
+      "target_identifier": 31368,
+      "heldout_identifiers": [
+        31368
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t020": {
+      "topic": "How do deformation parameters in finite hypercube nonuniform lattices alter spontaneous symmetry breaking mechanisms and observable consequences across energy scales?",
+      "target_article": "The Universe as a Nonuniform Lattice in the Finite-Dimensional Hypercube II.Simple Cases of Symmetry Breakdown and Restoration",
+      "target_identifier": 144474,
+      "heldout_identifiers": [
+        144474
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t021": {
+      "topic": "What comparative advantages and limitations arise when casting joint radar receiver and waveform design as constrained least squares, SDP, or QCQP?",
+      "target_article": "Constrained Least Squares, SDP, and QCQP Perspectives on Joint Biconvex Radar Receiver and Waveform design",
+      "target_identifier": 42440,
+      "heldout_identifiers": [
+        42440
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t022": {
+      "topic": "How can finite-alphabet chains with grammar constraints be characterized probabilistically to determine when they define equivalent one-dimensional Gibbs measures?",
+      "target_article": "Chains with complete connections and one-dimensional Gibbs measures",
+      "target_identifier": 146130,
+      "heldout_identifiers": [
+        146130
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t023": {
+      "topic": "What physical mechanisms enable a levitated superconducting sphere–ring system to transduce microwave gravitational waves into electromagnetic signals and what are the limits?",
+      "target_article": "Generation and detection of gravitational waves at microwave frequencies by means of a superconducting two-body system",
+      "target_identifier": 1213,
+      "heldout_identifiers": [
+        1213
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t024": {
+      "topic": "How do joint multimodal VAEs collapse when generating high-dimensional missing modalities, and what remedies improve bidirectional generation fidelity?",
+      "target_article": "Improving Bi-directional Generation between Different Modalities with Variational Autoencoders",
+      "target_identifier": 42045,
+      "heldout_identifiers": [
+        42045
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t025": {
+      "topic": "In what ways can asymptotic normalization coefficients of mirror nuclei predict resonance widths, and what approximations limit their accuracy?",
+      "target_article": "Connection between asymptotic normalization coefficients and resonance widths of mirror states",
+      "target_identifier": 46398,
+      "heldout_identifiers": [
+        46398
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t026": {
+      "topic": "How does applying Dirac's interaction picture to Black–Scholes with time-dependent arbitrage bubbles alter option Greeks interpretation and pricing robustness?",
+      "target_article": "An Application of Dirac's Interaction Picture to Option Pricing",
+      "target_identifier": 62245,
+      "heldout_identifiers": [
+        62245
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    },
+    "t027": {
+      "topic": "What experimental techniques and systematic uncertainties shape measurements of vector boson production associated with D* mesons at Tevatron energies?",
+      "target_article": "Measurement of vector boson plus $D^{*}(2010)^+$ meson production in $\\bar{p}p$ collisions at $\\sqrt{s}=1.96\\, {\\rm TeV}$",
+      "target_identifier": 28823,
+      "heldout_identifiers": [
+        28823
+      ],
+      "removed": {
+        "target": 1,
+        "title_identical": 0,
+        "abstract_jaccard_ge_0.60": 0
+      }
+    }
+  },
+  "heldout_identifiers": [
+    1213,
+    6173,
+    11036,
+    15506,
+    19052,
+    25460,
+    27822,
+    28823,
+    31368,
+    41220,
+    42045,
+    42215,
+    42440,
+    46398,
+    47818,
+    54688,
+    55039,
+    61896,
+    62245,
+    64609,
+    65316,
+    79768,
+    83871,
+    105342,
+    110992,
+    114957,
+    144474,
+    146130
+  ],
+  "unmatched_targets": [],
+  "elapsed_s": 22.96
+}

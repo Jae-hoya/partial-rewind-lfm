@@ -224,5 +224,11 @@
   "scope": "메타데이터(제목·초록) 라이선스. 문서별 license 필드(본문 라이선스)는 판단 근거가 아니다",
   "revision": "c428226b689a0e17db2cd55265133b9eca15d97f"
  },
- "elapsed_s": 128.2
+ "elapsed_s": 128.2,
+ "topic_phrase_prompt": {
+  "phrase_prompt_r2_sha256": "4bd73037d71f3167129937e28fc68befe5d20c186ec059e2f36c112d4eacd3de",
+  "phrase_prompt_c2_sha256": "450231d06e6925cc2ec00b8e068a4c655c540aa907b8f0660600415ab5c0372b",
+  "phrase_system_sha256": "f8ac93f1d9b06987e518cd7d56d2944ab06e42792408ee59d52518d622120090",
+  "change": "'an encyclopedia corpus' -> 'a corpus of scientific paper abstracts' (한 군데)"
+ }
 }
