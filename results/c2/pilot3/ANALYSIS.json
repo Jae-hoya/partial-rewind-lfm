@@ -1,0 +1,2137 @@
+{
+ "run_dir": "C:\\Users\\skyop\\Desktop\\나의 rag\\03_LFM\\LFM\\m1\\results\\c2\\pilot3",
+ "n_boot": 10000,
+ "boot_seed": 42,
+ "sentence_support": "minicheck_rescored",
+ "notes": [
+  "accounting_tokens = executed branch 의 tokens_in + tokens_out (물려받은 branch 제외)",
+  "billed_tokens = executed branch 의 billing.billed_in + billed_out. 원장 행에는 arm 이 없어 arm 별 분해는 branch billing 으로 한다",
+  "CRN: 같은 family·seed 에서 뒤에 도는 arm 은 앞 arm 의 캐시를 맞혀 청구가 작다 — 청구 비교는 실행 순서에 의존한다",
+  "E-R1 = E-GR 라운드 0 (실행하지 않음)",
+  "coverage = 최종 라운드 sub-answer 중 유효 인용이 있는 비율(질의 단위 풀링). grounding = 문장 가중 풀링",
+  "R1-8 전이표는 회계 분해이고 인과가 아니다. 토큰은 branch 실행 토큰을 새로 만든 sub-answer 수로 균등 분할했다",
+  "legacy(L) arm 은 status 가 없다. 빈 답·유효 인용 없는 답을 전이표와 기권률에서 insufficient 로 센다 — L 이 기권 status 를 냈다는 뜻이 아니다",
+  "코퍼스2: R2 의 30토픽 민감도(t000~t004 제외)는 해당 없음 — 블록을 지웠다"
+ ],
+ "arm_seed": {
+  "E-BR·s1": {
+   "n_topics": 3,
+   "totals": {
+    "accounting_in": 129553,
+    "accounting_out": 41588,
+    "accounting_tokens": 171141,
+    "billed_in": 90377,
+    "billed_out": 28246,
+    "billed_tokens": 118623,
+    "api_calls": 58,
+    "llm_calls": 80,
+    "branch_rounds": 36,
+    "subq_executed": 156,
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n_frozen_final": 0
+   },
+   "verify": {
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n": 3
+   },
+   "frozen_branches_final": 0,
+   "by_tag": {
+    "answer:calls": 36,
+    "answer:tokens": 139670,
+    "claims:calls": 18,
+    "claims:tokens": 14543,
+    "paraphrase:calls": 24,
+    "paraphrase:tokens": 15383,
+    "answer_repair:calls": 2,
+    "answer_repair:tokens": 1545
+   },
+   "generated_status": {
+    "insufficient": 131,
+    "answered": 25
+   },
+   "generated_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.8397435897435898,
+    "dropped": 0.0,
+    "answered": 0.16025641025641027
+   },
+   "final_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.9423076923076923,
+    "dropped": 0.0,
+    "answered": 0.057692307692307696
+   },
+   "mean_coverage": 0.05416666666666667,
+   "mean_grounding": 0.30158730158730157
+  },
+  "E-GR·s1": {
+   "n_topics": 3,
+   "totals": {
+    "accounting_in": 129553,
+    "accounting_out": 41588,
+    "accounting_tokens": 171141,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 80,
+    "branch_rounds": 36,
+    "subq_executed": 156,
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n_frozen_final": 0
+   },
+   "verify": {
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n": 3
+   },
+   "frozen_branches_final": 0,
+   "by_tag": {
+    "answer:calls": 36,
+    "answer:tokens": 139670,
+    "claims:calls": 18,
+    "claims:tokens": 14543,
+    "paraphrase:calls": 24,
+    "paraphrase:tokens": 15383,
+    "answer_repair:calls": 2,
+    "answer_repair:tokens": 1545
+   },
+   "generated_status": {
+    "insufficient": 131,
+    "answered": 25
+   },
+   "generated_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.8397435897435898,
+    "dropped": 0.0,
+    "answered": 0.16025641025641027
+   },
+   "final_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.9423076923076923,
+    "dropped": 0.0,
+    "answered": 0.057692307692307696
+   },
+   "mean_coverage": 0.05416666666666667,
+   "mean_grounding": 0.30158730158730157
+  },
+  "E-R1·s1": {
+   "n_topics": 3,
+   "totals": {
+    "accounting_in": 39176,
+    "accounting_out": 13342,
+    "accounting_tokens": 52518,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 22,
+    "branch_rounds": 12,
+    "subq_executed": 52,
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n_frozen_final": 0
+   },
+   "verify": {
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n": 3
+   },
+   "frozen_branches_final": 0,
+   "by_tag": {
+    "answer:calls": 12,
+    "answer:tokens": 44414,
+    "claims:calls": 10,
+    "claims:tokens": 8104
+   },
+   "generated_status": {
+    "insufficient": 37,
+    "answered": 15
+   },
+   "generated_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.7115384615384616,
+    "dropped": 0.0,
+    "answered": 0.28846153846153844
+   },
+   "final_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.7115384615384616,
+    "dropped": 0.0,
+    "answered": 0.28846153846153844
+   },
+   "mean_coverage": 0.2833333333333333,
+   "mean_grounding": 0.4120879120879121
+  },
+  "E-SQ·s1": {
+   "n_topics": 3,
+   "totals": {
+    "accounting_in": 132403,
+    "accounting_out": 45428,
+    "accounting_tokens": 177831,
+    "billed_in": 132403,
+    "billed_out": 45428,
+    "billed_tokens": 177831,
+    "api_calls": 81,
+    "llm_calls": 81,
+    "branch_rounds": 36,
+    "subq_executed": 153,
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n_frozen_final": 0
+   },
+   "verify": {
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n": 3
+   },
+   "frozen_branches_final": 0,
+   "by_tag": {
+    "answer:calls": 36,
+    "answer:tokens": 141572,
+    "claims:calls": 19,
+    "claims:tokens": 17479,
+    "paraphrase:calls": 24,
+    "paraphrase:tokens": 16997,
+    "paraphrase_repair:calls": 1,
+    "paraphrase_repair:tokens": 1015,
+    "answer_repair:calls": 1,
+    "answer_repair:tokens": 768
+   },
+   "generated_status": {
+    "insufficient": 119,
+    "answered": 29,
+    "format_fail": 5
+   },
+   "generated_rates": {
+    "format_fail": 0.032679738562091505,
+    "insufficient": 0.7777777777777778,
+    "dropped": 0.0,
+    "answered": 0.1895424836601307
+   },
+   "final_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.8461538461538461,
+    "dropped": 0.0,
+    "answered": 0.15384615384615385
+   },
+   "mean_coverage": 0.13333333333333333,
+   "mean_grounding": 0.12820512820512822
+  },
+  "L-BR·s1": {
+   "n_topics": 3,
+   "totals": {
+    "accounting_in": 136292,
+    "accounting_out": 75083,
+    "accounting_tokens": 211375,
+    "billed_in": 136292,
+    "billed_out": 75083,
+    "billed_tokens": 211375,
+    "api_calls": 97,
+    "llm_calls": 97,
+    "branch_rounds": 36,
+    "subq_executed": 156,
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n_frozen_final": 0
+   },
+   "verify": {
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n": 3
+   },
+   "frozen_branches_final": 0,
+   "by_tag": {
+    "answer:calls": 36,
+    "answer:tokens": 156166,
+    "claims:calls": 35,
+    "claims:tokens": 36137,
+    "paraphrase:calls": 24,
+    "paraphrase:tokens": 15899,
+    "answer_repair:calls": 2,
+    "answer_repair:tokens": 3173
+   },
+   "generated_status": {
+    "legacy": 156
+   },
+   "generated_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.0,
+    "dropped": 0.0,
+    "answered": 0.0
+   },
+   "final_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.0,
+    "dropped": 0.0,
+    "answered": 0.0
+   },
+   "mean_coverage": 0.5875,
+   "mean_grounding": 0.2836405529953917
+  },
+  "L-GR·s1": {
+   "n_topics": 3,
+   "totals": {
+    "accounting_in": 136292,
+    "accounting_out": 75083,
+    "accounting_tokens": 211375,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 97,
+    "branch_rounds": 36,
+    "subq_executed": 156,
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n_frozen_final": 0
+   },
+   "verify": {
+    "passed": 0,
+    "pass_grounding": 0,
+    "pass_coverage": 0,
+    "n": 3
+   },
+   "frozen_branches_final": 0,
+   "by_tag": {
+    "answer:calls": 36,
+    "answer:tokens": 156166,
+    "claims:calls": 35,
+    "claims:tokens": 36137,
+    "paraphrase:calls": 24,
+    "paraphrase:tokens": 15899,
+    "answer_repair:calls": 2,
+    "answer_repair:tokens": 3173
+   },
+   "generated_status": {
+    "legacy": 156
+   },
+   "generated_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.0,
+    "dropped": 0.0,
+    "answered": 0.0
+   },
+   "final_rates": {
+    "format_fail": 0.0,
+    "insufficient": 0.0,
+    "dropped": 0.0,
+    "answered": 0.0
+   },
+   "mean_coverage": 0.5875,
+   "mean_grounding": 0.2836405529953917
+  }
+ },
+ "per_query": {
+  "E-BR·s1": {
+   "t001": {
+    "accounting_in": 45645,
+    "accounting_out": 10817,
+    "accounting_tokens": 56462,
+    "billed_in": 31691,
+    "billed_out": 8087,
+    "billed_tokens": 39778,
+    "api_calls": 17,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 48751,
+     "claims:calls": 3,
+     "claims:tokens": 2410,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5301
+    }
+   },
+   "t013": {
+    "accounting_in": 42434,
+    "accounting_out": 11828,
+    "accounting_tokens": 54262,
+    "billed_in": 29934,
+    "billed_out": 6650,
+    "billed_tokens": 36584,
+    "api_calls": 19,
+    "llm_calls": 27,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0625,
+    "grounding": 0.3333333333333333,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 44353,
+     "claims:calls": 6,
+     "claims:tokens": 4751,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 4631,
+     "answer_repair:calls": 1,
+     "answer_repair:tokens": 527
+    }
+   },
+   "t019": {
+    "accounting_in": 41474,
+    "accounting_out": 18943,
+    "accounting_tokens": 60417,
+    "billed_in": 28752,
+    "billed_out": 13509,
+    "billed_tokens": 42261,
+    "api_calls": 22,
+    "llm_calls": 30,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.1,
+    "grounding": 0.5714285714285714,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 46566,
+     "claims:calls": 9,
+     "claims:tokens": 7382,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5451,
+     "answer_repair:calls": 1,
+     "answer_repair:tokens": 1018
+    }
+   }
+  },
+  "E-GR·s1": {
+   "t001": {
+    "accounting_in": 45645,
+    "accounting_out": 10817,
+    "accounting_tokens": 56462,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 23,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 48751,
+     "claims:calls": 3,
+     "claims:tokens": 2410,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5301
+    }
+   },
+   "t013": {
+    "accounting_in": 42434,
+    "accounting_out": 11828,
+    "accounting_tokens": 54262,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 27,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0625,
+    "grounding": 0.3333333333333333,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 44353,
+     "claims:calls": 6,
+     "claims:tokens": 4751,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 4631,
+     "answer_repair:calls": 1,
+     "answer_repair:tokens": 527
+    }
+   },
+   "t019": {
+    "accounting_in": 41474,
+    "accounting_out": 18943,
+    "accounting_tokens": 60417,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 30,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.1,
+    "grounding": 0.5714285714285714,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 46566,
+     "claims:calls": 9,
+     "claims:tokens": 7382,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5451,
+     "answer_repair:calls": 1,
+     "answer_repair:tokens": 1018
+    }
+   }
+  },
+  "E-R1·s1": {
+   "t001": {
+    "accounting_in": 13954,
+    "accounting_out": 2730,
+    "accounting_tokens": 16684,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 6,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.125,
+    "grounding": 0.42857142857142855,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 15187,
+     "claims:calls": 2,
+     "claims:tokens": 1497
+    }
+   },
+   "t013": {
+    "accounting_in": 12500,
+    "accounting_out": 5178,
+    "accounting_tokens": 17678,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 8,
+    "branch_rounds": 4,
+    "subq_executed": 16,
+    "coverage": 0.375,
+    "grounding": 0.5,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 14025,
+     "claims:calls": 4,
+     "claims:tokens": 3653
+    }
+   },
+   "t019": {
+    "accounting_in": 12722,
+    "accounting_out": 5434,
+    "accounting_tokens": 18156,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 8,
+    "branch_rounds": 4,
+    "subq_executed": 20,
+    "coverage": 0.35,
+    "grounding": 0.3076923076923077,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 1,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 4,
+     "answer:tokens": 15202,
+     "claims:calls": 4,
+     "claims:tokens": 2954
+    }
+   }
+  },
+  "E-SQ·s1": {
+   "t001": {
+    "accounting_in": 47181,
+    "accounting_out": 13397,
+    "accounting_tokens": 60578,
+    "billed_in": 47181,
+    "billed_out": 13397,
+    "billed_tokens": 60578,
+    "api_calls": 25,
+    "llm_calls": 25,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 49558,
+     "claims:calls": 4,
+     "claims:tokens": 4376,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5629,
+     "paraphrase_repair:calls": 1,
+     "paraphrase_repair:tokens": 1015
+    }
+   },
+   "t013": {
+    "accounting_in": 42577,
+    "accounting_out": 11976,
+    "accounting_tokens": 54553,
+    "billed_in": 42577,
+    "billed_out": 11976,
+    "billed_tokens": 54553,
+    "api_calls": 25,
+    "llm_calls": 25,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.0,
+    "grounding": 0.0,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 45053,
+     "claims:calls": 5,
+     "claims:tokens": 4068,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5432
+    }
+   },
+   "t019": {
+    "accounting_in": 42645,
+    "accounting_out": 20055,
+    "accounting_tokens": 62700,
+    "billed_in": 42645,
+    "billed_out": 20055,
+    "billed_tokens": 62700,
+    "api_calls": 31,
+    "llm_calls": 31,
+    "branch_rounds": 12,
+    "subq_executed": 57,
+    "coverage": 0.4,
+    "grounding": 0.38461538461538464,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 46961,
+     "claims:calls": 10,
+     "claims:tokens": 9035,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5936,
+     "answer_repair:calls": 1,
+     "answer_repair:tokens": 768
+    }
+   }
+  },
+  "L-BR·s1": {
+   "t001": {
+    "accounting_in": 48901,
+    "accounting_out": 25013,
+    "accounting_tokens": 73914,
+    "billed_in": 48901,
+    "billed_out": 25013,
+    "billed_tokens": 73914,
+    "api_calls": 32,
+    "llm_calls": 32,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.4375,
+    "grounding": 0.05714285714285714,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 54664,
+     "claims:calls": 12,
+     "claims:tokens": 13789,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5461
+    }
+   },
+   "t013": {
+    "accounting_in": 43833,
+    "accounting_out": 22106,
+    "accounting_tokens": 65939,
+    "billed_in": 43833,
+    "billed_out": 22106,
+    "billed_tokens": 65939,
+    "api_calls": 32,
+    "llm_calls": 32,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.625,
+    "grounding": 0.5357142857142857,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 49460,
+     "claims:calls": 11,
+     "claims:tokens": 10302,
+     "answer_repair:calls": 1,
+     "answer_repair:tokens": 1469,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 4708
+    }
+   },
+   "t019": {
+    "accounting_in": 43558,
+    "accounting_out": 27964,
+    "accounting_tokens": 71522,
+    "billed_in": 43558,
+    "billed_out": 27964,
+    "billed_tokens": 71522,
+    "api_calls": 33,
+    "llm_calls": 33,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.7,
+    "grounding": 0.25806451612903225,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 52042,
+     "answer_repair:calls": 1,
+     "answer_repair:tokens": 1704,
+     "claims:calls": 12,
+     "claims:tokens": 12046,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5730
+    }
+   }
+  },
+  "L-GR·s1": {
+   "t001": {
+    "accounting_in": 48901,
+    "accounting_out": 25013,
+    "accounting_tokens": 73914,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 32,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.4375,
+    "grounding": 0.05714285714285714,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 54664,
+     "claims:calls": 12,
+     "claims:tokens": 13789,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5461
+    }
+   },
+   "t013": {
+    "accounting_in": 43833,
+    "accounting_out": 22106,
+    "accounting_tokens": 65939,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 32,
+    "branch_rounds": 12,
+    "subq_executed": 48,
+    "coverage": 0.625,
+    "grounding": 0.5357142857142857,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 49460,
+     "claims:calls": 11,
+     "claims:tokens": 10302,
+     "answer_repair:calls": 1,
+     "answer_repair:tokens": 1469,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 4708
+    }
+   },
+   "t019": {
+    "accounting_in": 43558,
+    "accounting_out": 27964,
+    "accounting_tokens": 71522,
+    "billed_in": 0,
+    "billed_out": 0,
+    "billed_tokens": 0,
+    "api_calls": 0,
+    "llm_calls": 33,
+    "branch_rounds": 12,
+    "subq_executed": 60,
+    "coverage": 0.7,
+    "grounding": 0.25806451612903225,
+    "passed": false,
+    "pass_grounding": false,
+    "pass_coverage": false,
+    "n_rounds": 3,
+    "n_frozen_final": 0,
+    "by_tag": {
+     "answer:calls": 12,
+     "answer:tokens": 52042,
+     "answer_repair:calls": 1,
+     "answer_repair:tokens": 1704,
+     "claims:calls": 12,
+     "claims:tokens": 12046,
+     "paraphrase:calls": 8,
+     "paraphrase:tokens": 5730
+    }
+   }
+  }
+ },
+ "ledger": {
+  "rows": 239,
+  "by_seed_family": {
+   "s1|E": {
+    "billed_in": 222780,
+    "billed_out": 73674,
+    "api_calls": 139
+   },
+   "s1|L": {
+    "billed_in": 136292,
+    "billed_out": 75083,
+    "api_calls": 97
+   },
+   "unseeded": {
+    "billed_in": 592,
+    "billed_out": 2328,
+    "api_calls": 3
+   }
+  }
+ },
+ "usage": {
+  "E-BR·s1": {
+   "calls": 83,
+   "cache_hits": 25,
+   "api_calls": 58,
+   "billed_tokens_in": 90377,
+   "billed_tokens_out": 28246,
+   "decompose_api_calls": 0
+  },
+  "E-GR·s1": {
+   "calls": 83,
+   "cache_hits": 83,
+   "api_calls": 0,
+   "billed_tokens_in": 0,
+   "billed_tokens_out": 0,
+   "decompose_api_calls": 0
+  },
+  "E-SQ·s1": {
+   "calls": 84,
+   "cache_hits": 3,
+   "api_calls": 81,
+   "billed_tokens_in": 132403,
+   "billed_tokens_out": 45428,
+   "decompose_api_calls": 0
+  },
+  "L-BR·s1": {
+   "calls": 100,
+   "cache_hits": 0,
+   "api_calls": 100,
+   "billed_tokens_in": 136884,
+   "billed_tokens_out": 77411,
+   "decompose_api_calls": 3
+  },
+  "L-GR·s1": {
+   "calls": 100,
+   "cache_hits": 100,
+   "api_calls": 0,
+   "billed_tokens_in": 0,
+   "billed_tokens_out": 0,
+   "decompose_api_calls": 0
+  }
+ },
+ "all_topics": {
+  "savings": {
+   "E-SQ_vs_E-GR": {
+    "accounting_tokens": {
+     "a": "E-SQ",
+     "b": "E-GR",
+     "metric": "accounting_tokens",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σaccounting_tokens(E-SQ) / Σaccounting_tokens(E-GR)",
+     "point": -0.03909057443862074,
+     "ci95": [
+      -0.07289858666005444,
+      -0.005362869042792484
+     ],
+     "per_seed": {
+      "1": -0.03909057443862074
+     },
+     "sign_table": {
+      "1": -1
+     },
+     "claim": true,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "billed_tokens": {
+     "a": "E-SQ",
+     "b": "E-GR",
+     "metric": "billed_tokens",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbilled_tokens(E-SQ) / Σbilled_tokens(E-GR)",
+     "point": null,
+     "ci95": [
+      NaN,
+      NaN
+     ],
+     "per_seed": {
+      "1": null
+     },
+     "sign_table": {
+      "1": null
+     },
+     "claim": null,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "branch_rounds": {
+     "a": "E-SQ",
+     "b": "E-GR",
+     "metric": "branch_rounds",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbranch_rounds(E-SQ) / Σbranch_rounds(E-GR)",
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "per_seed": {
+      "1": 0.0
+     },
+     "sign_table": {
+      "1": 0
+     },
+     "claim": false,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "subq_executed": {
+     "a": "E-SQ",
+     "b": "E-GR",
+     "metric": "subq_executed",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σsubq_executed(E-SQ) / Σsubq_executed(E-GR)",
+     "point": 0.019230769230769273,
+     "ci95": [
+      0.0,
+      0.050000000000000044
+     ],
+     "per_seed": {
+      "1": 0.019230769230769273
+     },
+     "sign_table": {
+      "1": 1
+     },
+     "claim": false,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    }
+   },
+   "L-BR_vs_L-GR": {
+    "accounting_tokens": {
+     "a": "L-BR",
+     "b": "L-GR",
+     "metric": "accounting_tokens",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σaccounting_tokens(L-BR) / Σaccounting_tokens(L-GR)",
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "per_seed": {
+      "1": 0.0
+     },
+     "sign_table": {
+      "1": 0
+     },
+     "claim": false,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "billed_tokens": {
+     "a": "L-BR",
+     "b": "L-GR",
+     "metric": "billed_tokens",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbilled_tokens(L-BR) / Σbilled_tokens(L-GR)",
+     "point": null,
+     "ci95": [
+      NaN,
+      NaN
+     ],
+     "per_seed": {
+      "1": null
+     },
+     "sign_table": {
+      "1": null
+     },
+     "claim": null,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "branch_rounds": {
+     "a": "L-BR",
+     "b": "L-GR",
+     "metric": "branch_rounds",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbranch_rounds(L-BR) / Σbranch_rounds(L-GR)",
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "per_seed": {
+      "1": 0.0
+     },
+     "sign_table": {
+      "1": 0
+     },
+     "claim": false,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "subq_executed": {
+     "a": "L-BR",
+     "b": "L-GR",
+     "metric": "subq_executed",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σsubq_executed(L-BR) / Σsubq_executed(L-GR)",
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "per_seed": {
+      "1": 0.0
+     },
+     "sign_table": {
+      "1": 0
+     },
+     "claim": false,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    }
+   },
+   "E-BR_vs_E-SQ": {
+    "accounting_tokens": {
+     "a": "E-BR",
+     "b": "E-SQ",
+     "metric": "accounting_tokens",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σaccounting_tokens(E-BR) / Σaccounting_tokens(E-SQ)",
+     "point": 0.0376199875162373,
+     "ci95": [
+      0.005334262093743658,
+      0.0679454587474001
+     ],
+     "per_seed": {
+      "1": 0.0376199875162373
+     },
+     "sign_table": {
+      "1": 1
+     },
+     "claim": true,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "billed_tokens": {
+     "a": "E-BR",
+     "b": "E-SQ",
+     "metric": "billed_tokens",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbilled_tokens(E-BR) / Σbilled_tokens(E-SQ)",
+     "point": 0.3329453244934798,
+     "ci95": [
+      0.32598086124401915,
+      0.34335897520552017
+     ],
+     "per_seed": {
+      "1": 0.3329453244934798
+     },
+     "sign_table": {
+      "1": 1
+     },
+     "claim": null,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": true,
+      "ci_lo_ge": true
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "branch_rounds": {
+     "a": "E-BR",
+     "b": "E-SQ",
+     "metric": "branch_rounds",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σbranch_rounds(E-BR) / Σbranch_rounds(E-SQ)",
+     "point": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "per_seed": {
+      "1": 0.0
+     },
+     "sign_table": {
+      "1": 0
+     },
+     "claim": false,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    },
+    "subq_executed": {
+     "a": "E-BR",
+     "b": "E-SQ",
+     "metric": "subq_executed",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "definition": "1 - Σsubq_executed(E-BR) / Σsubq_executed(E-SQ)",
+     "point": -0.019607843137254832,
+     "ci95": [
+      -0.05263157894736836,
+      0.0
+     ],
+     "per_seed": {
+      "1": -0.019607843137254832
+     },
+     "sign_table": {
+      "1": -1
+     },
+     "claim": false,
+     "vs_big_effect": {
+      "threshold": 0.2,
+      "point_ge": false,
+      "ci_lo_ge": false
+     },
+     "var_components": {
+      "sigma2_seed": null,
+      "sigma2_within": null
+     }
+    }
+   }
+  },
+  "noninferiority": {
+   "E-SQ_vs_E-GR": {
+    "coverage": {
+     "a": "E-SQ",
+     "b": "E-GR",
+     "metric": "coverage",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "diff": 0.07916666666666668,
+     "ci90": [
+      -0.041666666666666664,
+      0.20000000000000004
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.07916666666666668
+     },
+     "sensitivity": {
+      "0.03": {
+       "noninferior": false,
+       "equivalent": false
+      },
+      "0.1": {
+       "noninferior": true,
+       "equivalent": false
+      }
+     }
+    },
+    "grounding": {
+     "a": "E-SQ",
+     "b": "E-GR",
+     "metric": "grounding",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "diff": -0.17338217338217335,
+     "ci90": [
+      -0.2844932844932844,
+      -0.06227106227106225
+     ],
+     "delta": 0.05,
+     "noninferior": false,
+     "equivalent": false,
+     "per_seed": {
+      "1": -0.17338217338217335
+     },
+     "sensitivity": {}
+    }
+   },
+   "E-R1_vs_E-GR": {
+    "coverage": {
+     "a": "E-R1",
+     "b": "E-GR",
+     "metric": "coverage",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "diff": 0.22916666666666666,
+     "ci90": [
+      0.16666666666666666,
+      0.2916666666666667
+     ],
+     "delta": 0.05,
+     "noninferior": true,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.22916666666666666
+     },
+     "sensitivity": {
+      "0.03": {
+       "noninferior": true,
+       "equivalent": false
+      },
+      "0.1": {
+       "noninferior": true,
+       "equivalent": false
+      }
+     }
+    },
+    "grounding": {
+     "a": "E-R1",
+     "b": "E-GR",
+     "metric": "grounding",
+     "available": true,
+     "n_topics": 3,
+     "seeds": [
+      1
+     ],
+     "diff": 0.11050061050061051,
+     "ci90": [
+      -0.12026862026862023,
+      0.3412698412698412
+     ],
+     "delta": 0.05,
+     "noninferior": false,
+     "equivalent": false,
+     "per_seed": {
+      "1": 0.11050061050061051
+     },
+     "sensitivity": {}
+    }
+   }
+  }
+ },
+ "transitions": {
+  "E-BR·s1": {
+   "label": "accounting decomposition (회계 분해, 인과 아님)",
+   "states": [
+    "format_fail",
+    "insufficient",
+    "dropped",
+    "cited-unsupported",
+    "sufficient"
+   ],
+   "counts": {
+    "insufficient": {
+     "insufficient": 75,
+     "cited-unsupported": 7
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 3,
+     "insufficient": 18
+    },
+    "sufficient": {
+     "insufficient": 1
+    }
+   },
+   "tokens": {
+    "insufficient": {
+     "insufficient": 85014.45,
+     "cited-unsupported": 8447.0
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 3860.5,
+     "insufficient": 20335.45
+    },
+    "sufficient": {
+     "insufficient": 965.6
+    }
+   },
+   "n_reexecuted_units": 104,
+   "round0": {
+    "counts": {
+     "insufficient": 37,
+     "cited-unsupported": 14,
+     "sufficient": 1
+    },
+    "tokens": {
+     "insufficient": 36622.1,
+     "cited-unsupported": 14907.9,
+     "sufficient": 988.0
+    }
+   },
+   "format_recovery_tokens": 0,
+   "format_fail_to_cited_tokens": 0,
+   "format_recovery_upper_bound": {
+    "repair_tokens": 1545,
+    "answer_retry_tokens": 0,
+    "sum": 1545
+   },
+   "unrecoverable_tokens": 105563.1,
+   "insufficient_to_answered": {
+    "n_from_insufficient": 82,
+    "n_to_answered": 7,
+    "rate": 0.08536585365853659
+   },
+   "subq_executed_mismatch": 0
+  },
+  "E-GR·s1": {
+   "label": "accounting decomposition (회계 분해, 인과 아님)",
+   "states": [
+    "format_fail",
+    "insufficient",
+    "dropped",
+    "cited-unsupported",
+    "sufficient"
+   ],
+   "counts": {
+    "insufficient": {
+     "insufficient": 75,
+     "cited-unsupported": 7
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 3,
+     "insufficient": 18
+    },
+    "sufficient": {
+     "insufficient": 1
+    }
+   },
+   "tokens": {
+    "insufficient": {
+     "insufficient": 85014.45,
+     "cited-unsupported": 8447.0
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 3860.5,
+     "insufficient": 20335.45
+    },
+    "sufficient": {
+     "insufficient": 965.6
+    }
+   },
+   "n_reexecuted_units": 104,
+   "round0": {
+    "counts": {
+     "insufficient": 37,
+     "cited-unsupported": 14,
+     "sufficient": 1
+    },
+    "tokens": {
+     "insufficient": 36622.1,
+     "cited-unsupported": 14907.9,
+     "sufficient": 988.0
+    }
+   },
+   "format_recovery_tokens": 0,
+   "format_fail_to_cited_tokens": 0,
+   "format_recovery_upper_bound": {
+    "repair_tokens": 1545,
+    "answer_retry_tokens": 0,
+    "sum": 1545
+   },
+   "unrecoverable_tokens": 105563.1,
+   "insufficient_to_answered": {
+    "n_from_insufficient": 82,
+    "n_to_answered": 7,
+    "rate": 0.08536585365853659
+   },
+   "subq_executed_mismatch": 0
+  },
+  "E-R1·s1": {
+   "label": "accounting decomposition (회계 분해, 인과 아님)",
+   "states": [
+    "format_fail",
+    "insufficient",
+    "dropped",
+    "cited-unsupported",
+    "sufficient"
+   ],
+   "counts": {},
+   "tokens": {},
+   "n_reexecuted_units": 0,
+   "round0": {
+    "counts": {
+     "insufficient": 37,
+     "cited-unsupported": 14,
+     "sufficient": 1
+    },
+    "tokens": {
+     "insufficient": 36622.1,
+     "cited-unsupported": 14907.9,
+     "sufficient": 988.0
+    }
+   },
+   "format_recovery_tokens": 0,
+   "format_fail_to_cited_tokens": 0,
+   "format_recovery_upper_bound": {
+    "repair_tokens": 0,
+    "answer_retry_tokens": 0,
+    "sum": 0
+   },
+   "unrecoverable_tokens": 36622.1,
+   "insufficient_to_answered": {
+    "n_from_insufficient": 0,
+    "n_to_answered": 0,
+    "rate": null
+   },
+   "subq_executed_mismatch": 0
+  },
+  "E-SQ·s1": {
+   "label": "accounting decomposition (회계 분해, 인과 아님)",
+   "states": [
+    "format_fail",
+    "insufficient",
+    "dropped",
+    "cited-unsupported",
+    "sufficient"
+   ],
+   "counts": {
+    "insufficient": {
+     "insufficient": 65,
+     "cited-unsupported": 7,
+     "format_fail": 3
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 3,
+     "insufficient": 15,
+     "sufficient": 1,
+     "format_fail": 2
+    },
+    "format_fail": {
+     "cited-unsupported": 3,
+     "insufficient": 2
+    }
+   },
+   "tokens": {
+    "insufficient": {
+     "insufficient": 79328.2,
+     "cited-unsupported": 11402.8,
+     "format_fail": 3294.0
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 4477.3,
+     "insufficient": 16824.7,
+     "sufficient": 1328.0,
+     "format_fail": 2196.0
+    },
+    "format_fail": {
+     "cited-unsupported": 3877.2,
+     "insufficient": 2584.8
+    }
+   },
+   "n_reexecuted_units": 101,
+   "round0": {
+    "counts": {
+     "insufficient": 37,
+     "cited-unsupported": 14,
+     "sufficient": 1
+    },
+    "tokens": {
+     "insufficient": 36622.1,
+     "cited-unsupported": 14907.9,
+     "sufficient": 988.0
+    }
+   },
+   "format_recovery_tokens": 0,
+   "format_fail_to_cited_tokens": 3877.2,
+   "format_recovery_upper_bound": {
+    "repair_tokens": 1783,
+    "answer_retry_tokens": 0,
+    "sum": 1783
+   },
+   "unrecoverable_tokens": 96611.85,
+   "insufficient_to_answered": {
+    "n_from_insufficient": 75,
+    "n_to_answered": 7,
+    "rate": 0.09333333333333334
+   },
+   "subq_executed_mismatch": 0
+  },
+  "L-BR·s1": {
+   "label": "accounting decomposition (회계 분해, 인과 아님)",
+   "states": [
+    "format_fail",
+    "insufficient",
+    "dropped",
+    "cited-unsupported",
+    "sufficient"
+   ],
+   "counts": {
+    "sufficient": {
+     "insufficient": 4,
+     "sufficient": 2,
+     "cited-unsupported": 6
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 63,
+     "insufficient": 17,
+     "sufficient": 2
+    },
+    "insufficient": {
+     "insufficient": 7,
+     "cited-unsupported": 3
+    }
+   },
+   "tokens": {
+    "sufficient": {
+     "insufficient": 5866.55,
+     "sufficient": 3042.75,
+     "cited-unsupported": 7998.25
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 90158.7,
+     "insufficient": 24457.5,
+     "sufficient": 2411.0
+    },
+    "insufficient": {
+     "insufficient": 10408.75,
+     "cited-unsupported": 4446.5
+    }
+   },
+   "n_reexecuted_units": 104,
+   "round0": {
+    "counts": {
+     "sufficient": 9,
+     "cited-unsupported": 40,
+     "insufficient": 3
+    },
+    "tokens": {
+     "sufficient": 10506.75,
+     "cited-unsupported": 48125.0,
+     "insufficient": 3953.25
+    }
+   },
+   "format_recovery_tokens": 0,
+   "format_fail_to_cited_tokens": 0,
+   "format_recovery_upper_bound": {
+    "repair_tokens": 3173,
+    "answer_retry_tokens": 0,
+    "sum": 3173
+   },
+   "unrecoverable_tokens": 8708.75,
+   "insufficient_to_answered": {
+    "n_from_insufficient": 10,
+    "n_to_answered": 3,
+    "rate": 0.3
+   },
+   "subq_executed_mismatch": 0
+  },
+  "L-GR·s1": {
+   "label": "accounting decomposition (회계 분해, 인과 아님)",
+   "states": [
+    "format_fail",
+    "insufficient",
+    "dropped",
+    "cited-unsupported",
+    "sufficient"
+   ],
+   "counts": {
+    "sufficient": {
+     "insufficient": 4,
+     "sufficient": 2,
+     "cited-unsupported": 6
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 63,
+     "insufficient": 17,
+     "sufficient": 2
+    },
+    "insufficient": {
+     "insufficient": 7,
+     "cited-unsupported": 3
+    }
+   },
+   "tokens": {
+    "sufficient": {
+     "insufficient": 5866.55,
+     "sufficient": 3042.75,
+     "cited-unsupported": 7998.25
+    },
+    "cited-unsupported": {
+     "cited-unsupported": 90158.7,
+     "insufficient": 24457.5,
+     "sufficient": 2411.0
+    },
+    "insufficient": {
+     "insufficient": 10408.75,
+     "cited-unsupported": 4446.5
+    }
+   },
+   "n_reexecuted_units": 104,
+   "round0": {
+    "counts": {
+     "sufficient": 9,
+     "cited-unsupported": 40,
+     "insufficient": 3
+    },
+    "tokens": {
+     "sufficient": 10506.75,
+     "cited-unsupported": 48125.0,
+     "insufficient": 3953.25
+    }
+   },
+   "format_recovery_tokens": 0,
+   "format_fail_to_cited_tokens": 0,
+   "format_recovery_upper_bound": {
+    "repair_tokens": 3173,
+    "answer_retry_tokens": 0,
+    "sum": 3173
+   },
+   "unrecoverable_tokens": 8708.75,
+   "insufficient_to_answered": {
+    "n_from_insufficient": 10,
+    "n_to_answered": 3,
+    "rate": 0.3
+   },
+   "subq_executed_mismatch": 0
+  }
+ },
+ "gaming": {
+  "abstention_by_round": {
+   "E-BR·s1": {
+    "0": {
+     "n": 52,
+     "insufficient_rate": 0.7115384615384616,
+     "abstain_rate": 0.7115384615384616
+    },
+    "1": {
+     "n": 52,
+     "insufficient_rate": 0.8653846153846154,
+     "abstain_rate": 0.8653846153846154
+    },
+    "2": {
+     "n": 52,
+     "insufficient_rate": 0.9423076923076923,
+     "abstain_rate": 0.9423076923076923
+    }
+   },
+   "E-GR·s1": {
+    "0": {
+     "n": 52,
+     "insufficient_rate": 0.7115384615384616,
+     "abstain_rate": 0.7115384615384616
+    },
+    "1": {
+     "n": 52,
+     "insufficient_rate": 0.8653846153846154,
+     "abstain_rate": 0.8653846153846154
+    },
+    "2": {
+     "n": 52,
+     "insufficient_rate": 0.9423076923076923,
+     "abstain_rate": 0.9423076923076923
+    }
+   },
+   "E-R1·s1": {
+    "0": {
+     "n": 52,
+     "insufficient_rate": 0.7115384615384616,
+     "abstain_rate": 0.7115384615384616
+    }
+   },
+   "E-SQ·s1": {
+    "0": {
+     "n": 52,
+     "insufficient_rate": 0.7115384615384616,
+     "abstain_rate": 0.7115384615384616
+    },
+    "1": {
+     "n": 51,
+     "insufficient_rate": 0.7450980392156863,
+     "abstain_rate": 0.8431372549019608
+    },
+    "2": {
+     "n": 50,
+     "insufficient_rate": 0.88,
+     "abstain_rate": 0.88
+    }
+   },
+   "L-BR·s1": {
+    "0": {
+     "n": 52,
+     "insufficient_rate": 0.057692307692307696,
+     "abstain_rate": 0.057692307692307696
+    },
+    "1": {
+     "n": 52,
+     "insufficient_rate": 0.1346153846153846,
+     "abstain_rate": 0.1346153846153846
+    },
+    "2": {
+     "n": 52,
+     "insufficient_rate": 0.40384615384615385,
+     "abstain_rate": 0.40384615384615385
+    }
+   },
+   "L-GR·s1": {
+    "0": {
+     "n": 52,
+     "insufficient_rate": 0.057692307692307696,
+     "abstain_rate": 0.057692307692307696
+    },
+    "1": {
+     "n": 52,
+     "insufficient_rate": 0.1346153846153846,
+     "abstain_rate": 0.1346153846153846
+    },
+    "2": {
+     "n": 52,
+     "insufficient_rate": 0.40384615384615385,
+     "abstain_rate": 0.40384615384615385
+    }
+   }
+  },
+  "insufficient_to_answered": {
+   "E-BR·s1": {
+    "n_from_insufficient": 82,
+    "n_to_answered": 7,
+    "rate": 0.08536585365853659
+   },
+   "E-GR·s1": {
+    "n_from_insufficient": 82,
+    "n_to_answered": 7,
+    "rate": 0.08536585365853659
+   },
+   "E-R1·s1": {
+    "n_from_insufficient": 0,
+    "n_to_answered": 0,
+    "rate": null
+   },
+   "E-SQ·s1": {
+    "n_from_insufficient": 75,
+    "n_to_answered": 7,
+    "rate": 0.09333333333333334
+   },
+   "L-BR·s1": {
+    "n_from_insufficient": 10,
+    "n_to_answered": 3,
+    "rate": 0.3
+   },
+   "L-GR·s1": {
+    "n_from_insufficient": 10,
+    "n_to_answered": 3,
+    "rate": 0.3
+   }
+  }
+ },
+ "rescore_consistency": {
+  "n_branch_records": 180,
+  "n_mismatch": 0,
+  "pass": true,
+  "examples": []
+ },
+ "gates": {
+  "G1": {
+   "1_seed_key_disjoint": {
+    "status": "manual",
+    "note": "캐시 키는 산출에 없다. 원장 nonce 의 seed 접두사만 확인한다",
+    "ledger_rows_without_seed_prefix": 0
+   },
+   "2_decompose_api_calls": {
+    "rule": "C-G1 ②: 토픽마다 decompose + decompose_repair API ≤ 2, 그 토픽의 두 번째 arm 부터 0",
+    "ledger_decompose_rows": 3,
+    "n_topics": 3,
+    "limit": 6,
+    "first_arm_seed": "L-BR·s1",
+    "usage_by_arm_seed": {
+     "E-BR·s1": 0,
+     "E-GR·s1": 0,
+     "E-SQ·s1": 0,
+     "L-BR·s1": 3,
+     "L-GR·s1": 0
+    },
+    "pass": true
+   },
+   "3_answer_format": {
+    "format_fail_rate": 0.006435006435006435,
+    "truncated_branch_rate": 0.0,
+    "threshold": 0.01,
+    "pass": true,
+    "note": "파싱 실패·status 누락은 format_fail 로 합쳐진다. finish=length 는 재시도 후에도 잘린 branch 비율"
+   },
+   "4_repair_calls": {
+    "rate": 0.022988505747126436,
+    "threshold": 0.02,
+    "pass": false
+   },
+   "5_fabricated_ids_left": {
+    "n": 28,
+    "by_family": {
+     "E": 0,
+     "L": 28
+    },
+    "pass": true,
+    "scope": "E (status 모드 필터 대상). L 은 보고만"
+   },
+   "6_dropped_uncited_sentences": {
+    "rate": 0.02242152466367713,
+    "threshold": 0.05,
+    "pass": true
+   },
+   "7_ledger_equals_usage": {
+    "ledger": [
+     359664,
+     151085,
+     239
+    ],
+    "usage": [
+     359664,
+     151085,
+     239
+    ],
+    "pass": true
+   },
+   "7b_branch_billing_equals_usage": {
+    "branch_billing": [
+     359072,
+     148757
+    ],
+    "usage_minus_decompose": [
+     359072,
+     148757
+    ],
+    "pass": true
+   },
+   "8_minicheck_cuda_single_chunk": {
+    "status": "manual",
+    "pass": null,
+    "note": "산출에서 알 수 없다. 실행 로그로 확인한다"
+   },
+   "9_inherited_bytes_identical": {
+    "n": 3,
+    "same": 3,
+    "rate": 1.0,
+    "pass": true
+   },
+   "round0_identical_within_family_seed": {
+    "n_pairs": 9,
+    "n_differ": 0,
+    "pass": true
+   }
+  },
+  "G3": {
+   "by_seed": {
+    "E-SQ_s1": {
+     "partial": 2,
+     "total": 24,
+     "rate": 0.08333333333333333
+    }
+   },
+   "partial_rate_threshold": 0.2,
+   "mean_tokens_in_per_rerun": {
+    "E-SQ": 3884.4583333333335,
+    "E-BR": 3765.7083333333335
+   },
+   "pass": false
+  },
+  "G4": {
+   "extrapolated_billed": [
+    8976800.0,
+    3718925.0
+   ],
+   "extrapolated_ledger": [
+    8991600.0,
+    3777125.0
+   ],
+   "extrapolated_used": [
+    8991600.0,
+    3777125.0
+   ],
+   "extrapolated_accounting_upper": [
+    16602325.000000002,
+    6969250.0
+   ],
+   "arms_used": [
+    "E-BR",
+    "E-GR",
+    "E-SQ",
+    "L-BR",
+    "L-GR"
+   ],
+   "limit_hard": [
+    12600000,
+    3400000
+   ],
+   "limit_1p5x_estimate": [
+    12585000.0,
+    3330000.0
+   ],
+   "pass": false,
+   "gpu_hours": null,
+   "note": "GPU 시간은 산출에서 알 수 없다(수동). 청구는 CRN·실행 순서를 본실험과 같게 두고 외삽한다",
+   "multiplier_note": "C-G4: 파일럿 원장 × 25 (= 25토픽 × 3 seed ÷ 3 토픽-seed)",
+   "gpu_limit_hours": 8
+  },
+  "G2": "사람 라벨(P-H) 필요 — r2_sheets.py",
+  "G5": "P-H 라벨 후 r2_sheets.g5_from_labels"
+ },
+ "c2": {
+  "C-G2": {
+   "answered_rate_by_seed": {
+    "s1": 0.28846153846153844
+   },
+   "answered_rate_pooled": 0.28846153846153844,
+   "threshold": 0.05,
+   "degenerate": false,
+   "E_round0_legacy_coverage_by_seed": {
+    "E-R1·s1": 0.2833333333333333
+   }
+  },
+  "freeze_events_by_arm": {
+   "E-BR": 0,
+   "E-GR": 0,
+   "E-SQ": 0,
+   "L-BR": 0,
+   "L-GR": 0
+  },
+  "C-G3": {
+   "pass": false
+  },
+  "C-G6a": {
+   "pass": true,
+   "source": "results/c2/pilot3/NEGCTL_C2.json",
+   "note": null
+  },
+  "assay": {
+   "coverage": {
+    "available": true,
+    "metric": "coverage",
+    "egr_mean": 0.05416666666666667,
+    "egr_ci90_lo": 0.020833333333333332,
+    "delta": 0.05,
+    "sensitive": false,
+    "n_topics": 3,
+    "seeds": [
+     "1"
+    ]
+   },
+   "grounding": {
+    "available": true,
+    "metric": "grounding",
+    "egr_mean": 0.30158730158730157,
+    "egr_ci90_lo": 0.1111111111111111,
+    "delta": 0.05,
+    "sensitive": true,
+    "n_topics": 3,
+    "seeds": [
+     "1"
+    ]
+   }
+  },
+  "grounding_rescored": true,
+  "switch_rule_4_2_1": {
+   "a_degenerate_E-GR_round0": false,
+   "freeze_L-BR": 0,
+   "switch": false,
+   "note": "FREEZE 0회는 단독으로 전환을 일으키지 않는다 (결정). C-L 실패(b)는 실행 전 관문"
+  }
+ }
+}

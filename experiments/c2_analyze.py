@@ -292,7 +292,13 @@ def main(argv=None) -> int:
     res = analyze_c2(run_dir, rescore=args.rescore, pilot=args.pilot, n_boot=args.n_boot,
                      corpus1=(ROOT / args.corpus1) if args.corpus1 and not Path(args.corpus1).is_absolute() else args.corpus1,
                      negctl=args.negctl, config_c2=Path(args.config))
-    j, m = RA.write_outputs(res, run_dir)
+    # r2_analyze.to_markdown 은 sensitivity_30 블록을 전제한다(고치지 않는다). 코퍼스2 에는 해당이 없어
+    # JSON 에서는 지우고, MD 만 전체 토픽 블록을 그 자리에 두되 제목을 "해당 없음"으로 바꾼다.
+    j, m = run_dir / "ANALYSIS.json", run_dir / "ANALYSIS.md"
+    io.open(j, "w", encoding="utf-8").write(json.dumps(res, ensure_ascii=False, indent=1, default=float))
+    md = RA.to_markdown(dict(res, sensitivity_30=res["all_topics"]))
+    md = md.replace("30토픽 민감도 (t000~t004 제외)", "30토픽 민감도 — 코퍼스2 해당 없음(전체 토픽과 같은 값)")
+    io.open(m, "w", encoding="utf-8").write(md)
     p = run_dir / "C2_VERDICTS.md"
     io.open(p, "w", encoding="utf-8").write(c2_markdown(res))
     print("-> %s\n-> %s\n-> %s" % (j, m, p))

@@ -1,0 +1,35 @@
+{
+ "spec": "PREREG_R3 §4.6 C-G6",
+ "run_dir": "C:\\Users\\skyop\\Desktop\\나의 rag\\03_LFM\\LFM\\m1\\results\\c2\\pilot3",
+ "seed_run": 1,
+ "rng_seed": 4503,
+ "n_units_available": 380,
+ "n_units_sampled": 300,
+ "n_topics": 3,
+ "status": "measured",
+ "offtopic": {
+  "n": 300,
+  "false_positive": 0,
+  "rate": 0.0,
+  "wilson95": [
+   0.0,
+   0.012642971224546034
+  ],
+  "pass": true,
+  "criterion": "rate <= 0.05 and Wilson95 upper <= 0.10"
+ },
+ "near_miss": {
+  "n": 300,
+  "false_positive": 0,
+  "rate": 0.0,
+  "wilson95": [
+   0.0,
+   0.012642971224546034
+  ],
+  "note": "보고만 — 같은 토픽의 인용 안 한 청크는 실제로 지지할 수 있으므로 위양성의 상한"
+ },
+ "score_seconds": 99.3,
+ "premise_rule": "원 전제와 같은 청크 수 k, 단일 문서(SEP 이음)",
+ "interpretation": "C-G6(a) 실패면 grounding 결과는 'operator not validated on this corpus' 로 보고만, C-H3·C-H4 는 coverage 만",
+ "config": "C:\\Users\\skyop\\Desktop\\나의 rag\\03_LFM\\LFM\\m1\\config_c2.yaml"
+}
