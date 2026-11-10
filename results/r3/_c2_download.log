@@ -1,0 +1,6 @@
+원천 librarian-bots/arxiv-metadata-snapshot @ c428226b689a0e17db2cd55265133b9eca15d97f (card license cc0-1.0)
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files:   9%|▉         | 1/11 [00:23<03:59, 23.96s/it]Fetching 11 files:  18%|█▊        | 2/11 [00:28<01:52, 12.46s/it]Fetching 11 files:  45%|████▌     | 5/11 [00:31<00:25,  4.25s/it]Fetching 11 files:  82%|████████▏ | 9/11 [00:34<00:04,  2.23s/it]Fetching 11 files: 100%|██████████| 11/11 [00:34<00:00,  3.13s/it]
+원천 파일 11개, 2.70 GB
+문서 150000건 -> data_c2\corpus.parquet
+MANIFEST -> data_c2\MANIFEST_C2.json
+다음: C-L 기록 (data_c2/license_gate_c2.py), 그다음 experiments/c2_config_diff.py --write --check

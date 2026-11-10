@@ -16,7 +16,7 @@ paths:
 data:
   hf_dataset: librarian-bots/arxiv-metadata-snapshot   # C2: C-L 에서 고정, data_c2/MANIFEST_C2.json 과 같아야 한다
   hf_config: default   # C2: C-L 에서 고정, data_c2/MANIFEST_C2.json 과 같아야 한다
-  hf_revision: PENDING_C_L   # C2: C-L 에서 고정, data_c2/MANIFEST_C2.json 과 같아야 한다
+  hf_revision: c428226b689a0e17db2cd55265133b9eca15d97f   # C2: C-L 에서 고정, data_c2/MANIFEST_C2.json 과 같아야 한다
   hf_file_glob: data/train-*.parquet   # C2: C-L 에서 고정, data_c2/MANIFEST_C2.json 과 같아야 한다
   language: en
   max_articles: 150000            # SPEC v1.1 기본값 30000 에서 상향.

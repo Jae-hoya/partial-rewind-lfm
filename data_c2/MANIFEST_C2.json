@@ -1,0 +1,228 @@
+{
+ "spec": "PREREG_R3 §4.2",
+ "created_at": "2026-11-11T03:11:41+0900",
+ "source": {
+  "hf_dataset": "librarian-bots/arxiv-metadata-snapshot",
+  "hf_config": "default",
+  "hf_file_glob": "data/train-*.parquet",
+  "hf_revision": "c428226b689a0e17db2cd55265133b9eca15d97f",
+  "fetched": true,
+  "source_url": "https://huggingface.co/datasets/librarian-bots/arxiv-metadata-snapshot/tree/c428226b689a0e17db2cd55265133b9eca15d97f",
+  "resolved_at": "2026-11-11T03:09:34+0900",
+  "last_modified": "2026-10-27 11:10:26+00:00",
+  "card_license": "cc0-1.0",
+  "files": {
+   ".gitattributes": 2307,
+   "README.md": 2319,
+   "data/train-00000-of-00011.parquet": 284033689,
+   "data/train-00001-of-00011.parquet": 280398761,
+   "data/train-00002-of-00011.parquet": 275725802,
+   "data/train-00003-of-00011.parquet": 269293149,
+   "data/train-00004-of-00011.parquet": 262530975,
+   "data/train-00005-of-00011.parquet": 254418986,
+   "data/train-00006-of-00011.parquet": 243101946,
+   "data/train-00007-of-00011.parquet": 233806666,
+   "data/train-00008-of-00011.parquet": 222733408,
+   "data/train-00009-of-00011.parquet": 200637171,
+   "data/train-00010-of-00011.parquet": 174286181
+  },
+  "download_seconds": 35.5,
+  "raw_files": {
+   "data/train-00000-of-00011.parquet": {
+    "bytes": 284033689,
+    "sha256": "2b0cd657765299c06a53f40d18d9a6be707b7bb5ac67cc99afea12c1eb1f6b2d"
+   },
+   "data/train-00001-of-00011.parquet": {
+    "bytes": 280398761,
+    "sha256": "6a9f1721f2ff83a9554966ea5fb3b6082e06a7b6a0e9a60c65c9b45a49b40f2e"
+   },
+   "data/train-00002-of-00011.parquet": {
+    "bytes": 275725802,
+    "sha256": "5ceb8990b71f0026e6a99e06ffdaaa6fafb1283a811b91e113638ee17b9d6724"
+   },
+   "data/train-00003-of-00011.parquet": {
+    "bytes": 269293149,
+    "sha256": "1326619f9081a0ab3e26ce0a47368fe719eca3769e3d0c1fd937c5c5a72a8bbf"
+   },
+   "data/train-00004-of-00011.parquet": {
+    "bytes": 262530975,
+    "sha256": "c0643e0a72b30a834386abf2442abbea9ce654082d08c2e058baf496c560ffbf"
+   },
+   "data/train-00005-of-00011.parquet": {
+    "bytes": 254418986,
+    "sha256": "22ccd6bb2b32a3f6bb597b064930b9d0ab87a2e500ae4d30033f4fba6806c68a"
+   },
+   "data/train-00006-of-00011.parquet": {
+    "bytes": 243101946,
+    "sha256": "35a9c6ef73f51a0b2c57d131297bbfd627df2a2e63ed2052a51fa735413e9d7b"
+   },
+   "data/train-00007-of-00011.parquet": {
+    "bytes": 233806666,
+    "sha256": "b831a8bd9ca4ff409e12759b0f0529e1304bd8b0be1a97aea1c6ef3ec8c3a694"
+   },
+   "data/train-00008-of-00011.parquet": {
+    "bytes": 222733408,
+    "sha256": "a3fa8db6eac9fb17dfdfdf65be4fae0c9ed5e65480683a98959e845099180984"
+   },
+   "data/train-00009-of-00011.parquet": {
+    "bytes": 200637171,
+    "sha256": "f6b76c2cfa337ae252b5aec4e4d1e06a4b9e64fff8890b8aa54db61b60cd192a"
+   },
+   "data/train-00010-of-00011.parquet": {
+    "bytes": 174286181,
+    "sha256": "e3b1b851f16bb1f579c37f16d2b14f8d2bbd1d1930e7fabf0b4e9639c12fc745"
+   }
+  }
+ },
+ "corpus": {
+  "n_rows_raw": 3224635,
+  "n_unique_ids": 3224542,
+  "n_eligible": 2966381,
+  "excluded_row_counts": {
+   "abstract_lt_400": 258097,
+   "duplicate_id_rows": 93,
+   "withdrawn": 85
+  },
+  "columns_seen": [
+   "id",
+   "submitter",
+   "authors",
+   "title",
+   "comments",
+   "journal-ref",
+   "doi",
+   "report-no",
+   "categories",
+   "license",
+   "abstract",
+   "versions",
+   "update_date",
+   "authors_parsed"
+  ],
+  "dedup_rule": "arXiv id 당 update_date 최대 행(같으면 뒤 파일·뒤 행). 적격 판정은 남은 행으로",
+  "seed": 4500,
+  "n_sampled": 150000,
+  "sample_rule": "적격 행 arXiv id 사전순 → default_rng(4500).choice(N, 150000, replace=False)",
+  "identifier_rule": "뽑힌 행의 arXiv id 사전순 1..N (data_c2/id_map.parquet)",
+  "archive_definition": "분류의 점 앞 접두사 (cs.LG→cs, hep-th→hep-th)",
+  "archive_distribution_primary": {
+   "cs": 42158,
+   "math": 24057,
+   "cond-mat": 17622,
+   "astro-ph": 16894,
+   "physics": 10640,
+   "quant-ph": 6679,
+   "hep-ph": 6361,
+   "hep-th": 4895,
+   "eess": 4119,
+   "gr-qc": 3339,
+   "stat": 3271,
+   "q-bio": 1798,
+   "nucl-th": 1722,
+   "math-ph": 1422,
+   "hep-ex": 1113,
+   "nlin": 917,
+   "hep-lat": 819,
+   "q-fin": 686,
+   "econ": 654,
+   "nucl-ex": 561,
+   "chao-dyn": 70,
+   "cmp-lg": 39,
+   "alg-geom": 29,
+   "solv-int": 29,
+   "q-alg": 27,
+   "patt-sol": 18,
+   "dg-ga": 16,
+   "adap-org": 9,
+   "comp-gas": 9,
+   "chem-ph": 7,
+   "funct-an": 6,
+   "mtrl-th": 4,
+   "supr-con": 3,
+   "acc-phys": 2,
+   "plasm-ph": 2,
+   "ao-sci": 1,
+   "atom-ph": 1,
+   "bayes-an": 1
+  },
+  "archive_distribution_any": {
+   "cs": 51871,
+   "math": 32688,
+   "cond-mat": 21098,
+   "astro-ph": 19240,
+   "physics": 15464,
+   "quant-ph": 9154,
+   "hep-ph": 8876,
+   "hep-th": 8112,
+   "stat": 7560,
+   "eess": 6984,
+   "gr-qc": 5786,
+   "math-ph": 4010,
+   "nucl-th": 2978,
+   "q-bio": 2839,
+   "hep-ex": 2803,
+   "nlin": 2216,
+   "nucl-ex": 1364,
+   "hep-lat": 1333,
+   "q-fin": 1283,
+   "econ": 884,
+   "chao-dyn": 101,
+   "solv-int": 56,
+   "cmp-lg": 39,
+   "q-alg": 39,
+   "alg-geom": 37,
+   "patt-sol": 29,
+   "dg-ga": 23,
+   "adap-org": 18,
+   "chem-ph": 13,
+   "supr-con": 12,
+   "comp-gas": 11,
+   "funct-an": 7,
+   "mtrl-th": 7,
+   "atom-ph": 5,
+   "acc-phys": 2,
+   "plasm-ph": 2,
+   "ao-sci": 1,
+   "bayes-an": 1
+  },
+  "per_document_license_field": {
+   "note": "원천의 문서별 license 는 본문 라이선스이지 메타데이터(초록) 라이선스가 아니다",
+   "distribution": {
+    "http://arxiv.org/licenses/nonexclusive-distrib/1.0/": 90233,
+    "http://creativecommons.org/licenses/by/4.0/": 29662,
+    "(empty)": 19010,
+    "http://creativecommons.org/licenses/by-nc-nd/4.0/": 4516,
+    "http://creativecommons.org/licenses/by-nc-sa/4.0/": 3299,
+    "http://creativecommons.org/licenses/by-sa/4.0/": 1535,
+    "http://creativecommons.org/publicdomain/zero/1.0/": 1066,
+    "http://creativecommons.org/licenses/by/3.0/": 342,
+    "http://creativecommons.org/licenses/by-nc-sa/3.0/": 232,
+    "http://creativecommons.org/licenses/publicdomain/": 105
+   }
+  },
+  "corpus_sha256": "835734fc8235ee5b68d82b7dadfc421cdddca31afd4def14d2d1d4032bab06b2",
+  "id_map_sha256": "66215930da814378dc37a02a9ef0dc66d833e5ef36987806bce1fbb09fcd219a",
+  "build_seconds": 90.0
+ },
+ "field_mapping": {
+  "identifier": "arXiv id 사전순 정수 (chunk_id d{n}s0p0)",
+  "name": "title (공백 정규화)",
+  "url": "https://arxiv.org/abs/{id}",
+  "abstract": "abstract (공백만 정규화, LaTeX 그대로)",
+  "sections": "[Abstract 섹션 1개, 문단 1개 = 초록]",
+  "infoboxes": "[{name: 분류}] categories 순서",
+  "references": "빈 목록 열 (topics.load_meta 호환)"
+ },
+ "license_gate": {
+  "status": "passed",
+  "rule": "arXiv 공식 문서에서 메타데이터(초록 포함)가 CC0 임을 확인해 기록한다. 기록 전에는 토픽 생성·실행 금지",
+  "recorded_by_script": "data_c2/license_gate_c2.py",
+  "checked_at": "2026-11-11T03:11:56+0900",
+  "evidence_url": "https://info.arxiv.org/help/api/tou.html",
+  "statement": "arXiv API Terms of Use (Metadata Licensing): descriptive metadata, defined to include title, abstract, authors, identifiers and classification terms, is usable under CC0 1.0. Corroborated by https://info.arxiv.org/help/license/index.html ('CC0 1.0 Universal Public Domain Dedication will apply to all metadata'), the HF card librarian-bots/arxiv-metadata-snapshot (license cc0-1.0) and Kaggle Cornell-University/arxiv ('CC0: Public Domain'). Only title/abstract/categories are used; the per-record license field (full-text license) is not the basis. Checked 2026-11-11.",
+  "checked_by": "Claude (research on official pages), approved by the corresponding author (2026-11-10 scope approval)",
+  "scope": "메타데이터(제목·초록) 라이선스. 문서별 license 필드(본문 라이선스)는 판단 근거가 아니다",
+  "revision": "c428226b689a0e17db2cd55265133b9eca15d97f"
+ },
+ "elapsed_s": 128.2
+}
