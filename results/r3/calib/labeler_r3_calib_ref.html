@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R3 보정 참조 라벨 (저자)</title>
+<style>
+  :root{--bg:#fbfbfa;--fg:#1a1a19;--mut:#6b6b68;--line:#e0e0dc;--acc:#2b5cab;
+        --ok:#1c7c4a;--no:#a33;--unk:#7a6a2a;}
+  @media (prefers-color-scheme:dark){:root{--bg:#17181a;--fg:#e8e8e6;--mut:#9a9a97;
+        --line:#31333a;--acc:#7aa2e8;--ok:#5cc38a;--no:#e08b8b;--unk:#d8c07a;}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:15px/1.65 -apple-system,"Segoe UI",Roboto,"Malgun Gothic",sans-serif}
+  header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);
+         padding:10px 16px;z-index:5}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+  .tab{font:inherit;font-size:13px;padding:6px 10px;border-radius:8px;border:1.5px solid var(--line);
+       background:transparent;color:var(--fg);cursor:pointer}
+  .tab.on{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 12%,transparent);font-weight:600}
+  .tab .c{color:var(--mut);font-weight:400;margin-left:4px}
+  .tab.full .c{color:var(--ok);font-weight:600}
+  .bar{height:4px;background:var(--line);border-radius:2px;overflow:hidden;margin-top:8px}
+  .bar i{display:block;height:100%;background:var(--acc);transition:width .2s}
+  .wrap{max-width:860px;margin:0 auto;padding:0 16px 120px}
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .mut{color:var(--mut);font-size:13px}
+  details{margin:10px 0;border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+  summary{cursor:pointer;font-weight:600;font-size:13px}
+  details p{margin:8px 0 2px;font-size:13.5px}
+  h2{font-size:13px;letter-spacing:.04em;color:var(--mut);margin:22px 0 6px}
+  .claim{font-size:19px;line-height:1.6;padding:16px 18px;border-radius:10px;
+         border:2px solid var(--acc);background:color-mix(in srgb,var(--acc) 7%,transparent)}
+  .ev{white-space:pre-wrap;font-size:14px;height:55vh;overflow:auto;padding:14px 16px;
+      border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--fg) 3%,transparent)}
+  footer{position:fixed;left:0;right:0;bottom:0;background:var(--bg);
+         border-top:1px solid var(--line);padding:10px 16px}
+  .btns{max-width:860px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap}
+  button{font:inherit;padding:11px 16px;border-radius:9px;border:1.5px solid var(--line);
+         background:transparent;color:var(--fg);cursor:pointer}
+  button:hover{border-color:var(--acc)}
+  .b1{border-color:var(--ok);color:var(--ok)} .b2{border-color:var(--no);color:var(--no)}
+  .b3{border-color:var(--unk);color:var(--unk)}
+  .b1.on{background:var(--ok);color:#fff} .b2.on{background:var(--no);color:#fff}
+  .b3.on{background:var(--unk);color:#fff}
+  .sp{flex:1} kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;font-size:12px}
+  .done{color:var(--ok);font-weight:600}
+
+  .tab.locked{opacity:.45;cursor:not-allowed}
+  .meta{font-size:13px;color:var(--mut);margin-top:14px}
+  .ans{white-space:pre-wrap;font-size:16px;line-height:1.65;padding:12px 16px;border-radius:10px;
+       border:1px solid var(--acc)}
+  .q{font-size:17px;padding:12px 16px;border-radius:10px;border:2px solid var(--acc);
+     background:color-mix(in srgb,var(--acc) 7%,transparent)}
+  .ch{margin:0 0 14px} .chh{font-weight:600;font-size:13px;color:var(--acc)}
+  mark{background:#fff2a8;color:inherit} @media (prefers-color-scheme:dark){mark{background:#6b5d12}}
+  .gate{font-size:13px;color:var(--mut)} .gate b{color:var(--fg)}
+  .tr label{margin-right:10px;font-size:13.5px;white-space:nowrap}
+  .grp{display:flex;gap:6px;flex-wrap:wrap;align-items:center} .grp .lab{font-size:13px;color:var(--mut);min-width:44px}
+  button:disabled{opacity:.35;cursor:not-allowed}
+  .opt.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+  .fb{margin:8px auto 0;max-width:860px;padding:8px 12px;border-radius:8px;border:1.5px solid var(--ok);display:none}
+  .testbanner{background:#a33;color:#fff;text-align:center;font-weight:700;padding:4px}
+  footer{max-height:48vh;overflow:auto}
+  .rub td{border-top:1px solid var(--line);padding:4px 6px;vertical-align:top;font-size:13px}
+</style></head><body>
+
+<div id="guide" style="position:fixed;inset:0;z-index:50;background:var(--bg,#fff);overflow:auto">
+<div style="max-width:780px;margin:0 auto;padding:28px 20px;line-height:1.7;font-size:15px">
+<h2 style="margin-top:0">라벨 작업 안내</h2>
+<p>영어로 된 질문·답·근거 글을 읽고 버튼을 고르는 작업입니다. <b>4단계, 3문항</b>이고
+5~6시간쯤 걸립니다(문항마다 최소 읽기 시간이 있습니다). 나눠서 하셔도 됩니다.
+진행 상황은 <b>같은 컴퓨터의 같은 브라우저</b>에서만 기억됩니다(시크릿 창은 기억하지 않습니다).
+쉬는 것을 권합니다: 2단계 중간에 한 번, 2단계와 3단계 사이에 한 번(각 30분 이상, 강제하지 않음).</p>
+<h3>순서와 잠금</h3>
+<p>1단계(3) → 2단계(0) → 3단계(0) → 4단계(0). 앞 단계를 다 채워야 다음 단계가 열립니다(잠긴 단계에는 🔒).</p>
+<ul>
+<li><b>1단계 (연습, 답의 품질)</b>: C와 K를 고르고 "저장하고 다음 →"을 누르면 첫 답이 잠기고 참고 답이 보입니다. "확인"을 누르면 다음 문항으로 갑니다.</li>
+<li><b>2단계 (본 판정, 답의 품질)</b>: 피드백이 없습니다. 3단계를 시작하기 전까지는 돌아와 고칠 수 있습니다(처음 답과 고친 횟수가 기록됩니다).</li>
+<li><b>쉬는 화면</b>: 2단계를 다 채우면 쉬는 화면이 나옵니다. 준비되면 <b>"3단계 시작"</b>을 누르세요. <b>누른 뒤에는 1·2단계 답을 바꿀 수 없습니다</b>(볼 수는 있습니다).</li>
+<li><b>3단계 (연습, 문장 지지)</b>: 라벨을 고르면 첫 답이 잠기고 참고 라벨만 보입니다(설명은 없습니다). "확인" 뒤 다음 문항.</li>
+<li><b>4단계 (본 판정, 문장 지지)</b>: 피드백이 없습니다. 고칠 수 있습니다.</li>
+</ul>
+<h3>낱말 뜻</h3>
+<ul>
+<li><b>청크</b> = 근거 글의 한 조각(문서의 한 단락쯤). 화면에는 "(문서 제목 > 절 이름)"과 함께 보입니다.</li>
+<li><b>컨텍스트</b> = 모델이 답을 쓸 때 받은 청크 전부. 위의 "인용된 청크"와 아래에 접힌 "나머지 컨텍스트"를 합친 것입니다.</li>
+<li><b>인용</b> = 답 속의 [1], [2] 표시. 답이 그 번호의 청크를 근거로 삼았다는 뜻입니다.</li>
+</ul>
+<h3>판단 방법</h3>
+<ul>
+<li><b>1·2단계</b> — 질문, 모델의 답, 그 답이 받은 컨텍스트를 봅니다. 답마다 두 가지를 따로 고릅니다.
+<ul>
+<li><b>C 정답성(근거 대비)</b>: C2a 지지(인용) = 모든 사실 주장이 답이 인용한 청크([1], [2] …)에서 확인됨(요약·바꿔 쓰기 허용) /
+C2b 지지(다른 청크) = 모두 컨텍스트에서 확인되지만 적어도 하나는 인용하지 않은 청크에서만 확인됨 /
+C1 미지지 = 적어도 한 주장이 컨텍스트 어디에도 없음(모순은 아님) /
+C0 오류 = 적어도 한 주장이 컨텍스트와 <b>모순</b>(숫자·날짜·이름·주체·인과), 또는 다른 대상에 대한 근거를 그 대상인 양 씀.</li>
+<li>"사실 주장" = 참·거짓을 따질 수 있는 문장·절. 연결어, 질문 되풀이, "근거에 따르면" 같은 틀 문장은 세지 않습니다.</li>
+<li><b>K 완전성(질문 대비)</b>: K2 완전 = 질문의 모든 부분에 직접 답 / K1 부분 = 일부만, 또는 간접·일반적 / K0 비응답 = 다른 주제, 회피, 배경만.</li>
+<li>예시(가상, 질문 "언제, 누가 다리를 설계했나?"):
+<ul>
+<li>답 "1932년 J. Smith가 설계했다 [1]", [1]에 둘 다 있음 → <b>C2a · K2</b>.</li>
+<li>[1]에 연도만 있고 설계자 이름은 인용하지 않은 다른 청크에만 있음 → <b>C2b</b>.</li>
+<li><b>C1과 C0의 차이</b>: 설계자 이름이 컨텍스트 <b>어디에도 없으면</b> C1 미지지. 컨텍스트에 "A. Brown이 설계했다"처럼 <b>다른 값이 적혀 있으면</b> C0 오류. [1]에 "1923년"이라고 적혀 있는데 답이 1932년이라고 하면 C0.</li>
+<li>연도만 답하고 설계자는 말하지 않음 → <b>K1</b>.</li>
+<li><b>K0 예</b>: 답 "그 다리는 강 위에 놓인 철교다 [1]" — 맞는 말이어도 질문(언제·누가)에 답하지 않고 배경만 말함 → K0. C는 따로 판단합니다(여기서는 [1]에 있으면 C2a).</li>
+<li><b>"컨텍스트에 X가 없다"고 말하는 답</b>: 예 "주어진 자료에는 설계자가 나오지 않는다." 이런 문장은 컨텍스트에 대한 말이라 사실 주장으로 세지 않습니다.
+답이 이것뿐이면 <b>C2a · K0</b>를 고릅니다(실제로 컨텍스트에 설계자가 있어도 K0). 다른 사실 주장이 함께 있으면 C는 그 주장들로, K는 질문에 답한 정도로 판단합니다.</li>
+</ul></li>
+<li>기준은 <b>보여 준 컨텍스트뿐</b>입니다. 바깥 지식으로 맞아 보여도 컨텍스트에 없으면 <b>"C1 미지지"</b>입니다.</li>
+<li>노란 하이라이트는 찾기 도움일 뿐입니다. 하이라이트에 없으면 "나머지 컨텍스트"를 펼쳐 확인한 뒤, 어디에도 없을 때 "C1 미지지"를 고르세요.
+인용된 청크는 위에 펼쳐 있고, 나머지 컨텍스트는 아래에 접혀 있습니다(C2b인지 보려면 펼쳐야 합니다).</li>
+</ul></li>
+<li><b>3·4단계</b> — 문장 하나와 그 문장이 인용한 근거 글을 봅니다. 문항 위의 판단 기준(지지 / 불지지 / 판단불가)만 따릅니다.</li>
+<li>근거는 <b>끝까지</b> 읽어 주세요. 근거가 길다는 이유로 불지지를 주지 마세요. 브라우저 찾기(Ctrl+F)를 써도 됩니다.</li>
+<li>근거 상자를 끝까지 스크롤하고 최소 읽기 시간이 지나야 버튼이 켜집니다(남은 시간이 버튼 위에 보입니다). 다른 탭을 보는 동안이나 컴퓨터가 절전·잠금 상태인 동안은 시간이 가지 않습니다.</li>
+<li>번역기를 써도 됩니다. 다만 <b>판단은 번역기에 맡기지 마세요</b>. 문항마다 번역기를 어디에 썼는지(안 씀 / 문장만 / 근거 일부 / 근거 전체) 골라야 버튼이 켜집니다.</li>
+<li>인터넷 검색이나 배경지식 없이, 화면에 보이는 글만 보고 판단해 주세요. 다른 사람과 상의하지 말고 혼자 판단해 주세요.</li>
+<li>3·4단계는 키보드 1·2·3으로도 고를 수 있습니다(버튼이 켜졌을 때만). ← →로 앞뒤 문항을 오갑니다.</li>
+</ul>
+<h3>시작 전에 (한 번만)</h3>
+<p>쓸 번역 도구 이름(안 쓰면 "없음"): <input id="g_tool" style="font:inherit;width:260px"><br>
+영어 실력 자기 평가 한 줄(예: "논문 초록은 사전 없이 읽음"): <input id="g_prof" style="font:inherit;width:420px"></p>
+<h3>끝나면</h3>
+<p>위쪽에 "전체 n / 3"이 나오고, 다 채우면 "전부 완료"가 뜹니다. 그때 <b>"CSV 내려받기 (전체)"</b>를 눌러
+내려받은 파일(<b>labels_r3_calib_ref.csv</b>) 하나를 보내 주세요.</p>
+<p style="text-align:center;margin-top:28px"><button id="startbtn" style="font-size:17px;padding:10px 28px">시작하기</button></p>
+</div></div>
+<div id="brk" style="position:fixed;inset:0;z-index:45;background:var(--bg,#fff);overflow:auto;display:none">
+<div style="max-width:680px;margin:0 auto;padding:48px 20px;line-height:1.75;font-size:16px;text-align:center">
+<h2>2단계를 모두 채웠습니다</h2>
+<p>여기서 쉬어 가기를 권합니다(30분 이상, 강제하지 않음). 창을 닫아도 진행은 저장됩니다.</p>
+<p>다음은 3단계(문장 지지 연습)와 4단계입니다. <b>"3단계 시작"을 누르면 1·2단계 답은 더 바꿀 수 없습니다</b>(보기만 할 수 있습니다).
+고칠 답이 있으면 "2단계로 돌아가기"를 눌러 고친 뒤, 3단계 탭(또는 2단계 마지막 문항의 "다음 →")으로 이 화면에 다시 오세요.</p>
+<p style="margin-top:28px"><button id="brkback" style="font-size:15px;padding:8px 18px">2단계로 돌아가기</button>
+<button id="s3btn" style="font-size:17px;padding:10px 28px;margin-left:12px">3단계 시작</button></p>
+</div></div>
+
+
+<header>
+  <div class="tabs" id="tabs"></div>
+  <div class="row">
+    <strong id="pos"></strong><span class="sp"></span>
+    <span class="mut" id="cnt"></span>
+    <button id="guidebtn">안내 보기</button>
+    <button id="dl">CSV 내려받기 (전체)</button>
+  </div><div class="bar"><i id="pb"></i></div>
+</header>
+<div class="wrap" id="view"></div>
+<footer>
+  <div class="btns" style="flex-direction:column;gap:6px">
+    <div class="tr" id="trrow"><span class="mut">번역기 사용(필수):</span></div>
+    <div class="gate" id="gate"></div>
+    <div id="lab"></div>
+    <div class="row"><span class="sp"></span>
+      <button id="prev">← 이전</button><button id="next">다음 →</button><button id="jump">안 채운 곳으로</button></div>
+  </div>
+  <div class="fb" id="fb"></div>
+</footer>
+
+<script>
+(function () {   // 함수 범위로 감싼다: 페이지 상태·buildCsv 가 전역(콘솔)에 나오지 않게(시험 판의 훅만 예외, §2.4 8)
+
+const D = {"annotator": "author_ref", "version": "r3_sheet_v1+calib_ref", "store_key": "r3_calibref_v1", "csv_name": "labels_r3_calib_ref.csv", "v_labels": ["지지", "불지지", "판단불가"], "h_claim": "문장 (모델이 쓴 답의 한 문장)", "h_ev": "근거 (그 문장이 인용한 글)", "rubric_html": "<table class=\"rub\"><tr><td><b>C2a<\/b> 지지(인용)<br><i>supported by cited chunks<\/i><\/td><td>모든 사실 주장이 답이 인용한 청크에서 확인된다. 요약·바꿔 쓰기 허용<\/td><\/tr><tr><td><b>C2b<\/b> 지지(다른 청크)<br><i>supported by context, not (only) cited<\/i><\/td><td>모든 주장이 컨텍스트에서 확인되지만 적어도 하나는 인용하지 않은 청크에서만 확인된다<\/td><\/tr><tr><td><b>C1<\/b> 미지지<br><i>unsupported<\/i><\/td><td>적어도 한 주장이 컨텍스트 어디에서도 확인되지 않는다(모순은 아님)<\/td><\/tr><tr><td><b>C0<\/b> 오류<br><i>contradicted / wrong entity<\/i><\/td><td>적어도 한 주장이 컨텍스트와 모순된다(숫자·날짜·이름·주체·인과), 또는 다른 대상에 대한 근거를 그 대상인 양 썼다<\/td><\/tr><tr><td><b>K2<\/b> 완전<br><i>complete<\/i><\/td><td>질문의 모든 부분에 직접 답한다<\/td><\/tr><tr><td><b>K1<\/b> 부분<br><i>partial<\/i><\/td><td>일부만, 또는 간접·일반적으로 답한다<\/td><\/tr><tr><td><b>K0<\/b> 비응답<br><i>non-answer<\/i><\/td><td>다른 주제, 회피, 배경만<\/td><\/tr><\/table><p class=\"mut\">청크 = 근거 글 조각, 컨텍스트 = 모델이 받은 청크 전부, 인용 = 답의 [1][2]가 가리키는 청크. 기준은 보여 준 컨텍스트뿐이다. 바깥 지식으로 맞아 보여도 컨텍스트에 없으면 'C1 미지지'. 컨텍스트에 다른 값이 적혀 있으면(모순) 'C0 오류'. '사실 주장' = 참·거짓을 따질 수 있는 문장·절(연결어·질문 되풀이·'근거에 따르면' 같은 틀 문장, '자료에 X가 없다' 같은 컨텍스트에 대한 말은 세지 않는다; 답이 그것뿐이면 C2a · K0). 하이라이트는 찾기 도움일 뿐이다. 하이라이트에 없으면 '나머지 컨텍스트'를 펼쳐 확인한 뒤, 어디에도 없을 때 'C1 미지지'를 고른다.<\/p>", "stages": [{"id": 1, "kind": "q", "mode": "main", "name": "참조 라벨", "items": [{"id": "qc795b7", "persp": "영향·응용 (impact / application)", "q": "Which foreign promotions and international partners has the 2001-founded promotion formally collaborated or co-promoted events with?", "ans": "TNA/Impact co-promoted with Hermie Sadler's United Wrestling Federation (United States) under a 2006 agreement allowing UWF to use the TNA logo and six-sided ring, with the TNA name agreement ending at the end of 2006 [1]. TNA worked with Mexico's Consejo Mundial de Lucha Libre (CMLL) from 2007 to 2009 and later established a working agreement with Mexico's Lucha Libre AAA Worldwide (AAA) since 2015, including co-promotion of the Ultra Clash supershow in the Monterrey area on November 26, 2023 [1]. TNA/Impact partnered with Japan's New Japan Pro-Wrestling (NJPW) initially from 2008 to 2011 and re-established the relationship in February 2021 which lasted until December 2024, during which TNA sent talent to NJPW Wrestle Kingdom events and NJPW sent Kazuchika Okada on a TNA training excursion [1]. On March 2, 2014 TNA collaborated with Japan's Wrestle-1 to produce the Kaisen: Outbreak supershow in Tokyo where three TNA championships were defended, and that Wrestle-1 relationship ended by May 2015 [1]. Impact maintained working relationships with Japan's Inoki Genome Federation (IGF), Pro Wrestling Noah, Wrestle-1, and with U.S. promotions including the original Global Force Wrestling, OMEGA Championship Wrestling, Evolve Wrestling, and from December 2020 had a partnership with All Elite Wrestling (AEW) until October 2021 [1]. Impact established broader co-promotion arrangements since 2018 with numerous regional/independent promotions for house shows, Twitch specials, and Impact Plus events including Future Stars of Wrestling, Smash Wrestling, AML Wrestling, Border City Wrestling, WrestleCade, Rocky Mountain Pro, Rockstar Pro Wrestling, Wrestlepro, Wrestling Revolver, RISE, Destiny Wrestling, Big Time Wrestling (California), DEFY Wrestling and House of Hardcore [1]. Impact announced widening talent exchanges with WWE starting in 2024, including appearances on WWE NXT, and WWE announced a multi-year partnership on January 16, 2025 to allow cross-appearances on NXT, iMPACT!, select WWE Premium Live Events and TNA pay-per-views [1].", "cited": [{"n": 1, "h": "Total Nonstop Action Wrestling > Partnerships", "t": "In early 2006, the promotion began a collaboration with Hermie Sadler 's United Wrestling Federation. The agreement permitted UWF to use the TNA logo on posters and signage, as well as to use the six-sided ring with TNA branding. These shows were mainly promoted as 'UWF/TNA' events. The TNA name agreement ended at the end of 2006, as TNA began to promote their own house show events, though UWF still used a six-sided ring. These events were recorded and released on DVD by Highsports. They would continue to work with United Wrestling Federation and promote independent shows at the same time until 2007. TNA has worked with several wrestling promotions, with championships from those promotions sometimes having been defended at TNA events. Among the organizations TNA has had working relationships with are Mexico's Consejo Mundial de Lucha Libre (CMLL) from 2007 to 2009 and The Crash, Japan's Inoki Genome Federation (IGF), New Japan Pro-Wrestling (NJPW), Wrestle-1 (W-1), Pro Wrestling Noah (Noah), United States' the original Global Force Wrestling (another promotion founded by Jeff Jarrett), OMEGA Championship Wrestling (owned by Matt Hardy, Jeff Hardy and Gregory Helms) and Evolve Wrestling.  The initial relationship with NJPW lasted from 2008 to 2011. Then-known as TNA, the promotion would send wrestlers to participate in NJPW's annual Wrestle Kingdom events, as well as NJPW sending future IWGP Heavyweight Champion Kazuchika Okada on a training excursion to TNA. The relationship would be strained, when IWGP Tag Team Champions Team 3D were held off of a New Japan tour in favor of appearing on Impact Wrestling tapings and Okada was given the gimmick of \"Okato\", where he dressed similar to The Green Hornet 's sidekick Kato. a decision Executive Vice President Scott D'Amore has since apologized for on behalf of the previous regime. In February 2021, Impact would re-establish its relationship with NJPW, with NJPW later forgiving the incidents that happened under the previous regime. This partnership would last until December 2024, when NJPW's contract to air on TNA's co-owned TV home AXS TV expired, and was not renewed.  On March 2, 2014, TNA collaborated with Wrestle-1 in producing the Kaisen: Outbreak supershow in Tokyo, Japan, where three TNA championships were defended. In May 2015, it was reported that the relationship between TNA and Wrestle-1 had ended. Since 2015, the promotion has had a working agreement with Mexico's Lucha Libre AAA Worldwide (AAA) and in 2018, announced a partnership with the AAA-affiliated Lucha Underground, allowing their wrestlers from the show to appear for Impact on a regular basis. In April 2018, the two promotions held Impact vs Lucha Underground from WrestleCon in New Orleans to a sell out crowd. On November 26, 2023, Impact and partner promotion Lucha Libre AAA Worldwide (AAA), co-promoted the Ultra Clash supershow in the Monterrey, Mexico area, marking Impact's first show in Mexico since 2019.  Since 2018, Impact has established working relationships with a number of promotions to co-promote house shows, Twitch specials, the final Impact One Night Only events, and Impact Plus Monthly Specials. These promotions include, Future Stars of Wrestling, Smash Wrestling, AML Wrestling, Superkick'd, Border City Wrestling, WrestleCade, Rocky Mountain Pro, Rockstar Pro Wrestling, Wrestlepro, Wrestling Revolver, RISE, Destiny Wrestling, Big Time Wrestling (California), DEFY Wrestling and House of Hardcore. Impact Wrestling would begin a partnership with All Elite Wrestling (AEW) in December 2020, with its wrestlers and titles appearing on Impact programming. In October 2021, the working relationship between Impact and AEW quietly ended following Bound for Glory.  On the January 7, 2022, episode of SmackDown, it was announced that Knockouts Champion Mickie James would enter the 2022 Royal Rumble match. Both WWE 's official Twitter account and Impact's website confirmed this soon after, with the former recognizing James as an Impact champion. Two years later, Knockouts Champion Jordynne Grace would enter in the Royal Rumble. In 2024, TNA and WWE began a wider talent exchange, with several TNA wrestlers appearing on WWE's NXT brand, and NXT wrestlers making periodic appearances at TNA events. On January 16, 2025, WWE announced a multi-year partnership with TNA that allows NXT wrestlers and TNA wrestlers to appear in NXT shows, TNA iMPACT!, select WWE Premium Live Events, and TNA pay-per-views.", "hl": [[102, 229], [284, 425], [745, 1205], [1207, 1267], [1268, 1482], [2150, 2305], [2306, 2393], [2394, 2653], [2773, 2975], [2977, 3179], [3180, 3485], [3486, 3640], [4115, 4284], [4285, 4489]]}], "other": [{"h": "List of professional wrestling attendance records in Japan > Abstract", "t": "The following is a list of professional wrestling attendance records in Japan. The list is dominated by the country's largest promotion, New Japan Pro-Wrestling (NJPW). The company was founded by Antonio Inoki in 1972 and had a long rivalry with Giant Baba 's All Japan Pro Wrestling. AJPW set a number of attendance records during its heyday, especially during the 1990s wrestling boom, however, only three of its shows remain on the list as of 2023.  According to this list, 5 events are from NJPW's flagship Wrestling World supercard event, which since 1992's Super Warriors in Tokyo Dome has been held exclusively at the Tokyo Dome which typically has a seating capacity of at least 42,000 people or more. Only six of the attendances listed are non-NJPW events, with the Weekly Pro Wrestling Tokyo Dome Show being an interpromotional event involving over a dozen Japanese promotions. In addition, NJPW has hosted three co-promotional events each with the U.S.-based World Championship Wrestling, two with the Japan-based UWF International, and one with deathmatch promotion Big Japan Pro Wrestling. All but two of the events have been held at the Tokyo Dome in the Japanese capital city of Tokyo, while one has been held at Sun Beach in Atami, Japan and one at Kawasaki Stadium in Kawasaki, Japan.", "hl": []}, {"h": "Global Wars Mexico > Production > Background", "t": "Global Wars is a professional wrestling event held sporadically by the American promotion Ring of Honor (ROH) since 2012. Originally named \"Border Wars\" and co-produced with the Japanese promotion Pro Wrestling Noah, the event was renamed Global Wars in 2014 after ROH announced a partnership with New Japan Pro-Wrestling.  Under the new name, the event became a supershow co-produced by the two promotions. In 2019, ROH announced a three-event tour with the Mexican promotion Consejo Mundial de Lucha Libre as the new partner for the series, renamed \"Global Wars Espectacular\". The Global Wars Espectacular tour marked the last Global Wars event held by ROH under the ownership of Sinclair Broadcast Group.  On June 13, 2025, ROH announced that it would bring back the \"Global Wars\" name a second time this year in 2025 for a co-promoted event with professional wrestling Mexican company Consejo Mundial de Lucha Libre (CMLL), to take place in Mexico City, Mexico at Arena México on June 18.  The previous event was Global Wars Australia in February 2025; it is the first time since 2019 that ROH has hosted two Global Wars events in the same calendar year.", "hl": []}, {"h": "List of former championships in Total Nonstop Action Wrestling > Abstract", "t": "In professional wrestling, championships are competed for in scripted storylines by a promotion 's roster of contracted wrestlers. Total Nonstop Action Wrestling (TNA, formerly Impact Wrestling) is a Nashville, Tennessee -based professional wrestling promotion. The promotion was founded in 2002; in the company's 23-year history, fourteen different unique championships, some originating from other promotions, have been promoted by TNA and later abandoned by the promotion. The following is a list of the promotion's former championships that were once active and contended for by its roster.", "hl": []}, {"h": "Wrestling of Darkness 666 > History", "t": "On December 13, 2003, Onryo and The Crazy SKB co-produced a professional wrestling event in Tokyo that would become known as \"666 vol. 1.\" The first events were mostly held at the Tokyo Battle Sphere until the promotion was banned from the venue that deemed their performances too extreme. Triple Six moved to the Differ Ariake arena which ended up also banning the promotion after The Crazy SKB destroyed equipment and broke into the Pro Wrestling Noah office. Today, the promotion holds most of its shows at the Shin-Kiba 1st Ring arena.  Triple Six also promotes three sub-brands: Shinjuku Ni-chōme Pro-Wrestling which began as a collaboration with the gay magazine Badi, Young Pro-Wrestling Wasshoi which features younger wrestlers, and Young Ribbon Wasshoi, a joint venture with women's wrestling promotion Ice Ribbon.", "hl": []}, {"h": "List of American Wrestling Association attendance records > Abstract", "t": "This is a list of American Wrestling Association attendance records. Established as the Minneapolis Boxing & Wrestling Club by Tony Stecher in 1933, it was among the first professional wrestling promotions in the United States. A founding member of the National Wrestling Alliance in 1948, Stecher controlled the NWA's \"Minneapolis wrestling territory\" which included much of the Great Lakes and Upper Midwestern United States. In 1959, Verne Gagne and Wally Karbo took control of the company and left the NWA the following year. The company was subsequently renamed the American Wrestling Association. With Gagne promoted as a legitimate rival to the NWA World Heavyweight Champion, the AWA closely matched the NWA in terms of attendances. In its heyday, the AWA was able to hold \"stadium show\" supercards at Comiskey Park, the International Amphitheater, Rosemont Horizon, Soldier Field and other major venues.  The AWA was considered one of the \"Big Three\", along with the National Wrestling Alliance and World Wide Wrestling Federation, during the \"Territory-era\" (1940s–1980s). Although its success continued into the early part of the 1980s wrestling boom, peaking with 23,000 fans at WrestleRock '86, the promotion was unable to compete against the national expansion of Vince McMahon 's World Wrestling Federation, and eventually went bankrupt in 1991.", "hl": []}, {"h": "Innovate Pro Wrestling > Abstract", "t": "Innovate Pro Wrestling (formerly Championship Wrestling Alliance and NWA Smoky Mountain) is an American independent professional wrestling promotion based in Kingsport, Tennessee. The company was established in 2004 and until 2017 it was associated with the National Wrestling Alliance. During its time in the NWA, NWA Smoky Mountain Wrestling was considered the flagship promotion of the National Wrestling Alliance.", "hl": []}, {"h": "Bam Bam Bigelow > Professional wrestling career > United States independent circuit; Japanese tours (1995–1998)", "t": "After leaving the World Wrestling Federation in late 1995, Bigelow began working on the United States independent circuit. In March 1996, Bigelow became the inaugural NWA Northeast Heavyweight Champion of the newly founded NWA Northeast promotion, defeating Jim Neidhart in a tournament final. Although Bigelow only made a handful of appearances with the promotion, his reign officially lasted until October 1998 when the title was vacated. In May 1996, Bigelow defeated Typhoon to win the vacant Universal Superstars of America Heavyweight Championship. In July 1996, he defeated King Kong Bundy at NWA New Jersey. Bigelow returned to Wrestle Association R in August 1996 for a tour that lasted until the end of the year. He briefly held the WAR World Six-Man Tag Team Championship with Hiromichi Fuyuki and Yoji Anjo in October 1996. In 1997, Bigelow was named as the inaugural Heavyweight Champion of the newly founded World Star Wrestling Federation. In June 1997, Bigelow appeared at the World Wrestling Peace Festival, an inter-promotional supercard staged at the Los Angeles Memorial Sports Arena by Antonio Inoki, where he faced Chris Jericho and Konnan in a three way dance. In April 1998, Bigelow wrestled two bouts for", "hl": []}], "tmin": 106.8}, {"id": "qcb8e39", "persp": "영향·응용 (impact / application)", "q": "How have talent exchanges or international tours affected the promotion's roster exposure and wrestler career trajectories?", "ans": "William Ospreay began working with New Japan Pro-Wrestling (NJPW) in 2016 and subsequently became a three-time IWGP Junior Heavyweight Champion and later won the IWGP World Heavyweight Championship, showing concrete title progression after international engagement [1][2].", "cited": [{"n": 1, "h": "Will Ospreay > Abstract", "t": "William \"Will\" Peter Charles Ospreay (born 7 May 1993) is an English professional wrestler. As of November 2023, he is signed to All Elite Wrestling (AEW), where he is a former two-time AEW International Champion. He also makes appearances for partner promotion New Japan Pro-Wrestling (NJPW), where he is a member of United Empire and is one-third of the reigning NEVER Openweight 6-Man Tag Team Champions alongside stablemates Henare and Great-O-Khan in their first reign as a team and as individuals. He also works for Pro-Wrestling: EVE as a producer and a member of the creative team. Known for his in-ring ability, he is widely regarded as one of the best wrestlers in the world.  Ospreay previously wrestled for NJPW's United Kingdom -based partner promotion Revolution Pro Wrestling (RevPro), where he is a former and longest reigning Undisputed British Heavyweight Champion. He also wrestled for British promotion Progress Wrestling, where he is a former Progress World Champion.  Ospreay began his career on the UK independent circuit in 2012. In 2016, after being recommended by AJ Styles, he began to work with the Japanese promotion NJPW as part of the junior heavyweight division, becoming a three-time IWGP Junior Heavyweight Champion and the winner of the 2016 and 2019 Best of the Super Juniors. In 2019, Ospreay also won the NEVER Openweight Championship. That same year, Ospreay participated in the G1 Climax, NJPW's biggest tournament featuring heavyweight wrestlers. In 2020, he made his transition to the heavyweight division, where he won the IWGP World Heavyweight Championship. He was also the winner of 2021 New Japan Cup. Ospreay is a former two-time and the final IWGP United States Heavyweight Champion, as the title was deactivated in December 2023 when Ospreay was in his second reign.  Before signing with AEW, Ospreay had also periodically ventured into the American wrestling circuit; he made appearances in NJPW partner promotions Total Nonstop Action Wrestling (TNA, formerly known as Impact Wrestling) and Ring of Honor (ROH), where he is a former ROH World Television Champion, as well as independent promotions like Pro Wrestling Guerrilla (PWG). After making appearances in AEW in 2022 and 2023, he signed with the company and officially joined its roster after his NJPW contract expired in February 2024. In AEW, he would become a two-time AEW International Champion.  Ospreay holds the record for the most 5 or more stars matches given by wrestling journalist Dave Meltzer with a total of 54 matches; he is also one of five wrestlers to have wrestled two five-star matches on the same night, a feat he achieved at AEW's Worlds End in 2024.", "hl": [[1054, 1312], [1649, 1816]]}, {"n": 2, "h": "Will Ospreay > Professional wrestling career > Various international promotions (2016–2017)", "t": "On 29 January 2016, Ospreay made his debut for Total Nonstop Action Wrestling (TNA), during the promotion's tour of the United Kingdom. Ospreay unsuccessfully entered the 2016 Joker's Wild tournament and challenged for both the TNA King of the Mountain Championship and TNA World Tag Team Championship. Dave Meltzer of the Wrestling Observer Newsletter reported that TNA had plans to push Ospreay, but upon finding out that he had signed to appear for NJPW relegated him to a short match on their secondary television programme.  On 1 April 2016, Ospreay made his debut for Evolve, losing to Zack Sabre Jr. at Evolve 58 and Ricochet at Evolve 59, both in Dallas, Texas, USA. On 12 July, Paul Heyman, during a speaking tour of the United Kingdom, offered Ospreay an Evolve contract on behalf of Gabe Sapolsky while clarifying that the contract would not affect his NJPW deal. On 20 July, Pro Wrestling Torch reported Ospreay had signed the contract to make Evolve his American home promotion, but the Wrestling Observer Newsletter disputed this, reporting Ospreay did not sign and was still in talks with Evolve, PWG, TNA, and ROH, another American promotion who had a relationship with NJPW which Ospreay later confirmed.  In August 2017, Ospreay made his debut appearance for Pro Wrestling Australia (PWA) at their Sydney event Call to Arms. Originally scheduled to face PWA Heavyweight Champion Robbie Eagles in a non-title match for the main event, Eagles made the last-minute decision to put his title on the line. Ospreay ultimately defeated Eagles and won the PWA Heavyweight Championship for the first time. Afterwards, Ospreay announced that he was moving to Australia and would begin working regularly for PWA and other local independent promotions. Ospreay stated that he felt he could help the Australian wrestling scene grow, while the U.K. scene did not need him. Days later, Ospreay faced Adam Brooks in the main event of a Melbourne City Wrestling show, Ballroom Brawl; defeating him to win the MCW Intercommonwealth Championship.", "hl": []}], "other": [{"h": "Strong Women's Championship > History", "t": "In 2022, New Japan Pro-Wrestling (NJPW) established a women's division. On July 29 of that year, the promotion created the IWGP Women's Championship, the first women's title in the company's history, which was first held by Kairi. The championship was created to be the top title of NJPW's women's division and was intended to be defended on NJPW events in Japan and on events promoted by NJPW's Japanese sister company World Wonder Ring Stardom (Stardom), a joshi puroresu promotion.  On April 27, 2023, NJPW announced the creation of the Strong Women's Championship, the top women's championship of the promotion's American subsidiary Strong Live. The promotion additionally announced a four-woman single-elimination tournament to determine the inaugural champion to be held at Resurgence on May 21, in Long Beach, California. The tournament featured representatives from NJPW's partners All Elite Wrestling (AEW), Consejo Mundial de Lucha Libre (CMLL), and Stardom. The tournament participants were former IWGP Women's Champion Mercedes Moné (NJPW), Momo Kohgo (Stardom), Stephanie Vaquer (CMLL), and Willow Nightingale (AEW). At Resurgence, Nightingale became the inaugural champion by defeating Moné in the finals.", "hl": []}, {"h": "Total Nonstop Action Wrestling > Partnerships", "t": "In early 2006, the promotion began a collaboration with Hermie Sadler 's United Wrestling Federation. The agreement permitted UWF to use the TNA logo on posters and signage, as well as to use the six-sided ring with TNA branding. These shows were mainly promoted as 'UWF/TNA' events. The TNA name agreement ended at the end of 2006, as TNA began to promote their own house show events, though UWF still used a six-sided ring. These events were recorded and released on DVD by Highsports. They would continue to work with United Wrestling Federation and promote independent shows at the same time until 2007. TNA has worked with several wrestling promotions, with championships from those promotions sometimes having been defended at TNA events. Among the organizations TNA has had working relationships with are Mexico's Consejo Mundial de Lucha Libre (CMLL) from 2007 to 2009 and The Crash, Japan's Inoki Genome Federation (IGF), New Japan Pro-Wrestling (NJPW), Wrestle-1 (W-1), Pro Wrestling Noah (Noah), United States' the original Global Force Wrestling (another promotion founded by Jeff Jarrett), OMEGA Championship Wrestling (owned by Matt Hardy, Jeff Hardy and Gregory Helms) and Evolve Wrestling.  The initial relationship with NJPW lasted from 2008 to 2011. Then-known as TNA, the promotion would send wrestlers to participate in NJPW's annual Wrestle Kingdom events, as well as NJPW sending future IWGP Heavyweight Champion Kazuchika Okada on a training excursion to TNA. The relationship would be strained, when IWGP Tag Team Champions Team 3D were held off of a New Japan tour in favor of appearing on Impact Wrestling tapings and Okada was given the gimmick of \"Okato\", where he dressed similar to The Green Hornet 's sidekick Kato. a decision Executive Vice President Scott D'Amore has since apologized for on behalf of the previous regime. In February 2021, Impact would re-establish its relationship with NJPW, with NJPW later forgiving the incidents that happened under the previous regime. This partnership would last until December 2024, when NJPW's contract to air on TNA's co-owned TV home AXS TV expired, and was not renewed.  On March 2, 2014, TNA collaborated with Wrestle-1 in producing the Kaisen: Outbreak supershow in Tokyo, Japan, where three TNA championships were defended. In May 2015, it was reported that the relationship between TNA and Wrestle-1 had ended. Since 2015, the promotion has had a working agreement with Mexico's Lucha Libre AAA Worldwide (AAA) and in 2018, announced a partnership with the AAA-affiliated Lucha Underground, allowing their wrestlers from the show to appear for Impact on a regular basis. In April 2018, the two promotions held Impact vs Lucha Underground from WrestleCon in New Orleans to a sell out crowd. On November 26, 2023, Impact and partner promotion Lucha Libre AAA Worldwide (AAA), co-promoted the Ultra Clash supershow in the Monterrey, Mexico area, marking Impact's first show in Mexico since 2019.  Since 2018, Impact has established working relationships with a number of promotions to co-promote house shows, Twitch specials, the final Impact One Night Only events, and Impact Plus Monthly Specials. These promotions include, Future Stars of Wrestling, Smash Wrestling, AML Wrestling, Superkick'd, Border City Wrestling, WrestleCade, Rocky Mountain Pro, Rockstar Pro Wrestling, Wrestlepro, Wrestling Revolver, RISE, Destiny Wrestling, Big Time Wrestling (California), DEFY Wrestling and House of Hardcore. Impact Wrestling would begin a partnership with All Elite Wrestling (AEW) in December 2020, with its wrestlers and titles appearing on Impact programming. In October 2021, the working relationship between Impact and AEW quietly ended following Bound for Glory.  On the January 7, 2022, episode of SmackDown, it was announced that Knockouts Champion Mickie James would enter the 2022 Royal Rumble match. Both WWE 's official Twitter account and Impact's website confirmed this soon after, with the former recognizing James as an Impact champion. Two years later, Knockouts Champion Jordynne Grace would enter in the Royal Rumble. In 2024, TNA and WWE began a wider talent exchange, with several TNA wrestlers appearing on WWE's NXT brand, and NXT wrestlers making periodic appearances at TNA events. On January 16, 2025, WWE announced a multi-year partnership with TNA that allows NXT wrestlers and TNA wrestlers to appear in NXT shows, TNA iMPACT!, select WWE Premium Live Events, and TNA pay-per-views.", "hl": []}, {"h": "Fantastica Mania 2017 > Background", "t": "The 2017 Fantastica Mania tour was the seventh year in a row where Japanese wrestling promotion New Japan Pro-Wrestling (NJPW) promoted a series of shows in Japan alongside their Mexican partner promotion Consejo Mundial de Lucha Libre (CMLL). The 2017 tour was shows 25 to 31, a total of seven shows.  The tour was officially announced on October 24, 2016. Originally, NJPW confirmed the locations of six shows with a seventh pending confirmation. The seventh show was officially announced on November 4. The shows take place in Osaka, Kyoto and Tokyo, all of which had previously hosted Fantastica Mania events, as well as Matsuyama and Nagoya, which host their first events. The three final shows in Tokyo would air live through NJPW's internet streaming site, NJPW World.  NJPW announced the CMLL wrestlers taking part in the tour on October 30. Included were returning wrestlers Atlantis, Bárbaro Cavernario, Dragon Lee, Euforia, Hechicero, Máximo Sexy, Místico, Okumura, Stuka Jr., Titán, Último Guerrero and Volador Jr. and debuting wrestlers Blue Panther Jr., Ephesto, Raziel and Soberano Jr. Also announced for the tour was CMLL ring announcer Evan. On November 21, Rush was added to the tour, three days after he had made his surpri", "hl": []}], "tmin": 111.9}, {"id": "qc39c2c", "persp": "논쟁·한계 (controversy / limitation)", "q": "What criticisms did contemporaries or commentators raise about Johnson's control, temperament, or interactions with hitters?", "ans": "Early in his career Johnson struggled with control, a criticism noted in summaries of his career as he \"initially struggled with control\" before improving.[1] Opponents sometimes described facing him as intimidating: Larry Walker said in spring training that Johnson \"almost killed me,\" and Walker avoided facing him in a regular-season start, reflecting hitters' fears of Johnson's power and perceived danger.[2] Adam Dunn described facing Johnson as a \"hopeless\" experience where pitches felt like they might hit the back of the neck, illustrating hitter perceptions of intimidation from his delivery and velocity.[3]", "cited": [{"n": 1, "h": "Randy Johnson > Abstract", "t": "Randall David Johnson (born September 10, 1963), nicknamed \" the Big Unit,\" is an American former professional baseball pitcher who played 22 seasons in Major League Baseball (MLB) (1988–2009) for six teams, primarily the Seattle Mariners and Arizona Diamondbacks.  At 6 feet 10 inches (2.08 metres) tall, Johnson was the tallest player in MLB history when he entered the league, contributing to his intimidating persona and pitching style. As a player, he was especially known for his overpowering fastball and devastating slider, a combination that remained effective throughout his lengthy career. While he initially struggled with control in his early seasons, Johnson subsequently established himself as one of the most dominant pitchers of his era, leading his league in strikeouts nine times, and in earned run average, winning percentage, and complete games four times each. Along with teammate Curt Schilling, Johnson was one of two World Series Most Valuable Players in 2001; in the Series, Johnson won three games and led the Diamondbacks to a World Series victory over the New York Yankees in the fourth season of the team's existence. He won the pitching Triple Crown in 2002.  Johnson's 303 career victories are the fifth-most by a left-hander in MLB history, while his 4,875 strikeouts place him second all time behind Nolan Ryan and first among left-handers. He recorded 300 strikeouts in a season six different times, a major league record tied with Ryan. Johnson is a ten-time All-Star, won the Cy Young Award five times, and is one of only two pitchers (along with Greg Maddux) to win the award in four consecutive seasons (1999–2002). Johnson won Cy Young Awards in both leagues. He is also one of five pitchers to pitch no-hitters in both leagues, and one of 25 pitchers in history to record a win against all 30 MLB franchises.  Johnson enjoyed a career longevity uncommon to pitchers, with his signature fastball-slider combination remaining effective well into his 40s. Four of his six 300-strikeout seasons occurred after his 35th birthday. On May 18, 2004, at 40 years old, he threw MLB's 17th perfect game, becoming the oldest pitcher to accomplish the feat. Johnson retired at the age of 46, and was elected to the Baseball Hall of Fame in 2015 in his first year of eligibility. He is the first member of the Hall to be depicted in a Diamondbacks uniform on his plaque. Johnson's accomplishments and accolades have led to him being widely regarded as one of the greatest pitchers in baseball history. On August 8, 2015, the Diamondbacks retired Johnson's number 51. On May 2, 2026, the Mariners retired Johnson's number 51, making him one of 12 players in MLB history to have his number retired by multiple MLB teams.", "hl": [[601, 882]]}, {"n": 2, "h": "Randy Johnson > Professional career > Seattle Mariners (1989–1998) > 1996−1998", "t": "Johnson was sidelined throughout much of the 1996 season with a back injury but rebounded in 1997 with a 20–4 record, 291 strikeouts, and a 2.28 ERA (his personal best). Between May 1994 and October 1997, Johnson went 53–9, including a 16–0 streak that fell one short of the AL record. Johnson had two 19-strikeout starts in 1997, on June 24 and August 8.  Another colorful All-Star Game moment proceeded in 1997 involving former Expos teammate Larry Walker, then with the Colorado Rockies. When Johnson started a game against the Rockies on June 12, Walker chose not to play, explaining that \"I faced Randy one time in spring training and he almost killed me.\" In the All-Star Game, Walker batted against Johnson, who theatrically threw over his head. Ever adaptable, Walker placed his batting helmet backwards and switched sides in the batters' box to stand right-handed for one pitch. He ended the plate appearance by drawing a walk. The incident momentarily drew mirth and laughter from players in both dugouts, fans, and announcers as well as comparisons to the at bat with Kruk in the 1993 All-Star Game. In spite of garnering a reputation of avoiding Johnson, Walker batted.393 in 28 at bats against him in his career, nearly double the rate of all left-handed batters at.199. When the 1998 season began, Johnson was upset the Mariners would not offer him a contract extension, given his contract was expiring after the season. Though the Mariners initially wanted to keep Johnson, turning down a trade offer from the Los Angeles Dodgers, they fell out of contention, going 8–20 in June. Minutes before the non-waiver trade deadline, on July 31, the Mariners traded Johnson to the Houston Astros for minor leaguers Freddy García, Carlos Guillén, and John Halama. Johnson was a Mariner for nearly nine years, his longest tenure with one team.", "hl": [[491, 752], [1284, 1434]]}, {"n": 3, "h": "Randy Johnson > Pitching style", "t": "In the prime of his career, Johnson's fastball was clocked as high as 102 mph (164 km/h), with a low three-quarters delivery (nearly sidearm). His signature pitch was a slider that broke down and away from left-handed hitters and down and in to right-handed hitters. The effectiveness of the pitch is marked by its velocity being in the low 90s along with tight late break; hitters often believed they were thrown a fastball until the ball broke just before it crossed home plate. Right-handed hitters have swung through and missed sliders that nearly hit their back foot. Johnson dubbed his slider \"Mr. Snappy\". In later years, his fastball declined to the 96 mph (154 km/h) range and his slider clocked at around 87 mph (140 km/h). Johnson also threw a split-finger fastball that behaved like a change-up and a sinker to induce ground balls.  In a 2012 appearance on The Dan Patrick Show, Adam Dunn, a left-handed batter, was asked who the best pitcher he faced was. \"Honestly, Randy Johnson when he was good. It's hopeless. It's like a hopeless feeling. The first time you face him you feel like he's going to hit you right in the back of the neck when he throws it, like every pitch is going to hit you in the back of the neck. And it ends up down and away for a strike and you just have to trust it's going to be a strike, and heaven forbid he doesn't lose one out there and heaven forbid, there goes your cheek,\" Dunn said.", "hl": [[1027, 1056], [1057, 1231]]}], "other": [{"h": "Randy Johnson > Professional career > Arizona Diamondbacks (1999–2004) > 2002–2003", "t": "In 2002, Johnson won the pitching Triple Crown, leading the NL in wins, ERA, and strikeouts, and was voted his fourth consecutive Cy Young and Warren Spahn Awards. It was Johnson's fourth consecutive 300-strikeout season with the Diamondbacks, and fifth consecutive overall, extending his own MLB record from the previous season in which he set the record for the most consecutive seasons with 300 or more strikeouts in a season by a pitcher. He also became the first pitcher in baseball history to post a 24–5 record.  Johnson spent the majority of the 2003 season on the disabled list and was ineffective in the few injury-hampered starts he did make. He hit the only home run of his career on September 19, 2003, against the Milwaukee Brewers. Johnson was a.125 hitter over 625 career at-bats.", "hl": [[747, 796]]}, {"h": "Jason Motte > Professional career > St. Louis Cardinals (2008–2014) > 2014", "t": "On May 21, Motte made his return to the mound after missing 2013, pitching 1 + 1 ⁄ 3 innings of scoreless relief. However, he struggled for the rest of the season and was ultimately left off the Cardinals' postseason roster. In 29 games he was 1-0 with a 4.68 ERA. He became a free agent after they were eliminated by the San Francisco Giants.  In six seasons with the Cardinals, Motte was 18-13 with 54 saves and a 3.03 ERA with 290 strikeouts in 285 innings. He became a free agent following the season.", "hl": []}, {"h": "Chet Johnson > Abstract", "t": "Chester Lillis Johnson (August 1, 1917 – April 10, 1983) was an American professional baseball pitcher who appeared in five games in Major League Baseball for the St. Louis Browns in 1946. Nicknamed \"Chesty Chet,\" he was listed at 6 feet (1.8 m) tall and 175 pounds (79 kg), and threw and batted left-handed. He was born in Redmond, Washington; a younger brother, Earl, also a southpaw, pitched for the Boston Red Sox and the Detroit Tigers for eight seasons between 1940 and 1951.  Chet Johnson attended the University of Washington, where he played college baseball for the Huskies from 1937 – 1939. Johnson entered pro baseball in 1939, and his active career would continue for the next 18 seasons, all of them in the minor leagues, apart from his month-long stint with the Browns in September 1946.  During his MLB trial, Johnson made three starts and appeared twice in relief. He did not register a decision or a save, allowing 20 hits, 13 bases on balls and ten earned runs in 18 innings pitched. He struck out eight. He retired from the game in 1956 as a member of the Sacramento Solons, one of six Pacific Coast League teams he played for during his 13 full or partial seasons in that circuit.", "hl": []}, {"h": "Randy Johnson > Professional career > Arizona Diamondbacks (1999–2004)", "t": "Johnson agreed to a four-year contract, with an option for a fifth year, for $52.4 million, with the Arizona Diamondbacks, a second-year franchise, in late 1998. Johnson led the team to the playoffs in 1999 on the strength of a 17–9 record and 2.48 ERA with 364 strikeouts, leading the majors in innings, complete games, and strikeouts. Johnson won the NL Cy Young Award and Warren Spahn Award as the best left-handed pitcher in MLB. Johnson became the third MLB pitcher, after Gaylord Perry and Pedro Martínez, to win the Cy Young Award in both the AL and NL; Martínez won the AL Cy Young in 1999. Johnson finished 2000 with 19 wins, 347 strikeouts and a 2.64 ERA, and won his second consecutive NL Cy Young Award and Warren Spahn Award. The Diamondbacks acquired Curt Schilling from the Phillies in July 2000, and the two aces anchored the Diamondbacks rotation.", "hl": []}, {"h": "Chris Tillman > Baseball career > Baltimore Orioles", "t": "On May 7, 2015, Tillman surrendered a home run to Alex Rodriguez, which moved Rodriguez into sole possession of fourth place on the all time home run list, surpassing Willie Mays. After struggling greatly in the first half of the season, Tillman started off the second half of the year with one of the most dominant starts of his career, going eight innings, allowing only one hit and no runs, including retiring the last 23 batters he faced, against the Detroit Tigers. In addition, it was Tillman's fourth career outing in which he had allowed one or fewer hits over the course of six-plus innings. In his very next start, he pitched 7.0-plus innings and didn't give up a run until the seventh inning, ending his career-high 16-inning scoreless streak. In his third post-All-Star start, Tillman continued his dominance with a no-run, four hit, 8 2 ⁄ 3 inning performance. His season ERA was lowered to 4.35 (it had been 5.40 going into the second half). However, Tillman struggled through the rest of the season, as he finished 11–11 in 31 starts with a 4.99 ERA. The Orioles finished 81–81 and missed out on the postseason.  Tillman was named the Orioles Opening Day starter for the third consecutive year in 2016. Due to two separate rain delays, Tillman was able to throw only two complete innings. However, he struck out the final five batters he faced, and the Orioles went on to win in the bottom of the ninth 3–2, giving them their sixth consecutive Opening Day victory under manager Buck Showalter. Tillman pitched to a 2–1 and 3.24 ERA in the month of April and seemed to have his consistency, which he lacked in 2015, back. In May, Tillman went 5–0 in six starts, pitching to a 2.72 ERA in 39 2 ⁄ 3 with 37 strikeouts. In addition, he held opponents to a.197 batting average. On June 8, Tillman pitched his best game of the year, going 7 1 ⁄ 3 shutout innings, walking no batters, and tied a career-high with nine strikeouts. It was Tillman's 3rd game on the year with nine strikeouts, and his fourth start pitching at least", "hl": []}], "tmin": 120.0}]}]};
+const TEST = new URLSearchParams(location.search).get("test") === "1";
+const VERSION = D.version + (TEST ? "-test" : "");
+const KEY = D.store_key + (TEST ? "_test" : "");
+const TEST_TMIN = 3;
+const TR = ["안 씀", "문장만", "근거 일부", "근거 전체"];
+const CS = [["C2a", "C2a 지지(인용)"], ["C2b", "C2b 지지(다른 청크)"], ["C1", "C1 미지지"], ["C0", "C0 오류"]];
+const KS = [["K2", "K2 완전"], ["K1", "K1 부분"], ["K0", "K0 비응답"]];
+const S = D.stages;
+const S3 = S.findIndex(s => s.kind === "v" && s.mode === "practice");   // 3단계 위치(보정 참조 시트에는 없음 → -1)
+const IDLE_GAP_MS = 2000;                                               // 한 tick 이 2초를 넘으면(절전·잠금·멈춤) active 가 아니라 idle
+let st = {start: null, it: {}, pos: [0, 0], s3_started_at: ""};
+try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.it) st = s; } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const iso = () => new Date().toISOString();
+const rec = id => st.it[id] || (st.it[id] = {label: "", C: "", K: "", first_label: "", first_C: "", first_K: "",
+  n_changes: 0, active_ms: 0, total_ms: 0, hidden_ms: 0, idle_ms: 0, t_bottom_ms: "", scrolled: 0, max_frac: 0,
+  scroll_events: 0, visits: 0, trans: "", shown_at: "", answered_at: "", locked: 0, confirmed: 0, fold_opens: 0});
+// 3단계를 시작한 뒤(쉬는 화면의 "3단계 시작" 또는 3단계 문항이 한 번이라도 보였으면) 1·2단계는 보기만 된다(§2.4)
+const s2Locked = () => S3 >= 0 && (!!st.s3_started_at || S[S3].items.some(x => st.it[x.id] && st.it[x.id].shown_at));
+const qLocked = s => s.kind === "q" && s2Locked();
+const breakOpen = () => document.getElementById("brk").style.display !== "none";
+const feedbackStage = s => s.mode === "calib" || s.mode === "practice";
+function itemDone(s, x) {
+  const r = st.it[x.id]; if (!r) return false;
+  const a = s.kind === "v" ? !!r.label : (!!r.C && !!r.K);
+  return a && (!feedbackStage(s) || !!r.confirmed);
+}
+const nDone = s => s.items.filter(x => itemDone(s, x)).length;
+const unlocked = k => S.slice(0, k).every(s => nDone(s) === s.items.length);
+let si = 0, i = 0, curId = null, pend = {C: "", K: ""};
+if (Array.isArray(st.pos)) { si = st.pos[0] | 0; i = st.pos[1] | 0; }
+if (!(si >= 0 && si < S.length) || !unlocked(si) || !(i >= 0 && i < S[si].items.length)) { si = 0; i = 0; }
+if (S3 >= 0 && si >= S3 && !s2Locked()) { si = S3 - 1; i = S[si].items.length - 1; }   // 3단계는 "3단계 시작"으로만 연다
+const guideOpen = () => document.getElementById("guide").style.display !== "none";
+const tminEff = x => TEST ? Math.min(TEST_TMIN, x.tmin) : x.tmin;
+
+// ---------- 시간: 직전 tick 의 가시 상태로 dt 를 나눈다(숨겨졌다 돌아온 시간이 active 로 들어가지 않게)
+let last = performance.now(), vis = document.visibilityState === "visible";
+function tick() {
+  const now = performance.now(), dt = now - last; last = now;
+  const wasVis = vis; vis = document.visibilityState === "visible";
+  if (!curId || guideOpen() || breakOpen() || qLocked(S[si])) return;   // 잠긴 1·2단계 문항은 다시 봐도 시간을 더하지 않는다
+  const r = rec(curId);
+  r.total_ms += dt;
+  if (!wasVis) r.hidden_ms += dt;
+  else if (dt > IDLE_GAP_MS) r.idle_ms = (r.idle_ms || 0) + dt;      // 절전·화면 잠금 뒤 깨어난 한 번의 긴 tick
+  else r.active_ms += dt;
+  updateGate();
+}
+document.addEventListener("visibilitychange", () => { tick(); save(); });
+let nt = 0;
+setInterval(() => { tick(); if (++nt % 8 === 0) save(); }, 250);
+
+// ---------- 표시
+function hl(text, spans) {
+  let out = "", p = 0;
+  for (const [a, b] of (spans || [])) { out += esc(text.slice(p, a)) + "<mark>" + esc(text.slice(a, b)) + "</mark>"; p = b; }
+  return out + esc(text.slice(p));
+}
+function renderTabs() {
+  const t = document.getElementById("tabs"); t.innerHTML = "";
+  S.forEach((s, k) => {
+    const b = document.createElement("button"), n = nDone(s);
+    b.className = "tab" + (k === si ? " on" : "") + (n === s.items.length ? " full" : "");
+    b.innerHTML = (unlocked(k) ? "" : "🔒 ") + esc(s.name) + '<span class="c">' + n + "/" + s.items.length + "</span>";
+    if (!unlocked(k)) { b.className += " locked"; b.onclick = () => alert("앞 단계를 끝까지 채워야 열립니다."); }
+    else b.onclick = () => goStage(k, Math.max(0, s.items.findIndex(x => !itemDone(s, x))));
+    t.appendChild(b);
+  });
+}
+function goStage(k, idx) {
+  if (S3 >= 0 && k >= S3 && !s2Locked()) { showBreak(); return; }
+  si = k; i = idx; render();
+}
+function showBreak() { tick(); document.getElementById("brk").style.display = "block"; }
+function viewQ(s, x) {
+  let h = '<div class="meta">관점: <b>' + esc(x.persp) + "</b> · " + esc(x.id) + "</div>";
+  h += '<details id="rules"' + (i === 0 ? " open" : "") + '><summary>판단 기준 (C 정답성 · K 완전성) — 누르면 펼침/접힘</summary>' + D.rubric_html + "</details>";
+  h += "<h2>질문</h2><div class=\"q\">" + esc(x.q) + "</div>";
+  h += "<h2>모델의 답</h2><div class=\"ans\">" + esc(x.ans) + "</div>";
+  h += "<h2>인용된 청크 — 끝까지 스크롤해 주세요</h2><div class=\"ev\" id=\"gatebox\">";
+  h += x.cited.length ? x.cited.map(c => '<div class="ch"><div class="chh">[' + c.n + "] (" + esc(c.h) + ")</div>" + hl(c.t, c.hl) + "</div>").join("")
+                      : '<div class="mut">(답이 인용한 청크가 컨텍스트에 없다)</div>';
+  h += "</div>";
+  h += '<details id="otherctx"><summary>나머지 컨텍스트 (인용되지 않은 청크 ' + x.other.length + "개) — 누르면 펼침</summary>" +
+       x.other.map(c => '<div class="ch"><div class="chh">(' + esc(c.h) + ")</div>" + hl(c.t, c.hl) + "</div>").join("") + "</details>";
+  return h;
+}
+function viewV(s, x) {
+  let h = '<div class="meta">' + esc(x.id) + "</div>";
+  h += '<details id="rules" open><summary>판단 기준 (누르면 접힘)</summary>' + x.rules.split(" / ").map(y => "<p>· " + esc(y) + "</p>").join("") + "</details>";
+  h += "<h2>" + esc(D.h_claim) + '</h2><div class="claim">' + esc(x.claim) + "</div>";
+  h += "<h2>" + esc(D.h_ev) + ' — 끝까지 스크롤해 주세요</h2><div class="ev" id="gatebox">' + esc(x.ev) + "</div>";
+  return h;
+}
+function labButtons(s, x, r) {
+  const L = document.getElementById("lab");
+  if (s.kind === "v") {
+    L.innerHTML = '<div class="grp">' + D.v_labels.map((v, k) =>
+      '<button class="opt b' + (k + 1) + (r.label === v ? " on" : "") + '" data-v="' + esc(v) + '">' + esc(v) + " <kbd>" + (k + 1) + "</kbd></button>").join("") + "</div>";
+    L.querySelectorAll("[data-v]").forEach(b => b.onclick = () => pickV(b.dataset.v));
+  } else {
+    if (!pend.C && r.C) pend.C = r.C; if (!pend.K && r.K) pend.K = r.K;
+    L.innerHTML = '<div class="grp"><span class="lab">C</span>' + CS.map(([v, t]) =>
+      '<button class="opt" data-c="' + v + '">' + esc(t) + "</button>").join("") + "</div>" +
+      '<div class="grp" style="margin-top:6px"><span class="lab">K</span>' + KS.map(([v, t]) =>
+      '<button class="opt" data-k="' + v + '">' + esc(t) + "</button>").join("") +
+      '<span class="sp"></span><button id="saveq">저장하고 다음 →</button></div>';
+    L.querySelectorAll("[data-c]").forEach(b => b.onclick = () => { pend.C = b.dataset.c; markQ(); updateGate(); });
+    L.querySelectorAll("[data-k]").forEach(b => b.onclick = () => { pend.K = b.dataset.k; markQ(); updateGate(); });
+    document.getElementById("saveq").onclick = saveQ;
+    markQ();
+  }
+}
+function markQ() {
+  document.querySelectorAll("[data-c]").forEach(b => b.classList.toggle("on", b.dataset.c === pend.C));
+  document.querySelectorAll("[data-k]").forEach(b => b.classList.toggle("on", b.dataset.k === pend.K));
+}
+function trRow(r) {
+  const T = document.getElementById("trrow");
+  T.innerHTML = '<span class="mut">번역기 사용(필수):</span> ' + TR.map(v =>
+    '<label><input type="radio" name="tr" value="' + esc(v) + '"' + (r.trans === v ? " checked" : "") + "> " + esc(v) + "</label>").join("");
+  T.querySelectorAll("input").forEach(e => e.onchange = () => { rec(curId).trans = e.value; save(); updateGate(); });
+}
+function gateOpen(x, r) { return !!r.scrolled && r.active_ms >= tminEff(x) * 1000 && !!r.trans; }
+function updateGate() {
+  if (!curId) return;
+  const s = S[si], x = s.items[i], r = rec(x.id);
+  const left = Math.max(0, Math.ceil(tminEff(x) - r.active_ms / 1000));
+  const ro = qLocked(s);
+  const ok = gateOpen(x, r) && !ro, lock = (feedbackStage(s) && r.locked) || ro;
+  const msg = [];
+  if (!r.scrolled) msg.push("근거를 끝까지 스크롤");
+  if (left > 0) msg.push("최소 읽기 시간 <b>" + left + "초</b> 남음");
+  if (!r.trans) msg.push("번역기 사용 선택");
+  document.getElementById("gate").innerHTML = (ro ? "3단계를 시작했으므로 1·2단계 답은 더 바꿀 수 없습니다(보기만 됩니다)." :
+    lock ? "첫 답이 잠겼습니다. 아래 참고 답을 보고 \"확인\"을 누르세요." :
+    (ok ? "버튼이 켜졌습니다." : "버튼을 켜려면: " + msg.join(" · "))) + (TEST ? " [TEST MODE: 체류 " + TEST_TMIN + "초]" : "");
+  document.querySelectorAll("#lab button").forEach(b => { b.disabled = !ok || !!lock; });
+  const sv = document.getElementById("saveq");
+  if (sv) sv.disabled = !ok || !!lock || !pend.C || !pend.K;
+  document.querySelectorAll("#trrow input").forEach(e => { e.disabled = !!lock; });
+}
+function onScroll(e) {
+  if (qLocked(S[si])) return;
+  const g = e.target, r = rec(curId);
+  r.scroll_events++;
+  const f = g.scrollHeight > 0 ? Math.min(1, (g.scrollTop + g.clientHeight) / g.scrollHeight) : 1;
+  if (f > r.max_frac) r.max_frac = f;
+  if (!r.scrolled && g.scrollTop + g.clientHeight >= g.scrollHeight - 4) { r.scrolled = 1; r.t_bottom_ms = Math.round(r.active_ms); }
+  updateGate();
+}
+function checkFit() {
+  const g = document.getElementById("gatebox"); if (!g || !curId) return;
+  const r = rec(curId);
+  if (g.scrollHeight <= g.clientHeight + 4) { if (!r.scrolled) { r.scrolled = 1; r.t_bottom_ms = Math.round(r.active_ms); } r.max_frac = 1; }
+  updateGate();
+}
+function showFeedback(s, x, r) {
+  const F = document.getElementById("fb");
+  if (!(feedbackStage(s) && r.locked)) { F.style.display = "none"; F.innerHTML = ""; return; }
+  const ref = s.kind === "v" ? ("참고 라벨: <b>" + esc(x.ref.label) + "</b>")
+    : ("참고 답: <b>" + esc(CS.find(c => c[0] === x.ref.C)[1]) + "</b> · <b>" + esc(KS.find(k => k[0] === x.ref.K)[1]) + "</b>");
+  const mine = s.kind === "v" ? esc(r.first_label) : esc(r.first_C + " · " + r.first_K);
+  F.innerHTML = "내 첫 답: " + mine + " — " + ref + ' <button id="okbtn">확인</button>';
+  F.style.display = "block";
+  document.getElementById("okbtn").onclick = () => { r.confirmed = 1; save(); advance(); };
+}
+function render() {
+  const s = S[si], x = s.items[i];
+  if (curId !== x.id && !guideOpen()) {
+    pend = {C: "", K: ""};
+    const r = rec(x.id); if (!qLocked(s)) r.visits++; if (!r.shown_at) r.shown_at = iso();   // 잠긴 1·2단계 문항은 다시 봐도 기록을 바꾸지 않는다
+    curId = x.id;
+  }
+  const r = rec(x.id);
+  renderTabs();
+  document.getElementById("pos").textContent = s.name + "  " + (i + 1) + " / " + s.items.length;
+  document.getElementById("view").innerHTML = (s.kind === "q" ? viewQ : viewV)(s, x);
+  const g = document.getElementById("gatebox");
+  g.scrollTop = 0; g.addEventListener("scroll", onScroll);
+  const oc = document.getElementById("otherctx");                 // "나머지 컨텍스트" 펼친 횟수(§2.4 ctx_fold_opens)
+  if (oc) oc.addEventListener("toggle", () => { if (oc.open && !qLocked(S[si])) { const rr = rec(x.id); rr.fold_opens = (rr.fold_opens || 0) + 1; save(); } });
+  trRow(r); labButtons(s, x, r); showFeedback(s, x, r);
+  padForFooter();
+  const tot = S.reduce((a, y) => a + y.items.length, 0), got = S.reduce((a, y) => a + nDone(y), 0);
+  let note = "";
+  if (s.mode === "main" && s.kind === "q" && nDone(s) >= Math.floor(s.items.length / 2) && nDone(s) < s.items.length) note = " · 2단계 절반 — 쉬어 가기를 권합니다";
+  if (qLocked(s)) note = " · 3단계 시작 뒤라 이 단계는 보기만 됩니다";
+  document.getElementById("cnt").innerHTML = (got === tot ? '<span class="done">전부 완료 — CSV 를 내려받으세요</span>' : ("전체 " + got + " / " + tot)) + esc(note);
+  document.getElementById("pb").style.width = (100 * got / tot) + "%";
+  st.pos = [si, i]; save();
+  updateGate();
+  requestAnimationFrame(checkFit); setTimeout(checkFit, 120);
+}
+// 고정된 아래 버튼 줄이 페이지 끝("나머지 컨텍스트" 접힘)을 가리지 않게 본문 아래 여백을 버튼 줄 높이에 맞춘다
+function padForFooter() { const f = document.querySelector("footer"); document.getElementById("view").style.paddingBottom = (f.offsetHeight + 32) + "px"; }
+window.addEventListener("resize", padForFooter);
+function commitCommon(r) { r.answered_at = iso(); }
+function pickV(v) {
+  const s = S[si], x = s.items[i], r = rec(x.id);
+  if (!gateOpen(x, r) || (feedbackStage(s) && r.locked)) return;
+  if (!r.first_label) r.first_label = v; else if (r.label !== v) r.n_changes++;
+  r.label = v; commitCommon(r);
+  if (feedbackStage(s)) { r.locked = 1; save(); render(); return; }
+  save(); advance();
+}
+function saveQ() {
+  const s = S[si], x = s.items[i], r = rec(x.id);
+  if (qLocked(s) || !gateOpen(x, r) || !pend.C || !pend.K || (feedbackStage(s) && r.locked)) return;
+  if (!r.first_C) { r.first_C = pend.C; r.first_K = pend.K; }
+  else if (r.C !== pend.C || r.K !== pend.K) r.n_changes++;
+  r.C = pend.C; r.K = pend.K; commitCommon(r);
+  if (feedbackStage(s)) { r.locked = 1; save(); render(); return; }
+  save(); advance();
+}
+function advance() {
+  const s = S[si];
+  if (i < s.items.length - 1) { i++; render(); return; }
+  if (si < S.length - 1 && unlocked(si + 1)) { goStage(si + 1, 0); return; }   // 2단계 끝 → 쉬는 화면
+  render();
+  if (si < S.length - 1) alert("이 단계에 안 채운 문항이 있습니다. \"안 채운 곳으로\"를 누르세요.");
+}
+document.getElementById("prev").onclick = () => { if (i > 0) { i--; render(); } else if (si > 0) { si--; i = S[si].items.length - 1; render(); } };
+document.getElementById("next").onclick = () => {
+  if (i < S[si].items.length - 1) { i++; render(); }
+  else if (si < S.length - 1 && unlocked(si + 1)) goStage(si + 1, 0);
+  else if (si < S.length - 1) alert("이 단계에 안 채운 문항이 있습니다. \"안 채운 곳으로\"를 누르세요.");
+};
+document.getElementById("jump").onclick = () => {
+  for (let k = 0; k < S.length; k++) {
+    if (!unlocked(k)) break;
+    const j = S[k].items.findIndex(x => !itemDone(S[k], x));
+    if (j >= 0) { goStage(k, j); return; }
+  }
+  alert("전부 채웠습니다. \"CSV 내려받기 (전체)\"를 누르세요.");
+};
+document.getElementById("s3btn").onclick = () => {
+  if (S3 < 0 || !unlocked(S3)) return;
+  if (!st.s3_started_at) st.s3_started_at = iso();
+  save(); document.getElementById("brk").style.display = "none"; last = performance.now();
+  si = S3; i = 0; render();
+};
+document.getElementById("brkback").onclick = () => { document.getElementById("brk").style.display = "none"; last = performance.now(); render(); };
+document.onkeydown = e => {
+  if (guideOpen() || breakOpen()) return;
+  const inp = e.target.tagName === "INPUT", radio = inp && e.target.type === "radio";
+  if (inp && !radio) return;                       // 첫 화면 글 칸
+  const s = S[si];
+  if (s.kind === "v" && ["1", "2", "3"].includes(e.key)) { e.preventDefault(); pickV(D.v_labels[+e.key - 1]); return; }
+  if (radio) return;                               // 번역 라디오 위의 ← → 는 라디오 선택 이동(기본 동작)
+  else if (e.key === "ArrowLeft") document.getElementById("prev").click();
+  else if (e.key === "ArrowRight") document.getElementById("next").click();
+};
+
+// ---------- CSV
+const COLS = ["stage", "item_id", "label", "C", "K", "first_label", "first_C", "first_K", "n_changes", "active_ms", "total_ms", "hidden_ms", "t_bottom_ms", "scrolled_to_bottom", "max_scroll_frac", "scroll_events", "revisits", "t_min_s", "translator_used", "translator_tool", "proficiency", "shown_at_iso", "answered_at_iso", "sheet_version", "annotator", "ref_label", "ref_C", "ref_K", "correct_first", "idle_ms", "ctx_fold_opens", "s3_started_at_iso"];
+function buildCsv() {
+  const q = v => '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"';
+  const rows = [COLS.join(",")];
+  const start = st.start || {};
+  S.forEach((s, k) => s.items.forEach(x => {
+    const r = st.it[x.id] || rec(x.id);
+    const v = {stage: k + 1, item_id: x.id, label: s.kind === "v" ? r.label : "", C: s.kind === "q" ? r.C : "", K: s.kind === "q" ? r.K : "",
+      first_label: s.kind === "v" ? r.first_label : "", first_C: s.kind === "q" ? r.first_C : "", first_K: s.kind === "q" ? r.first_K : "",
+      n_changes: r.n_changes, active_ms: Math.round(r.active_ms), total_ms: Math.round(r.total_ms), hidden_ms: Math.round(r.hidden_ms),
+      t_bottom_ms: r.t_bottom_ms, scrolled_to_bottom: r.scrolled ? 1 : 0, max_scroll_frac: (+r.max_frac).toFixed(3),
+      scroll_events: r.scroll_events, revisits: Math.max(0, r.visits - 1), t_min_s: x.tmin, translator_used: r.trans,
+      translator_tool: start.tool || "", proficiency: start.prof || "", shown_at_iso: r.shown_at, answered_at_iso: r.answered_at,
+      sheet_version: VERSION, annotator: D.annotator, ref_label: "", ref_C: "", ref_K: "", correct_first: "",
+      idle_ms: Math.round(r.idle_ms || 0), ctx_fold_opens: s.kind === "q" ? (r.fold_opens || 0) : "", s3_started_at_iso: st.s3_started_at || ""};
+    if (feedbackStage(s)) {
+      if (s.kind === "v") { v.ref_label = x.ref.label; v.correct_first = r.first_label ? (r.first_label === x.ref.label ? 1 : 0) : ""; }
+      else { v.ref_C = x.ref.C; v.ref_K = x.ref.K; v.correct_first = r.first_C ? ((r.first_C === x.ref.C && r.first_K === x.ref.K) ? 1 : 0) : ""; }
+    }
+    rows.push(COLS.map(c => q(v[c])).join(","));
+  }));
+  return rows.join("\r\n");
+}
+if (TEST) {                                        // 시험 판(?test=1)에서만 콘솔 훅을 연다(실제 시트에는 없음)
+  window.buildCsv = buildCsv;
+  window.__r3 = {state: () => st, pos: () => [si, i], tminEff, unlocked, s2Locked, TEST, VERSION, KEY};
+}
+document.getElementById("dl").onclick = () => {
+  const blob = new Blob(["\ufeff" + buildCsv()], {type: "text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = D.csv_name; a.click();
+};
+
+// ---------- 첫 화면
+const G = document.getElementById("guide");
+if (st.start) { document.getElementById("g_tool").value = st.start.tool; document.getElementById("g_prof").value = st.start.prof; }
+const startOk = () => document.getElementById("g_tool").value.trim() && document.getElementById("g_prof").value.trim();
+const sb = document.getElementById("startbtn");
+const syncStart = () => { sb.disabled = !startOk(); };
+["g_tool", "g_prof"].forEach(id => document.getElementById(id).oninput = syncStart); syncStart();
+sb.onclick = () => {
+  if (!startOk()) return;
+  const t = document.getElementById("g_tool").value.trim(), p = document.getElementById("g_prof").value.trim();
+  st.start = Object.assign({started_at: iso()}, st.start || {}, {tool: t, prof: p});
+  save(); G.style.display = "none"; last = performance.now(); render();
+};
+document.getElementById("guidebtn").onclick = () => { tick(); G.style.display = "block"; };
+if (TEST) document.body.insertAdjacentHTML("afterbegin", '<div class="testbanner">TEST MODE (?test=1) — 체류 하한 ' + TEST_TMIN + "초, 기록에 -test 표시. 실제 판정에 쓰지 마세요</div>");
+render();
+
+})();
+</script></body></html>

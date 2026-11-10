@@ -9,8 +9,15 @@ __pycache__/
 .pytest_cache/
 .venv/
 data/_*.log
+data_c2/raw/
+data_c2/*.parquet
+data_c2/index/
+data_c2/_*.log
 
 # 원고는 저장소에 두지 않는다 (로컬에는 그대로 있음)
 MANUSCRIPT_FIXES.md
 specs_from_chat/manuscript_PartialRewind_*
 HANDOFF_TO_CLAUDE.md
+
+# R3 시험 빌드(배포 금지, 봉인 키 포함)
+results/r3/_test_build/
