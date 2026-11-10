@@ -1,0 +1,68 @@
+[
+ {
+  "finished_at": "2026-11-11T04:24:13",
+  "usage": {
+   "calls": 723,
+   "cache_hits": 0,
+   "api_calls": 723,
+   "tokens_in": 989009,
+   "tokens_out": 536832,
+   "billed_tokens_in": 989009,
+   "billed_tokens_out": 536832,
+   "billed_tokens_in_cached": 17152,
+   "billed_tokens_reasoning": 201744,
+   "latency_ms": 5972975,
+   "by_tag": {
+    "decompose": {
+     "calls": 22,
+     "cache_hits": 0,
+     "tokens_in": 4334,
+     "tokens_out": 16717
+    },
+    "answer": {
+     "calls": 264,
+     "cache_hits": 0,
+     "tokens_in": 805248,
+     "tokens_out": 296126
+    },
+    "claims": {
+     "calls": 247,
+     "cache_hits": 0,
+     "tokens_in": 123501,
+     "tokens_out": 127768
+    },
+    "paraphrase": {
+     "calls": 176,
+     "cache_hits": 0,
+     "tokens_in": 35096,
+     "tokens_out": 82292
+    },
+    "paraphrase_repair": {
+     "calls": 1,
+     "cache_hits": 0,
+     "tokens_in": 329,
+     "tokens_out": 344
+    },
+    "answer_repair": {
+     "calls": 8,
+     "cache_hits": 0,
+     "tokens_in": 4652,
+     "tokens_out": 5688
+    },
+    "answer_retry": {
+     "calls": 5,
+     "cache_hits": 0,
+     "tokens_in": 15849,
+     "tokens_out": 7897
+    }
+   }
+  },
+  "scorer_cumulative": {
+   "calls": 2003,
+   "violations": 0,
+   "cpu_fallbacks": 0,
+   "cpu_fallback_doc_chars": [],
+   "max_input_tokens": 2024
+  }
+ }
+]
