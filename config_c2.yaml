@@ -1,0 +1,128 @@
+# C2 (PREREG_R3 §4.3): config.yaml 에서 §4.3 표의 키만 바꾼 사본. 손으로 고치지 말고 experiments/c2_config_diff.py --write 로 만든다.
+# LFM M1 — Test A 설정. 코드에 하드코딩 금지, 모든 파라미터는 여기서 주입한다.
+# SPEC_M1_TestA_v1.1.md §7 의 필수 키를 전부 포함한다.
+
+seed: 42
+
+paths:
+  data_dir: data_c2
+  raw_dir: data_c2/raw
+  index_dir: data_c2/index
+  index_dir_partial: null   # C2: partial 진단 없음
+  results_dir: results
+  cache_dir: .cache/llm_c2
+  cache_dir_ro: null   # C2: 읽기 전용 캐시 없음 — 분해는 토픽마다 한 번 라이브 (PREREG_R3 §4.4)
+
+data:
+  hf_dataset: librarian-bots/arxiv-metadata-snapshot   # C2: C-L 에서 고정, data_c2/MANIFEST_C2.json 과 같아야 한다
+  hf_config: default   # C2: C-L 에서 고정, data_c2/MANIFEST_C2.json 과 같아야 한다
+  hf_revision: PENDING_C_L   # C2: C-L 에서 고정, data_c2/MANIFEST_C2.json 과 같아야 한다
+  hf_file_glob: data/train-*.parquet   # C2: C-L 에서 고정, data_c2/MANIFEST_C2.json 과 같아야 한다
+  language: en
+  max_articles: 150000            # SPEC v1.1 기본값 30000 에서 상향.
+                                  # 30000 으로는 교차 도메인 토픽 후보가 28개뿐이었다
+                                  # (기준: 관련문서>=30 & infobox 유형>=3). HANDOFF §4 의
+                                  # "커버리지 미달이면 max_articles 를 올려 P1 부터 재실행" 경로.
+  row_groups_per_shard: 3         # 샤드당 range-read 할 row group 수 (층화 표집 폭)
+  min_abstract_chars: 400   # C2: 초록 400자 미만 제외 (§4.2)
+  min_chunks_per_topic: 20
+  n_topics: 28   # C2: pilot3 + heldout25
+
+topics:                           # SPEC §2.3 교차 도메인 후보 선별 임계
+  min_related_docs: 30            # 코퍼스 내 관련 문서 하한. min_chunks_per_topic 보다 넉넉히
+  min_infobox_types: 3            # "서로 다른 3개 이상 하위주제" 의 조작적 정의
+  min_term_hits: 2                # 이웃 판정: 변별력 용어 중 몇 개를 담아야 하는가
+  n_terms: 5                      # target 당 변별력 용어 수
+  df_lo: 20                       # 변별력 용어의 문서빈도 하한 (이웃이 생길 만큼)
+  df_hi: 3000                     # 상한 (기능어 배제)
+  min_target_abstract_chars: 1000   # C2
+  min_target_section_chars: 0   # C2: 본문 없음 (초록 = 유일한 섹션)
+  min_target_references: 0   # C2: references 는 빈 목록 열
+  max_per_infobox_type: 2   # C2: 주 분류당 최대 2
+  min_archives: 2                 # C2 신규: 이웃 문서의 서로 다른 archive(분류의 점 앞 접두사) 하한
+  max_per_archive: 8              # C2 신규: target 주 분류의 archive 당 후보 상한
+  n_candidates: 60   # C2: 28개 승인 + 예비 (모자라면 120 으로 한 번, 이탈)
+  min_term_len: 4
+  batch_size: 10                  # 문구 생성 배치당 후보 수
+
+heldout:
+  mode: full                      # {full, partial}. partial 은 SPEC M1-D C3 진단 전용 —
+                                  # target article 의 abstract/lead 섹션만 빼고 본문은 남긴다.
+                                  # leakage 를 완화하는 조건이므로 본실험에 쓰지 않는다.
+  near_dup_jaccard: 0.6           # C2 신규: 초록 내용어 자카드 >= 이 값인 문서도 held-out (§4.2)
+
+retrieval:
+  backend: bm25s                  # 변경 #5. {bm25s, rank_bm25}
+  top_k: 5
+  retry_k_multiplier: [1, 2, 3]   # 변경 #1. 라운드별 검색 폭 배수
+  max_chunks: 4000000
+  chunk_max_tokens: 1200          # 섹션이 이 값을 넘으면 문단 분할
+
+llm:
+  provider: openai                # 상용 API 는 OpenAI 만 (CLAUDE.md 모델 정책)
+  model: gpt-5-mini
+  max_tokens: 2000                # reasoning + 가시 출력의 합산 상한이다 (아래 주석 참고)
+  reasoning_effort: low           # gpt-5-mini 는 추론 모델. 기본값(medium)은 출력 토큰의
+                                  # 84%를 reasoning 에 쓰고 가시 답안은 630자로 눌린다.
+                                  # {minimal, low, medium, high}. null 이면 요청에서 생략.
+                                  # 전 시스템 공통 고정 변인이다 — 조건별로 바꾸지 마라.
+  temperature: null               # null 이면 요청에서 생략한다 (모델별 지원 차이 회피)
+  max_tokens_param: auto          # {auto, max_tokens, max_completion_tokens}
+  timeout_s: 120
+  max_retries: 4
+  cache_enabled: true
+  cache_policy: live              # R2: {live, cache_only}. cache_only 는 캐시 미스를 예외로 막는다
+  decompose_model: null           # R2: 분해 호출의 모델. null 이면 llm.model. N arm 은 Test A 분해 모델로 고정
+
+perspectives:
+  min_sub_questions: 3            # SPEC §3.2 — role 당 3~5개
+  max_sub_questions: 5
+
+branch:
+  max_context_chars: 12000        # 생성 프롬프트에 싣는 청크 본문 상한
+  max_claims: 20
+  max_claim_chars: 8000
+  truncation_retry_mult: 2        # 응답이 잘리면 max_tokens 를 이 배수로 올려 1회 재시도
+  prompt_mode: legacy             # R2: {legacy, status}. status = 기권 명시형 ANSWER_PROMPT_E
+
+nli:
+  model: cross-encoder/nli-deberta-v3-base
+  device: auto                    # {auto, cuda, cpu}. GPU 없으면 base 강제
+  batch_size: 16
+  tau_ground: 0.5
+
+estimator:
+  # SPEC_M1prime §1. 기본은 nli_max — 바꾸면 Test A~D14 재현이 조용히 깨진다.
+  # M1′ 만 실행 시 minicheck_doc 으로 덮어쓴다.
+  kind: nli_max                   # {nli_max, minicheck_doc}
+  tau: 0.5                        # minicheck_doc 은 **엄격 초과** (> 0.5)
+
+verify:
+  tau_g_global: 0.80              # 변경 #2 — primary_tau 와 동일하게 고정
+  tau_c_global: 0.80
+
+sweep:
+  tau: [0.7, 0.8, 0.9]
+  primary_tau: 0.8
+  bootstrap_n: 1000
+
+run:
+  branch_workers: 4               # 한 라운드의 4개 branch 를 병렬 실행. 결과는 직렬과 동일
+  seed: null                      # R2: 생성 단계 반복 seed. null 이면 nonce 불변 (Test A 키)
+  family: null                    # R2: 프롬프트 계열 {L, E}. nonce 접두사 s{seed}|{family}|
+  arm: null                       # R2: arm 이름. 값이 있으면 branch 회계 필드를 채운다
+                                  # (캐시 키가 결정론, 호출 회계는 스레드-로컬)
+
+controller:                        # R2. 기본은 Test A 의 GlobalRetry
+  kind: global_retry              # {global_retry, freeze_retry}
+  granularity: branch             # freeze_retry 만: {branch, subq}
+
+budget:                            # R2: 청구 토큰 하드 스톱. null 이면 없음
+  max_billed_in: null
+  max_billed_out: null
+
+max_rounds: 3
+
+retry_directives:                 # 변경 #1. 키는 라운드 번호(int)
+  1: "이전 시도는 근거가 부족했다. 다른 하위 질문 각도와 다른 출처를 우선하라."
+  2: "앞선 두 시도가 실패했다. 하위 질문을 더 구체적인 사실 단위로 쪼개고 인용을 늘려라."
