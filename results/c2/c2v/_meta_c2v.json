@@ -1,0 +1,12 @@
+{
+ "spec": "PREREG_R3 §4.6 C-G7",
+ "run_dir": "results/c2/heldout25",
+ "seed_run": 1,
+ "rng_seed": 4504,
+ "n_units": 2558,
+ "N_sup": 653,
+ "N_uns": 1905,
+ "n_items": 40,
+ "sheet_version": "c2v_sheet_v1",
+ "html_sha256": "209d1893e96108a37df1ab8b4cea557c317748125d03b5437bc44335ec64aeab"
+}
