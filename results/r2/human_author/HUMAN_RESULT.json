@@ -1,0 +1,1079 @@
+{
+ "labels_csv": "results/r2/human_author/labels_merged_authorH4.csv",
+ "n_boot": 10000,
+ "boot_seed": 42,
+ "kappa": {
+  "vprime50": {
+   "n": 50,
+   "kappa3": 0.024390243902439046,
+   "kappa3_ci95": [
+    -0.12293902894236107,
+    0.1635687732342008
+   ],
+   "kappa2": 0.024390243902439046,
+   "kappa2_ci95": [
+    -0.12293902894236107,
+    0.1635687732342008
+   ],
+   "binary_positive": "지지",
+   "agree3": 0.36,
+   "agree2": 0.36,
+   "confusion_rows_author_cols_colleague": {
+    "지지": {
+     "지지": 10,
+     "불지지": 30,
+     "판단불가": 0
+    },
+    "불지지": {
+     "지지": 2,
+     "불지지": 8,
+     "판단불가": 0
+    },
+    "판단불가": {
+     "지지": 0,
+     "불지지": 0,
+     "판단불가": 0
+    }
+   },
+   "marginals": {
+    "author": {
+     "불지지": 10,
+     "지지": 40
+    },
+    "colleague": {
+     "불지지": 38,
+     "지지": 12
+    }
+   },
+   "by_cell": {
+    "N1": {
+     "n": 12,
+     "agree": 0.16666666666666666,
+     "author": {
+      "불지지": 3,
+      "지지": 9
+     },
+     "colleague": {
+      "불지지": 11,
+      "지지": 1
+     }
+    },
+    "N2": {
+     "n": 4,
+     "agree": 0.25,
+     "author": {
+      "지지": 3,
+      "불지지": 1
+     },
+     "colleague": {
+      "지지": 2,
+      "불지지": 2
+     }
+    },
+    "P1": {
+     "n": 13,
+     "agree": 0.6153846153846154,
+     "author": {
+      "지지": 12,
+      "불지지": 1
+     },
+     "colleague": {
+      "지지": 7,
+      "불지지": 6
+     }
+    },
+    "P2": {
+     "n": 21,
+     "agree": 0.3333333333333333,
+     "author": {
+      "지지": 16,
+      "불지지": 5
+     },
+     "colleague": {
+      "불지지": 19,
+      "지지": 2
+     }
+    }
+   },
+   "minicheck_on_50": {
+    "author": {
+     "registered_operator": {
+      "unweighted": {
+       "precision": 0.8235294117647058,
+       "recall": 0.7
+      },
+      "weighted": {
+       "precision": 0.7905748098055789,
+       "recall": 0.7182662538699689
+      }
+     },
+     "dedup_operator": {
+      "unweighted": {
+       "precision": 0.8461538461538461,
+       "recall": 0.825
+      },
+      "weighted": {
+       "precision": 0.8185611680925807,
+       "recall": 0.8584051327589379
+      }
+     }
+    },
+    "colleague": {
+     "registered_operator": {
+      "unweighted": {
+       "precision": 0.2647058823529412,
+       "recall": 0.75
+      },
+      "weighted": {
+       "precision": 0.1740807269653424,
+       "recall": 0.7683488466994423
+      }
+     },
+     "dedup_operator": {
+      "unweighted": {
+       "precision": 0.23076923076923078,
+       "recall": 0.75
+      },
+      "weighted": {
+       "precision": 0.15081759614907836,
+       "recall": 0.7683488466994423
+      }
+     }
+    }
+   }
+  },
+  "anchor25": {
+   "n": 25,
+   "kappa3": 0.05303030303030297,
+   "kappa3_ci95": [
+    -0.16525423728813532,
+    0.33862433862433877
+   ],
+   "kappa2": 0.03846153846153849,
+   "kappa2_ci95": [
+    -0.20192307692307704,
+    0.3119266055045872
+   ],
+   "binary_positive": "답함",
+   "agree3": 0.6,
+   "agree2": 0.6,
+   "confusion_rows_author_cols_colleague": {
+    "답함": {
+     "답함": 14,
+     "일부": 1,
+     "답안함": 0
+    },
+    "일부": {
+     "답함": 7,
+     "일부": 1,
+     "답안함": 0
+    },
+    "답안함": {
+     "답함": 2,
+     "일부": 0,
+     "답안함": 0
+    }
+   },
+   "marginals": {
+    "author": {
+     "답함": 15,
+     "일부": 8,
+     "답안함": 2
+    },
+    "colleague": {
+     "답함": 23,
+     "일부": 2
+    }
+   }
+  },
+  "pooled_binary_kappa_75": -0.08620689655172416,
+  "bar": 0.6,
+  "rule": "κ < 0.60 → 라벨러별 결과를 함께 내고 '신뢰도 제한'(PREREG §9)",
+  "min_kappa3": 0.024390243902439046,
+  "reliability_limited": true
+ },
+ "h4_support": {
+  "n_rows": 46,
+  "n_supported": 33,
+  "missing_chunks": [],
+  "sentences": {
+   "E-SQ/1/t026/technical_mechanism/3": [
+    true,
+    true,
+    true
+   ],
+   "E-R1/1/t026/technical_mechanism/3": [
+    true,
+    true,
+    true
+   ],
+   "E-SQ/1/t005/technical_mechanism/2": [
+    true
+   ],
+   "E-R1/1/t005/technical_mechanism/2": [
+    true
+   ],
+   "E-SQ/1/t036/impact_application/0": [
+    true,
+    true,
+    true
+   ],
+   "E-R1/1/t036/impact_application/0": [
+    true,
+    true,
+    true
+   ],
+   "E-GR/2/t036/overview_factual/0": [
+    false,
+    true,
+    false,
+    true,
+    true
+   ],
+   "E-GR/2/t043/technical_mechanism/3": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "E-GR/1/t041/technical_mechanism/0": [
+    true
+   ],
+   "E-R1/1/t041/controversy_limitation/0": [
+    false
+   ],
+   "E-GR/2/t005/overview_factual/0": [
+    true
+   ],
+   "E-R1/1/t000/overview_factual/2": [
+    false
+   ],
+   "E-GR/3/t023/controversy_limitation/3": [
+    true,
+    true,
+    true
+   ],
+   "E-SQ/3/t036/overview_factual/0": [
+    false,
+    false,
+    true,
+    true,
+    true
+   ],
+   "E-SQ/1/t041/technical_mechanism/0": [
+    true,
+    true
+   ],
+   "E-SQ/1/t024/impact_application/1": [
+    true
+   ],
+   "E-SQ/2/t034/overview_factual/2": [
+    true
+   ],
+   "E-R1/2/t034/overview_factual/2": [
+    true
+   ],
+   "E-GR/1/t005/technical_mechanism/2": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "E-SQ/2/t043/impact_application/1": [
+    true,
+    true,
+    true
+   ],
+   "E-R1/2/t043/impact_application/1": [
+    true,
+    true,
+    true
+   ],
+   "E-SQ/1/t001/controversy_limitation/0": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "E-R1/1/t001/controversy_limitation/0": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "E-GR/1/t041/controversy_limitation/0": [
+    true,
+    true,
+    true,
+    false
+   ],
+   "E-GR/1/t000/overview_factual/2": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "E-R1/2/t043/technical_mechanism/3": [
+    false,
+    false,
+    true
+   ],
+   "E-GR/3/t036/overview_factual/0": [
+    true,
+    true,
+    false,
+    true,
+    true,
+    false,
+    true,
+    false,
+    false,
+    true
+   ],
+   "E-R1/3/t023/controversy_limitation/3": [
+    false,
+    false,
+    true
+   ],
+   "E-SQ/2/t043/controversy_limitation/0": [
+    true,
+    true
+   ],
+   "E-R1/2/t043/controversy_limitation/0": [
+    true,
+    true
+   ],
+   "E-SQ/2/t002/impact_application/3": [
+    true
+   ],
+   "E-R1/2/t002/impact_application/3": [
+    true
+   ],
+   "E-SQ/3/t023/controversy_limitation/3": [
+    true,
+    true,
+    true
+   ],
+   "E-R1/2/t036/overview_factual/0": [
+    true,
+    true,
+    false,
+    true,
+    true,
+    false
+   ],
+   "E-SQ/2/t030/overview_factual/4": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "E-R1/2/t030/overview_factual/4": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "E-GR/1/t026/technical_mechanism/3": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "E-R1/3/t036/overview_factual/0": [
+    true,
+    true,
+    false,
+    true,
+    true,
+    false
+   ],
+   "E-SQ/2/t043/controversy_limitation/1": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "E-SQ/2/t036/overview_factual/0": [
+    true,
+    true,
+    false,
+    true,
+    false,
+    true,
+    true,
+    true
+   ],
+   "E-SQ/2/t043/technical_mechanism/3": [
+    false,
+    false,
+    true,
+    false
+   ],
+   "E-SQ/2/t005/technical_mechanism/3": [
+    true
+   ],
+   "E-R1/2/t005/technical_mechanism/3": [
+    true
+   ],
+   "E-SQ/3/t052/controversy_limitation/1": [
+    true,
+    true
+   ],
+   "E-GR/2/t027/impact_application/0": [
+    true,
+    true,
+    false
+   ],
+   "E-SQ/1/t041/controversy_limitation/0": [
+    true,
+    true,
+    true,
+    true
+   ]
+  }
+ },
+ "h4": {
+  "n_slots": 120,
+  "arm_abstention": {
+   "E-SQ": {
+    "abstain_rate_weighted": 0.8418949771689498,
+    "n_abstain": 101,
+    "n_nonempty": 19
+   },
+   "E-GR": {
+    "abstain_rate_weighted": 0.9077625570776257,
+    "n_abstain": 109,
+    "n_nonempty": 11
+   },
+   "E-R1": {
+    "abstain_rate_weighted": 0.866324200913242,
+    "n_abstain": 104,
+    "n_nonempty": 16
+   }
+  },
+  "human_labels_by_arm": {
+   "E-SQ": {
+    "답함": 17,
+    "답안함": 1,
+    "일부": 1
+   },
+   "E-GR": {
+    "답함": 10,
+    "일부": 1
+   },
+   "E-R1": {
+    "답함": 15,
+    "답안함": 1
+   }
+  },
+  "answered_but_not_supported": {
+   "E-SQ": 3,
+   "E-GR": 4,
+   "E-R1": 6
+  },
+  "inferable_items": [
+   "h4002",
+   "h4012",
+   "h4013"
+  ],
+  "comparisons": {
+   "E-SQ_vs_E-GR": {
+    "all": {
+     "a": "E-SQ",
+     "b": "E-GR",
+     "n_slots": 120,
+     "n_topics": 35,
+     "excluded_items": [],
+     "ua_a": 0.11621004566210046,
+     "ua_b": 0.05034246575342466,
+     "diff": 0.0658675799086758,
+     "ci90": [
+      0.02758424013380471,
+      0.10465307579004748
+     ],
+     "delta": 0.1,
+     "noninferior": true,
+     "equivalent": false,
+     "sensitivity": {
+      "0.05": {
+       "noninferior": true,
+       "equivalent": false
+      },
+      "0.2": {
+       "noninferior": true,
+       "equivalent": true
+      }
+     },
+     "ratio": 2.308390022675737,
+     "ratio_ci90": [
+      1.4872665534804754,
+      4.307902097902097
+     ],
+     "ratio_bar": 0.75,
+     "ratio_pass": true,
+     "ratio_nan_resamples": 22,
+     "unweighted": {
+      "ua_a": 0.11666666666666667,
+      "ua_b": 0.05,
+      "diff": 0.06666666666666667
+     },
+     "per_seed_diff": {
+      "1": 0.09794520547945205,
+      "2": 0.09965753424657535,
+      "3": 0.0
+     },
+     "gaming": {
+      "discordant_pairs": 14,
+      "a_only": 11,
+      "b_only": 3,
+      "n_slots_nonempty_either": 22,
+      "conditional_ua_a": 0.6334785314250156,
+      "conditional_ua_b": 0.27442439327940266,
+      "conditional_diff_ci90": [
+       0.1880014419293235,
+       0.5453955941669253
+      ]
+     }
+    },
+    "excl_inferable": {
+     "a": "E-SQ",
+     "b": "E-GR",
+     "n_slots": 117,
+     "n_topics": 35,
+     "excluded_items": [
+      "h4002",
+      "h4012",
+      "h4013"
+     ],
+     "ua_a": 0.0935487647816415,
+     "ua_b": 0.05163329820864067,
+     "diff": 0.041915466573000826,
+     "ci90": [
+      0.007786973376013646,
+      0.07694009542848425
+     ],
+     "delta": 0.1,
+     "noninferior": true,
+     "equivalent": true,
+     "sensitivity": {
+      "0.05": {
+       "noninferior": true,
+       "equivalent": false
+      },
+      "0.2": {
+       "noninferior": true,
+       "equivalent": true
+      }
+     },
+     "ratio": 1.8117913832199548,
+     "ratio_ci90": [
+      1.1460182899178717,
+      2.9863636363636354
+     ],
+     "ratio_bar": 0.75,
+     "ratio_pass": true,
+     "ratio_nan_resamples": 22,
+     "unweighted": {
+      "ua_a": 0.09401709401709402,
+      "ua_b": 0.05128205128205128,
+      "diff": 0.042735042735042736
+     },
+     "per_seed_diff": {
+      "1": 0.051152737752161385,
+      "2": 0.07592267135325131,
+      "3": 0.0
+     },
+     "gaming": {
+      "discordant_pairs": 11,
+      "a_only": 8,
+      "b_only": 3,
+      "n_slots_nonempty_either": 19,
+      "conditional_ua_a": 0.5756484149855907,
+      "conditional_ua_b": 0.3177233429394813,
+      "conditional_diff_ci90": [
+       0.057963620230700966,
+       0.44579211254957707
+      ]
+     }
+    }
+   },
+   "E-R1_vs_E-GR": {
+    "all": {
+     "a": "E-R1",
+     "b": "E-GR",
+     "n_slots": 120,
+     "n_topics": 35,
+     "excluded_items": [],
+     "ua_a": 0.07499999999999998,
+     "ua_b": 0.05034246575342466,
+     "diff": 0.024657534246575324,
+     "ci90": [
+      -0.01699467980886626,
+      0.06501836368021584
+     ],
+     "delta": 0.1,
+     "noninferior": true,
+     "equivalent": true,
+     "sensitivity": {
+      "0.05": {
+       "noninferior": true,
+       "equivalent": false
+      },
+      "0.2": {
+       "noninferior": true,
+       "equivalent": true
+      }
+     },
+     "ratio": 1.4897959183673466,
+     "ratio_ci90": [
+      0.7469470608756323,
+      3.2718006209037593
+     ],
+     "ratio_bar": 0.75,
+     "ratio_pass": false,
+     "ratio_nan_resamples": 22,
+     "unweighted": {
+      "ua_a": 0.075,
+      "ua_b": 0.05,
+      "diff": 0.025
+     },
+     "per_seed_diff": {
+      "1": 0.02363013698630137,
+      "2": 0.075,
+      "3": -0.024657534246575342
+     },
+     "gaming": {
+      "discordant_pairs": 13,
+      "a_only": 8,
+      "b_only": 5,
+      "n_slots_nonempty_either": 19,
+      "conditional_ua_a": 0.47232207045291164,
+      "conditional_ua_b": 0.3170381020848311,
+      "conditional_diff_ci90": [
+       -0.10815488848227091,
+       0.4183924545501821
+      ]
+     }
+    },
+    "excl_inferable": {
+     "a": "E-R1",
+     "b": "E-GR",
+     "n_slots": 118,
+     "n_topics": 35,
+     "excluded_items": [
+      "h4002",
+      "h4012",
+      "h4013"
+     ],
+     "ua_a": 0.05921281783350749,
+     "ua_b": 0.05120167189132706,
+     "diff": 0.008011145942180435,
+     "ci90": [
+      -0.02925532657992146,
+      0.04433533345826654
+     ],
+     "delta": 0.1,
+     "noninferior": true,
+     "equivalent": true,
+     "sensitivity": {
+      "0.05": {
+       "noninferior": true,
+       "equivalent": true
+      },
+      "0.2": {
+       "noninferior": true,
+       "equivalent": true
+      }
+     },
+     "ratio": 1.1564625850340138,
+     "ratio_ci90": [
+      0.5022072732431665,
+      2.440442953020133
+     ],
+     "ratio_bar": 0.75,
+     "ratio_pass": false,
+     "ratio_nan_resamples": 22,
+     "unweighted": {
+      "ua_a": 0.059322033898305086,
+      "ua_b": 0.05084745762711865,
+      "diff": 0.00847457627118644
+     },
+     "per_seed_diff": {
+      "1": -0.0010533707865168533,
+      "2": 0.05061511423550087,
+      "3": -0.024657534246575342
+     },
+     "gaming": {
+      "discordant_pairs": 11,
+      "a_only": 6,
+      "b_only": 5,
+      "n_slots_nonempty_either": 17,
+      "conditional_ua_a": 0.40996784565916394,
+      "conditional_ua_b": 0.3545016077170418,
+      "conditional_diff_ci90": [
+       -0.21987187378123632,
+       0.3299238900590398
+      ]
+     }
+    }
+   }
+  },
+  "human_only": {
+   "E-SQ_vs_E-GR": {
+    "a": "E-SQ",
+    "b": "E-GR",
+    "n_slots": 120,
+    "n_topics": 35,
+    "excluded_items": [],
+    "ua_a": 0.14166666666666666,
+    "ua_b": 0.0839041095890411,
+    "diff": 0.057762557077625565,
+    "ci90": [
+     0.014289525758339689,
+     0.10341431909138372
+    ],
+    "delta": 0.1,
+    "noninferior": true,
+    "equivalent": false,
+    "sensitivity": {
+     "0.05": {
+      "noninferior": true,
+      "equivalent": false
+     },
+     "0.2": {
+      "noninferior": true,
+      "equivalent": true
+     }
+    },
+    "ratio": 1.6884353741496598,
+    "ratio_ci90": [
+     1.1367562590931135,
+     2.675675675675676
+    ],
+    "ratio_bar": 0.75,
+    "ratio_pass": true,
+    "ratio_nan_resamples": 1,
+    "unweighted": {
+     "ua_a": 0.14166666666666666,
+     "ua_b": 0.08333333333333333,
+     "diff": 0.058333333333333334
+    },
+    "per_seed_diff": {
+     "1": 0.07328767123287672,
+     "2": 0.09999999999999999,
+     "3": 0.0
+    },
+    "gaming": {
+     "discordant_pairs": 13,
+     "a_only": 10,
+     "b_only": 3,
+     "n_slots_nonempty_either": 22,
+     "conditional_ua_a": 0.7722464219041694,
+     "conditional_ua_b": 0.45737398879900437,
+     "conditional_diff_ci90": [
+      0.08417843030339747,
+      0.5175550722402446
+     ]
+    }
+   },
+   "E-R1_vs_E-GR": {
+    "a": "E-R1",
+    "b": "E-GR",
+    "n_slots": 120,
+    "n_topics": 35,
+    "excluded_items": [],
+    "ua_a": 0.1254566210045662,
+    "ua_b": 0.0839041095890411,
+    "diff": 0.0415525114155251,
+    "ci90": [
+     0.0003783012238090842,
+     0.08010923788260756
+    ],
+    "delta": 0.1,
+    "noninferior": true,
+    "equivalent": true,
+    "sensitivity": {
+     "0.05": {
+      "noninferior": true,
+      "equivalent": false
+     },
+     "0.2": {
+      "noninferior": true,
+      "equivalent": true
+     }
+    },
+    "ratio": 1.495238095238095,
+    "ratio_ci90": [
+     1.0048110996878679,
+     2.332645259938838
+    ],
+    "ratio_bar": 0.75,
+    "ratio_pass": true,
+    "ratio_nan_resamples": 1,
+    "unweighted": {
+     "ua_a": 0.125,
+     "ua_b": 0.08333333333333333,
+     "diff": 0.041666666666666664
+    },
+    "per_seed_diff": {
+     "1": 0.049315068493150684,
+     "2": 0.07534246575342465,
+     "3": 0.0
+    },
+    "gaming": {
+     "discordant_pairs": 11,
+     "a_only": 8,
+     "b_only": 3,
+     "n_slots_nonempty_either": 19,
+     "conditional_ua_a": 0.7900790797987061,
+     "conditional_ua_b": 0.5283968368080518,
+     "conditional_diff_ci90": [
+      0.003157728706624647,
+      0.49660377358490554
+     ]
+    }
+   }
+  }
+ },
+ "h5": {
+  "ins": {
+   "n": 30,
+   "counts": {
+    "답있음": 2,
+    "답없음": 28
+   },
+   "답있음": {
+    "weighted": 0.07016949152542373,
+    "unweighted": 0.06666666666666667,
+    "ci95": [
+     0.0,
+     0.1857622185579044
+    ]
+   },
+   "일부": {
+    "weighted": 0.0,
+    "unweighted": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "답없음": {
+    "weighted": 0.9298305084745763,
+    "unweighted": 0.9333333333333333,
+    "ci95": [
+     0.8142377814420955,
+     1.0
+    ]
+   }
+  },
+  "ins_excl_no_context": {
+   "n": 24,
+   "counts": {
+    "답있음": 2,
+    "답없음": 22
+   },
+   "답있음": {
+    "weighted": 0.0872558662357735,
+    "unweighted": 0.08333333333333333,
+    "ci95": [
+     0.0,
+     0.22300694278190086
+    ]
+   },
+   "일부": {
+    "weighted": 0.0,
+    "unweighted": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "답없음": {
+    "weighted": 0.9127441337642265,
+    "unweighted": 0.9166666666666666,
+    "ci95": [
+     0.7769930572180992,
+     1.0
+    ]
+   }
+  },
+  "new_answered": {
+   "n": 10,
+   "counts": {
+    "일부": 3,
+    "답없음": 7
+   },
+   "답있음": {
+    "weighted": 0.0,
+    "unweighted": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "일부": {
+    "weighted": 0.35185185185185186,
+    "unweighted": 0.3,
+    "ci95": [
+     0.0,
+     0.6851851851851852
+    ]
+   },
+   "답없음": {
+    "weighted": 0.6481481481481481,
+    "unweighted": 0.7,
+    "ci95": [
+     0.3148148148148148,
+     1.0
+    ]
+   }
+  },
+  "new_answered_excl_no_context": {
+   "n": 10,
+   "counts": {
+    "일부": 3,
+    "답없음": 7
+   },
+   "답있음": {
+    "weighted": 0.0,
+    "unweighted": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "일부": {
+    "weighted": 0.35185185185185186,
+    "unweighted": 0.3,
+    "ci95": [
+     0.0,
+     0.6851851851851852
+    ]
+   },
+   "답없음": {
+    "weighted": 0.6481481481481481,
+    "unweighted": 0.7,
+    "ci95": [
+     0.3148148148148148,
+     1.0
+    ]
+   }
+  },
+  "no_context_items": [
+   "h5017",
+   "h5018",
+   "h5020",
+   "h5022",
+   "h5032",
+   "h5039"
+  ]
+ },
+ "h3": {
+  "a": {
+   "n_reuse": 100,
+   "n_found": 100,
+   "n_E_insufficient": 85,
+   "답있음": 4,
+   "일부": 16,
+   "rate": 0.047058823529411764,
+   "bar": 0.15,
+   "pass": true,
+   "labeler": "저자(H2-B 라벨 재사용, 새 라벨 0)",
+   "status_counts": {
+    "answered": 15,
+    "insufficient": 85
+   }
+  },
+  "b": {
+   "E_answered_colleague": {
+    "n": 35,
+    "weighted": 1.0,
+    "unweighted": 1.0,
+    "counts": {
+     "답함": 35
+    }
+   },
+   "L_anchor_colleague": {
+    "n": 25,
+    "weighted": 0.9226190476190478,
+    "unweighted": 0.92,
+    "counts": {
+     "답함": 23,
+     "일부": 2
+    }
+   },
+   "L_anchor_author": {
+    "n": 25,
+    "weighted": 0.5952380952380952,
+    "unweighted": 0.6,
+    "counts": {
+     "답함": 15,
+     "일부": 8,
+     "답안함": 2
+    }
+   },
+   "diff_colleague_weighted": 0.07738095238095222,
+   "diff_colleague_unweighted": 0.07999999999999996,
+   "diff_mixed_unweighted": 0.4,
+   "bar": 0.1,
+   "pass_colleague": false,
+   "note": "앵커 가중은 H3 안의 앵커 표집(N_h = H2-A 층 크기)이다. E 와 L 의 모집단이 달라(held-out s1 라운드 0 E vs D18 H2-A L) 가중 차이는 참고로만 낸다. 판정은 G2(b) 와 같은 비가중"
+  }
+ },
+ "auto_noninferiority": {
+  "E-SQ_vs_E-GR:coverage": {
+   "a": "E-SQ",
+   "b": "E-GR",
+   "metric": "coverage",
+   "diff": 0.08825708061002178,
+   "ci90": [
+    0.06057399626517274,
+    0.11823225957049487
+   ],
+   "delta": 0.05,
+   "noninferior": true
+  },
+  "E-SQ_vs_E-GR:grounding": {
+   "a": "E-SQ",
+   "b": "E-GR",
+   "metric": "grounding",
+   "diff": 0.238363093445442,
+   "ci90": [
+    0.1479650706973663,
+    0.33135602986338275
+   ],
+   "delta": 0.05,
+   "noninferior": true
+  },
+  "E-R1_vs_E-GR:coverage": {
+   "a": "E-R1",
+   "b": "E-GR",
+   "metric": "coverage",
+   "diff": 0.08320728291316526,
+   "ci90": [
+    0.05654730781201369,
+    0.11124509803921566
+   ],
+   "delta": 0.05,
+   "noninferior": true
+  },
+  "E-R1_vs_E-GR:grounding": {
+   "a": "E-R1",
+   "b": "E-GR",
+   "metric": "grounding",
+   "diff": 0.13691192025982807,
+   "ci90": [
+    0.044680600321639063,
+    0.2333303818047607
+   ],
+   "delta": 0.05,
+   "noninferior": true
+  }
+ }
+}
