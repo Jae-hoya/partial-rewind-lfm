@@ -1,0 +1,40 @@
+{
+ "spec": "PREREG_R3 A/B sheets, minimal v2 (DEVIATIONS 33)",
+ "source": "results/r3/sheets/labeler_{A,B}.html (d810136)",
+ "sheet_version": "r3_sheet_v2",
+ "dropped": "guide/break screens, timing, min reading time, scroll gate, translator record, stage locks, practice feedback",
+ "A": {
+  "n_items": 136,
+  "stages": [
+   3,
+   73,
+   10,
+   50
+  ],
+  "order": [
+   "qc795b7",
+   "qc39c2c",
+   "qcb8e39",
+   "q1ebbd2",
+   "q1720ac"
+  ],
+  "html_sha256": "9e3856851fd3a0211b2c0cc0c7a10485b81f2f14a0bede4fac7feeecf2ae0994"
+ },
+ "B": {
+  "n_items": 136,
+  "stages": [
+   3,
+   73,
+   10,
+   50
+  ],
+  "order": [
+   "qc795b7",
+   "qcb8e39",
+   "qc39c2c",
+   "q301429",
+   "qb1a23d"
+  ],
+  "html_sha256": "55a6a66da5a0a6c1924783daa4bf8058455c266647f0f135ced12641f6d9eb5b"
+ }
+}
