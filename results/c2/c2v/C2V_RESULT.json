@@ -1,0 +1,36 @@
+{
+ "spec": "PREREG_R3 §4.6 C-G7 (report only)",
+ "n": 40,
+ "n_undecidable": 0,
+ "undecidable_by_mc": {
+  "sup": 0,
+  "uns": 0
+ },
+ "precision": {
+  "k": 15,
+  "n": 20,
+  "rate": 0.75,
+  "wilson95": [
+   0.531299122381256,
+   0.8881382985923343
+  ]
+ },
+ "recall": {
+  "k_raw": 15,
+  "n_raw": 22,
+  "rate_raw": 0.6818181818181818,
+  "rate_hajek": 0.42347600518806744,
+  "n_eff_kish": 16.82,
+  "wilson95_hajek_approx": [
+   0.224193378693442,
+   0.651208171829857
+  ]
+ },
+ "translator_used": {
+  "안 씀": 40
+ },
+ "scrolled_to_bottom": 40,
+ "manuscript_note": "single-author check, n = 40; the author knew the hypotheses but not the operator's verdicts",
+ "attempt": 2,
+ "role": "primary"
+}
