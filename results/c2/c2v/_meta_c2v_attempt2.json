@@ -1,0 +1,9 @@
+{
+ "spec": "PREREG_R3 §4.6 C-G7, attempt 2 (DEVIATIONS 28)",
+ "source_sheet": "results/c2/c2v/labeler_c2v.html",
+ "order_seed": 4506,
+ "sheet_version": "c2v_sheet_v2",
+ "n_items": 40,
+ "gate": "translator_used AND scrolled_to_bottom",
+ "html_sha256": "ca7f8ec7e201ba787a67c584d70cd34395061379710444c119a42aa9ac1b1bb3"
+}

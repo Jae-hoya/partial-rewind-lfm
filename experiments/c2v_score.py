@@ -7,7 +7,8 @@
   둘 다 Wilson 95%(recall 은 Kish 유효 n 으로 근사), 가중 안 한 표본 recall 도 함께 적는다.
 원고 문구: "single-author check, n = 40; the author knew the hypotheses but not the operator's verdicts".
 
-  python experiments/c2v_score.py
+  python experiments/c2v_score.py --attempt 2   # 주 결과 (DEVIATIONS 28)
+  python experiments/c2v_score.py --attempt 1   # 1차 시도, 보고만
 """
 
 from __future__ import annotations
@@ -23,7 +24,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from c2_negative_control import wilson  # noqa: E402
 
-VERSION = "c2v_sheet_v1"
+ATTEMPTS = {1: ("labels_c2v_filled.csv", "c2v_sheet_v1", "C2V_RESULT_attempt1.json"),
+            2: ("labels_c2v_attempt2.csv", "c2v_sheet_v2", "C2V_RESULT.json")}   # DEVIATIONS 28: 2차 = 주 결과
 
 
 def wilson_p(p: float, n_eff: float, z: float = 1.959963984540054) -> tuple[float, float]:
@@ -35,8 +37,13 @@ def wilson_p(p: float, n_eff: float, z: float = 1.959963984540054) -> tuple[floa
     return (max(0.0, c - h), min(1.0, c + h))
 
 
-def main() -> int:
-    lab_p = ROOT / "results/c2/c2v/labels_c2v_filled.csv"
+def main(argv=None) -> int:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--attempt", type=int, choices=(1, 2), default=2)
+    a = ap.parse_args(argv)
+    lab_name, VERSION, out_name = ATTEMPTS[a.attempt]
+    lab_p = ROOT / "results/c2/c2v" / lab_name
     key_p = ROOT / "results/c2/c2v_sealed/_key_c2v.csv"
     labs = {r["item_id"]: r for r in csv.DictReader(io.open(lab_p, encoding="utf-8-sig"))}
     key = {r["item_id"]: r for r in csv.DictReader(io.open(key_p, encoding="utf-8"))}
@@ -68,7 +75,9 @@ def main() -> int:
            "translator_used": {t: sum(labs[i]["translator_used"] == t for i in labs) for t in sorted({r["translator_used"] for r in labs.values()})},
            "scrolled_to_bottom": sum(int(labs[i]["scrolled_to_bottom"] or 0) for i in labs),
            "manuscript_note": "single-author check, n = 40; the author knew the hypotheses but not the operator's verdicts"}
-    out = ROOT / "results/c2/c2v/C2V_RESULT.json"
+    res["attempt"] = a.attempt
+    res["role"] = "primary" if a.attempt == 2 else "attempt 1 (fast pass, reported; DEVIATIONS 28)"
+    out = ROOT / "results/c2/c2v" / out_name
     io.open(out, "w", encoding="utf-8").write(json.dumps(res, ensure_ascii=False, indent=1))
     print(json.dumps(res, ensure_ascii=False, indent=1))
     return 0
