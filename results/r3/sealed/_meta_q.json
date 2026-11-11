@@ -1,0 +1,275 @@
+{
+ "spec": "PREREG_R3 §2.2, §2.4, §3.3, §3.5, §3.6",
+ "version": "r3_sheet_v1",
+ "salt": "r3-quality-v1",
+ "seeds": {
+  "practice": 4301,
+  "v_A": 4302,
+  "v_B": 4303,
+  "draw": 4401,
+  "q_A": 4402,
+  "q_B": 4403,
+  "catch": 4404,
+  "calib": 4405
+ },
+ "cap_s": 120.0,
+ "n_items_by_stage": {
+  "1": 3,
+  "2": 73,
+  "3": 10,
+  "4": 50
+ },
+ "v": {
+  "practice_alloc": {
+   "P2": 4,
+   "P1": 2,
+   "N2": 1,
+   "N1": 3
+  },
+  "practice_bins": {
+   "mid": 6,
+   "short": 3,
+   "long": 1
+  },
+  "practice_author_support": 7,
+  "c50_bins": {
+   "mid": 16,
+   "short": 20,
+   "long": 14
+  },
+  "tmin_h": {
+   "practice": 0.232,
+   "test": 1.076
+  }
+ },
+ "q": {
+  "U_E_slots": 357,
+  "U_E_items": 496,
+  "topics": 28,
+  "U_E_by_seed": {
+   "1": 123,
+   "2": 116,
+   "3": 118
+  },
+  "U_E_answered": {
+   "E-SQ": 277,
+   "E-GR": 126,
+   "E-R1": 269
+  },
+  "all_slots": 1752,
+  "n_query_seeds_all": 105,
+  "design": "two-way: (E-GR answered g1/g0) x topic, g0 topics with N_h<=4 pooled",
+  "alloc": {
+   "g0|small": 1,
+   "g0|t000": 1,
+   "g0|t001": 1,
+   "g0|t002": 1,
+   "g0|t003": 1,
+   "g0|t005": 1,
+   "g0|t020": 1,
+   "g0|t026": 1,
+   "g0|t029": 1,
+   "g0|t030": 1,
+   "g0|t032": 1,
+   "g0|t034": 1,
+   "g0|t036": 1,
+   "g0|t041": 1,
+   "g0|t042": 1,
+   "g0|t043": 1,
+   "g0|t044": 1,
+   "g0|t051": 1,
+   "g0|t052": 1,
+   "g0|t053": 1,
+   "g1|t000": 1,
+   "g1|t001": 1,
+   "g1|t002": 1,
+   "g1|t003": 1,
+   "g1|t004": 1,
+   "g1|t005": 1,
+   "g1|t015": 1,
+   "g1|t020": 1,
+   "g1|t023": 1,
+   "g1|t024": 1,
+   "g1|t025": 1,
+   "g1|t026": 1,
+   "g1|t027": 1,
+   "g1|t029": 1,
+   "g1|t030": 1,
+   "g1|t032": 1,
+   "g1|t034": 1,
+   "g1|t036": 2,
+   "g1|t041": 1,
+   "g1|t042": 1,
+   "g1|t043": 1,
+   "g1|t044": 1,
+   "g1|t052": 1,
+   "g1|t053": 1
+  },
+  "N_cell": {
+   "g0|small": 21,
+   "g0|t000": 15,
+   "g0|t001": 6,
+   "g0|t002": 21,
+   "g0|t003": 12,
+   "g0|t005": 5,
+   "g0|t020": 12,
+   "g0|t026": 13,
+   "g0|t029": 9,
+   "g0|t030": 22,
+   "g0|t032": 8,
+   "g0|t034": 6,
+   "g0|t036": 13,
+   "g0|t041": 11,
+   "g0|t042": 11,
+   "g0|t043": 10,
+   "g0|t044": 14,
+   "g0|t051": 5,
+   "g0|t052": 10,
+   "g0|t053": 7,
+   "g1|t000": 7,
+   "g1|t001": 2,
+   "g1|t002": 5,
+   "g1|t003": 3,
+   "g1|t004": 5,
+   "g1|t005": 7,
+   "g1|t015": 4,
+   "g1|t020": 3,
+   "g1|t023": 5,
+   "g1|t024": 1,
+   "g1|t025": 9,
+   "g1|t026": 10,
+   "g1|t027": 2,
+   "g1|t029": 9,
+   "g1|t030": 7,
+   "g1|t032": 1,
+   "g1|t034": 7,
+   "g1|t036": 11,
+   "g1|t041": 7,
+   "g1|t042": 7,
+   "g1|t043": 4,
+   "g1|t044": 7,
+   "g1|t052": 1,
+   "g1|t053": 2
+  },
+  "N_topic": {
+   "t000": 22,
+   "t001": 8,
+   "t002": 26,
+   "t003": 15,
+   "t004": 8,
+   "t005": 12,
+   "t011": 1,
+   "t012": 2,
+   "t015": 6,
+   "t019": 3,
+   "t020": 15,
+   "t023": 8,
+   "t024": 2,
+   "t025": 13,
+   "t026": 23,
+   "t027": 4,
+   "t029": 18,
+   "t030": 29,
+   "t032": 9,
+   "t034": 13,
+   "t036": 24,
+   "t041": 18,
+   "t042": 18,
+   "t043": 14,
+   "t044": 21,
+   "t051": 5,
+   "t052": 11,
+   "t053": 9
+  },
+  "expected_items": 69.31,
+  "expected_items_by_pool_limit": {
+   "0": 77.31,
+   "1": 76.31,
+   "2": 73.31,
+   "3": 70.31,
+   "4": 69.31
+  },
+  "K_SMALL": 4,
+  "n_slots": 45,
+  "n_items": 69,
+  "answered_in_draw": {
+   "E-SQ": 29,
+   "E-GR": 25,
+   "E-R1": 30
+  }
+ },
+ "q_items_main": 69,
+ "h4_overlap": 8,
+ "groups_with_differing_contexts": 0,
+ "catch_candidate_counts": {
+  "candidates_after_calib_topic_exclusion": 7,
+  "numbers_in_answers": 5,
+  "in_cited_chunk_sentence": 14,
+  "replacement_absent_from_context": 18,
+  "hard_candidate_answers_rung0": 2,
+  "hard_rung_applied": 0,
+  "hard_candidate_answers": 2
+ },
+ "catch_positions": [
+  3,
+  30,
+  44,
+  46
+ ],
+ "calib_dev_topics": [
+  [
+   "t031",
+   2
+  ],
+  [
+   "t050",
+   1
+  ]
+ ],
+ "catch_dev_topics": [
+  [
+   "t007",
+   3
+  ],
+  [
+   "t037",
+   1
+  ]
+ ],
+ "hard_rung_applied": 0,
+ "n_query_seeds_all": 105,
+ "calib_pool": 33,
+ "tmin_sum_h_by_stage": {
+  "1": 0.094,
+  "2": 1.274,
+  "3": 0.232,
+  "4": 1.076
+ },
+ "tmin_mean_s_by_stage": {
+  "1": 112.9,
+  "2": 62.8,
+  "3": 83.3,
+  "4": 77.4
+ },
+ "html_sha256": {
+  "A": "56e04e110dbfa4499b2c21e32ce784b5909a27c0c68ea49274a6eb74cea95b8a",
+  "B": "8964f3a21a724419ff851188f14a330e167acda0db01530c1447447cf71296da"
+ },
+ "placeholder_ref": false,
+ "time_estimate": {
+  "by_stage_h": {
+   "1": 0.13,
+   "2": 3.163,
+   "3": 0.333,
+   "4": 1.667
+  },
+  "guide_h": 0.25,
+  "total_h": 5.54
+ },
+ "llm_instances": 0,
+ "api_calls": 0,
+ "leak_check": {
+  "ok": true,
+  "v_claim_chunk_id_markers_inherited": 82
+ }
+}
