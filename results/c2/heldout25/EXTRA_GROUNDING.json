@@ -1,0 +1,80 @@
+{
+ "spec": "PREREG_R3 §4.8 sensitivity: grounding pair exclusion (definitions of r2_extra.block_c)",
+ "run_dir": "results/c2/heldout25",
+ "comparison": "E-R1_vs_E-GR",
+ "n_boot": 10000,
+ "boot_seed": 42,
+ "zero_rule": {
+  "n_topics": 22,
+  "seeds": [
+   1,
+   2,
+   3
+  ],
+  "diff": 0.09225701805250318,
+  "ci90": [
+   0.005743048125320002,
+   0.1768341862509643
+  ],
+  "delta": 0.05,
+  "noninferior": true,
+  "per_seed": {
+   "1": 0.08088036033610196,
+   "2": 0.08143728655673552,
+   "3": 0.11445340726467207
+  }
+ },
+ "zero_rule_reproduces_ANALYSIS": true,
+ "empty_queries": {
+  "E-GR·s1": 8,
+  "E-GR·s2": 8,
+  "E-GR·s3": 4,
+  "E-R1·s1": 1,
+  "E-R1·s2": 3,
+  "E-R1·s3": 2
+ },
+ "drop_both": {
+  "cell": {
+   "point": 0.09981906871254442,
+   "ci90": [
+    0.006279130612330736,
+    0.1915233789993921
+   ],
+   "noninferior": true,
+   "n_cells_kept": 61,
+   "n_cells": 66,
+   "nan_resamples": 0
+  },
+  "topic": {
+   "n_topics": 20,
+   "diff": 0.1014827198577535,
+   "ci90": [
+    0.0036342799978509744,
+    0.19601191187186098
+   ],
+   "noninferior": true
+  }
+ },
+ "drop_either": {
+  "cell": {
+   "point": 0.05647752097756585,
+   "ci90": [
+    -0.05896859638173117,
+    0.16965670711034303
+   ],
+   "noninferior": false,
+   "n_cells_kept": 45,
+   "n_cells": 66,
+   "nan_resamples": 0
+  },
+  "topic": {
+   "n_topics": 10,
+   "diff": 0.05925396600403329,
+   "ci90": [
+    -0.06463170279090995,
+    0.17842121485350718
+   ],
+   "noninferior": false
+  }
+ }
+}
