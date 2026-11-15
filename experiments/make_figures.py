@@ -105,7 +105,7 @@ def fig4() -> dict:
     (a) 가 있으면 (b) 가 대표성을 주장하지 않아도 되므로 체리피킹 시비가 원천 차단된다.
     최종 형태는 공저자가 정한다.
     """
-    live = rd("results/m1c/m2min_live.csv")
+    live = rd("results/m1c_singledoc/m2min_live.csv")  # corrected single-document operator (results/m1c is the chunk-split version)
     assert live, "m2min_live.csv 가 없다"
     fr = [int(r["B_frozen"]) for r in live]
     med_all = st.median(fr)
@@ -139,7 +139,7 @@ def fig4() -> dict:
     axb.step(rounds, a_exec, where="mid", color="black", linewidth=1.2,
              linestyle="--", label="Global retry")
     axb.step(rounds, b_exec, where="mid", color="black", linewidth=1.8,
-             label="Freeze-and-expand")
+             label="Freeze + branch re-run")
     axb.fill_between(rounds, b_exec, a_exec, step="mid", facecolor="0.85",
                      edgecolor="none")
     axb.set_xticks(rounds, ["R0", "R1", "R2"])

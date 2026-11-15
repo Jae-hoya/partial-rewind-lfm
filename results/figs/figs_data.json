@@ -22,12 +22,12 @@
   "frozen": 1,
   "median_frozen_all": 0,
   "median_frozen_nonzero": 1.0,
-  "queries_freezing_none": 23,
-  "queries_freezing_any": 22,
+  "queries_freezing_none": 25,
+  "queries_freezing_any": 20,
   "n_queries": 45,
   "distribution": {
-   "0": 23,
-   "1": 16,
+   "0": 25,
+   "1": 14,
    "2": 5,
    "3": 1
   },
