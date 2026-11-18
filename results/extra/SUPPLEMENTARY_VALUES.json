@@ -1,0 +1,205 @@
+{
+  "script": "experiments/supplementary_values.py",
+  "definitions": {
+    "waste_tau0.7_cov1.0": "re_executed = 1 인 branch-round 중 coverage == 1.0 이고 grounding > 0.7 인 비율 (manuscript §III-C S_τ). grounding 열은 각 실행이 기록한 값 그대로.",
+    "r2_precision/recall": "V′ C50 50문항; 연산자 양성 = rescore_singledoc_rows.csv p_mc_new > 0.5; 사람 양성 = 라벨 '지지' (불지지·판단불가 = 0); precision = 양성 중 사람 '지지' 비율, recall = 사람 '지지' 중 연산자 양성 비율. 비가중."
+  },
+  "values": {
+    "waste_tau0.7_cov1.0/g1": {
+      "value": 0.015,
+      "numerator": 6,
+      "denominator": 400,
+      "reported": "6/400",
+      "match": true,
+      "inputs": [
+        "results/test_a/20260829-041445/waste_ratio.csv"
+      ],
+      "cross_check": [
+        "results/test_a/20260829-041445/waste_ratio_ci.csv"
+      ]
+    },
+    "waste_tau0.7_cov1.0/selected_operator (MiniCheck M1')": {
+      "value": 0.1325,
+      "numerator": 53,
+      "denominator": 400,
+      "reported": "53/400",
+      "match": true,
+      "inputs": [
+        "results/m1prime/seed42/waste_ratio.csv"
+      ],
+      "cross_check": [
+        "results/m1prime/seed42/waste_ratio_ci.csv"
+      ]
+    },
+    "r2_precision/author": {
+      "value": 0.8421052631578947,
+      "numerator": 32,
+      "denominator": 38,
+      "reported": "32/38",
+      "match": true,
+      "inputs": [
+        "results/vprime/labels_stage1_filled.csv",
+        "results/d18/labels_all_filled.csv",
+        "results/vprime/_key_stage1.csv",
+        "results/vprime/_key_stage2.csv",
+        "results/vprime/rescore_singledoc_rows.csv",
+        "results/vprime/c50_sealed/_key_vc50.csv",
+        "results/r2/bundle/labels/labels_r2_bundle_filled.csv"
+      ],
+      "read_by_loader_not_used": [
+        "results/vprime/VPRIME_DEDUP_CHECK.json",
+        "results/vprime/stage2_strata.json",
+        "results/vprime/premise_lengths.csv"
+      ],
+      "cross_check": [
+        "results/r3/R3_RELIABILITY.json"
+      ]
+    },
+    "r2_recall/author": {
+      "value": 0.8,
+      "numerator": 32,
+      "denominator": 40,
+      "reported": "32/40",
+      "match": true,
+      "inputs": [
+        "results/vprime/labels_stage1_filled.csv",
+        "results/d18/labels_all_filled.csv",
+        "results/vprime/_key_stage1.csv",
+        "results/vprime/_key_stage2.csv",
+        "results/vprime/rescore_singledoc_rows.csv",
+        "results/vprime/c50_sealed/_key_vc50.csv",
+        "results/r2/bundle/labels/labels_r2_bundle_filled.csv"
+      ],
+      "read_by_loader_not_used": [
+        "results/vprime/VPRIME_DEDUP_CHECK.json",
+        "results/vprime/stage2_strata.json",
+        "results/vprime/premise_lengths.csv"
+      ],
+      "cross_check": [
+        "results/r3/R3_RELIABILITY.json"
+      ]
+    },
+    "r2_precision/A-v1": {
+      "value": 0.23684210526315788,
+      "numerator": 9,
+      "denominator": 38,
+      "reported": "9/38",
+      "match": true,
+      "inputs": [
+        "results/vprime/labels_stage1_filled.csv",
+        "results/d18/labels_all_filled.csv",
+        "results/vprime/_key_stage1.csv",
+        "results/vprime/_key_stage2.csv",
+        "results/vprime/rescore_singledoc_rows.csv",
+        "results/vprime/c50_sealed/_key_vc50.csv",
+        "results/r2/bundle/labels/labels_r2_bundle_filled.csv"
+      ],
+      "read_by_loader_not_used": [
+        "results/vprime/VPRIME_DEDUP_CHECK.json",
+        "results/vprime/stage2_strata.json",
+        "results/vprime/premise_lengths.csv"
+      ],
+      "cross_check": []
+    }
+  },
+  "context": {
+    "waste_by_tau": {
+      "g1": {
+        "0.7": {
+          "cov_eq_1": 6,
+          "cov_gt_tau": 7,
+          "released_ci_csv_n_wasted": 7
+        },
+        "0.8": {
+          "cov_eq_1": 2,
+          "cov_gt_tau": 2,
+          "released_ci_csv_n_wasted": 2
+        },
+        "0.9": {
+          "cov_eq_1": 2,
+          "cov_gt_tau": 2,
+          "released_ci_csv_n_wasted": 2
+        },
+        "n_reexec": 400
+      },
+      "selected_operator (MiniCheck M1')": {
+        "0.7": {
+          "cov_eq_1": 53,
+          "cov_gt_tau": 93,
+          "released_ci_csv_n_wasted": 93
+        },
+        "0.8": {
+          "cov_eq_1": 34,
+          "cov_gt_tau": 34,
+          "released_ci_csv_n_wasted": 34
+        },
+        "0.9": {
+          "cov_eq_1": 28,
+          "cov_gt_tau": 28,
+          "released_ci_csv_n_wasted": 28
+        },
+        "n_reexec": 400
+      }
+    },
+    "precision_recall": {
+      "n_items": 50,
+      "author_support": 40,
+      "A-v1_support": 12,
+      "author_labels": {
+        "불지지": 10,
+        "지지": 40
+      },
+      "A-v1_labels": {
+        "불지지": 38,
+        "지지": 12
+      },
+      "second_round (p_mc_new > 0.5)": {
+        "operator_positives": 38,
+        "precision_author": {
+          "value": 0.8421052631578947,
+          "numerator": 32,
+          "denominator": 38
+        },
+        "recall_author": {
+          "value": 0.8,
+          "numerator": 32,
+          "denominator": 40
+        },
+        "precision_A-v1": {
+          "value": 0.23684210526315788,
+          "numerator": 9,
+          "denominator": 38
+        },
+        "recall_A-v1": {
+          "value": 0.75,
+          "numerator": 9,
+          "denominator": 12
+        }
+      },
+      "first_round (_key lab_mc == 1)": {
+        "operator_positives": 34,
+        "precision_author": {
+          "value": 0.8235294117647058,
+          "numerator": 28,
+          "denominator": 34
+        },
+        "recall_author": {
+          "value": 0.7,
+          "numerator": 28,
+          "denominator": 40
+        },
+        "precision_A-v1": {
+          "value": 0.2647058823529412,
+          "numerator": 9,
+          "denominator": 34
+        },
+        "recall_A-v1": {
+          "value": 0.75,
+          "numerator": 9,
+          "denominator": 12
+        }
+      }
+    }
+  },
+  "all_match": true
+}
